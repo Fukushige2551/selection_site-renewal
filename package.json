@@ -1,0 +1,30 @@
+{
+  "name": "foods-selectioncojptestrsjp-theme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fukushige2551/selection_site-renewal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fukushige2551/selection_site-renewal/issues"
+  },
+  "homepage": "https://github.com/Fukushige2551/selection_site-renewal#readme",
+  "description": "",
+  "dependencies": {
+    "vite": "^8.0.0"
+  },
+  "devDependencies": {
+    "sass": "^1.98.0",
+    "vite-plugin-full-reload": "^1.2.0",
+    "vite-plugin-imagemin": "^0.6.1"
+  }
+}
