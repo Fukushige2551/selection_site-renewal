@@ -1,0 +1,25 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+html {
+    color: #000;
+    background-color: $color-bg;
+    font-size: 62.5%;
+}
+
+/**
+ * box-sizing: border-box; を全ての要素に適用
+ */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/**
+ * モーダル表示の場合はスクロール不可
+ */
+body.is-fixed {
+  overflow: hidden;
+  height: 100%;
+}

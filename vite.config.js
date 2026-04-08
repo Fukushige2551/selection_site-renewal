@@ -7,8 +7,8 @@ export default defineConfig({
     base: '',
     plugins: [
         FullReload([
-        '**/*.php',
-        'template-parts/**/*.php'
+            '**/*.php',
+            'template-parts/**/*.php'
         ])
     ],
     server: {
@@ -26,7 +26,16 @@ export default defineConfig({
         manifest: true,
         rollupOptions: {
             input: {
-                main: path.resolve(__dirname, 'src/js/main.js')
+                main: path.resolve(__dirname, 'src/js/main.js'),
+                'front-page': path.resolve(__dirname, 'src/js/front-page.js')
+            },
+            output: {
+                entryFileNames: 'assets/[name].js',
+                chunkFileNames: 'assets/[name].js',
+                assetFileNames: (assetInfo) => {
+                    const ext = path.extname(assetInfo.name || '')
+                    return 'assets/[name][extname]'
+                }
             }
         }
     }

@@ -1,0 +1,12 @@
+.u-border {
+    &-bottom--none {
+        border-bottom: none !important;
+    }
+    &-top--header {
+        border-top: 1px solid #D9D9D9 !important;
+    }
+}
+.u-transparent {
+    pointer-events: none !important;
+    opacity: 0 !important;
+}

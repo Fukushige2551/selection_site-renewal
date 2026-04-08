@@ -1,0 +1,194 @@
+@use "../foundation/variables" as *;
+
+.l-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 18px 0 25px;
+    width: 100vw;
+    height: $header-margin;
+
+    &__bascket {
+        &__img {
+            display: inline-block;
+            width: 35px;
+        }
+
+        &.is-transparent {
+            pointer-events: none;
+            opacity: 0;
+        }
+    }
+    &__logo {
+        &__img {
+            display: block;
+            width: 83px;
+        }
+    }
+    &__hamburger {
+        &__img {
+            display: block;
+            width: 36px;
+        }
+    }
+    &__nav {
+        position: fixed;
+        top: 0;
+        z-index: 99;
+        width: 100vw;
+        height: 100dvh;
+        font-family: "Zen Kaku Gothic New", sans-serif;
+        color: #103675;
+        background-color: #fff;
+        transition: all 0.2s;
+
+        &.is {
+            &-closed {
+                left: 100%;
+                inset: 0;
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            &-open {
+                left: 0;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+            }
+        }
+
+        .c-btn--online-shop {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #fff;
+            font-size: 1.6rem;
+            font-weight: bold;
+            line-height: 1;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+        }
+
+        &__overlay {
+            width: 100%;
+            height: $header-margin;
+        }
+        &__inner {
+            overflow: auto;
+            height: calc(100dvh - #{$header-margin});
+        }
+        &__group {
+            display: block;
+            font-weight: bold;
+            font-size: 1.8rem;
+            padding: 15px 0 15px;
+            border-bottom: 1px solid #D9D9D9;
+
+            &__title {
+                width: 65.3846vw;
+                margin: 0 auto;
+
+                &--position-fix {
+                    position: relative;
+                    left: -30px;
+                }
+            }
+        }
+        &__online-shop {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 25px auto 213px;
+            width: 82.0512%;
+            height: 48px;
+
+            &__img {
+                width: 36px;
+            }
+        }
+
+        .store-info {
+            border-bottom: none;
+
+            &.is-open {
+                border-bottom: 1px solid #D9D9D9;
+            }
+
+            &__group {
+                display: none;
+                width: 65.3846vw;
+                margin: 0 auto;
+                font-size: 1.6rem;
+
+                &.is-open {
+                    ul {
+                        display: block;
+                    }
+                }
+                &.is-saitama {
+                    .store-info__prefecture {
+                        border-bottom: none;
+                    }
+
+                    &.is-open {
+                        .store-info__prefecture {
+                            border-bottom: 1px dotted #D9D9D9;
+                        }
+                    }
+                }
+            }
+            &__prefecture,
+            &__store {
+                padding: 13px 0;
+                border-bottom: 1px dotted #D9D9D9;
+            }
+            &__prefecture {
+                font-weight: bold;
+                padding-left: 14px;
+            }
+            &__store {
+                padding-left: 30px;
+
+                &::before {
+                    content: "-";
+                    margin-right: 4px;
+                }
+            }
+        }
+    }
+}
+
+/**
+ * JSアニメーション
+ */
+.js- {
+    &toggle--nav {
+        transform: scale(1);
+
+        &.is-pop {
+            animation: popButton 0.25s ease;
+        }
+    }
+
+    @keyframes popButton {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.15);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+}

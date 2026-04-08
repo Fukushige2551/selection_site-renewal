@@ -1,7 +1,7 @@
 <?php
 
 /**
- *テーマのセットアップ
+ * テーマのセットアップ
  */
 function foods_theme_setup() {
     add_theme_support('title-tag');
@@ -20,6 +20,7 @@ function foods_add_module_type($tag, $handle, $src) {
     $module_handles = [
         'foods-vite-client',
         'foods-main-js',
+        'foods-front-page-js',
     ];
 
     if (in_array($handle, $module_handles, true)) {
@@ -46,39 +47,19 @@ function foods_get_vite_manifest() {
 }
 
 /**
- * アセット読み込み
+ * Vite のエントリを読み込む
  */
-function foods_theme_scripts() {
-    $env = function_exists('wp_get_environment_type')
-        ? wp_get_environment_type()
-        : 'production';
-
-    $dev_server = 'http://localhost:5173';
-    $entry_key  = 'src/js/main.js';
-
-    // local 環境では Vite dev server を読む
-    if ($env === 'local') {
+function foods_enqueue_vite_entry($handle_prefix, $entry_key, $dev_server, $manifest, $is_local) {
+    if ($is_local) {
         wp_enqueue_script(
-            'foods-vite-client',
-            $dev_server . '/@vite/client',
-            [],
-            null,
-            true
-        );
-
-        wp_enqueue_script(
-            'foods-main-js',
+            $handle_prefix . '-js',
             $dev_server . '/' . $entry_key,
             [],
             null,
             true
         );
-
         return;
     }
-
-    // staging / production は build 済み dist を読む
-    $manifest = foods_get_vite_manifest();
 
     if (!$manifest || empty($manifest[$entry_key])) {
         return;
@@ -88,7 +69,7 @@ function foods_theme_scripts() {
 
     if (!empty($entry['file'])) {
         wp_enqueue_script(
-            'foods-main-js',
+            $handle_prefix . '-js',
             get_template_directory_uri() . '/dist/' . $entry['file'],
             [],
             null,
@@ -99,7 +80,7 @@ function foods_theme_scripts() {
     if (!empty($entry['css']) && is_array($entry['css'])) {
         foreach ($entry['css'] as $index => $css_file) {
             wp_enqueue_style(
-                'foods-main-css-' . $index,
+                $handle_prefix . '-css-' . $index,
                 get_template_directory_uri() . '/dist/' . $css_file,
                 [],
                 null
@@ -107,4 +88,56 @@ function foods_theme_scripts() {
         }
     }
 }
+
+/**
+ * アセット読み込み
+ */
+function foods_theme_scripts() {
+    $env = function_exists('wp_get_environment_type')
+        ? wp_get_environment_type()
+        : 'production';
+
+    $is_local   = ($env === 'local');
+    $dev_server = 'http://localhost:5173';
+
+    $main_entry       = 'src/js/main.js';
+    $front_page_entry = 'src/js/front-page.js';
+
+    if ($is_local) {
+        wp_enqueue_script(
+            'foods-vite-client',
+            $dev_server . '/@vite/client',
+            [],
+            null,
+            true
+        );
+    }
+
+    $manifest = $is_local ? null : foods_get_vite_manifest();
+
+    // 共通アセット
+    foods_enqueue_vite_entry(
+        'foods-main',
+        $main_entry,
+        $dev_server,
+        $manifest,
+        $is_local
+    );
+
+    // トップページ専用アセット
+    if (is_front_page()) {
+        foods_enqueue_vite_entry(
+            'foods-front-page',
+            $front_page_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+}
 add_action('wp_enqueue_scripts', 'foods_theme_scripts');
+
+function mytheme_enqueue_scripts() {
+    wp_enqueue_script('jquery');
+}
+add_action('wp_enqueue_scripts', 'mytheme_enqueue_scripts');

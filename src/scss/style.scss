@@ -1,7 +1,17 @@
-/*
-Theme Name: Foods Selection Theme
-Theme URI: https://example.com
-Author: Your Name
-Description: Foods Selection custom theme
-Version: 1.0
-*/
+/**
+ * foundation
+ */
+@use 'foundation/global' as *;
+@use 'foundation/reset';
+@use 'foundation/base';
+
+/**
+ * layout
+ */
+@use 'layout/header';
+@use 'layout/footer';
+
+/**
+ * common
+ */
+@use 'common';

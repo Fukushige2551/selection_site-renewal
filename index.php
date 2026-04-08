@@ -1,7 +1,4 @@
-<?php get_header(); ?>
-
 <main>
-    <h1>Foods Selection Site Renewal</h1>
+    <h1>エラーが発生しました。</h1>
+    <p>※ フォールバックして表示しています。-> index.php</p>
 </main>
-
-<?php get_footer(); ?>
