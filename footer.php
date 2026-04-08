@@ -1,8 +1,8 @@
 <footer class="l-footer">
     <picture class="l-footer__logo">
         <a href="/">
-            <source srcset="<?php echo get_template_directory_uri(); ?>/images/webp/logo_footer-sp.webp" type="image/webp">
-            <img class="l-footer__logo__img" src="<?php echo get_template_directory_uri(); ?>/images/png/logo_footer-sp.png" alt="会社ロゴ">
+            <source srcset="<?php echo get_template_directory_uri(); ?>/img/footer/footer_logo-sp.webp" type="image/webp">
+            <img class="l-footer__logo__img" src="<?php echo get_template_directory_uri(); ?>/img/footer/footer_logo-sp.png" alt="会社ロゴ">
         </a>
     </picture>
 
@@ -73,14 +73,14 @@
     <!-- バナー -->
     <a href="" class="l-footer__banner">
         <picture>
-            <source srcset="<?php echo get_template_directory_uri(); ?>/images/webp/footer_banner-selection-app.webp" type="image/webp">
-            <img class="l-footer__banner__img selection-app" src="<?php echo get_template_directory_uri(); ?>/images/jpg/footer_banner-selection-app.jpg" alt="セレクションアプリ">
+            <source srcset="<?php echo get_template_directory_uri(); ?>/img/footer/footer_banner-selection-app.webp" type="image/webp">
+            <img class="l-footer__banner__img selection-app" src="<?php echo get_template_directory_uri(); ?>/img/footer/footer_banner-selection-app.jpg" alt="セレクションアプリ">
         </picture>
     </a>
     <a href="" class="l-footer__banner">
         <picture>
-            <source srcset="<?php echo get_template_directory_uri(); ?>/images/webp/footer_banner-cgc-colab.webp" type="image/webp">
-            <img class="l-footer__banner__img cgc-colab" src="<?php echo get_template_directory_uri(); ?>/images/jpg/footer_banner-cgc-colab.jpg" alt="CGCコラボ">
+            <source srcset="<?php echo get_template_directory_uri(); ?>/img/footer/footer_banner-cgc-colab.webp" type="image/webp">
+            <img class="l-footer__banner__img cgc-colab" src="<?php echo get_template_directory_uri(); ?>/img/footer/footer_banner-cgc-colab.jpg" alt="CGCコラボ">
         </picture>
     </a>
 

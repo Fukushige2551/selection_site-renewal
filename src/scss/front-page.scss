@@ -1,0 +1,22 @@
+@use "foundation/global" as *;
+
+.p-front-page {
+    position: relative;
+
+    /**
+     * background
+     */
+    &__bg {
+        &--hero {
+            &__sky-1 {
+
+            }
+            &__sky-2 {
+
+            }
+            &__sky-3 {
+
+            }
+        }
+    }
+}

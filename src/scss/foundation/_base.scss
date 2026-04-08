@@ -1,5 +1,4 @@
-@use "variables" as *;
-@use "mixins" as *;
+@use "global" as *;
 
 html {
     color: #000;
@@ -17,9 +16,16 @@ html {
 }
 
 /**
+ * ヘッダー分の余白調整
+ */
+main {
+    margin-top: $header-margin;
+}
+
+/**
  * モーダル表示の場合はスクロール不可
  */
 body.is-fixed {
-  overflow: hidden;
-  height: 100%;
+    overflow: hidden;
+    height: 100%;
 }

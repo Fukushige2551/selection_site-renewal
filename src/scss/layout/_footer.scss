@@ -1,8 +1,7 @@
-@use "../foundation/variables" as *;
-@use "../foundation/mixins" as *;
+@use "../foundation/global" as *;
 
 .l-footer {
-    @include backgroundImg("#{$img-path}png/footer_bg-sp.png");
+    @include backgroundImg("#{$img-path}footer/footer_bg-sp.png");
     display: flex;
     flex-flow: column;
     align-items: center;

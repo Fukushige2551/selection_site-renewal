@@ -15,20 +15,20 @@
 <header class="l-header">
     <a href="/" class="js-toggle--nav js-transparent">
         <picture class="l-header__bascket">
-            <source srcset="<?php echo get_template_directory_uri(); ?>/images/webp/btn_bascket.webp" type="image/webp">
-            <img class="l-header__bascket__img" src="<?php echo get_template_directory_uri(); ?>/images/png/btn_bascket.png" alt="オンラインショップ">
+            <source srcset="<?php echo get_template_directory_uri(); ?>/img/header/btn_bascket.webp" type="image/webp">
+            <img class="l-header__bascket__img" src="<?php echo get_template_directory_uri(); ?>/img/header/btn_bascket.png" alt="オンラインショップ">
         </picture>
     </a>
 
     <picture class="l-header__logo">
-        <source srcset="<?php echo get_template_directory_uri(); ?>/images/webp/logo_header-sp.webp" type="image/webp">
-        <img class="l-header__logo__img" src="<?php echo get_template_directory_uri(); ?>/images/png/logo_header-sp.png" alt="会社ロゴ">
+        <source srcset="<?php echo get_template_directory_uri(); ?>/img/header/header_logo-sp.webp" type="image/webp">
+        <img class="l-header__logo__img" src="<?php echo get_template_directory_uri(); ?>/img/header/header_logo-sp.png" alt="会社ロゴ">
     </picture>
 
     <button class="js-toggle--nav" aria-label="メニューを開く" aria-expanded="false" type="button">
         <picture class="l-header__hamburger">
-            <source srcset="<?php echo get_template_directory_uri(); ?>/images/webp/btn_hamburger.webp" type="image/webp">
-            <img class="l-header__hamburger__img" src="<?php echo get_template_directory_uri(); ?>/images/png/btn_hamburger.png" alt="ハンバーガーメニューアイコン">
+            <source srcset="<?php echo get_template_directory_uri(); ?>/img/header/btn_hamburger.webp" type="image/webp">
+            <img class="l-header__hamburger__img" src="<?php echo get_template_directory_uri(); ?>/img/header/btn_hamburger.png" alt="ハンバーガーメニューアイコン">
         </picture>
     </button>
 </header>
@@ -91,8 +91,8 @@
         <a href="https://foods-selection.stores.jp/" class="l-header__nav__online-shop" target="_blank" rel="noopener noreferrer">
             <button class="c-btn c-btn--online-shop" type="button" aria-label="オンラインショップを開く" aria-expanded="true">
                 <picture>
-                    <source srcset="<?php echo get_template_directory_uri(); ?>/images/webp/btn_bascket--white.webp" type="image/webp">
-                    <img class="l-header__nav__online-shop__img" src="<?php echo get_template_directory_uri(); ?>/images/png/btn_bascket--white.png" alt="オンラインショップのバナー画像">
+                    <source srcset="<?php echo get_template_directory_uri(); ?>/img/header/btn_bascket--white.webp" type="image/webp">
+                    <img class="l-header__nav__online-shop__img" src="<?php echo get_template_directory_uri(); ?>/img/header/btn_bascket--white.png" alt="オンラインショップのバナー画像">
                 </picture>
                 オンラインショップ
             </button>

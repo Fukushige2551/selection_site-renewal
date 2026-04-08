@@ -1,18 +1,14 @@
-@use "foundation/variables" as *;
-@use "foundation/mixins" as *;
+@use "../foundation/global" as *;
 
-.c-main {
-    margin-top: $header-margin;
-}
 .c-btn {
     &--online-shop {
-        @include backgroundImg("#{$img-path}png/bg_online-shop.png");
+        @include backgroundImg("#{$img-path}common/btn_online-shop.png");
     }
     &--pulldown {
         position: relative;
 
         &::after {
-            @include backgroundImg("#{$img-path}png/btn_pulldown.png");
+            @include backgroundImg("#{$img-path}common/btn_pulldown.png");
             content: "";
             position: absolute;
             top: 50%;
@@ -25,17 +21,17 @@
 }
 .c-icon {
     &--youtube {
-        @include backgroundImg("#{$img-path}svg/footer_youtube.svg");
+        @include backgroundImg("#{$img-path}common/icon_youtube.svg");
         width: 40px;
         height: 40px;
     }
     &--instagram {
-        @include backgroundImg("#{$img-path}svg/footer_instagram.svg");
+        @include backgroundImg("#{$img-path}common/icon_instagram.svg");
         width: 32px;
         height: 32px;
     }
     &--facebook {
-        @include backgroundImg("#{$img-path}svg/footer_facebook.svg");
+        @include backgroundImg("#{$img-path}common/icon_facebook.svg");
         width: 32px;
         height: 32px;
     }

@@ -1,7 +1,6 @@
 /**
  * foundation
  */
-@use 'foundation/global' as *;
 @use 'foundation/reset';
 @use 'foundation/base';
 
@@ -12,6 +11,8 @@
 @use 'layout/footer';
 
 /**
- * common
+ * object
  */
-@use 'common';
+@use 'object/common';
+@use 'object/project';
+@use 'object/utility';

@@ -1,3 +1,5 @@
+@use "../foundation/global" as *;
+
 .u-border {
     &-bottom--none {
         border-bottom: none !important;
