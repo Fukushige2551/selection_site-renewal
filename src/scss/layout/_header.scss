@@ -1,22 +1,58 @@
 @use "../foundation/global" as *;
 
+.is-fixed {
+    display: block;
+
+    .l-header {
+        position: relative;
+        height: 15.5vw;
+
+        &__logo {
+            @include backgroundImg("#{$img-path}header/bg_header-logo-sp.png");
+            position: absolute;
+            top: 1.8vw;
+            left: 37.4vw;
+            width: 26.15vw;
+            aspect-ratio: 102 / 54;
+        }
+        &__btn {
+            &__bascket {
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+        &__nav {
+            &__inner {
+                overflow: auto;
+                height: calc(100dvh - 15.5vw);
+            }
+            &__overlay {
+                width: 100%;
+                height: 15.5vw;
+            }
+        }
+    }
+}
+
 .l-header {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
-    padding: 0 18px 0 25px;
-    width: 100vw;
-    height: $header-margin;
+    padding: 4.10vw 4.61vw 0 6.41vw;
+    width: 100%;
+    height: $header-height;
 
+    &__btn {
+        height: fit-content;
+    }
     &__bascket {
         &__img {
-            display: inline-block;
-            width: 35px;
+            width: 8.97vw;
+            aspect-ratio: 35 / 29;
         }
 
         &.is-transparent {
@@ -25,22 +61,23 @@
         }
     }
     &__logo {
+        width: 18.20vw;
+        aspect-ratio: 71 / 35;
+
         &__img {
-            display: block;
-            width: 83px;
+            display: none;
         }
     }
     &__hamburger {
         &__img {
-            display: block;
-            width: 36px;
+            width: 9.23vw;
         }
     }
     &__nav {
         position: fixed;
         top: 0;
         z-index: 99;
-        width: 100vw;
+        width: 100%;
         height: 100dvh;
         font-family: "Zen Kaku Gothic New", sans-serif;
         color: #103675;
@@ -69,9 +106,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 2.05vw;
             color: #fff;
-            font-size: 1.6rem;
+            font-size: 4.1vw;
             font-weight: bold;
             line-height: 1;
             width: 100%;
@@ -81,16 +118,16 @@
 
         &__overlay {
             width: 100%;
-            height: $header-margin;
+            height: $header-height;
         }
         &__inner {
             overflow: auto;
-            height: calc(100dvh - #{$header-margin});
+            height: calc(100dvh - #{$header-height});
         }
         &__group {
             display: block;
             font-weight: bold;
-            font-size: 1.8rem;
+            font-size: 4.61vw;
             padding: 15px 0 15px;
             border-bottom: 1px solid #D9D9D9;
 
@@ -109,11 +146,12 @@
             justify-content: center;
             align-items: center;
             margin: 25px auto 213px;
-            width: 82.0512%;
-            height: 48px;
+            width: 82.05vw;
+            aspect-ratio: 319 / 48;
 
             &__img {
-                width: 36px;
+                width: 9.23vw;
+                aspect-ratio: 36 / 30;
             }
         }
 
@@ -128,7 +166,7 @@
                 display: none;
                 width: 65.3846vw;
                 margin: 0 auto;
-                font-size: 1.6rem;
+                font-size: 4.1vw;
 
                 &.is-open {
                     ul {
@@ -189,6 +227,181 @@
         }
         100% {
             transform: scale(1);
+        }
+    }
+}
+
+.l-header-pc {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+.is-fixed {
+    .l-header {
+        height: 10.41vw;
+
+        &__logo {
+            width: 15.11vw;
+            top: 2.5vw;
+            left: 42.96vw;
+        }
+        &__nav {
+            &__inner {
+                overflow: auto;
+                height: calc(100dvh - 10.41vw);
+            }
+            &__overlay {
+                width: 100%;
+                height: 10.41vw;
+            }
+        }
+    }
+}
+
+.l-header {
+    padding: 3.88vw 3.90vw 0;
+
+    &__bascket {
+        &__img {
+            width: 5.20vw;
+            aspect-ratio: 40 / 33;
+        }
+    }
+    &__logo {
+        width: 15.11vw;
+    }
+    &__hamburger {
+        &__img {
+            width: 5.20vw;
+        }
+    }
+    &__nav {
+        &--sp {
+            .c-btn--online-shop {
+                gap: 1.56vw;
+                font-size: 2.86vw;
+                border-radius: 1.30vw;
+            }
+
+            .l-header__nav {
+                &__group {
+                    font-size: 3.12vw;
+                    padding: 1.95vw 0;
+
+                    &__title {
+                        width: 72vw;
+
+                        &--position-fix {
+                            left: -2.86vw;
+                        }
+                    }
+                }
+
+                &__online-shop {
+                    margin: 3.12vw auto 10.41vw;
+                    width: 60vw;
+                    aspect-ratio: 317 / 44;
+
+                    &__img {
+                        width: 4.68vw;
+                    }
+                }
+            }
+
+            .store-info {
+                &__group {
+                    width: 72vw;
+                    font-size: 2.86vw;
+                }
+
+                &__prefecture,
+                &__store {
+                    padding: 1.69vw 0;
+                }
+
+                &__prefecture {
+                    padding-left: 1.82vw;
+                }
+
+                &__store {
+                    padding-left: 3.90vw;
+
+                    &::before {
+                        margin-right: 0.52vw;
+                    }
+                }
+            }
+        }
+    }
+}
+}
+@media screen and (min-width: 1024px) {
+    .l-header--sp,
+    .l-header__nav--sp {
+        display: none;
+    }
+
+    .l-header-pc {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 100;
+        width: 100%;
+        background-color: #fff;
+
+        &::after {
+            @include backgroundImg("#{$img-path}header/bg_cartain-wide-pc.png");
+            content: "";
+            position: absolute;
+            pointer-events: none;
+            width: 100%;
+            aspect-ratio: 1920 / 25.48;
+        }
+
+        &__inner {
+            display: flex;
+            justify-content: end;
+            height: $header-height-pc;
+        }
+
+        &__nav {
+            display: flex;
+            align-items: center;
+            gap: 5.46vw;
+
+            &__link {
+                color: #103675;
+                font-family: $font-family-ZenKaku;
+                font-size: calc(0.93vw * var(--pc-font-scale));
+                font-weight: bold;
+                line-height: 1;
+                white-space: nowrap;
+
+                &.online-shop {
+                    @include backgroundImg("#{$img-path}header/btn_header-blue.png");
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 15.20vw;
+                    aspect-ratio: 292 / 48;
+                    color: #fff;
+                    gap: 0.46vw;
+
+                    img {
+                        width: 1.87vw;
+                        aspect-ratio: 36 / 30;
+                    }
+
+                    &:hover {
+                        transform: scale(1);
+                    }
+                }
+            }
+            &__logo {
+                width: 7.23vw;
+                aspect-ratio: 139 / 85;
+            }
         }
     }
 }

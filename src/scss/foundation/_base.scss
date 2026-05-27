@@ -2,7 +2,6 @@
 
 html {
     color: #000;
-    background-color: $color-bg;
     font-size: 62.5%;
 }
 
@@ -19,7 +18,7 @@ html {
  * ヘッダー分の余白調整
  */
 main {
-    margin-top: $header-margin;
+    padding-top: $header-height;
 }
 
 /**
@@ -28,4 +27,15 @@ main {
 body.is-fixed {
     overflow: hidden;
     height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    a {
+        cursor: pointer;
+        transition: opacity 0.3s ease, transform 0.6s ease;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
 }

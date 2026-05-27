@@ -6,25 +6,40 @@
     flex-flow: column;
     align-items: center;
     background-repeat: no-repeat;
-    padding: 100px 15px 15px;
+    padding: 17.17vw 3.846vw 3.846vw;
+
+    a {
+        &:hover {
+            opacity: 0.8;
+            transform: scale(1);
+        }
+    }
 
     &__logo {
-        width: clamp(140px, 41.54vw, 162px);
-        margin-bottom: 26px;
+        width: 41.53vw;
+        aspect-ratio: 162 / 77;
+        margin-bottom: 6.66vw;
 
         &__img {
             display: block;
             width: 100%;
             height: auto;
         }
+
+        &--pc {
+            display: none;
+        }
     }
     &__nav {
-        margin-bottom: 282px;
-        width: clamp(177px, 45.38vw, 300px);
+        margin-bottom: 72.3vw;
+        width: 45.64vw;
 
+        &--tab {
+            display: none;
+        }
         &__group {
             position: relative;
-            padding: 16px 0 18px;
+            padding: 4.1vw 0 4.615vw;
             color: #103675;
 
             &::before {
@@ -44,11 +59,12 @@
         &__item {
             display: flex;
             justify-content: center;
-            font-size: 1.6rem;
+            font-size: 4.15vw;
             font-weight: bold;
+            white-space: nowrap;
 
             &.list-title {
-                margin-bottom: 12px;
+                margin-bottom: 3.7vw;
             }
         }
         &__list {
@@ -57,7 +73,7 @@
 
             &__item {
                 font-family: "Zen Kaku Gothic New", sans-serif;
-                font-size: 1.4rem;
+                font-size: 3.58vw;
                 white-space: nowrap;
                 width: 50%;
             }
@@ -77,8 +93,8 @@
     &__sns {
         display: flex;
         align-items: center;
-        gap: 0 20px;
-        margin-bottom: 17px;
+        gap: 0 5.12vw;
+        margin-bottom: 4.35vw;
 
         &__img {
             display: block;
@@ -86,19 +102,19 @@
             background-position: center;
 
             &.youtube {
-                width: 40px;
-                height: 40px;
+                width: 10.25vw;
+                aspect-ratio: 40 / 40;
             }
             &.instagram,
             &.facebook {
-                width: 32px;
-                height: 32px;
+                width: 8.2vw;
+                aspect-ratio: 32 / 32;
             }
         }
     }
     &__banner {
         display: block;
-        margin-bottom: 15px;
+        margin-bottom: 3.84vw;
 
         &__img {
             display: block;
@@ -114,13 +130,207 @@
     &__address {
         line-height: 1.8;
         letter-spacing: 10%;
-        font-size: 1.4rem;
+        font-size: 3.58vw;
         font-weight: bold;
     }
     &__address {
-        margin-bottom: 24px;
+        margin-bottom: 6.15vw;
     }
     &__copyright {
-        font-size: 1.2rem;
+        font-size: 3.07vw;
     }
+}
+
+@media screen and (min-width: 768px) {
+.l-footer {
+    @include backgroundImg("#{$img-path}footer/footer_bg-tab.png");
+    background-size: contain;
+    background-position: center top;
+    aspect-ratio: 768 / 1305;
+    padding: 9.11vw 0 0;
+    box-sizing: border-box;
+
+    &__logo {
+        width: 25.13vw;
+        aspect-ratio: 193 / 118;
+        margin-bottom: 2.08vw;
+
+        &--sp {
+            display: none;
+        }
+        &--pc {
+            display: block;
+        }
+    }
+    &__nav {
+        display: none;
+        flex-wrap: wrap;
+        gap: 1.75vw 10.61vw;
+        width: 56.82vw;
+        margin-bottom: 38.8vw;
+
+        &--tab {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: 0 10.61vw;
+
+            .l-footer__nav__column {
+                display: flex;
+                flex-direction: column;
+                width: 23.10vw;
+            }
+
+            .l-footer__nav__group {
+                width: 100%;
+            }
+        }
+        &__group {
+            width: 23.10vw;
+            padding: 2.08vw 0;
+        }
+        &__item {
+            font-size: 2.08vw;
+
+            &.list-title {
+                font-size: 2.08vw;
+                margin-bottom: 1.69vw;
+            }
+        }
+        &__list {
+            &.store-info {
+                .l-footer__nav__list__item {
+                    text-align: center;
+                }
+            }
+
+            &__item {
+                font-size: 1.82vw;
+            }
+        }
+    }
+    &__sns {
+        gap: 2.81vw;
+        margin-bottom: 1.60vw;
+
+        &__img {
+            &.youtube {
+                width: 5.20vw;
+                aspect-ratio: 40 / 40;
+            }
+            &.instagram,
+            &.facebook {
+                width: 4.17vw;
+                aspect-ratio: 32 / 32;
+            }
+        }
+    }
+    &__banner {
+        margin-bottom: 2.67vw;
+
+        &:last-of-type {
+            margin-bottom: 1.27vw;
+        }
+
+        &__img {
+            width: 46.98vw;
+        }
+    }
+    &__company,
+    &__address {
+        font-size: 1.82vw;
+    }
+    &__address {
+        margin-bottom: 2.8vw;
+    }
+    &__copyright {
+        font-size: 1.56vw;
+    }
+}
+}
+
+@media screen and (min-width: 1024px){
+.l-footer {
+    @include backgroundImg("#{$img-path}footer/footer_bg-pc.png");
+    aspect-ratio: 1920 / 1550;
+    padding: 5.67vw 0 0;
+
+    &__logo {
+        width: 10.05vw;
+        margin-bottom: 0;
+    }
+    &__nav {
+        display: flex;
+        gap: 1.75vw 1.25vw;
+        width: 62.50vw;
+        margin-bottom: 38.12vw;
+
+        &--tab {
+            display: none;
+        }
+        &__group {
+            width: 9.37vw;
+            padding: 1.04vw 0 0;
+        }
+        &__item {
+            font-size: calc(0.72vw * var(--pc-font-scale));
+
+            &.list-title {
+                font-size: calc(0.83vw * var(--pc-font-scale));
+                margin-bottom: 0.72vw;
+            }
+        }
+        &__list {
+            &.store-info {
+                .l-footer__nav__list__item {
+                    text-align: left;
+                }
+            }
+
+            &__item {
+                font-size: calc(0.72vw * var(--pc-font-scale));
+            }
+        }
+    }
+    &__sns {
+        gap: 1.12vw;
+        margin-bottom: 1.50vw;
+
+        &__img {
+            &.youtube {
+                width: 2.08vw;
+            }
+            &.instagram,
+            &.facebook {
+                width: 1.67vw;
+            }
+        }
+    }
+    &__banner {
+        margin-bottom: 0;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        &__group {
+            display: flex;
+            gap: 1.25vw;
+            margin-bottom: 1.77vw;
+        }
+        &__img {
+            width: 18.79vw;
+        }
+    }
+    &__company {
+        font-size: calc(0.83vw * var(--pc-font-scale));
+    }
+    &__address {
+        font-size: calc(0.72vw * var(--pc-font-scale));
+        margin-bottom: 1.77vw;
+    }
+    &__copyright {
+        font-size: calc(0.62vw * var(--pc-font-scale));
+    }
+}
 }

@@ -97,7 +97,11 @@ function foods_theme_scripts() {
         ? wp_get_environment_type()
         : 'production';
 
-    $is_local   = ($env === 'local');
+    $http_host  = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '';
+    $is_local   = ($env === 'local') && (
+        in_array(strtok($http_host, ':'), ['localhost', '127.0.0.1', '::1'], true) ||
+        substr($http_host, -6) === '.local'
+    );
     $dev_server = 'http://localhost:5173';
 
     $main_entry       = 'src/js/main.js';

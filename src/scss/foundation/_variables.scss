@@ -4,11 +4,24 @@
 $img-path: '/wp-content/themes/foods-selectioncojp-theme/img/';
 
 /**
- * Color
- */
-$color-bg: #F5F5F5;
-
-/**
  * margin, padding
  */
-$header-margin: 60px;
+$header-height: 14.2vw;
+$header-height-tab: 10.41vw;
+$header-height-pc: 4.42vw;
+
+/**
+ * font-family
+ */
+$font-family-NotoSerif: "Noto Serif JP", serif;
+$font-family-NotoSans: "Noto Sans JP", sans-serif;
+$font-family-ZenKaku: "Zen Kaku Gothic New", sans-serif;
+$font-family-ZenKakuAntique: "Zen Kaku Gothic Antique", sans-serif;
+$font-family-SecularOne: "Secular One", sans-serif;
+$font-family-ScopeOne: "Scope One", serif;
+$font-family-Ysabeau: "Ysabeau", sans-serif;
+/**
+ * font-weight
+ */
+$font-weight-regular: 400;
+$font-weight-medium: 500;

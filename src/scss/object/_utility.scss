@@ -2,13 +2,23 @@
 
 .u-border {
     &-bottom--none {
-        border-bottom: none !important;
+        border-bottom: none;
     }
     &-top--header {
-        border-top: 1px solid #D9D9D9 !important;
+        border-top: 1px solid #D9D9D9;
     }
 }
-.u-transparent {
-    pointer-events: none !important;
-    opacity: 0 !important;
+.u-disp--pc {
+    display: none !important;
+
+    @media screen and (min-width: 768px) {
+        display: block !important;
+    }
+}
+.u-disp--sp {
+    display: block !important;
+
+    @media screen and (min-width: 768px) {
+        display: none !important;
+    }
 }

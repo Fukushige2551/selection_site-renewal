@@ -1,0 +1,125 @@
+@use "../foundation/global" as *;
+
+.c-btn {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+
+    &--youtube {
+        &--play {
+            position: relative;
+
+            &::after {
+                @include backgroundImg("#{$img-path}component/svg/btn_youtube-play.svg");
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 12.24vw;
+                aspect-ratio: 47.74 / 48.59;
+            }
+        }
+    }
+    &--online-shop {
+        @include backgroundImg("#{$img-path}component/btn_online-shop.png");
+    }
+    &--common--blue {
+        @include backgroundImg("#{$img-path}component/svg/btn_common-blue.svg");
+        width: 100%;
+        aspect-ratio: 150 / 36;
+
+        &--large {
+            @include backgroundImg("#{$img-path}component/btn_common-blue-large.png");
+            width: 100%;
+            aspect-ratio: 343.84 / 48.12;
+        }
+    }
+    &--common--green {
+        @include backgroundImg("#{$img-path}component/btn_common-green.png");
+        width: 100%;
+        aspect-ratio: 134 / 42;
+
+        &--large {
+            @include backgroundImg("#{$img-path}component/btn_common-green-large.png");
+            width: 100%;
+            aspect-ratio: 341 / 48;
+        }
+    }
+    &--pulldown {
+        position: relative;
+
+        &::after {
+            @include backgroundImg("#{$img-path}component/btn_pulldown.png");
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            width: 4.35vw;
+            aspect-ratio: 17 / 15;
+        }
+    }
+    &--scroll-top {
+        @include backgroundImg("#{$img-path}component/btn_scroll-top.png");
+        position: fixed;
+        bottom: 4.61vw;
+        right: 2.64vw;
+        width: 12.08vw;
+        aspect-ratio: 47.12 / 47.12;
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(8px);
+        z-index: 100;
+
+        &.is-visible {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+    }
+}
+.c-icon {
+    &--youtube {
+        @include backgroundImg("#{$img-path}component/svg/icon_youtube.svg");
+    }
+    &--instagram {
+        @include backgroundImg("#{$img-path}component/svg/icon_instagram.svg");
+    }
+    &--facebook {
+        @include backgroundImg("#{$img-path}component/svg/icon_facebook.svg");
+    }
+}
+.c-slider {
+    &--btn {
+        &__img {
+            width: 7.69vw;
+            aspect-ratio: 30 / 31;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .c-btn {
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &--scroll-top {
+            right: 5.98vw;
+            bottom: 3.80vw;
+            width: 4.16vw;
+            aspect-ratio: 80 / 80;
+        }
+    }
+    .c-pop {
+        transition: transform 0.4s ease;
+
+        &:hover {
+            transform: scale(1.04);
+        }
+    }
+}
