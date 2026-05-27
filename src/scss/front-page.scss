@@ -676,80 +676,46 @@
                 }
             }
         }
-        &__list {
-            display: flex;
+        .c-store-card-list {
             justify-content: space-between;
             margin: 0 auto;
             width: 92.05vw;
 
-            &__item {
-                display: none;
-                flex-flow: column;
+            .c-store-card {
                 width: 44.61vw;
                 height: 53.07vw;
-                border: 1px solid #d9d9d9;
-                border-radius: 10px;
                 padding: 4.61vw 2.56vw 3.07vw 3.58vw;
-                box-sizing: border-box;
-
-                &.is-active {
-                    display: flex;
-                }
 
                 &__name {
-                    font-family: $font-family-ZenKakuAntique;
-                    font-weight: bold;
                     font-size: 4.1vw;
-                    margin-bottom: 2.56vw;
-                    color: #103675;
-                    border-bottom: 1px solid #103675;
-                    width: fit-content;
                     padding-bottom: 2px;
                     margin: 0 auto 2.56vw;
                 }
                 &__wrapper {
-                    display: flex;
-                    align-items: flex-start;
-                    font-family: $font-family-ZenKaku;
-                    font-weight: $font-weight-regular;
                     font-size: 3.58vw;
-                    line-height: 1.286;
-                    word-break: keep-all;
 
                     &:first-of-type {
                         margin-bottom: 2.6vw;
-                    }
-                    &:last-of-type {
-                        margin-bottom: auto;
                     }
                 }
                 &__address {
                     position: relative;
                     bottom: 0.6vw;
                     width: 7vw;
-                    aspect-ratio: 14 / 17.5;
                     margin-right: 1vw;
 
                     &__link {
-                        color: #10A3FF;
-                        font-family: $font-family-ZenKaku;
                         font-size: 3.07vw;
-                        line-height: 1;
-                        text-decoration: underline;
                         margin-left: 2.6vw;
                     }
                 }
                 &__time {
                     width: 3.7vw;
-                    aspect-ratio: 15 / 15;
                     margin-right: 2vw;
                 }
                 &__link {
                     .c-btn--common--blue {
-                        color: #fff;
-                        font-family: $font-family-NotoSans;
                         font-size: 3.58vw;
-                        font-weight: bold;
                     }
                 }
             }
@@ -793,64 +759,40 @@
             }
         }
 
-        &__content {
-            position: relative;
+        .c-campaign-content {
             margin: 4.8vw auto 0 12.05vw;
 
-            &--wrapper {
-                &:nth-child(n + 4) {
-                    display: none;
-                }
-            }
             &__img {
-                cursor: pointer;
-                transition: opacity 0.3s ease, transform 0.6s ease;
                 width: 81.02vw;
                 aspect-ratio: 316 / 236;
             }
             &__phrase {
-                pointer-events: none;
-                position: absolute;
                 top: 51.6%;
                 left: 17.94vw;
-                transform: translateY(-50%);
-                text-align: center;
-                font-family: $font-family-NotoSans;
                 font-size: 8.2vw;
-                line-height: 1.2;
-                font-weight: 800;
-                color: #fff;
-                white-space: nowrap;
 
                 &__highlight {
                     font-size: 8.97vw;
                 }
             }
             &__time {
-                pointer-events: none;
-                position: absolute;
                 left: -5.38vw;
                 bottom: 7.94vw;
-                display: flex;
-                align-items: center;
-                justify-content: center;
                 width: 26.41vw;
                 aspect-ratio: 103 / 30;
-                color: #00A684;
-                font-family: $font-family-SecularOne;
                 font-size: 3.07vw;
-                letter-spacing: 10%;
-                background-color: #fff;
                 border-radius: 3.84vw;
             }
         }
-        &__phrase {
-            text-align: center;
-            font-family: $font-family-ZenKaku;
+        .c-campaign-content-wrapper {
+            &:nth-child(n + 4) {
+                display: none;
+            }
+        }
+        .c-campaign-content-caption {
             font-size: 4.10vw;
             font-weight: $font-weight-medium;
             line-height: 1.56;
-            letter-spacing: 15%;
             margin-top: 2.05vw;
         }
         &__all {
@@ -871,68 +813,45 @@
             }
         }
 
-        &__content {
-            position: relative;
+        .c-recipe-card {
             width: 63.33vw;
             aspect-ratio: 247 / 134;
             margin-left: 32.30vw;
-            background-color: #FFF7DF;
             border-radius: 0 15.38vw 15.38vw 0;
             margin-bottom: 9.23vw;
             padding: 8.20vw 3.33vw 0 19.23vw;
-            box-sizing: border-box;
 
             &:last-of-type {
                 margin-bottom: 10.25vw;
             }
 
-            &--wrapper {
-                &__link {
-                    &:nth-child(n + 4) {
-                        display: none;
-                    }
-                }
-            }
             &__title {
-                font-family: $font-family-ZenKaku;
                 font-size: 4.10vw;
-                font-weight: bold;
-                line-height: 1.43;
                 margin-bottom: 3vw;
             }
             &__category {
-                color: #848484;
-                font-family: $font-family-NotoSans;
                 font-size: 4.10vw;
-                font-weight: 400;
             }
             &__img {
-                position: absolute;
-                top: 50%;
                 left: -24.61vw;
-                transform: translateY(-50%);
                 width: 41.76vw;
                 aspect-ratio: 162.89 / 150.24;
             }
             &__time {
-                position: absolute;
-                top: 0;
                 left: -24.61vw;
-                display: flex;
-                align-items: center;
-                justify-content: center;
                 gap: 1.54vw;
                 width: 20.04vw;
                 aspect-ratio: 78.19 / 32.08;
-                font-family: $font-family-NotoSans;
                 font-size: 3.33vw;
-                font-weight: 500;
-                background-color: #fff;
                 border-radius: 4.10vw;
             }
             &__clock {
                 width: 5.39vw;
-                aspect-ratio: 21.05 / 24.06;
+            }
+        }
+        .c-recipe-card-wrapper-link {
+            &:nth-child(n + 4) {
+                display: none;
             }
         }
         &__all {
@@ -968,11 +887,6 @@
         &__banner {
             display: block;
             margin: 3.33vw auto 0 4.10vw;
-            width: fit-content;
-
-            &.u-margin-top--38 {
-                margin-top: calc(9.74vw + 1vw + 1vw); // hureaiの下部余白(9.74vw) + 下線の太さ(1vw) + line-height分の余白(1vw)
-            }
 
             &__img {
                 &--app {
@@ -1062,68 +976,52 @@
             }
         }
 
-        &__content {
-            display: flex;
-            flex-flow: column;
-            justify-content: space-between;
+        .c-news-card {
             width: 92.56vw;
             aspect-ratio: 361 / 77;
             padding: 3.16vw 3.03vw;
             border-radius: 2.56vw;
-            background-color: #fff;
 
-            &--wrapper {
-                display: block;
-                width: fit-content;
-                margin: 0 auto 3.07vw;
-
-                &:nth-of-type(n + 4) {
-                    display: none;
-                }
-
-                &:nth-of-type(3) {
-                    margin-bottom: 8.20vw;
-                }
-            }
             &__header {
-                display: flex;
-                align-items: center;
                 gap: 4.61vw;
 
-                &__date {
-                    color: #00A684;
-                    font-family: $font-family-ScopeOne;
+                .c-news-card__date {
                     font-size: 3.07vw;
                     padding-top: 1vw;
                 }
-                &__genre {
-                    font-family: $font-family-NotoSans;
+
+                .c-news-card__genre {
                     font-size: 3.33vw;
-                    font-weight: $font-weight-medium;
-                    line-height: 1;
                     padding: 0.76vw 2vw;
                     border-radius: 1.28vw;
-                    text-align: center;
-                    box-sizing: border-box;
 
                     &--new {
-                        color: #E60039;
                         aspect-ratio: 67.16 / 20.05;
-                        border: 1px solid #E60039;
                     }
                     &--campaign {
-                        color: #A7A219;
                         aspect-ratio: 88.22 / 20.05;
-                        border: 1px solid #A7A219;
                     }
                 }
             }
+
             &__body {
-                font-family: $font-family-ZenKakuAntique;
                 font-size: 4.10vw;
-                font-weight: $font-weight-medium;
             }
         }
+
+        .c-news-card-wrapper {
+            width: fit-content;
+            margin: 0 auto 3.07vw;
+
+            &:nth-of-type(n + 4) {
+                display: none;
+            }
+
+            &:nth-of-type(3) {
+                margin-bottom: 8.20vw;
+            }
+        }
+
         &__all {
             display: block;
             width: 44.1vw;
@@ -1877,7 +1775,7 @@
                 padding-top: 0.3vw;
             }
         }
-        &__list {
+        .c-store-card-list {
             position: relative;
             width: 70.31vw;
             justify-content: start;
@@ -1900,7 +1798,7 @@
                 }
             }
 
-            &__item {
+            .c-store-card {
                 width: 22.65vw;
                 height: auto;
                 padding: 2.34vw 1.30vw 1.56vw 1.82vw;
@@ -1976,16 +1874,9 @@
             width: 86.71vw;
             margin: 0 auto 0 6.90vw;
         }
-        &__content {
-            position: relative;
+        .c-campaign-content {
             margin: 0;
 
-            &--wrapper {
-                width: 40.36vw;
-                &:nth-child(4) {
-                    display: block;
-                }
-            }
             &__img {
                 width: 100%;
                 aspect-ratio: 377.33 / 289;
@@ -2007,7 +1898,14 @@
                 font-size: 1.56vw;
             }
         }
-        &__phrase {
+        .c-campaign-content-wrapper {
+            width: 40.36vw;
+
+            &:nth-child(4) {
+                display: block;
+            }
+        }
+        .c-campaign-content-caption {
             font-size: 2.08vw;
             margin-top: 0.7vw;
             font-weight: bold;
@@ -2028,7 +1926,7 @@
             }
         }
 
-        &__content {
+        .c-recipe-card {
             width: 32.16vw;
             aspect-ratio: 247 / 134;
             margin: 0;
@@ -2038,20 +1936,6 @@
                 margin-bottom: 0;
             }
 
-            &--wrapper {
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap;
-                gap: 5.98vw 15.36vw;
-                width: 79.68vw;
-                margin: 0 auto 9.63vw 16.53vw;
-
-                &__link {
-                    &:nth-child(5) {
-                        display: block;
-                    }
-                }
-            }
             &__title {
                 font-size: 2.08vw;
                 margin-bottom: 2.08vw;
@@ -2072,6 +1956,19 @@
             &__clock {
                 width: 2.74vw;
                 aspect-ratio: 21.05 / 24.06;
+            }
+        }
+        .c-recipe-card-wrapper {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 5.98vw 15.36vw;
+            width: 79.68vw;
+            margin: 0 auto 9.63vw 16.53vw;
+        }
+        .c-recipe-card-wrapper-link {
+            &:nth-child(5) {
+                display: block;
             }
         }
         &__all {
@@ -2181,32 +2078,20 @@
             }
         }
 
-        &__content {
+        .c-news-card {
             width: 76.56vw;
             aspect-ratio: 588 / 77;
             padding: 1.86vw 1.54vw;
             border-radius: 1.30vw;
 
-            &--wrapper {
-                display: block;
-                width: fit-content;
-                margin: 0 auto 1.56vw;
-
-                &:nth-of-type(3) {
-                    margin-bottom: 0.62vw;
-                }
-                &:nth-of-type(3) {
-                    margin-bottom: 4.81vw;
-                }
-            }
             &__header {
                 gap: 1.69vw;
 
-                &__date {
+                .c-news-card__date {
                     font-size: 1.56vw;
                     padding-top: 0.3vw;
                 }
-                &__genre {
+                .c-news-card__genre {
                     font-size: 1.69vw;
                     padding: 0.42vw 0.94vw;
                     border-radius: 0.65vw;
@@ -2223,6 +2108,19 @@
                 font-size: 2.08vw;
             }
         }
+
+        .c-news-card-wrapper {
+            width: fit-content;
+            margin: 0 auto 1.56vw;
+
+            &:nth-of-type(3) {
+                margin-bottom: 0.62vw;
+            }
+            &:nth-of-type(3) {
+                margin-bottom: 4.81vw;
+            }
+        }
+
         &__all {
             width: 26vw;
             aspect-ratio: 172.37 / 42.1;
@@ -2834,7 +2732,7 @@
                 padding-top: 0.3vw;
             }
         }
-        &__list {
+        .c-store-card-list {
             width: 52.08vw;
             gap: 1.04vw;
 
@@ -2854,7 +2752,7 @@
                 }
             }
 
-            &__item {
+            .c-store-card {
                 width: 12.18vw;
                 padding: 1.25vw 1.04vw 0.89vw 1.04vw;
 
@@ -2923,14 +2821,7 @@
             width: 62.81vw;
             margin: 0 auto 0 18vw;
         }
-        &__content {
-            &--wrapper {
-                width: 19.65vw;
-
-                &:nth-child(n + 5) {
-                    display: block;
-                }
-            }
+        .c-campaign-content {
             &__img {
                 aspect-ratio: 377.33 / 289;
             }
@@ -2951,7 +2842,14 @@
                 font-size: calc(0.72vw * var(--pc-font-scale));
             }
         }
-        &__phrase {
+        .c-campaign-content-wrapper {
+            width: 19.65vw;
+
+            &:nth-child(n + 5) {
+                display: block;
+            }
+        }
+        .c-campaign-content-caption {
             font-size: calc(0.93vw * var(--pc-font-scale));
             margin-top: 0.7vw;
         }
@@ -2968,22 +2866,11 @@
             }
         }
 
-        &__content {
+        .c-recipe-card {
             width: 14.79vw;
             aspect-ratio: 284 / 134;
             padding: 2.08vw 2.70vw 1.09vw 3.33vw;
 
-            &--wrapper {
-                gap: 1.92vw 6.30vw;
-                width: 56.97vw;
-                margin: 0 auto 3.17vw 24.37vw;
-
-                &__link {
-                    &:nth-child(n + 4) {
-                        display: block;
-                    }
-                }
-            }
             &__title {
                 font-size: calc(0.93vw * var(--pc-font-scale));
                 margin-bottom: 0.52vw;
@@ -3003,6 +2890,16 @@
             }
             &__clock {
                 width: 1.09vw;
+            }
+        }
+        .c-recipe-card-wrapper {
+            gap: 1.92vw 6.30vw;
+            width: 56.97vw;
+            margin: 0 auto 3.17vw 24.37vw;
+        }
+        .c-recipe-card-wrapper-link {
+            &:nth-child(n + 4) {
+                display: block;
             }
         }
         &__all {
@@ -3133,33 +3030,20 @@
             }
         }
 
-        &__content {
+        .c-news-card {
             width: 39.58vw;
             aspect-ratio: 760 / 77;
             padding: 0.74vw 0.62vw;
             border-radius: 0.52vw;
 
-            &--wrapper {
-                margin: 0 auto 0.62vw;
-
-                &:nth-of-type(n + 4) {
-                    display: block;
-                }
-                &:nth-of-type(3) {
-                    margin-bottom: 0.62vw;
-                }
-                &:nth-of-type(4) {
-                    margin-bottom: 2.39vw;
-                }
-            }
             &__header {
                 gap: 2.29vw;
 
-                &__date {
+                .c-news-card__date {
                     font-size: calc(0.72vw * var(--pc-font-scale));
                     padding-top: 0.1vw;
                 }
-                &__genre {
+                .c-news-card__genre {
                     font-size: calc(0.67vw * var(--pc-font-scale));
                     padding: 0.15vw 0.31vw;
                     border-radius: 0.26vw;
@@ -3176,6 +3060,21 @@
                 font-size: calc(0.83vw * var(--pc-font-scale));
             }
         }
+
+        .c-news-card-wrapper {
+            margin: 0 auto 0.62vw;
+
+            &:nth-of-type(n + 4) {
+                display: block;
+            }
+            &:nth-of-type(3) {
+                margin-bottom: 0.62vw;
+            }
+            &:nth-of-type(4) {
+                margin-bottom: 2.39vw;
+            }
+        }
+
         &__all {
             width: 14.50vw;
             aspect-ratio: 278.48 / 68;

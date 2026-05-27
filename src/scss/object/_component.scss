@@ -1,5 +1,9 @@
 @use "../foundation/global" as *;
 
+/**
+ * UIコンポーネント
+ */
+// ボタン
 .c-btn {
     cursor: pointer;
     transition: opacity 0.3s ease;
@@ -81,6 +85,8 @@
         }
     }
 }
+
+// アイコン
 .c-icon {
     &--youtube {
         @include backgroundImg("#{$img-path}component/svg/icon_youtube.svg");
@@ -92,6 +98,8 @@
         @include backgroundImg("#{$img-path}component/svg/icon_facebook.svg");
     }
 }
+
+// スライダー
 .c-slider {
     &--btn {
         &__img {
@@ -101,25 +109,231 @@
     }
 }
 
+/**
+ * ページコンポーネント
+ */
+// 店舗情報
+.c-store-card-list {
+    display: flex;
+}
+.c-store-card {
+    display: none;
+    flex-flow: column;
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    box-sizing: border-box;
+
+    &.is-active {
+        display: flex;
+    }
+
+    &__name {
+        font-family: $font-family-ZenKakuAntique;
+        font-weight: bold;
+        color: #103675;
+        border-bottom: 1px solid #103675;
+        width: fit-content;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: flex-start;
+        font-family: $font-family-ZenKaku;
+        font-weight: $font-weight-regular;
+        line-height: 1.286;
+        word-break: keep-all;
+
+        &:last-of-type {
+            margin-bottom: auto;
+        }
+    }
+
+    &__address {
+        aspect-ratio: 14 / 17.5;
+
+        &__link {
+            color: #10A3FF;
+            font-family: $font-family-ZenKaku;
+            line-height: 1;
+            text-decoration: underline;
+        }
+    }
+
+    &__time {
+        aspect-ratio: 15 / 15;
+    }
+
+    &__link {
+        .c-btn--common--blue {
+            color: #fff;
+            font-family: $font-family-NotoSans;
+            font-weight: bold;
+        }
+    }
+}
+
+// キャンペーン
+.c-campaign-content-wrapper {
+    display: block;
+}
+.c-campaign-content {
+    position: relative;
+
+    &__img {
+        cursor: pointer;
+        transition: opacity 0.3s ease, transform 0.6s ease;
+    }
+
+    &__phrase {
+        pointer-events: none;
+        position: absolute;
+        transform: translateY(-50%);
+        text-align: center;
+        font-family: $font-family-NotoSans;
+        line-height: 1.2;
+        font-weight: 800;
+        color: #fff;
+        white-space: nowrap;
+    }
+
+    &__time {
+        pointer-events: none;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #00A684;
+        font-family: $font-family-SecularOne;
+        letter-spacing: 10%;
+        background-color: #fff;
+    }
+}
+.c-campaign-content-caption {
+    text-align: center;
+    font-family: $font-family-ZenKaku;
+    letter-spacing: 15%;
+}
+
+// レシピ
+.c-recipe-card-wrapper {
+    display: block;
+}
+.c-recipe-card-wrapper-link {
+    display: block;
+}
+.c-recipe-card {
+    position: relative;
+    background-color: #FFF7DF;
+    box-sizing: border-box;
+
+    &__title {
+        font-family: $font-family-ZenKaku;
+        font-weight: bold;
+        line-height: 1.43;
+    }
+
+    &__category {
+        color: #848484;
+        font-family: $font-family-NotoSans;
+        font-weight: $font-weight-regular;
+        line-height: 1;
+    }
+
+    &__img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__time {
+        position: absolute;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $font-family-NotoSans;
+        font-weight: $font-weight-medium;
+        line-height: 1;
+        background-color: #fff;
+    }
+
+    &__clock {
+        aspect-ratio: 21.05 / 24.06;
+    }
+}
+
+// 新着情報
+.c-news-card-wrapper {
+    display: block;
+}
+.c-news-card {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    background-color: #fff;
+
+    &__header {
+        display: flex;
+        align-items: center;
+    }
+
+    &__date {
+        color: #00A684;
+        font-family: $font-family-ScopeOne;
+    }
+
+    &__genre {
+        font-family: $font-family-NotoSans;
+        font-weight: $font-weight-medium;
+        line-height: 1;
+        text-align: center;
+        box-sizing: border-box;
+
+        &--new {
+            color: #E60039;
+            border: 1px solid #E60039;
+        }
+
+        &--campaign {
+            color: #A7A219;
+            border: 1px solid #A7A219;
+        }
+    }
+
+    &__body {
+        font-family: $font-family-ZenKakuAntique;
+        font-weight: $font-weight-medium;
+    }
+}
+
+/**
+ * タブレット/PC
+ */
 @media screen and (min-width: 768px) {
-    .c-btn {
+/**
+* UIコンポーネント
+*/
+//  ボタン
+.c-btn {
 
-        &:hover {
-            opacity: 0.8;
-        }
-
-        &--scroll-top {
-            right: 5.98vw;
-            bottom: 3.80vw;
-            width: 4.16vw;
-            aspect-ratio: 80 / 80;
-        }
+    &:hover {
+        opacity: 0.8;
     }
-    .c-pop {
-        transition: transform 0.4s ease;
 
-        &:hover {
-            transform: scale(1.04);
-        }
+    &--scroll-top {
+        right: 5.98vw;
+        bottom: 3.80vw;
+        width: 4.16vw;
+        aspect-ratio: 80 / 80;
     }
+}
+
+// ポップ(ホバーアニメーション)
+.c-pop {
+    transition: transform 0.4s ease;
+
+    &:hover {
+        transform: scale(1.04);
+    }
+}
 }

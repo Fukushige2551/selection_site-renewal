@@ -1076,8 +1076,8 @@ jQuery(function($) {
 		}
 
 		var $tabs = $store.find('.p-front-page__store__group__tab');
-		var $items = $store.find('.p-front-page__store__list__item');
-		var $listWrapper = $store.find('.p-front-page__store__list-wrapper');
+		var $items = $store.find('.c-store-card');
+		var $listWrapper = $store.find('.js-store-content');
 		var $pagination = $store.find('.p-front-page__store__pagination');
 		var $prev = $store.find('.c-slider--btn--left[aria-label="前の店舗へ"]').first();
 		var $next = $store.find('.c-slider--btn--right[aria-label="次の店舗へ"]').first();

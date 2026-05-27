@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+﻿<?php get_header(); ?>
 
 <main id="front-page" class="p-front-page">
     <!-- ヒーロー start -->
@@ -399,236 +399,236 @@
                 <button class="c-btn p-front-page__store__group__tab">東京</button>
                 <button class="c-btn p-front-page__store__group__tab">埼玉</button>
             </div>
-            <div class="p-front-page__store__list-wrapper">
-                <ul class="p-front-page__store__list js-handle--tab-store-list">
-                    <li class="p-front-page__store__list__item is-chiba is-active">
-                        <p class="p-front-page__store__list__item__name">行徳店</p>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="js-store-content">
+                <ul class="c-store-card-list js-handle--tab-store-list">
+                    <li class="c-store-card is-chiba is-active">
+                        <p class="c-store-card__name">行徳店</p>
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒272-0132<br>千葉県市川市湊新田<br>1-6-8
-                                <a class="p-front-page__store__list__item__address__link" href="">マップを見る</a>
+                                <a class="c-store-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:00</time>
                         </div>
-                        <a class="p-front-page__store__list__item__link" href="">
+                        <a class="c-store-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
-                    <li class="p-front-page__store__list__item is-chiba is-active">
-                        <p class="p-front-page__store__list__item__name">西船橋店</p>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <li class="c-store-card is-chiba is-active">
+                        <p class="c-store-card__name">西船橋店</p>
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒273-0025<br>千葉県船橋市印内町 579-1
-                                <a class="p-front-page__store__list__item__address__link" href="">マップを見る</a>
+                                <a class="c-store-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:30<br>(土日 22:00閉店)</time>
                         </div>
-                        <a class="p-front-page__store__list__item__link" href="">
+                        <a class="c-store-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
-                    <li class="p-front-page__store__list__item is-chiba">
-                        <p class="p-front-page__store__list__item__name">西原店</p>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <li class="c-store-card is-chiba">
+                        <p class="c-store-card__name">西原店</p>
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒273-0025<br>千葉県船橋市印内町 579-1
-                                <a class="p-front-page__store__list__item__address__link" href="">マップを見る</a>
+                                <a class="c-store-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:30<br>(土日 22:00閉店)</time>
                         </div>
-                        <a class="p-front-page__store__list__item__link" href="">
+                        <a class="c-store-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
-                    <li class="p-front-page__store__list__item is-chiba">
-                        <p class="p-front-page__store__list__item__name">花野井店</p>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <li class="c-store-card is-chiba">
+                        <p class="c-store-card__name">花野井店</p>
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒273-0025<br>千葉県船橋市印内町 579-1
-                                <a class="p-front-page__store__list__item__address__link" href="">マップを見る</a>
+                                <a class="c-store-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:30<br>(土日 22:00閉店)</time>
                         </div>
-                        <a class="p-front-page__store__list__item__link" href="">
+                        <a class="c-store-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
-                    <li class="p-front-page__store__list__item is-chiba">
-                        <p class="p-front-page__store__list__item__name">しいの木台店</p>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <li class="c-store-card is-chiba">
+                        <p class="c-store-card__name">しいの木台店</p>
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒273-0025<br>千葉県船橋市印内町 579-1
-                                <a class="p-front-page__store__list__item__address__link" href="">マップを見る</a>
+                                <a class="c-store-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:30<br>(土日 22:00閉店)</time>
                         </div>
-                        <a class="p-front-page__store__list__item__link" href="">
+                        <a class="c-store-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
-                    <li class="p-front-page__store__list__item is-chiba">
-                        <p class="p-front-page__store__list__item__name">八潮店</p>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <li class="c-store-card is-chiba">
+                        <p class="c-store-card__name">八潮店</p>
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒273-0025<br>千葉県船橋市印内町 579-1
-                                <a class="p-front-page__store__list__item__address__link" href="">マップを見る</a>
+                                <a class="c-store-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:30<br>(土日 22:00閉店)</time>
                         </div>
-                        <a class="p-front-page__store__list__item__link" href="">
+                        <a class="c-store-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
-                    <li class="p-front-page__store__list__item is-chiba">
-                        <p class="p-front-page__store__list__item__name">青葉台店</p>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <li class="c-store-card is-chiba">
+                        <p class="c-store-card__name">青葉台店</p>
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒273-0025<br>千葉県船橋市印内町 579-1
-                                <a class="p-front-page__store__list__item__address__link" href="">マップを見る</a>
+                                <a class="c-store-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:30<br>(土日 22:00閉店)</time>
                         </div>
-                        <a class="p-front-page__store__list__item__link" href="">
+                        <a class="c-store-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
-                    <li class="p-front-page__store__list__item is-chiba">
-                        <p class="p-front-page__store__list__item__name">松戸店</p>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <li class="c-store-card is-chiba">
+                        <p class="c-store-card__name">松戸店</p>
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒273-0025<br>千葉県船橋市印内町 579-1
-                                <a class="p-front-page__store__list__item__address__link" href="">マップを見る</a>
+                                <a class="c-store-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:30<br>(土日 22:00閉店)</time>
                         </div>
-                        <a class="p-front-page__store__list__item__link" href="">
+                        <a class="c-store-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
-                    <li class="p-front-page__store__list__item is-tokyo">
-                        <p class="p-front-page__store__list__item__name">西新井店</p>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <li class="c-store-card is-tokyo">
+                        <p class="c-store-card__name">西新井店</p>
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒273-0025<br>千葉県船橋市印内町 579-1
-                                <a class="p-front-page__store__list__item__address__link" href="">マップを見る</a>
+                                <a class="c-store-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:30<br>(土日 22:00閉店)</time>
                         </div>
-                        <a class="p-front-page__store__list__item__link" href="">
+                        <a class="c-store-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
-                    <li class="p-front-page__store__list__item is-saitama">
-                        <p class="p-front-page__store__list__item__name">三郷店</p>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <li class="c-store-card is-saitama">
+                        <p class="c-store-card__name">三郷店</p>
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒273-0025<br>千葉県船橋市印内町 579-1
-                                <a class="p-front-page__store__list__item__address__link" href="">マップを見る</a>
+                                <a class="c-store-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:30<br>(土日 22:00閉店)</time>
                         </div>
-                        <a class="p-front-page__store__list__item__link" href="">
+                        <a class="c-store-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
-                    <li class="p-front-page__store__list__item is-saitama">
-                        <p class="p-front-page__store__list__item__name">八潮店</p>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <li class="c-store-card is-saitama">
+                        <p class="c-store-card__name">八潮店</p>
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒273-0025<br>千葉県船橋市印内町 579-1
-                                <a class="p-front-page__store__list__item__address__link" href="">マップを見る</a>
+                                <a class="c-store-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="p-front-page__store__list__item__wrapper">
-                            <svg class="p-front-page__store__list__item__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-store-card__wrapper">
+                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:30<br>(土日 22:00閉店)</time>
                         </div>
-                        <a class="p-front-page__store__list__item__link" href="">
+                        <a class="c-store-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
@@ -667,92 +667,92 @@
             <!-- タイトル end -->
 
             <div class="p-front-page__campaign__pc-flex">
-                <div class="p-front-page__campaign__content--wrapper">
-                    <div class="p-front-page__campaign__content">
+                <div class="c-campaign-content-wrapper">
+                    <div class="c-campaign-content">
                         <a href="">
                             <picture class="u-disp--sp">
                                 <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_campaign-content-01.webp" type="image/webp">
-                                <img class="c-pop p-front-page__campaign__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-01.png" alt="セレクションおせちご予約始まります！">
+                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-01.png" alt="セレクションおせちご予約始まります！">
                             </picture>
                             <picture class="u-disp--pc">
                                 <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_campaign-content-pc-01.webp" type="image/webp">
-                                <img class="c-pop p-front-page__campaign__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-pc-01.png" alt="セレクションおせちご予約始まります！">
+                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-pc-01.png" alt="セレクションおせちご予約始まります！">
                             </picture>
-                            <time class="p-front-page__campaign__content__time" datetime="2025-11-18">2025.11.18</time>
+                            <time class="c-campaign-content__time" datetime="2025-11-18">2025.11.18</time>
                         </a>
                     </div>
-                    <p class="p-front-page__campaign__phrase">セレクション<br>おせちご予約始まります！</p>
+                    <p class="c-campaign-content-caption">セレクション<br>おせちご予約始まります！</p>
                 </div>
 
-                <div class="p-front-page__campaign__content--wrapper">
-                    <div class="p-front-page__campaign__content">
+                <div class="c-campaign-content-wrapper">
+                    <div class="c-campaign-content">
                         <a href="">
                             <picture>
                                 <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_campaign-content-02.webp" type="image/webp">
-                                <img class="c-pop p-front-page__campaign__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-02.png" alt="セレクションおせちご予約始まります！">
+                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-02.png" alt="セレクションおせちご予約始まります！">
                             </picture>
-                            <p class="p-front-page__campaign__content__phrase">リサイクル<br>ポイント<span class="p-front-page__campaign__content__phrase__highlight">3</span>倍</p>
-                            <time class="p-front-page__campaign__content__time" datetime="2025-11-10">2025.11.10</time>
+                            <p class="c-campaign-content__phrase">リサイクル<br>ポイント<span class="c-campaign-content__phrase__highlight">3</span>倍</p>
+                            <time class="c-campaign-content__time" datetime="2025-11-10">2025.11.10</time>
                         </a>
                     </div>
-                    <p class="p-front-page__campaign__phrase">店舗限定！<br>リサイクルポイント3倍</p>
+                    <p class="c-campaign-content-caption">店舗限定！<br>リサイクルポイント3倍</p>
                 </div>
 
-                <div class="p-front-page__campaign__content--wrapper">
-                    <div class="p-front-page__campaign__content">
+                <div class="c-campaign-content-wrapper">
+                    <div class="c-campaign-content">
                         <a href="">
                             <picture>
                                 <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_campaign-content-03.webp" type="image/webp">
-                                <img class="c-pop p-front-page__campaign__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-03.png" alt="セレクションおせちご予約始まります！">
+                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-03.png" alt="セレクションおせちご予約始まります！">
                             </picture>
-                            <time class="p-front-page__campaign__content__time" datetime="2025-10-31">2025.10.31</time>
+                            <time class="c-campaign-content__time" datetime="2025-10-31">2025.10.31</time>
                         </a>
                     </div>
-                    <p class="p-front-page__campaign__phrase">セレクションクリスマスケーキ<br>ご予約始まります！</p>
+                    <p class="c-campaign-content-caption">セレクションクリスマスケーキ<br>ご予約始まります！</p>
                 </div>
 
-                <div class="p-front-page__campaign__content--wrapper">
-                    <div class="p-front-page__campaign__content">
+                <div class="c-campaign-content-wrapper">
+                    <div class="c-campaign-content">
                         <a href="">
                             <picture class="u-disp--sp">
                                 <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_campaign-content-01.webp" type="image/webp">
-                                <img class="c-pop p-front-page__campaign__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-01.png" alt="セレクションおせちご予約始まります！">
+                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-01.png" alt="セレクションおせちご予約始まります！">
                             </picture>
                             <picture class="u-disp--pc">
                                 <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_campaign-content-pc-01.webp" type="image/webp">
-                                <img class="c-pop p-front-page__campaign__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-pc-01.png" alt="セレクションおせちご予約始まります！">
+                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-pc-01.png" alt="セレクションおせちご予約始まります！">
                             </picture>
-                            <time class="p-front-page__campaign__content__time" datetime="2025-11-18">2025.11.18</time>
+                            <time class="c-campaign-content__time" datetime="2025-11-18">2025.11.18</time>
                         </a>
                     </div>
-                    <p class="p-front-page__campaign__phrase">セレクション<br>おせちご予約始まります！</p>
+                    <p class="c-campaign-content-caption">セレクション<br>おせちご予約始まります！</p>
                 </div>
 
-                <div class="p-front-page__campaign__content--wrapper">
-                    <div class="p-front-page__campaign__content">
+                <div class="c-campaign-content-wrapper">
+                    <div class="c-campaign-content">
                         <a href="">
                             <picture>
                                 <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_campaign-content-02.webp" type="image/webp">
-                                <img class="c-pop p-front-page__campaign__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-02.png" alt="セレクションおせちご予約始まります！">
+                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-02.png" alt="セレクションおせちご予約始まります！">
                             </picture>
-                            <p class="p-front-page__campaign__content__phrase">リサイクル<br>ポイント<span class="p-front-page__campaign__content__phrase__highlight">3</span>倍</p>
-                            <time class="p-front-page__campaign__content__time" datetime="2025-11-10">2025.11.10</time>
+                            <p class="c-campaign-content__phrase">リサイクル<br>ポイント<span class="c-campaign-content__phrase__highlight">3</span>倍</p>
+                            <time class="c-campaign-content__time" datetime="2025-11-10">2025.11.10</time>
                         </a>
                     </div>
-                    <p class="p-front-page__campaign__phrase">店舗限定！<br>リサイクルポイント3倍</p>
+                    <p class="c-campaign-content-caption">店舗限定！<br>リサイクルポイント3倍</p>
                 </div>
 
-                <div class="p-front-page__campaign__content--wrapper">
-                    <div class="p-front-page__campaign__content">
+                <div class="c-campaign-content-wrapper">
+                    <div class="c-campaign-content">
                         <a href="">
                             <picture>
                                 <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_campaign-content-03.webp" type="image/webp">
-                                <img class="c-pop p-front-page__campaign__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-03.png" alt="セレクションおせちご予約始まります！">
+                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-03.png" alt="セレクションおせちご予約始まります！">
                             </picture>
-                            <time class="p-front-page__campaign__content__time" datetime="2025-10-31">2025.10.31</time>
+                            <time class="c-campaign-content__time" datetime="2025-10-31">2025.10.31</time>
                         </a>
                     </div>
-                    <p class="p-front-page__campaign__phrase">セレクションクリスマスケーキ<br>ご予約始まります！</p>
+                    <p class="c-campaign-content-caption">セレクションクリスマスケーキ<br>ご予約始まります！</p>
                 </div>
             </div>
 
@@ -786,97 +786,97 @@
             <p class="p-front-page__section-title--sub">Recipe</p>
             <!-- タイトル end -->
 
-            <div class="p-front-page__recipe__content--wrapper">
-                <a href="" class="p-front-page__recipe__content--wrapper__link">
-                    <div class="p-front-page__recipe__content">
-                        <p class="p-front-page__recipe__content__title">暑い日にピッタリ！さっぱり冷やし中華</p>
-                        <p class="p-front-page__recipe__content__category">麺</p>
+            <div class="c-recipe-card-wrapper">
+                <a href="" class="c-recipe-card-wrapper-link">
+                    <div class="c-recipe-card">
+                        <p class="c-recipe-card__title">暑い日にピッタリ！さっぱり冷やし中華</p>
+                        <p class="c-recipe-card__category">麺</p>
                         <picture>
                             <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_recipe-content-01.webp" type="image/webp">
-                            <img class="p-front-page__recipe__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recipe-content-01.png" alt="暑い日にピッタリ！さっぱり冷やし中華">
+                            <img class="c-recipe-card__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recipe-content-01.png" alt="暑い日にピッタリ！さっぱり冷やし中華">
                         </picture>
-                        <time class="p-front-page__recipe__content__time" datetime="PT30M">
-                            <svg class="p-front-page__recipe__content__clock" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <time class="c-recipe-card__time" datetime="PT30M">
+                            <svg class="c-recipe-card__clock" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18.1919 6.55391L18.3109 6.41125L18.3449 6.43643C18.532 6.58748 18.7787 6.65461 19.0168 6.62944C19.2549 6.60426 19.476 6.48678 19.6291 6.30216L19.9268 5.94132C20.0799 5.7567 20.1479 5.52173 20.1224 5.27838C20.0969 5.03502 19.9778 4.82522 19.7907 4.67417L18.0558 3.29794C17.8687 3.14688 17.6306 3.07975 17.3839 3.10493C17.1373 3.1301 16.9247 3.24759 16.7716 3.4322L16.4825 3.79305C16.3294 3.97766 16.2613 4.21263 16.2869 4.45599C16.3124 4.66578 16.4059 4.8504 16.5505 5.00145L16.4655 5.10215C15.3003 4.31333 13.8801 3.7427 12.4513 3.47416V2.94548H12.749C13.2593 2.94548 13.6675 2.54268 13.676 2.03079V0.948261C13.6675 0.427976 13.2253 0 12.6895 0H8.46274C7.92696 0 7.48473 0.436368 7.48473 0.973436V2.04757C7.48473 2.55107 7.90145 2.96227 8.41172 2.96227H8.70937V3.49094C7.32314 3.75109 5.96243 4.28816 4.83983 5.00145C4.94189 4.86718 5.00992 4.71613 5.02693 4.5483C5.05245 4.31333 4.98441 4.07836 4.83133 3.88535L4.53367 3.52451C4.38059 3.33989 4.16798 3.22241 3.91285 3.19724C3.67472 3.17206 3.4366 3.24759 3.2495 3.39024L1.50608 4.77487C1.31898 4.92592 1.19992 5.13572 1.1744 5.37908C1.14889 5.61404 1.21693 5.84901 1.37001 6.04202L1.66766 6.40286C1.82074 6.58748 2.04186 6.70496 2.27999 6.73853C2.47559 6.75531 2.6797 6.71335 2.84979 6.61265C1.03833 8.51757 0.0348037 10.9847 0.000785774 13.5526C-0.0332321 16.3302 1.03833 18.9484 3.01137 20.9373C4.97591 22.9177 7.60379 24.0254 10.4103 24.059H10.5293C16.1678 24.059 20.7857 19.7037 21.0409 14.1484C21.1684 11.3036 20.1564 8.60988 18.1919 6.55391ZM4.63573 7.85462C6.20906 6.30216 8.30116 5.44621 10.5293 5.44621C12.7575 5.44621 14.8496 6.30216 16.4229 7.85462C17.9963 9.40709 18.8637 11.4714 18.8637 13.6701C18.8637 15.8687 17.9963 17.933 16.4229 19.4855C14.8496 21.038 12.7575 21.8939 10.5293 21.8939C8.30116 21.8939 6.20906 21.038 4.63573 19.4855C3.0624 17.933 2.19494 15.8687 2.19494 13.6701C2.19494 11.4714 3.0624 9.40709 4.63573 7.85462Z" fill="#222222"/>
                             </svg>
                             30分
                         </time>
                     </div>
                 </a>
-                <a href="" class="p-front-page__recipe__content--wrapper__link">
-                    <div class="p-front-page__recipe__content">
-                        <p class="p-front-page__recipe__content__title">ピリ辛！麻婆豆腐</p>
-                        <p class="p-front-page__recipe__content__category">お豆腐</p>
+                <a href="" class="c-recipe-card-wrapper-link">
+                    <div class="c-recipe-card">
+                        <p class="c-recipe-card__title">ピリ辛！麻婆豆腐</p>
+                        <p class="c-recipe-card__category">お豆腐</p>
                         <picture>
                             <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_recipe-content-02.webp" type="image/webp">
-                            <img class="p-front-page__recipe__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recipe-content-02.png" alt="ピリ辛！麻婆豆腐">
+                            <img class="c-recipe-card__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recipe-content-02.png" alt="ピリ辛！麻婆豆腐">
                         </picture>
-                        <time class="p-front-page__recipe__content__time" datetime="PT30M">
-                            <svg class="p-front-page__recipe__content__clock" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <time class="c-recipe-card__time" datetime="PT30M">
+                            <svg class="c-recipe-card__clock" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18.1919 6.55391L18.3109 6.41125L18.3449 6.43643C18.532 6.58748 18.7787 6.65461 19.0168 6.62944C19.2549 6.60426 19.476 6.48678 19.6291 6.30216L19.9268 5.94132C20.0799 5.7567 20.1479 5.52173 20.1224 5.27838C20.0969 5.03502 19.9778 4.82522 19.7907 4.67417L18.0558 3.29794C17.8687 3.14688 17.6306 3.07975 17.3839 3.10493C17.1373 3.1301 16.9247 3.24759 16.7716 3.4322L16.4825 3.79305C16.3294 3.97766 16.2613 4.21263 16.2869 4.45599C16.3124 4.66578 16.4059 4.8504 16.5505 5.00145L16.4655 5.10215C15.3003 4.31333 13.8801 3.7427 12.4513 3.47416V2.94548H12.749C13.2593 2.94548 13.6675 2.54268 13.676 2.03079V0.948261C13.6675 0.427976 13.2253 0 12.6895 0H8.46274C7.92696 0 7.48473 0.436368 7.48473 0.973436V2.04757C7.48473 2.55107 7.90145 2.96227 8.41172 2.96227H8.70937V3.49094C7.32314 3.75109 5.96243 4.28816 4.83983 5.00145C4.94189 4.86718 5.00992 4.71613 5.02693 4.5483C5.05245 4.31333 4.98441 4.07836 4.83133 3.88535L4.53367 3.52451C4.38059 3.33989 4.16798 3.22241 3.91285 3.19724C3.67472 3.17206 3.4366 3.24759 3.2495 3.39024L1.50608 4.77487C1.31898 4.92592 1.19992 5.13572 1.1744 5.37908C1.14889 5.61404 1.21693 5.84901 1.37001 6.04202L1.66766 6.40286C1.82074 6.58748 2.04186 6.70496 2.27999 6.73853C2.47559 6.75531 2.6797 6.71335 2.84979 6.61265C1.03833 8.51757 0.0348037 10.9847 0.000785774 13.5526C-0.0332321 16.3302 1.03833 18.9484 3.01137 20.9373C4.97591 22.9177 7.60379 24.0254 10.4103 24.059H10.5293C16.1678 24.059 20.7857 19.7037 21.0409 14.1484C21.1684 11.3036 20.1564 8.60988 18.1919 6.55391ZM4.63573 7.85462C6.20906 6.30216 8.30116 5.44621 10.5293 5.44621C12.7575 5.44621 14.8496 6.30216 16.4229 7.85462C17.9963 9.40709 18.8637 11.4714 18.8637 13.6701C18.8637 15.8687 17.9963 17.933 16.4229 19.4855C14.8496 21.038 12.7575 21.8939 10.5293 21.8939C8.30116 21.8939 6.20906 21.038 4.63573 19.4855C3.0624 17.933 2.19494 15.8687 2.19494 13.6701C2.19494 11.4714 3.0624 9.40709 4.63573 7.85462Z" fill="#222222"/>
                             </svg>
                             30分
                         </time>
                     </div>
                 </a>
-                <a href="" class="p-front-page__recipe__content--wrapper__link">
-                    <div class="p-front-page__recipe__content">
-                        <p class="p-front-page__recipe__content__title">彩り豊かな夏野菜カレー</p>
-                        <p class="p-front-page__recipe__content__category">ご飯</p>
+                <a href="" class="c-recipe-card-wrapper-link">
+                    <div class="c-recipe-card">
+                        <p class="c-recipe-card__title">彩り豊かな夏野菜カレー</p>
+                        <p class="c-recipe-card__category">ご飯</p>
                         <picture>
                             <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_recipe-content-03.webp" type="image/webp">
-                            <img class="p-front-page__recipe__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recipe-content-03.png" alt="彩り豊かな夏野菜カレー">
+                            <img class="c-recipe-card__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recipe-content-03.png" alt="彩り豊かな夏野菜カレー">
                         </picture>
-                        <time class="p-front-page__recipe__content__time" datetime="PT30M">
-                            <svg class="p-front-page__recipe__content__clock" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <time class="c-recipe-card__time" datetime="PT30M">
+                            <svg class="c-recipe-card__clock" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18.1919 6.55391L18.3109 6.41125L18.3449 6.43643C18.532 6.58748 18.7787 6.65461 19.0168 6.62944C19.2549 6.60426 19.476 6.48678 19.6291 6.30216L19.9268 5.94132C20.0799 5.7567 20.1479 5.52173 20.1224 5.27838C20.0969 5.03502 19.9778 4.82522 19.7907 4.67417L18.0558 3.29794C17.8687 3.14688 17.6306 3.07975 17.3839 3.10493C17.1373 3.1301 16.9247 3.24759 16.7716 3.4322L16.4825 3.79305C16.3294 3.97766 16.2613 4.21263 16.2869 4.45599C16.3124 4.66578 16.4059 4.8504 16.5505 5.00145L16.4655 5.10215C15.3003 4.31333 13.8801 3.7427 12.4513 3.47416V2.94548H12.749C13.2593 2.94548 13.6675 2.54268 13.676 2.03079V0.948261C13.6675 0.427976 13.2253 0 12.6895 0H8.46274C7.92696 0 7.48473 0.436368 7.48473 0.973436V2.04757C7.48473 2.55107 7.90145 2.96227 8.41172 2.96227H8.70937V3.49094C7.32314 3.75109 5.96243 4.28816 4.83983 5.00145C4.94189 4.86718 5.00992 4.71613 5.02693 4.5483C5.05245 4.31333 4.98441 4.07836 4.83133 3.88535L4.53367 3.52451C4.38059 3.33989 4.16798 3.22241 3.91285 3.19724C3.67472 3.17206 3.4366 3.24759 3.2495 3.39024L1.50608 4.77487C1.31898 4.92592 1.19992 5.13572 1.1744 5.37908C1.14889 5.61404 1.21693 5.84901 1.37001 6.04202L1.66766 6.40286C1.82074 6.58748 2.04186 6.70496 2.27999 6.73853C2.47559 6.75531 2.6797 6.71335 2.84979 6.61265C1.03833 8.51757 0.0348037 10.9847 0.000785774 13.5526C-0.0332321 16.3302 1.03833 18.9484 3.01137 20.9373C4.97591 22.9177 7.60379 24.0254 10.4103 24.059H10.5293C16.1678 24.059 20.7857 19.7037 21.0409 14.1484C21.1684 11.3036 20.1564 8.60988 18.1919 6.55391ZM4.63573 7.85462C6.20906 6.30216 8.30116 5.44621 10.5293 5.44621C12.7575 5.44621 14.8496 6.30216 16.4229 7.85462C17.9963 9.40709 18.8637 11.4714 18.8637 13.6701C18.8637 15.8687 17.9963 17.933 16.4229 19.4855C14.8496 21.038 12.7575 21.8939 10.5293 21.8939C8.30116 21.8939 6.20906 21.038 4.63573 19.4855C3.0624 17.933 2.19494 15.8687 2.19494 13.6701C2.19494 11.4714 3.0624 9.40709 4.63573 7.85462Z" fill="#222222"/>
                             </svg>
                             30分
                         </time>
                     </div>
                 </a>
-                <a href="" class="p-front-page__recipe__content--wrapper__link">
-                    <div class="p-front-page__recipe__content">
-                        <p class="p-front-page__recipe__content__title">暑い日にピッタリ！さっぱり冷やし中華</p>
-                        <p class="p-front-page__recipe__content__category">麺</p>
+                <a href="" class="c-recipe-card-wrapper-link">
+                    <div class="c-recipe-card">
+                        <p class="c-recipe-card__title">暑い日にピッタリ！さっぱり冷やし中華</p>
+                        <p class="c-recipe-card__category">麺</p>
                         <picture>
                             <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_recipe-content-01.webp" type="image/webp">
-                            <img class="p-front-page__recipe__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recipe-content-01.png" alt="暑い日にピッタリ！さっぱり冷やし中華">
+                            <img class="c-recipe-card__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recipe-content-01.png" alt="暑い日にピッタリ！さっぱり冷やし中華">
                         </picture>
-                        <time class="p-front-page__recipe__content__time" datetime="PT30M">
-                            <svg class="p-front-page__recipe__content__clock" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <time class="c-recipe-card__time" datetime="PT30M">
+                            <svg class="c-recipe-card__clock" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18.1919 6.55391L18.3109 6.41125L18.3449 6.43643C18.532 6.58748 18.7787 6.65461 19.0168 6.62944C19.2549 6.60426 19.476 6.48678 19.6291 6.30216L19.9268 5.94132C20.0799 5.7567 20.1479 5.52173 20.1224 5.27838C20.0969 5.03502 19.9778 4.82522 19.7907 4.67417L18.0558 3.29794C17.8687 3.14688 17.6306 3.07975 17.3839 3.10493C17.1373 3.1301 16.9247 3.24759 16.7716 3.4322L16.4825 3.79305C16.3294 3.97766 16.2613 4.21263 16.2869 4.45599C16.3124 4.66578 16.4059 4.8504 16.5505 5.00145L16.4655 5.10215C15.3003 4.31333 13.8801 3.7427 12.4513 3.47416V2.94548H12.749C13.2593 2.94548 13.6675 2.54268 13.676 2.03079V0.948261C13.6675 0.427976 13.2253 0 12.6895 0H8.46274C7.92696 0 7.48473 0.436368 7.48473 0.973436V2.04757C7.48473 2.55107 7.90145 2.96227 8.41172 2.96227H8.70937V3.49094C7.32314 3.75109 5.96243 4.28816 4.83983 5.00145C4.94189 4.86718 5.00992 4.71613 5.02693 4.5483C5.05245 4.31333 4.98441 4.07836 4.83133 3.88535L4.53367 3.52451C4.38059 3.33989 4.16798 3.22241 3.91285 3.19724C3.67472 3.17206 3.4366 3.24759 3.2495 3.39024L1.50608 4.77487C1.31898 4.92592 1.19992 5.13572 1.1744 5.37908C1.14889 5.61404 1.21693 5.84901 1.37001 6.04202L1.66766 6.40286C1.82074 6.58748 2.04186 6.70496 2.27999 6.73853C2.47559 6.75531 2.6797 6.71335 2.84979 6.61265C1.03833 8.51757 0.0348037 10.9847 0.000785774 13.5526C-0.0332321 16.3302 1.03833 18.9484 3.01137 20.9373C4.97591 22.9177 7.60379 24.0254 10.4103 24.059H10.5293C16.1678 24.059 20.7857 19.7037 21.0409 14.1484C21.1684 11.3036 20.1564 8.60988 18.1919 6.55391ZM4.63573 7.85462C6.20906 6.30216 8.30116 5.44621 10.5293 5.44621C12.7575 5.44621 14.8496 6.30216 16.4229 7.85462C17.9963 9.40709 18.8637 11.4714 18.8637 13.6701C18.8637 15.8687 17.9963 17.933 16.4229 19.4855C14.8496 21.038 12.7575 21.8939 10.5293 21.8939C8.30116 21.8939 6.20906 21.038 4.63573 19.4855C3.0624 17.933 2.19494 15.8687 2.19494 13.6701C2.19494 11.4714 3.0624 9.40709 4.63573 7.85462Z" fill="#222222"/>
                             </svg>
                             30分
                         </time>
                     </div>
                 </a>
-                <a href="" class="p-front-page__recipe__content--wrapper__link">
-                    <div class="p-front-page__recipe__content">
-                        <p class="p-front-page__recipe__content__title">ピリ辛！麻婆豆腐</p>
-                        <p class="p-front-page__recipe__content__category">お豆腐</p>
+                <a href="" class="c-recipe-card-wrapper-link">
+                    <div class="c-recipe-card">
+                        <p class="c-recipe-card__title">ピリ辛！麻婆豆腐</p>
+                        <p class="c-recipe-card__category">お豆腐</p>
                         <picture>
                             <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_recipe-content-02.webp" type="image/webp">
-                            <img class="p-front-page__recipe__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recipe-content-02.png" alt="ピリ辛！麻婆豆腐">
+                            <img class="c-recipe-card__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recipe-content-02.png" alt="ピリ辛！麻婆豆腐">
                         </picture>
-                        <time class="p-front-page__recipe__content__time" datetime="PT30M">
-                            <svg class="p-front-page__recipe__content__clock" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <time class="c-recipe-card__time" datetime="PT30M">
+                            <svg class="c-recipe-card__clock" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18.1919 6.55391L18.3109 6.41125L18.3449 6.43643C18.532 6.58748 18.7787 6.65461 19.0168 6.62944C19.2549 6.60426 19.476 6.48678 19.6291 6.30216L19.9268 5.94132C20.0799 5.7567 20.1479 5.52173 20.1224 5.27838C20.0969 5.03502 19.9778 4.82522 19.7907 4.67417L18.0558 3.29794C17.8687 3.14688 17.6306 3.07975 17.3839 3.10493C17.1373 3.1301 16.9247 3.24759 16.7716 3.4322L16.4825 3.79305C16.3294 3.97766 16.2613 4.21263 16.2869 4.45599C16.3124 4.66578 16.4059 4.8504 16.5505 5.00145L16.4655 5.10215C15.3003 4.31333 13.8801 3.7427 12.4513 3.47416V2.94548H12.749C13.2593 2.94548 13.6675 2.54268 13.676 2.03079V0.948261C13.6675 0.427976 13.2253 0 12.6895 0H8.46274C7.92696 0 7.48473 0.436368 7.48473 0.973436V2.04757C7.48473 2.55107 7.90145 2.96227 8.41172 2.96227H8.70937V3.49094C7.32314 3.75109 5.96243 4.28816 4.83983 5.00145C4.94189 4.86718 5.00992 4.71613 5.02693 4.5483C5.05245 4.31333 4.98441 4.07836 4.83133 3.88535L4.53367 3.52451C4.38059 3.33989 4.16798 3.22241 3.91285 3.19724C3.67472 3.17206 3.4366 3.24759 3.2495 3.39024L1.50608 4.77487C1.31898 4.92592 1.19992 5.13572 1.1744 5.37908C1.14889 5.61404 1.21693 5.84901 1.37001 6.04202L1.66766 6.40286C1.82074 6.58748 2.04186 6.70496 2.27999 6.73853C2.47559 6.75531 2.6797 6.71335 2.84979 6.61265C1.03833 8.51757 0.0348037 10.9847 0.000785774 13.5526C-0.0332321 16.3302 1.03833 18.9484 3.01137 20.9373C4.97591 22.9177 7.60379 24.0254 10.4103 24.059H10.5293C16.1678 24.059 20.7857 19.7037 21.0409 14.1484C21.1684 11.3036 20.1564 8.60988 18.1919 6.55391ZM4.63573 7.85462C6.20906 6.30216 8.30116 5.44621 10.5293 5.44621C12.7575 5.44621 14.8496 6.30216 16.4229 7.85462C17.9963 9.40709 18.8637 11.4714 18.8637 13.6701C18.8637 15.8687 17.9963 17.933 16.4229 19.4855C14.8496 21.038 12.7575 21.8939 10.5293 21.8939C8.30116 21.8939 6.20906 21.038 4.63573 19.4855C3.0624 17.933 2.19494 15.8687 2.19494 13.6701C2.19494 11.4714 3.0624 9.40709 4.63573 7.85462Z" fill="#222222"/>
                             </svg>
                             30分
                         </time>
                     </div>
                 </a>
-                <a href="" class="p-front-page__recipe__content--wrapper__link">
-                    <div class="p-front-page__recipe__content">
-                        <p class="p-front-page__recipe__content__title">彩り豊かな夏野菜カレー</p>
-                        <p class="p-front-page__recipe__content__category">ご飯</p>
+                <a href="" class="c-recipe-card-wrapper-link">
+                    <div class="c-recipe-card">
+                        <p class="c-recipe-card__title">彩り豊かな夏野菜カレー</p>
+                        <p class="c-recipe-card__category">ご飯</p>
                         <picture>
                             <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_recipe-content-03.webp" type="image/webp">
-                            <img class="p-front-page__recipe__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recipe-content-03.png" alt="彩り豊かな夏野菜カレー">
+                            <img class="c-recipe-card__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recipe-content-03.png" alt="彩り豊かな夏野菜カレー">
                         </picture>
-                        <time class="p-front-page__recipe__content__time" datetime="PT30M">
-                            <svg class="p-front-page__recipe__content__clock" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <time class="c-recipe-card__time" datetime="PT30M">
+                            <svg class="c-recipe-card__clock" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18.1919 6.55391L18.3109 6.41125L18.3449 6.43643C18.532 6.58748 18.7787 6.65461 19.0168 6.62944C19.2549 6.60426 19.476 6.48678 19.6291 6.30216L19.9268 5.94132C20.0799 5.7567 20.1479 5.52173 20.1224 5.27838C20.0969 5.03502 19.9778 4.82522 19.7907 4.67417L18.0558 3.29794C17.8687 3.14688 17.6306 3.07975 17.3839 3.10493C17.1373 3.1301 16.9247 3.24759 16.7716 3.4322L16.4825 3.79305C16.3294 3.97766 16.2613 4.21263 16.2869 4.45599C16.3124 4.66578 16.4059 4.8504 16.5505 5.00145L16.4655 5.10215C15.3003 4.31333 13.8801 3.7427 12.4513 3.47416V2.94548H12.749C13.2593 2.94548 13.6675 2.54268 13.676 2.03079V0.948261C13.6675 0.427976 13.2253 0 12.6895 0H8.46274C7.92696 0 7.48473 0.436368 7.48473 0.973436V2.04757C7.48473 2.55107 7.90145 2.96227 8.41172 2.96227H8.70937V3.49094C7.32314 3.75109 5.96243 4.28816 4.83983 5.00145C4.94189 4.86718 5.00992 4.71613 5.02693 4.5483C5.05245 4.31333 4.98441 4.07836 4.83133 3.88535L4.53367 3.52451C4.38059 3.33989 4.16798 3.22241 3.91285 3.19724C3.67472 3.17206 3.4366 3.24759 3.2495 3.39024L1.50608 4.77487C1.31898 4.92592 1.19992 5.13572 1.1744 5.37908C1.14889 5.61404 1.21693 5.84901 1.37001 6.04202L1.66766 6.40286C1.82074 6.58748 2.04186 6.70496 2.27999 6.73853C2.47559 6.75531 2.6797 6.71335 2.84979 6.61265C1.03833 8.51757 0.0348037 10.9847 0.000785774 13.5526C-0.0332321 16.3302 1.03833 18.9484 3.01137 20.9373C4.97591 22.9177 7.60379 24.0254 10.4103 24.059H10.5293C16.1678 24.059 20.7857 19.7037 21.0409 14.1484C21.1684 11.3036 20.1564 8.60988 18.1919 6.55391ZM4.63573 7.85462C6.20906 6.30216 8.30116 5.44621 10.5293 5.44621C12.7575 5.44621 14.8496 6.30216 16.4229 7.85462C17.9963 9.40709 18.8637 11.4714 18.8637 13.6701C18.8637 15.8687 17.9963 17.933 16.4229 19.4855C14.8496 21.038 12.7575 21.8939 10.5293 21.8939C8.30116 21.8939 6.20906 21.038 4.63573 19.4855C3.0624 17.933 2.19494 15.8687 2.19494 13.6701C2.19494 11.4714 3.0624 9.40709 4.63573 7.85462Z" fill="#222222"/>
                             </svg>
                             30分
@@ -1020,40 +1020,40 @@
             <p class="p-front-page__section-title--sub">News</p>
             <!-- タイトル end -->
 
-            <a class="p-front-page__news__content--wrapper" href="/">
-                <div class="p-front-page__news__content">
-                    <div class="p-front-page__news__content__header">
-                        <time class="p-front-page__news__content__header__date" datetime="2025-08-25">2025.08.25</time>
-                        <span class="p-front-page__news__content__header__genre p-front-page__news__content__header__genre--new">おしらせ</span>
+            <a class="c-news-card-wrapper" href="/">
+                <div class="c-news-card">
+                    <div class="c-news-card__header">
+                        <time class="c-news-card__date" datetime="2025-08-25">2025.08.25</time>
+                        <span class="c-news-card__genre c-news-card__genre--new">おしらせ</span>
                     </div>
-                    <p class="p-front-page__news__content__body">新着情報の内容が入ります</p>
+                    <p class="c-news-card__body">新着情報の内容が入ります</p>
                 </div>
             </a>
-            <a class="p-front-page__news__content--wrapper" href="/">
-                <div class="p-front-page__news__content">
-                    <div class="p-front-page__news__content__header">
-                        <time class="p-front-page__news__content__header__date" datetime="2025-08-25">2025.08.25</time>
-                        <span class="p-front-page__news__content__header__genre p-front-page__news__content__header__genre--campaign">キャンペーン</span>
+            <a class="c-news-card-wrapper" href="/">
+                <div class="c-news-card">
+                    <div class="c-news-card__header">
+                        <time class="c-news-card__date" datetime="2025-08-25">2025.08.25</time>
+                        <span class="c-news-card__genre c-news-card__genre--campaign">キャンペーン</span>
                     </div>
-                    <p class="p-front-page__news__content__body">新着情報の内容が入ります</p>
+                    <p class="c-news-card__body">新着情報の内容が入ります</p>
                 </div>
             </a>
-            <a class="p-front-page__news__content--wrapper" href="/">
-                <div class="p-front-page__news__content">
-                    <div class="p-front-page__news__content__header">
-                        <time class="p-front-page__news__content__header__date" datetime="2025-08-25">2025.08.25</time>
-                        <span class="p-front-page__news__content__header__genre p-front-page__news__content__header__genre--new">おしらせ</span>
+            <a class="c-news-card-wrapper" href="/">
+                <div class="c-news-card">
+                    <div class="c-news-card__header">
+                        <time class="c-news-card__date" datetime="2025-08-25">2025.08.25</time>
+                        <span class="c-news-card__genre c-news-card__genre--new">おしらせ</span>
                     </div>
-                    <p class="p-front-page__news__content__body">新着情報の内容が入ります</p>
+                    <p class="c-news-card__body">新着情報の内容が入ります</p>
                 </div>
             </a>
-            <a class="p-front-page__news__content--wrapper" href="/">
-                <div class="p-front-page__news__content">
-                    <div class="p-front-page__news__content__header">
-                        <time class="p-front-page__news__content__header__date" datetime="2025-08-25">2025.08.25</time>
-                        <span class="p-front-page__news__content__header__genre p-front-page__news__content__header__genre--new">おしらせ</span>
+            <a class="c-news-card-wrapper" href="/">
+                <div class="c-news-card">
+                    <div class="c-news-card__header">
+                        <time class="c-news-card__date" datetime="2025-08-25">2025.08.25</time>
+                        <span class="c-news-card__genre c-news-card__genre--new">おしらせ</span>
                     </div>
-                    <p class="p-front-page__news__content__body">新着情報の内容が入ります</p>
+                    <p class="c-news-card__body">新着情報の内容が入ります</p>
                 </div>
             </a>
 
@@ -1197,3 +1197,4 @@
 </main>
 
 <?php get_footer(); ?>
+
