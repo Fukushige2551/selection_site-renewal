@@ -2,13 +2,13 @@
 
 <main id="front-page" class="p-front-page">
     <!-- ヒーロー start -->
-    <div class="p-front-page__bg p-front-page__bg--hero">
+    <div class="c-bg p-front-page__bg--hero">
         <div class="p-front-page__hero">
             <!-- 背景画像(position配置) start -->
             <div class="p-front-page__hero__cartain"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--hero--01"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--hero--02"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--hero--03"></div>
+            <div class="c-bg__positioned p-front-page__bg--hero--01"></div>
+            <div class="c-bg__positioned p-front-page__bg--hero--02"></div>
+            <div class="c-bg__positioned p-front-page__bg--hero--03"></div>
             <!-- 背景画像(position配置) end -->
 
             <!-- ページネーション start -->
@@ -377,258 +377,258 @@
     <!-- ヒーロー end -->
 
     <!-- 店舗情報 start -->
-    <div class="p-front-page__bg p-front-page__bg--store no-image">
-        <section class="p-front-page__store">
+    <div class="c-bg p-front-page__bg--shop no-image">
+        <section class="p-front-page__shop">
             <!-- 背景画像(position配置) start -->
-            <div class="p-front-page__bg__positioned p-front-page__bg--store--01"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--store--02"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--store--03"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--store--04"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--store--05"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--store--06"></div>
+            <div class="c-bg__positioned p-front-page__bg--shop--01"></div>
+            <div class="c-bg__positioned p-front-page__bg--shop--02"></div>
+            <div class="c-bg__positioned p-front-page__bg--shop--03"></div>
+            <div class="c-bg__positioned p-front-page__bg--shop--04"></div>
+            <div class="c-bg__positioned p-front-page__bg--shop--05"></div>
+            <div class="c-bg__positioned p-front-page__bg--shop--06"></div>
             <!-- 背景画像(position配置) end -->
 
             <!-- タイトル start -->
-            <h1 class="p-front-page__section-title">チラシ・店舗情報</h1>
-            <p class="p-front-page__section-title--sub">Flyers and store information</p>
+            <h1 class="c-section__title">チラシ・店舗情報</h1>
+            <p class="c-section__title--sub">Flyers and shop information</p>
             <!-- タイトル end -->
 
-            <div class="p-front-page__store__group js-handle--tab-store-group">
-                <button class="c-btn p-front-page__store__group__tab is-active">ALL</button>
-                <button class="c-btn p-front-page__store__group__tab">千葉</button>
-                <button class="c-btn p-front-page__store__group__tab">東京</button>
-                <button class="c-btn p-front-page__store__group__tab">埼玉</button>
+            <div class="p-front-page__shop__group js-handle--tab-shop-group">
+                <button class="c-btn p-front-page__shop__group__tab is-active">ALL</button>
+                <button class="c-btn p-front-page__shop__group__tab">千葉</button>
+                <button class="c-btn p-front-page__shop__group__tab">東京</button>
+                <button class="c-btn p-front-page__shop__group__tab">埼玉</button>
             </div>
-            <div class="js-store-content">
-                <ul class="c-store-card-list js-handle--tab-store-list">
-                    <li class="c-store-card is-chiba is-active">
-                        <p class="c-store-card__name">行徳店</p>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="js-shop-content">
+                <ul class="c-shop-card-list js-handle--tab-shop-list">
+                    <li class="c-shop-card is-chiba is-active">
+                        <p class="c-shop-card__name">行徳店</p>
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒272-0132<br>千葉県市川市湊新田<br>1-6-8
-                                <a class="c-store-card__address__link" href="">マップを見る</a>
+                                <a class="c-shop-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:00</time>
                         </div>
-                        <a class="c-store-card__link" href="">
+                        <a class="c-shop-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
-                    <li class="c-store-card is-chiba is-active">
-                        <p class="c-store-card__name">西船橋店</p>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <li class="c-shop-card is-chiba is-active">
+                        <p class="c-shop-card__name">西船橋店</p>
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒273-0025<br>千葉県船橋市印内町 579-1
-                                <a class="c-store-card__address__link" href="">マップを見る</a>
+                                <a class="c-shop-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:30<br>(土日 22:00閉店)</time>
                         </div>
-                        <a class="c-store-card__link" href="">
+                        <a class="c-shop-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
-                    <li class="c-store-card is-chiba">
-                        <p class="c-store-card__name">西原店</p>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <li class="c-shop-card is-chiba">
+                        <p class="c-shop-card__name">西原店</p>
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒273-0025<br>千葉県船橋市印内町 579-1
-                                <a class="c-store-card__address__link" href="">マップを見る</a>
+                                <a class="c-shop-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:30<br>(土日 22:00閉店)</time>
                         </div>
-                        <a class="c-store-card__link" href="">
+                        <a class="c-shop-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
-                    <li class="c-store-card is-chiba">
-                        <p class="c-store-card__name">花野井店</p>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <li class="c-shop-card is-chiba">
+                        <p class="c-shop-card__name">花野井店</p>
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒273-0025<br>千葉県船橋市印内町 579-1
-                                <a class="c-store-card__address__link" href="">マップを見る</a>
+                                <a class="c-shop-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:30<br>(土日 22:00閉店)</time>
                         </div>
-                        <a class="c-store-card__link" href="">
+                        <a class="c-shop-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
-                    <li class="c-store-card is-chiba">
-                        <p class="c-store-card__name">しいの木台店</p>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <li class="c-shop-card is-chiba">
+                        <p class="c-shop-card__name">しいの木台店</p>
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒273-0025<br>千葉県船橋市印内町 579-1
-                                <a class="c-store-card__address__link" href="">マップを見る</a>
+                                <a class="c-shop-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:30<br>(土日 22:00閉店)</time>
                         </div>
-                        <a class="c-store-card__link" href="">
+                        <a class="c-shop-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
-                    <li class="c-store-card is-chiba">
-                        <p class="c-store-card__name">八潮店</p>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <li class="c-shop-card is-chiba">
+                        <p class="c-shop-card__name">八潮店</p>
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒273-0025<br>千葉県船橋市印内町 579-1
-                                <a class="c-store-card__address__link" href="">マップを見る</a>
+                                <a class="c-shop-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:30<br>(土日 22:00閉店)</time>
                         </div>
-                        <a class="c-store-card__link" href="">
+                        <a class="c-shop-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
-                    <li class="c-store-card is-chiba">
-                        <p class="c-store-card__name">青葉台店</p>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <li class="c-shop-card is-chiba">
+                        <p class="c-shop-card__name">青葉台店</p>
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒273-0025<br>千葉県船橋市印内町 579-1
-                                <a class="c-store-card__address__link" href="">マップを見る</a>
+                                <a class="c-shop-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:30<br>(土日 22:00閉店)</time>
                         </div>
-                        <a class="c-store-card__link" href="">
+                        <a class="c-shop-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
-                    <li class="c-store-card is-chiba">
-                        <p class="c-store-card__name">松戸店</p>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <li class="c-shop-card is-chiba">
+                        <p class="c-shop-card__name">松戸店</p>
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒273-0025<br>千葉県船橋市印内町 579-1
-                                <a class="c-store-card__address__link" href="">マップを見る</a>
+                                <a class="c-shop-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:30<br>(土日 22:00閉店)</time>
                         </div>
-                        <a class="c-store-card__link" href="">
+                        <a class="c-shop-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
-                    <li class="c-store-card is-tokyo">
-                        <p class="c-store-card__name">西新井店</p>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <li class="c-shop-card is-tokyo">
+                        <p class="c-shop-card__name">西新井店</p>
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒273-0025<br>千葉県船橋市印内町 579-1
-                                <a class="c-store-card__address__link" href="">マップを見る</a>
+                                <a class="c-shop-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:30<br>(土日 22:00閉店)</time>
                         </div>
-                        <a class="c-store-card__link" href="">
+                        <a class="c-shop-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
-                    <li class="c-store-card is-saitama">
-                        <p class="c-store-card__name">三郷店</p>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <li class="c-shop-card is-saitama">
+                        <p class="c-shop-card__name">三郷店</p>
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒273-0025<br>千葉県船橋市印内町 579-1
-                                <a class="c-store-card__address__link" href="">マップを見る</a>
+                                <a class="c-shop-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:30<br>(土日 22:00閉店)</time>
                         </div>
-                        <a class="c-store-card__link" href="">
+                        <a class="c-shop-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
-                    <li class="c-store-card is-saitama">
-                        <p class="c-store-card__name">八潮店</p>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <li class="c-shop-card is-saitama">
+                        <p class="c-shop-card__name">八潮店</p>
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
                             </svg>
                             <address>
                                 〒273-0025<br>千葉県船橋市印内町 579-1
-                                <a class="c-store-card__address__link" href="">マップを見る</a>
+                                <a class="c-shop-card__address__link" href="">マップを見る</a>
                             </address>
                         </div>
-                        <div class="c-store-card__wrapper">
-                            <svg class="c-store-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="c-shop-card__wrapper">
+                            <svg class="c-shop-card__time" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7.5 0C3.375 0 0 3.375 0 7.5C0 11.625 3.375 15 7.5 15C11.625 15 15 11.625 15 7.5C15 3.375 11.625 0 7.5 0ZM7.5 13.5C4.1925 13.5 1.5 10.8075 1.5 7.5C1.5 4.1925 4.1925 1.5 7.5 1.5C10.8075 1.5 13.5 4.1925 13.5 7.5C13.5 10.8075 10.8075 13.5 7.5 13.5ZM7.875 3.75H6.75V8.25L10.65 10.65L11.25 9.675L7.875 7.65V3.75Z" fill="black"/>
                             </svg>
                             <time>9:30～22:30<br>(土日 22:00閉店)</time>
                         </div>
-                        <a class="c-store-card__link" href="">
+                        <a class="c-shop-card__link" href="">
                             <button class="c-btn c-btn--common--blue">チラシ・店舗情報</button>
                         </a>
                     </li>
@@ -645,7 +645,7 @@
                     </button>
                 </ul>
             </div>
-            <a class="p-front-page__store__all" href="">
+            <a class="p-front-page__shop__all" href="">
                 <button class="c-btn c-btn--common--green">一覧</button>
             </a>
         </section>
@@ -653,17 +653,17 @@
     <!-- 店舗情報 end -->
 
     <!-- キャンペーン start -->
-    <div class="p-front-page__bg p-front-page__bg--campaign">
+    <div class="c-bg p-front-page__bg--campaign">
         <section class="p-front-page__campaign">
             <!-- 背景画像(position配置) start -->
-            <div class="p-front-page__bg__positioned p-front-page__bg--campaign--01"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--campaign--02"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--campaign--03"></div>
+            <div class="c-bg__positioned p-front-page__bg--campaign--01"></div>
+            <div class="c-bg__positioned p-front-page__bg--campaign--02"></div>
+            <div class="c-bg__positioned p-front-page__bg--campaign--03"></div>
             <!-- 背景画像(position配置) end -->
 
             <!-- タイトル start -->
-            <h1 class="p-front-page__section-title">キャンペーン情報</h1>
-            <p class="p-front-page__section-title--sub">Campaign Information</p>
+            <h1 class="c-section__title">キャンペーン情報</h1>
+            <p class="c-section__title--sub">Campaign Information</p>
             <!-- タイトル end -->
 
             <div class="p-front-page__campaign__pc-flex">
@@ -764,26 +764,26 @@
     <!-- キャンペーン end -->
 
     <!-- レシピ/バナー start -->
-    <div class="p-front-page__bg p-front-page__bg--recipe no-image">
+    <div class="c-bg p-front-page__bg--recipe no-image">
         <section class="p-front-page__recipe">
             <!-- 背景画像(position配置) start -->
-            <div class="p-front-page__bg__positioned p-front-page__bg--recipe--01"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--recipe--02"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--recipe--03"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--recipe--04"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--recipe--05"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--recipe--06"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--recipe--07"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--recipe--08"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--recipe--09"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--recipe--10"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--recipe--11"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--recipe--12"></div>
+            <div class="c-bg__positioned p-front-page__bg--recipe--01"></div>
+            <div class="c-bg__positioned p-front-page__bg--recipe--02"></div>
+            <div class="c-bg__positioned p-front-page__bg--recipe--03"></div>
+            <div class="c-bg__positioned p-front-page__bg--recipe--04"></div>
+            <div class="c-bg__positioned p-front-page__bg--recipe--05"></div>
+            <div class="c-bg__positioned p-front-page__bg--recipe--06"></div>
+            <div class="c-bg__positioned p-front-page__bg--recipe--07"></div>
+            <div class="c-bg__positioned p-front-page__bg--recipe--08"></div>
+            <div class="c-bg__positioned p-front-page__bg--recipe--09"></div>
+            <div class="c-bg__positioned p-front-page__bg--recipe--10"></div>
+            <div class="c-bg__positioned p-front-page__bg--recipe--11"></div>
+            <div class="c-bg__positioned p-front-page__bg--recipe--12"></div>
             <!-- 背景画像(position配置) end -->
 
             <!-- タイトル start -->
-            <h1 class="p-front-page__section-title">レシピ</h1>
-            <p class="p-front-page__section-title--sub">Recipe</p>
+            <h1 class="c-section__title">レシピ</h1>
+            <p class="c-section__title--sub">Recipe</p>
             <!-- タイトル end -->
 
             <div class="c-recipe-card-wrapper">
@@ -909,23 +909,23 @@
     <!-- レシピ/バナー end -->
 
     <!-- セレクションのこだわり start -->
-    <div class="p-front-page__bg p-front-page__bg--commitment">
+    <div class="c-bg p-front-page__bg--commitment">
         <section class="p-front-page__commitment">
             <!-- 背景画像(position配置) start -->
-            <div class="p-front-page__bg__positioned p-front-page__bg--commitment--01"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--commitment--02"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--commitment--03"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--commitment--04"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--commitment--05"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--commitment--06"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--commitment--07"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--commitment--08"></div>
-            <div class="p-front-page__bg__positioned p-front-page__bg--commitment--09"></div>
+            <div class="c-bg__positioned p-front-page__bg--commitment--01"></div>
+            <div class="c-bg__positioned p-front-page__bg--commitment--02"></div>
+            <div class="c-bg__positioned p-front-page__bg--commitment--03"></div>
+            <div class="c-bg__positioned p-front-page__bg--commitment--04"></div>
+            <div class="c-bg__positioned p-front-page__bg--commitment--05"></div>
+            <div class="c-bg__positioned p-front-page__bg--commitment--06"></div>
+            <div class="c-bg__positioned p-front-page__bg--commitment--07"></div>
+            <div class="c-bg__positioned p-front-page__bg--commitment--08"></div>
+            <div class="c-bg__positioned p-front-page__bg--commitment--09"></div>
             <!-- 背景画像(position配置) end -->
 
             <!-- タイトル start -->
-            <h1 class="p-front-page__section-title">セレクションのこだわり</h1>
-            <p class="p-front-page__section-title--sub">Commitment</p>
+            <h1 class="c-section__title">セレクションのこだわり</h1>
+            <p class="c-section__title--sub">Commitment</p>
             <!-- タイトル end -->
 
             <p class="p-front-page__commitment__text">
@@ -1013,11 +1013,11 @@
     <!-- セレクションのこだわり end -->
 
     <!-- 新着情報 start -->
-    <div class="p-front-page__bg p-front-page__bg--news">
+    <div class="c-bg p-front-page__bg--news">
         <section class="p-front-page__news">
             <!-- タイトル start -->
-            <h1 class="p-front-page__section-title">新着情報</h1>
-            <p class="p-front-page__section-title--sub">News</p>
+            <h1 class="c-section__title">新着情報</h1>
+            <p class="c-section__title--sub">News</p>
             <!-- タイトル end -->
 
             <a class="c-news-card-wrapper" href="/">
@@ -1065,10 +1065,10 @@
     <!-- 新着情報 end -->
 
     <!-- SNS start -->
-    <div class="p-front-page__bg p-front-page__bg--sns no-image">
+    <div class="c-bg p-front-page__bg--sns no-image">
         <section class="p-front-page__sns">
             <!-- タイトル start -->
-            <h1 class="p-front-page__section-title">SNS</h1>
+            <h1 class="c-section__title">SNS</h1>
             <!-- タイトル end -->
 
             <h2 class="p-front-page__sns__subtitle">Instagram</h2>
@@ -1143,11 +1143,11 @@
     <!-- SNS end -->
 
     <!-- 採用情報 start -->
-    <div class="p-front-page__bg p-front-page__bg--recruit">
+    <div class="c-bg p-front-page__bg--recruit">
         <section class="p-front-page__recruit">
             <!-- タイトル start -->
-            <h1 class="p-front-page__section-title">採用情報</h1>
-            <p class="p-front-page__section-title--sub">Recruitment</p>
+            <h1 class="c-section__title">採用情報</h1>
+            <p class="c-section__title--sub">Recruitment</p>
             <!-- タイトル end -->
 
             <a class="p-front-page__recruit__link u-disp--sp" href="/">
@@ -1167,7 +1167,7 @@
     <!-- 採用情報 end -->
 
     <!-- 会社情報 start -->
-    <div class="p-front-page__bg p-front-page__bg--company no-image">
+    <div class="c-bg p-front-page__bg--company no-image">
         <div class="p-front-page__company__picture--wrapper">
             <a class="c-pop p-front-page__company__link p-front-page__company__link--company" href="/">
                 <picture class="p-front-page__company__picture">

@@ -15,8 +15,8 @@
     <!-- ナビゲーション -->
     <nav class="l-footer__nav">
         <div class="l-footer__nav__group">
-            <a class="l-footer__nav__item list-title">チラシ・店舗情報</a>
-            <ul class="l-footer__nav__list store-info">
+            <a class="l-footer__nav__item list-title" href="/shop">チラシ・店舗情報</a>
+            <ul class="l-footer__nav__list shop-info">
                 <li class="l-footer__nav__list__item"><a href="">行徳店</a></li>
                 <li class="l-footer__nav__list__item"><a href="">花野井店</a></li>
                 <li class="l-footer__nav__list__item"><a href="">三郷店</a></li>
@@ -66,7 +66,7 @@
         <div class="l-footer__nav__column l-footer__nav__column--left">
             <div class="l-footer__nav__group">
                 <a class="l-footer__nav__item list-title">チラシ・店舗情報</a>
-                <ul class="l-footer__nav__list store-info">
+                <ul class="l-footer__nav__list shop-info">
                     <li class="l-footer__nav__list__item"><a href="">行徳店</a></li>
                     <li class="l-footer__nav__list__item"><a href="">花野井店</a></li>
                     <li class="l-footer__nav__list__item"><a href="">三郷店</a></li>

@@ -155,7 +155,7 @@
             }
         }
 
-        .store-info {
+        .shop-info {
             border-bottom: none;
 
             &.is-open {
@@ -174,19 +174,19 @@
                     }
                 }
                 &.is-saitama {
-                    .store-info__prefecture {
+                    .shop-info__prefecture {
                         border-bottom: none;
                     }
 
                     &.is-open {
-                        .store-info__prefecture {
+                        .shop-info__prefecture {
                             border-bottom: 1px dotted #D9D9D9;
                         }
                     }
                 }
             }
             &__prefecture,
-            &__store {
+            &__shop {
                 padding: 13px 0;
                 border-bottom: 1px dotted #D9D9D9;
             }
@@ -194,7 +194,7 @@
                 font-weight: bold;
                 padding-left: 14px;
             }
-            &__store {
+            &__shop {
                 padding-left: 30px;
 
                 &::before {
@@ -308,14 +308,14 @@
                 }
             }
 
-            .store-info {
+            .shop-info {
                 &__group {
                     width: 72vw;
                     font-size: 2.86vw;
                 }
 
                 &__prefecture,
-                &__store {
+                &__shop {
                     padding: 1.69vw 0;
                 }
 
@@ -323,7 +323,7 @@
                     padding-left: 1.82vw;
                 }
 
-                &__store {
+                &__shop {
                     padding-left: 3.90vw;
 
                     &::before {

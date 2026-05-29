@@ -1,4 +1,4 @@
-@use "foundation/global" as *;
+﻿@use "foundation/global" as *;
 
 .l-header__logo {
     position: relative;
@@ -14,17 +14,18 @@
 .p-front-page {
     padding-top: 0;
 
+    .c-shop-card {
+        display: none;
+
+        &.is-active {
+            display: flex;
+        }
+    }
+
     /**
      * background
      */
     &__bg {
-        z-index: -1;
-
-        &__positioned {
-            position: absolute;
-            z-index: 100;
-            pointer-events: none;
-        }
         &--hero {
             @include backgroundImg("#{$img-path}page/front-page/bg_hero.png");
             padding-top: 15.5vw;
@@ -65,25 +66,25 @@
                 aspect-ratio: 78 / 106;
             }
         }
-        &--store {
+        &--shop {
             aspect-ratio: 390 / 474;
 
             &--01 {
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_store-bg-01.svg");
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_shop-bg-01.svg");
                 top: -16.4vw;
                 left: 17.43vw;
                 width: 8.09vw;
                 aspect-ratio: 31.57 / 15.03;
             }
             &--02 {
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_store-bg-02.svg");
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_shop-bg-02.svg");
                 top: -3.53vw;
                 left: 12.3vw;
                 width: 7.37vw;
                 aspect-ratio: 28.76 / 13.77;
             }
             &--03 {
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_store-bg-03.svg");
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_shop-bg-03.svg");
                 top: -15.89vw;
                 right: 50%;
                 transform: translateX(50%);
@@ -91,7 +92,7 @@
                 aspect-ratio: 177 / 80;
             }
             &--04 {
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_store-bg-04.svg");
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_shop-bg-04.svg");
                 top: -20.25vw;
                 right: 5.63vw;
                 width: 20.01vw;
@@ -283,23 +284,6 @@
             box-sizing: border-box;
         }
     }
-    &__section-title {
-        font-family: $font-family-ZenKaku;
-        text-align: center;
-        font-size: 5.12vw;
-        letter-spacing: 15%;
-        margin-bottom: 1vw;
-
-        &--sub {
-            font-family: $font-family-ScopeOne;
-            text-align: center;
-            color: #00A684;
-            font-size: 3.07vw;
-            letter-spacing: 15%;
-            line-height: 1.6;
-        }
-    }
-
     .c-btn--common--blue,
     .c-btn--common--green {
         color: #fff;
@@ -424,7 +408,7 @@
         margin: 0 auto 0 4.4vw;
         box-sizing: border-box;
 
-        .p-front-page__section-title {
+        .c-section__title {
             padding-left: 1.6vw;
         }
         .c-slider {
@@ -640,12 +624,12 @@
             }
         }
     }
-    &__store {
+    &__shop {
         position: relative;
         z-index: 1;
         padding-top: 10vw;
 
-        .p-front-page__section-title {
+        .c-section__title {
             &--sub {
                 margin-bottom: 2.56vw;
             }
@@ -676,12 +660,12 @@
                 }
             }
         }
-        .c-store-card-list {
+        .c-shop-card-list {
             justify-content: space-between;
             margin: 0 auto;
             width: 92.05vw;
 
-            .c-store-card {
+            .c-shop-card {
                 width: 44.61vw;
                 height: 53.07vw;
                 padding: 4.61vw 2.56vw 3.07vw 3.58vw;
@@ -751,7 +735,7 @@
         z-index: 1;
         padding-top: 15.2vw;
 
-        .p-front-page__section-title {
+        .c-section__title {
             padding-left: 4.61vw;
 
             &--sub {
@@ -807,7 +791,7 @@
         z-index: 1;
         padding-top: 7.69vw;
 
-        .p-front-page__section-title {
+        .c-section__title {
             &--sub {
                 margin-bottom: 7.17vw;
             }
@@ -904,7 +888,7 @@
         position: relative;
         padding-top: 22.4vw;
 
-        .p-front-page__section-title {
+        .c-section__title {
             &--sub {
                 margin-bottom: 2.4vw;
             }
@@ -970,7 +954,7 @@
         }
     }
     &__news {
-        .p-front-page__section-title {
+        .c-section__title {
             &--sub {
                 margin-bottom: 6.66vw;
             }
@@ -1032,7 +1016,7 @@
     &__sns {
         padding: 9.74vw 0 12.27vw;
 
-        .p-front-page__section-title {
+        .c-section__title {
             margin-bottom: 8.20vw;
         }
         &__subtitle {
@@ -1114,7 +1098,7 @@
         }
     }
     &__recruit {
-        .p-front-page__section-title {
+        .c-section__title {
             &--sub {
                 color: #E60039;
                 margin-bottom: 7.17vw;
@@ -1212,18 +1196,18 @@
                 display: none;
             }
         }
-        &--store {
+        &--shop {
             aspect-ratio: 768 / 481;
 
             &--01 {
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_store-bg-01.svg");
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_shop-bg-01.svg");
                 top: -20vw;
                 left: 12.44vw;
                 width: 6.90vw;
                 aspect-ratio: 53 / 28;
             }
             &--02 {
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_store-bg-02.svg");
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_shop-bg-02.svg");
                 top: -10vw;
                 left: 7.68vw;
                 width: 6.28vw;
@@ -1231,7 +1215,7 @@
             }
             &--03 {
                 display: none;
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_store-bg-03.svg");
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_shop-bg-03.svg");
                 top: -9.4vw;
                 right: 43.7vw;
                 transform: translateX(0);
@@ -1239,7 +1223,7 @@
                 aspect-ratio: 285 / 152;
             }
             &--04 {
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_store-bg-04.svg");
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_shop-bg-04.svg");
                 top: -25vw;
                 right: 6.01vw;
                 width: 11.43vw;
@@ -1247,7 +1231,7 @@
             }
             &--05 {
                 display: none;
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_store-bg-pc-05.svg");
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_shop-bg-pc-05.svg");
                 top: -14.2vw;
                 right: 88.10vw;
                 width: 5.75vw;
@@ -1255,7 +1239,7 @@
             }
             &--06 {
                 display: none;
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_store-bg-pc-06.svg");
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_shop-bg-pc-06.svg");
                 top: -10.2vw;
                 left: 17.08vw;
                 width: 9.68vw;
@@ -1471,15 +1455,6 @@
     .c-btn--common--green {
         font-size: 2.08vw;
     }
-    .p-front-page__section-title {
-        font-size: 2.60vw;
-        margin-bottom: 0.91vw;
-
-        &--sub {
-            font-size: 1.56vw;
-        }
-    }
-
     /**
      * コンテンツ
      */
@@ -1752,12 +1727,12 @@
             }
         }
     }
-    &__store {
+    &__shop {
         position: relative;
         top: -2.5vw;
         padding-top: 0;
 
-        .p-front-page__section-title {
+        .c-section__title {
             &--sub {
                 margin-bottom: 2.56vw;
             }
@@ -1775,7 +1750,7 @@
                 padding-top: 0.3vw;
             }
         }
-        .c-store-card-list {
+        .c-shop-card-list {
             position: relative;
             width: 70.31vw;
             justify-content: start;
@@ -1798,7 +1773,7 @@
                 }
             }
 
-            .c-store-card {
+            .c-shop-card {
                 width: 22.65vw;
                 height: auto;
                 padding: 2.34vw 1.30vw 1.56vw 1.82vw;
@@ -1857,7 +1832,7 @@
     &__campaign {
         padding-top: 8.2vw;
 
-        .p-front-page__section-title {
+        .c-section__title {
             padding-left: 0;
 
             &--sub {
@@ -1920,7 +1895,7 @@
         position: relative;
         padding-top: 3.51vw;
 
-        .p-front-page__section-title {
+        .c-section__title {
             &--sub {
                 margin-bottom: 2.96vw;
             }
@@ -2017,7 +1992,7 @@
     &__commitment {
         padding-top: 8.6vw;
 
-        .p-front-page__section-title {
+        .c-section__title {
             &--sub {
                 margin-bottom: 4.42vw;
             }
@@ -2072,7 +2047,7 @@
     &__news {
         padding-top: 5.46vw;
 
-        .p-front-page__section-title {
+        .c-section__title {
             &--sub {
                 margin-bottom: 3.38vw;
             }
@@ -2130,7 +2105,7 @@
     &__sns {
         padding: 3.12vw 0 5.06vw;
 
-        .p-front-page__section-title {
+        .c-section__title {
             margin-bottom: 4.16vw;
         }
         .c-btn--youtube--play {
@@ -2180,7 +2155,7 @@
         }
     }
     &__recruit {
-        .p-front-page__section-title {
+        .c-section__title {
             &--sub {
                 margin-bottom: 3.90vw;
             }
@@ -2268,18 +2243,18 @@
                 display: none;
             }
         }
-        &--store {
+        &--shop {
             aspect-ratio: 1920 / 626;
 
             &--01 {
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_store-bg-01.svg");
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_shop-bg-01.svg");
                 top: -6vw;
                 left: 37.76vw;
                 width: 3.00vw;
                 aspect-ratio: 57.71 / 27.47;
             }
             &--02 {
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_store-bg-02.svg");
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_shop-bg-02.svg");
                 top: -3.6vw;
                 left: 34.84vw;
                 width: 2.73vw;
@@ -2287,7 +2262,7 @@
             }
             &--03 {
                 display: block;
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_store-bg-03.svg");
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_shop-bg-03.svg");
                 top: -9.4vw;
                 right: 43.7vw;
                 transform: translateX(0);
@@ -2295,7 +2270,7 @@
                 aspect-ratio: 285 / 152;
             }
             &--04 {
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_store-bg-04.svg");
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_shop-bg-04.svg");
                 top: -13.9vw;
                 right: 19.11vw;
                 width: 8.59vw;
@@ -2303,7 +2278,7 @@
             }
             &--05 {
                 display: block;
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_store-bg-pc-05.svg");
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_shop-bg-pc-05.svg");
                 top: -14.2vw;
                 right: 88.10vw;
                 width: 5.75vw;
@@ -2311,7 +2286,7 @@
             }
             &--06 {
                 display: block;
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_store-bg-pc-06.svg");
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_shop-bg-pc-06.svg");
                 top: -10.2vw;
                 left: 17.08vw;
                 width: 9.68vw;
@@ -2511,15 +2486,6 @@
     .c-btn--common--green {
         font-size: calc(0.93vw * var(--pc-font-scale));
     }
-    .p-front-page__section-title {
-        font-size: calc(1.25vw * var(--pc-font-scale));
-        margin-bottom: 0;
-
-        &--sub {
-            font-size: calc(0.72vw * var(--pc-font-scale));
-        }
-    }
-
     &__hero {
         aspect-ratio: 1920 / 542;
         padding-bottom: 5.9vw;
@@ -2721,7 +2687,7 @@
             }
         }
     }
-    &__store {
+    &__shop {
         &__group {
             margin: 0 auto 0.98vw;
 
@@ -2732,7 +2698,7 @@
                 padding-top: 0.3vw;
             }
         }
-        .c-store-card-list {
+        .c-shop-card-list {
             width: 52.08vw;
             gap: 1.04vw;
 
@@ -2752,7 +2718,7 @@
                 }
             }
 
-            .c-store-card {
+            .c-shop-card {
                 width: 12.18vw;
                 padding: 1.25vw 1.04vw 0.89vw 1.04vw;
 
@@ -2810,7 +2776,7 @@
     &__campaign {
         padding-top: 5.6vw;
 
-        .p-front-page__section-title {
+        .c-section__title {
             &--sub {
                 margin-bottom: 0.65vw;
             }
@@ -2860,7 +2826,7 @@
         }
     }
     &__recipe {
-        .p-front-page__section-title {
+        .c-section__title {
             &--sub {
                 margin-bottom: 2.96vw;
             }
@@ -2936,7 +2902,7 @@
     &__commitment {
         padding-top: 5.31vw;
 
-        .p-front-page__section-title {
+        .c-section__title {
             &--sub {
                 margin-bottom: 1.66vw;
             }
@@ -3024,7 +2990,7 @@
     &__news {
         padding-top: 1.4vw;
 
-        .p-front-page__section-title {
+        .c-section__title {
             &--sub {
                 margin-bottom: 1.45vw;
             }
@@ -3084,13 +3050,8 @@
         margin-top: -0.41vw;
         padding: 0 0 3.12vw;
 
-        .p-front-page__section-title {
+        .c-section__title {
             margin-bottom: 2.86vw;
-        }
-        .c-btn--youtube--play {
-            &::after {
-                // display: none;
-            }
         }
         &__subtitle {
             font-size: calc(1.04vw * var(--pc-font-scale));
@@ -3118,7 +3079,7 @@
         }
     }
     &__recruit {
-        .p-front-page__section-title {
+        .c-section__title {
             &--sub {
                 margin-bottom: 2.18vw;
             }

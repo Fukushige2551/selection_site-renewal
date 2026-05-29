@@ -77,7 +77,7 @@
                 white-space: nowrap;
                 width: 50%;
             }
-            &.store-info {
+            &.shop-info {
                 flex-wrap: wrap;
             }
             &.company-info {
@@ -198,7 +198,7 @@
             }
         }
         &__list {
-            &.store-info {
+            &.shop-info {
                 .l-footer__nav__list__item {
                     text-align: center;
                 }
@@ -281,7 +281,7 @@
             }
         }
         &__list {
-            &.store-info {
+            &.shop-info {
                 .l-footer__nav__list__item {
                     text-align: left;
                 }

@@ -1069,18 +1069,18 @@ jQuery(function($) {
 	 * 店舗一覧ページネーション
 	 */
 	function setupStoreTabsPagination() {
-		var $store = $('.p-front-page__store');
+		var $shop = $('.p-front-page__shop');
 
-		if (!$store.length) {
+		if (!$shop.length) {
 			return;
 		}
 
-		var $tabs = $store.find('.p-front-page__store__group__tab');
-		var $items = $store.find('.c-store-card');
-		var $listWrapper = $store.find('.js-store-content');
-		var $pagination = $store.find('.p-front-page__store__pagination');
-		var $prev = $store.find('.c-slider--btn--left[aria-label="前の店舗へ"]').first();
-		var $next = $store.find('.c-slider--btn--right[aria-label="次の店舗へ"]').first();
+		var $tabs = $shop.find('.p-front-page__shop__group__tab');
+		var $items = $shop.find('.c-shop-card');
+		var $listWrapper = $shop.find('.js-shop-content');
+		var $pagination = $shop.find('.p-front-page__shop__pagination');
+		var $prev = $shop.find('.c-slider--btn--left[aria-label="前の店舗へ"]').first();
+		var $next = $shop.find('.c-slider--btn--right[aria-label="次の店舗へ"]').first();
 		function getStorePerPage() {
 			if (window.matchMedia('(min-width: 1024px)').matches) {
 				return 4;
@@ -1102,7 +1102,7 @@ jQuery(function($) {
 		}
 
 		if (!$pagination.length) {
-			$pagination = $('<div class="p-front-page__store__pagination" aria-label="店舗一覧のページネーション"></div>');
+			$pagination = $('<div class="p-front-page__shop__pagination" aria-label="店舗一覧のページネーション"></div>');
 			$listWrapper.after($pagination);
 		}
 
@@ -1119,7 +1119,7 @@ jQuery(function($) {
 
 			for (var i = 0; i < pageCount; i += 1) {
 				var isActive = i === currentPage;
-				var $dot = $('<button type="button" class="p-front-page__store__pagination__dot" aria-label="ページ' + (i + 1) + 'を表示"></button>');
+				var $dot = $('<button type="button" class="p-front-page__shop__pagination__dot" aria-label="ページ' + (i + 1) + 'を表示"></button>');
 
 				if (isActive) {
 					$dot.addClass('is-active').attr('aria-current', 'true');
@@ -1210,7 +1210,7 @@ jQuery(function($) {
 			});
 		}
 
-		$(window).on('resize.storeTabsPagination', function() {
+		$(window).on('resize.shopTabsPagination', function() {
 			var nextPerPage = getStorePerPage();
 
 			if (nextPerPage !== perPage) {

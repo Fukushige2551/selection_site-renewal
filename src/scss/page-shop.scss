@@ -1,0 +1,169 @@
+@use "foundation/global" as *;
+
+.p-page-shop {
+    /**
+     * ページ背景
+     */
+    &__bg {
+        &--top {
+            @include backgroundImg("#{$img-path}page/page-shop/bg_top.png");
+            width: 100%;
+            aspect-ratio: 390 / 657;
+            padding-top: 47.69vw;
+            box-sizing: border-box;
+
+            .c-section {
+                &__title--sub {
+                    margin-bottom: 73vw;
+                }
+            }
+        }
+    }
+
+    /**
+     * ページコンテンツ
+     */
+    .c-shop-card-list {
+        flex-direction: column;
+        gap: 3.84vw 0;
+        width: 89.74vw;
+        margin: 0 auto;
+    }
+    .c-shop-card {
+        padding: 6.15vw 0 5.64vw;
+        border-radius: 4.61vw;
+
+        &__name {
+            width:  fit-content;
+            text-decoration: none;
+            font-size: 4.10vw;
+            margin: 0 auto 4.87vw;
+        }
+        &__detail {
+            padding-left: 4.35vw;
+            margin-bottom: 5.12vw;
+            font-family: $font-family-ZenKaku;
+
+            &__item {
+                display: flex;
+                gap: 2.82vw;
+
+                &:last-child {
+                    .c-shop-card__detail__content {
+                        padding-bottom: 0;
+                    }
+                }
+            }
+            &__title {
+                width: 21.46vw;
+                font-size: 4.10vw;
+            }
+            &__content {
+                position: relative;
+                width: 100%;
+                padding: 0 0 6.66vw 3.33vw;
+                font-size: 4.61vw;
+                --dot-color: #D9D9D9;
+                --dot-size: 0.51vw;
+                --dot-gap: 1vw;
+                --line-width: 0.25vw;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    width: var(--line-width);
+                    background-image: radial-gradient(
+                        circle,
+                        var(--dot-color) 0 calc(var(--dot-size) / 2),
+                        transparent calc(var(--dot-size) / 2)
+                    );
+                    background-size: 100% var(--dot-gap);
+                    background-repeat: repeat-y;
+                    background-position: center top;
+                }
+            }
+            &__address {
+                position: relative;
+                width: fit-content;
+
+                &::after {
+                    @include backgroundImg("#{$img-path}page/page-shop/svg/bg_address.svg");
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    right: -6.2vw;
+                    width: 3.8vw;
+                    aspect-ratio: 13.33 / 16.67;
+                }
+            }
+        }
+        &__link--wrapper {
+            display: flex;
+            gap: 1.53vw;
+            width: 75.38vw;
+            margin: 0 auto;
+        }
+        &__link {
+            width: 36.92vw;
+            aspect-ratio: 144 / 45;
+            font-size: 4.10vw;
+            font-weight: bold;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2vw;
+
+            &__icon {
+                width: 4.10vw;
+                aspect-ratio: 16 / 19;
+            }
+            &__text {
+                position: relative;
+                bottom: 0.25vw;
+            }
+
+            &.u-bg--green {
+                @include backgroundImg("#{$img-path}page/page-shop/btn_green-sp.png");
+            }
+            &.u-bg--blue {
+                @include backgroundImg("#{$img-path}page/page-shop/btn_blue-sp.png");
+            }
+        }
+    }
+
+    &__section {
+        margin-bottom: 20.25vw;
+
+        &:last-child {
+            margin-bottom: 28.20vw;
+        }
+
+        .c-section {
+            &__title--sub {
+                margin-bottom: 6.66vw;
+            }
+        }
+    }
+    &__scroll {
+        display: flex;
+        justify-content: space-between;
+        width: 89.23vw;
+        margin: 0 auto;
+
+        &__link {
+            @include backgroundImg("#{$img-path}page/page-shop/svg/btn_green-sp.svg");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 27.69vw;
+            aspect-ratio: 108 / 38;
+            color: #fff;
+            font-size: 4.10vw;
+            font-weight: bold;
+        }
+    }
+}

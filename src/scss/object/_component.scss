@@ -1,8 +1,55 @@
-@use "../foundation/global" as *;
+﻿@use "../foundation/global" as *;
 
 /**
  * UIコンポーネント
  */
+// メイン
+.c-main {
+    position: relative;
+
+    &:after {
+        @include backgroundImg("#{$img-path}header/bg_cartain.png");
+        content: "";
+        position: absolute;
+        pointer-events: none;
+        top: 14.35vw;
+        left: 0;
+        width: 100%;
+        aspect-ratio: 390 / 6;
+    }
+}
+
+// セクション
+.c-section {
+    &__title {
+        font-family: $font-family-ZenKaku;
+        text-align: center;
+        font-size: 5.12vw;
+        letter-spacing: 15%;
+        margin-bottom: 1vw;
+
+        &--sub {
+            font-family: $font-family-ScopeOne;
+            text-align: center;
+            color: #00A684;
+            font-size: 3.07vw;
+            letter-spacing: 15%;
+            line-height: 1.6;
+        }
+    }
+}
+
+// 背景
+.c-bg {
+    z-index: -1;
+
+    &__positioned {
+        position: absolute;
+        z-index: 100;
+        pointer-events: none;
+    }
+}
+
 // ボタン
 .c-btn {
     cursor: pointer;
@@ -113,19 +160,15 @@
  * ページコンポーネント
  */
 // 店舗情報
-.c-store-card-list {
+.c-shop-card-list {
     display: flex;
 }
-.c-store-card {
-    display: none;
+.c-shop-card {
+    display: flex;
     flex-flow: column;
     border: 1px solid #d9d9d9;
     border-radius: 10px;
     box-sizing: border-box;
-
-    &.is-active {
-        display: flex;
-    }
 
     &__name {
         font-family: $font-family-ZenKakuAntique;
@@ -334,6 +377,30 @@
 
     &:hover {
         transform: scale(1.04);
+    }
+}
+
+.c-section {
+    &__title {
+        font-size: 2.60vw;
+        margin-bottom: 0.91vw;
+
+        &--sub {
+            font-size: 1.56vw;
+        }
+    }
+}
+}
+
+@media screen and (min-width: 1024px) {
+.c-section {
+    &__title {
+        font-size: calc(1.25vw * var(--pc-font-scale));
+        margin-bottom: 0;
+
+        &--sub {
+            font-size: calc(0.72vw * var(--pc-font-scale));
+        }
     }
 }
 }

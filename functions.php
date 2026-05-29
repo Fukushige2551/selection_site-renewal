@@ -21,6 +21,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-vite-client',
         'foods-main-js',
         'foods-front-page-js',
+        'foods-page-shop-js',
     ];
 
     if (in_array($handle, $module_handles, true)) {
@@ -106,6 +107,7 @@ function foods_theme_scripts() {
 
     $main_entry       = 'src/js/main.js';
     $front_page_entry = 'src/js/front-page.js';
+    $page_shop_entry  = 'src/js/page-shop.js';
 
     if ($is_local) {
         wp_enqueue_script(
@@ -133,6 +135,17 @@ function foods_theme_scripts() {
         foods_enqueue_vite_entry(
             'foods-front-page',
             $front_page_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    // page-shop.php 専用アセット
+    if (is_page() && basename((string) get_page_template()) === 'page-shop.php') {
+        foods_enqueue_vite_entry(
+            'foods-page-shop',
+            $page_shop_entry,
             $dev_server,
             $manifest,
             $is_local

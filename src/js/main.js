@@ -11,7 +11,7 @@ jQuery(function($) {
     var $scrollTopButton = $('.c-btn--scroll-top');
 
     var $topPulldown = $('.l-header__nav__group.js-toggle--pulldown').first();
-    var $prefGroups = $('.store-info__group.js-toggle--pulldown');
+    var $prefGroups = $('.shop-info__group.js-toggle--pulldown');
 
     function popButton($target, dom) {
         $target.removeClass('is-pop');
@@ -82,7 +82,7 @@ jQuery(function($) {
         e.preventDefault();
 
         var $this = $(this);
-        var $group = $this.closest('.store-info__group');
+        var $group = $this.closest('.shop-info__group');
         var $list = $group.find('ul').first();
 
         $group.toggleClass('is-open');
@@ -117,7 +117,7 @@ jQuery(function($) {
     /**
      * vw算出(SP)
      */
-    const valueSP = (116.06) / 390;
+    const valueSP = (13.33) / 390;
     const resultSP = Math.floor(valueSP * 10000) / 100;
     console.log('SP: ' + resultSP.toFixed(2) + 'vw');
 
