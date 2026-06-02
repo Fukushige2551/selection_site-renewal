@@ -1,0 +1,23 @@
+@use "foundation/global" as *;
+
+.p-page-select {
+    /**
+     * ページ背景
+     */
+    &__bg {
+        &--top {
+            @include backgroundImg("#{$img-path}page/page-shop/bg_top.png");
+            width: 100%;
+            aspect-ratio: 390 / 657;
+            padding-top: 47.69vw;
+            box-sizing: border-box;
+
+            .c-section {
+                &__title--sub {
+                    margin-bottom: 73vw;
+                }
+            }
+            
+        }
+    }
+}
