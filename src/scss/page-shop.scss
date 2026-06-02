@@ -61,8 +61,10 @@
             &__content {
                 position: relative;
                 width: 100%;
-                padding: 0 0 6.66vw 3.33vw;
-                font-size: 4.61vw;
+                line-height: 0.8;
+                padding: 0 0 4.61vw 3.33vw;
+
+                // コンテンツ左の点線(営業時間・住所・電話番号)
                 --dot-color: #D9D9D9;
                 --dot-size: 0.51vw;
                 --dot-gap: 1vw;
@@ -93,11 +95,27 @@
                     @include backgroundImg("#{$img-path}page/page-shop/svg/bg_address.svg");
                     content: "";
                     position: absolute;
-                    bottom: 0;
-                    right: -6.2vw;
+                    bottom: -0.6vw;
+                    right: -6vw;
                     width: 3.8vw;
                     aspect-ratio: 13.33 / 16.67;
                 }
+
+                &__zip {
+                    display: inline-block;
+                    margin-bottom: 2.56vw;
+                }
+            }
+            &__time__main,
+            &__time__note__highlight,
+            &__address__zip,
+            &__address__street,
+            &__tel {
+                font-size: 4.61vw;
+            }
+            &__time__note,
+            &__address__prefecture {
+                font-size: 4.10vw;
             }
         }
         &__link--wrapper {
