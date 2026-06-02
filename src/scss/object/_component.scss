@@ -393,6 +393,11 @@
 }
 
 @media screen and (min-width: 1024px) {
+.c-main {
+    &:after {
+        display: none;
+    }
+}
 .c-section {
     &__title {
         font-size: calc(1.25vw * var(--pc-font-scale));
