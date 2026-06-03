@@ -669,6 +669,7 @@
                 width: 44.61vw;
                 height: 53.07vw;
                 padding: 4.61vw 2.56vw 3.07vw 3.58vw;
+                border-radius: 2.56vw;
 
                 &__name {
                     font-size: 4.1vw;
@@ -677,6 +678,7 @@
                 }
                 &__wrapper {
                     font-size: 3.58vw;
+                    gap: 2vw;
 
                     &:first-of-type {
                         margin-bottom: 2.6vw;
@@ -686,7 +688,6 @@
                     position: relative;
                     bottom: 0.6vw;
                     width: 7vw;
-                    margin-right: 1vw;
 
                     &__link {
                         font-size: 3.07vw;
@@ -695,10 +696,12 @@
                 }
                 &__time {
                     width: 3.7vw;
-                    margin-right: 2vw;
                 }
                 &__link {
                     .c-btn--common--blue {
+                        color: #fff;
+                        font-family: $font-family-NotoSans;
+                        font-weight: bold;
                         font-size: 3.58vw;
                     }
                 }
@@ -1777,6 +1780,7 @@
                 width: 22.65vw;
                 height: auto;
                 padding: 2.34vw 1.30vw 1.56vw 1.82vw;
+                border-radius: 1.30vw;
                 box-sizing: border-box;
 
                 &__name {
@@ -1807,6 +1811,8 @@
                     margin-right: 0.6vw;
                 }
                 &__link {
+                    width: auto;
+                    aspect-ratio: 150 / 36;
                     margin-top: 2.34vw;
 
                     .c-btn--common--blue {
@@ -2721,6 +2727,7 @@
             .c-shop-card {
                 width: 12.18vw;
                 padding: 1.25vw 1.04vw 0.89vw 1.04vw;
+                border-radius: 0.52vw;
 
                 &__name {
                     font-size: calc(1.04vw * var(--pc-font-scale));
