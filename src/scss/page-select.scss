@@ -20,4 +20,19 @@
             
         }
     }
+    &__commitment {
+
+        &__text {
+            text-align: center;
+            font-family: $font-family-ZenKaku;
+            font-weight: $font-weight-medium;
+            font-size: 4.10vw;
+            line-height: 2.18;
+            width: 82.1vw;
+            margin: 0 auto;
+            word-break: keep-all;
+        }
+
+    }
+
 }
