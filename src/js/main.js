@@ -117,21 +117,21 @@ jQuery(function($) {
     /**
      * vw算出(SP)
      */
-    const valueSP = (13.33) / 390;
+    const valueSP = (12.67) / 390;
     const resultSP = Math.floor(valueSP * 10000) / 100;
     console.log('SP: ' + resultSP.toFixed(2) + 'vw');
 
     /**
      * vw算出(Tablet)
      */
-    const valueTablet = (116.06) / 768;
+    const valueTablet = (20) / 768;
     const resultTablet = Math.floor(valueTablet * 10000) / 100;
     console.log('Tablet: ' + resultTablet.toFixed(2) + 'vw');
 
     /**
      * vw算出(PC)
      */
-    const valuePC = (115) / 1920;
+    const valuePC = (10) / 1920;
     const resultPC = Math.floor(valuePC * 10000) / 100;
     console.log('PC: ' + resultPC.toFixed(2) + 'vw');
 });

@@ -28,19 +28,25 @@
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">営業時間</dt>
                         <dd class="c-shop-card__detail__content">
-                            <time>9:30 ~ 22:00</time>
+                            <time class="c-shop-card__detail__time">
+                                <span class="c-shop-card__detail__time__main">9:30 ~ 22:00</span>
+                            </time>
                         </dd>
                     </div>
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">住所</dt>
                         <dd class="c-shop-card__detail__content">
-                            <address class="c-shop-card__detail__address">〒272-0132<br>千葉県市川市湊新田1-6-8</address>
+                            <address class="c-shop-card__detail__address">
+                                <span class="c-shop-card__detail__address__zip">〒272-0132</span><br>
+                                <span class="c-shop-card__detail__address__prefecture">千葉県市川市湊新田</span>
+                                <span class="c-shop-card__detail__address__street">1-6-8</span>
+                            </address>
                         </dd>
                     </div>
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">電話番号</dt>
                         <dd class="c-shop-card__detail__content">
-                            <tel>047-390-3336</tel>
+                            <tel class="c-shop-card__detail__tel">047-390-3336</tel>
                         </dd>
                     </div>
                 </dl>
@@ -78,19 +84,26 @@
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">営業時間</dt>
                         <dd class="c-shop-card__detail__content">
-                            <time>9:30 ～ 22:30（土日22:00閉店）</time>
+                            <time class="c-shop-card__detail__time">
+                                <span class="c-shop-card__detail__time__main">9:30 ～ 22:30</span>
+                                <span class="c-shop-card__detail__time__note">（土日<span class="c-shop-card__detail__time__note__highlight">22:00</span>閉店）</span>
+                            </time>
                         </dd>
                     </div>
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">住所</dt>
                         <dd class="c-shop-card__detail__content">
-                            <address class="c-shop-card__detail__address">〒273-0025<br>千葉県船橋市印内町 579-1
+                            <address class="c-shop-card__detail__address">
+                                <span class="c-shop-card__detail__address__zip">〒273-0025</span><br>
+                                <span class="c-shop-card__detail__address__prefecture">千葉県船橋市印内町</span>
+                                <span class="c-shop-card__detail__address__street">579-1</span>
+                            </address>
                         </dd>
                     </div>
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">電話番号</dt>
                         <dd class="c-shop-card__detail__content">
-                            <tel>047-420-3840</tel>
+                            <tel class="c-shop-card__detail__tel">047-420-3840</tel>
                         </dd>
                     </div>
                 </dl>
@@ -128,19 +141,25 @@
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">営業時間</dt>
                         <dd class="c-shop-card__detail__content">
-                            <time>9:30 ～ 21:00</time>
+                            <time class="c-shop-card__detail__time">
+                                <span class="c-shop-card__detail__time__main">9:30 ～ 21:00</span>
+                            </time>
                         </dd>
                     </div>
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">住所</dt>
                         <dd class="c-shop-card__detail__content">
-                            <address class="c-shop-card__detail__address">〒277-0885<br>千葉県柏市西原7-8-1
+                            <address class="c-shop-card__detail__address">
+                                <span class="c-shop-card__detail__address__zip">〒277-0885</span><br>
+                                <span class="c-shop-card__detail__address__prefecture">千葉県柏市西原</span>
+                                <span class="c-shop-card__detail__address__street">7-8-1</span>
+                            </address>
                         </dd>
                     </div>
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">電話番号</dt>
                         <dd class="c-shop-card__detail__content">
-                            <tel>047-156-8007</tel>
+                            <tel class="c-shop-card__detail__tel">047-156-8007</tel>
                         </dd>
                     </div>
                 </dl>
@@ -178,19 +197,25 @@
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">営業時間</dt>
                         <dd class="c-shop-card__detail__content">
-                            <time>9:30 ～ 21:00</time>
+                            <time class="c-shop-card__detail__time">
+                                <span class="c-shop-card__detail__time__main">9:30 ～ 21:00</span>
+                            </time>
                         </dd>
                     </div>
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">住所</dt>
                         <dd class="c-shop-card__detail__content">
-                            <address class="c-shop-card__detail__address">〒277-0812<br>千葉県柏市花野井737-8
+                            <address class="c-shop-card__detail__address">
+                                <span class="c-shop-card__detail__address__zip">〒277-0812</span><br>
+                                <span class="c-shop-card__detail__address__prefecture">千葉県柏市花野井</span>
+                                <span class="c-shop-card__detail__address__street">737-8</span>
+                            </address>
                         </dd>
                     </div>
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">電話番号</dt>
                         <dd class="c-shop-card__detail__content">
-                            <tel>047-137-0195</tel>
+                            <tel class="c-shop-card__detail__tel">047-137-0195</tel>
                         </dd>
                     </div>
                 </dl>
@@ -228,19 +253,25 @@
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">営業時間</dt>
                         <dd class="c-shop-card__detail__content">
-                            <time>9:30 ～ 21:00</time>
+                            <time class="c-shop-card__detail__time">
+                                <span class="c-shop-card__detail__time__main">9:30 ～ 21:00</span>
+                            </time>
                         </dd>
                     </div>
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">住所</dt>
                         <dd class="c-shop-card__detail__content">
-                            <address class="c-shop-card__detail__address">〒277-0945<br>千葉県柏市しいの木台2-12
+                            <address class="c-shop-card__detail__address">
+                                <span class="c-shop-card__detail__address__zip">〒277-0945</span><br>
+                                <span class="c-shop-card__detail__address__prefecture">千葉県柏市しいの木台</span>
+                                <span class="c-shop-card__detail__address__street">2-12</span>
+                            </address>
                         </dd>
                     </div>
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">電話番号</dt>
                         <dd class="c-shop-card__detail__content">
-                            <tel>047-388-1176</tel>
+                            <tel class="c-shop-card__detail__tel">047-388-1176</tel>
                         </dd>
                     </div>
                 </dl>
@@ -278,19 +309,25 @@
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">営業時間</dt>
                         <dd class="c-shop-card__detail__content">
-                            <time>9:30 ～ 21:00</time>
+                            <time class="c-shop-card__detail__time">
+                                <span class="c-shop-card__detail__time__main">9:30 ～ 21:00</span>
+                            </time>
                         </dd>
                     </div>
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">住所</dt>
                         <dd class="c-shop-card__detail__content">
-                            <address class="c-shop-card__detail__address">〒277-0055<br>千葉県柏市青葉台1-2-1
+                            <address class="c-shop-card__detail__address">
+                                <span class="c-shop-card__detail__address__zip">〒277-0055</span><br>
+                                <span class="c-shop-card__detail__address__prefecture">千葉県柏市青葉台</span>
+                                <span class="c-shop-card__detail__address__street">1-2-1</span>
+                            </address>
                         </dd>
                     </div>
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">電話番号</dt>
                         <dd class="c-shop-card__detail__content">
-                            <tel>047-171-3570</tel>
+                            <tel class="c-shop-card__detail__tel">047-171-3570</tel>
                         </dd>
                     </div>
                 </dl>
@@ -328,19 +365,25 @@
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">営業時間</dt>
                         <dd class="c-shop-card__detail__content">
-                            <time>9:30 ～ 21:00</time>
+                            <time class="c-shop-card__detail__time">
+                                <span class="c-shop-card__detail__time__main">9:30 ～ 21:00</span>
+                            </time>
                         </dd>
                     </div>
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">住所</dt>
                         <dd class="c-shop-card__detail__content">
-                            <address class="c-shop-card__detail__address">〒270-2241<br>千葉県松戸市松戸新田418-5
+                            <address class="c-shop-card__detail__address">
+                                <span class="c-shop-card__detail__address__zip">〒270-2241</span><br>
+                                <span class="c-shop-card__detail__address__prefecture">千葉県松戸市松戸新田</span>
+                                <span class="c-shop-card__detail__address__street">418-5</span>
+                            </address>
                         </dd>
                     </div>
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">電話番号</dt>
                         <dd class="c-shop-card__detail__content">
-                            <tel>047-382-5190</tel>
+                            <tel class="c-shop-card__detail__tel">047-382-5190</tel>
                         </dd>
                     </div>
                 </dl>
@@ -386,19 +429,25 @@
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">営業時間</dt>
                         <dd class="c-shop-card__detail__content">
-                            <time>9:30 ～ 21:00</time>
+                            <time class="c-shop-card__detail__time">
+                                <span class="c-shop-card__detail__time__main">9:30 ～ 21:00</span>
+                            </time>
                         </dd>
                     </div>
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">住所</dt>
                         <dd class="c-shop-card__detail__content">
-                            <address class="c-shop-card__detail__address">〒123-0852<br>東京都足立区関原3-12-11</address>
+                            <address class="c-shop-card__detail__address">
+                                <span class="c-shop-card__detail__address__zip">〒123-0852</span><br>
+                                <span class="c-shop-card__detail__address__prefecture">東京都足立区関原</span>
+                                <span class="c-shop-card__detail__address__street">3-12-11</span>
+                            </address>
                         </dd>
                     </div>
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">電話番号</dt>
                         <dd class="c-shop-card__detail__content">
-                            <tel>03-6806-3651</tel>
+                            <tel class="c-shop-card__detail__tel">03-6806-3651</tel>
                         </dd>
                     </div>
                 </dl>
@@ -444,19 +493,25 @@
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">営業時間</dt>
                         <dd class="c-shop-card__detail__content">
-                            <time>9:30 ～ 21:00</time>
+                            <time class="c-shop-card__detail__time">
+                                <span class="c-shop-card__detail__time__main">9:30 ～ 21:00</span>
+                            </time>
                         </dd>
                     </div>
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">住所</dt>
                         <dd class="c-shop-card__detail__content">
-                            <address class="c-shop-card__detail__address">〒341-0035<br>埼玉県三郷市鷹野4-428
+                            <address class="c-shop-card__detail__address">
+                                <span class="c-shop-card__detail__address__zip">〒341-0035</span><br>
+                                <span class="c-shop-card__detail__address__prefecture">埼玉県三郷市鷹野</span>
+                                <span class="c-shop-card__detail__address__street">4-428</span>
+                            </address>
                         </dd>
                     </div>
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">電話番号</dt>
                         <dd class="c-shop-card__detail__content">
-                            <tel>048-948-1815</tel>
+                            <tel class="c-shop-card__detail__tel">048-948-1815</tel>
                         </dd>
                     </div>
                 </dl>
@@ -494,19 +549,25 @@
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">営業時間</dt>
                         <dd class="c-shop-card__detail__content">
-                            <time>9:30 ～ 21:00</time>
+                            <time class="c-shop-card__detail__time">
+                                <span class="c-shop-card__detail__time__main">9:30 ～ 21:00</span>
+                            </time>
                         </dd>
                     </div>
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">住所</dt>
                         <dd class="c-shop-card__detail__content">
-                            <address class="c-shop-card__detail__address">〒340-0815<br>埼玉県八潮市八潮4-10-2</address>
+                            <address class="c-shop-card__detail__address">
+                                <span class="c-shop-card__detail__address__zip">〒340-0815</span><br>
+                                <span class="c-shop-card__detail__address__prefecture">埼玉県八潮市八潮</span>
+                                <span class="c-shop-card__detail__address__street">4-10-2</span>
+                            </address>
                         </dd>
                     </div>
                     <div class="c-shop-card__detail__item">
                         <dt class="c-shop-card__detail__title">電話番号</dt>
                         <dd class="c-shop-card__detail__content">
-                            <tel>048-994-1185</tel>
+                            <tel class="c-shop-card__detail__tel">048-994-1185</tel>
                         </dd>
                     </div>
                 </dl>

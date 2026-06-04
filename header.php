@@ -45,7 +45,7 @@
     <div class="l-header__nav__inner">
         <div class="l-header__nav__group shop-info u-border-top--header js-toggle--pulldown">
             <p class="l-header__nav__group__title c-btn--pulldown">
-                <span class="l-header__nav__group__title--position-fix">チラシ・店舗情報</span>
+                <a href="/shop" class="l-header__nav__group__title--position-fix">チラシ・店舗情報</a>
             </p>
         </div>
 

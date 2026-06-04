@@ -167,7 +167,8 @@
     display: flex;
     flex-flow: column;
     border: 1px solid #d9d9d9;
-    border-radius: 10px;
+    padding: 6.15vw 0 5.64vw;
+    border-radius: 4.61vw;
     box-sizing: border-box;
 
     &__name {
@@ -177,7 +178,6 @@
         border-bottom: 1px solid #103675;
         width: fit-content;
     }
-
     &__wrapper {
         display: flex;
         align-items: flex-start;
@@ -190,7 +190,6 @@
             margin-bottom: auto;
         }
     }
-
     &__address {
         aspect-ratio: 14 / 17.5;
 
@@ -201,16 +200,119 @@
             text-decoration: underline;
         }
     }
-
     &__time {
         aspect-ratio: 15 / 15;
     }
+    &__detail {
+        padding-left: 4.35vw;
+        margin-bottom: 5.12vw;
+        font-family: $font-family-ZenKaku;
 
+        &__item {
+            display: flex;
+            gap: 2.82vw;
+
+            &:last-child {
+                .c-shop-card__detail__content {
+                    padding-bottom: 0;
+                }
+            }
+        }
+        &__title {
+            width: 21.46vw;
+            font-size: 4.10vw;
+        }
+        &__content {
+            position: relative;
+            width: 100%;
+            line-height: 0.8;
+            padding: 0 0 4.61vw 3.33vw;
+
+            // コンテンツ左の点線(営業時間・住所・電話番号)
+            --dot-color: #D9D9D9;
+            --dot-size: 0.51vw;
+            --dot-gap: 1vw;
+            --line-width: 0.25vw;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: var(--line-width);
+                background-image: radial-gradient(
+                    circle,
+                    var(--dot-color) 0 calc(var(--dot-size) / 2),
+                    transparent calc(var(--dot-size) / 2)
+                );
+                background-size: 100% var(--dot-gap);
+                background-repeat: repeat-y;
+                background-position: center top;
+            }
+        }
+        &__address {
+            position: relative;
+            width: fit-content;
+
+            &::after {
+                @include backgroundImg("#{$img-path}page/page-shop/svg/bg_address.svg");
+                content: "";
+                position: absolute;
+                bottom: -0.6vw;
+                right: -6vw;
+                width: 3.8vw;
+                aspect-ratio: 13.33 / 16.67;
+            }
+
+            &__zip {
+                display: inline-block;
+                margin-bottom: 2.56vw;
+            }
+        }
+        &__time__main,
+        &__time__note__highlight,
+        &__address__zip,
+        &__address__street,
+        &__tel {
+            font-size: 4.61vw;
+        }
+        &__time__note,
+        &__address__prefecture {
+            font-size: 4.10vw;
+        }
+    }
+    &__link--wrapper {
+        display: flex;
+        gap: 1.53vw;
+        width: 75.38vw;
+        margin: 0 auto;
+    }
     &__link {
-        .c-btn--common--blue {
-            color: #fff;
-            font-family: $font-family-NotoSans;
-            font-weight: bold;
+        width: 36.92vw;
+        aspect-ratio: 144 / 45;
+        font-size: 4.10vw;
+        font-weight: bold;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2vw;
+
+        &__icon {
+            width: 4.10vw;
+            aspect-ratio: 16 / 19;
+        }
+        &__text {
+            position: relative;
+            bottom: 0.25vw;
+        }
+
+        &.u-bg--green {
+            @include backgroundImg("#{$img-path}page/page-shop/btn_green-sp.png");
+        }
+        &.u-bg--blue {
+            @include backgroundImg("#{$img-path}page/page-shop/btn_blue-sp.png");
         }
     }
 }
