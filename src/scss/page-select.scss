@@ -1,26 +1,28 @@
 @use "foundation/global" as *;
 
 .p-page-select {
-    /**
-     * ページ背景
-     */
-    &__bg {
-        &--top {
-            @include backgroundImg("#{$img-path}page/page-shop/bg_top.png");
-            width: 100%;
-            aspect-ratio: 390 / 657;
-            padding-top: 47.69vw;
-            box-sizing: border-box;
 
-            .c-section {
-                &__title--sub {
-                    margin-bottom: 73vw;
-                }
-            }
-            
+    &__hero {
+        &__inner {
+            position: relative;
         }
-    }
-    &__commitment {
+
+        &__img {
+            &--top {
+                width: 91.8vw;
+                display: block;
+                margin: 4.8vw auto 7vw;
+            }
+
+            &--toptext {
+                position: absolute;
+                width: 65vw;
+                display: block;
+                left: 50%;
+                bottom: 1vw;
+                transform: translateX(-50%);
+            }
+        }
 
         &__text {
             text-align: center;
@@ -32,7 +34,135 @@
             margin: 0 auto;
             word-break: keep-all;
         }
-
     }
 
+    &__commitment {
+        &--bg {
+            @include backgroundImg("#{$img-path}page/page-select/svg/bg_select.svg");
+            background-position: top center;
+            background-size: 100% auto;
+            margin-top: 10vw;
+            position: relative;
+        }
+
+        &__img--mark {
+            position: absolute;
+            top: -17vw;
+            width: 65vw;
+            display: block;
+        }
+
+        &__selectTitle {
+            position: absolute;
+            top: 19vw;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 67vw;
+            height: 18.5vw;
+            background-image: url("#{$img-path}page/page-select/svg/img_kodawariTitle.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                transform: translateY(-0.5vw);
+                font-family: $font-family-ZenKaku;
+                font-size: 5.1vw;
+                color: #00A684;
+            }
+        }
+        &--01 {
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_recipe-01.svg");
+                top: -22.35vw;
+                left: 0;
+                width: 23.33vw;
+                aspect-ratio: 91 / 129;
+            }
+            &--02 {
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_recipe-02.svg");
+                top: 0.98vw;
+                left: 26.15vw;
+                width: 13.58vw;
+                aspect-ratio: 53 / 73.5;
+            }
+            &--3 {
+                top: -7.25vw;
+                right: 31.75vw;
+                width: 19.35vw;
+                aspect-ratio: 75.5 / 37;
+            }
+            &--04 {
+                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-04.png");
+                top: 4.57vw;
+                right: 25.64vw;
+                width: 15.64vw;
+                aspect-ratio: 61 / 74.5;
+            }
+            &--05 {
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_recipe-05.svg");
+                top: -5.43vw;
+                right: 12.48vw;
+                width: 10.33vw;
+                aspect-ratio: 40.31 / 124.02;
+                z-index: 1;
+            }
+            &--06 {
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_recipe-06.svg");
+                top: 55.59vw;
+                left: 0;
+                width: 13.58vw;
+                aspect-ratio: 53 / 26;
+            }
+            &--07 {
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_recipe-07.svg");
+                top: 54.82vw;
+                right: 18.20vw;
+                width: 12.05vw;
+                aspect-ratio: 47 / 41;
+                z-index: 1;
+            }
+            &--08 {
+                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-08.png");
+                top: 64.05vw;
+                right: 3.41vw;
+                width: 7.94vw;
+                aspect-ratio: 31 / 33.5;
+                z-index: 1;
+            }
+            &--09 {
+                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-09.png");
+                top: 103.80vw;
+                left: 47.69vw;
+                width: 9.23vw;
+                aspect-ratio: 36 / 40.5;
+                z-index: 1;
+            }
+            &--10 {
+                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-10.png");
+                top: 98.67vw;
+                right: 19.30vw;
+                width: 12.56vw;
+                aspect-ratio: 49 / 33.5;
+                z-index: 1;
+            }
+            &--11 {
+                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-11.png");
+                top: 158.16vw;
+                left: 5.38vw;
+                width: 17.17vw;
+                aspect-ratio: 67 / 28;
+                z-index: 1;
+            }
+            &--12 {
+                @include backgroundImg("#{$img-path}page/front-page/svg/bg_recipe-12.svg");
+                top: 145.59vw;
+                right: 5.12vw;
+                width: 17.94vw;
+                aspect-ratio: 70 / 61;
+                z-index: 1;
+            }
+    }
 }
