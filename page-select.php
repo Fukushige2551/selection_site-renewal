@@ -89,6 +89,12 @@
                     <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-10.svg" alt="こだわり　お米">
                 </picture>
             </a>
+            <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--11" href="/">
+                <picture>
+                    <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-11.svg" alt="こだわり　お米">
+                </picture>
+            </a>
+            
         </section>
     </div>
     <!-- セレクションのこだわり end -->
