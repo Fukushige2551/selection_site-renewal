@@ -122,6 +122,7 @@ usort($prefectures, function ($a, $b) use ($prefecture_order_map) {
                     <?php
                     $shop_id        = $shop->ID;
                     $business_hours = get_field('business_hours', $shop_id);
+                    $business_hours_note = get_field('business_hours_note', $shop_id);
                     $postal_code    = get_field('postal_code', $shop_id);
                     $address        = get_field('address', $shop_id);
                     $tel            = get_field('tel', $shop_id);
@@ -135,6 +136,9 @@ usort($prefectures, function ($a, $b) use ($prefecture_order_map) {
                                     <time class="c-shop-card__detail__time">
                                         <span class="c-shop-card__detail__time__main">
                                             <?php echo esc_html($business_hours); ?>
+                                        </span>
+                                        <span class="c-shop-card__detail__time__note">
+                                            <?php echo esc_html($business_hours_note); ?>
                                         </span>
                                     </time>
                                 </dd>
