@@ -20,16 +20,15 @@
             &--top {
                 width: 91.8vw;
                 display: block;
-                margin: 4.8vw auto 5vw;
+                margin: 4.8vw auto 0vw;
             }
 
             &--toptext {
-                position: absolute;
+                position: relative;
                 width: 65vw;
                 display: block;
-                left: 50%;
-                bottom: 1vw;
-                transform: translateX(-50%);
+                margin: 0 auto 3vw;
+    
             }
         }
 
@@ -52,7 +51,7 @@
             @include backgroundImg("#{$img-path}page/page-select/svg/bg_select.svg");
             background-position: top center;
             background-size: 100% auto;
-            margin-top: 10vw;
+            margin: 10vw 0 -45vw;
             position: relative;
             padding: 17vw 3.8vw 0 ;
             height: 318.5vw;
@@ -63,6 +62,7 @@
             top: -17vw;
             width: 65vw;
             display: block;
+            left: 0;
         }
 
         &__selectTitle {
@@ -132,27 +132,27 @@
             }
             &--08 {
                 width: 42.3vw;
-                top: 148vw;
-                right: 0vw;
+                top: 133vw;
                 z-index: 1;
+                left: 0;
             }
             &--09 {
                 width: 42.3vw;
-                top: 183.8vw;
+                top: 146.8vw;
                 z-index: 1;
-                left: 0vw;
+                right: 0vw;
             }
             &--10 {
                 width: 43.3vw;
-                top: 204vw;
-                right: 0vw;
+                top: 188vw;
+                left: 0vw;
                 z-index: 1;
             }    
             &--11 {
                 width: 43.3vw;
-                top: 231vw;
+                top: 194vw;
                 z-index: 1;
-                left: 0vw;
+                right: 0vw;
             }    
         }
     }
@@ -160,5 +160,105 @@
 
 @media screen and (min-width: 768px) {
 
-    
+    .p-page-select {
+
+    &__hero {
+        &__inner {
+            position: relative;
+        }
+       .p-page-select__hero__text
+        &__img {
+            &--top {
+                width: 80vw;
+                margin: 1.8vw auto 2vw;
+            }
+
+            &--toptext {
+                width: 25vw;
+                bottom: 6vw;
+            }
+        }
+
+        &__text {
+            font-size: 2.1vw;
+            line-height: 2;
+            width: 72.1vw;
+            margin: 0 auto;
+            }
+        }
+        &__commitment {
+        padding: 5vw 3.8vw;
+        &--bg {
+            margin: 5vw 0 -45vw;
+            padding: 14vw 3.8vw 0 ;
+            height: 195vw;
+        }
+
+        &__img--mark {
+            top: -5vw;
+            width: 36vw;
+            left: 21vw;
+        }
+
+        &__selectTitle {
+            width: 35vw;
+            height: 9.5vw;
+            span {
+                font-size: 2.6vw;
+            }
+        }
+        &__link{
+            &--01 {
+                top: 7.8vw;
+                width: 26.9vw;
+                left: 3vw;
+                }
+            &--02 {
+                width: 27vw;
+                top: 3.5vw;
+                right: 33vw;
+                }
+            &--03 {
+                width: 27.7vw;
+                top: 9vw;
+                left: 62vw;
+                }
+            &--04 {
+                width: 25.3vw;
+                top: 31vw;
+                right: 49vw;
+                }
+            &--05 {
+                width: 27vw;
+                top: 29.4vw;
+                left: 47vw;
+                }
+            &--06 {
+                width: 26.9vw;
+                top: 57.5vw;
+                right: 61vw;
+                }
+            &--08 {
+                width: 25.6vw;
+                top: 55vw;
+                left: 34vw;
+                }
+            &--09 {
+                width: 24.8vw;
+                top: 57.8vw;
+                right: 5vw;
+                }
+            &--10 {
+                 width: 27.8vw;
+                top: 86vw;
+                left: 15vw;
+                }    
+            &--11 {
+                width: 28.2vw;
+                top: 85vw;
+                right: 14vw;
+                }    
+            }
+        }
+    }
 }

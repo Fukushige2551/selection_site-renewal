@@ -18,6 +18,24 @@
         aspect-ratio: 390 / 6;
     }
 }
+// パンくず
+.c-breadcrumb {
+    display: flex;
+    align-items: center;
+    font-family: $font-family-ZenKaku;
+    font-size: 3.3vw;
+    margin: 3.3vw 3.8vw 10vw;
+
+    &__link {
+        color: #10A3FF;
+        text-decoration: underline;
+    }
+    &__arrow {
+        margin: 0 1.5vw 0 3vw;
+        width: 1.8vw;
+        aspect-ratio: 6 / 10;
+    }
+}
 
 // セクション
 .c-section {
@@ -458,6 +476,16 @@
 /**
 * UIコンポーネント
 */
+// パンくず
+.c-breadcrumb {
+    font-size: 1.6vw;
+    margin: 0 3.8vw 3vw;
+    
+    &__arrow {
+        margin: 0 0.5vw 0 1vw;
+        width: 0.8vw;
+    }
+}
 //  ボタン
 .c-btn {
 
@@ -498,6 +526,16 @@
 .c-main {
     &:after {
         display: none;
+    }
+}
+// パンくず
+.c-breadcrumb {
+    font-size: 1.2vw;
+    margin: 0 3.8vw 6vw;
+
+    &__arrow {
+        margin: 0 0.5vw 0 1vw;
+        width: 0.6vw;
     }
 }
 .c-section {

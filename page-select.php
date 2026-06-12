@@ -1,6 +1,11 @@
 <?php get_header(); ?>
 
 <main id="page-select" class="p-page-select">
+    <nav class="c-breadcrumb" aria-label="パンくずリスト">
+        <a class="c-breadcrumb__link" href="/">TOP</a>
+        <img class="c-breadcrumb__arrow"src="<?php echo get_template_directory_uri(); ?>/img/component/svg/icon_breadcrumb.svg"alt="矢印">
+        <span class="c-breadcrumb__current">セレクションのこだわり</span>
+    </nav>
     <!-- ヒーロー start -->
     <div class="p-page-select__hero">
          <!-- タイトル start -->
@@ -12,8 +17,8 @@
             <img class="p-page-select__hero__img--toptext" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/img_selectToptext.svg" alt="いい商品を皆様に">
         </div>
             <p class="p-page-select__hero__text">
-                Selectionは“選ぶ”を仕事にしたスーパー。
-                旬・鮮度・食べ方まで、売場でわかるように
+                Selectionは“選ぶ”を仕事にしたスーパー。<br>
+                旬・鮮度・食べ方まで、売場でわかるように<br>
                 整えて、毎日の定番にちょっとした発見を
                 増やしていきます。
             </p>
@@ -61,37 +66,39 @@
             </a>
             <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--05" href="/">
                 <picture>
-                    <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-05.svg" alt="こだわり　お肉">
+                    <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-05.svg" alt="こだわり　お惣菜">
                 </picture>
             </a>
             <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--06" href="/">
                 <picture>
-                    <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-06.svg" alt="こだわり　お魚">
+                    <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-06.svg" alt="こだわり　和日配">
                 </picture>
             </a>
+            <?php /*
             <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--07" href="/">
                 <picture>
-                    <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-07.svg" alt="こだわり　お野菜・果物">
+                    <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-07.svg" alt="こだわり　ベーカリー">
                 </picture>
             </a>
+            */ ?>
             <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--08" href="/">
                 <picture>
-                    <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-08.svg" alt="こだわり　お米">
+                    <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-08.svg" alt="こだわり　乳製品">
                 </picture>
             </a>
             <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--09" href="/">
                 <picture>
-                    <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-09.svg" alt="こだわり　お野菜・果物">
+                    <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-09.svg" alt="こだわり　加工食品">
                 </picture>
             </a>
             <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--10" href="/">
                 <picture>
-                    <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-10.svg" alt="こだわり　お米">
+                    <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-10.svg" alt="こだわり　お菓子">
                 </picture>
             </a>
             <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--11" href="/">
                 <picture>
-                    <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-11.svg" alt="こだわり　お米">
+                    <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-11.svg" alt="こだわり　お酒">
                 </picture>
             </a>
             
