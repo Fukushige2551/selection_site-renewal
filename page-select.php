@@ -13,7 +13,8 @@
             <p class="c-section__title--sub">Commitment</p>
         <!-- タイトル end -->
          <div class="p-page-select__hero__inner">
-            <img class="p-page-select__hero__img--top" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/img_selectTop.svg" alt="家族で食事を楽しむ様子">
+            <img class="p-page-select__hero__img--top-sp" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/img_selectTop-sp.svg" alt="家族で食事を楽しむ様子">
+             <img class="p-page-select__hero__img--top-pc" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/img_selectTop-pc.svg" alt="家族で食事を楽しむ様子">
             <img class="p-page-select__hero__img--toptext" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/img_selectToptext.svg" alt="いい商品を皆様に">
         </div>
             <p class="p-page-select__hero__text">

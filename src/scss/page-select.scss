@@ -17,12 +17,14 @@
             font-weight:normal;
         }
         &__img {
-            &--top {
+            &--top-sp {
                 width: 91.8vw;
                 display: block;
                 margin: 4.8vw auto 0vw;
             }
-
+            &--top-pc {
+                display: none;
+            }
             &--toptext {
                 position: relative;
                 width: 65vw;
@@ -48,7 +50,7 @@
         position: relative;
         padding: 5vw 3.8vw;
         &--bg {
-            @include backgroundImg("#{$img-path}page/page-select/svg/bg_select.svg");
+            @include backgroundImg("#{$img-path}page/page-select/svg/bg_select-sp.svg");
             background-position: top center;
             background-size: 100% auto;
             margin: 10vw 0 -45vw;
@@ -166,16 +168,21 @@
         &__inner {
             position: relative;
         }
-       .p-page-select__hero__text
+         .c-section__title{
+            font-size: 2.6vw;
+        }
+        .c-section__title--sub{
+            font-size: 1.6vw;
+        }
         &__img {
             &--top {
                 width: 80vw;
-                margin: 1.8vw auto 2vw;
+                margin: 1.8vw auto 0;
             }
 
             &--toptext {
                 width: 25vw;
-                bottom: 6vw;
+                bottom: 0;
             }
         }
 
@@ -189,9 +196,9 @@
         &__commitment {
         padding: 5vw 3.8vw;
         &--bg {
-            margin: 5vw 0 -45vw;
+            margin: 5vw 0 -25vw;
             padding: 14vw 3.8vw 0 ;
-            height: 195vw;
+            height: 160vw;
         }
 
         &__img--mark {
@@ -255,6 +262,122 @@
                 }    
             &--11 {
                 width: 28.2vw;
+                top: 85vw;
+                right: 14vw;
+                }    
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .p-page-select {
+
+    &__hero {
+        &__inner {
+            position: relative;
+        }
+         .c-section__title{
+            font-size: 1.9vw;
+        }
+        .c-section__title--sub{
+            font-size: 1.1vw;
+        }
+        &__img {
+            &--top-sp {
+                display: none;
+            }
+
+            &--top-pc {
+                width: 62.27vw;
+                margin: 1.8vw auto 0;
+                display: block;
+            }
+
+            &--toptext {
+                width: 13.2vw;
+                bottom: 0;
+            }
+        }
+
+        &__text {
+            font-size: 1.6rem;
+            width: 55rem;
+            }
+        }
+        &__commitment {
+        padding: 5vw 3.8vw;
+        position: relative;
+        max-width: 700px;
+        &--bg {
+            @include backgroundImg("#{$img-path}page/page-select/svg/bg_select-pc.svg");
+            margin: 5vw 0 -25vw;
+            padding: 8vw 3.8vw 0 ;
+            height: 160vw;
+        }
+
+        &__img--mark {
+            top: -4vw;
+            width: 20vw;
+            left: 30vw;
+        }
+
+        &__selectTitle {
+            width: 24vw;
+            height: 6.5vw;
+            span {
+                font-size: 1.9vw;
+            }
+        }
+        &__link{
+            &--01 {
+                top: 7.8vw;
+                width: 20vw;
+                left: 3vw;
+                }
+            &--02 {
+                width: 20vw;
+                top: 3.5vw;
+                right: 33vw;
+                }
+            &--03 {
+                width: 20vw;
+                top: 9vw;
+                left: 62vw;
+                }
+            &--04 {
+                width: 18.9vw;
+                top: 31vw;
+                right: 49vw;
+                }
+            &--05 {
+                width: 20vw;
+                top: 29.4vw;
+                left: 47vw;
+                }
+            &--06 {
+                width: 20vw;
+                top: 57.5vw;
+                right: 61vw;
+                }
+            &--08 {
+                width: 18.9vw;
+                top: 55vw;
+                left: 34vw;
+                }
+            &--09 {
+                width: 19vw;
+                top: 57.8vw;
+                right: 5vw;
+                }
+            &--10 {
+                 width: 20vw;
+                top: 86vw;
+                left: 15vw;
+                }    
+            &--11 {
+                width: 21vw;
                 top: 85vw;
                 right: 14vw;
                 }    
