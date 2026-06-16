@@ -272,116 +272,375 @@
 
 @media screen and (min-width: 1024px) {
 
+    main{
+        padding: 7vw 0 0;
+    }
     .p-page-select {
 
-    &__hero {
-        &__inner {
-            position: relative;
-        }
-         .c-section__title{
-            font-size: 1.9vw;
-        }
-        .c-section__title--sub{
-            font-size: 1.1vw;
-        }
-        &__img {
-            &--top-sp {
-                display: none;
-            }
+        &__hero {
 
-            &--top-pc {
-                width: 62.27vw;
-                margin: 1.8vw auto 0;
-                display: block;
-            }
-
-            &--toptext {
-                width: 13.2vw;
-                bottom: 0;
-            }
-        }
-
-        &__text {
-            font-size: 1.6rem;
-            width: 55rem;
-            }
-        }
-        &__commitment {
-        padding: 5vw 3.8vw;
-        position: relative;
-        max-width: 700px;
-        &--bg {
-            @include backgroundImg("#{$img-path}page/page-select/svg/bg_select-pc.svg");
-            margin: 5vw 0 -25vw;
-            padding: 8vw 3.8vw 0 ;
-            height: 160vw;
-        }
-
-        &__img--mark {
-            top: -4vw;
-            width: 20vw;
-            left: 30vw;
-        }
-
-        &__selectTitle {
-            width: 24vw;
-            height: 6.5vw;
-            span {
+            .c-section__title {
                 font-size: 1.9vw;
             }
+
+            .c-section__title--sub {
+                font-size: 1.1vw;
+            }
+
+            &__img {
+
+                &--top-sp {
+                    display: none;
+                }
+
+                &--top-pc {
+                    width: 62.27vw;
+                    margin: 1.76vw auto 0;
+                    display: block;
+                }
+
+                &--toptext {
+                    width: 16vw;
+                    bottom: 0;
+                }
+            }
+
+            &__text {
+                font-size: 1.57vw;
+                width: 54vw;
+            }
         }
-        &__link{
-            &--01 {
-                top: 7.8vw;
-                width: 20vw;
-                left: 3vw;
+
+        &__commitment {
+            margin: auto;
+            padding: 0;
+            position: relative;
+            max-width: 68.36vw;
+
+            &--bg {
+                @include backgroundImg("#{$img-path}page/page-select/svg/bg_select-pc.svg");
+                margin: 6.35vw 0 -9.77vw;
+                padding: 8.30vw 0;
+                height: 98vw;
+            }
+
+            &__img--mark {
+                top: -8.40vw;
+                width: 28.7vw;
+                left: 24vw;
+            }
+
+            &__selectTitle {
+                width: 26.9vw;
+                height: 7.71vw;
+
+                span {
+                    font-size: 1.8vw;
+                    padding: 0.3vw 0 0;
                 }
-            &--02 {
-                width: 20vw;
-                top: 3.5vw;
-                right: 33vw;
+            }
+
+            &__link {
+
+                &--01 {
+                    top: 4vw;
+                    width: 18.21vw;
+                    left: 4vw;
                 }
-            &--03 {
-                width: 20vw;
-                top: 9vw;
-                left: 62vw;
+
+                &--02 {
+                    width: 18.31vw;
+                    top: 2vw;
+                    right: 25.5vw;
                 }
-            &--04 {
-                width: 18.9vw;
-                top: 31vw;
-                right: 49vw;
+
+                &--03 {
+                    width: 18.80vw;
+                    top: 4vw;
+                    left: 44.5vw;
                 }
-            &--05 {
-                width: 20vw;
-                top: 29.4vw;
-                left: 47vw;
+
+                &--04 {
+                    width: 17.04vw;
+                    top: 20vw;
+                    right: 36vw;
                 }
-            &--06 {
-                width: 20vw;
-                top: 57.5vw;
-                right: 61vw;
+
+                &--05 {
+                    width: 18.21vw;
+                    top: 19vw;
+                    left: 35vw;
                 }
-            &--08 {
-                width: 18.9vw;
-                top: 55vw;
-                left: 34vw;
+
+                &--06 {
+                    width: 18.21vw;
+                    top: 37vw;
+                    right: 46vw;
                 }
-            &--09 {
-                width: 19vw;
-                top: 57.8vw;
-                right: 5vw;
+
+                &--08 {
+                    width: 17.24vw;
+                    top: 37vw;
+                    left: 25vw;
                 }
-            &--10 {
-                 width: 20vw;
-                top: 86vw;
-                left: 15vw;
-                }    
-            &--11 {
-                width: 21vw;
-                top: 85vw;
-                right: 14vw;
-                }    
+
+                &--09 {
+                    width: 16.65vw;
+                    top: 39vw;
+                    right: 6vw;
+                }
+
+                &--10 {
+                    width: 18.90vw;
+                    top: 57vw;
+                    left: 11vw;
+                }
+
+                &--11 {
+                    width: 19.19vw;
+                    top: 57vw;
+                    right: 11vw;
+                }
             }
         }
     }
 }
+
+@media screen and (min-width: 1336px) {
+
+    .p-page-select {
+
+        &__hero {
+
+            .c-section__title {
+                font-size: 1.4vw;
+            }
+
+            .c-section__title--sub {
+                font-size: 0.89vw;
+            }
+
+            &__img {
+    
+                &--toptext {
+                    width: 16vw;
+                    bottom: 0;
+                }
+            }
+
+            &__text {
+                font-size: 1.19vw;
+                width: 41vw;
+            }
+        }
+
+        &__commitment {
+
+            &--bg {
+                @include backgroundImg("#{$img-path}page/page-select/svg/bg_select-pc.svg");
+                margin: 6.35vw 0 -9.77vw;
+                padding: 7vw 0;
+                height: 92vw;
+            }
+
+            &__img--mark {
+                left: 28vw;
+                top: -4.4vw;
+                width: 22vw;
+            }
+
+            &__selectTitle {
+                width: 24vw;
+                height: 7vw;
+
+                span {
+                    font-size: 1.6vw;
+                    padding: 0.5vw 0 0;
+                }
+            }
+
+            &__link {
+
+                &--01 {
+                    top: 4vw;
+                    width: 17vw;
+                    left: 7vw;
+                }
+
+                &--02 {
+                    width: 18vw;
+                    top: 2vw;
+                    right: 24.41vw;
+                }
+
+                &--03 {
+                    width: 17.2vw;
+                    top: 5vw;
+                    left: 46vw;
+                }
+
+                &--04 {
+                    width: 16vw;
+                    top: 20vw;
+                    right: 36.13vw;
+                }
+
+                &--05 {
+                    width: 17.5vw;
+                    top: 19vw;
+                    left: 35vw;
+                }
+
+                &--06 {
+                    width: 17.3vw;
+                    top: 37vw;
+                    right: 45vw;
+                }
+
+                &--08 {
+                    width: 16.3vw;
+                    top: 37vw;
+                    left: 25vw;
+                }
+
+                &--09 {
+                    width: 16.6vw;
+                    top: 38vw;
+                    right: 8vw;
+                }
+
+                &--10 {
+                    width: 17.4vw;
+                    top: 57vw;
+                    left: 13vw;
+                }
+
+                &--11 {
+                    width: 17.5vw;
+                    top: 56vw;
+                    right: 14vw;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1600px) {
+
+    .p-page-select {
+
+        &__hero {
+
+            .c-section__title {
+                font-size: 1.25vw;
+            }
+
+            .c-section__title--sub {
+                font-size: 0.75vw;
+            }
+
+            &__img {
+    
+                &--toptext {
+                    width: 15vw;
+                    bottom: 0;
+                }
+            }
+
+            &__text {
+                font-size: 1vw;
+                width: 37vw;
+            }
+        }
+
+        &__commitment {
+
+            &--bg {
+                @include backgroundImg("#{$img-path}page/page-select/svg/bg_select-pc.svg");
+                margin: 3.35vw 0 -13.77vw;
+                padding: 6vw 0;
+                height: 82vw;
+            }
+
+            &__img--mark {
+                left: 28vw;
+                top: -4.4vw;
+                width: 20vw;
+            }
+
+            &__selectTitle {
+                width: 19vw;
+                height: 5vw;
+
+                span {
+                    font-size: 1.25vw;
+                    padding: 0.7vw 0 0;
+                }
+            }
+
+            &__link {
+
+                &--01 {
+                    top: 4vw;
+                    width: 14.5vw;
+                    left: 12vw;
+                }
+
+                &--02 {
+                    width: 14.8vw;
+                    top: 2vw;
+                    right: 25.41vw;
+                }
+
+                &--03 {
+                    width: 14.2vw;
+                    top: 5vw;
+                    left: 45vw;
+                }
+
+                &--04 {
+                    width: 13.7vw;
+                    top: 18vw;
+                    right: 35.13vw;
+                }
+
+                &--05 {
+                    width: 14.7vw;
+                    top: 17vw;
+                    left: 36vw;
+                }
+
+                &--06 {
+                    width: 14.5vw;
+                    top: 32vw;
+                    right: 42vw;
+                }
+
+                &--08 {
+                    width: 13.5vw;
+                    top: 31vw;
+                    left: 29vw;
+                }
+
+                &--09 {
+                    width: 13.6vw;
+                    top: 33vw;
+                    right: 10vw;
+                }
+
+                &--10 {
+                    width: 14.6vw;
+                    top: 47vw;
+                    left: 18vw;
+                }
+
+                &--11 {
+                    width: 14.7vw;
+                    top: 47vw;
+                    right: 15vw;
+                }
+            }
+        }
+    }
+}
+
