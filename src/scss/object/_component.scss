@@ -5,6 +5,7 @@
  */
 // メイン
 .c-main {
+    padding-top: $header-height;
     position: relative;
 
     &:after {
@@ -162,6 +163,10 @@
 // 店舗情報
 .c-shop-card-list {
     display: flex;
+    flex-direction: column;
+    gap: 3.84vw 0;
+    width: 89.74vw;
+    margin: 0 auto;
 }
 .c-shop-card {
     display: flex;
@@ -174,9 +179,11 @@
     &__name {
         font-family: $font-family-ZenKakuAntique;
         font-weight: bold;
+        font-size: 4.10vw;
         color: #103675;
-        border-bottom: 1px solid #103675;
         width: fit-content;
+        border-bottom: 1px solid #103675;
+        margin: 0 auto 4.87vw;
     }
     &__wrapper {
         display: flex;
@@ -304,8 +311,6 @@
             aspect-ratio: 16 / 19;
         }
         &__text {
-            position: relative;
-            bottom: 0.25vw;
         }
 
         &.u-bg--green {
@@ -458,6 +463,15 @@
 /**
 * UIコンポーネント
 */
+// メイン
+.c-main {
+    padding-top: $header-height-tab;
+
+    &:after {
+        top: $header-height-tab;
+    }
+}
+
 //  ボタン
 .c-btn {
 
@@ -482,6 +496,7 @@
     }
 }
 
+// セレクション
 .c-section {
     &__title {
         font-size: 2.60vw;
@@ -492,10 +507,90 @@
         }
     }
 }
+
+.c-shop-card-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2.6vw 0;
+    width: 92.31vw;
+    margin: 0 auto;
+}
+.c-shop-card {
+    width: 45vw;
+    height: auto;
+    padding: 2.34vw 1.30vw 2.36vw 1.82vw;
+    border-radius: 1.30vw;
+    box-sizing: border-box;
+
+    &__name {
+        font-size: 2.08vw;
+        padding-bottom: 1px;
+        margin: 0 auto 2vw;
+    }
+    &__detail {
+        padding: 0;
+        margin-bottom: 3.6vw;
+
+        &__item {
+            gap: 1vw;
+        }
+        &__title {
+            width: 10.94vw;
+            font-size: 2.09vw;
+        }
+        &__content {
+            line-height: 0.8;
+            padding: 0 0 2.35vw 1.69vw;
+
+            // コンテンツ左の点線(営業時間・住所・電話番号)
+            --dot-size: 0.26vw;
+            --dot-gap: 0.51vw;
+            --line-width: 0.12vw;
+        }
+        &__address {
+            position: relative;
+            width: fit-content;
+
+            &::after {
+                bottom: -0.3vw;
+                right: -3vw;
+                width: 1.93vw;
+                display: none;
+            }
+
+            &__zip {
+                margin-bottom: 2.56vw;
+            }
+        }
+        &__time__main,
+        &__time__note__highlight,
+        &__address__zip,
+        &__address__street,
+        &__tel {
+            font-size: 2.35vw;
+        }
+        &__time__note,
+        &__address__place {
+            font-size: 2.09vw;
+        }
+    }
+    &__link {
+        width: 18.92vw;
+        font-size: 2.05vw;
+        gap: 1vw;
+
+        &--wrapper {
+            width: auto;
+        }
+    }
+}
 }
 
 @media screen and (min-width: 1024px) {
 .c-main {
+    padding-top: $header-height-pc;
+
     &:after {
         display: none;
     }
@@ -507,6 +602,76 @@
 
         &--sub {
             font-size: calc(0.72vw * var(--pc-font-scale));
+        }
+    }
+}
+.c-shop-card-list {
+    gap: 2.6vw 0;
+    width: 56.77vw;
+}
+.c-shop-card {
+    width: 18.22vw;
+    padding: 1.25vw 0 1.23vw 0.88vw;
+
+    &__name {
+        font-size: 0.83vw;
+        margin: 0 auto 1.19vw;
+    }
+    &__detail {
+        padding: 0;
+        margin-bottom: 1.12vw;
+
+        &__item {
+            gap: 0.52vw;
+        }
+        &__title {
+            width: 4.8vw;
+            font-size: 0.83vw;
+        }
+        &__content {
+            line-height: 0.8;
+            padding: 0 0 1.04vw 0.67vw;
+
+            // コンテンツ左の点線(営業時間・住所・電話番号)
+            --dot-size: 0.13vw;
+            --dot-gap: 0.26vw;
+            --line-width: 0.06vw;
+        }
+        &__address {
+            &::after {
+                bottom: -0.3vw;
+                right: -3vw;
+                width: 1.93vw;
+                display: none;
+            }
+
+            &__zip {
+                margin-bottom: 0.93vw;
+            }
+        }
+        &__time__main,
+        &__time__note__highlight,
+        &__address__zip,
+        &__address__street,
+        &__tel {
+            font-size: 0.93vw;
+        }
+        &__time__note,
+        &__address__place {
+            font-size: 0.83vw;
+        }
+    }
+    &__link {
+        width: 7.69vw;
+        font-size: 0.83vw;
+        gap: 0.41vw;
+
+        &--wrapper {
+            gap: 0.32vw;
+            margin: 0 0.36vw 0;
+        }
+        &__icon {
+            width: auto;
         }
     }
 }

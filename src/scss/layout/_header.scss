@@ -44,7 +44,7 @@
     box-sizing: border-box;
     padding: 4.10vw 4.61vw 0 6.41vw;
     width: 100%;
-    height: $header-height;
+    height: 14.2vw;
 
     &__btn {
         height: fit-content;
@@ -118,11 +118,11 @@
 
         &__overlay {
             width: 100%;
-            height: $header-height;
+            height: 14.2vw;
         }
         &__inner {
             overflow: auto;
-            height: calc(100dvh - #{$header-height});
+            height: calc(100dvh - 14.2vw);
         }
         &__group {
             display: block;
@@ -236,30 +236,9 @@
 }
 
 @media screen and (min-width: 768px) {
-.is-fixed {
-    .l-header {
-        height: 10.41vw;
-
-        &__logo {
-            width: 15.11vw;
-            top: 2.5vw;
-            left: 42.96vw;
-        }
-        &__nav {
-            &__inner {
-                overflow: auto;
-                height: calc(100dvh - 10.41vw);
-            }
-            &__overlay {
-                width: 100%;
-                height: 10.41vw;
-            }
-        }
-    }
-}
-
 .l-header {
-    padding: 3.88vw 3.90vw 0;
+    height: $header-height-tab;
+    padding: 2.34vw 4.94vw 0 3.64vw;
 
     &__bascket {
         &__img {
