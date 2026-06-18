@@ -23,6 +23,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-front-page-js',
         'foods-page-shop-js',
         'foods-page-select-js',
+        'foods-page-select-meat-js',
     ];
 
     if (in_array($handle, $module_handles, true)) {
@@ -110,6 +111,7 @@ function foods_theme_scripts() {
     $front_page_entry = 'src/js/front-page.js';
     $page_shop_entry  = 'src/js/page-shop.js';
     $page_select_entry  = 'src/js/page-select.js';
+    $page_select_meat_entry  = 'src/js/page-select-meat.js';
 
     if ($is_local) {
         wp_enqueue_script(
@@ -158,6 +160,16 @@ function foods_theme_scripts() {
         foods_enqueue_vite_entry(
             'foods-page-select',
             $page_select_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+      // page-select-meat.php 専用アセット
+    if (is_page() && basename((string) get_page_template()) === 'page-select-meat.php') {
+        foods_enqueue_vite_entry(
+            'foods-page-select-meat',
+            $page_select_meat_entry,
             $dev_server,
             $manifest,
             $is_local
