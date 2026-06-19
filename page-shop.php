@@ -68,6 +68,17 @@ usort($prefectures, function ($a, $b) use ($prefecture_order_map) {
 
     return $a_order <=> $b_order;
 });
+
+$prefectures_by_name = [];
+foreach ($prefectures as $prefecture) {
+    $prefectures_by_name[$prefecture->name] = $prefecture;
+}
+
+$map_prefectures = [
+    '埼玉県' => 'saitama',
+    '東京都' => 'tokyo',
+    '千葉県' => 'chiba',
+];
 ?>
 
 <main id="page-shop" class="c-main p-page-shop">
@@ -78,6 +89,24 @@ usort($prefectures, function ($a, $b) use ($prefecture_order_map) {
         <!-- タイトル end -->
 
         <?php if ($prefectures) : ?>
+            <!-- 地図から都道府県セクションへスクロール start -->
+            <nav class="p-page-shop__map-nav" aria-label="地図から都道府県を選択">
+                <?php foreach ($map_prefectures as $prefecture_name => $map_key) : ?>
+                    <?php if (!isset($prefectures_by_name[$prefecture_name])) {
+                        continue;
+                    } ?>
+                    <?php $prefecture = $prefectures_by_name[$prefecture_name]; ?>
+                    <a
+                        href="#prefecture-<?php echo esc_attr($prefecture->slug); ?>"
+                        class="p-page-shop__map-nav__link is-<?php echo esc_attr($map_key); ?>"
+                        aria-label="<?php echo esc_attr($prefecture_name); ?>の店舗一覧へ移動"
+                    >
+                        <span class="u-visually-hidden"><?php echo esc_html($prefecture_name); ?></span>
+                    </a>
+                <?php endforeach; ?>
+            </nav>
+            <!-- 地図から都道府県セクションへスクロール end -->
+
             <!-- 都道府県セクションへスクロール start -->
             <div class="p-page-shop__scroll">
                 <?php foreach ($prefectures as $prefecture) : ?>
