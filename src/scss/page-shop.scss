@@ -7,6 +7,8 @@
     &__bg {
         &--top {
             @include backgroundImg("#{$img-path}page/page-shop/bg_top.png");
+            position: relative;
+            z-index: auto;
             width: 100%;
             aspect-ratio: 390 / 657;
             padding-top: 47.69vw;
@@ -23,24 +25,6 @@
     /**
      * ページコンテンツ
      */
-    .c-shop-card-list {
-        flex-direction: column;
-        gap: 3.84vw 0;
-        width: 89.74vw;
-        margin: 0 auto;
-    }
-    .c-shop-card {
-        padding: 6.15vw 0 5.64vw;
-        border-radius: 4.61vw;
-
-        &__name {
-            width:  fit-content;
-            text-decoration: none;
-            font-size: 4.10vw;
-            margin: 0 auto 4.87vw;
-        }
-    }
-
     &__section {
         margin-bottom: 20.25vw;
 
@@ -57,6 +41,8 @@
     &__scroll {
         display: flex;
         justify-content: space-between;
+        position: relative;
+        z-index: 2;
         width: 89.23vw;
         margin: 0 auto;
 
@@ -72,6 +58,62 @@
             font-weight: bold;
         }
     }
+    &__map-nav {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+
+        &__link {
+            position: absolute;
+            display: block;
+            pointer-events: auto;
+
+            &:focus-visible {
+                outline: 3px solid #00A684;
+                outline-offset: 4px;
+            }
+
+            .u-visually-hidden {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                white-space: nowrap;
+                border: 0;
+            }
+
+            &.is-saitama {
+                z-index: 3;
+                top: 36.68%;
+                left: 7.43%;
+                width: 48.20%;
+                height: 14%;
+                clip-path: polygon(9% 39%, 23% 18%, 43% 5%, 70% 13%, 95% 57%, 99% 94%, 62% 91%, 36% 73%, 12% 80%, 0 61%);
+            }
+
+            &.is-tokyo {
+                z-index: 2;
+                top: 48.03%;
+                left: 19.76%;
+                width: 35%;
+                height: 8.8%;
+                clip-path: polygon(4% 2%, 35% 22%, 69% 45%, 99% 37%, 91% 78%, 71% 76%, 57% 99%, 34% 81%, 9% 55%, 0 21%);
+            }
+
+            &.is-chiba {
+                z-index: 1;
+                top: 43%;
+                left: 48.97%;
+                width: 41.02%;
+                height: 30.50%;
+                clip-path: polygon(0 0, 55% 17%, 95% 14%, 100% 44%, 72% 56%, 56% 80%, 22% 100%, 28% 67%, 11% 55%, 30% 38%);
+            }
+        }
+    }
 }
 
 // Tablet
@@ -82,6 +124,10 @@
      */
     &__bg {
         &--top {
+            @include backgroundImg("#{$img-path}page/page-shop/bg_top-tab.png");
+            aspect-ratio: 768 / 736;
+            padding-top: 16.79vw;
+
             .c-section {
                 &__title--sub {
                     margin-bottom: 52.08vw;
@@ -90,40 +136,138 @@
         }
     }
 
-    .c-shop-card-list {
-        gap: 5.21vw 0;
-        width: 89.58vw;
-    }
+    /**
+     * コンテンツ
+     */
     .c-shop-card {
-        padding: 8.85vw 0 8.12vw;
-        border-radius: 6.25vw;
-
         &__name {
-            font-size: 5.21vw;
-            margin: 0 auto 6.25vw;
+            border-bottom: none;
         }
     }
-
     &__section {
-        margin-bottom: 27.08vw;
+        margin-bottom: 12vw;
 
         &:last-child {
-            margin-bottom: 37.50vw;
+            margin-bottom: 18vw;
         }
 
         .c-section {
             &__title--sub {
-                margin-bottom: 8.85vw;
+                margin-bottom: 4vw;
             }
         }
     }
     &__scroll {
-        width: 89.23vw;
+        width: 48.55vw;
 
         &__link {
-            width: 27.69vw;
-            aspect-ratio: 108 / 38;
-            font-size: 5.21vw;
+            width: 14.97vw;
+            font-size: 2.08vw;
+        }
+    }
+    &__map-nav {
+        &__link {
+            &.is-saitama {
+                top: 26.49%;
+                left: 20.83%;
+                width: 33.85%;
+                height: 17.32%;
+            }
+
+            &.is-tokyo {
+                top: 39.68%;
+                left: 27.88%;
+                width: 26.15%;
+                height: 12.26%;
+            }
+
+            &.is-chiba {
+                top: 34.30%;
+                left: 50%;
+                width: 29.62%;
+                height: 38.72%;
+            }
+        }
+    }
+}
+}
+
+// PC
+@media screen and (min-width: 1024px) {
+.p-page-shop {
+    /**
+     * background
+     */
+    &__bg {
+        &--top {
+            @include backgroundImg("#{$img-path}page/page-shop/bg_top-pc.png");
+            aspect-ratio: 1920 / 1069;
+            padding-top: 15.78vw;
+
+            .c-section {
+                &__title--sub {
+                    margin-bottom: 25.52vw;
+                }
+            }
+        }
+    }
+
+    /**
+     * コンテンツ
+     */
+    .c-shop-card-list {
+        justify-content: flex-start;
+        gap: 1.04vw;
+
+    }
+    .c-shop-card {
+        &__name {
+            border-bottom: none;
+        }
+    }
+    &__section {
+        margin-bottom: 4.47vw;
+
+        &:last-child {
+            margin-bottom: 5.26vw;
+        }
+
+        .c-section {
+            &__title--sub {
+                margin-bottom: 4vw;
+            }
+        }
+    }
+    &__scroll {
+        width: 25.31vw;
+
+        &__link {
+            width: 7.50vw;
+            font-size: 0.83vw;
+        }
+    }
+    &__map-nav {
+        &__link {
+            &.is-saitama {
+                top: 37.35%;
+                left: 42.02%;
+                width: 13.6%;
+                height: 13.23%;
+            }
+
+            &.is-tokyo {
+                top: 47.77%;
+                left: 44.93%;
+                width: 10.75%;
+                height: 8.89%;
+            }
+
+            &.is-chiba {
+                top: 43.96%;
+                left: 53.43%;
+                width: 12.76%;
+                height: 27.32%;
+            }
         }
     }
 }

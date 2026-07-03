@@ -661,6 +661,8 @@
             }
         }
         .c-shop-card-list {
+            flex-direction: row;
+            flex-wrap: nowrap;
             justify-content: space-between;
             margin: 0 auto;
             width: 92.05vw;
@@ -672,7 +674,6 @@
                 border-radius: 2.56vw;
 
                 &__name {
-                    font-size: 4.1vw;
                     padding-bottom: 2px;
                     margin: 0 auto 2.56vw;
                 }
@@ -1155,6 +1156,31 @@
 
 @media screen and (min-width: 768px) {
 /**
+ * ヘッダー
+ */
+.is-fixed {
+    .l-header {
+        height: 10.41vw;
+
+        &__logo {
+            width: 15.11vw;
+            top: 2.5vw;
+            left: 42.96vw;
+        }
+        &__nav {
+            &__inner {
+                overflow: auto;
+                height: calc(100dvh - 10.41vw);
+            }
+            &__overlay {
+                width: 100%;
+                height: 10.41vw;
+            }
+        }
+    }
+}
+
+/**
  * コンテンツ
  */
 .p-front-page {
@@ -1167,7 +1193,7 @@
             background-size: contain;
             background-position: center top;
             aspect-ratio: 768 / 1100;
-            padding-top: $header-height-tab;
+            padding-top: 10.41vw;
 
             &::before {
                 @include backgroundImg("#{$img-path}page/front-page/bg_hero-logo-tab.png");
@@ -2221,7 +2247,7 @@
             background-size: contain;
             background-position: center top;
             aspect-ratio: 1920 / 1307;
-            padding-top: $header-height-pc;
+            padding-top: 4.42vw;
 
             &::before {
                 display: none;
