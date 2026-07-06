@@ -30,8 +30,7 @@ get_header();
                 「美味しさ」と「安心」の両立にこだわった<br>
                 お肉をお届けしています。
             </p>
-            <img class="p-page-select-meat__hero__img--top-sp" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select-meat/svg/img_meatTop-sp.svg" alt="家族で食事を楽しむ様子">
-            <img class="p-page-select-meat__hero__img--top-pc" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select-meat/svg/img_meatTop-pc.svg" alt="家族で食事を楽しむ様子">
+            <img class="p-page-select-meat__hero__img--top" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select-meat/svg/img_meatTop.svg" alt="家族で食事を楽しむ様子">
         </div>
     </div>
     <!-- ヒーロー end -->
@@ -45,29 +44,29 @@ get_header();
                     <img class="p-page-select-meat__message--buyer" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select-meat/svg/img_message-buyer.svg"alt="バイヤー">
                      <div class="p-page-select-meat__message--text">
                         <p>
-                            毎日の使いやすさと、週末のごちそう感。
-                            その両方を叶える“肉の売場”。
+                            毎日の使いやすさと、週末のごちそう感。<br>
+                            その両方を叶える“肉の売場”。<br>
                             セレクションは、部位の特徴を活かした
-                            カットと提案で、
+                            カットと提案で、<br>
                             料理がきれいに決まる売場づくりを
                             徹底しています。<br>
-                            おいしさの土台は、鮮度と素材の安心。
-                            私たちは、飼育や原材料まで目を向けた
-                            肉を選び、必要以上の添加物に頼らない
+                            おいしさの土台は、鮮度と素材の安心。<br>
+                            私たちは、飼育や原材料まで目を向けた<br>
+                            肉を選び、必要以上の添加物に頼らない<br>
                             無添加ハム・ウィンナーなども
                             揃えています。<br>
                             さらに、北総豚をはじめ
-                            生産者とつながる取り組みで、
-                            味わいと品質を安定して届けます。
+                            生産者とつながる取り組みで、<br>
+                            味わいと品質を安定して届けます。<br>
                             そして最後は“料理目線”。<br>
-                            「炒める」「煮る」「揚げる」<br>
+                            「炒める」「煮る」「揚げる」
                             「焼く」など<br>
                             用途が一目で伝わるカット、<br>
                             味付け・下ごしらえの提案まで
-                            セットにして、<br>
-                            迷わず選べるように。
+                            セットにして、
+                            迷わず選べるように。<br>
                             平日は時短でおいしく、
-                            週末はしっかりごちそうに。
+                            週末はしっかりごちそうに。<br>
                             毎日の食卓を、お肉から支えます。
                         </p>
                     </div>
@@ -84,6 +83,7 @@ get_header();
             </div>
             <div class="p-page-select-meat__about__content">
                  <h3 class="p-page-select-meat__about__content--title"> 美味北総豚<br><span>代表生産者</span> 井上農場</h3>
+                  <img class="p-page-select-meat__about__title--decorationPC" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select-meat/svg/meat_about_deco1-pc.svg" alt="ファーム作業人">
                 <img class="p-page-select-meat__about__content--decoration2" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select-meat/svg/meat_about_deco2.svg" alt="お肉のこだわり">
                 <picture>
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/page-select-meat/webp/meat_about_img1.webp" type="image/webp">
@@ -109,6 +109,7 @@ get_header();
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/page-select-meat/webp/meat_about_img4.webp" type="image/webp">
                         <img class="p-page-select-meat__about__content--imgSmall" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select-meat/meat_about_img4.png" alt="おせち予約はこちら">
                     </picture>
+                    <img class="p-page-select-meat__about__title--decoration7" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select-meat/svg/meat_about_deco7.svg" alt="ファーム作業人">
                 </div>
             </div>
 
@@ -132,6 +133,7 @@ get_header();
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/page-select-meat/webp/meat_about_img7.webp" type="image/webp">
                         <img class="p-page-select-meat__about__content--imgSmall" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select-meat/meat_about_img7.png" alt="おせち予約はこちら">
                     </picture>
+                    
                 </div>
             </div>
 
@@ -182,7 +184,7 @@ get_header();
                     <div class="p-page-select-meat__news__body">
                         <img class="p-page-select-meat__news__image" src="画像パス" alt="">
                         <p class="p-page-select-meat__news__text">
-                            テストテストテストテストテストテストテストテストテストテストテストテストテス...
+                            テストテストテストテストテストテストテストテストテストテストテストテストテステストテストテストテストテストテストテストテストテストテストテストテストテステストテストテストテストテストテストテストテストテストテストテストテストテステストテストテストテストテストテストテストテストテストテストテストテストテステストテストテストテストテストテストテストテストテストテストテストテストテス...
                         </p>
                     </div>
                 </article>
