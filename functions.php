@@ -23,6 +23,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-front-page-js',
         'foods-page-shop-js',
         'foods-single-shop-js',
+        'foods-archive-news-js',
     ];
 
     if (in_array($handle, $module_handles, true)) {
@@ -129,6 +130,7 @@ function foods_theme_scripts() {
     $front_page_entry = 'src/js/front-page.js';
     $page_shop_entry  = 'src/js/page-shop.js';
     $single_shop_entry = 'src/js/single-shop.js';
+    $archive_news_entry = 'src/js/archive-news.js';
 
     if ($is_local) {
         wp_enqueue_script(
@@ -178,6 +180,15 @@ function foods_theme_scripts() {
         foods_enqueue_vite_entry(
             'foods-single-shop',
             $single_shop_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+    if (is_post_type_archive('news')) {
+        foods_enqueue_vite_entry(
+            'foods-archive-news',
+            $archive_news_entry,
             $dev_server,
             $manifest,
             $is_local

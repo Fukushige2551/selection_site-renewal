@@ -1,7 +1,7 @@
 @use "../foundation/global" as *;
 
 .l-footer {
-    @include backgroundImg("#{$img-path}footer/footer_bg-sp.png");
+    @include backgroundImg("#{$img-path}footer/footer_bg-sp.svg");
     display: flex;
     flex-flow: column;
     align-items: center;

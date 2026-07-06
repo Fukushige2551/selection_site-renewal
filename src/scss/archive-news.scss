@@ -1,0 +1,451 @@
+.p-news-archive {
+    min-height: 2500px;
+    background-color: #fff;
+
+    &__breadcrumb {
+        position: relative;
+        z-index: 1;
+        width: fit-content;
+        padding-top: 19.23vw;
+        margin-left: 5.38vw;
+    }
+
+    &__heading {
+        position: relative;
+        z-index: 1;
+        width: fit-content;
+        margin: 10.26vw auto 0;
+        text-align: center;
+    }
+
+    &__title {
+        margin: 0;
+        color: #000;
+        font-family: "Zen Kaku Gothic New", sans-serif;
+        font-size: 5.13vw;
+        font-weight: 900;
+        line-height: 1.5;
+        letter-spacing: 0.15em;
+    }
+
+    &__title-en {
+        margin: 0;
+        color: #00a684;
+        font-family: "Scope One", serif;
+        font-size: 3.08vw;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: 0.15em;
+    }
+
+    &__decorations {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    &__decoration {
+        position: absolute;
+        display: block;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    &__decoration--flag {
+        top: 26.92vw;
+        left: 1.79vw;
+        width: 11.16vw;
+        aspect-ratio: 43.55/136.53;
+        background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/news-flag.svg");
+    }
+
+    &__decoration--female {
+        top: 30.25vw;
+        left: 14.87vw;
+        width: 10.79vw;
+        aspect-ratio: 42/111;
+        background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/news-staff-female.svg");
+    }
+
+    &__decoration--male {
+        top: 38.46vw;
+        left: 21.79vw;
+        width: 12.01vw;
+        aspect-ratio: 46.84/102;
+        background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/news-staff-male.svg");
+    }
+
+    &__decoration--shop {
+        top: 41.53vw;
+        right: 3.8vw;
+        width: 31.32vw;
+        aspect-ratio: 122.18/73.79;
+        background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/news-shop.svg");
+    }
+
+    &__filter {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.86vw 3.17vw;
+        width: 87.44vw;
+        padding-top: 22.56vw;
+        margin: 0 auto;
+    }
+
+    &__filter-button {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 7.38vw;
+        padding: 0;
+        border: 0.26vw solid currentColor;
+        border-radius: 2.05vw;
+        background-color: #fff;
+        font-family: "Noto Sans JP", sans-serif;
+        font-size: 4.1vw;
+        font-weight: 700;
+        line-height: 1;
+        appearance: none;
+    }
+
+    &__filter-button--notice {
+        width: 24.77vw;
+        color: #e70f44;
+    }
+
+    &__filter-button--campaign {
+        width: 32.54vw;
+        color: #a7a219;
+    }
+
+    &__filter-button--shop {
+        width: 23.6vw;
+        color: #199ba7;
+    }
+
+    &__filter-button--commitment {
+        width: 24.77vw;
+        color: #a27a40;
+    }
+
+    &__filter-button--important {
+        width: 15.12vw;
+        color: #ff8442;
+    }
+
+    &__content {
+        aspect-ratio: 390/2372;
+        margin-top: 0;
+        background-color: #f4f4f2;
+        background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/news-archive-bg-sp.svg");
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 100% auto;
+    }
+    &__pickup {
+        position: relative;
+        z-index: 1;
+        width: 79.48vw;
+        margin: 12.31vw auto 0;
+    }
+
+    &__pickup-list {
+        position: relative;
+    }
+
+    &__pickup-card {
+        width: 100%;
+    }
+
+    &__pickup-card[hidden] {
+        display: none;
+    }
+
+    &__pickup-card .c-campaign-content {
+        width: 100%;
+    }
+
+    &__pickup-card .c-campaign-content a {
+        position: relative;
+        display: block;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    &__pickup-card .c-campaign-content picture,
+    &__pickup-card .c-campaign-content__img {
+        display: block;
+        width: 100%;
+    }
+
+    &__pickup-card .c-campaign-content__img {
+        aspect-ratio: 310 / 238;
+        object-fit: cover;
+        border-radius: 18.97vw 0 18.97vw 0;
+    }
+
+    &__pickup-card .c-campaign-content__time {
+        left: -5.6vw;
+        bottom: 8vw;
+        width: 26.41vw;
+        height: 7.69vw;
+        border-radius: 3.59vw;
+        font-size: 3.08vw;
+        letter-spacing: 0.1em;
+    }
+
+    &__pickup-tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.05vw;
+        margin-top: 4.61vw;
+    }
+
+    &__pickup-tag {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        min-width: 20.51vw;
+        height: 6.15vw;
+        padding: 0 2.05vw;
+        border: 0.26vw solid currentColor;
+        border-radius: 1.54vw;
+        background-color: #fff;
+        font-family: "Noto Sans JP", sans-serif;
+        font-size: 3.59vw;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    &__pickup-tag--notice {
+        color: #e70f44;
+    }
+
+    &__pickup-tag--campaign {
+        color: #a7a219;
+    }
+
+    &__pickup-tag--shop {
+        color: #199ba7;
+    }
+
+    &__pickup-tag--commitment {
+        color: #a27a40;
+    }
+
+    &__pickup-tag--important {
+        color: #ff8442;
+    }
+
+    &__pickup-caption {
+        margin: 5.38vw 0 0;
+        color: #000;
+        font-size: 4.1vw;
+        font-weight: 700;
+        line-height: 2;
+        letter-spacing: 0.15em;
+    }
+
+    &__pickup-pager-button {
+        position: absolute;
+        top: 28.72vw;
+        z-index: 2;
+        width: 7.69vw;
+        height: 7.95vw;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        line-height: 0;
+        appearance: none;
+    }
+
+    &__pickup-pager-button.c-slider--btn--left {
+        left: -4.36vw;
+    }
+
+    &__pickup-pager-button.c-slider--btn--right {
+        right: -4.36vw;
+    }
+
+    &__pickup-pager-button .c-slider--btn__img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    &__pickup-dots {
+        display: flex;
+        justify-content: center;
+        gap: 3.08vw;
+        margin-top: 5.13vw;
+    }
+
+    &__pickup-dots button {
+        width: 2.05vw;
+        height: 2.05vw;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background-color: #d9d9d9;
+        appearance: none;
+    }
+
+    &__pickup-dots button.is-active {
+        background-color: #103675;
+    }
+    &__list {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 4.1vw;
+        width: 92.56vw;
+        margin: 10.26vw auto 0;
+    }
+
+    &__list-card-wrapper {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    &__list-card {
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 35.64vw;
+        justify-content: flex-start;
+        padding: 3.08vw 3.08vw 3.59vw;
+        border-radius: 4.1vw;
+    }
+
+    &__list-header {
+        gap: 4.62vw;
+        margin-bottom: 3.08vw;
+    }
+
+    &__list-header .c-news-card__date {
+        flex: 0 0 auto;
+        padding-top: 0.77vw;
+        font-size: 3.08vw;
+        font-weight: bold;
+        line-height: 1;
+        letter-spacing: 0.1em;
+    }
+
+    &__list-genre {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 5.13vw;
+        min-width: 14.1vw;
+        padding: 0 2.05vw;
+        border-radius: 1.03vw;
+        background-color: #fff;
+        font-size: 3.08vw;
+        line-height: 1;
+        white-space: nowrap;
+    }
+
+    &__list-genre--shop {
+        color: #199ba7;
+        border: 1px solid #199ba7;
+    }
+
+    &__list-genre--commitment {
+        color: #a27a40;
+        border: 1px solid #a27a40;
+    }
+
+    &__list-genre--important {
+        color: #ff8442;
+        border: 1px solid #ff8442;
+    }
+
+    &__list-body-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 3.08vw;
+    }
+
+    &__list-image {
+        flex: 0 0 22.31vw;
+        width: 22.31vw;
+        aspect-ratio: 87 / 66;
+        overflow: hidden;
+        border-radius: 1.03vw;
+    }
+
+    &__list-image img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__list-body {
+        display: -webkit-box;
+        flex: 1;
+        margin: -0.51vw 0 0;
+        overflow: hidden;
+        color: #000;
+        font-size: 4.1vw;
+        line-height: 1.65;
+        letter-spacing: 0.08em;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+    }
+
+    &__pagination {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3.08vw;
+        margin-top: 11.28vw;
+    }
+
+    &__pagination-item {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 11.28vw;
+        height: 11.28vw;
+        border-radius: 50%;
+        background-color: #fff;
+        color: #8a8a8a;
+        font-family: "Noto Sans JP", sans-serif;
+        font-size: 3.59vw;
+        font-weight: 700;
+        line-height: 1;
+        text-decoration: none;
+    }
+
+    &__pagination-item.is-current {
+        background-color: #838383;
+        color: #fff;
+    }
+
+    &__pagination-next {
+        display: block;
+        width: 0;
+        height: 0;
+        margin-left: 0.51vw;
+        border-top: 1.79vw solid transparent;
+        border-bottom: 1.79vw solid transparent;
+        border-left: 2.56vw solid #8a8a8a;
+        text-decoration: none;
+    }
+}
+.p-news-archive + .l-footer {
+    position: relative;
+    z-index: 2;
+    margin-top: -12.05vw;
+}

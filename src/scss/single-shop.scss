@@ -1,4 +1,4 @@
-﻿@use "foundation/global" as *;
+@use "foundation/global" as *;
 
 .p-single-shop {
     box-sizing: border-box;
@@ -18,18 +18,8 @@
     }
 
     &__breadcrumb {
-        display: flex;
-        align-items: center;
-        gap: 3.07vw;
         width: 89.74vw;
         margin: 6.15vw auto 10.76vw;
-        font-size: 3.58vw;
-        line-height: 1.4;
-
-        a,
-        span {
-            white-space: nowrap;
-        }
     }
 
     &__hero {
