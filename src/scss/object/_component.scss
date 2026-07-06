@@ -1,4 +1,4 @@
-﻿@use "../foundation/global" as *;
+@use "../foundation/global" as *;
 
 /**
  * UIコンポーネント
@@ -177,13 +177,15 @@
     box-sizing: border-box;
 
     &__name {
-        font-family: $font-family-ZenKakuAntique;
+        display: block;
+font-family: $font-family-ZenKakuAntique;
         font-weight: bold;
         font-size: 4.10vw;
         color: #103675;
         width: fit-content;
         border-bottom: 1px solid #103675;
         margin: 0 auto 4.87vw;
+        text-decoration: none;
     }
     &__wrapper {
         display: flex;
@@ -282,7 +284,9 @@
         &__address__zip,
         &__address__street,
         &__tel {
+            color: #111;
             font-size: 4.61vw;
+            text-decoration: none;
         }
         &__time__note,
         &__address__place {
@@ -301,6 +305,7 @@
         font-size: 4.10vw;
         font-weight: bold;
         color: #fff;
+        text-decoration: none;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -319,6 +324,15 @@
         &.u-bg--blue {
             @include backgroundImg("#{$img-path}page/page-shop/btn_blue-sp.png");
         }
+    }
+    .c-shop-card__detail__tel {
+        color: #111;
+        text-decoration: none;
+    }
+
+    .c-shop-card__link {
+        color: #fff;
+        text-decoration: none;
     }
 }
 
@@ -524,9 +538,11 @@
     box-sizing: border-box;
 
     &__name {
-        font-size: 2.08vw;
+        display: block;
+font-size: 2.08vw;
         padding-bottom: 1px;
         margin: 0 auto 2vw;
+        text-decoration: none;
     }
     &__detail {
         padding: 0;
@@ -614,8 +630,10 @@
     padding: 1.25vw 0 1.23vw 0.88vw;
 
     &__name {
-        font-size: 0.83vw;
+        display: block;
+font-size: 0.83vw;
         margin: 0 auto 1.19vw;
+        text-decoration: none;
     }
     &__detail {
         padding: 0;

@@ -3,6 +3,29 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function() {
+            var methods = ['log', 'info', 'warn'];
+
+            methods.forEach(function(method) {
+                var original = console[method];
+
+                if (typeof original !== 'function') {
+                    return;
+                }
+
+                console[method] = function() {
+                    var message = Array.prototype.join.call(arguments, ' ');
+
+                    if (message.indexOf('JQMIGRATE: Migrate is installed') !== -1) {
+                        return;
+                    }
+
+                    return original.apply(console, arguments);
+                };
+            });
+        })();
+    </script>
     <?php wp_head(); ?>
 
     <!--

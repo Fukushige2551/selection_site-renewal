@@ -131,7 +131,7 @@ jQuery(function($) {
     /**
      * vw算出(PC)
      */
-    const valuePC = (20) / 1920;
-    const resultPC = Math.floor(valuePC * 10000) / 100;
-    console.log('PC: ' + resultPC.toFixed(2) + 'vw');
+    // const valuePC = (20) / 1920;
+    // const resultPC = Math.floor(valuePC * 10000) / 100;
+    // console.log('PC: ' + resultPC.toFixed(2) + 'vw');
 });

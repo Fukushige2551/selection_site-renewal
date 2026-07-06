@@ -157,7 +157,7 @@ $map_prefectures = [
                     $tel            = get_field('tel', $shop_id);
                     ?>
                     <li class="c-shop-card">
-                        <p class="c-shop-card__name"><?php echo esc_html(get_the_title($shop_id)); ?></p>
+                        <a class="c-shop-card__name" href="<?php echo esc_url(get_permalink($shop_id)); ?>"><?php echo esc_html(get_the_title($shop_id)); ?></a>
                         <dl class="c-shop-card__detail">
                             <div class="c-shop-card__detail__item">
                                 <dt class="c-shop-card__detail__title">営業時間</dt>
