@@ -23,19 +23,29 @@ document.addEventListener('DOMContentLoaded', () => {
         return index;
     };
 
+    const getVisibleCount = () => window.matchMedia('(min-width: 1024px)').matches ? 3 : 1;
+
     const updateCards = (index) => {
-        activeIndex = normalizeIndex(index);
+        const visibleCount = Math.min(getVisibleCount(), cards.length || 1);
+        const maxStartIndex = Math.max(cards.length - visibleCount, 0);
+        activeIndex = Math.min(normalizeIndex(index), maxStartIndex);
 
         cards.forEach((card, cardIndex) => {
-            card.hidden = cardIndex !== activeIndex;
+            card.hidden = cardIndex < activeIndex || cardIndex >= activeIndex + visibleCount;
         });
 
         dots.forEach((dot, dotIndex) => {
-            const isActive = dotIndex === activeIndex;
+            const shouldShowDot = dotIndex <= maxStartIndex;
+            const isActive = shouldShowDot && dotIndex === activeIndex;
+            dot.hidden = !shouldShowDot;
             dot.classList.toggle('is-active', isActive);
             dot.setAttribute('aria-pressed', isActive ? 'true' : 'false');
         });
     };
+
+    window.addEventListener('resize', () => {
+        updateCards(activeIndex);
+    });
 
     dots.forEach((dot) => {
         dot.addEventListener('click', () => {

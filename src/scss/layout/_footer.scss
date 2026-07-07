@@ -143,7 +143,7 @@
 
 @media screen and (min-width: 768px) {
 .l-footer {
-    @include backgroundImg("#{$img-path}footer/footer_bg-tab.png");
+    @include backgroundImg("#{$img-path}footer/footer_bg-tab.svg");
     background-size: contain;
     background-position: center top;
     aspect-ratio: 768 / 1305;

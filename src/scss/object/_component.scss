@@ -705,6 +705,8 @@ font-size: 0.83vw;
     font-weight: 400;
     line-height: 1.23;
     letter-spacing: 0.05em;
+    padding-top: 3.84vw;
+    margin-left: 5.38vw;
 
     a,
     span {
@@ -737,5 +739,80 @@ font-size: 0.83vw;
         border-top: 0.26vw solid #000;
         border-right: 0.26vw solid #000;
         transform: translate(-50%, -50%) rotate(45deg);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .c-breadcrumb {
+        gap: 1.56vw;
+        font-size: 1.82vw;
+        line-height: 1.5;
+        padding-top: 4.6vw;
+        margin-left: 7.81vw;
+
+        &__separator {
+            flex-basis: 0.65vw;
+            width: 0.65vw;
+            height: 1.3vw;
+            margin-right: 0.39vw;
+            margin-left: 0.39vw;
+        }
+
+        &__separator::before {
+            width: 0.91vw;
+            height: 0.91vw;
+            border-top-width: 0.13vw;
+            border-right-width: 0.13vw;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .c-breadcrumb {
+        gap: 1.56vw;
+        font-size: 1.56vw;
+        line-height: 1.5;
+        padding-top: 3vw;
+        margin-left: 4vw;
+
+        &__separator {
+            flex-basis: 0.49vw;
+            width: 0.49vw;
+            height: 0.98vw;
+            margin-right: 0.29vw;
+            margin-left: 0.29vw;
+        }
+
+        &__separator::before {
+            width: 0.68vw;
+            height: 0.68vw;
+            border-top-width: 0.1vw;
+            border-right-width: 0.1vw;
+        }
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .c-breadcrumb {
+        gap: 1.0417vw;
+        font-size: 0.8333vw;
+        line-height: 1.5;
+        padding-top: 2.2vw;
+        margin-left: 24.06vw;
+
+        &__separator {
+            flex-basis: 0.2604vw;
+            width: 0.2604vw;
+            height: 0.5208vw;
+            margin-right: 0.2083vw;
+            margin-left: 0.2083vw;
+        }
+
+        &__separator::before {
+            width: 0.3646vw;
+            height: 0.3646vw;
+            border-top-width: 0.0521vw;
+            border-right-width: 0.0521vw;
+        }
     }
 }

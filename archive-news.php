@@ -152,7 +152,7 @@ $pickup_news_items = array_slice($news_items, 0, 5);
 get_header();
 ?>
 
-<main class="p-news-archive">
+<main class="p-news-archive c-main">
     <nav class="c-breadcrumb p-news-archive__breadcrumb" aria-label="パンくず">
         <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
         <span class="c-breadcrumb__separator" aria-hidden="true"></span>
@@ -160,8 +160,8 @@ get_header();
     </nav>
 
     <div class="p-news-archive__heading">
-        <h1 class="p-news-archive__title">新着情報</h1>
-        <p class="p-news-archive__title-en">NEWS</p>
+        <h1 class="p-news-archive__title c-section__title">新着情報</h1>
+        <p class="p-news-archive__title-en c-section__title--sub">NEWS</p>
     </div>
     <div class="p-news-archive__content">
         <div class="p-news-archive__decorations" aria-hidden="true">

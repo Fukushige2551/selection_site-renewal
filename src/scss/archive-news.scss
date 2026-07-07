@@ -6,8 +6,6 @@
         position: relative;
         z-index: 1;
         width: fit-content;
-        padding-top: 19.23vw;
-        margin-left: 5.38vw;
     }
 
     &__heading {
@@ -186,7 +184,6 @@
     &__pickup-card .c-campaign-content__img {
         aspect-ratio: 310 / 238;
         object-fit: cover;
-        border-radius: 18.97vw 0 18.97vw 0;
     }
 
     &__pickup-card .c-campaign-content__time {
@@ -444,8 +441,782 @@
         text-decoration: none;
     }
 }
-.p-news-archive + .l-footer {
+.l-footer {
     position: relative;
     z-index: 2;
-    margin-top: -12.05vw;
+    margin-top: -12.2vw;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .l-footer {
+        position: relative;
+        z-index: 2;
+        margin-top: -9.4vw;
+    }
+    .p-news-archive {
+        min-height: 325.52vw;
+
+        &__heading {
+            margin-top: 5.21vw;
+        }
+
+        &__title {
+            font-size: 2.6vw;
+            line-height: 1.5;
+        }
+
+        &__title-en {
+            font-size: 1.56vw;
+        }
+
+        &__content {
+            aspect-ratio: auto;
+            height: 310vw;
+            background-size: 100% auto;
+        }
+
+        &__decoration--flag {
+            top: -6vw;
+            left: 9.51vw;
+            width: 6.17vw;
+        }
+
+        &__decoration--female {
+            top: 0vw;
+            left: 20vw;
+            width: 5.47vw;
+        }
+
+        &__decoration--male {
+            top: 3vw;
+            left: 27vw;
+            width: 5.95vw;
+        }
+
+        &__decoration--shop {
+            top: 2vw;
+            right: 18vw;
+            width: 15.91vw;
+        }
+
+        &__filter {
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1.69vw;
+            width: 68.88vw;
+            padding-top: 20.7vw;
+        }
+
+        &__filter-button {
+            height: 3.76vw;
+            border-width: 0.13vw;
+            border-radius: 1.04vw;
+            font-size: 2.08vw;
+        }
+
+        &__filter-button--notice,
+        &__filter-button--commitment {
+            width: 12.58vw;
+        }
+
+        &__filter-button--campaign {
+            width: 16.52vw;
+        }
+
+        &__filter-button--shop {
+            width: 11.99vw;
+        }
+
+        &__filter-button--important {
+            width: 7.68vw;
+        }
+
+        &__pickup {
+            width: 45.96vw;
+            margin-top: 3.91vw;
+        }
+
+        &__pickup-card .c-campaign-content__img {
+            aspect-ratio: 353 / 277;
+        }
+
+        &__pickup-card .c-campaign-content__time {
+            left: -3.65vw;
+            bottom: 3.91vw;
+            width: 16.15vw;
+            height: 4.69vw;
+            border-radius: 2.34vw;
+            font-size: 1.82vw;
+            letter-spacing: 0.1em;
+        }
+
+        &__pickup-tags {
+            gap: 1.04vw;
+            margin-top: 2.34vw;
+        }
+
+        &__pickup-tag {
+            min-width: 8.33vw;
+            height: 2.61vw;
+            padding: 0 0.78vw;
+            border-width: 0.13vw;
+            border-radius: 0.65vw;
+            font-size: 1.69vw;
+            line-height: 1;
+        }
+
+        &__pickup-tag--campaign {
+            min-width: 11.49vw;
+        }
+
+        &__pickup-caption {
+            margin-top: 2.86vw;
+            font-size: 2.08vw;
+            line-height: 1.56;
+            letter-spacing: 0.15em;
+        }
+
+        &__pickup-pager-button {
+            top: 16.15vw;
+            width: 3.39vw;
+            height: 3.48vw;
+        }
+
+        &__pickup-pager-button.c-slider--btn--left {
+            left: -9.11vw;
+        }
+
+        &__pickup-pager-button.c-slider--btn--right {
+            right: -9.11vw;
+        }
+
+        &__pickup-dots {
+            gap: 1.56vw;
+            margin-top: 4.17vw;
+        }
+
+        &__pickup-dots button {
+            width: 1.04vw;
+            height: 1.04vw;
+        }
+
+        &__list {
+            gap: 2.08vw;
+            width: 68.88vw;
+            margin-top: 5.21vw;
+        }
+
+        &__list-card {
+            min-height: 17.6vw;
+            padding: 1.56vw 2.08vw 1.82vw;
+            border-radius: 2.08vw;
+        }
+
+        &__list-header {
+            gap: 2.08vw;
+            margin-bottom: 1.56vw;
+        }
+
+        &__list-header .c-news-card__date {
+            padding-top: 0.39vw;
+            font-size: 1.56vw;
+        }
+
+        &__list-genre {
+            height: 2.61vw;
+            min-width: 7.29vw;
+            padding: 0 1.04vw;
+            border-radius: 0.52vw;
+            font-size: 1.56vw;
+        }
+
+        &__list-body-row {
+            gap: 1.56vw;
+        }
+
+        &__list-image {
+            flex-basis: 11.33vw;
+            width: 11.33vw;
+            border-radius: 0.52vw;
+        }
+
+        &__list-body {
+            margin-top: -0.26vw;
+            font-size: 2.08vw;
+            line-height: 1.65;
+        }
+
+        &__pagination {
+            gap: 1.56vw;
+            margin-top: 4.17vw;
+        }
+
+        &__pagination-item {
+            width: 4.69vw;
+            height: 4.69vw;
+            font-size: 1.82vw;
+        }
+
+        &__pagination-next {
+            margin-left: 0.26vw;
+            border-top-width: 0.91vw;
+            border-bottom-width: 0.91vw;
+            border-left-width: 1.3vw;
+        }
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .p-news-archive {
+        &__content {
+            position: relative;
+            z-index: 0;
+            overflow: visible;
+            isolation: isolate;
+        }
+
+        &__content::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            width: 100%;
+            height: 91.15vw;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/news-archive-layer-tablet.svg");
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: 100% auto;
+            pointer-events: none;
+        }
+
+        &__filter,
+        &__pickup,
+        &__list,
+        &__pagination {
+            z-index: 2;
+        }
+
+        &__decorations {
+            z-index: 3;
+        }
+
+        &__heading {
+            z-index: 2;
+        }
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .l-footer {
+        position: relative;
+        z-index: 2;
+        margin-top: -7.81vw;
+    }
+
+    .p-news-archive {
+        min-height: 257.81vw;
+
+        &__heading {
+            margin-top: 4.3vw;
+        }
+
+        &__title {
+            font-size: 1.95vw;
+            line-height: 1.5;
+        }
+
+        &__title-en {
+            font-size: 1.17vw;
+        }
+
+        &__content {
+            position: relative;
+            z-index: 0;
+            height: 242.19vw;
+            overflow: visible;
+            isolation: isolate;
+            aspect-ratio: auto;
+            background-size: 100% auto;
+        }
+
+        &__content::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            width: 100%;
+            height: 68.36vw;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/news-archive-layer-tablet.svg");
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: 100% auto;
+            pointer-events: none;
+        }
+
+        &__decorations {
+            z-index: 3;
+        }
+
+        &__decoration--flag {
+            top: -5.08vw;
+            left: 8.2vw;
+            width: 4.63vw;
+        }
+
+        &__decoration--female {
+            top: 0.1vw;
+            left: 18.75vw;
+            width: 4.1vw;
+        }
+
+        &__decoration--male {
+            top: 2.64vw;
+            left: 25vw;
+            width: 4.47vw;
+        }
+
+        &__decoration--shop {
+            top: 1.95vw;
+            right: 15.04vw;
+            width: 11.93vw;
+        }
+
+        &__filter,
+        &__pickup,
+        &__list,
+        &__pagination {
+            z-index: 2;
+        }
+
+        &__filter {
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1.37vw;
+            width: 51.66vw;
+            padding-top: 23.73vw;
+        }
+
+        &__filter-button {
+            height: 2.82vw;
+            border-width: 0.1vw;
+            border-radius: 0.78vw;
+            font-size: 1.56vw;
+        }
+
+        &__filter-button--notice,
+        &__filter-button--commitment {
+            width: 9.44vw;
+        }
+
+        &__filter-button--campaign {
+            width: 12.39vw;
+        }
+
+        &__filter-button--shop {
+            width: 8.99vw;
+        }
+
+        &__filter-button--important {
+            width: 5.76vw;
+        }
+
+        &__pickup {
+            width: 95.41vw;
+            margin-top: 2.83vw;
+        }
+
+        &__pickup-list {
+            display: grid;
+            grid-template-columns: repeat(3, 29.2vw);
+            justify-content: center;
+            gap: 3.03vw;
+        }
+
+        &__pickup-card {
+            width: 29.2vw;
+        }
+
+        &__pickup-card:nth-of-type(n + 4) {
+            display: none;
+        }
+
+        &__pickup-card .c-campaign-content__img {
+            aspect-ratio: 299 / 230;
+        }
+
+        &__pickup-card .c-campaign-content__time {
+            left: -1.76vw;
+            bottom: 2.34vw;
+            width: 10.06vw;
+            height: 2.93vw;
+            border-radius: 1.46vw;
+            font-size: 1.17vw;
+            letter-spacing: 0.1em;
+        }
+
+        &__pickup-tags {
+            justify-content: flex-start;
+            gap: 0.78vw;
+            margin-top: 3.32vw;
+        }
+
+        &__pickup-tag {
+            min-width: 6.56vw;
+            height: 1.95vw;
+            padding: 0 0.68vw;
+            border-width: 0.1vw;
+            border-radius: 0.49vw;
+            font-size: 1.27vw;
+            line-height: 1;
+        }
+
+        &__pickup-tag--campaign {
+            min-width: 8.61vw;
+        }
+
+        &__pickup-caption {
+            margin-top: 2.05vw;
+            font-size: 1.56vw;
+            line-height: 1.56;
+            letter-spacing: 0.15em;
+            text-align: center;
+        }
+
+        &__pickup-pager-button {
+            top: 10.94vw;
+            width: 2.54vw;
+            height: 2.61vw;
+        }
+
+        &__pickup-pager-button.c-slider--btn--left {
+            left: 0.49vw;
+        }
+
+        &__pickup-pager-button.c-slider--btn--right {
+            right: 0.49vw;
+        }
+
+        &__pickup-dots {
+            gap: 1.17vw;
+            margin-top: 3.13vw;
+        }
+
+        &__pickup-dots button {
+            width: 0.78vw;
+            height: 0.78vw;
+        }
+
+        &__list {
+            gap: 1.56vw;
+            width: 68.75vw;
+            margin-top: 5.86vw;
+        }
+
+        &__list-card {
+            min-height: 13.67vw;
+            padding: 1.17vw 1.56vw 1.37vw;
+            border-radius: 1.56vw;
+        }
+
+        &__list-header {
+            gap: 1.56vw;
+            margin-bottom: 1.17vw;
+        }
+
+        &__list-header .c-news-card__date {
+            padding-top: 0.29vw;
+            font-size: 1.17vw;
+        }
+
+        &__list-genre {
+            height: 1.95vw;
+            min-width: 5.47vw;
+            padding: 0 0.78vw;
+            border-radius: 0.39vw;
+            font-size: 1.17vw;
+        }
+
+        &__list-body-row {
+            gap: 1.17vw;
+        }
+
+        &__list-image {
+            flex-basis: 8.5vw;
+            width: 8.5vw;
+            border-radius: 0.39vw;
+        }
+
+        &__list-body {
+            margin-top: -0.2vw;
+            font-size: 1.56vw;
+            line-height: 1.65;
+        }
+
+        &__pagination {
+            gap: 1.17vw;
+            margin-top: 3.91vw;
+        }
+
+        &__pagination-item {
+            width: 3.52vw;
+            height: 3.52vw;
+            font-size: 1.37vw;
+        }
+
+        &__pagination-next {
+            margin-left: 0.2vw;
+            border-top-width: 0.68vw;
+            border-bottom-width: 0.68vw;
+            border-left-width: 0.98vw;
+        }
+    }
+}
+@media screen and (min-width: 1024px) {
+    .p-news-archive {
+        &__pickup-pager-button,
+        &__pickup-dots {
+            display: none;
+        }
+    }
+}
+@media screen and (min-width: 1280px) {
+    .l-footer {
+        margin-top: -9.8vw;
+    }
+
+    .p-news-archive {
+        min-height: auto;
+
+        &__heading {
+            margin-top: 3.44vw;
+        }
+
+        &__title {
+            font-size: calc(1.25vw * var(--pc-font-scale));
+            line-height: 1.5;
+        }
+
+        &__title-en {
+            font-size: calc(0.72vw * var(--pc-font-scale));
+            line-height: 1.6;
+        }
+
+        &__content {
+            position: relative;
+            top: -2.5vw;
+            aspect-ratio: 1920 / 2835;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/news-archive-bg-desktop.svg");
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: 100% auto;
+        }
+
+        &__filter {
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            gap: 0.78vw;
+            width: 27.6vw;
+            padding-top: 7vw;
+        }
+
+        &__filter-button {
+            height: 1.56vw;
+            border-width: 0.05vw;
+            border-radius: 0.42vw;
+            font-size: 0.83vw;
+            line-height: 1;
+        }
+
+        &__filter-button--notice,
+        &__filter-button--commitment {
+            width: 5.03vw;
+        }
+
+        &__filter-button--campaign {
+            width: 6.61vw;
+        }
+
+        &__filter-button--shop {
+            width: 4.79vw;
+        }
+
+        &__filter-button--important {
+            width: 3.07vw;
+        }
+
+        &__decoration--flag {
+            top: 4.6vw;
+            left: 22vw;
+            width: 2.26vw;
+        }
+
+        &__decoration--female {
+            top: 0.1vw;
+            left: 58.75vw;
+            width: 2.18vw;
+            transform: scaleX(-1);
+        }
+
+        &__decoration--male {
+            top: 1vw;
+            left: 30.6vw;
+            width: 2.43vw;
+        }
+
+        &__decoration--shop {
+            top: -1vw;
+            right: 58vw;
+            width: 8.77vw;
+        }
+
+        &__pickup {
+            width: 62.5vw;
+            margin-top: 2.14vw;
+        }
+
+        &__pickup-list {
+            display: grid;
+            grid-template-columns: repeat(3, 18.85vw);
+            justify-content: center;
+            gap: 2.14vw;
+        }
+
+        &__pickup-card {
+            width: 18.85vw;
+        }
+
+        &__pickup-card:nth-of-type(n + 4) {
+            display: none;
+        }
+
+        &__pickup-card .c-campaign-content__img {
+            aspect-ratio: 362 / 275;
+        }
+
+        &__pickup-card .c-campaign-content__time {
+            left: -0.63vw;
+            bottom: 1.35vw;
+            width: 5.31vw;
+            height: 1.77vw;
+            border-radius: 0.89vw;
+            font-size: 0.73vw;
+            letter-spacing: 0.1em;
+        }
+
+        &__pickup-tags {
+            display: none;
+        }
+
+        &__pickup-caption {
+            margin-top: 3.28vw;
+            font-size: 0.83vw;
+            line-height: 1.75;
+            letter-spacing: 0.15em;
+            text-align: center;
+        }
+
+        &__list {
+            gap: 0.78vw;
+            width: 39.58vw;
+            margin-top: 2.5vw;
+        }
+
+        &__list-card {
+            position: relative;
+            min-height: 9.01vw;
+            padding: 0;
+            border-radius: 1.04vw;
+        }
+
+        &__list-header {
+            display: block;
+            margin-bottom: 0;
+        }
+
+        &__list-header .c-news-card__date {
+            position: absolute;
+            top: 0.87vw;
+            left: 0.62vw;
+            padding-top: 0;
+            font-size: 0.63vw;
+            line-height: 1;
+            letter-spacing: 0.1em;
+        }
+
+        &__list-genre {
+            position: absolute;
+            top: 0.78vw;
+            left: 5.47vw;
+            height: 1.04vw;
+            min-width: 3.5vw;
+            padding: 0 0.36vw;
+            border-radius: 0.26vw;
+            font-size: 0.68vw;
+            line-height: 1;
+        }
+
+        &__list-genre--notice {
+            color: #e60039;
+            border-color: #e60039;
+        }
+
+        &__list-genre--important {
+            color: #ff5b03;
+            border-color: #ff5b03;
+        }
+
+        &__list-genre--campaign {
+            min-width: 4.59vw;
+        }
+
+        &__list-genre--shop {
+            min-width: 3.33vw;
+        }
+
+        &__list-genre--important {
+            min-width: 2.14vw;
+        }
+
+        &__list-body-row {
+            gap: 1.04vw;
+            padding: 2.71vw 0.73vw 0;
+        }
+
+        &__list-image {
+            flex: 0 0 7.81vw;
+            width: 7.81vw;
+            aspect-ratio: 150 / 105;
+            border-radius: 0.26vw;
+        }
+
+        &__list-body {
+            width: 29.38vw;
+            margin-top: 0.05vw;
+            font-size: 0.83vw;
+            line-height: 1.56vw;
+            letter-spacing: 0;
+        }
+
+        &__pagination {
+            gap: 0.63vw;
+            margin-top: 4vw;
+        }
+
+        &__pagination-item {
+            width: 2.29vw;
+            height: 2.24vw;
+            font-size: 0.83vw;
+            line-height: 1;
+        }
+
+        &__pagination-next {
+            margin-left: 0.2vw;
+            border-top-width: 0.36vw;
+            border-bottom-width: 0.36vw;
+            border-left-width: 0.68vw;
+        }
+    }
 }
