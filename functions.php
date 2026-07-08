@@ -25,6 +25,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-single-shop-js',
         'foods-archive-news-js',
         'foods-single-news-js',
+        'foods-archive-recipe-js',
     ];
 
     if (in_array($handle, $module_handles, true)) {
@@ -133,6 +134,7 @@ function foods_theme_scripts() {
     $single_shop_entry = 'src/js/single-shop.js';
     $archive_news_entry = 'src/js/archive-news.js';
     $single_news_entry = 'src/js/single-news.js';
+    $archive_recipe_entry = 'src/js/archive-recipe.js';
 
     if ($is_local) {
         wp_enqueue_script(
@@ -201,6 +203,16 @@ function foods_theme_scripts() {
         foods_enqueue_vite_entry(
             'foods-single-news',
             $single_news_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    if (is_post_type_archive('recipe')) {
+        foods_enqueue_vite_entry(
+            'foods-archive-recipe',
+            $archive_recipe_entry,
             $dev_server,
             $manifest,
             $is_local

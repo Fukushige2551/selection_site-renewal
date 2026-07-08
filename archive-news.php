@@ -252,16 +252,16 @@ get_header();
                 <?php endforeach; ?>
             </section>
             <?php if ($news_total_pages > 1) : ?>
-                <nav class="p-news-archive__pagination" aria-label="新着情報一覧のページ送り">
+                <nav class="c-archive-pagination p-news-archive__pagination" aria-label="新着情報一覧のページ送り">
                     <?php for ($page_number = 1; $page_number <= $news_total_pages; $page_number++) : ?>
                         <?php if ($page_number === $news_paged) : ?>
-                            <span class="p-news-archive__pagination-item is-current" aria-current="page"><?php echo esc_html($page_number); ?></span>
+                            <span class="c-archive-pagination__item p-news-archive__pagination-item is-current" aria-current="page"><?php echo esc_html($page_number); ?></span>
                         <?php else : ?>
-                            <a class="p-news-archive__pagination-item" href="<?php echo esc_url(get_pagenum_link($page_number)); ?>"><?php echo esc_html($page_number); ?></a>
+                            <a class="c-archive-pagination__item p-news-archive__pagination-item" href="<?php echo esc_url(get_pagenum_link($page_number)); ?>"><?php echo esc_html($page_number); ?></a>
                         <?php endif; ?>
                     <?php endfor; ?>
                     <?php if ($news_paged < $news_total_pages) : ?>
-                        <a class="p-news-archive__pagination-next" href="<?php echo esc_url(get_pagenum_link($news_paged + 1)); ?>" aria-label="次のページへ"></a>
+                        <a class="c-archive-pagination__next p-news-archive__pagination-next" href="<?php echo esc_url(get_pagenum_link($news_paged + 1)); ?>" aria-label="次のページへ"></a>
                     <?php endif; ?>
                 </nav>
             <?php endif; ?>        <?php endif; ?>

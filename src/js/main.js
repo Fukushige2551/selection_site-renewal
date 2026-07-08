@@ -117,7 +117,7 @@ jQuery(function($) {
     // /**
     //  * vw算出(SP)
     //  */
-    // const valueSP = (56) / 390;
+    // const valueSP = (15.85) / 390;
     // const resultSP = Math.floor(valueSP * 10000) / 100;
     // console.log('SP: ' + resultSP.toFixed(2) + 'vw');
 

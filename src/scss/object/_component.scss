@@ -865,3 +865,107 @@ font-size: 0.83vw;
         }
     }
 }
+
+// ???????
+.c-archive-pagination {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.08vw;
+    margin-top: 11.28vw;
+
+    &__item {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 11.28vw;
+        height: 11.28vw;
+        border-radius: 50%;
+        background-color: #fff;
+        color: #8a8a8a;
+        font-family: "Noto Sans JP", sans-serif;
+        font-size: 3.59vw;
+        font-weight: 700;
+        line-height: 1;
+        text-decoration: none;
+    }
+
+    &__item.is-current {
+        background-color: #838383;
+        color: #fff;
+    }
+
+    &__next {
+        display: block;
+        width: 0;
+        height: 0;
+        margin-left: 0.51vw;
+        border-top: 1.79vw solid transparent;
+        border-bottom: 1.79vw solid transparent;
+        border-left: 2.56vw solid #8a8a8a;
+        text-decoration: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .c-archive-pagination {
+        gap: 1.56vw;
+        margin-top: 4.17vw;
+
+        &__item {
+            width: 4.69vw;
+            height: 4.69vw;
+            font-size: 1.82vw;
+        }
+
+        &__next {
+            margin-left: 0.26vw;
+            border-top-width: 0.91vw;
+            border-bottom-width: 0.91vw;
+            border-left-width: 1.3vw;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .c-archive-pagination {
+        gap: 1.17vw;
+        margin-top: 3.91vw;
+
+        &__item {
+            width: 3.52vw;
+            height: 3.52vw;
+            font-size: 1.37vw;
+        }
+
+        &__next {
+            margin-left: 0.2vw;
+            border-top-width: 0.68vw;
+            border-bottom-width: 0.68vw;
+            border-left-width: 0.98vw;
+        }
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .c-archive-pagination {
+        gap: 0.63vw;
+        margin-top: 4vw;
+
+        &__item {
+            width: 2.29vw;
+            height: 2.24vw;
+            font-size: 0.83vw;
+            line-height: 1;
+        }
+
+        &__next {
+            margin-left: 0.2vw;
+            border-top-width: 0.36vw;
+            border-bottom-width: 0.36vw;
+            border-left-width: 0.68vw;
+        }
+    }
+}
