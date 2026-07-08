@@ -95,45 +95,36 @@
     }
 
     &__filter-button {
-        box-sizing: border-box;
         display: flex;
         align-items: center;
         justify-content: center;
         height: 7.38vw;
         padding: 0;
-        border: 0.26vw solid currentColor;
+        border-width: 0.26vw;
         border-radius: 2.05vw;
-        background-color: #fff;
-        font-family: "Noto Sans JP", sans-serif;
         font-size: 4.1vw;
-        font-weight: 700;
         line-height: 1;
         appearance: none;
     }
 
     &__filter-button--notice {
         width: 24.77vw;
-        color: #e70f44;
     }
 
     &__filter-button--campaign {
         width: 32.54vw;
-        color: #a7a219;
     }
 
     &__filter-button--shop {
         width: 23.6vw;
-        color: #199ba7;
     }
 
     &__filter-button--commitment {
         width: 24.77vw;
-        color: #a27a40;
     }
 
     &__filter-button--important {
         width: 15.12vw;
-        color: #ff8442;
     }
 
     &__content {
@@ -208,38 +199,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        box-sizing: border-box;
         min-width: 20.51vw;
         height: 6.15vw;
         padding: 0 2.05vw;
-        border: 0.26vw solid currentColor;
+        border-width: 0.26vw;
         border-radius: 1.54vw;
-        background-color: #fff;
-        font-family: "Noto Sans JP", sans-serif;
         font-size: 3.59vw;
-        font-weight: 700;
         line-height: 1;
     }
 
-    &__pickup-tag--notice {
-        color: #e70f44;
-    }
-
-    &__pickup-tag--campaign {
-        color: #a7a219;
-    }
-
-    &__pickup-tag--shop {
-        color: #199ba7;
-    }
-
-    &__pickup-tag--commitment {
-        color: #a27a40;
-    }
-
-    &__pickup-tag--important {
-        color: #ff8442;
-    }
 
     &__pickup-caption {
         margin: 5.38vw 0 0;
@@ -343,27 +311,12 @@
         height: 5.13vw;
         min-width: 14.1vw;
         padding: 0 2.05vw;
+        border-width: 1px;
         border-radius: 1.03vw;
-        background-color: #fff;
         font-size: 3.08vw;
         line-height: 1;
-        white-space: nowrap;
     }
 
-    &__list-genre--shop {
-        color: #199ba7;
-        border: 1px solid #199ba7;
-    }
-
-    &__list-genre--commitment {
-        color: #a27a40;
-        border: 1px solid #a27a40;
-    }
-
-    &__list-genre--important {
-        color: #ff8442;
-        border: 1px solid #ff8442;
-    }
 
     &__list-body-row {
         display: flex;
@@ -1153,16 +1106,6 @@
             border-radius: 0.26vw;
             font-size: 0.68vw;
             line-height: 1;
-        }
-
-        &__list-genre--notice {
-            color: #e60039;
-            border-color: #e60039;
-        }
-
-        &__list-genre--important {
-            color: #ff5b03;
-            border-color: #ff5b03;
         }
 
         &__list-genre--campaign {

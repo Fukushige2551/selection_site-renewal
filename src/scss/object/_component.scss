@@ -378,6 +378,68 @@ font-family: $font-family-ZenKakuAntique;
     letter-spacing: 15%;
 }
 
+.c-news-category-tag,
+.p-news-detail__category,
+.p-news-archive__filter-button,
+.p-news-archive__pickup-tag,
+.p-news-archive__list-genre,
+.c-news-card__genre {
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: currentColor;
+    background-color: #fff;
+    font-family: $font-family-NotoSans;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.c-news-category-tag--notice,
+.c-news-category-tag--new,
+.p-news-detail__category--notice,
+.p-news-archive__filter-button--notice,
+.p-news-archive__pickup-tag--notice,
+.p-news-archive__list-genre--notice,
+.c-news-card__genre--new {
+    color: #e60039;
+}
+
+.c-news-category-tag--campaign,
+.p-news-detail__category--campaign,
+.p-news-archive__filter-button--campaign,
+.p-news-archive__pickup-tag--campaign,
+.p-news-archive__list-genre--campaign,
+.c-news-card__genre--campaign {
+    color: #a7a219;
+}
+
+.c-news-category-tag--shop,
+.p-news-detail__category--shop,
+.p-news-archive__filter-button--shop,
+.p-news-archive__pickup-tag--shop,
+.p-news-archive__list-genre--shop,
+.c-news-card__genre--shop {
+    color: #199ba7;
+}
+
+.c-news-category-tag--commitment,
+.p-news-detail__category--commitment,
+.p-news-archive__filter-button--commitment,
+.p-news-archive__pickup-tag--commitment,
+.p-news-archive__list-genre--commitment,
+.c-news-card__genre--commitment {
+    color: #a27a40;
+}
+
+.c-news-category-tag--important,
+.p-news-detail__category--important,
+.p-news-archive__filter-button--important,
+.p-news-archive__pickup-tag--important,
+.p-news-archive__list-genre--important,
+.c-news-card__genre--important {
+    color: #ff8442;
+}
+
 // レシピ
 .c-recipe-card-wrapper {
     display: block;
@@ -447,21 +509,8 @@ font-family: $font-family-ZenKakuAntique;
     }
 
     &__genre {
-        font-family: $font-family-NotoSans;
-        font-weight: $font-weight-medium;
         line-height: 1;
-        text-align: center;
-        box-sizing: border-box;
-
-        &--new {
-            color: #E60039;
-            border: 1px solid #E60039;
-        }
-
-        &--campaign {
-            color: #A7A219;
-            border: 1px solid #A7A219;
-        }
+        border-width: 1px;
     }
 
     &__body {

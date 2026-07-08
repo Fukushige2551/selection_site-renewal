@@ -30,7 +30,8 @@ export default defineConfig({
                 'front-page': path.resolve(__dirname, 'src/js/front-page.js'),
                 'page-shop': path.resolve(__dirname, 'src/js/page-shop.js'),
                 'single-shop': path.resolve(__dirname, 'src/js/single-shop.js'),
-                'archive-news': path.resolve(__dirname, 'src/js/archive-news.js')
+                'archive-news': path.resolve(__dirname, 'src/js/archive-news.js'),
+                'single-news': path.resolve(__dirname, 'src/js/single-news.js')
             },
             output: {
                 entryFileNames: 'assets/[name].js',

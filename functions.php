@@ -24,6 +24,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-page-shop-js',
         'foods-single-shop-js',
         'foods-archive-news-js',
+        'foods-single-news-js',
     ];
 
     if (in_array($handle, $module_handles, true)) {
@@ -131,6 +132,7 @@ function foods_theme_scripts() {
     $page_shop_entry  = 'src/js/page-shop.js';
     $single_shop_entry = 'src/js/single-shop.js';
     $archive_news_entry = 'src/js/archive-news.js';
+    $single_news_entry = 'src/js/single-news.js';
 
     if ($is_local) {
         wp_enqueue_script(
@@ -189,6 +191,16 @@ function foods_theme_scripts() {
         foods_enqueue_vite_entry(
             'foods-archive-news',
             $archive_news_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    if (is_singular('news')) {
+        foods_enqueue_vite_entry(
+            'foods-single-news',
+            $single_news_entry,
             $dev_server,
             $manifest,
             $is_local
@@ -292,6 +304,51 @@ function register_news_post_type() {
     ]);
 }
 add_action('init', 'register_news_post_type');
+
+function foods_get_news_permalink_category_slug($post_id) {
+    $terms = get_the_terms($post_id, 'news_category');
+
+    if (is_wp_error($terms) || empty($terms)) {
+        return 'news';
+    }
+
+    $term = reset($terms);
+
+    return $term && !empty($term->slug) ? $term->slug : 'news';
+}
+
+function foods_news_post_type_link($post_link, $post) {
+    if ($post->post_type !== 'news') {
+        return $post_link;
+    }
+
+    $category_slug = foods_get_news_permalink_category_slug($post->ID);
+
+    return home_url(user_trailingslashit('news/' . $category_slug . '/' . $post->ID));
+}
+add_filter('post_type_link', 'foods_news_post_type_link', 10, 2);
+
+function foods_add_news_rewrite_rules() {
+    add_rewrite_rule(
+        '^news/([^/]+)/([0-9]+)/?$',
+        'index.php?post_type=news&p=$matches[2]',
+        'top'
+    );
+}
+add_action('init', 'foods_add_news_rewrite_rules');
+
+function foods_flush_news_rewrite_rules_once() {
+    $rewrite_version = '20260707-news-detail-id-url';
+
+    if (get_option('foods_news_rewrite_rules_version') === $rewrite_version) {
+        return;
+    }
+
+    foods_add_news_rewrite_rules();
+    flush_rewrite_rules(false);
+    update_option('foods_news_rewrite_rules_version', $rewrite_version);
+}
+add_action('init', 'foods_flush_news_rewrite_rules_once', 20);
 
 // 採用情報（パート・アルバイト）
 function register_recruit_part_time_post_type() {
@@ -703,6 +760,16 @@ function foods_get_news_field_group() {
                 'library' => 'all',
             ],
             [
+                'key' => 'field_news_summary',
+                'label' => 'お知らせ概要',
+                'name' => 'news_summary',
+                'type' => 'wysiwyg',
+                'required' => 0,
+                'tabs' => 'all',
+                'toolbar' => 'basic',
+                'media_upload' => 1,
+                'delay' => 0,
+            ],            [
                 'key' => 'field_news_body',
                 'label' => '本文',
                 'name' => 'news_body',
@@ -762,14 +829,14 @@ function foods_register_news_scf_fields() {
         return;
     }
 
-    $version = '20260623-1';
+    $version = '20260707-1';
     if (get_option('foods_news_scf_fields_version') === $version) {
         return;
     }
 
     $result = foods_sync_news_scf_fields();
 
-    if (!empty($result['field_group_id']) && $result['field_count'] === 5) {
+    if (!empty($result['field_group_id']) && $result['field_count'] === 6) {
         update_option('foods_news_scf_fields_version', $version);
     }
 }
