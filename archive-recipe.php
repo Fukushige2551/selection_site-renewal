@@ -142,9 +142,10 @@ function foods_recipe_archive_format_item($recipe_post) {
     $recipe_id = $recipe_post->ID;
     $recipe_categories = foods_recipe_archive_get_terms($recipe_id, 'recipe_category');
     $recipe_tags = foods_recipe_archive_get_terms($recipe_id, 'recipe_tag');
+    $recipe_main_ingredients = foods_recipe_archive_get_terms($recipe_id, 'recipe_main_ingredient');
     $categories = foods_recipe_archive_get_terms($recipe_id, 'category');
     $tags = foods_recipe_archive_get_terms($recipe_id, 'post_tag');
-    $keyword_terms = array_merge($recipe_categories, $recipe_tags, $categories, $tags);
+    $keyword_terms = array_merge($recipe_categories, $recipe_main_ingredients, $recipe_tags, $categories, $tags);
 
     return [
         'id' => $recipe_id,
@@ -166,6 +167,7 @@ function foods_recipe_archive_format_item($recipe_post) {
         'terms' => [
             'recipe_categories' => $recipe_categories,
             'recipe_tags' => $recipe_tags,
+            'recipe_main_ingredients' => $recipe_main_ingredients,
             'categories' => $categories,
             'tags' => $tags,
         ],

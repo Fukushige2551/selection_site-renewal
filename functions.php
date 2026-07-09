@@ -1622,6 +1622,194 @@ function register_recipe_post_type() {
 }
 add_action('init', 'register_recipe_post_type');
 
+function foods_register_recipe_taxonomies() {
+    $common_args = [
+        'public' => true,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'show_in_rest' => true,
+    ];
+
+    register_taxonomy('recipe_category', ['recipe'], array_merge($common_args, [
+        'labels' => [
+            'name' => '料理ジャンル',
+            'singular_name' => '料理ジャンル',
+            'search_items' => '料理ジャンルを検索',
+            'all_items' => 'すべての料理ジャンル',
+            'edit_item' => '料理ジャンルを編集',
+            'update_item' => '料理ジャンルを更新',
+            'add_new_item' => '新しい料理ジャンルを追加',
+            'new_item_name' => '新しい料理ジャンル名',
+            'menu_name' => '料理ジャンル',
+        ],
+        'hierarchical' => true,
+        'rewrite' => [
+            'slug' => 'recipe-category',
+        ],
+    ]));
+
+    register_taxonomy('recipe_main_ingredient', ['recipe'], array_merge($common_args, [
+        'labels' => [
+            'name' => 'メイン食材',
+            'singular_name' => 'メイン食材',
+            'search_items' => 'メイン食材を検索',
+            'all_items' => 'すべてのメイン食材',
+            'edit_item' => 'メイン食材を編集',
+            'update_item' => 'メイン食材を更新',
+            'add_new_item' => '新しいメイン食材を追加',
+            'new_item_name' => '新しいメイン食材名',
+            'menu_name' => 'メイン食材',
+        ],
+        'hierarchical' => false,
+        'rewrite' => [
+            'slug' => 'recipe-main-ingredient',
+        ],
+    ]));
+
+    register_taxonomy('recipe_tag', ['recipe'], array_merge($common_args, [
+        'labels' => [
+            'name' => 'キーワード',
+            'singular_name' => 'キーワード',
+            'search_items' => 'キーワードを検索',
+            'popular_items' => 'よく使われているキーワード',
+            'all_items' => 'すべてのキーワード',
+            'edit_item' => 'キーワードを編集',
+            'update_item' => 'キーワードを更新',
+            'add_new_item' => '新しいキーワードを追加',
+            'new_item_name' => '新しいキーワード名',
+            'separate_items_with_commas' => 'キーワードをカンマで区切って入力',
+            'add_or_remove_items' => 'キーワードを追加または削除',
+            'choose_from_most_used' => 'よく使われているキーワードから選択',
+            'menu_name' => 'キーワード',
+        ],
+        'hierarchical' => false,
+        'rewrite' => [
+            'slug' => 'recipe-keyword',
+        ],
+    ]));
+}
+add_action('init', 'foods_register_recipe_taxonomies');
+
+function foods_get_recipe_default_terms() {
+    return [
+        'recipe_category' => [
+            ['name' => 'お肉', 'slug' => 'meat'],
+            ['name' => 'お魚', 'slug' => 'fish'],
+            ['name' => '野菜', 'slug' => 'vegetable'],
+            ['name' => '主食', 'slug' => 'staple'],
+            ['name' => 'その他', 'slug' => 'other'],
+        ],
+        'recipe_main_ingredient' => [
+            ['name' => '鶏肉', 'slug' => 'chicken'],
+            ['name' => '豚肉', 'slug' => 'pork'],
+            ['name' => '鮭', 'slug' => 'salmon'],
+            ['name' => '豆腐', 'slug' => 'tofu'],
+            ['name' => 'トマト', 'slug' => 'tomato'],
+            ['name' => '麺', 'slug' => 'noodles'],
+            ['name' => 'ご飯', 'slug' => 'rice'],
+        ],
+        'recipe_tag' => [
+            ['name' => '時短', 'slug' => 'quick'],
+            ['name' => '簡単', 'slug' => 'easy'],
+            ['name' => 'さっぱり', 'slug' => 'refreshing'],
+            ['name' => 'ピリ辛', 'slug' => 'spicy'],
+            ['name' => 'お弁当', 'slug' => 'bento'],
+            ['name' => '夏向け', 'slug' => 'summer'],
+        ],
+    ];
+}
+
+function foods_sync_recipe_default_terms() {
+    foreach (foods_get_recipe_default_terms() as $taxonomy => $terms) {
+        if (!taxonomy_exists($taxonomy)) {
+            continue;
+        }
+
+        foreach ($terms as $term) {
+            $existing_term = get_term_by('slug', $term['slug'], $taxonomy);
+
+            if (!$existing_term) {
+                wp_insert_term($term['name'], $taxonomy, [
+                    'slug' => $term['slug'],
+                ]);
+                continue;
+            }
+
+            if ($existing_term->name !== $term['name']) {
+                wp_update_term($existing_term->term_id, $taxonomy, [
+                    'name' => $term['name'],
+                ]);
+            }
+        }
+    }
+}
+add_action('init', 'foods_sync_recipe_default_terms', 20);
+
+function foods_get_recipe_term_slugs_for_post($index) {
+    $genre_sets = [
+        ['staple'],
+        ['meat'],
+        ['fish'],
+        ['vegetable'],
+        ['other'],
+    ];
+    $ingredient_sets = [
+        ['noodles'],
+        ['chicken'],
+        ['salmon'],
+        ['tomato'],
+        ['tofu'],
+        ['rice'],
+        ['pork'],
+    ];
+    $keyword_sets = [
+        ['quick', 'refreshing'],
+        ['easy', 'spicy'],
+        ['summer'],
+        ['bento', 'easy'],
+        ['quick'],
+        ['easy'],
+    ];
+
+    return [
+        'recipe_category' => $genre_sets[$index % count($genre_sets)],
+        'recipe_main_ingredient' => $ingredient_sets[$index % count($ingredient_sets)],
+        'recipe_tag' => $keyword_sets[$index % count($keyword_sets)],
+    ];
+}
+
+function foods_assign_recipe_default_terms_to_existing_posts() {
+    $version = '20260709';
+    if (get_option('foods_recipe_default_terms_assigned_version') === $version) {
+        return;
+    }
+
+    if (!post_type_exists('recipe')) {
+        return;
+    }
+
+    $recipe_posts = get_posts([
+        'post_type' => 'recipe',
+        'post_status' => 'any',
+        'posts_per_page' => -1,
+        'fields' => 'ids',
+        'orderby' => 'date',
+        'order' => 'ASC',
+    ]);
+
+    foreach ($recipe_posts as $index => $post_id) {
+        foreach (foods_get_recipe_term_slugs_for_post($index) as $taxonomy => $slugs) {
+            if (!taxonomy_exists($taxonomy) || !empty(wp_get_object_terms($post_id, $taxonomy, ['fields' => 'ids']))) {
+                continue;
+            }
+
+            wp_set_object_terms($post_id, $slugs, $taxonomy, false);
+        }
+    }
+
+    update_option('foods_recipe_default_terms_assigned_version', $version);
+}
+add_action('init', 'foods_assign_recipe_default_terms_to_existing_posts', 30);
 /**
  * カスタムタクソノミー
  */
