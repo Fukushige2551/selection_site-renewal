@@ -182,7 +182,7 @@ function foods_recipe_archive_format_item($recipe_post) {
 $recipe_paged = max(1, (int) get_query_var('paged'));
 $recipe_query = new WP_Query([
     'post_type' => 'recipe',
-    'posts_per_page' => 10,
+    'posts_per_page' => 12,
     'paged' => $recipe_paged,
     'post_status' => 'publish',
     'orderby' => 'date',
@@ -280,6 +280,8 @@ get_header();
                 <span class="p-recipe-archive__decoration p-recipe-archive__decoration--bowl"></span>
                 <span class="p-recipe-archive__decoration p-recipe-archive__decoration--glove"></span>
                 <span class="p-recipe-archive__decoration p-recipe-archive__decoration--cutter"></span>
+                <span class="p-recipe-archive__decoration p-recipe-archive__decoration--cutter-medium"></span>
+                <span class="p-recipe-archive__decoration p-recipe-archive__decoration--cutter-small"></span>
                 <span class="p-recipe-archive__decoration p-recipe-archive__decoration--ladle"></span>
                 <span class="p-recipe-archive__decoration p-recipe-archive__decoration--apron"></span>
                 <span class="p-recipe-archive__decoration p-recipe-archive__decoration--tools"></span>
