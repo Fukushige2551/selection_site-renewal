@@ -236,6 +236,66 @@ get_header();
             <button class="p-recipe-archive__ingredient-button" type="button" data-recipe-category="other">その他</button>
         </div>
 
+        <div class="p-recipe-archive__desktop-search" aria-label="レシピ検索">
+            <section class="p-recipe-archive__desktop-search-group" aria-labelledby="recipe-desktop-ingredient-title">
+                <h2 id="recipe-desktop-ingredient-title" class="p-recipe-archive__desktop-search-title">食材から探す</h2>
+                <div class="p-recipe-archive__desktop-search-grid">
+                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-category="vegetable">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-ingredient-vegetable.png'); ?>" alt="" loading="lazy">
+                        <span>野菜</span>
+                    </button>
+                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-category="meat">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-ingredient-meat.png'); ?>" alt="" loading="lazy">
+                        <span>お肉</span>
+                    </button>
+                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-category="fish">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-ingredient-fish.png'); ?>" alt="" loading="lazy">
+                        <span>お魚</span>
+                    </button>
+                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-category="noodle-rice">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-ingredient-rice.png'); ?>" alt="" loading="lazy">
+                        <span>麺・ご飯</span>
+                    </button>
+                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-category="dairy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-ingredient-dairy.png'); ?>" alt="" loading="lazy">
+                        <span>乳製品</span>
+                    </button>
+                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-category="soy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-ingredient-soy.png'); ?>" alt="" loading="lazy">
+                        <span>大豆・豆腐</span>
+                    </button>
+                </div>
+            </section>
+            <section class="p-recipe-archive__desktop-search-group" aria-labelledby="recipe-desktop-name-title">
+                <h2 id="recipe-desktop-name-title" class="p-recipe-archive__desktop-search-title">料理名から探す</h2>
+                <div class="p-recipe-archive__desktop-search-grid">
+                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-keyword="麺・ご飯">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-name-rice.png'); ?>" alt="" loading="lazy">
+                        <span>麺・ご飯</span>
+                    </button>
+                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-keyword="肉料理">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-name-meat.png'); ?>" alt="" loading="lazy">
+                        <span>肉料理</span>
+                    </button>
+                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-keyword="魚料理">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-name-fish.png'); ?>" alt="" loading="lazy">
+                        <span>魚料理</span>
+                    </button>
+                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-keyword="卵料理">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-name-egg.png'); ?>" alt="" loading="lazy">
+                        <span>卵料理</span>
+                    </button>
+                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-keyword="スープ・汁物">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-name-soup.png'); ?>" alt="" loading="lazy">
+                        <span>スープ・汁物</span>
+                    </button>
+                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-keyword="鍋">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-name-pot.png'); ?>" alt="" loading="lazy">
+                        <span>鍋</span>
+                    </button>
+                </div>
+            </section>
+        </div>
         <section class="p-recipe-archive__keyword" aria-labelledby="recipe-archive-keyword-title">
             <h2 id="recipe-archive-keyword-title" class="p-recipe-archive__keyword-title">
                 <span class="p-recipe-archive__keyword-title-text">キーワード</span>
