@@ -117,7 +117,7 @@ jQuery(function($) {
     // /**
     //  * vw算出(SP)
     //  */
-    // const valueSP = (56) / 390;
+    // const valueSP = (15.85) / 390;
     // const resultSP = Math.floor(valueSP * 10000) / 100;
     // console.log('SP: ' + resultSP.toFixed(2) + 'vw');
 
@@ -131,7 +131,7 @@ jQuery(function($) {
     /**
      * vw算出(PC)
      */
-    const valuePC = (20) / 1920;
-    const resultPC = Math.floor(valuePC * 10000) / 100;
-    console.log('PC: ' + resultPC.toFixed(2) + 'vw');
+    // const valuePC = (20) / 1920;
+    // const resultPC = Math.floor(valuePC * 10000) / 100;
+    // console.log('PC: ' + resultPC.toFixed(2) + 'vw');
 });

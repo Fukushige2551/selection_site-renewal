@@ -28,7 +28,11 @@ export default defineConfig({
             input: {
                 main: path.resolve(__dirname, 'src/js/main.js'),
                 'front-page': path.resolve(__dirname, 'src/js/front-page.js'),
-                'page-shop': path.resolve(__dirname, 'src/js/page-shop.js')
+                'page-shop': path.resolve(__dirname, 'src/js/page-shop.js'),
+                'single-shop': path.resolve(__dirname, 'src/js/single-shop.js'),
+                'archive-news': path.resolve(__dirname, 'src/js/archive-news.js'),
+                'single-news': path.resolve(__dirname, 'src/js/single-news.js'),
+                'archive-recipe': path.resolve(__dirname, 'src/js/archive-recipe.js')
             },
             output: {
                 entryFileNames: 'assets/[name].js',
@@ -41,3 +45,4 @@ export default defineConfig({
         }
     }
 })
+

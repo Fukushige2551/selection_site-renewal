@@ -1,0 +1,4025 @@
+@use "foundation/global" as *;
+
+.p-single-shop {
+    box-sizing: border-box;
+    background: #fff;
+    color: #111;
+    font-family: $font-family-ZenKaku;
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    a {
+        color: #10a3ff;
+        text-decoration: underline;
+    }
+
+    &__breadcrumb {
+        width: 89.74vw;
+    }
+
+    &__hero {
+        text-align: center;
+        margin-bottom: 5.64vw;
+    }
+
+    &__title {
+        margin: 0 0 2.05vw;
+        font-size: 6.15vw;
+        font-weight: 700;
+        letter-spacing: 0;
+    }
+
+    &__title-sub {
+        color: #00a684;
+        font-family: $font-family-ScopeOne;
+        font-size: 3.07vw;
+        letter-spacing: 0.18em;
+    }
+
+    &__section {
+        position: relative;
+        width: 100%;
+        padding-right: 8vw;
+        padding-left: 8vw;
+    }
+
+    &__heading {
+        margin: 0 0 6.41vw;
+        text-align: center;
+        font-size: 5.64vw;
+        font-weight: 700;
+        line-height: 1.45;
+        letter-spacing: 0;
+
+        &--accent {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3.07vw;
+            color: #00a684;
+            font-size: 4.61vw;
+            line-height: 1;
+            white-space: nowrap;
+
+            &::before,
+            &::after {
+                content: "";
+                flex: 0 0 16.41vw;
+                border-top: 0.51vw dotted #00a684;
+            }
+
+            .p-single-shop__heading-chevron {
+                position: relative;
+                display: inline-block;
+                flex: 0 0 0.76em;
+                width: 0.76em;
+                height: 0.75em;
+                line-height: 1;
+
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    display: block;
+                    width: 0.76em;
+                    height: 0.1em;
+                    border-radius: 999px;
+                    background: #00a684;
+                }
+
+                &--left::before,
+                &--left::after {
+                    left: 0;
+                    transform-origin: left center;
+                }
+
+                &--left::before {
+                    transform: rotate(-25deg);
+                }
+
+                &--left::after {
+                    transform: rotate(25deg);
+                }
+
+                &--right::before,
+                &--right::after {
+                    right: 0;
+                    transform-origin: right center;
+                }
+
+                &--right::before {
+                    transform: rotate(25deg);
+                }
+
+                &--right::after {
+                    transform: rotate(-25deg);
+                }
+            }
+        }
+    }
+
+    &__bracket-heading {
+        margin: 0 0 8.2vw;
+        text-align: center;
+        font-size: 4.1vw;
+        font-weight: 700;
+
+        &::before {
+            content: "[";
+            margin-right: 0.4em;
+        }
+
+        &::after {
+            content: "]";
+            margin-left: 0.4em;
+        }
+    }
+
+    &__lead,
+    &__period {
+        text-align: center;
+        font-weight: 700;
+    }
+
+    &__lead {
+        margin-bottom: 4.1vw;
+        font-size: 4.1vw;
+    }
+
+    &__period {
+        margin-bottom: 10.25vw;
+        font-size: 4.1vw;
+    }
+
+    &__flyer {
+        padding-bottom: 9.48vw;
+    }
+
+    &__flyer-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4.1vw;
+    }
+
+    &__flyer-card {
+        position: relative;
+        display: block;
+        aspect-ratio: 152 / 142;
+        border-radius: 3.84vw;
+        background: #f3f3f3;
+        text-decoration: none;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__zoom {
+        position: absolute;
+        right: 2.05vw;
+        bottom: 2.05vw;
+        width: 9.23vw;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 0.76vw 1.79vw rgba(0, 0, 0, 0.18);
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 2.4vw;
+            left: 2.4vw;
+            width: 3.2vw;
+            aspect-ratio: 1;
+            border: 0.76vw solid #111;
+            border-radius: 50%;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: 2.1vw;
+            bottom: 2.25vw;
+            width: 3vw;
+            height: 0.76vw;
+            border-radius: 999px;
+            background: #111;
+            transform: rotate(45deg);
+            transform-origin: center;
+        }
+    }
+
+    &__deals {
+        position: relative;
+        overflow: visible;
+        padding: 33vw 5.12vw 43.4vw;
+        background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/bg-shop_deals.png");
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 100% auto;
+    }
+
+    &__deal-decorations {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    &__deal-decoration {
+        position: absolute;
+        display: block;
+        height: auto;
+        pointer-events: none;
+
+        &--scallion {
+            top: 249vw;
+            left: 3.07vw;
+            width: 14.87vw;
+        }
+
+        &--chocolate {
+            display: none;
+        }
+
+        &--cabbage {
+            display: none;
+        }
+
+        &--apple {
+            top: 32vw;
+            left: 11vw;
+            width: 7.18vw;
+        }
+
+        &--banana {
+            top: 7.6vw;
+            left: 34vw;
+            width: 12.05vw;
+        }
+
+        &--prepared-food,
+        &--soy-sauce {
+            display: none;
+        }
+
+        &--cart {
+            top: -5vw;
+            right: 8vw;
+            width: 26.41vw;
+        }
+
+        &--napa-cabbage {
+            top: 14vw;
+            left: 5.12vw;
+            width: 14.61vw;
+        }
+
+        &--meat {
+            top: 238vw;
+            right: 27vw;
+            width: 19.74vw;
+        }
+
+        &--rice {
+            top: 251vw;
+            left: 79vw;
+            width: 17.95vw;
+        }
+    }
+
+    &__deals-title {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+
+    &__deals .p-front-page__special-offers {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 4.35vw;
+    }
+
+    &__deals .p-front-page__special-offers__item {
+        position: relative;
+        width: 90.46vw;
+        aspect-ratio: 352.82 / 281;
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: 11.53vw;
+        background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/front-page/svg/bg_special-offers-body.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+
+        &[hidden] {
+            display: none;
+        }
+
+        &.is-special::after {
+            content: attr(data-label);
+            position: absolute;
+            top: 6.92vw;
+            right: -2.61vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 22.56vw;
+            aspect-ratio: 88 / 44;
+            padding-bottom: 2.4vw;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/bg-shop_deal-badge.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            color: #fff;
+            font-family: $font-family-ZenKaku;
+            font-size: 3.59vw;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: 0;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        &.is-good-deal::before {
+            content: "今日のお買い得品";
+            position: absolute;
+            top: -8.46vw;
+            left: 16.92vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60.51vw;
+            aspect-ratio: 236 / 56;
+            margin-bottom: 1vw;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/front-page/svg/bg_special-offers-header.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+            font-family: $font-family-ZenKaku;
+            font-size: 5.12vw;
+            font-weight: 700;
+            letter-spacing: 0;
+        }
+    }
+
+    &__deals .p-front-page__special-offers__date {
+        padding: 0 2.05vw 0 21.79vw;
+        font-size: 4.1vw;
+        font-weight: 700;
+        line-height: 1.4;
+    }
+
+    &__deal-date-main {
+        font-size: 4.1vw;
+    }
+
+    &__deal-date-weekday {
+        font-size: 3.07vw;
+    }
+
+    &__deal-date-space {
+        font-size: 3.58vw;
+    }
+
+    &__deals .p-front-page__special-offers__item__details--wrapper {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        gap: 2.82vw;
+        margin-top: 12.3vw;
+        padding: 0 6.1vw 0 8.2vw;
+
+        &.is--limited--qupon::after {
+            content: attr(data-coupon);
+            position: absolute;
+            top: -9.23vw;
+            left: 7.69vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.79vw 2.3vw;
+            border: 1px solid #f4313f;
+            border-radius: 3.33vw;
+            color: #f4313f;
+            font-size: 3.58vw;
+            font-weight: 800;
+            line-height: 1;
+            white-space: nowrap;
+        }
+    }
+
+    &__deals .p-front-page__special-offers__item__img {
+        display: block;
+        flex: 0 0 32.3vw;
+
+        img {
+            width: 32.3vw;
+            aspect-ratio: 126 / 113;
+            border-radius: 2.56vw;
+            object-fit: cover;
+        }
+    }
+
+    &__deals .p-front-page__special-offers__item__details {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: space-between;
+        min-width: 0;
+        width: 100%;
+        --details-font-scale: 1;
+    }
+
+    &__deals .p-front-page__special-offers__item__details__title {
+        line-height: 1.4;
+        word-break: keep-all;
+    }
+
+    &__deals .p-front-page__special-offers__item__details__title__origin,
+    &__deals .p-front-page__special-offers__item__details__title__note {
+        display: block;
+        font-size: calc(3.58vw * var(--details-font-scale));
+    }
+
+    &__deals .p-front-page__special-offers__item__details__title__origin {
+        font-weight: 500;
+    }
+
+    &__deals .p-front-page__special-offers__item__details__title__highlight {
+        display: block;
+        font-size: calc(4.1vw * var(--details-font-scale));
+        font-weight: 700;
+        overflow-wrap: anywhere;
+        word-break: normal;
+        white-space: normal;
+    }
+
+    &__deals .p-front-page__special-offers__item__details__price {
+        text-align: right;
+
+        &__label {
+            font-size: calc(4.1vw * var(--details-font-scale));
+            font-weight: 500;
+        }
+
+        &__value {
+            font-size: calc(7.17vw * var(--details-font-scale));
+            font-weight: 700;
+        }
+
+        &__unit {
+            font-size: calc(5.12vw * var(--details-font-scale));
+            font-weight: 700;
+        }
+    }
+
+    &__deals .p-front-page__special-offers__item__details__tax {
+        margin-top: 2.3vw;
+        font-size: calc(3.07vw * var(--details-font-scale));
+        font-weight: 400;
+        line-height: 1.4;
+        text-align: right;
+    }
+
+    &__deals .p-front-page__special-offers__item--note {
+        display: flex;
+        margin-top: 2.4vw;
+        padding: 0 9vw;
+        font-size: 3.07vw;
+        line-height: 1.4;
+        word-break: keep-all;
+
+        &::before {
+            content: "※";
+            display: block;
+        }
+    }
+
+    &__slider-dots {
+        display: flex;
+        justify-content: center;
+        gap: 3.07vw;
+
+        span,
+        button {
+            width: 2.3vw;
+            aspect-ratio: 1;
+            padding: 0;
+            border: 0;
+            border-radius: 50%;
+            background: #d7d7d7;
+            appearance: none;
+
+            &.is-active {
+                background: #103675;
+            }
+        }
+
+        button {
+            cursor: pointer;
+        }
+    }
+
+    &__deal-pager {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 27vw;
+        margin-top: 6vw;
+    }
+
+    &__deal-pager-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 7.69vw;
+        aspect-ratio: 1;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        transition: opacity 0.3s ease, transform 0.4s ease;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        > svg {
+            display: none;
+        }
+
+        .c-slider--btn__img {
+            width: 7.69vw;
+            height: auto;
+        }
+    }
+
+    &__news-pager-button {
+        display: none;
+    }
+    &__deals &__slider-dots {
+        position: relative;
+        z-index: 1;
+        margin-top: 0;
+    }
+
+    &__important {
+        width: 84.61vw;
+        margin: 0 auto 21.53vw;
+        padding: 4vw 3.6vw;
+        border: 0.51vw solid #ff3447;
+        border-radius: 3.07vw;
+        background: #fff;
+
+        h2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.28vw;
+            margin-bottom: 2vw;
+            text-align: center;
+            font-size: 4.1vw;
+            font-weight: 700;
+
+            img {
+                display: block;
+                width: 5.12vw;
+                height: auto;
+            }
+        }
+
+        h3 {
+            height: 11.02vw;
+            margin-bottom: 2.56vw;
+            font-size: 3.84vw;
+            font-weight: 700;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 3.84vw;
+            line-height: 1.7;
+        }
+    }
+
+    &__important-item + &__important-item {
+        margin-top: 4.1vw;
+        padding-top: 4.1vw;
+        border-top: 1px solid #f0d4d7;
+    }
+
+    &__important-body {
+        margin-bottom: 1.53vw;
+    }
+
+    &__deals &__important {
+        position: relative;
+        z-index: 1;
+        margin-top: 8.2vw;
+        margin-bottom: 0;
+    }
+
+    &__info {
+        padding-bottom: 14.35vw;
+    }
+
+    &__main-photo,
+    &__news-card img,
+    &__message img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__main-photo {
+        aspect-ratio: 333 / 233;
+        margin-bottom: 7.17vw;
+        border-radius: 3.07vw;
+    }
+
+    &__info-list {
+        display: flex;
+        flex-direction: column;
+        gap: 4.1vw;
+        margin-bottom: 6.15vw;
+
+        div {
+            display: grid;
+            grid-template-columns: 22.56vw 1fr;
+            gap: 4.61vw;
+        }
+
+        dt {
+            font-size: 3.84vw;
+            font-weight: 700;
+            line-height: 1.65;
+        }
+
+        dd {
+            font-size: 3.84vw;
+            line-height: 1.75;
+        }
+
+        span {
+            display: inline-block;
+            margin-top: 2.05vw;
+        }
+
+        &--compact {
+            margin-bottom: 0;
+        }
+    }
+
+    &__map {
+        width: 100%;
+        aspect-ratio: 333 / 255;
+        margin-bottom: 7.17vw;
+        overflow: hidden;
+        border-radius: 3.07vw;
+        background:
+            linear-gradient(35deg, transparent 0 46%, #b6cfe8 46% 49%, transparent 49%),
+            linear-gradient(-28deg, transparent 0 38%, #b6cfe8 38% 41%, transparent 41%),
+            linear-gradient(90deg, #f7f0e2 1px, transparent 1px),
+            linear-gradient(#f7f0e2 1px, transparent 1px),
+            #edf4fa;
+        background-size: auto, auto, 14vw 14vw, 14vw 14vw, auto;
+
+        iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: inherit;
+        }
+    }
+
+    &__map--embed {
+        background: none;
+    }
+
+    &__payment {
+        position: relative;
+        padding-top: 8.2vw;
+        padding-bottom: 12.3vw;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            right: 6.8vw;
+            left: 6.8vw;
+            border-top: 1px dashed #d0d0d0;
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+        }
+    }
+
+    &__payment-group {
+        margin-bottom: 6vw;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        h3 {
+            height: 11.02vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 7.17vw;
+            margin-bottom: 6vw;
+            border-radius: 999px;
+            background: #f2f2f2;
+            font-size: 4.1vw;
+            font-weight: 700;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4.1vw 5.12vw;
+            align-items: center;
+            list-style: none;
+        }
+
+        li {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 18vw;
+            min-height: 9.23vw;
+            padding: 1.53vw 2.05vw;
+            border: 1px solid #ddd;
+            border-radius: 1.53vw;
+            background: #fff;
+            color: #103675;
+            font-size: 4.1vw;
+            font-weight: 700;
+            line-height: 1;
+        }
+    }
+
+    &__payment-icons {
+        display: grid !important;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 4.1vw 3.07vw !important;
+        align-items: center;
+        justify-items: center;
+
+        li {
+            width: 100%;
+            min-width: 0;
+            min-height: 0;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+        }
+
+        img {
+            display: block;
+            width: auto;
+            max-width: 100%;
+            max-height: 12.82vw;
+        }
+
+        &--qr {
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 4.1vw 2.56vw !important;
+        }
+    }
+
+    &__services {
+        padding-top: 10.25vw;
+        padding-bottom: 8vw;
+    }
+
+    &__service-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 5.12vw 4.1vw;
+        justify-items: center;
+        list-style: none;
+
+        li {
+            width: 100%;
+            text-align: center;
+            color: #00a684;
+            font-size: 3.58vw;
+            font-weight: 700;
+            line-height: 1.35;
+        }
+
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: min(17.94vw, 100%);
+            aspect-ratio: 1;
+            margin: 0 auto 2.56vw;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__news {
+        position: relative;
+        z-index: 2;
+        padding: 23.07vw 0 18.46vw;
+        background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/shop_news-bg.svg");
+        background-repeat: no-repeat;
+        background-position: top center;
+
+        .p-single-shop__slider-dots {
+            position: relative;
+            z-index: 4;
+        }
+    }
+
+    &__news-staff {
+        position: absolute;
+        top: 11.4vw;
+        right: 13vw;
+        z-index: 1;
+        width: 13vw;
+        height: auto;
+        pointer-events: none;
+    }
+
+    &__news-campaign {
+        width: 81.02vw;
+        margin: 0 auto 6.15vw;
+
+        &[hidden] {
+            display: none;
+        }
+
+        .c-campaign-content {
+            &__img {
+                display: block;
+                width: 100%;
+                aspect-ratio: 316 / 236;
+            }
+
+            &__time {
+                left: -5.38vw;
+                bottom: 7.94vw;
+                width: 26.41vw;
+                aspect-ratio: 103 / 30;
+                border-radius: 3.84vw;
+                font-size: 3.07vw;
+            }
+        }
+
+        .c-campaign-content-caption {
+            margin-top: 2.05vw;
+            font-size: 4.1vw;
+            font-weight: $font-weight-medium;
+            line-height: 1.56;
+        }
+    }
+
+    &__news-card {
+        text-align: center;
+
+        img {
+            aspect-ratio: 314 / 244;
+            margin-bottom: 4.1vw;
+            border-radius: 9.23vw 9.23vw 2.56vw 2.56vw;
+        }
+
+        time {
+            display: inline-flex;
+            margin-bottom: 6.15vw;
+            padding: 2.05vw 4.1vw;
+            border-radius: 999px;
+            background: #fff;
+            color: #00a684;
+            font-family: $font-family-SecularOne;
+            font-size: 3.07vw;
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 3.07vw;
+            font-size: 4.1vw;
+            letter-spacing: 0.2em;
+        }
+
+        h3 {
+            height: 11.02vw;
+            font-size: 4.1vw;
+            letter-spacing: 0.18em;
+        }
+    }
+
+    &__message {
+        padding-top: 28vw;
+        padding-bottom: 28vw;
+        background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/owner_greeting.svg");
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 100% auto;
+        position: relative;
+        z-index: 2;
+        color: #fff;
+        top: -20vw;
+
+        .p-single-shop__heading {
+            color: #fff;
+        }
+
+        p {
+            font-size: 4.1vw;
+            line-height: 1.75;
+        }
+
+        .p-single-shop__message-body {
+            min-height: 57.43vw;
+        }
+
+        .p-single-shop__manager-photo {
+            position: relative;
+            width: 79.48vw;
+            aspect-ratio: 310 / 238;
+            margin: 6vw auto 0;
+        }
+
+        .p-single-shop__manager-photo-image,
+        .p-single-shop__manager-photo-frame {
+            width: 100%;
+            height: 100%;
+        }
+
+        .p-single-shop__manager-photo-image {
+            object-fit: cover;
+        }
+
+        .p-single-shop__manager-photo-frame {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            object-fit: fill;
+            pointer-events: none;
+        }
+
+        .p-single-shop__manager-photo-decoration,
+        .p-single-shop__manager-photo-bush {
+            position: absolute;
+            z-index: 2;
+            height: auto;
+            object-fit: contain;
+            pointer-events: none;
+        }
+
+        .p-single-shop__manager-photo-decoration {
+            top: 34vw;
+            left: 64vw;
+            width: 25.9vw;
+        }
+
+        .p-single-shop__manager-photo-decoration--tablet {
+            display: none;
+        }
+
+        .p-single-shop__manager-photo-bush {
+            top: 46vw;
+            left: -10vw;
+            width: 23.58vw;
+        }
+    }
+
+    &__manager {
+        margin-top: 5.12vw;
+        text-align: right;
+    }
+
+    &__recruit {
+        top: -38vw;
+        padding: 30vw 4.1vw 30vw;
+        background-image: url(/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/bg_recruit.svg);
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 100% auto;
+    }
+
+    &__recruit &__heading {
+        position: relative;
+        width: 75.64vw;
+        margin-right: auto;
+        margin-left: auto;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            display: block;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            pointer-events: none;
+        }
+
+        &::before {
+            top: -6.6vw;
+            right: -4vw;
+            width: 16vw;
+            aspect-ratio: 53 / 113;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/recruit_staff-left.svg");
+        }
+
+        &::after {
+            z-index: 2;
+            top: -17vw;
+            left: 0vw;
+            width: 13.59vw;
+            aspect-ratio: 53 / 113;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/recruit_staff-right.svg");
+        }
+    }
+
+    &__recruit-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4.61vw;
+        margin-bottom: 5.89vw;
+    }
+
+    &__recruit-card {
+        display: flex;
+        flex-direction: column;
+        padding: 4.61vw 3.58vw 3.8vw;
+        border-radius: 2.56vw;
+        background: #fff;
+
+        &[hidden] {
+            display: none;
+        }
+
+        h3 {
+            height: 11.02vw;
+            margin-bottom: 4vw;
+            font-size: 4.1vw;
+            line-height: 1.45;
+        }
+
+        p {
+            margin-bottom: 2vw;
+            font-size: 3.58vw;
+            line-height: 1.55;
+        }
+
+        p:last-of-type {
+            margin-bottom: 5.12vw;
+        }
+
+        strong {
+            font-size: 3.59vw;
+        }
+
+        a {
+            display: flex;
+            margin-top: auto;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 11.79vw;
+            border-radius: 0;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/btn_recruit_apply.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+            color: #fff;
+            font-size: 4.1vw;
+            font-weight: 700;
+            text-decoration: none;
+        }
+    }
+
+    &__more {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44.35vw;
+        min-height: 13.84vw;
+        margin: 5.38vw auto 0;
+        border-radius: 0;
+        background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/btn_more.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+        color: #fff !important;
+        font-size: 3.58vw;
+        font-weight: 700;
+        text-decoration: none !important;
+    }
+
+    &__recruit-banner {
+        display: block;
+        width: 92.56vw;
+        max-width: none;
+        aspect-ratio: 361 / 303;
+        margin-top: 10.25vw;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        object-fit: contain;
+    }
+
+    &__nearby {
+        margin-top: -38vw;
+        padding: 13vw 5.12vw 15.38vw;
+        background: #fff;
+        border-radius: 45% 45% 0 0 / 4% 4% 0 0;
+
+        .c-shop-card-list {
+            width: 100%;
+        }
+
+        .js-single-shop-nearby-card[hidden] {
+            display: none;
+        }
+
+        .p-single-shop__slider-dots {
+            position: relative;
+            z-index: 1;
+            margin-top: 10.51vw;
+        }
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .p-single-shop {
+        &__breadcrumb {
+            width: 89.84vw;
+            overflow-x: auto;
+        }
+
+        &__hero {
+            margin-bottom: 4.69vw;
+            text-align: center;
+        }
+
+        &__title {
+            margin-bottom: 1.3vw;
+            font-size: 3.39vw;
+            line-height: 1.45;
+        }
+
+        &__title-sub {
+            line-height: 1;
+            letter-spacing: 0.18em;
+        }
+
+        &__flyer {
+            width: 76.56vw;
+            margin-right: auto;
+            margin-left: auto;
+            padding-right: 0;
+            padding-bottom: 7.03vw;
+            padding-left: 0;
+        }
+
+        &__flyer &__heading {
+            gap: 1.82vw;
+            margin-bottom: 3.13vw;
+            font-size: 2.6vw;
+            line-height: 1;
+
+            &::before,
+            &::after {
+                flex-basis: 8.33vw;
+                border-top-width: 0.26vw;
+            }
+        }
+
+        &__lead {
+            margin-bottom: 1.82vw;
+            font-size: 2.08vw;
+            line-height: 1.6;
+        }
+
+        &__period {
+            margin-bottom: 3.52vw;
+        }
+
+        &__flyer-list {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 2.34vw;
+        }
+
+        &__flyer-card {
+            aspect-ratio: 320 / 300;
+            border-radius: 1.56vw;
+        }
+
+        &__zoom {
+            right: 1.56vw;
+            bottom: 1.56vw;
+            width: 4.43vw;
+        }
+        &__deals {
+            padding: 13.4vw 0 15vw;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/bg-shop_deals-tablet.svg");
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: 100% auto;
+        }
+
+        &__deals-title {
+            position: absolute;
+            top: 9vw;
+            left: 51%;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30.02vw;
+            height: auto;
+            aspect-ratio: 236 / 56;
+            overflow: visible;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/bg-shop_deals-title-tablet.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+            clip: auto;
+            clip-path: none;
+            font-family: $font-family-ZenKaku;
+            font-size: 2.6vw;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: 0.29vw;
+            white-space: nowrap;
+            transform: translateX(-50%);
+        }
+
+        &__deal-decorations {
+            z-index: 1;
+        }
+
+        &__deal-decoration {
+            &--scallion,
+            &--apple,
+            &--rice,
+            &--napa-cabbage {
+                display: none;
+            }
+
+            &--prepared-food {
+                display: block;
+                top: 3vw;
+                left: 27vw;
+                width: 10.28vw;
+            }
+
+            &--soy-sauce {
+                display: block;
+                top: 50.6vw;
+                left: 2.54vw;
+                width: 5.77vw;
+            }
+
+            &--banana {
+                top: 10.6vw;
+                left: 3vw;
+                width: 4.8vw;
+                aspect-ratio: 47 / 42;
+            }
+
+            &--cart {
+                top: 1.6vw;
+                right: 3vw;
+                left: auto;
+                width: 11.52vw;
+            }
+
+            &--meat {
+                top: 50.6vw;
+                left: 89vw;
+                width: 8.87vw;
+            }
+
+            &--rice {
+                top: 25.2vw;
+                right: 5.8vw;
+                left: auto;
+                width: 5.47vw;
+            }
+
+            &--napa-cabbage {
+                top: 17.8vw;
+                right: 10.5vw;
+                left: auto;
+                width: 5.76vw;
+            }
+        }
+
+        &__deals .p-front-page__special-offers {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 93.08vw;
+            margin: 0 auto;
+        }
+
+        &__deals .p-front-page__special-offers__item {
+            flex: 0 0 44.88vw;
+            width: 44.88vw;
+            aspect-ratio: 344.74 / 281;
+            margin-right: 0;
+            margin-left: 0;
+            padding-top: 5vw;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/bg-shop_deal-card-tablet.svg");
+            background-size: 100% 100%;
+
+            &[hidden] {
+                display: none;
+            }
+
+            &.is-special::after {
+                top: 3vw;
+                right: 0;
+                width: 11.45vw;
+                padding-bottom: 1.5vw;
+                font-size: 2.08vw;
+                letter-spacing: 0.23vw;
+            }
+
+            &.is-good-deal::before {
+                content: none;
+                display: none;
+            }
+        }
+
+        &__deals .p-front-page__special-offers__date {
+            padding: 0 2.15vw;
+            font-family: $font-family-ZenKaku;
+            font-size: 0;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: 0;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        &__deal-date-main {
+            font-size: 2.08vw;
+            line-height: normal;
+        }
+
+        &__deal-date-weekday {
+            line-height: normal;
+        }
+
+        &__deal-date-space {
+            line-height: normal;
+        }
+
+        &__deals .p-front-page__special-offers__item__details--wrapper {
+            gap: 1.07vw;
+            margin-top: 4.59vw;
+            padding: 0 3.17vw;
+
+            &.is--limited--qupon::after {
+                top: -3.42vw;
+                left: 3vw;
+                min-width: 14.36vw;
+                min-height: 2.54vw;
+                padding: 0 0.74vw;
+                border-radius: 1.27vw;
+                    line-height: 1;
+            }
+        }
+
+        &__deals .p-front-page__special-offers__item__img {
+            flex: 0 0 12.305vw;
+
+            img {
+                width: 16.4vw;
+                aspect-ratio: 126 / 113;
+                border-radius: 0.98vw;
+            }
+        }
+
+        &__deals .p-front-page__special-offers__item__details {
+            --details-font-scale: 1;
+        }
+
+        &__deals .p-front-page__special-offers__item__details__title {
+            line-height: normal;
+        }
+
+        &__deals .p-front-page__special-offers__item__details__title__origin,
+        &__deals .p-front-page__special-offers__item__details__title__note {
+            line-height: normal;
+        }
+
+        &__deals .p-front-page__special-offers__item__details__title__highlight {
+            font-size: 2.08vw;
+            line-height: normal;
+        }
+
+        &__deals .p-front-page__special-offers__item__details__price {
+            line-height: normal;
+
+            &__label {
+                font-size: 2.08vw;
+                line-height: 1;
+            }
+
+            &__value {
+                font-size: 3.64vw;
+                line-height: 1;
+            }
+
+            &__unit {
+                font-size: 2.6vw;
+                line-height: 1;
+            }
+        }
+
+        &__deals .p-front-page__special-offers__item__details__tax {
+            margin-top: 0.2vw;
+            line-height: 1;
+        }
+
+        &__deals .p-front-page__special-offers__item--note {
+            margin-top: 1vw;
+            padding: 0 3.13vw;
+            line-height: normal;
+        }
+
+        &__deal-pager {
+            position: static;
+            display: block;
+            margin-top: 2.4vw;
+        }
+
+        &__deal-pager-button {
+            position: absolute;
+            top: 29.74vw;
+            z-index: 3;
+            width: 3.91vw;
+        }
+
+        &__deal-pager-button.c-slider--btn--left {
+            left: calc((100vw - 93.08vw) / 2 - 1.955vw);
+        }
+
+        &__deal-pager-button.c-slider--btn--right {
+            right: calc((100vw - 93.08vw) / 2 - 1.955vw);
+        }
+
+
+    &__deals &__slider-dots {
+        }
+
+        &__deals &__slider-dots button {
+            width: 1.04vw;
+        }
+
+
+        &__important-section {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        &__important-section > &__important {
+            width: 76.56vw;
+            min-height: 14vw;
+            margin: 0 auto 8.59vw;
+            padding: 2vw 3.25vw 1.46vw;
+            border-width: 0.2vw;
+            border-radius: 1.95vw;
+        }
+
+        &__important-section > &__important h2 {
+            gap: 0.78vw;
+            margin-bottom: 1.66vw;
+            font-size: 2.08vw;
+            line-height: 1;
+        }
+
+        &__important-section > &__important h2 img {
+            width: 1.95vw;
+        }
+
+        &__important-section > &__important h3 {
+            height: auto;
+            margin-bottom: 0.59vw;
+            font-size: 2.08vw;
+        }
+
+        &__important-section > &__important p {
+            font-size: 2.08vw;
+            line-height: 1.6;
+        }
+
+        &__important-section .p-single-shop__important-body {
+            margin-bottom: 0;
+        }
+
+        &__important-section .p-single-shop__important-body + p {
+            font-size: 1.367vw;
+            line-height: 1.6;
+        }
+
+        &__important-section .p-single-shop__important-item + .p-single-shop__important-item {
+            margin-top: 1.17vw;
+            padding-top: 1.17vw;
+        }
+        &__info {
+            width: 76.56vw;
+            margin-right: auto;
+            margin-left: auto;
+            padding-bottom: 8.59vw;
+        }
+
+        &__info &__heading {
+            margin-bottom: 4.3vw;
+            font-size: 2.73vw;
+            line-height: 1.45;
+        }
+
+        &__main-photo {
+            width: 100%;
+            aspect-ratio: 680 / 360;
+            margin-bottom: 4.3vw;
+            border-radius: 1.56vw;
+        }
+
+        &__info-list {
+            gap: 2.15vw;
+            margin-bottom: 4.3vw;
+
+            div {
+                grid-template-columns: 11.72vw 1fr;
+                gap: 3.52vw;
+                align-items: start;
+            }
+
+            dt {
+                font-size: 1.76vw;
+                line-height: 1.7;
+            }
+
+            dd {
+                font-size: 1.76vw;
+                line-height: 1.8;
+            }
+
+            span {
+                margin-top: 0.78vw;
+            }
+
+            &--compact {
+                margin-bottom: 0;
+            }
+        }
+
+        &__map {
+            aspect-ratio: 680 / 330;
+            margin-bottom: 4.3vw;
+            border-radius: 1.56vw;
+            background-size: auto, auto, 6.84vw 6.84vw, 6.84vw 6.84vw, auto;
+        }
+
+
+        &__payment {
+            width: 76.56vw;
+            margin-right: auto;
+            margin-left: auto;
+            padding-top: 5.47vw;
+            padding-bottom: 7.03vw;
+
+            &::before,
+            &::after {
+                right: 0;
+                left: 0;
+            }
+        }
+
+        &__payment &__bracket-heading {
+            margin-bottom: 4.3vw;
+            font-size: 2.08vw;
+        }
+
+        &__payment-group {
+            margin-bottom: 4.3vw;
+
+            h3 {
+                width: 58.59vw;
+                height: 3.52vw;
+                min-height: 0;
+                margin: 0 auto 3.52vw;
+                font-size: 2.08vw;
+                line-height: 1;
+            }
+        }
+
+        &__payment-icons {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 3.13vw 4.3vw !important;
+            width: 58.59vw;
+            margin-right: auto;
+            margin-left: auto;
+
+            img {
+                max-height: 6.25vw;
+            }
+
+            &--qr {
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+                gap: 2.34vw 2.34vw !important;
+                width: 63.48vw;
+
+                img {
+                    max-height: 5.08vw;
+                }
+            }
+        }
+
+
+        &__services {
+            width: 76.56vw;
+            margin-right: auto;
+            margin-left: auto;
+            padding-top: 6.25vw;
+            padding-bottom: 7.03vw;
+        }
+
+        &__services &__bracket-heading {
+            margin-bottom: 4.3vw;
+            font-size: 2.08vw;
+        }
+
+        &__service-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 3.52vw 4.3vw;
+            width: 58.59vw;
+            margin-right: auto;
+            margin-left: auto;
+
+            li {
+                    line-height: 1.45;
+            }
+
+            span {
+                width: 7.81vw;
+                margin-bottom: 1.17vw;
+            }
+        }
+
+
+
+        &__news {
+            padding: 14vw 0 9.38vw;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/shop_news-tablet.svg");
+            background-position: top center;
+            background-size: 100% auto;
+        }
+
+        &__news &__heading {
+            margin-bottom: 7.2vw;
+            font-size: 2.6vw;
+            line-height: 1;
+        }
+
+        &__news-staff {
+            top: 12vw;
+            right: 31vw;
+            width: 5.46vw;
+        }
+
+        &__news-list {
+            width: 40.36vw;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        &__news-campaign {
+            flex: 0 0 33.98vw;
+            width: 33.98vw;
+            margin: 0 0 2.34vw;
+
+            .c-campaign-content {
+                margin: 0;
+
+                &__img {
+                    width: 100%;
+                    aspect-ratio: 377.33 / 289;
+                    border-radius: 6.51vw 6.51vw 1.95vw 1.95vw;
+                }
+
+                &__time {
+                    left: -3vw;
+                    bottom: 3.6vw;
+                    width: 13.41vw;
+                    aspect-ratio: 125.21 / 36.02;
+                    padding: 0;
+                        }
+            }
+
+            .c-campaign-content-caption {
+                margin-top: 2.65vw;
+                font-size: 2.08vw;
+                font-weight: 700;
+                line-height: 1.6;
+                letter-spacing: 0.18em;
+            }
+        }
+
+        &__news-pager-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.91vw;
+            aspect-ratio: 1;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+
+            &:hover,
+            &:active {
+                transform: translateY(-50%) scale(1.04);
+            }
+        }
+
+        &__news-pager-button.c-slider--btn--left {
+            left: calc((100vw - 40.36vw) / 2 - 19.52vw - 3.91vw);
+        }
+
+        &__news-pager-button.c-slider--btn--right {
+            right: calc((100vw - 40.36vw) / 2 - 19.52vw - 3.91vw);
+        }
+
+        &__news-pager-button .c-slider--btn__img {
+            width: 3.91vw;
+            height: auto;
+        }
+        &__news &__slider-dots {
+            margin-top: 5.07vw;
+        }
+
+        &__news &__slider-dots button {
+            width: 1.04vw;
+        }
+        &__message {
+            top: -14vw;
+            padding: 22.65vw 18.75vw 14vw;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/owner_greeting-tablet.svg");
+            background-size: 100% auto;
+        }
+
+        &__message &__heading {
+            margin-bottom: 4vw;
+            font-size: 2.6vw;
+            line-height: 1;
+        }
+
+        &__message p {
+            font-size: 2.08vw;
+            line-height: 1.75;
+        }
+
+        &__message .p-single-shop__message-body {
+            width: 100%;
+            min-height: 18vw;
+        }
+
+        &__manager {
+            width: 100%;
+            margin: 2.34vw 0 0;
+            line-height: 1.6;
+        }
+
+        &__message .p-single-shop__manager-photo {
+            width: 61.06vw;
+            margin-top: 3.12vw;
+        }
+
+        &__message .p-single-shop__manager-photo-decoration--default {
+            display: none;
+        }
+
+        &__message .p-single-shop__manager-photo-decoration--tablet {
+            display: block;
+            top: 21.4vw;
+            left: 52vw;
+            width: 23.05vw;
+        }
+
+        &__message .p-single-shop__manager-photo-bush {
+            top: 23.44vw;
+            left: -5.08vw;
+            width: 11.98vw;
+        }
+
+        &__recruit {
+            top: -25vw;
+            padding: 13vw 3.25vw 20vw;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/bg_recruit-tablet.svg");
+            background-size: 100% auto;
+        }
+
+        &__recruit &__heading {
+            width: 38.41vw;
+            margin-bottom: 4.3vw;
+            font-size: 2.73vw;
+            line-height: 1.45;
+
+            &::before,
+            &::after {
+                display: block;
+            }
+
+            &::before {
+                top: -8vw;
+                right: -4vw;
+                width: 7vw;
+            }
+
+            &::after {
+                top: -8.6vw;
+                left: -4vw;
+                width: 6.9vw;
+            }
+        }
+
+        &__recruit-list {
+            grid-template-columns: repeat(2, 45.57vw);
+            justify-content: center;
+            gap: 2.6vw;
+            margin-bottom: 2.6vw;
+        }
+
+        &__recruit-card {
+            min-height: 28.65vw;
+            padding: 1.82vw 1.95vw 1.95vw;
+            border-radius: 1.3vw;
+
+            h3 {
+                height: auto;
+                min-height: auto;
+                margin-bottom: 1.56vw;
+                font-size: 2.08vw;
+                line-height: 1.25;
+            }
+
+            p {
+                margin-bottom: 0.78vw;
+                    line-height: 1.29;
+            }
+
+            p:last-of-type {
+                display: none;
+            }
+
+            strong {
+                }
+
+            a {
+                width: 18.79vw;
+                min-height: 5.89vw;
+                margin-right: auto;
+                margin-left: auto;
+                font-size: 2.08vw;
+            }
+        }
+
+        &__recruit &__slider-dots {
+            margin-top: 3.12vw;
+        }
+
+        &__recruit &__slider-dots button {
+            width: 1.04vw;
+        }
+
+        &__recruit .p-single-shop__more {
+            width: 18.79vw;
+            min-height: 5.89vw;
+            margin-top: 3.52vw;
+        }
+
+        &__recruit-banner {
+            width: 71.61vw;
+            margin-top: 9.63vw;
+        }
+&__nearby {
+            margin-top: -31vw;
+            padding: 8.59vw 5.12vw 9.38vw;
+            border-radius: 45% 45% 0 0 / 6% 6% 0 0;
+
+            .p-single-shop__heading {
+                margin-bottom: 4.3vw;
+                font-size: 2.73vw;
+                line-height: 1.45;
+            }
+
+            .c-shop-card-list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 2.08vw;
+                width: 89.84vw;
+                margin: 0 auto;
+            }
+
+            .c-shop-card {
+                width: 28.56vw;
+                padding: 2.6vw 1.82vw 2.34vw;
+                border-radius: 1.17vw;
+            }
+
+            .c-shop-card__name {
+                margin-bottom: 2.15vw;
+                }
+
+            .c-shop-card__detail {
+                padding-left: 0;
+                margin-bottom: 2.34vw;
+            }
+
+            .c-shop-card__detail__item {
+                gap: 1.17vw;
+            }
+
+            .c-shop-card__detail__title {
+                width: 6.64vw;
+                    line-height: 1.6;
+            }
+
+            .c-shop-card__detail__content {
+                padding: 0 0 1.82vw 1.56vw;
+                    --dot-size: 0.2vw;
+                --dot-gap: 0.56vw;
+                --line-width: 0.1vw;
+            }
+
+            .c-shop-card__detail__time__main,
+            .c-shop-card__detail__time__note__highlight,
+            .c-shop-card__detail__address__zip,
+            .c-shop-card__detail__address__street,
+            .c-shop-card__detail__tel {
+                    line-height: 1.6;
+            }
+
+            .c-shop-card__detail__time__note,
+            .c-shop-card__detail__address__place {
+                font-size: 1.43vw;
+                line-height: 1.6;
+            }
+
+            .c-shop-card__detail__address::after {
+                right: -1.82vw;
+                bottom: -0.2vw;
+                width: 1.3vw;
+            }
+
+            .c-shop-card__detail__address__zip {
+                margin-bottom: 0.78vw;
+            }
+
+            .c-shop-card__link--wrapper {
+                gap: 1.04vw;
+                width: 100%;
+            }
+
+            .c-shop-card__link {
+                flex: 1 1 0;
+                width: auto;
+                min-width: 0;
+                gap: 0.52vw;
+                }
+
+            .c-shop-card__link__icon,
+            .c-shop-card__link svg {
+                width: 1.56vw;
+                height: auto;
+            }
+
+            .p-single-shop__slider-dots {
+                    margin-top: 3.52vw;
+            }
+
+            .p-single-shop__slider-dots button {
+                width: 1.04vw;
+            }
+
+            .p-single-shop__more {
+                width: 18.23vw;
+                margin-top: 3.52vw;
+                }
+        }
+
+        &__deals &__important {
+            width: 76.56vw;
+            min-height: 14vw;
+            margin-top: 3.91vw;
+            padding: 2vw 3.25vw 1.46vw;
+            border-width: 0.2vw;
+            border-radius: 1.95vw;
+
+            h2 {
+                gap: 0.78vw;
+                margin-bottom: 1.66vw;
+                font-size: 2.08vw;
+                line-height: 1;
+
+                img {
+                    width: 1.95vw;
+                }
+            }
+
+            h3 {
+                height: auto;
+                margin-bottom: 0.59vw;
+                font-size: 2.08vw;
+                }
+
+            p {
+                font-size: 2.08vw;
+                line-height: 1.6;
+            }
+
+            .p-single-shop__important-body {
+                margin-bottom: 0;
+            }
+
+            .p-single-shop__important-body + p {
+                font-size: 1.367vw;
+                line-height: 1.6;
+            }
+
+            .p-single-shop__important-item + .p-single-shop__important-item {
+                margin-top: 1.17vw;
+                padding-top: 1.17vw;
+            }
+        }
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .p-single-shop {
+
+        &__hero {
+            margin-bottom: 4.69vw;
+        }
+
+        &__title {
+            margin-bottom: 1.17vw;
+            font-size: 3.13vw;
+            line-height: 1.45;
+        }
+
+        &__title-sub {
+            line-height: 1;
+            letter-spacing: 0.18em;
+        }
+
+        &__flyer {
+            width: 78.13vw;
+            margin-right: auto;
+            margin-left: auto;
+            padding-right: 0;
+            padding-bottom: 6.25vw;
+            padding-left: 0;
+        }
+
+        &__flyer &__heading {
+            gap: 1vw;
+            margin-bottom: 2.73vw;
+            font-size: 2.34vw;
+            line-height: 1;
+
+            &::before,
+            &::after {
+                flex-basis: 6.25vw;
+                border-top-width: 0.2vw;
+            }
+        }
+
+        &__lead {
+            margin-bottom: 1.56vw;
+            font-size: 1.95vw;
+            line-height: 1.6;
+        }
+
+        &__period {
+            margin-bottom: 3.13vw;
+            font-size: 1.76vw;
+        }
+
+        &__flyer-list {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 2.34vw;
+        }
+
+        &__flyer-card {
+            aspect-ratio: 320 / 300;
+            border-radius: 1.17vw;
+        }
+
+        &__deals {
+            padding: 11vw 0 15vw;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/bg-shop_deals-laptop.svg");
+        }
+
+        &__deals-title {
+            top: 8vw;
+            left: 50%;
+            width: 23.05vw;
+            aspect-ratio: 236 / 56;
+            transform: translateX(-50%);
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/bg-shop_deals-title-laptop.svg");
+            font-size: 1.95vw;
+            line-height: 1.45;
+        }
+
+        &__deal-decoration {
+            &--rice {
+                display: none;
+            }
+
+            &--apple {
+                display: block;
+                top: 16vw;
+                left: 7.42vw;
+                width: 2.14vw;
+            }
+
+            &--scallion {
+                display: block;
+                top: 31vw;
+                left: 8.6vw;
+                width: 4vw;
+                content: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/scallion-laptop.svg");
+            }
+
+            &--napa-cabbage {
+                display: block;
+                top: 17.8vw;
+                right: 7.8vw;
+                left: auto;
+                width: 6vw;
+            }
+
+            &--cabbage {
+                display: block;
+                top: 33.2vw;
+                right: 8.4vw;
+                left: auto;
+                width: 4.49vw;
+            }
+
+            &--chocolate {
+                display: block;
+                top: 5vw;
+                right: 24.5vw;
+                left: auto;
+                width: 5vw;
+            }
+
+            &--banana {
+                top: 9vw;
+                left: 13vw;
+                width: 4.58vw;
+            }
+
+            &--prepared-food {
+                top: 3.2vw;
+                left: 32.2vw;
+                width: 8.01vw;
+            }
+
+            &--cart {
+                top: 0.6vw;
+                right: 14vw;
+                width: 10.05vw;
+            }
+
+            &--soy-sauce {
+                top: 40vw;
+                left: 15.4vw;
+                width: 4.49vw;
+            }
+
+            &--meat {
+                top: 39vw;
+                right: 13.4vw;
+                left: auto;
+                width: 7.81vw;
+            }
+        }
+
+        &__deals .p-front-page__special-offers {
+            flex-direction: row;
+            justify-content: center;
+            gap: 1.32vw;
+            width: 82.62vw;
+            margin: 0 auto;
+        }
+
+        &__deals .p-front-page__special-offers__item {
+            flex: 0 0 35.44vw;
+            width: 35.44vw;
+            aspect-ratio: 363 / 281;
+            padding-top: 4.39vw;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/bg-shop_deal-card-tablet.svg");
+            background-size: 97.2% 100%;
+            background-position: left top;
+
+            &.is-special::after {
+                top: 2.64vw;
+                right: -0.2vw;
+                width: 8.59vw;
+                padding-bottom: 1.17vw;
+                background-size: 100% 100%;
+                    line-height: 1.31;
+                letter-spacing: 0.15em;
+            }
+        }
+
+        &__deals .p-front-page__special-offers__date {
+            padding: 0 8.3vw;
+            font-size: 0;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        &__deal-date-main {
+            line-height: normal;
+        }
+
+        &__deal-date-weekday {
+            font-size: 1.17vw;
+            line-height: normal;
+        }
+
+        &__deal-date-space {
+            font-size: 1.37vw;
+            line-height: normal;
+        }
+
+        &__deals .p-front-page__special-offers__item__details--wrapper {
+            gap: 1.46vw;
+            margin-top: 4.69vw;
+            padding: 0 3.32vw 0 3.13vw;
+
+            &.is--limited--qupon::after {
+                top: -3.61vw;
+                left: inherit;
+                min-width: 14.36vw;
+                min-height: 2.54vw;
+                padding: 0 0.88vw;
+                border-radius: 1.27vw;
+                font-size: 1.37vw;
+                line-height: 1;
+            }
+        }
+
+        &__deals .p-front-page__special-offers__item__img {
+            flex: 0 0 12.3vw;
+
+            img {
+                width: 12.3vw;
+                aspect-ratio: 126 / 113;
+                border-radius: 0.98vw;
+            }
+        }
+
+        &__deals .p-front-page__special-offers__item__details {
+            --details-font-scale: 1;
+            min-width: 0;
+            max-width: 16.41vw;
+        }
+
+        &__deals .p-front-page__special-offers__item__details__title {
+            line-height: normal;
+            word-break: normal;
+        }
+
+        &__deals .p-front-page__special-offers__item__details__title__origin,
+        &__deals .p-front-page__special-offers__item__details__title__note {
+            font-size: 1.37vw;
+            line-height: normal;
+        }
+
+        &__deals .p-front-page__special-offers__item__details__title__highlight {
+            line-height: normal;
+            overflow-wrap: anywhere;
+            word-break: normal;
+            white-space: normal;
+        }
+
+        &__deals .p-front-page__special-offers__item__details__price {
+            line-height: normal;
+
+            &__label {
+                    line-height: 1;
+            }
+
+            &__value {
+                font-size: 2.73vw;
+                line-height: 1;
+            }
+
+            &__unit {
+                font-size: 1.95vw;
+                line-height: 1;
+            }
+        }
+
+        &__deals .p-front-page__special-offers__item__details__tax {
+            margin-top: 0.2vw;
+            font-size: 1.17vw;
+            line-height: 1;
+        }
+
+        &__deals .p-front-page__special-offers__item--note {
+            margin-top: 0.1vw;
+            padding: 0 4.1vw 0 3.61vw;
+            font-size: 1.17vw;
+            line-height: 1.42;
+        }
+
+        &__deal-pager {
+            position: static;
+            display: block;
+            margin-top: 2vw;
+        }
+
+        &__deal-pager-button {
+            position: absolute;
+            top: 25.6vw;
+            transform: translateY(-50%);
+            z-index: 3;
+            width: 3.13vw;
+
+            &:hover,
+            &:active,
+            &:focus-visible {
+                transform: translateY(-50%);
+            }
+        }
+
+        &__deal-pager-button.c-slider--btn--left {
+            left: 13vw;
+        }
+
+        &__deal-pager-button.c-slider--btn--right {
+            right: 14.4vw;
+        }
+
+        &__deals &__slider-dots {
+        }
+
+        &__deals &__slider-dots button {
+            width: 0.78vw;
+        }
+
+        &__deals &__important {
+            width: 57.42vw;
+            min-height: 11.62vw;
+            margin-top: 1.95vw;
+            padding: 1.66vw 3.25vw 1.46vw;
+            border-width: 0.2vw;
+            border-radius: 1.95vw;
+        }
+
+        &__deals &__important h2 {
+            gap: 0.59vw;
+            margin-bottom: 1.56vw;
+            line-height: 1;
+        }
+
+        &__deals &__important h2 img {
+            width: 1.95vw;
+        }
+
+        &__deals &__important p {
+            line-height: 1.85;
+        }
+
+        &__deals .p-single-shop__important-body {
+            margin-bottom: 0;
+        }
+
+        &__deals .p-single-shop__important-body + p {
+            font-size: 1.37vw;
+            line-height: 1.35;
+        }
+        &__info {
+            width: 78.13vw;
+            margin-right: auto;
+            margin-left: auto;
+            padding-bottom: 7.81vw;
+        }
+
+        &__info &__heading {
+            margin-bottom: 3.13vw;
+            font-size: 2.34vw;
+            line-height: 1;
+        }
+
+        &__main-photo {
+            width: 100%;
+            aspect-ratio: 800 / 424;
+            margin-bottom: 3.91vw;
+            border-radius: 1.17vw;
+        }
+
+        &__info-list {
+            gap: 1.95vw;
+            margin-bottom: 3.91vw;
+
+            div {
+                grid-template-columns: 10.94vw 1fr;
+                gap: 3.13vw;
+                align-items: start;
+            }
+
+            dt {
+                    line-height: 1.7;
+            }
+
+            dd {
+                    line-height: 1.8;
+            }
+
+            span {
+                margin-top: 0.78vw;
+            }
+
+            &--compact {
+                margin-bottom: 0;
+            }
+        }
+
+        &__map {
+            aspect-ratio: 800 / 388;
+            margin-bottom: 3.91vw;
+            border-radius: 1.17vw;
+            background-size: auto, auto, 5.47vw 5.47vw, 5.47vw 5.47vw, auto;
+        }
+        &__payment {
+            width: 78.13vw;
+            margin-right: auto;
+            margin-left: auto;
+            padding-top: 5.47vw;
+            padding-bottom: 6.64vw;
+
+            &::before,
+            &::after {
+                right: 0;
+                left: 0;
+            }
+        }
+
+        &__payment &__bracket-heading {
+            margin-bottom: 3.91vw;
+            font-size: 1.95vw;
+        }
+
+        &__payment-group {
+            margin-bottom: 3.91vw;
+
+            h3 {
+                width: 54.69vw;
+                height: 3.13vw;
+                min-height: 0;
+                margin: 0 auto 3.13vw;
+                font-size: 1.95vw;
+                line-height: 1;
+            }
+        }
+
+        &__payment-icons {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 2.73vw 3.91vw !important;
+            width: 54.69vw;
+            margin-right: auto;
+            margin-left: auto;
+
+            img {
+                max-height: 5.47vw;
+            }
+
+            &--qr {
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+                gap: 2.15vw 2.15vw !important;
+                width: 58.59vw;
+
+                img {
+                    max-height: 4.69vw;
+                }
+            }
+        }
+
+        &__services {
+            width: 78.13vw;
+            margin-right: auto;
+            margin-left: auto;
+            padding-top: 5.86vw;
+            padding-bottom: 6.64vw;
+        }
+
+        &__services &__bracket-heading {
+            margin-bottom: 3.91vw;
+            font-size: 1.95vw;
+        }
+
+        &__service-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 3.13vw 3.91vw;
+            width: 54.69vw;
+            margin-right: auto;
+            margin-left: auto;
+
+            li {
+                font-size: 1.46vw;
+                line-height: 1.45;
+            }
+
+            span {
+                width: 7.03vw;
+                margin-bottom: 1.17vw;
+            }
+        }
+        &__news {
+            padding: 11vw 0 10.4vw;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/shop_news-bg.svg");
+            background-position: top center;
+            background-size: 100% auto;
+        }
+
+        &__news &__heading {
+            margin-bottom: 5.47vw;
+            font-size: 1.95vw;
+            line-height: 1;
+        }
+
+        &__news-staff {
+            top: 9.77vw;
+            right: 33.98vw;
+            width: 4.69vw;
+        }
+
+        &__news-list {
+            display: flex;
+            justify-content: center;
+            gap: 4.69vw;
+            width: 78.32vw;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        &__news-campaign {
+            flex: 0 0 36.85vw;
+            width: 36.85vw;
+            margin: 0 0 2.34vw;
+
+            .c-campaign-content {
+                margin: 0;
+
+                &__img {
+                    width: 100%;
+                    aspect-ratio: 377.33 / 289;
+                    border-radius: 5.86vw 5.86vw 1.56vw 1.56vw;
+                }
+
+                &__time {
+                    left: 0;
+                    bottom: 3.81vw;
+                    width: 12.1094vw;
+                    height: 3.5156vw;
+                    padding: 0;
+                    border-radius: 1.7578vw;
+                    font-size: 1.3672vw;
+                    font-weight: 400;
+                    line-height: normal;
+                    letter-spacing: 0.1367vw;
+                }
+            }
+
+            .c-campaign-content-caption {
+                margin-top: 0.78vw;
+                    font-weight: 700;
+                line-height: 1.6;
+                letter-spacing: 0.18em;
+            }
+        }
+
+        &__news-pager-button {
+            position: absolute;
+            top: 42.97vw;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.81vw;
+            aspect-ratio: 39 / 40;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            transform: translateY(-50%);
+            cursor: pointer;
+
+            &:hover,
+            &:active {
+                transform: translateY(-50%) scale(1.04);
+            }
+        }
+
+        &__news-pager-button.c-slider--btn--left {
+            left: calc((100vw - 78.32vw) / 2 - 3.81vw - 0.68vw);
+        }
+
+        &__news-pager-button.c-slider--btn--right {
+            right: calc((100vw - 78.32vw) / 2 - 3.81vw - 0.68vw);
+        }
+
+        &__news-pager-button .c-slider--btn__img {
+            width: 3.81vw;
+            height: auto;
+        }
+
+        &__news &__slider-dots {
+            gap: 1.17vw;
+            margin-top: 3.22vw;
+        }
+
+        &__news &__slider-dots button {
+            width: 0.78vw;
+        }
+        &__message {
+            top: -14vw;
+            padding: 16.41vw 0 10.16vw;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/owner_greeting-laptop.svg");
+            background-size: 100% auto;
+        }
+
+        &__message &__heading {
+            margin-bottom: 3.13vw;
+            font-size: 1.95vw;
+            line-height: 1.45;
+        }
+
+        &__message .p-single-shop__message-body {
+            width: 46.87vw;
+            min-height: 13.28vw;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        &__message p {
+            line-height: 1.85;
+        }
+
+        &__manager {
+            width: 46.87vw;
+            margin: 2.34vw auto 0;
+            line-height: 1.6;
+        }
+
+        &__message .p-single-shop__manager-photo {
+            width: 46.87vw;
+            margin-top: 2vw;
+        }
+
+        &__message .p-single-shop__manager-photo-decoration--default {
+            display: none;
+        }
+
+        &__message .p-single-shop__manager-photo-decoration--tablet {
+            display: block;
+            top: 16.8vw;
+            left: 39vw;
+            width: 17.29vw;
+        }
+
+        &__message .p-single-shop__manager-photo-bush {
+            top: 16vw;
+            left: -5.6vw;
+            width: 9.77vw;
+        }
+        &__recruit {
+            top: -29.8vw;
+            padding: 17vw 3.13vw 10vw;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/bg_recruit-laptop.svg");
+            background-size: 100% auto;
+        }
+
+        &__recruit &__heading {
+            width: 28.81vw;
+            margin-bottom: 3.2vw;
+            font-size: 1.95vw;
+
+            &::before,
+            &::after {
+                display: block;
+            }
+
+            &::before {
+                top: -6.2vw;
+                right: -3.13vw;
+                width: 5.8vw;
+            }
+
+            &::after {
+                top: -7vw;
+                right: -3.81vw;
+                width: 5.8vw;
+            }
+        }
+
+        &__recruit-list {
+            grid-template-columns: repeat(2, 34.17vw);
+            justify-content: center;
+            gap: 2.34vw;
+            margin-bottom: 1.6vw;
+        }
+
+        &__recruit-card {
+            min-height: 24vw;
+            padding: 1.56vw 1.76vw 1.76vw;
+            border-radius: 1.17vw;
+
+            h3 {
+                height: auto;
+                min-height: 3.52vw;
+                margin-bottom: 1.37vw;
+                font-size: 1.95vw;
+                line-height: 1.28;
+            }
+
+            p {
+                margin-bottom: 0.68vw;
+                    line-height: 1.35;
+            }
+
+            p:last-of-type {
+                display: none;
+            }
+
+            strong {
+                }
+
+            a {
+                width: 14.14vw;
+                min-height: 5.47vw;
+                margin-right: auto;
+                margin-left: auto;
+                }
+        }
+
+        &__recruit &__slider-dots {
+            gap: 1.17vw;
+            margin-top: 0vw;
+        }
+
+        &__recruit &__slider-dots button {
+            width: 0.78vw;
+        }
+
+        &__recruit .p-single-shop__more {
+            width: 17.58vw;
+            min-height: 5.47vw;
+            margin-top: 2vw;
+        }
+
+        &__recruit-banner {
+            width: 53.71vw;
+            margin-top: 5vw;
+        }
+
+        &__news {
+            padding: 10vw 0 11.8vw;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/shop_news-bg.svg");
+            background-position: top center;
+            background-size: 100% auto;
+        }
+
+        &__news &__heading {
+            margin-bottom: 4.2vw;
+            font-size: 1.95vw;
+            line-height: 1.45;
+        }
+
+        &__news-staff {
+            top: 9.4vw;
+            right: 35.6vw;
+            width: 3.6vw;
+        }
+
+        &__news-list {
+            display: flex;
+            justify-content: center;
+            gap: 6.19vw;
+            width: fit-content;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        &__news-campaign {
+            flex: 0 0 35.31vw;
+            width: 35.31vw;
+            margin: 0;
+
+            .c-campaign-content {
+                margin: 0;
+
+                &__img {
+                    width: 100%;
+                    aspect-ratio: 377.33 / 289;
+                    border-radius: 3.125vw 3.125vw 0.8333vw 0.8333vw;
+                }
+
+                &__time {
+                    left: -3.4vw;
+                    bottom: 3vw;
+                    width: 12.31vw;
+                    aspect-ratio: 125.21 / 36.02;
+                    padding: 0;
+                    font-size: 1.36vw;
+                }
+            }
+
+            .c-campaign-content-caption {
+                margin-top: 2vw;
+                    font-weight: 700;
+                line-height: 1.6;
+                letter-spacing: 0.18em;
+            }
+        }
+
+        &__news-pager-button {
+            position: absolute;
+            top: 30vw;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.875vw;
+            aspect-ratio: 1;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            transform: translateY(-50%);
+            cursor: pointer;
+
+            &:hover,
+            &:active,
+            &:focus-visible {
+                transform: translateY(-50%) scale(1.04);
+            }
+        }
+
+        &__news-pager-button.c-slider--btn--left {
+            left: 5vw;
+        }
+
+        &__news-pager-button.c-slider--btn--right {
+            right: 5vw;
+        }
+
+        &__news-pager-button .c-slider--btn__img {
+            width: 3.8vw;
+            height: auto;
+        }
+
+        &__news &__slider-dots {
+            gap: 1.17vw;
+            margin-top: 3vw;
+        }
+
+        &__news &__slider-dots button {
+            width: 0.78vw;
+        }
+
+        &__nearby {
+            margin-top: -28.13vw;
+            padding: 7.81vw 3.91vw 8.59vw;
+            border-radius: 45% 45% 0 0 / 5% 5% 0 0;
+
+            .p-single-shop__heading {
+                margin-bottom: 3.91vw;
+                font-size: 2.34vw;
+                line-height: 1.45;
+            }
+
+            .c-shop-card-list {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 1.95vw;
+                width: 89.06vw;
+                margin: 0 auto;
+            }
+
+            .c-shop-card {
+                width: 100%;
+                padding: 2.34vw 1.56vw 2.15vw;
+                border-radius: 1.17vw;
+            }
+
+            .c-shop-card__name {
+                margin-bottom: 1.95vw;
+                font-size: 1.76vw;
+            }
+
+            .c-shop-card__detail {
+                padding-left: 0;
+                margin-bottom: 2.15vw;
+            }
+
+            .c-shop-card__detail__item {
+                gap: 0.98vw;
+            }
+
+            .c-shop-card__detail__title {
+                width: 6.25vw;
+                font-size: 1.37vw;
+                line-height: 1.6;
+            }
+
+            .c-shop-card__detail__content {
+                padding: 0 0 1.56vw 1.37vw;
+                    --dot-size: 0.2vw;
+                --dot-gap: 0.49vw;
+                --line-width: 0.1vw;
+            }
+
+            .c-shop-card__detail__time__main,
+            .c-shop-card__detail__time__note__highlight,
+            .c-shop-card__detail__address__zip,
+            .c-shop-card__detail__address__street,
+            .c-shop-card__detail__tel {
+                font-size: 1.37vw;
+                line-height: 1.6;
+            }
+
+            .c-shop-card__detail__time__note,
+            .c-shop-card__detail__address__place {
+                font-size: 1.27vw;
+                line-height: 1.6;
+            }
+
+            .c-shop-card__detail__address::after {
+                right: -1.56vw;
+                bottom: -0.2vw;
+                width: 1.17vw;
+            }
+
+            .c-shop-card__detail__address__zip {
+                margin-bottom: 0.68vw;
+            }
+
+            .c-shop-card__link--wrapper {
+                gap: 0.98vw;
+                width: 100%;
+            }
+
+            .c-shop-card__link {
+                flex: 1 1 0;
+                width: auto;
+                min-width: 0;
+                gap: 0.49vw;
+                font-size: 1.37vw;
+            }
+
+            .c-shop-card__link__icon,
+            .c-shop-card__link svg {
+                width: 1.37vw;
+                height: auto;
+            }
+
+            .p-single-shop__slider-dots {
+                gap: 1.17vw;
+                margin-top: 3.13vw;
+            }
+
+            .p-single-shop__slider-dots button {
+                width: 0.78vw;
+            }
+
+            .p-single-shop__more {
+                width: 17.58vw;
+                min-height: 5.47vw;
+                margin-top: 3.13vw;
+                }
+        }
+
+        &__zoom {
+            right: 1.17vw;
+            bottom: 1.17vw;
+            width: 3.52vw;
+            box-shadow: 0 0.29vw 0.68vw rgba(0, 0, 0, 0.18);
+
+            &::before {
+                top: 0.92vw;
+                left: 0.92vw;
+                width: 1.22vw;
+                border-width: 0.29vw;
+            }
+
+            &::after {
+                right: 0.8vw;
+                bottom: 0.86vw;
+                width: 1.14vw;
+                height: 0.29vw;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .p-single-shop {
+        &__breadcrumb {
+            width: min(93.75vw, 62.5vw);
+            margin: 0 auto 3.6458vw;
+        }
+
+        &__hero {
+            margin-bottom: 3.125vw;
+        }
+
+        &__title {
+            margin-bottom: 0.7812vw;
+            font-size: 2.0833vw;
+            line-height: 1.45;
+        }
+
+        &__title-sub {
+            font-size: 1.0417vw;
+            line-height: 1;
+            letter-spacing: 0.18em;
+        }
+
+        &__flyer {
+            width: min(78.13vw, 52.0833vw);
+            margin-right: auto;
+            margin-left: auto;
+            padding-right: 0;
+            padding-bottom: 4.1667vw;
+            padding-left: 0;
+        }
+
+        &__flyer &__heading {
+            gap: 1vw;
+            margin-bottom: 1.8229vw;
+            font-size: 1.5625vw;
+            line-height: 1;
+
+            &::before,
+            &::after {
+                flex-basis: 4.1667vw;
+                border-top-width: 0.1042vw;
+            }
+        }
+
+        &__lead {
+            margin-bottom: 1.0417vw;
+            font-size: 1.3021vw;
+            line-height: 1.6;
+        }
+
+        &__period {
+            margin-bottom: 2.0833vw;
+            font-size: 1.1458vw;
+        }
+
+        &__flyer-list {
+            grid-template-columns: repeat(2, 18.2292vw);
+            justify-content: center;
+            gap: 1.5625vw;
+        }
+
+        &__flyer-card {
+            width: 18.2292vw;
+            aspect-ratio: 350.03 / 283;
+            border-radius: 0.7812vw;
+        }
+
+        &__deals {
+            padding: 6vw 0 10vw;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/bg-shop_deals-desktop.svg");
+            background-position: top center;
+            background-size: 100% auto;
+        }
+
+        &__deal-decorations {
+            z-index: 2;
+        }
+
+        &__deals-title {
+            position: absolute;
+            top: 3.6vw;
+            left: 50%;
+            z-index: 4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 12.29vw;
+            height: auto;
+            aspect-ratio: 236 / 56;
+            overflow: visible;
+            clip: auto;
+            clip-path: none;
+            transform: translateX(-50%);
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/bg-shop_deals-title-laptop.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            font-size: 1.04vw;
+            font-weight: 700;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        &__deal-decoration {
+            &--rice {
+                display: block;
+                top: 8.4vw;
+                right: 11.4%;
+                left: auto;
+                width: 3.2vw;
+            }
+
+            &--apple {
+                display: none;
+                top: 8.0729vw;
+                left: 7.8%;
+                width: 1.25vw;
+            }
+
+            &--scallion {
+                display: none;
+                top: 16.4062vw;
+                left: 8.7%;
+                width: 2.2396vw;
+                content: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/scallion-laptop.svg");
+            }
+
+            &--napa-cabbage {
+                display: block;
+                top: 0.8vw;
+                right: 29%;
+                left: auto;
+                width: 3.125vw;
+            }
+
+            &--cabbage {
+                display: block;
+                top: 18vw;
+                right: 15%;
+                left: auto;
+                width: 2.3438vw;
+            }
+
+            &--chocolate {
+                display: block;
+                top: 3.8542vw;
+                right: 24.3%;
+                left: auto;
+                width: 3.0208vw;
+            }
+
+            &--banana {
+                top: 5.625vw;
+                left: 22.5%;
+                width: 2.5vw;
+            }
+
+            &--prepared-food {
+                top: 1.7708vw;
+                left: 39.8%;
+                width: 4.4792vw;
+            }
+
+            &--cart {
+                top: 0.4vw;
+                right: 36.2%;
+                width: 5.36vw;
+            }
+
+            &--soy-sauce {
+                display: block;
+                top: 27vw;
+                left: 28%;
+                width: 2.5vw;
+            }
+
+            &--meat {
+                top: 25.5vw;
+                right: 26.4%;
+                left: auto;
+                width: 4.1667vw;
+            }
+        }
+
+        &__deals .p-front-page__special-offers {
+            flex-direction: row;
+            justify-content: center;
+            gap: 1.5625vw;
+            z-index: 1;
+            width: 58.255vw;
+            margin: 0 auto;
+        }
+
+        &__deals .p-front-page__special-offers__item {
+            flex: 0 0 18.3761vw;
+            width: 18.3761vw;
+            aspect-ratio: 352.8212 / 281;
+            padding-top: 1.875vw;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/bg-shop_deal-card-desktop.svg");
+            background-size: 100% 100%;
+            background-position: left top;
+
+            &.is-good-deal::before {
+                display: none;
+            }
+
+            &.is-special::after {
+                top: 1vw;
+                right: -0.1042vw;
+                width: 4.58vw;
+                padding-bottom: 0.5208vw;
+                background-size: 100% 100%;
+                font-size: 0.83vw;
+                line-height: 1.31;
+                letter-spacing: 0.15em;
+            }
+        }
+
+        &__deals .p-front-page__special-offers__date {
+            padding: 0 4.1667vw;
+            font-size: 0;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        &__deal-date-main {
+            font-size: 0.83vw;
+            line-height: normal;
+        }
+
+        &__deal-date-weekday {
+            font-size: 0.62vw;
+            line-height: normal;
+        }
+
+        &__deal-date-space {
+            font-size: 0.625vw;
+            line-height: normal;
+        }
+
+        &__deals .p-front-page__special-offers__item__details--wrapper {
+            gap: 0.625vw;
+            margin-top: 1.9792vw;
+            padding: 0 1.2vw 0 1.4vw;
+
+            &.is--limited--qupon::after {
+                top: -1.6146vw;
+                left: inherit;
+                min-width: 6.3021vw;
+                min-height: 1.1458vw;
+                padding: 0 0.4167vw;
+                border-radius: 0.5729vw;
+                font-size: 0.72vw;
+                line-height: 1;
+            }
+        }
+
+        &__deals .p-front-page__special-offers__item__img {
+            flex: 0 0 6.5625vw;
+
+            img {
+                width: 6.5625vw;
+                aspect-ratio: 126 / 113;
+                border-radius: 0.4167vw;
+            }
+        }
+
+        &__deals .p-front-page__special-offers__item__details {
+            --details-font-scale: 1;
+            min-width: 0;
+            max-width: 9vw;
+        }
+
+        &__deals .p-front-page__special-offers__item__details__title {
+            line-height: normal;
+            word-break: normal;
+        }
+
+        &__deals .p-front-page__special-offers__item__details__title__origin,
+        &__deals .p-front-page__special-offers__item__details__title__note {
+            font-size: 0.72vw;
+            line-height: normal;
+        }
+
+        &__deals .p-front-page__special-offers__item__details__title__highlight {
+            font-size: 0.83vw;
+            line-height: normal;
+            overflow-wrap: anywhere;
+            word-break: normal;
+            white-space: normal;
+        }
+
+        &__deals .p-front-page__special-offers__item__details__price {
+            line-height: normal;
+
+            &__label {
+                font-size: 0.83vw;
+                line-height: 1;
+            }
+
+            &__value {
+                font-size: 1.45vw;
+                line-height: 1;
+            }
+
+            &__unit {
+                font-size: 1.04vw;
+                line-height: 1;
+            }
+        }
+
+        &__deals .p-front-page__special-offers__item__details__tax {
+            margin-top: 0.1042vw;
+            font-size: 0.625vw;
+            line-height: 1;
+        }
+
+        &__deals .p-front-page__special-offers__item--note {
+            margin-top: 0.4vw;
+            padding: 0 1.7708vw 0 1.6146vw;
+            font-size: 0.625vw;
+            line-height: 1.42;
+        }
+
+        &__deal-pager {
+            position: static;
+            display: block;
+            margin-top: 0.8333vw;
+        }
+
+        &__deal-pager-button {
+            position: absolute;
+            top: 11.3542vw;
+            transform: translateY(-50%);
+            z-index: 3;
+            width: 1.6667vw;
+
+            &:hover,
+            &:active,
+            &:focus-visible {
+                transform: translateY(-50%);
+            }
+        }
+
+        &__deal-pager-button.c-slider--btn--left {
+            left: calc(50% - 30vw);
+        }
+
+        &__deal-pager-button.c-slider--btn--right {
+            right: calc(50% - 30vw);
+        }
+
+        &__deals &__slider-dots {
+            gap: 0.625vw;
+            margin-top: 0.9375vw;
+        }
+
+        &__deals &__slider-dots button {
+            width: 0.4167vw;
+        }
+
+        &__deals &__important {
+            width: 30.625vw;
+            height: 6.1979vw;
+            min-height: 0;
+            margin-top: 1.4583vw;
+            padding: 0.8333vw 1.9792vw 0.7292vw;
+            overflow: hidden;
+            border-width: 0.1042vw;
+            border-color: #ff0000;
+            border-radius: 1.0417vw;
+            background: #fff;
+        }
+
+        &__deals &__important h2 {
+            gap: 0.3125vw;
+            margin-bottom: 0.6771vw;
+            font-size: 0.7292vw;
+            line-height: 1;
+        }
+
+        &__deals &__important h2 img {
+            width: 0.8333vw;
+        }
+
+        &__deals &__important p {
+            font-size: 0.625vw;
+            line-height: 1.75;
+        }
+
+        &__deals .p-single-shop__important-body {
+            margin-bottom: 0;
+        }
+
+        &__deals .p-single-shop__important-body + p {
+            font-size: 0.5729vw;
+            line-height: 1.35;
+        }
+
+        &__important-section {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        &__important-section > &__important {
+            width: 30.625vw;
+            height: 6.1979vw;
+            min-height: 0;
+            margin: 0 auto 5.2083vw;
+            padding: 0.8333vw 1.9792vw 0.7292vw;
+            overflow: hidden;
+            border-width: 0.1042vw;
+            border-color: #ff0000;
+            border-radius: 1.0417vw;
+            background: #fff;
+        }
+
+        &__important-section > &__important h2 {
+            gap: 0.3125vw;
+            margin-bottom: 0.6771vw;
+            font-size: 0.7292vw;
+            line-height: 1;
+        }
+
+        &__important-section > &__important h2 img {
+            width: 0.8333vw;
+        }
+
+        &__important-section > &__important p {
+            font-size: 0.625vw;
+            line-height: 1.75;
+        }
+
+        &__important-section .p-single-shop__important-body {
+            margin-bottom: 0;
+        }
+
+        &__important-section .p-single-shop__important-body + p {
+            font-size: 0.5729vw;
+            line-height: 1.35;
+        }
+
+        &__info {
+            width: 31.25vw;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 0 0 5.2083vw;
+        }
+
+        &__info &__heading {
+            margin-bottom: 2.0833vw;
+            font-size: 1.5625vw;
+            line-height: 1;
+        }
+
+        &__main-photo {
+            width: 100%;
+            aspect-ratio: 1000 / 530;
+            margin-bottom: 2.6042vw;
+            border-radius: 0.7813vw;
+        }
+
+        &__info-list {
+            gap: 1.25vw;
+            margin-bottom: 2.6042vw;
+
+            div {
+                grid-template-columns: 3vw 1fr;
+                gap: 1.04vw;
+                align-items: start;
+            }
+
+            dt {
+                font-size: 0.7292vw;
+                line-height: 1.75;
+            }
+
+            dd {
+                    line-height: 1.75;
+            }
+
+            span {
+                margin-top: 0.5208vw;
+            }
+
+            &--compact {
+                margin-bottom: 0;
+            }
+        }
+
+        &__map {
+            aspect-ratio: 600 / 413.73;
+            margin-bottom: 2.6042vw;
+            border-radius: 0.7813vw;
+            background-size: auto, auto, 3.6458vw 3.6458vw, 3.6458vw 3.6458vw, auto;
+        }
+
+        &__zoom {
+            right: 0.7812vw;
+            bottom: 0.7812vw;
+            width: 2.3438vw;
+            box-shadow: 0 0.2083vw 0.4688vw rgba(0, 0, 0, 0.18);
+
+            &::before {
+                top: 0.625vw;
+                left: 0.625vw;
+                width: 0.8333vw;
+                border-width: 0.2083vw;
+            }
+
+            &::after {
+                right: 0.5208vw;
+                bottom: 0.5729vw;
+                width: 0.7812vw;
+                height: 0.2083vw;
+            }
+        }
+        &__payment {
+            width: 31.25vw;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 3.6458vw 0 4.1667vw;
+
+            &::before,
+            &::after {
+                right: 0;
+                left: 0;
+            }
+        }
+
+        &__payment &__bracket-heading {
+            margin-bottom: 2.0833vw;
+            font-size: 0.93vw;
+            line-height: 1.45;
+        }
+
+        &__payment-group {
+            margin-bottom: 2.0833vw;
+
+            h3 {
+                width: 31.25vw;
+                height: 1.6667vw;
+                min-height: 0;
+                margin: 0 auto 2.0833vw;
+                font-size: 0.83vw;
+                line-height: 1;
+            }
+        }
+
+        &__payment-icons {
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 1.5625vw 0 !important;
+            width: 30vw;
+            margin-right: auto;
+            margin-left: auto;
+            justify-content: space-around;
+
+            img {
+                max-height: 2.9167vw;
+            }
+
+            &--qr {
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+                gap: 1.5625vw 0 !important;
+                width: 20.31vw;
+
+                img {
+                    max-height: 2.8646vw;
+                }
+            }
+        }
+
+        &__services {
+            width: 31.25vw;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 3.6458vw 0 4.1667vw;
+        }
+
+        &__services &__bracket-heading {
+            margin-bottom: 2.0833vw;
+            font-size: 0.93vw;
+            line-height: 1.45;
+        }
+
+        &__service-grid {
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 1.6667vw 1.12vw;
+
+            li {
+                font-size: 0.7813vw;
+                line-height: 1.45;
+            }
+
+            span {
+                width: 4.34vw;
+                margin-bottom: 0.625vw;
+            }
+        }
+
+        &__news {
+            padding: 9.42vw 0 5.4167vw;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/shop_news-bg-desktop.svg");
+            background-position: top center;
+            background-size: 100% auto;
+        }
+
+        &__news &__heading {
+            margin-bottom: 2.6042vw;
+            font-size: 1.25vw;
+            line-height: 1.45;
+        }
+
+        &__news-staff {
+            top: 8.2vw;
+            right: 41.3542vw;
+            width: 2.5vw;
+        }
+
+        &__news-list {
+            display: flex;
+            justify-content: center;
+            gap: 2.0833vw;
+            width: 60.5667vw;
+            margin-right: auto;
+            margin-left: 19.94vw;
+        }
+
+        &__news-campaign {
+            flex: 0 0 18.8vw;
+            width: 18.8vw;
+            margin: 0 0 1.0417vw;
+
+            .c-campaign-content {
+                margin: 0;
+
+                &__img {
+                    width: 100%;
+                    aspect-ratio: 377.33 / 289;
+                    border-radius: 3.125vw 3.125vw 0.8333vw 0.8333vw;
+                }
+
+                &__time {
+                    left: -1.25vw;
+                    bottom: 1.6667vw;
+                    width: 6.5104vw;
+                    aspect-ratio: 125.21 / 36.02;
+                    padding: 0;
+                    font-size: 0.7292vw;
+                }
+            }
+
+            .c-campaign-content-caption {
+                margin-top: 0.9375vw;
+                    font-weight: 700;
+                line-height: 1.6;
+                letter-spacing: 0.18em;
+            }
+        }
+
+        &__news-pager-button {
+            position: absolute;
+            top: 21.04vw;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.875vw;
+            aspect-ratio: 1;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            transform: translateY(-50%);
+            cursor: pointer;
+
+            &:hover,
+            &:active,
+            &:focus-visible {
+                transform: translateY(-50%) scale(1.04);
+            }
+        }
+
+        &__news-pager-button.c-slider--btn--left {
+            left: 17.7083vw;
+        }
+
+        &__news-pager-button.c-slider--btn--right {
+            right: 17.7083vw;
+        }
+
+        &__news-pager-button .c-slider--btn__img {
+            width: 1.875vw;
+            height: auto;
+        }
+
+        &__news &__slider-dots {
+            gap: 0.625vw;
+            margin-top: 0.5208vw;
+        }
+
+        &__news &__slider-dots button {
+            width: 0.4167vw;
+        }
+
+
+        &__message {
+            top: -10.4vw;
+            padding: 13vw 0 5.6vw;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/owner_greeting-bg.svg");
+            background-size: 100% auto;
+        }
+
+        &__message &__heading {
+            margin-bottom: 2.1875vw;
+            font-size: 1.0417vw;
+            line-height: 1;
+        }
+
+        &__message .p-single-shop__message-body {
+            width: 25vw;
+            min-height: 7vw;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        &__message p {
+            line-height: 1.75;
+        }
+
+        &__manager {
+            width: 25vw;
+            margin: 1vw auto 0;
+        }
+
+        &__message .p-single-shop__manager-photo {
+            width: 25vw;
+            margin-top: 1.8229vw;
+        }
+
+        &__message .p-single-shop__manager-photo-decoration--default {
+            display: none;
+        }
+
+        &__message .p-single-shop__manager-photo-decoration--tablet {
+            display: block;
+            top: 7vw;
+            left: 23.4vw;
+            width: 9.22vw;
+        }
+
+        &__message .p-single-shop__manager-photo-bush {
+            top: 11.6vw;
+            left: -3.4vw;
+            width: 5.52vw;
+        }
+
+        &__recruit {
+            top: -25vw;
+            padding: 16.4vw 0 6.25vw;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/single-shop/bg_recruit-new.svg");
+            background-size: 100% auto;
+        }
+
+        &__recruit &__heading {
+            width: 15.3646vw;
+            margin-bottom: 1.8229vw;
+            font-size: 1.0417vw;
+
+            &::before,
+            &::after {
+                display: block;
+            }
+
+            &::before {
+                top: -2.6vw;
+                right: -3.4vw;
+                width: 2.7604vw;
+            }
+
+            &::after {
+                top: -4.2vw;
+                left: -4vw;
+                width: 2.7604vw;
+            }
+        }
+
+        &__recruit-list {
+            grid-template-columns: repeat(3, 18.2292vw);
+            justify-content: center;
+            gap: 1.1458vw;
+            margin-bottom: 2.4479vw;
+        }
+
+        &__recruit-card {
+            min-height: 11.4583vw;
+            padding: 0.7292vw 0.7292vw 0.7813vw;
+            border-radius: 0.5208vw;
+
+            h3 {
+                height: auto;
+                min-height: 2.2396vw;
+                margin-bottom: 0.625vw;
+                    line-height: 1.25;
+            }
+
+            p {
+                margin-bottom: 0.4167vw;
+                font-size: 0.7292vw;
+                line-height: 1.2857;
+            }
+
+
+            p:last-of-type {
+                margin-bottom: 1.04vw;
+            }
+            strong {
+                font-size: 0.7292vw;
+                line-height: 1.2857;
+            }
+
+            a {
+                width: 7.5445vw;
+                min-height: 2.3577vw;
+                margin: auto auto 0;
+                padding-top: 0.4167vw;
+                }
+        }
+
+        &__recruit &__slider-dots {
+            gap: 0.625vw;
+            margin-top: 0;
+        }
+
+        &__recruit &__slider-dots button {
+            width: 0.4167vw;
+        }
+
+        &__recruit .p-single-shop__more {
+            width: 9.0104vw;
+            min-height: 2.8125vw;
+            margin-top: 2.1354vw;
+        }
+
+        &__recruit-banner {
+            width: 28.6458vw;
+            margin-top: 2.9688vw;
+        }
+        &__nearby {
+            margin-top: -24vw;
+            padding: 5.2083vw 0 2vw;
+            border-radius: 45% 45% 0 0 / 7% 7% 0 0;
+
+            .p-single-shop__heading {
+                margin-bottom: 0.8333vw;
+                font-size: 1.0417vw;
+                }
+
+            .c-shop-card-list {
+                display: grid;
+                grid-template-columns: repeat(3, 18.2292vw);
+                    width: 56.7708vw;
+                margin: 0 auto;
+            }
+
+            .c-shop-card {
+                width: 100%;
+                min-height: 14.5833vw;
+                padding: 1.1979vw 0.8854vw 1.1979vw;
+                border-radius: 0.5208vw;
+            }
+
+            .c-shop-card__name {
+                margin-bottom: 1.0417vw;
+                    line-height: 1;
+            }
+
+            .c-shop-card__detail {
+                padding-left: 0;
+                margin-bottom: 1.1458vw;
+            }
+
+            .c-shop-card__detail__item {
+                gap: 0.9896vw;
+            }
+
+            .c-shop-card__detail__title {
+                width: 4.6vw;
+                    line-height: 1;
+            }
+
+            .c-shop-card__detail__content {
+                padding: 0 0 0.8333vw 0;
+                line-height: 1.3889;
+                --dot-size: 0.0521vw;
+                --dot-gap: 0.2604vw;
+                --line-width: 0.0521vw;
+            }
+
+            .c-shop-card__detail__time__main,
+            .c-shop-card__detail__time__note__highlight,
+            .c-shop-card__detail__address__zip,
+            .c-shop-card__detail__address__street,
+            .c-shop-card__detail__tel {
+                font-size: 0.9375vw;
+                line-height: 1.3889;
+            }
+
+            .c-shop-card__detail__time__note,
+            .c-shop-card__detail__address__place {
+                    line-height: 1.5625;
+            }
+
+            .c-shop-card__detail__address::after {
+                right: -0.8333vw;
+                bottom: 0.1042vw;
+                width: 0.625vw;
+            }
+
+            .c-shop-card__detail__address__zip {
+                margin-bottom: 0;
+            }
+
+            .c-shop-card__link--wrapper {
+                gap: 0.326vw;
+                width: 100%;
+            }
+
+            .c-shop-card__link {
+                flex: 0 0 7.6946vw;
+                width: 7.6946vw;
+                min-height: 2.414vw;
+                min-width: 0;
+                gap: 0.3125vw;
+                }
+
+            .c-shop-card__link__icon,
+            .c-shop-card__link svg {
+                width: 1.25vw;
+                height: auto;
+            }
+
+            .p-single-shop__slider-dots {
+                gap: 0.625vw;
+                margin-top: 1.875vw;
+            }
+
+            .p-single-shop__slider-dots button {
+                width: 0.4167vw;
+            }
+
+            .p-single-shop__more {
+                width: 9.0104vw;
+                min-height: 2.8125vw;
+                margin-top: 1.5104vw;
+                    line-height: 1;
+            }
+        }
+    }
+}
