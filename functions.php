@@ -26,6 +26,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-archive-news-js',
         'foods-single-news-js',
         'foods-archive-recipe-js',
+        'foods-single-recipe-js',
     ];
 
     if (in_array($handle, $module_handles, true)) {
@@ -135,6 +136,7 @@ function foods_theme_scripts() {
     $archive_news_entry = 'src/js/archive-news.js';
     $single_news_entry = 'src/js/single-news.js';
     $archive_recipe_entry = 'src/js/archive-recipe.js';
+    $single_recipe_entry = 'src/js/single-recipe.js';
 
     if ($is_local) {
         wp_enqueue_script(
@@ -213,6 +215,16 @@ function foods_theme_scripts() {
         foods_enqueue_vite_entry(
             'foods-archive-recipe',
             $archive_recipe_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    if (is_singular('recipe')) {
+        foods_enqueue_vite_entry(
+            'foods-single-recipe',
+            $single_recipe_entry,
             $dev_server,
             $manifest,
             $is_local
@@ -410,6 +422,17 @@ function foods_get_scf_field_id($field_group_id, $field_key, $field_name) {
     return 0;
 }
 
+function foods_get_scf_field_group_id($field_group_key) {
+    $field_groups = get_posts([
+        'post_type' => 'acf-field-group',
+        'post_status' => ['publish', 'acf-disabled'],
+        'name' => $field_group_key,
+        'posts_per_page' => 1,
+        'fields' => 'ids',
+    ]);
+
+    return !empty($field_groups) ? (int) $field_groups[0] : 0;
+}
 function foods_trash_duplicate_scf_fields($field_group_id, $allowed_names) {
     $seen_names = [];
     $trashed_fields = 0;
@@ -536,11 +559,20 @@ function foods_sync_scf_field_group($field_group) {
     $fields = $field_group['fields'];
     unset($field_group['fields']);
 
+    $existing_field_group_id = foods_get_scf_field_group_id($field_group['key']);
+    if ($existing_field_group_id) {
+        $field_group['ID'] = $existing_field_group_id;
+    }
+
     $updated_field_group = acf_update_field_group($field_group);
     $saved_field_group = acf_get_field_group($field_group['key']);
     $field_group_id = is_array($saved_field_group) && !empty($saved_field_group['ID'])
         ? (int) $saved_field_group['ID']
         : 0;
+
+    if ($existing_field_group_id) {
+        $field_group_id = $existing_field_group_id;
+    }
 
     if (!$field_group_id && is_array($updated_field_group) && !empty($updated_field_group['ID'])) {
         $field_group_id = (int) $updated_field_group['ID'];
@@ -1440,43 +1472,99 @@ function foods_get_recipe_field_group() {
             ],
             [
                 'key' => 'field_recipe_ingredients',
-                'label' => '材料グループ',
+                'label' => "\u{6750}\u{6599}\u{30BB}\u{30AF}\u{30B7}\u{30E7}\u{30F3}",
                 'name' => 'recipe_ingredients',
                 'type' => 'repeater',
                 'required' => 0,
                 'layout' => 'block',
-                'button_label' => '材料グループを追加',
+                'button_label' => "\u{30BB}\u{30AF}\u{30B7}\u{30E7}\u{30F3}\u{3092}\u{8FFD}\u{52A0}",
                 'sub_fields' => [
                     [
-                        'key' => 'field_recipe_ingredients_group_name',
-                        'label' => 'グループ名',
-                        'name' => 'group_name',
+                        'key' => 'field_recipe_ingredients_section_name',
+                        'label' => "\u{30BB}\u{30AF}\u{30B7}\u{30E7}\u{30F3}\u{540D}",
+                        'name' => 'section_name',
                         'type' => 'text',
                         'required' => 0,
-                        'instructions' => '例: A、トッピング。通常材料の場合は空欄にします。',
+                        'instructions' => "\u{4F8B}: \u{6750}\u{6599}\u{3001}\u{8ABF}\u{5473}\u{6599}\u{3001}\u{30C8}\u{30C3}\u{30D4}\u{30F3}\u{30B0}\u{3002}\u{7A7A}\u{6B04}\u{306E}\u{5834}\u{5408}\u{306F}\u{6750}\u{6599}\u{3068}\u{3057}\u{3066}\u{6271}\u{3044}\u{307E}\u{3059}\u{3002}",
                     ],
                     [
-                        'key' => 'field_recipe_ingredients_items',
-                        'label' => '材料詳細',
-                        'name' => 'ingredients',
+                        'key' => 'field_recipe_ingredients_section_items',
+                        'label' => "\u{6750}\u{6599}\u{9805}\u{76EE}",
+                        'name' => 'items',
                         'type' => 'repeater',
                         'required' => 0,
-                        'layout' => 'table',
-                        'button_label' => '材料を追加',
+                        'layout' => 'block',
+                        'button_label' => "\u{9805}\u{76EE}\u{3092}\u{8FFD}\u{52A0}",
                         'sub_fields' => [
                             [
+                                'key' => 'field_recipe_ingredients_item_type',
+                                'label' => "\u{9805}\u{76EE}\u{30BF}\u{30A4}\u{30D7}",
+                                'name' => 'item_type',
+                                'type' => 'select',
+                                'required' => 0,
+                                'choices' => [
+                                    'item' => "\u{901A}\u{5E38}\u{6750}\u{6599}",
+                                    'compound' => "\u{8ABF}\u{5408}\u{6750}\u{6599}",
+                                ],
+                                'default_value' => 'item',
+                                'return_format' => 'value',
+                            ],
+                            [
                                 'key' => 'field_recipe_ingredients_item_name',
-                                'label' => '食材名',
+                                'label' => "\u{6750}\u{6599}\u{540D}",
                                 'name' => 'ingredient_name',
+                                'type' => 'text',
+                                'required' => 0,
+                                'instructions' => "\u{901A}\u{5E38}\u{6750}\u{6599}\u{306E}\u{5834}\u{5408}\u{306B}\u{5165}\u{529B}\u{3057}\u{307E}\u{3059}\u{3002}",
+                            ],
+                            [
+                                'key' => 'field_recipe_ingredients_item_amount',
+                                'label' => "\u{5206}\u{91CF}",
+                                'name' => 'amount',
                                 'type' => 'text',
                                 'required' => 0,
                             ],
                             [
-                                'key' => 'field_recipe_ingredients_item_amount',
-                                'label' => '分量',
-                                'name' => 'amount',
+                                'key' => 'field_recipe_ingredients_item_note',
+                                'label' => "\u{88DC}\u{8DB3}\u{6587}",
+                                'name' => 'note',
+                                'type' => 'textarea',
+                                'required' => 0,
+                                'rows' => 2,
+                                'new_lines' => 'br',
+                            ],
+                            [
+                                'key' => 'field_recipe_ingredients_compound_name',
+                                'label' => "\u{8ABF}\u{5408}\u{6750}\u{6599}\u{540D}",
+                                'name' => 'compound_name',
                                 'type' => 'text',
                                 'required' => 0,
+                                'instructions' => "\u{4F8B}: A\u{3001}\u{8ABF}\u{5408}\u{6750}\u{6599}1\u{3002}\u{3053}\u{3053}\u{306B}\u{5165}\u{529B}\u{3057}\u{305F}\u{9805}\u{76EE}\u{3060}\u{3051}\u{5DE6}\u{7DDA}\u{4ED8}\u{304D}\u{306E}\u{30CD}\u{30B9}\u{30C8}\u{8868}\u{793A}\u{306B}\u{306A}\u{308A}\u{307E}\u{3059}\u{3002}",
+                            ],
+                            [
+                                'key' => 'field_recipe_ingredients_compound_items',
+                                'label' => "\u{8ABF}\u{5408}\u{6750}\u{6599}\u{306E}\u{4E2D}\u{8EAB}",
+                                'name' => 'compound_items',
+                                'type' => 'repeater',
+                                'required' => 0,
+                                'layout' => 'table',
+                                'button_label' => "\u{8ABF}\u{5408}\u{6750}\u{6599}\u{3092}\u{8FFD}\u{52A0}",
+                                'sub_fields' => [
+                                    [
+                                        'key' => 'field_recipe_ingredients_compound_item_name',
+                                        'label' => "\u{6750}\u{6599}\u{540D}",
+                                        'name' => 'ingredient_name',
+                                        'type' => 'text',
+                                        'required' => 0,
+                                    ],
+                                    [
+                                        'key' => 'field_recipe_ingredients_compound_item_amount',
+                                        'label' => "\u{5206}\u{91CF}",
+                                        'name' => 'amount',
+                                        'type' => 'text',
+                                        'required' => 0,
+                                    ],
+                                ],
                             ],
                         ],
                     ],
@@ -1507,6 +1595,15 @@ function foods_get_recipe_field_group() {
                         'type' => 'textarea',
                         'required' => 0,
                         'rows' => 4,
+                        'new_lines' => 'br',
+                    ],
+                    [
+                        'key' => 'field_recipe_steps_point',
+                        'label' => "\u{30DD}\u{30A4}\u{30F3}\u{30C8}",
+                        'name' => 'step_point',
+                        'type' => 'textarea',
+                        'required' => 0,
+                        'rows' => 3,
                         'new_lines' => 'br',
                     ],
                 ],
@@ -1547,14 +1644,14 @@ function foods_register_recipe_scf_fields() {
         return;
     }
 
-    $version = '20260624-10';
+    $version = '20260710-04';
     if (get_option('foods_recipe_scf_fields_version') === $version) {
         return;
     }
 
     $result = foods_sync_recipe_scf_fields();
 
-    if (!empty($result['field_group_id']) && $result['field_count'] === 8) {
+    if (!empty($result['field_group_id'])) {
         update_option('foods_recipe_scf_fields_version', $version);
     }
 }
