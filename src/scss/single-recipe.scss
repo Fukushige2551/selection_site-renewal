@@ -85,7 +85,7 @@
         width: 85.9vw;
         aspect-ratio: 1 / 1;
         margin: 7.69vw 0 0;
-        overflow: hidden;
+        overflow: visible;
         border-radius: 8.21vw;
     }
 
@@ -569,7 +569,7 @@
         min-height: 154vw;
         margin: 13.85vw 0 0 calc((85.9vw - 100vw) / 2);
         padding: 17.44vw 4.1vw 41vw;
-        overflow: hidden;
+        overflow: visible;
         background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/recipe-detail-related-bg.svg");
         background-repeat: no-repeat;
         background-position: top center;
@@ -614,8 +614,8 @@
     }
 
     &__related-decoration--tools {
-        top: 10.26vw;
-        right: 7.69vw;
+        top: -5.74vw;
+        right: 3.83vw;
         width: 28.21vw;
         aspect-ratio: 110 / 97;
         background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_tools.svg");
@@ -766,3 +766,994 @@
     z-index: 2;
     margin-top: -13vw;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .p-recipe-detail {
+        &__article {
+            width: 68.49vw;
+            margin-top: 6.51vw;
+        }
+
+        &__meta {
+            gap: 1.3vw;
+            margin: 0 0 1.04vw -0.52vw;
+        }
+
+        &__time {
+            width: 20.7vw;
+            height: 4.43vw;
+            padding: 0 1.17vw 0 2.21vw;
+        }
+
+        &__time-icon {
+            width: 2.73vw;
+            margin-right: 0.65vw;
+        }
+
+        &__time-label {
+            font-size: 1.69vw;
+        }
+
+        &__time-value {
+            font-size: 1.95vw;
+        }
+
+        &__category {
+            height: 4.43vw;
+            padding: 0 1.82vw;
+            font-size: 1.95vw;
+        }
+
+        &__title {
+            width: 100%;
+            font-size: 2.6vw;
+            line-height: 1.8;
+        }
+
+        &__figure {
+            width: 54.69vw;
+            margin: 3.91vw auto 0;
+            border-radius: 4.17vw;
+        }
+
+        &__summary {
+            width: 60.94vw;
+            margin: 2.47vw auto 0;
+            font-size: 2.08vw;
+            line-height: 1.875;
+        }
+
+        &__ingredients {
+            width: 60.94vw;
+            margin: 5.21vw auto 0;
+            padding: 2.73vw 1.95vw 2.6vw;
+            border-radius: 1.95vw;
+        }
+
+        &__ingredients-heading {
+            gap: 1.56vw;
+            margin-bottom: 2.86vw;
+        }
+
+        &__section-title {
+            font-size: 2.34vw;
+        }
+
+        &__servings,
+        &__ingredient-section-title,
+        &__ingredient-compound-title,
+        &__ingredient-name,
+        &__ingredient-amount,
+        &__ingredient-note {
+            font-size: 2.08vw;
+        }
+
+        &__ingredient-sections {
+            gap: 3.39vw;
+        }
+
+        &__ingredient-section-title,
+        &__ingredient-compound-title {
+            margin-bottom: 2.08vw;
+        }
+
+        &__ingredient-compound {
+            margin-bottom: 2.08vw;
+        }
+
+        &__ingredient-list--nested {
+            padding-left: 1.43vw;
+        }
+
+        &__ingredient-item {
+            min-height: 4.3vw;
+            padding-bottom: 1.04vw;
+            column-gap: 2.6vw;
+        }
+
+        &__ingredient-item + &__ingredient-item {
+            padding-top: 1.04vw;
+        }
+
+        &__method,
+        &__tips {
+            width: 60.94vw;
+            margin: 4.56vw auto 0;
+        }
+
+        &__method-title,
+        &__tips-title {
+            margin-bottom: 2.08vw;
+            font-size: 2.34vw;
+            line-height: 1.67;
+        }
+
+        &__method-body,
+        &__tips-text {
+            font-size: 2.08vw;
+        }
+
+        &__preparation {
+            padding: 0 0.78vw 1.17vw;
+        }
+
+        &__step-list {
+            padding: 0 0.78vw;
+        }
+
+        &__step-item {
+            padding: 1.04vw 0 1.04vw 2.54vw;
+        }
+
+        &__step-item::before {
+            top: 1.04vw;
+            font-size: 2.08vw;
+        }
+
+        &__point {
+            width: 55.21vw;
+            min-height: 11.98vw;
+            margin: 1.3vw 0;
+            padding: 1.04vw 1.95vw;
+            border-radius: 2.6vw;
+        }
+
+        &__point-title {
+            gap: 0.52vw;
+            font-size: 2.08vw;
+        }
+
+        &__point-title span {
+            font-size: 1.56vw;
+        }
+
+        &__point-text {
+            font-size: 1.82vw;
+        }
+    
+        &__keywords {
+            gap: 0.52vw 1.04vw;
+            width: 60.94vw;
+            margin: 4.56vw auto 0;
+        }
+
+        &__keyword {
+            font-size: 1.82vw;
+        }
+
+        &__source {
+            gap: 1.04vw;
+            width: 60.94vw;
+            margin: 1.69vw auto 0;
+            font-size: 1.82vw;
+        }
+
+        &__source-link {
+            gap: 0.78vw;
+            text-underline-offset: 0.26vw;
+        }
+
+        &__source-logo {
+            width: 8.72vw;
+        }
+
+        &__shop-link {
+            width: 37.84vw;
+            margin-top: 8.46vw;
+        }
+
+        &__actions {
+            width: 60.94vw;
+            margin: 4.17vw auto 0;
+        }
+
+        &__share-date {
+            font-size: 2.08vw;
+        }
+
+        &__share-title {
+            margin-right: 1.95vw;
+            font-size: 1.82vw;
+        }
+
+        &__share-list {
+            gap: 1.56vw;
+        }
+
+        &__share-link--x,
+        &__share-link--instagram {
+            width: 2.6vw;
+        }
+
+        &__share-link--facebook {
+            width: 2.86vw;
+        }
+
+        &__actions-divider {
+            margin-top: 1.95vw;
+        }
+
+        &__pager {
+            width: 44.53vw;
+            height: 7.03vw;
+            margin: 5.08vw auto 0;
+        }
+
+        &__pager-arrow {
+            width: 3.91vw;
+            height: 4.04vw;
+        }
+
+        &__back-link {
+            width: 22.14vw;
+            height: 7.03vw;
+            font-size: 2.08vw;
+        }
+
+        &__related {
+            min-height: 84vw;
+            margin: 7.03vw 0 0 calc((68.49vw - 100vw) / 2);
+            padding: 16.85vw 3.91vw 20vw;
+        }
+
+        &__related-title {
+            font-size: 2.6vw;
+            line-height: 1;
+        }
+
+        &__related-decoration--scale {
+            top: 4.95vw;
+            left: 10.71vw;
+            width: 11.9vw;
+        }
+
+        &__related-decoration--tools {
+            top: -1vw;
+            right: 9.63vw;
+            width: 18.32vw;
+        }
+
+        &__related-decoration--bowl {
+            display: none;
+        }
+
+        &__related-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 5.72vw 3vw;
+            width: 92.06vw;
+            margin: 4.8vw auto 0;
+            padding: 0;
+        }
+
+        &__related-card-link {
+            min-width: 0;
+        }
+
+        &__related-card {
+            width: 31.25vw;
+            aspect-ratio: 240 / 130;
+            margin: 0 0 0 12.63vw;
+            padding: 4.55vw 1.69vw 2.08vw 9.77vw;
+            border-radius: 0 9.38vw 9.38vw 0;
+        }
+
+        &__related-card .c-recipe-card__title {
+            margin-bottom: 1.75vw;
+            font-size: 2.08vw;
+            line-height: 1.44;
+        }
+
+        &__related-card .c-recipe-card__category {
+            font-size: 2.08vw;
+        }
+
+        &__related-card .c-recipe-card__img {
+            left: -12.63vw;
+            width: 21.19vw;
+            aspect-ratio: 162.89 / 150.24;
+        }
+
+        &__related-card .c-recipe-card__time {
+            left: -12.63vw;
+            gap: 0.78vw;
+            width: 10.16vw;
+            border-radius: 2.08vw;
+            font-size: 1.69vw;
+        }
+
+        &__related-card .c-recipe-card__clock {
+            width: 2.73vw;
+        }
+
+        &__related-pager {
+            height: 4.04vw;
+            margin-top: 6.64vw;
+        }
+
+        &__related-pager-button {
+            width: 3.91vw;
+            height: 4.04vw;
+        }
+
+        &__related-pager-button--prev {
+            left: 8.2vw;
+        }
+
+        &__related-pager-button--next {
+            right: 8.2vw;
+        }
+
+        &__related-dots {
+            gap: 1.56vw;
+        }
+
+        &__related-dots button {
+            width: 1.17vw;
+        }
+    }
+
+    .l-footer {
+        margin-top: -10vw;
+    }}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .p-recipe-detail {
+        &__article {
+            width: 50.78vw;
+            margin-top: 4.88vw;
+        }
+
+        &__meta {
+            gap: 0.98vw;
+            margin: 0 0 0.78vw -0.39vw;
+        }
+
+        &__time {
+            width: 15.53vw;
+            height: 3.32vw;
+            padding: 0 0.88vw 0 1.66vw;
+        }
+
+        &__time-icon {
+            width: 2.05vw;
+            margin-right: 0.49vw;
+        }
+
+        &__time-label {
+            font-size: 1.27vw;
+        }
+
+        &__time-value {
+            font-size: 1.46vw;
+        }
+
+        &__category {
+            height: 3.32vw;
+            padding: 0 1.37vw;
+            font-size: 1.46vw;
+        }
+
+        &__title {
+            width: 100%;
+            font-size: 1.95vw;
+            line-height: 1.8;
+        }
+
+        &__figure {
+            width: 41.02vw;
+            margin: 2.93vw auto 0;
+            border-radius: 3.13vw;
+        }
+
+        &__summary {
+            width: 45.7vw;
+            margin: 1.86vw auto 0;
+            font-size: 1.56vw;
+            line-height: 1.875;
+        }
+
+        &__ingredients {
+            width: 45.7vw;
+            margin: 3.91vw auto 0;
+            padding: 2.05vw 1.46vw 1.95vw;
+            border-radius: 1.46vw;
+        }
+
+        &__ingredients-heading {
+            gap: 1.17vw;
+            margin-bottom: 2.15vw;
+        }
+
+        &__section-title {
+            font-size: 1.76vw;
+        }
+
+        &__servings,
+        &__ingredient-section-title,
+        &__ingredient-compound-title,
+        &__ingredient-name,
+        &__ingredient-amount,
+        &__ingredient-note {
+            font-size: 1.56vw;
+        }
+
+        &__ingredient-sections {
+            gap: 2.54vw;
+        }
+
+        &__ingredient-section-title,
+        &__ingredient-compound-title {
+            margin-bottom: 1.56vw;
+        }
+
+        &__ingredient-compound {
+            margin-bottom: 1.56vw;
+        }
+
+        &__ingredient-list--nested {
+            padding-left: 1.07vw;
+        }
+
+        &__ingredient-item {
+            min-height: 3.22vw;
+            padding-bottom: 0.78vw;
+            column-gap: 1.95vw;
+        }
+
+        &__ingredient-item + &__ingredient-item {
+            padding-top: 0.78vw;
+        }
+
+        &__method,
+        &__tips {
+            width: 45.7vw;
+            margin: 3.42vw auto 0;
+        }
+
+        &__method-title,
+        &__tips-title {
+            margin-bottom: 1.56vw;
+            font-size: 1.76vw;
+            line-height: 1.67;
+        }
+
+        &__method-body,
+        &__tips-text {
+            font-size: 1.56vw;
+        }
+
+        &__preparation {
+            padding: 0 0.59vw 0.88vw;
+        }
+
+        &__step-list {
+            padding: 0 0.59vw;
+        }
+
+        &__step-item {
+            padding: 0.78vw 0 0.78vw 1.9vw;
+        }
+
+        &__step-item::before {
+            top: 0.78vw;
+            font-size: 1.56vw;
+        }
+
+        &__point {
+            width: 41.41vw;
+            min-height: 8.98vw;
+            margin: 0.98vw 0;
+            padding: 0.78vw 1.46vw;
+            border-radius: 1.95vw;
+        }
+
+        &__point-title {
+            gap: 0.39vw;
+            font-size: 1.56vw;
+        }
+
+        &__point-title span {
+            font-size: 1.17vw;
+        }
+
+        &__point-text {
+            font-size: 1.37vw;
+        }
+    
+        &__keywords {
+            gap: 0.39vw 0.78vw;
+            width: 45.7vw;
+            margin: 3.42vw auto 0;
+        }
+
+        &__keyword {
+            font-size: 1.37vw;
+        }
+
+        &__source {
+            gap: 0.78vw;
+            width: 45.7vw;
+            margin: 1.27vw auto 0;
+            font-size: 1.37vw;
+        }
+
+        &__source-link {
+            gap: 0.59vw;
+            text-underline-offset: 0.2vw;
+        }
+
+        &__source-logo {
+            width: 6.54vw;
+        }
+
+        &__shop-link {
+            width: 28.38vw;
+            margin-top: 6.35vw;
+        }
+
+        &__actions {
+            width: 45.7vw;
+            margin: 3.13vw auto 0;
+        }
+
+        &__share-date {
+            font-size: 1.56vw;
+        }
+
+        &__share-title {
+            margin-right: 1.46vw;
+            font-size: 1.37vw;
+        }
+
+        &__share-list {
+            gap: 1.17vw;
+        }
+
+        &__share-link--x,
+        &__share-link--instagram {
+            width: 1.95vw;
+        }
+
+        &__share-link--facebook {
+            width: 2.15vw;
+        }
+
+        &__actions-divider {
+            margin-top: 1.46vw;
+        }
+
+        &__pager {
+            width: 33.4vw;
+            height: 5.27vw;
+            margin: 3.81vw auto 0;
+        }
+
+        &__pager-arrow {
+            width: 2.93vw;
+            height: 3.03vw;
+        }
+
+        &__back-link {
+            width: 16.6vw;
+            height: 5.27vw;
+            font-size: 1.56vw;
+        }
+
+        &__related {
+            min-height: 63vw;
+            margin: 5.27vw 0 0 calc((50.78vw - 100vw) / 2);
+            padding: 15.64vw 4.88vw 11vw;
+        }
+
+        &__related-title {
+            font-size: 1.95vw;
+            line-height: 1;
+        }
+
+        &__related-decoration--scale {
+            top: 4.71vw;
+            left: 19.31vw;
+            width: 9.42vw;
+        }
+
+        &__related-decoration--tools {
+            top: 0.85vw;
+            right: 12.53vw;
+            width: 16.74vw;
+        }
+
+        &__related-decoration--bowl {
+            bottom: 7.13vw;
+            left: 13.67vw;
+            width: 8.98vw;
+        }
+
+        &__related-list {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 3.13vw 2.73vw;
+            width: 89.06vw;
+            margin: 3.6vw auto 0;
+            padding: 0;
+        }
+
+        &__related-card-link {
+            min-width: 0;
+        }
+
+        &__related-card {
+            width: 19.53vw;
+            aspect-ratio: 232 / 126;
+            margin: 0 0 0 7.42vw;
+            padding: 2.83vw 1.07vw 1.37vw 6.05vw;
+            border-radius: 0 5.86vw 5.86vw 0;
+        }
+
+        &__related-card .c-recipe-card__title {
+            margin-bottom: 1.07vw;
+            font-size: 1.37vw;
+            line-height: 1.44;
+        }
+
+        &__related-card .c-recipe-card__category {
+            font-size: 1.37vw;
+        }
+
+        &__related-card .c-recipe-card__img {
+            left: -7.42vw;
+            width: 12.89vw;
+            aspect-ratio: 157.89 / 145.63;
+        }
+
+        &__related-card .c-recipe-card__time {
+            top: 0.78vw;
+            left: -7.42vw;
+            gap: 0.59vw;
+            width: 6.25vw;
+            border-radius: 1.37vw;
+            font-size: 1.07vw;
+        }
+
+        &__related-card .c-recipe-card__clock {
+            width: 1.76vw;
+        }
+
+        &__related-pager {
+            height: 3.03vw;
+            margin-top: 4.98vw;
+        }
+
+        &__related-pager-button {
+            width: 2.93vw;
+            height: 3.03vw;
+        }
+
+        &__related-pager-button--prev {
+            left: 8.2vw;
+        }
+
+        &__related-pager-button--next {
+            right: 8.2vw;
+        }
+
+        &__related-dots {
+            gap: 1.17vw;
+        }
+
+        &__related-dots button {
+            width: 0.88vw;
+        }
+    }
+
+    .l-footer {
+        margin-top: -7.5vw;
+    }}
+
+@media screen and (min-width: 1280px) {
+    .p-recipe-detail {
+        &__article {
+            width: 38.91vw;
+            margin-top: 4.17vw;
+        }
+
+        &__meta {
+            gap: 0.52vw;
+            margin: 0 0 0.78vw 0;
+        }
+
+        &__time {
+            width: 8.28vw;
+            height: 1.77vw;
+            padding: 0 0.52vw 0 2.24vw;
+        }
+
+        &__time-icon {
+            width: 1.1vw;
+            margin-right: 0.31vw;
+        }
+
+        &__time-label {
+            font-size: 0.68vw;
+        }
+
+        &__time-value {
+            font-size: 0.78vw;
+        }
+
+        &__category {
+            height: 1.77vw;
+            padding: 0 0.68vw;
+            font-size: 0.78vw;
+        }
+
+        &__title {
+            width: 22.86vw;
+            margin: 0;
+            font-size: 1.04vw;
+            line-height: 1.8;
+            letter-spacing: 0.16vw;
+        }
+
+        &__figure {
+            width: 29.38vw;
+            margin: 0.05vw auto 0;
+            border-radius: 2.92vw;
+        }
+
+        &__summary {
+            width: 38.91vw;
+            margin: 1.93vw auto 0;
+            font-size: 0.83vw;
+            line-height: 1.875;
+        }
+
+        &__ingredients {
+            width: 38.44vw;
+            min-height: 30.83vw;
+            margin: 4.32vw auto 0;
+            padding: 0.73vw 1.3vw 1.15vw;
+            border-radius: 1.04vw;
+        }
+
+        &__ingredients-heading {
+            gap: 0.83vw;
+            margin-bottom: 1.61vw;
+        }
+
+        &__section-title {
+            font-size: 0.94vw;
+            line-height: 1.67;
+        }
+
+        &__servings {
+            font-size: 0.94vw;
+            line-height: 1.67;
+        }
+
+        &__ingredient-sections {
+            gap: 1.56vw;
+        }
+
+        &__ingredient-section-title,
+        &__ingredient-compound-title {
+            margin-bottom: 0.78vw;
+            font-size: 0.94vw;
+            line-height: 1.67;
+        }
+
+        &__ingredient-compound {
+            margin-bottom: 0.78vw;
+        }
+
+        &__ingredient-list--nested {
+            padding-left: 1.41vw;
+        }
+
+        &__ingredient-item {
+            min-height: 2.14vw;
+            padding-bottom: 0.57vw;
+            column-gap: 1.56vw;
+        }
+
+        &__ingredient-item + &__ingredient-item {
+            padding-top: 0.57vw;
+        }
+
+        &__ingredient-name,
+        &__ingredient-amount {
+            font-size: 0.83vw;
+            line-height: 1.875;
+        }
+
+        &__ingredient-note {
+            grid-column: 1 / -1;
+            margin-top: 0.1vw;
+            font-size: 0.73vw;
+            line-height: 2.14;
+        }
+
+        &__method {
+            width: 38.44vw;
+            margin: 1.93vw auto 0;
+        }
+
+        &__method-title {
+            margin-bottom: 1.15vw;
+            font-size: 0.94vw;
+            line-height: 1.67;
+        }
+
+        &__method-body {
+            font-size: 0.83vw;
+            line-height: 1.625;
+        }
+
+        &__preparation {
+            padding: 0 0.78vw 0.89vw;
+        }
+
+        &__step-list {
+            padding: 0 0.78vw;
+        }
+
+        &__step-item {
+            padding: 0.83vw 0 0.83vw 1.25vw;
+        }
+
+        &__step-item::before {
+            top: 0.83vw;
+            font-size: 0.83vw;
+            line-height: 1.625;
+        }
+
+        &__point {
+            width: 34.74vw;
+            min-height: 3.65vw;
+            margin: 1.35vw 0 0.36vw;
+            padding: 0.26vw 0.89vw;
+            border-radius: 1.04vw;
+        }
+
+        &__point-title {
+            gap: 0.26vw;
+            font-size: 0.83vw;
+            line-height: 1.625;
+        }
+
+        &__point-title span {
+            font-size: 0.63vw;
+        }
+
+        &__point-text {
+            font-size: 0.73vw;
+            line-height: 1.86;
+        }
+
+        &__tips {
+            width: 38.44vw;
+            margin: 1.41vw auto 0;
+        }
+
+        &__tips-title {
+            margin-bottom: 0.36vw;
+            font-size: 0.94vw;
+            line-height: 1.67;
+        }
+
+        &__tips-text {
+            width: 37.86vw;
+            margin-left: 1.35vw;
+            color: #000;
+            font-size: 0.83vw;
+            font-weight: 400;
+            line-height: 1.875;
+        }
+    
+        &__keywords {
+            gap: 0.31vw 0.63vw;
+            width: 38.44vw;
+            margin: 3.23vw auto 0;
+        }
+
+        &__keyword {
+            font-size: 0.73vw;
+            line-height: 1.14;
+        }
+
+        &__source {
+            gap: 0.52vw;
+            width: 38.44vw;
+            margin: 0.83vw auto 0;
+            font-size: 0.73vw;
+            line-height: 1.14;
+        }
+
+        &__source-link {
+            gap: 0.42vw;
+            text-underline-offset: 0.1vw;
+        }
+
+        &__source-logo {
+            width: 3.96vw;
+        }
+
+        &__shop-link {
+            width: 27.66vw;
+            margin-top: 7.34vw;
+        }
+
+        &__actions {
+            width: 39.58vw;
+            margin: 3.07vw auto 0;
+        }
+
+        &__share-date {
+            font-size: 0.83vw;
+            letter-spacing: 0.08vw;
+        }
+
+        &__share-title {
+            margin-right: 1.15vw;
+            font-size: 0.73vw;
+            line-height: 1.14;
+        }
+
+        &__share-list {
+            gap: 0.68vw;
+        }
+
+        &__share-link--x,
+        &__share-link--instagram {
+            width: 0.83vw;
+        }
+
+        &__share-link--facebook {
+            width: 0.99vw;
+        }
+
+        &__actions-divider {
+            margin-top: 0.83vw;
+        }
+
+        &__pager {
+            width: 17.81vw;
+            height: 2.81vw;
+            margin: 1.61vw auto 0;
+        }
+
+        &__pager-arrow {
+            width: 1.56vw;
+            height: 1.61vw;
+        }
+
+        &__back-link {
+            width: 9.01vw;
+            height: 2.81vw;
+            font-size: 0.83vw;
+        }
+    }
+
+    .l-footer {
+        margin-top: -3vw;
+    }}
+

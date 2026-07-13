@@ -3,21 +3,48 @@ import '../scss/single-recipe.scss';
 const setupRelatedRecipesPager = () => {
     const cards = Array.from(document.querySelectorAll('.js-recipe-detail-related-card'));
     const dots = Array.from(document.querySelectorAll('.js-recipe-detail-related-dots button'));
+    const pager = document.querySelector('.p-recipe-detail__related-pager');
     const prevButton = document.querySelector('.js-recipe-detail-related-prev');
     const nextButton = document.querySelector('.js-recipe-detail-related-next');
-    const perPage = 3;
 
     if (!cards.length || !dots.length) {
         return;
     }
 
-    const pageCount = Math.ceil(cards.length / perPage);
+    const tabletQuery = window.matchMedia('(min-width: 768px) and (max-width: 1023.98px)');
+    const laptopQuery = window.matchMedia('(min-width: 1024px) and (max-width: 1279px)');
+    const getPerPage = () => {
+        if (tabletQuery.matches) {
+            return 4;
+        }
+
+        if (laptopQuery.matches) {
+            return 6;
+        }
+
+        return 3;
+    };
+    let perPage = getPerPage();
+    let pageCount = Math.ceil(cards.length / perPage);
     let currentPage = 0;
 
+    const updateDotsVisibility = () => {
+        dots.forEach((dot, index) => {
+            dot.hidden = index >= pageCount;
+        });
+    };
+
     const render = (page) => {
+        pageCount = Math.ceil(cards.length / perPage);
         currentPage = Math.max(0, Math.min(page, pageCount - 1));
         const start = currentPage * perPage;
         const end = start + perPage;
+
+        if (pager) {
+            pager.hidden = pageCount <= 1;
+        }
+
+        updateDotsVisibility();
 
         cards.forEach((card, index) => {
             card.hidden = index < start || index >= end;
@@ -52,10 +79,28 @@ const setupRelatedRecipesPager = () => {
         nextButton.addEventListener('click', () => render(currentPage + 1));
     }
 
+    const handleBreakpointChange = () => {
+        const nextPerPage = getPerPage();
+
+        if (nextPerPage === perPage) {
+            return;
+        }
+
+        perPage = nextPerPage;
+        render(0);
+    };
+
+    [tabletQuery, laptopQuery].forEach((mediaQuery) => {
+        if (typeof mediaQuery.addEventListener === 'function') {
+            mediaQuery.addEventListener('change', handleBreakpointChange);
+        } else if (typeof mediaQuery.addListener === 'function') {
+            mediaQuery.addListener(handleBreakpointChange);
+        }
+    });
+
     render(0);
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('foodsRecipeDetailItem', window.foodsRecipeDetailItem || null);
     setupRelatedRecipesPager();
 });
