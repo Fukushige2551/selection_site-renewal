@@ -675,7 +675,7 @@
         &__card-list {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            grid-template-rows: repeat(6, auto);
+            grid-template-rows: none;
             gap: 5.72vw 3vw;
             width: 92.06vw;
             margin: 4.8vw auto 0;
@@ -974,7 +974,7 @@
         &__card-list {
             display: grid;
             grid-template-columns: repeat(2, 32.81vw);
-            grid-template-rows: repeat(6, auto);
+            grid-template-rows: none;
             gap: 4.39vw 3.22vw;
             width: 68.85vw;
             margin: 2.64vw auto 0;
@@ -1421,7 +1421,7 @@
         &__card-list {
             display: grid;
             grid-template-columns: repeat(3, 20.36vw);
-            grid-template-rows: repeat(4, auto);
+            grid-template-rows: none;
             gap: 1.09vw 0.73vw;
             width: 62.5vw;
             margin: 2.14vw auto 0;

@@ -6,10 +6,53 @@ const setupRelatedRecipesPager = () => {
     const pager = document.querySelector('.p-recipe-detail__related-pager');
     const prevButton = document.querySelector('.js-recipe-detail-related-prev');
     const nextButton = document.querySelector('.js-recipe-detail-related-next');
+    const relatedSection = document.getElementById('recipe-detail-related-title')?.closest('.p-recipe-archive__list');
 
     if (!cards.length || !dots.length) {
         return;
     }
+
+    const getPseudoElementHeight = (element, pseudoElement) => {
+        const styles = window.getComputedStyle(element, pseudoElement);
+        const display = styles.getPropertyValue('display');
+        const height = parseFloat(styles.getPropertyValue('height'));
+
+        if (display === 'none' || Number.isNaN(height)) {
+            return 0;
+        }
+
+        return height;
+    };
+
+    const getVisibleHeaderHeight = () => {
+        const headers = document.querySelectorAll('.l-header-pc, .l-header');
+
+        for (const header of headers) {
+            const rect = header.getBoundingClientRect();
+
+            if (rect.height > 0) {
+                return rect.height + getPseudoElementHeight(header, '::after');
+            }
+        }
+
+        return 0;
+    };
+
+    const scrollToRelatedSection = () => {
+        if (!relatedSection) {
+            return;
+        }
+
+        const headerHeight = getVisibleHeaderHeight();
+        const breathingRoom = 16;
+        const targetTop = relatedSection.getBoundingClientRect().top + window.pageYOffset - headerHeight - breathingRoom;
+        const supportsSmooth = 'scrollBehavior' in document.documentElement.style;
+
+        window.scrollTo({
+            top: Math.max(0, targetTop),
+            behavior: supportsSmooth ? 'smooth' : 'auto',
+        });
+    };
 
     const tabletQuery = window.matchMedia('(min-width: 768px) and (max-width: 1023.98px)');
     const laptopQuery = window.matchMedia('(min-width: 1024px) and (max-width: 1279px)');
@@ -39,7 +82,7 @@ const setupRelatedRecipesPager = () => {
         });
     };
 
-    const render = (page) => {
+    const render = (page, shouldScroll = false) => {
         pageCount = Math.ceil(cards.length / perPage);
         currentPage = Math.max(0, Math.min(page, pageCount - 1));
         const start = currentPage * perPage;
@@ -70,18 +113,22 @@ const setupRelatedRecipesPager = () => {
             nextButton.classList.toggle('is-disabled', currentPage === pageCount - 1);
             nextButton.disabled = currentPage === pageCount - 1;
         }
+
+        if (shouldScroll) {
+            window.requestAnimationFrame(scrollToRelatedSection);
+        }
     };
 
     dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => render(index));
+        dot.addEventListener('click', () => render(index, true));
     });
 
     if (prevButton) {
-        prevButton.addEventListener('click', () => render(currentPage - 1));
+        prevButton.addEventListener('click', () => render(currentPage - 1, true));
     }
 
     if (nextButton) {
-        nextButton.addEventListener('click', () => render(currentPage + 1));
+        nextButton.addEventListener('click', () => render(currentPage + 1, true));
     }
 
     const handleBreakpointChange = () => {
