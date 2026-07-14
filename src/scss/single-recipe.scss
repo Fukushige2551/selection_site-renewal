@@ -1,8 +1,18 @@
 ﻿@use "foundation/global" as *;
 @use "object/recipe-archive-list";
 
+.js-recipe-detail-related-list > .js-recipe-detail-related-card:nth-child(n + 11) {
+    display: block;
+}
+
 .js-recipe-detail-related-card[hidden] {
     display: none !important;
+}
+
+@media screen and (min-width: 768px) {
+    .js-recipe-detail-related-list {
+        grid-template-rows: none;
+    }
 }
 
 .p-recipe-detail {
@@ -541,6 +551,11 @@
         display: block;
         width: 100%;
         height: auto;
+    }
+
+    &__pager-arrow.c-pop:hover,
+    &__pager-arrow.c-pop:active {
+        transform: translateY(-50%) scale(1.04);
     }
 
     &__pager-arrow.is-disabled {
@@ -1271,7 +1286,7 @@
 
         &__figure {
             width: 29.38vw;
-            margin: 0.05vw auto 0;
+            margin: 1.97vw auto 0;
             border-radius: 2.92vw;
         }
 
