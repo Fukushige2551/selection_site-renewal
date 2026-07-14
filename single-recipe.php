@@ -654,74 +654,81 @@ get_header();
                 <?php endif; ?>
             </nav>
         </section>
-
-        <?php if (!empty($related_recipe_items)) : ?>
-            <section class="p-recipe-detail__related" aria-labelledby="recipe-detail-related-title">
-                <div class="p-recipe-detail__related-decorations" aria-hidden="true">
-                    <span class="p-recipe-detail__related-decoration p-recipe-detail__related-decoration--tools"></span>
-                    <span class="p-recipe-detail__related-decoration p-recipe-detail__related-decoration--scale"></span>
-                    <span class="p-recipe-detail__related-decoration p-recipe-detail__related-decoration--bowl"></span>
-                </div>
-                <h2 id="recipe-detail-related-title" class="p-recipe-detail__related-title">&#38306;&#36899;&#12524;&#12471;&#12500;</h2>
-                <div class="c-recipe-card-wrapper p-recipe-detail__related-list js-recipe-detail-related-list">
-                    <?php foreach ($related_recipe_items as $related_index => $related_recipe_item) : ?>
-                        <?php
-                        $related_recipe_title = $related_recipe_item['title'] ?? '';
-                        $related_recipe_url = $related_recipe_item['permalink'] ?? '#';
-                        $related_recipe_image = $related_recipe_item['image'] ?? null;
-                        $related_recipe_image_url = !empty($related_recipe_image['url']) ? $related_recipe_image['url'] : $theme_uri . '/img/component/no-image.png';
-                        $related_recipe_image_alt = !empty($related_recipe_image['alt']) ? $related_recipe_image['alt'] : $related_recipe_title;
-                        $related_recipe_category = foods_recipe_detail_get_primary_term_name($related_recipe_item['terms']['recipe_categories'] ?? []);
-                        if ($related_recipe_category === '') {
-                            $related_recipe_category = foods_recipe_detail_get_primary_term_name($related_recipe_item['terms']['categories'] ?? []);
-                        }
-                        $related_recipe_time = $related_recipe_item['cooking_time'] ?? '';
-                        $related_recipe_datetime = foods_recipe_detail_format_duration_datetime($related_recipe_time);
-                        ?>
-                        <a href="<?php echo esc_url($related_recipe_url); ?>" class="c-recipe-card-wrapper-link p-recipe-detail__related-card-link js-recipe-detail-related-card" data-related-index="<?php echo esc_attr($related_index); ?>" <?php echo $related_index < 3 ? '' : 'hidden'; ?>>
-                            <article class="c-recipe-card p-recipe-detail__related-card">
-                                <p class="c-recipe-card__title"><?php echo esc_html($related_recipe_title); ?></p>
-                                <?php if ($related_recipe_category !== '') : ?>
-                                    <p class="c-recipe-card__category"><?php echo esc_html($related_recipe_category); ?></p>
-                                <?php endif; ?>
-                                <img class="c-recipe-card__img" src="<?php echo esc_url($related_recipe_image_url); ?>" alt="<?php echo esc_attr($related_recipe_image_alt); ?>">
-                                <?php if ($related_recipe_time !== '') : ?>
-                                    <time class="c-recipe-card__time"<?php echo $related_recipe_datetime !== '' ? ' datetime="' . esc_attr($related_recipe_datetime) . '"' : ''; ?>>
-                                        <svg class="c-recipe-card__clock" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                                            <path d="M18.1919 6.55391L18.3109 6.41125L18.3449 6.43643C18.532 6.58748 18.7787 6.65461 19.0168 6.62944C19.2549 6.60426 19.476 6.48678 19.6291 6.30216L19.9268 5.94132C20.0799 5.7567 20.1479 5.52173 20.1224 5.27838C20.0969 5.03502 19.9778 4.82522 19.7907 4.67417L18.0558 3.29794C17.8687 3.14688 17.6306 3.07975 17.3839 3.10493C17.1373 3.1301 16.9247 3.24759 16.7716 3.4322L16.4825 3.79305C16.3294 3.97766 16.2613 4.21263 16.2869 4.45599C16.3124 4.66578 16.4059 4.8504 16.5505 5.00145L16.4655 5.10215C15.3003 4.31333 13.8801 3.7427 12.4513 3.47416V2.94548H12.749C13.2593 2.94548 13.6675 2.54268 13.676 2.03079V0.948261C13.6675 0.427976 13.2253 0 12.6895 0H8.46274C7.92696 0 7.48473 0.436368 7.48473 0.973436V2.04757C7.48473 2.55107 7.90145 2.96227 8.41172 2.96227H8.70937V3.49094C7.32314 3.75109 5.96243 4.28816 4.83983 5.00145C4.94189 4.86718 5.00992 4.71613 5.02693 4.5483C5.05245 4.31333 4.98441 4.07836 4.83133 3.88535L4.53367 3.52451C4.38059 3.33989 4.16798 3.22241 3.91285 3.19724C3.67472 3.17206 3.4366 3.24759 3.2495 3.39024L1.50608 4.77487C1.31898 4.92592 1.19992 5.13572 1.1744 5.37908C1.14889 5.61404 1.21693 5.84901 1.37001 6.04202L1.66766 6.40286C1.82074 6.58748 2.04186 6.70496 2.27999 6.73853C2.47559 6.75531 2.6797 6.71335 2.84979 6.61265C1.03833 8.51757 0.0348037 10.9847 0.000785774 13.5526C-0.0332321 16.3302 1.03833 18.9484 3.01137 20.9373C4.97591 22.9177 7.60379 24.0254 10.4103 24.059H10.5293C16.1678 24.059 20.7857 19.7037 21.0409 14.1484C21.1684 11.3036 20.1564 8.60988 18.1919 6.55391ZM4.63573 7.85462C6.20906 6.30216 8.30116 5.44621 10.5293 5.44621C12.7575 5.44621 14.8496 6.30216 16.4229 7.85462C17.9963 9.40709 18.8637 11.4714 18.8637 13.6701C18.8637 15.8687 17.9963 17.933 16.4229 19.4855C14.8496 21.038 12.7575 21.8939 10.5293 21.8939C8.30116 21.8939 6.20906 21.038 4.63573 19.4855C3.0624 17.933 2.19494 15.8687 2.19494 13.6701C2.19494 11.4714 3.0624 9.40709 4.63573 7.85462Z" fill="#222222"/>
-                                        </svg>
-                                        <?php echo esc_html($related_recipe_time); ?>
-                                    </time>
-                                <?php endif; ?>
-                            </article>
-                        </a>
-                    <?php endforeach; ?>
-                </div>
-                <?php if (count($related_recipe_items) > 3) : ?>
-                    <div class="p-recipe-detail__related-pager" aria-label="&#38306;&#36899;&#12524;&#12471;&#12500;&#12398;&#12506;&#12540;&#12472;&#36865;&#12426;">
-                        <button class="p-recipe-detail__related-pager-button p-recipe-detail__related-pager-button--prev js-recipe-detail-related-prev" type="button" aria-label="&#21069;&#12398;&#38306;&#36899;&#12524;&#12471;&#12500;&#12408;">
-                            <img src="<?php echo esc_url($theme_uri . '/img/component/svg/btn_arrow-left.svg'); ?>" alt="">
-                        </button>
-                        <div class="p-single-shop__slider-dots p-recipe-detail__related-dots js-recipe-detail-related-dots">
-                            <?php for ($related_page_index = 0; $related_page_index < (int) ceil(count($related_recipe_items) / 3); $related_page_index++) : ?>
-                                <button
-                                    type="button"
-                                    class="<?php echo $related_page_index === 0 ? 'is-active' : ''; ?>"
-                                    data-related-page="<?php echo esc_attr($related_page_index); ?>"
-                                    aria-label="&#38306;&#36899;&#12524;&#12471;&#12500;<?php echo esc_attr($related_page_index + 1); ?>&#12506;&#12540;&#12472;&#30446;&#12434;&#34920;&#31034;"
-                                    aria-pressed="<?php echo $related_page_index === 0 ? 'true' : 'false'; ?>"
-                                ></button>
-                            <?php endfor; ?>
-                        </div>
-                        <button class="p-recipe-detail__related-pager-button p-recipe-detail__related-pager-button--next js-recipe-detail-related-next" type="button" aria-label="&#27425;&#12398;&#38306;&#36899;&#12524;&#12471;&#12500;&#12408;">
-                            <img src="<?php echo esc_url($theme_uri . '/img/component/svg/btn_arrow-right.svg'); ?>" alt="">
-                        </button>
-                    </div>
-                <?php endif; ?>
-            </section>
-        <?php endif; ?>
-
     </article>
+
+    <?php if (!empty($related_recipe_items)) : ?>
+        <section class="p-recipe-archive__list" aria-labelledby="recipe-detail-related-title">
+            <div class="p-recipe-archive__decorations" aria-hidden="true">
+                <span class="p-recipe-archive__decoration p-recipe-archive__decoration--scale"></span>
+                <span class="p-recipe-archive__decoration p-recipe-archive__decoration--cup"></span>
+                <span class="p-recipe-archive__decoration p-recipe-archive__decoration--spoon"></span>
+                <span class="p-recipe-archive__decoration p-recipe-archive__decoration--bowl"></span>
+                <span class="p-recipe-archive__decoration p-recipe-archive__decoration--glove"></span>
+                <span class="p-recipe-archive__decoration p-recipe-archive__decoration--cutter"></span>
+                <span class="p-recipe-archive__decoration p-recipe-archive__decoration--cutter-medium"></span>
+                <span class="p-recipe-archive__decoration p-recipe-archive__decoration--cutter-small"></span>
+                <span class="p-recipe-archive__decoration p-recipe-archive__decoration--ladle"></span>
+                <span class="p-recipe-archive__decoration p-recipe-archive__decoration--apron"></span>
+                <span class="p-recipe-archive__decoration p-recipe-archive__decoration--tools"></span>
+            </div>
+            <h2 id="recipe-detail-related-title" class="p-recipe-archive__list-title">&#38306;&#36899;&#12524;&#12471;&#12500;</h2>
+            <div class="c-recipe-card-wrapper p-recipe-archive__card-list js-recipe-detail-related-list">
+                <?php foreach ($related_recipe_items as $related_index => $related_recipe_item) : ?>
+                    <?php
+                    $related_recipe_title = $related_recipe_item['title'] ?? '';
+                    $related_recipe_url = $related_recipe_item['permalink'] ?? '#';
+                    $related_recipe_image = $related_recipe_item['image'] ?? null;
+                    $related_recipe_image_url = !empty($related_recipe_image['url']) ? $related_recipe_image['url'] : $theme_uri . '/img/component/no-image.png';
+                    $related_recipe_image_alt = !empty($related_recipe_image['alt']) ? $related_recipe_image['alt'] : $related_recipe_title;
+                    $related_recipe_category = foods_recipe_detail_get_primary_term_name($related_recipe_item['terms']['recipe_categories'] ?? []);
+                    if ($related_recipe_category === '') {
+                        $related_recipe_category = foods_recipe_detail_get_primary_term_name($related_recipe_item['terms']['categories'] ?? []);
+                    }
+                    $related_recipe_time = $related_recipe_item['cooking_time'] ?? '';
+                    $related_recipe_datetime = foods_recipe_detail_format_duration_datetime($related_recipe_time);
+                    ?>
+                    <a href="<?php echo esc_url($related_recipe_url); ?>" class="c-recipe-card-wrapper-link p-recipe-archive__card-link js-recipe-detail-related-card" data-related-index="<?php echo esc_attr($related_index); ?>" <?php echo $related_index < 3 ? '' : 'hidden'; ?>>
+                        <article class="c-recipe-card p-recipe-archive__card">
+                            <p class="c-recipe-card__title"><?php echo esc_html($related_recipe_title); ?></p>
+                            <?php if ($related_recipe_category !== '') : ?>
+                                <p class="c-recipe-card__category"><?php echo esc_html($related_recipe_category); ?></p>
+                            <?php endif; ?>
+                            <img class="c-recipe-card__img" src="<?php echo esc_url($related_recipe_image_url); ?>" alt="<?php echo esc_attr($related_recipe_image_alt); ?>">
+                            <?php if ($related_recipe_time !== '') : ?>
+                                <time class="c-recipe-card__time"<?php echo $related_recipe_datetime !== '' ? ' datetime="' . esc_attr($related_recipe_datetime) . '"' : ''; ?>>
+                                    <svg class="c-recipe-card__clock" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                                        <path d="M18.1919 6.55391L18.3109 6.41125L18.3449 6.43643C18.532 6.58748 18.7787 6.65461 19.0168 6.62944C19.2549 6.60426 19.476 6.48678 19.6291 6.30216L19.9268 5.94132C20.0799 5.7567 20.1479 5.52173 20.1224 5.27838C20.0969 5.03502 19.9778 4.82522 19.7907 4.67417L18.0558 3.29794C17.8687 3.14688 17.6306 3.07975 17.3839 3.10493C17.1373 3.1301 16.9247 3.24759 16.7716 3.4322L16.4825 3.79305C16.3294 3.97766 16.2613 4.21263 16.2869 4.45599C16.3124 4.66578 16.4059 4.8504 16.5505 5.00145L16.4655 5.10215C15.3003 4.31333 13.8801 3.7427 12.4513 3.47416V2.94548H12.749C13.2593 2.94548 13.6675 2.54268 13.676 2.03079V0.948261C13.6675 0.427976 13.2253 0 12.6895 0H8.46274C7.92696 0 7.48473 0.436368 7.48473 0.973436V2.04757C7.48473 2.55107 7.90145 2.96227 8.41172 2.96227H8.70937V3.49094C7.32314 3.75109 5.96243 4.28816 4.83983 5.00145C4.94189 4.86718 5.00992 4.71613 5.02693 4.5483C5.05245 4.31333 4.98441 4.07836 4.83133 3.88535L4.53367 3.52451C4.38059 3.33989 4.16798 3.22241 3.91285 3.19724C3.67472 3.17206 3.4366 3.24759 3.2495 3.39024L1.50608 4.77487C1.31898 4.92592 1.19992 5.13572 1.1744 5.37908C1.14889 5.61404 1.21693 5.84901 1.37001 6.04202L1.66766 6.40286C1.82074 6.58748 2.04186 6.70496 2.27999 6.73853C2.47559 6.75531 2.6797 6.71335 2.84979 6.61265C1.03833 8.51757 0.0348037 10.9847 0.000785774 13.5526C-0.0332321 16.3302 1.03833 18.9484 3.01137 20.9373C4.97591 22.9177 7.60379 24.0254 10.4103 24.059H10.5293C16.1678 24.059 20.7857 19.7037 21.0409 14.1484C21.1684 11.3036 20.1564 8.60988 18.1919 6.55391ZM4.63573 7.85462C6.20906 6.30216 8.30116 5.44621 10.5293 5.44621C12.7575 5.44621 14.8496 6.30216 16.4229 7.85462C17.9963 9.40709 18.8637 11.4714 18.8637 13.6701C18.8637 15.8687 17.9963 17.933 16.4229 19.4855C14.8496 21.038 12.7575 21.8939 10.5293 21.8939C8.30116 21.8939 6.20906 21.038 4.63573 19.4855C3.0624 17.933 2.19494 15.8687 2.19494 13.6701C2.19494 11.4714 3.0624 9.40709 4.63573 7.85462Z" fill="#222222"/>
+                                    </svg>
+                                    <?php echo esc_html($related_recipe_time); ?>
+                                </time>
+                            <?php endif; ?>
+                        </article>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+            <?php if (count($related_recipe_items) > 3) : ?>
+                <div class="p-recipe-detail__related-pager" aria-label="&#38306;&#36899;&#12524;&#12471;&#12500;&#12398;&#12506;&#12540;&#12472;&#36865;&#12426;">
+                    <button class="p-recipe-detail__related-pager-button p-recipe-detail__related-pager-button--prev js-recipe-detail-related-prev" type="button" aria-label="&#21069;&#12398;&#38306;&#36899;&#12524;&#12471;&#12500;&#12408;">
+                        <img src="<?php echo esc_url($theme_uri . '/img/component/svg/btn_arrow-left.svg'); ?>" alt="">
+                    </button>
+                    <div class="p-single-shop__slider-dots p-recipe-detail__related-dots js-recipe-detail-related-dots">
+                        <?php for ($related_page_index = 0; $related_page_index < (int) ceil(count($related_recipe_items) / 3); $related_page_index++) : ?>
+                            <button
+                                type="button"
+                                class="<?php echo $related_page_index === 0 ? 'is-active' : ''; ?>"
+                                data-related-page="<?php echo esc_attr($related_page_index); ?>"
+                                aria-label="&#38306;&#36899;&#12524;&#12471;&#12500;<?php echo esc_attr($related_page_index + 1); ?>&#12506;&#12540;&#12472;&#30446;&#12434;&#34920;&#31034;"
+                                aria-pressed="<?php echo $related_page_index === 0 ? 'true' : 'false'; ?>"
+                            ></button>
+                        <?php endfor; ?>
+                    </div>
+                    <button class="p-recipe-detail__related-pager-button p-recipe-detail__related-pager-button--next js-recipe-detail-related-next" type="button" aria-label="&#27425;&#12398;&#38306;&#36899;&#12524;&#12471;&#12500;&#12408;">
+                        <img src="<?php echo esc_url($theme_uri . '/img/component/svg/btn_arrow-right.svg'); ?>" alt="">
+                    </button>
+                </div>
+            <?php endif; ?>
+        </section>
+    <?php endif; ?>
 </main>
 
 <script>

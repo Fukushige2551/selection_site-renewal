@@ -1,4 +1,9 @@
-@use "foundation/global" as *;
+﻿@use "foundation/global" as *;
+@use "object/recipe-archive-list";
+
+.js-recipe-detail-related-card[hidden] {
+    display: none !important;
+}
 
 .p-recipe-detail {
     min-height: 100vh;
@@ -544,165 +549,15 @@
         pointer-events: none;
     }
 
-    &__back-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 44.36vw;
-        height: 13.85vw;
-        background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/news-detail-back-button.svg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        color: #fff;
-        font-family: $font-family-NotoSans;
-        font-size: 4.1vw;
-        font-weight: 700;
-        line-height: 1;
-        text-align: center;
-        text-decoration: none;
-    }
-
-    &__related {
-        position: relative;
-        width: 100vw;
-        min-height: 154vw;
-        margin: 13.85vw 0 0 calc((85.9vw - 100vw) / 2);
-        padding: 17.44vw 4.1vw 41vw;
-        overflow: visible;
-        background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/recipe-detail-related-bg.svg");
-        background-repeat: no-repeat;
-        background-position: top center;
-        background-size: 100% auto;
-        box-sizing: border-box;
-    }
-
-    &__related-title {
-        position: relative;
-        z-index: 1;
-        margin: 0;
-        color: #000;
-        font-family: $font-family-ZenKaku;
-        font-size: 5.13vw;
-        font-weight: 900;
-        line-height: 1.5;
-        letter-spacing: 0.15em;
-        text-align: center;
-    }
-
-    &__related-decorations {
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        pointer-events: none;
-    }
-
-    &__related-decoration {
-        position: absolute;
-        display: block;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-    }
-
-    &__related-decoration--scale {
-        top: 9.8vw;
-        left: 10.8vw;
-        width: 19.49vw;
-        aspect-ratio: 76 / 96;
-        background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_scale.svg");
-    }
-
-    &__related-decoration--tools {
-        top: -5.74vw;
-        right: 3.83vw;
-        width: 28.21vw;
-        aspect-ratio: 110 / 97;
-        background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_tools.svg");
-    }
-
-    &__related-decoration--bowl {
-        bottom: 18.72vw;
-        left: 6.15vw;
-        width: 23.59vw;
-        aspect-ratio: 92 / 85;
-        background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_bowl.svg");
-    }
-
-    &__related-list {
-        position: relative;
-        z-index: 1;
-        display: block;
-        width: 100%;
-        margin: 8.21vw 0 0;
-    }
-
-    &__related-card-link {
-        display: block;
-        color: inherit;
-        text-decoration: none;
-    }
-
-    &__related-card-link[hidden] {
-        display: none;
-    }
-
-    &__related-card {
-        width: 63.33vw;
-        aspect-ratio: 247 / 134;
-        margin: 0 0 9.23vw 32.3vw;
-        padding: 8.2vw 3.33vw 0 19.23vw;
-        border-radius: 0 15.38vw 15.38vw 0;
-        background-color: #fff;
-
-        .c-recipe-card__title {
-            margin: 0 0 3vw;
-            color: #000;
-            font-size: 4.1vw;
-            letter-spacing: 0;
-            word-break: break-word;
-        }
-
-        .c-recipe-card__category {
-            margin: 0;
-            font-size: 4.1vw;
-        }
-
-        .c-recipe-card__img {
-            left: -24.61vw;
-            width: 41.76vw;
-            aspect-ratio: 162.89 / 150.24;
-            object-fit: cover;
-        }
-
-        .c-recipe-card__time {
-            left: -24.61vw;
-            gap: 1.54vw;
-            width: 20.04vw;
-            aspect-ratio: 78.19 / 32.08;
-            border-radius: 4.1vw;
-            font-size: 3.33vw;
-        }
-
-        .c-recipe-card__clock {
-            width: 5.39vw;
-        }
-    }
-
-    &__related-card-link:last-of-type &__related-card,
-    &__related-card-link:nth-of-type(3n) &__related-card {
-        margin-bottom: 0;
-    }
-
     &__related-pager {
         position: relative;
         z-index: 1;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100%;
+        width: 87.69vw;
         height: 7.95vw;
-        margin-top: 13vw;
+        margin: 13vw auto 0;
     }
 
     &__related-pager-button {
@@ -756,15 +611,56 @@
         appearance: none;
     }
 
+    &__related-dots button[hidden] {
+        display: none;
+    }
+
     &__related-dots button.is-active {
         background: #103675;
+    }
+
+    &__back-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44.36vw;
+        height: 13.85vw;
+        background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/news-detail-back-button.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        color: #fff;
+        font-family: $font-family-NotoSans;
+        font-size: 4.1vw;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        text-decoration: none;
+    }
+}
+
+.p-recipe-archive{
+    &__list {
+        padding-bottom: 43vw;
+    }
+    &__decoration {
+        &--spoon {
+            display: none;
+        }
+        &--cup {
+            display: none;
+        }
+        &--bowl {
+            top: 105vw;
+            right: 3vw;
+        }
     }
 }
 
 .l-footer {
     position: relative;
     z-index: 2;
-    margin-top: -13vw;
+    margin-top: -32vw;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .p-recipe-detail {
@@ -1003,88 +899,6 @@
             height: 4.04vw;
         }
 
-        &__back-link {
-            width: 22.14vw;
-            height: 7.03vw;
-            font-size: 2.08vw;
-        }
-
-        &__related {
-            min-height: 84vw;
-            margin: 7.03vw 0 0 calc((68.49vw - 100vw) / 2);
-            padding: 16.85vw 3.91vw 20vw;
-        }
-
-        &__related-title {
-            font-size: 2.6vw;
-            line-height: 1;
-        }
-
-        &__related-decoration--scale {
-            top: 4.95vw;
-            left: 10.71vw;
-            width: 11.9vw;
-        }
-
-        &__related-decoration--tools {
-            top: -1vw;
-            right: 9.63vw;
-            width: 18.32vw;
-        }
-
-        &__related-decoration--bowl {
-            display: none;
-        }
-
-        &__related-list {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 5.72vw 3vw;
-            width: 92.06vw;
-            margin: 4.8vw auto 0;
-            padding: 0;
-        }
-
-        &__related-card-link {
-            min-width: 0;
-        }
-
-        &__related-card {
-            width: 31.25vw;
-            aspect-ratio: 240 / 130;
-            margin: 0 0 0 12.63vw;
-            padding: 4.55vw 1.69vw 2.08vw 9.77vw;
-            border-radius: 0 9.38vw 9.38vw 0;
-        }
-
-        &__related-card .c-recipe-card__title {
-            margin-bottom: 1.75vw;
-            font-size: 2.08vw;
-            line-height: 1.44;
-        }
-
-        &__related-card .c-recipe-card__category {
-            font-size: 2.08vw;
-        }
-
-        &__related-card .c-recipe-card__img {
-            left: -12.63vw;
-            width: 21.19vw;
-            aspect-ratio: 162.89 / 150.24;
-        }
-
-        &__related-card .c-recipe-card__time {
-            left: -12.63vw;
-            gap: 0.78vw;
-            width: 10.16vw;
-            border-radius: 2.08vw;
-            font-size: 1.69vw;
-        }
-
-        &__related-card .c-recipe-card__clock {
-            width: 2.73vw;
-        }
-
         &__related-pager {
             height: 4.04vw;
             margin-top: 6.64vw;
@@ -1110,10 +924,16 @@
         &__related-dots button {
             width: 1.17vw;
         }
+
+        &__back-link {
+            width: 22.14vw;
+            height: 7.03vw;
+            font-size: 2.08vw;
+        }
     }
 
     .l-footer {
-        margin-top: -10vw;
+        margin-top: 0;
     }}
 
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
@@ -1279,7 +1099,7 @@
         &__point-text {
             font-size: 1.37vw;
         }
-    
+
         &__keywords {
             gap: 0.39vw 0.78vw;
             width: 45.7vw;
@@ -1353,91 +1173,6 @@
             height: 3.03vw;
         }
 
-        &__back-link {
-            width: 16.6vw;
-            height: 5.27vw;
-            font-size: 1.56vw;
-        }
-
-        &__related {
-            min-height: 63vw;
-            margin: 5.27vw 0 0 calc((50.78vw - 100vw) / 2);
-            padding: 15.64vw 4.88vw 11vw;
-        }
-
-        &__related-title {
-            font-size: 1.95vw;
-            line-height: 1;
-        }
-
-        &__related-decoration--scale {
-            top: 4.71vw;
-            left: 19.31vw;
-            width: 9.42vw;
-        }
-
-        &__related-decoration--tools {
-            top: 0.85vw;
-            right: 12.53vw;
-            width: 16.74vw;
-        }
-
-        &__related-decoration--bowl {
-            bottom: 7.13vw;
-            left: 13.67vw;
-            width: 8.98vw;
-        }
-
-        &__related-list {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 3.13vw 2.73vw;
-            width: 89.06vw;
-            margin: 3.6vw auto 0;
-            padding: 0;
-        }
-
-        &__related-card-link {
-            min-width: 0;
-        }
-
-        &__related-card {
-            width: 19.53vw;
-            aspect-ratio: 232 / 126;
-            margin: 0 0 0 7.42vw;
-            padding: 2.83vw 1.07vw 1.37vw 6.05vw;
-            border-radius: 0 5.86vw 5.86vw 0;
-        }
-
-        &__related-card .c-recipe-card__title {
-            margin-bottom: 1.07vw;
-            font-size: 1.37vw;
-            line-height: 1.44;
-        }
-
-        &__related-card .c-recipe-card__category {
-            font-size: 1.37vw;
-        }
-
-        &__related-card .c-recipe-card__img {
-            left: -7.42vw;
-            width: 12.89vw;
-            aspect-ratio: 157.89 / 145.63;
-        }
-
-        &__related-card .c-recipe-card__time {
-            top: 0.78vw;
-            left: -7.42vw;
-            gap: 0.59vw;
-            width: 6.25vw;
-            border-radius: 1.37vw;
-            font-size: 1.07vw;
-        }
-
-        &__related-card .c-recipe-card__clock {
-            width: 1.76vw;
-        }
-
         &__related-pager {
             height: 3.03vw;
             margin-top: 4.98vw;
@@ -1463,10 +1198,16 @@
         &__related-dots button {
             width: 0.88vw;
         }
+
+        &__back-link {
+            width: 16.6vw;
+            height: 5.27vw;
+            font-size: 1.56vw;
+        }
     }
 
     .l-footer {
-        margin-top: -7.5vw;
+        margin-top: 0;
     }}
 
 @media screen and (min-width: 1280px) {
@@ -1668,7 +1409,7 @@
             font-weight: 400;
             line-height: 1.875;
         }
-    
+
         &__keywords {
             gap: 0.31vw 0.63vw;
             width: 38.44vw;
@@ -1746,6 +1487,32 @@
             height: 1.61vw;
         }
 
+        &__related-pager {
+            height: 2.81vw;
+            margin-top: 3.37vw;
+        }
+
+        &__related-pager-button {
+            width: 1.56vw;
+            height: 1.61vw;
+        }
+
+        &__related-pager-button--prev {
+            left: 18.75vw;
+        }
+
+        &__related-pager-button--next {
+            right: 18.75vw;
+        }
+
+        &__related-dots {
+            gap: 0.63vw;
+        }
+
+        &__related-dots button {
+            width: 0.52vw;
+        }
+
         &__back-link {
             width: 9.01vw;
             height: 2.81vw;
@@ -1754,6 +1521,6 @@
     }
 
     .l-footer {
-        margin-top: -3vw;
+        margin-top: 0;
     }}
 
