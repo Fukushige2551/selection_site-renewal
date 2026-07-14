@@ -459,7 +459,7 @@ $recipe_share_text = rawurlencode($recipe_title);
 $recipe_previous_post = get_previous_post(false, '', 'recipe_category');
 $recipe_next_post = get_next_post(false, '', 'recipe_category');
 $recipe_kurashiru_url = 'https://www.kurashiru.com/';
-$related_recipe_items = foods_recipe_detail_get_related_items($recipe_detail_item['id'] ?? get_the_ID(), 12);
+$related_recipe_items = foods_recipe_detail_get_related_items($recipe_detail_item['id'] ?? get_the_ID(), 24);
 $theme_uri = get_template_directory_uri();
 
 get_header();
@@ -657,7 +657,7 @@ get_header();
     </article>
 
     <?php if (!empty($related_recipe_items)) : ?>
-        <section class="p-recipe-archive__list" aria-labelledby="recipe-detail-related-title">
+        <section class="p-recipe-archive p-recipe-archive__list" aria-labelledby="recipe-detail-related-title">
             <div class="p-recipe-archive__decorations" aria-hidden="true">
                 <span class="p-recipe-archive__decoration p-recipe-archive__decoration--scale"></span>
                 <span class="p-recipe-archive__decoration p-recipe-archive__decoration--cup"></span>

@@ -31,9 +31,8 @@
         display: inline-flex;
         align-items: center;
         justify-content: flex-start;
-        width: 40.77vw;
         height: 8.72vw;
-        padding: 0 2.31vw 0 4.36vw;
+        padding: 0 4.36vw;
         border-radius: 999px;
         background-color: #f5f5f5;
         color: #000;
@@ -675,9 +674,8 @@
         }
 
         &__time {
-            width: 20.7vw;
             height: 4.43vw;
-            padding: 0 1.17vw 0 2.21vw;
+            padding: 0 2.21vw;
         }
 
         &__time-icon {
@@ -932,9 +930,22 @@
         }
     }
 
-    .l-footer {
-        margin-top: 0;
-    }}
+    .p-recipe-archive {
+        &__decoration {
+            &--ladle,
+            &--apron,
+            &--bowl,
+            &--cutter-small {
+                display: none;
+            }
+
+            &--bowl {
+                top: 145.96vw;
+                right: 2.45vw;
+            }
+        }
+    }
+}
 
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
     .p-recipe-detail {
@@ -949,9 +960,8 @@
         }
 
         &__time {
-            width: 15.53vw;
             height: 3.32vw;
-            padding: 0 0.88vw 0 1.66vw;
+            padding: 0 1.66vw;
         }
 
         &__time-icon {
@@ -1174,6 +1184,7 @@
         }
 
         &__related-pager {
+            width: 52vw;
             height: 3.03vw;
             margin-top: 4.98vw;
         }
@@ -1206,8 +1217,12 @@
         }
     }
 
+    .p-recipe-archive__list {
+        padding-bottom: 25vw;
+    }
+
     .l-footer {
-        margin-top: 0;
+        margin-top: -19vw;
     }}
 
 @media screen and (min-width: 1280px) {
@@ -1223,9 +1238,8 @@
         }
 
         &__time {
-            width: 8.28vw;
             height: 1.77vw;
-            padding: 0 0.52vw 0 2.24vw;
+            padding: 0 0.88vw;
         }
 
         &__time-icon {
@@ -1488,6 +1502,7 @@
         }
 
         &__related-pager {
+            width: 58vw;
             height: 2.81vw;
             margin-top: 3.37vw;
         }
@@ -1520,7 +1535,11 @@
         }
     }
 
-    .l-footer {
-        margin-top: 0;
-    }}
+    .p-recipe-archive__list {
+        padding-bottom: 27vw;
+    }
 
+    .l-footer {
+        margin-top: -20vw;
+    }
+}

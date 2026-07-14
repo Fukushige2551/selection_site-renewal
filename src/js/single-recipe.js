@@ -13,13 +13,18 @@ const setupRelatedRecipesPager = () => {
 
     const tabletQuery = window.matchMedia('(min-width: 768px) and (max-width: 1023.98px)');
     const laptopQuery = window.matchMedia('(min-width: 1024px) and (max-width: 1279px)');
+    const desktopQuery = window.matchMedia('(min-width: 1280px)');
     const getPerPage = () => {
         if (tabletQuery.matches) {
-            return 4;
+            return 12;
         }
 
         if (laptopQuery.matches) {
-            return 6;
+            return 12;
+        }
+
+        if (desktopQuery.matches) {
+            return 12;
         }
 
         return 3;
@@ -90,7 +95,7 @@ const setupRelatedRecipesPager = () => {
         render(0);
     };
 
-    [tabletQuery, laptopQuery].forEach((mediaQuery) => {
+    [tabletQuery, laptopQuery, desktopQuery].forEach((mediaQuery) => {
         if (typeof mediaQuery.addEventListener === 'function') {
             mediaQuery.addEventListener('change', handleBreakpointChange);
         } else if (typeof mediaQuery.addListener === 'function') {
