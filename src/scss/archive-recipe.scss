@@ -1,9 +1,6 @@
 @use "foundation/global" as *;
 
 .p-recipe-archive {
-    min-height: 100vh;
-    background-color: #fff;
-
     &__breadcrumb {
         position: relative;
         z-index: 1;
@@ -1544,6 +1541,6 @@
     }
 
     .l-footer {
-        margin-top: -49.8vw;
+        margin-top: -19.8vw;
     }
 }
