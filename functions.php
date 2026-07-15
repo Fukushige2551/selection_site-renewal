@@ -21,6 +21,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-vite-client',
         'foods-main-js',
         'foods-front-page-js',
+        'foods-page-contact-js',
         'foods-page-shop-js',
         'foods-single-shop-js',
         'foods-archive-news-js',
@@ -131,6 +132,7 @@ function foods_theme_scripts() {
 
     $main_entry       = 'src/js/main.js';
     $front_page_entry = 'src/js/front-page.js';
+    $page_contact_entry = 'src/js/page-contact.js';
     $page_shop_entry  = 'src/js/page-shop.js';
     $single_shop_entry = 'src/js/single-shop.js';
     $archive_news_entry = 'src/js/archive-news.js';
@@ -164,6 +166,17 @@ function foods_theme_scripts() {
         foods_enqueue_vite_entry(
             'foods-front-page',
             $front_page_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    // page-contact.php 専用アセット
+    if (is_page() && basename((string) get_page_template()) === 'page-contact.php') {
+        foods_enqueue_vite_entry(
+            'foods-page-contact',
+            $page_contact_entry,
             $dev_server,
             $manifest,
             $is_local
@@ -2214,3 +2227,4 @@ function foods_sync_news_default_terms() {
     }
 }
 add_action('init', 'foods_sync_news_default_terms', 20);
+

@@ -1,0 +1,526 @@
+@use 'foundation/variables' as v;
+
+.p-contact {
+    color: #000;
+    font-family: v.$font-family-ZenKakuAntique;
+    background: #fff;
+
+    &__inner {
+        width: 85.9vw;
+        margin-inline: auto;
+    }
+
+    &__hero {
+        padding: 10vw 0 6.41vw;
+        text-align: center;
+    }
+
+    &__title {
+        margin: 0 0 5.12vw;
+        font-family: v.$font-family-ZenKaku;
+        font-size: 5.13vw;
+        font-weight: 900;
+        line-height: 1.15;
+        letter-spacing: 0.15em;
+    }
+
+    &__lead {
+        font-size: 4.1vw;
+        font-weight: 500;
+        line-height: 1.875;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    &__note {
+        margin: 5.12vw 0 0;
+        font-size: 3.59vw;
+        font-weight: 400;
+        line-height: 1.79;
+        text-align: left;
+    }
+
+    &__caution {
+        padding: 0 0 14.87vw;
+    }
+
+    &__store {
+        padding: 0 0 27vw;
+    }
+}
+
+.p-contact-caution {
+    overflow: hidden;
+    border: 0.51vw solid #12356e;
+    border-radius: 5.13vw;
+    background: #fff;
+
+    &__title {
+        margin: 0;
+        padding: 3.08vw 4.62vw 3.33vw;
+        background: #12356e;
+        color: #fff;
+        font-family: v.$font-family-ZenKaku;
+        font-size: 4.62vw;
+        font-weight: 900;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    &__list {
+        margin: 0;
+        padding: 5.64vw 4.62vw 6.15vw;
+        list-style: none;
+        font-size: 4.1vw;
+        font-weight: 400;
+        line-height: 1.875;
+
+        li {
+            position: relative;
+            margin: 0;
+            padding: 0 0 5.64vw 1em;
+            border-bottom: 0.51vw dotted #cecece;
+
+            + li {
+                padding-top: 5.64vw;
+            }
+
+            &:last-child {
+                padding-bottom: 0;
+                border-bottom: 0;
+            }
+
+            &::before {
+                content: '・';
+                position: absolute;
+                left: 0;
+            }
+        }
+    }
+}
+
+.p-contact-store {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    &__title {
+        position: relative;
+        display: block;
+        margin: 0;
+        padding: 0;
+        font-family: v.$font-family-ZenKaku;
+        line-height: 1.2;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    &__title-text {
+        font-size: 5.13vw;
+        font-weight: 700;
+    }
+
+    &__required {
+        position: absolute;
+        top: 50%;
+        left: calc(50% + 23.59vw);
+        color: #ff0b0b;
+        font-family: v.$font-family-ZenKakuAntique;
+        font-size: 3.59vw;
+        font-weight: 500;
+        transform: translateY(-50%);
+    }
+
+    &__guide {
+        margin: 4.1vw 0 6.92vw;
+        font-size: 4.1vw;
+        font-weight: 500;
+        line-height: 1.875;
+        text-align: center;
+    }
+
+    &__options {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5.13vw;
+    }
+
+    &__row {
+        display: grid;
+        grid-template-columns: 29vw 25vw 26vw;
+        column-gap: 3vw;
+        align-items: center;
+        width: 86vw;
+    }
+
+    &__option {
+        display: inline-flex;
+        align-items: center;
+        min-width: 0;
+        color: #000;
+        font-family: v.$font-family-ZenKakuAntique;
+        font-size: 4.62vw;
+        font-weight: 400;
+        line-height: 1.67;
+        white-space: nowrap;
+        cursor: pointer;
+
+        input {
+            display: grid;
+            flex: 0 0 5.38vw;
+            width: 5.38vw;
+            height: 5.38vw;
+            margin: 0 2.31vw 0 0;
+            appearance: none;
+            place-content: center;
+            border: 0.26vw solid #cecece;
+            border-radius: 50%;
+            background: #f9f9f9;
+
+            &::before {
+                content: '';
+                width: 1.79vw;
+                height: 1.79vw;
+                transform: scale(0);
+                border-radius: 50%;
+                background: #69717d;
+                transition: transform 0.15s ease;
+            }
+
+            &:checked::before {
+                transform: scale(1);
+            }
+        }
+    }
+
+    &__business-note {
+        margin: 5.12vw 0 0;
+        font-family: v.$font-family-ZenKaku;
+        font-size: 3.59vw;
+        font-weight: 400;
+        line-height: 1.79;
+
+        a {
+            color: #10a3ff;
+            text-decoration: underline;
+            text-underline-offset: 0.16em;
+        }
+    }
+}
+
+.p-contact-fields {
+    margin-top: 11.28vw;
+
+    &__item {
+        margin: 0 0 7.95vw;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__label {
+        display: flex;
+        align-items: center;
+        gap: 2.05vw;
+        margin: 0 0 2.82vw;
+        color: #000;
+        font-family: v.$font-family-ZenKaku;
+        font-size: 4.1vw;
+        font-weight: 500;
+        line-height: 1.5;
+        white-space: nowrap;
+
+        span {
+            color: #ff0b0b;
+            font-family: v.$font-family-ZenKakuAntique;
+            font-size: 3.59vw;
+            font-weight: 500;
+            line-height: 1.875;
+        }
+    }
+
+    &__control {
+        display: block;
+        width: 100%;
+        height: 11.79vw;
+        padding: 0 4.1vw;
+        appearance: none;
+        border: 0.26vw solid #cecece;
+        border-radius: 5.9vw;
+        background: #f9f9f9;
+        color: #000;
+        font-family: v.$font-family-ZenKakuAntique;
+        font-size: 4.1vw;
+        font-weight: 400;
+        line-height: 1.5;
+        box-sizing: border-box;
+
+        &:focus {
+            outline: 2px solid #12356e;
+            outline-offset: 2px;
+        }
+
+        &--textarea {
+            min-height: 72.56vw;
+            padding-top: 2vw;
+            padding-bottom: 2vw;
+            resize: vertical;
+        }
+    }
+}
+
+.p-contact-privacy {
+    margin-top: 11.2vw;
+
+    &__label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000;
+        font-family: v.$font-family-ZenKakuAntique;
+        font-size: 4.1vw;
+        font-weight: 400;
+        line-height: 1.875;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+
+    &__checkbox {
+        display: grid;
+        flex: 0 0 5.38vw;
+        width: 5.38vw;
+        height: 5.13vw;
+        margin: 0 3.08vw 0 0;
+        appearance: none;
+        place-content: center;
+        border: 0.26vw solid #cecece;
+        border-radius: 1.28vw;
+        background: #f9f9f9;
+
+        &::before {
+            content: '';
+            width: 2.56vw;
+            height: 1.54vw;
+            transform: rotate(-45deg) scale(0);
+            transform-origin: center;
+            border-bottom: 0.51vw solid #69717d;
+            border-left: 0.51vw solid #69717d;
+            transition: transform 0.15s ease;
+        }
+
+        &:checked::before {
+            transform: rotate(-45deg) scale(1);
+        }
+    }
+
+    &__text {
+        min-width: 0;
+    }
+
+    a {
+        color: #10a3ff;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+    }
+}
+
+.p-contact-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 8.97vw;
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 87.44vw;
+        min-height: 12.31vw;
+        border: 0;
+        color: #fff;
+        font-family: v.$font-family-NotoSans;
+        font-size: 4.1vw;
+        font-weight: 700;
+        line-height: 1.25;
+        letter-spacing: 0.1em;
+        text-align: center;
+    }
+}
+@media screen and (min-width: 768px) {
+    .p-contact {
+        &__inner {
+            width: min(86vw, 76rem);
+        }
+
+        &__hero {
+            padding: clamp(10rem, 8.2vw, 15rem) 0 clamp(6rem, 4.8vw, 9rem);
+        }
+
+        &__title {
+            margin-bottom: clamp(2.4rem, 1.9vw, 3.6rem);
+            font-size: clamp(2.4rem, 1.7vw, 3.2rem);
+        }
+
+        &__lead {
+            font-size: clamp(1.7rem, 1.28vw, 2.4rem);
+        }
+
+        &__note {
+            margin-top: clamp(2.4rem, 2.1vw, 4rem);
+            font-size: clamp(1.4rem, 1.08vw, 2rem);
+            text-align: center;
+        }
+
+        &__caution {
+            padding-bottom: clamp(6rem, 5vw, 9.6rem);
+        }
+
+        &__store {
+            padding-bottom: clamp(6rem, 5vw, 9.6rem);
+        }
+    }
+
+    .p-contact-store {
+        &__title-text {
+            font-size: clamp(2.4rem, 1.7vw, 3.2rem);
+        }
+
+        &__required {
+            left: calc(50% + clamp(11rem, 8.1vw, 15.2rem));
+            font-size: clamp(1.4rem, 1.08vw, 2rem);
+        }
+
+        &__guide {
+            margin: clamp(1.8rem, 1.4vw, 2.8rem) 0 clamp(3rem, 2.55vw, 4.8rem);
+            font-size: clamp(1.7rem, 1.28vw, 2.4rem);
+        }
+
+        &__options {
+            gap: clamp(2rem, 1.75vw, 3.4rem);
+            align-items: center;
+        }
+
+        &__row {
+            grid-template-columns: clamp(13.5rem, 10.3vw, 19rem) clamp(12rem, 9.2vw, 17rem) clamp(12.5rem, 9.6vw, 18rem);
+            column-gap: clamp(2.8rem, 2.2vw, 4.2rem);
+            width: auto;
+        }
+
+        &__option {
+            font-size: clamp(1.9rem, 1.45vw, 2.7rem);
+
+            input {
+                flex-basis: clamp(2.1rem, 1.65vw, 3.2rem);
+                width: clamp(2.1rem, 1.65vw, 3.2rem);
+                height: clamp(2.1rem, 1.65vw, 3.2rem);
+                margin-right: clamp(0.9rem, 0.72vw, 1.4rem);
+                border-width: 0.1vw;
+
+                &::before {
+                    width: clamp(0.7rem, 0.55vw, 1rem);
+                    height: clamp(0.7rem, 0.55vw, 1rem);
+                }
+            }
+        }
+
+        &__business-note {
+            margin-top: clamp(2.4rem, 2vw, 3.8rem);
+            font-size: clamp(1.4rem, 1.08vw, 2rem);
+            text-align: center;
+        }
+    }
+
+    .p-contact-fields {
+        width: min(100%, clamp(48rem, 38vw, 68rem));
+        margin: clamp(7rem, 5.6vw, 10.8rem) auto 0;
+
+        &__item {
+            margin-bottom: clamp(3.6rem, 2.9vw, 5.6rem);
+        }
+
+        &__label {
+            gap: clamp(0.8rem, 0.62vw, 1.2rem);
+            margin-bottom: clamp(1.2rem, 1vw, 1.8rem);
+            font-size: clamp(1.6rem, 1.25vw, 2.4rem);
+
+            span {
+                font-size: clamp(1.4rem, 1.08vw, 2rem);
+            }
+        }
+
+        &__control {
+            height: clamp(4.6rem, 3.6vw, 6.8rem);
+            padding-inline: clamp(1.8rem, 1.4vw, 2.8rem);
+            border-width: 0.1vw;
+            border-radius: clamp(2.3rem, 1.8vw, 3.4rem);
+            font-size: clamp(1.6rem, 1.25vw, 2.4rem);
+
+            &--textarea {
+                min-height: clamp(28.3rem, 22.1vw, 42rem);
+                padding-top: clamp(1.4rem, 1.1vw, 2.1rem);
+                padding-bottom: clamp(1.4rem, 1.1vw, 2.1rem);
+            }
+        }
+    }
+
+    .p-contact-privacy {
+        margin-top: clamp(3.4rem, 2.65vw, 5rem);
+
+        &__label {
+            font-size: clamp(1.6rem, 1.25vw, 2.4rem);
+        }
+
+        &__checkbox {
+            flex-basis: clamp(2rem, 1.56vw, 3rem);
+            width: clamp(2rem, 1.56vw, 3rem);
+            height: clamp(1.9rem, 1.5vw, 2.8rem);
+            margin-right: clamp(1.2rem, 0.94vw, 1.8rem);
+            border-width: 0.1vw;
+            border-radius: clamp(0.5rem, 0.39vw, 0.75rem);
+
+            &::before {
+                width: clamp(1rem, 0.78vw, 1.5rem);
+                height: clamp(0.6rem, 0.47vw, 0.9rem);
+                border-bottom-width: 0.16vw;
+                border-left-width: 0.16vw;
+            }
+        }
+    }
+
+    .p-contact-actions {
+        margin-top: clamp(3.2rem, 2.55vw, 4.8rem);
+
+        &__button {
+            width: min(100%, clamp(34.1rem, 26.6vw, 50rem));
+            min-height: clamp(4.8rem, 3.75vw, 7rem);
+            font-size: clamp(1.6rem, 1.25vw, 2.4rem);
+        }
+    }
+    .p-contact-caution {
+        border-width: 0.16vw;
+        border-radius: clamp(2rem, 1.56vw, 3rem);
+
+        &__title {
+            padding: clamp(1.5rem, 1.1vw, 2.1rem) clamp(2.4rem, 1.8vw, 3.4rem);
+            font-size: clamp(2rem, 1.45vw, 2.8rem);
+        }
+
+        &__list {
+            padding: clamp(3rem, 2.45vw, 4.8rem) clamp(3.6rem, 2.8vw, 5.4rem);
+            font-size: clamp(1.7rem, 1.28vw, 2.4rem);
+
+            li {
+                padding-bottom: clamp(2.4rem, 1.9vw, 3.6rem);
+                border-bottom-width: 0.16vw;
+
+                + li {
+                    padding-top: clamp(2.4rem, 1.9vw, 3.6rem);
+                }
+            }
+        }
+    }
+}

@@ -28,6 +28,7 @@ export default defineConfig({
             input: {
                 main: path.resolve(__dirname, 'src/js/main.js'),
                 'front-page': path.resolve(__dirname, 'src/js/front-page.js'),
+                'page-contact': path.resolve(__dirname, 'src/js/page-contact.js'),
                 'page-shop': path.resolve(__dirname, 'src/js/page-shop.js'),
                 'single-shop': path.resolve(__dirname, 'src/js/single-shop.js'),
                 'archive-news': path.resolve(__dirname, 'src/js/archive-news.js'),
@@ -46,4 +47,5 @@ export default defineConfig({
         }
     }
 })
+
 
