@@ -22,6 +22,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-main-js',
         'foods-front-page-js',
         'foods-page-contact-js',
+        'foods-page-privacy-js',
         'foods-page-shop-js',
         'foods-single-shop-js',
         'foods-archive-news-js',
@@ -133,6 +134,7 @@ function foods_theme_scripts() {
     $main_entry       = 'src/js/main.js';
     $front_page_entry = 'src/js/front-page.js';
     $page_contact_entry = 'src/js/page-contact.js';
+    $page_privacy_entry = 'src/js/page-privacy.js';
     $page_shop_entry  = 'src/js/page-shop.js';
     $single_shop_entry = 'src/js/single-shop.js';
     $archive_news_entry = 'src/js/archive-news.js';
@@ -177,6 +179,17 @@ function foods_theme_scripts() {
         foods_enqueue_vite_entry(
             'foods-page-contact',
             $page_contact_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    // page-privacy.php assets
+    if (is_page() && basename((string) get_page_template()) === 'page-privacy.php') {
+        foods_enqueue_vite_entry(
+            'foods-page-privacy',
+            $page_privacy_entry,
             $dev_server,
             $manifest,
             $is_local

@@ -29,6 +29,7 @@ export default defineConfig({
                 main: path.resolve(__dirname, 'src/js/main.js'),
                 'front-page': path.resolve(__dirname, 'src/js/front-page.js'),
                 'page-contact': path.resolve(__dirname, 'src/js/page-contact.js'),
+                'page-privacy': path.resolve(__dirname, 'src/js/page-privacy.js'),
                 'page-shop': path.resolve(__dirname, 'src/js/page-shop.js'),
                 'single-shop': path.resolve(__dirname, 'src/js/single-shop.js'),
                 'archive-news': path.resolve(__dirname, 'src/js/archive-news.js'),
@@ -47,5 +48,6 @@ export default defineConfig({
         }
     }
 })
+
 
 
