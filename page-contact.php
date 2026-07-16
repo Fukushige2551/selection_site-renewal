@@ -25,7 +25,7 @@ get_header();
                 <h2 id="contact-caution-title" class="p-contact-caution__title">お問い合わせに関しましての注意点</h2>
                 <ul class="p-contact-caution__list">
                     <li>お急ぎの案件は、直接対象店舗へ電話にて確認をお願いいたします。</li>
-                    <li>Eメールの特性上、送信過程で内容欠落、送信遅延などの不具合が生じることがございます。これらにつきましては当社といたしまして、一切の責任を負いかねます。</li>
+                    <li>Eメールの特性上、送信過程で内容欠落、送信遅延などの不具合が生じることがございます。<br>これらにつきましては当社といたしまして、一切の責任を負いかねます。</li>
                     <li>お問い合わせが重なるお時間帯など、ご連絡にお時間がかかる場合がございます。</li>
                     <li>内容によっては回答しかねる場合がございますのでご了承ください。</li>
                     <li>システム障害によりお答えできない場合がございます。誠に申し訳ございませんが、なにとぞご理解を賜りますようよろしくお願い申し上げます。</li>
@@ -37,6 +37,7 @@ get_header();
 
     <section class="p-contact__store" aria-labelledby="contact-store-title">
         <div class="p-contact__inner">
+            <form class="p-contact-form" action="<?php echo esc_url(home_url('/contact/confirm/')); ?>" method="post" novalidate>
             <fieldset class="p-contact-store">
                 <legend id="contact-store-title" class="p-contact-store__title">
                     <span class="p-contact-store__title-text">【お問い合わせ先】</span>
@@ -107,6 +108,7 @@ get_header();
             <div class="p-contact-actions">
                 <button class="c-btn c-btn--common--green--large p-contact-actions__button" type="submit">確認</button>
             </div>
+            </form>
         </div>
     </section>
 </main>

@@ -76,6 +76,7 @@
         font-size: 4.1vw;
         font-weight: 400;
         line-height: 1.875;
+        background-color: #F8F8F8;
 
         li {
             position: relative;
@@ -350,6 +351,21 @@
         text-align: center;
     }
 }
+
+.p-contact-error {
+    margin: 2.05vw 0 0;
+    color: #ff0b0b;
+    font-family: v.$font-family-ZenKakuAntique;
+    font-size: 3.59vw;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.p-contact-fields__control.is-invalid,
+.p-contact-store__option.is-invalid input,
+.p-contact-privacy__checkbox.is-invalid {
+    border-color: #ff0b0b;
+}
 @media screen and (min-width: 768px) {
     .p-contact {
         &__inner {
@@ -521,6 +537,732 @@
                     padding-top: clamp(2.4rem, 1.9vw, 3.6rem);
                 }
             }
+        }
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .p-contact {
+        &__inner {
+            width: 86.98vw;
+        }
+
+        &__hero {
+            padding: 9.77vw 0 6.25vw;
+        }
+
+        &__title {
+            margin-bottom: 3.13vw;
+            font-size: 3.13vw;
+        }
+
+        &__lead {
+            font-size: 2.08vw;
+        }
+
+        &__note {
+            margin-top: 3.13vw;
+            font-size: 1.82vw;
+        }
+
+        &__caution {
+            padding-bottom: 7.81vw;
+        }
+
+        &__store {
+            padding-bottom: 8.85vw;
+        }
+    }
+
+    .p-contact-caution {
+        border-width: 0.2vw;
+        border-radius: 2.6vw;
+
+        &__title {
+            padding: 1.95vw 3.13vw 2.08vw;
+            font-size: 2.34vw;
+        }
+
+        &__list {
+            padding: 4.17vw 4.69vw 4.69vw;
+            font-size: 2.08vw;
+
+            li {
+                padding-bottom: 3.13vw;
+                border-bottom-width: 0.2vw;
+
+                + li {
+                    padding-top: 3.13vw;
+                }
+            }
+        }
+    }
+
+    .p-contact-store {
+        &__title-text {
+            font-size: 3.13vw;
+        }
+
+        &__required {
+            left: calc(50% + 14.45vw);
+            font-size: 1.82vw;
+        }
+
+        &__guide {
+            margin: 2.34vw 0 3.91vw;
+            font-size: 2.08vw;
+        }
+
+        &__options {
+            gap: 2.6vw;
+        }
+
+        &__row {
+            grid-template-columns: 18.23vw 16.15vw 16.67vw;
+            column-gap: 3.65vw;
+        }
+
+        &__option {
+            font-size: 2.34vw;
+
+            input {
+                flex-basis: 2.86vw;
+                width: 2.86vw;
+                height: 2.86vw;
+                margin-right: 1.17vw;
+
+                &::before {
+                    width: 0.91vw;
+                    height: 0.91vw;
+                }
+            }
+        }
+
+        &__business-note {
+            margin-top: 3.13vw;
+            font-size: 1.82vw;
+        }
+    }
+
+    .p-contact-fields {
+        width: 62.5vw;
+        margin-top: 6.25vw;
+
+        &__item {
+            margin-bottom: 4.43vw;
+        }
+
+        &__label {
+            gap: 1.04vw;
+            margin-bottom: 1.56vw;
+            font-size: 2.08vw;
+
+            span {
+                font-size: 1.82vw;
+            }
+        }
+
+        &__control {
+            height: 5.99vw;
+            padding-inline: 2.34vw;
+            border-radius: 2.99vw;
+            font-size: 2.08vw;
+
+            &--textarea {
+                min-height: 36.85vw;
+                padding-top: 1.82vw;
+                padding-bottom: 1.82vw;
+            }
+        }
+    }
+
+    .p-contact-privacy {
+        margin-top: 4.69vw;
+
+        &__label {
+            font-size: 2.08vw;
+        }
+
+        &__checkbox {
+            flex-basis: 2.73vw;
+            width: 2.73vw;
+            height: 2.6vw;
+            margin-right: 1.56vw;
+            border-radius: 0.65vw;
+
+            &::before {
+                width: 1.3vw;
+                height: 0.78vw;
+                border-bottom-width: 0.2vw;
+                border-left-width: 0.2vw;
+            }
+        }
+    }
+
+    .p-contact-actions {
+        margin-top: 4.17vw;
+
+        &__button {
+            width: 44.4vw;
+            min-height: 6.25vw;
+            font-size: 2.08vw;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .p-contact {
+        &__inner {
+            width: 74.22vw;
+        }
+
+        &__hero {
+            padding: 8.79vw 0 5.86vw;
+        }
+
+        &__title {
+            margin-bottom: 2.73vw;
+            font-size: 2.73vw;
+        }
+
+        &__lead {
+            font-size: 1.76vw;
+        }
+
+        &__note {
+            margin-top: 2.73vw;
+            font-size: 1.46vw;
+        }
+
+        &__caution {
+            padding-bottom: 6.45vw;
+        }
+
+        &__store {
+            padding-bottom: 7.42vw;
+        }
+    }
+
+    .p-contact-caution {
+        border-width: 0.16vw;
+        border-radius: 2.15vw;
+
+        &__title {
+            padding: 1.56vw 2.73vw 1.66vw;
+            font-size: 1.95vw;
+        }
+
+        &__list {
+            padding: 3.42vw 4vw 3.91vw;
+            font-size: 1.56vw;
+
+            li {
+                padding-bottom: 2.54vw;
+                border-bottom-width: 0.16vw;
+
+                + li {
+                    padding-top: 2.54vw;
+                }
+            }
+        }
+    }
+
+    .p-contact-store {
+        &__title-text {
+            font-size: 2.73vw;
+        }
+
+        &__required {
+            left: calc(50% + 12.7vw);
+            font-size: 1.37vw;
+        }
+
+        &__guide {
+            margin: 1.95vw 0 3.13vw;
+            font-size: 1.76vw;
+        }
+
+        &__options {
+            gap: 2.15vw;
+        }
+
+        &__row {
+            grid-template-columns: 14.65vw 13.28vw 13.67vw;
+            column-gap: 2.93vw;
+        }
+
+        &__option {
+            font-size: 1.86vw;
+
+            input {
+                flex-basis: 2.34vw;
+                width: 2.34vw;
+                height: 2.34vw;
+                margin-right: 0.98vw;
+
+                &::before {
+                    width: 0.78vw;
+                    height: 0.78vw;
+                }
+            }
+        }
+
+        &__business-note {
+            margin-top: 2.54vw;
+            font-size: 1.37vw;
+        }
+    }
+
+    .p-contact-fields {
+        width: 52.73vw;
+        margin-top: 5.47vw;
+
+        &__item {
+            margin-bottom: 3.71vw;
+        }
+
+        &__label {
+            gap: 0.78vw;
+            margin-bottom: 1.17vw;
+            font-size: 1.56vw;
+
+            span {
+                font-size: 1.37vw;
+            }
+        }
+
+        &__control {
+            height: 4.49vw;
+            padding-inline: 1.76vw;
+            border-radius: 2.25vw;
+            font-size: 1.56vw;
+
+            &--textarea {
+                min-height: 27.64vw;
+                padding-top: 1.37vw;
+                padding-bottom: 1.37vw;
+            }
+        }
+    }
+
+    .p-contact-privacy {
+        margin-top: 3.71vw;
+
+        &__label {
+            font-size: 1.56vw;
+        }
+
+        &__checkbox {
+            flex-basis: 2.05vw;
+            width: 2.05vw;
+            height: 1.95vw;
+            margin-right: 1.17vw;
+            border-radius: 0.49vw;
+
+            &::before {
+                width: 0.98vw;
+                height: 0.59vw;
+                border-bottom-width: 0.16vw;
+                border-left-width: 0.16vw;
+            }
+        }
+    }
+
+    .p-contact-actions {
+        margin-top: 3.32vw;
+
+        &__button {
+            width: 33.3vw;
+            min-height: 4.69vw;
+            font-size: 1.56vw;
+        }
+    }
+}
+@media screen and (min-width: 1280px) {
+    .p-contact {
+        &__hero {
+            padding: 3.33vw 0 2.6vw;
+        }
+
+        &__hero &__inner {
+            width: 100%;
+        }
+
+        &__title {
+            margin-bottom: 1.51vw;
+            font-size: 1.0417vw;
+            line-height: 1.45;
+            letter-spacing: 0.15em;
+        }
+
+        &__lead {
+            width: 27.4vw;
+            margin-inline: auto;
+            font-size: 0.8333vw;
+            line-height: 1.875;
+
+            p:first-child br:nth-of-type(2) {
+                display: none;
+            }
+        }
+
+        &__note {
+            width: 19.27vw;
+            margin: 0.83vw auto 0;
+            font-size: 0.7292vw;
+            line-height: 1.7857;
+            text-align: left;
+        }
+
+        &__caution {
+            padding-bottom: 4.27vw;
+        }
+    }
+
+    .p-contact-caution {
+        width: 41.15vw;
+        margin-inline: auto;
+        border-width: 0.1vw;
+        border-radius: 1.04vw;
+
+        &__title {
+            padding: 0.58vw 1.04vw 0.63vw;
+            font-size: 0.9375vw;
+            line-height: 1.45;
+        }
+
+        &__list {
+            padding: 0.94vw 0.93vw 1.35vw;
+            font-size: 0.8333vw;
+            line-height: 1.875;
+
+            li {
+                padding: 0 0 0.99vw 0.78em;
+                border-bottom-width: 0.1vw;
+
+                + li {
+                    padding-top: 0.99vw;
+                }
+            }
+        }
+    }
+
+    .p-contact-store {
+        &__title-text {
+            font-size: 1.0417vw;
+            line-height: 1.2;
+        }
+
+        &__required {
+            left: calc(50% + 5.1vw);
+            font-size: 0.7292vw;
+            line-height: 2.14;
+        }
+
+        &__guide {
+            margin: 0.99vw 0 1.88vw;
+            font-size: 0.8333vw;
+            line-height: 1.875;
+        }
+
+        &__guide br {
+            display: none;
+        }
+
+        &__options {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            align-items: center;
+            width: 26.04vw;
+            margin-inline: auto;
+            gap: 1.77vw 1.1vw;
+        }
+
+        &__row {
+            display: contents;
+        }
+
+        &__option {
+            font-size: 0.9375vw;
+            line-height: 1.67;
+
+            input {
+                flex-basis: 1.09vw;
+                width: 1.09vw;
+                height: 1.09vw;
+                margin-right: 0.78vw;
+                border-width: 0.052vw;
+
+                &::before {
+                    width: 0.36vw;
+                    height: 0.36vw;
+                }
+            }
+        }
+
+        &__business-note {
+            margin-top: 1.61vw;
+            font-size: 0.7292vw;
+            line-height: 1.79;
+            text-align: center;
+        }
+    }
+
+    .p-contact-fields {
+        width: 26.04vw;
+        margin-top: 3.28vw;
+        margin-inline: auto;
+
+        &__item {
+            margin-bottom: 1.56vw;
+        }
+
+        &__label {
+            gap: 0.41vw;
+            margin-bottom: 0.52vw;
+            font-size: 0.8333vw;
+            line-height: 1.5;
+
+            span {
+                font-size: 0.7292vw;
+                line-height: 2.14;
+            }
+        }
+
+        &__control {
+            height: 2.4vw;
+            padding: 0 1.04vw;
+            border-width: 0.052vw;
+            border-radius: 1.2vw;
+            font-size: 0.8333vw;
+
+            &--textarea {
+                min-height: 14.74vw;
+                padding-top: 0.78vw;
+                padding-bottom: 0.78vw;
+                border-radius: 1.04vw;
+            }
+        }
+    }
+
+    .p-contact-privacy {
+        margin-top: 2.6vw;
+
+        &__label {
+            font-size: 0.8333vw;
+            line-height: 1.875;
+        }
+
+        &__checkbox {
+            flex-basis: 1.09vw;
+            width: 1.09vw;
+            height: 1.04vw;
+            margin-right: 0.42vw;
+            border-width: 0.052vw;
+            border-radius: 0.26vw;
+
+            &::before {
+                width: 0.52vw;
+                height: 0.31vw;
+                border-bottom-width: 0.1vw;
+                border-left-width: 0.1vw;
+            }
+        }
+    }
+
+    .p-contact-actions {
+        margin-top: 1.82vw;
+
+        &__button {
+            width: 17.76vw;
+            min-height: 2.5vw;
+            font-size: 0.8333vw;
+            letter-spacing: 0.1em;
+        }
+    }
+}
+@media screen and (min-width: 768px) {
+    .p-contact-error {
+        margin-top: clamp(0.8rem, 0.62vw, 1.2rem);
+        font-size: clamp(1.4rem, 1.08vw, 2rem);
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .p-contact-error {
+        margin-top: 0.42vw;
+        font-size: 0.7292vw;
+    }
+}
+.p-contact-confirm {
+    &__lead {
+        margin: 0 0 16vw;
+        color: #000;
+        font-family: v.$font-family-ZenKakuAntique;
+        font-size: 2.8vw;
+        font-weight: 500;
+        line-height: 1.875;
+        text-align: center;
+    }
+
+    &__list {
+        margin: 0;
+    }
+
+    &__item {
+        margin: 0 0 7.95vw;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__label {
+        margin: 0 0 2.82vw;
+        color: #000;
+        font-family: v.$font-family-ZenKaku;
+        font-size: 4.1vw;
+        font-weight: 500;
+        line-height: 1.5;
+    }
+
+    &__value {
+        min-height: 11.79vw;
+        margin: 0;
+        padding: 3.08vw 4.1vw;
+        border: 0.26vw solid #cecece;
+        border-radius: 5.9vw;
+        background: #f9f9f9;
+        color: #000;
+        font-family: v.$font-family-ZenKakuAntique;
+        font-size: 4.1vw;
+        font-weight: 400;
+        line-height: 1.5;
+        box-sizing: border-box;
+    }
+
+    &__form {
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .p-contact-confirm {
+        width: min(100%, clamp(48rem, 38vw, 68rem));
+        margin-inline: auto;
+
+        &__lead {
+            margin-bottom: clamp(4rem, 3.2vw, 6rem);
+            font-size: clamp(1.6rem, 1.25vw, 2.4rem);
+        }
+
+        &__item {
+            margin-bottom: clamp(3.6rem, 2.9vw, 5.6rem);
+        }
+
+        &__label {
+            margin-bottom: clamp(1.2rem, 1vw, 1.8rem);
+            font-size: clamp(1.6rem, 1.25vw, 2.4rem);
+        }
+
+        &__value {
+            min-height: clamp(4.8rem, 3.75vw, 7rem);
+            padding: clamp(1.2rem, 1vw, 1.8rem) clamp(1.8rem, 1.4vw, 2.8rem);
+            border-width: 0.16vw;
+            border-radius: clamp(2.4rem, 1.88vw, 3.5rem);
+            font-size: clamp(1.6rem, 1.25vw, 2.4rem);
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .p-contact-confirm {
+        width: 100%;
+
+        &__lead {
+            margin-bottom: 5.73vw;
+            font-size: 2.08vw;
+        }
+
+        &__item {
+            margin-bottom: 4.43vw;
+        }
+
+        &__label {
+            margin-bottom: 1.56vw;
+            font-size: 2.08vw;
+        }
+
+        &__value {
+            min-height: 6.25vw;
+            padding: 1.56vw 2.08vw;
+            border-width: 0.2vw;
+            border-radius: 3.13vw;
+            font-size: 2.08vw;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .p-contact-confirm {
+        width: 100%;
+
+        &__lead {
+            margin-bottom: 4.69vw;
+            font-size: 1.56vw;
+        }
+
+        &__item {
+            margin-bottom: 3.71vw;
+        }
+
+        &__label {
+            margin-bottom: 1.17vw;
+            font-size: 1.56vw;
+        }
+
+        &__value {
+            min-height: 4.88vw;
+            padding: 1.17vw 1.76vw;
+            border-width: 0.16vw;
+            border-radius: 2.44vw;
+            font-size: 1.56vw;
+        }
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .p-contact--confirm {
+        .p-contact__hero {
+            padding-bottom: 1vw;
+        }
+    }
+
+    .p-contact-confirm {
+        width: 100%;
+        margin-inline: auto;
+
+        &__lead {
+            margin-bottom: 2.6vw;
+            font-size: 0.8333vw;
+            line-height: 1.875;
+        }
+
+        &__item {
+            margin-bottom: 1.56vw;
+        }
+
+        &__label {
+            margin-bottom: 0.52vw;
+            font-size: 0.8333vw;
+            line-height: 1.5;
+        }
+
+        &__value {
+            min-height: 2.4vw;
+            padding: 0.57vw 1.04vw;
+            border-width: 0.052vw;
+            border-radius: 1.2vw;
+            font-size: 0.8333vw;
         }
     }
 }

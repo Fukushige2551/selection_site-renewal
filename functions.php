@@ -172,8 +172,8 @@ function foods_theme_scripts() {
         );
     }
 
-    // page-contact.php 専用アセット
-    if (is_page() && basename((string) get_page_template()) === 'page-contact.php') {
+    // お問い合わせページ専用アセット
+    if (is_page() && in_array(basename((string) get_page_template()), ['page-contact.php', 'page-contact-confirm.php'], true)) {
         foods_enqueue_vite_entry(
             'foods-page-contact',
             $page_contact_entry,
