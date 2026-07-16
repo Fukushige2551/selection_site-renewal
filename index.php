@@ -1,4 +1,3 @@
-<main>
-    <h1>フォールバック画面に遷移しています。</h1>
-    <p>設定を見直してください</p>
-</main>
+<?php get_header(); ?>
+
+<?php get_footer(); ?>
