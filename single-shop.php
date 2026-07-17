@@ -890,11 +890,11 @@ $recruit_archive_url = get_post_type_archive_link('recruit_part_time') ?: home_u
         id="js-single-shop-data"
     ><?php echo wp_json_encode($single_shop_data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?></script>
 
-    <nav class="c-breadcrumb p-single-shop__breadcrumb" aria-label="パンくず">
+    <nav class="p-single-shop__breadcrumb" aria-label="パンくず">
         <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
-        <span class="c-breadcrumb__separator" aria-hidden="true"></span>
+        <span aria-hidden="true">></span>
         <a href="<?php echo esc_url(home_url('/shop/')); ?>">チラシ・店舗情報一覧</a>
-        <span class="c-breadcrumb__separator" aria-hidden="true"></span>
+        <span aria-hidden="true">></span>
         <span><?php echo esc_html($shop_title ?: '行徳店'); ?></span>
     </nav>
 

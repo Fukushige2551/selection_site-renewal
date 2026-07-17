@@ -18,7 +18,18 @@
     }
 
     &__breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 3.07vw;
         width: 89.74vw;
+        margin: 6.15vw auto 10.76vw;
+        font-size: 3.58vw;
+        line-height: 1.4;
+
+        a,
+        span {
+            white-space: nowrap;
+        }
     }
 
     &__hero {
@@ -981,6 +992,7 @@
         }
 
         .p-single-shop__manager-photo-frame {
+            display: none;
             position: absolute;
             inset: 0;
             z-index: 1;
@@ -1177,8 +1189,12 @@
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .p-single-shop {
         &__breadcrumb {
+            gap: 1.56vw;
             width: 89.84vw;
+            margin: 3.91vw auto 6.25vw;
             overflow-x: auto;
+            font-size: 1.82vw;
+            line-height: 1.5;
         }
 
         &__hero {
@@ -1193,6 +1209,7 @@
         }
 
         &__title-sub {
+            font-size: 1.82vw;
             line-height: 1;
             letter-spacing: 0.18em;
         }
@@ -1227,6 +1244,8 @@
 
         &__period {
             margin-bottom: 3.52vw;
+            font-size: 1.82vw;
+            line-height: 1.5;
         }
 
         &__flyer-list {
@@ -1393,10 +1412,12 @@
         }
 
         &__deal-date-weekday {
+            font-size: 1.56vw;
             line-height: normal;
         }
 
         &__deal-date-space {
+            font-size: 1.82vw;
             line-height: normal;
         }
 
@@ -1412,7 +1433,8 @@
                 min-height: 2.54vw;
                 padding: 0 0.74vw;
                 border-radius: 1.27vw;
-                    line-height: 1;
+                font-size: 1.82vw;
+                line-height: 1;
             }
         }
 
@@ -1436,6 +1458,7 @@
 
         &__deals .p-front-page__special-offers__item__details__title__origin,
         &__deals .p-front-page__special-offers__item__details__title__note {
+            font-size: 1.82vw;
             line-height: normal;
         }
 
@@ -1465,12 +1488,14 @@
 
         &__deals .p-front-page__special-offers__item__details__tax {
             margin-top: 0.2vw;
+            font-size: 1.56vw;
             line-height: 1;
         }
 
         &__deals .p-front-page__special-offers__item--note {
             margin-top: 1vw;
             padding: 0 3.13vw;
+            font-size: 1.56vw;
             line-height: normal;
         }
 
@@ -1497,6 +1522,7 @@
 
 
     &__deals &__slider-dots {
+            gap: 1.56vw;
         }
 
         &__deals &__slider-dots button {
@@ -1533,6 +1559,7 @@
             height: auto;
             margin-bottom: 0.59vw;
             font-size: 2.08vw;
+            line-height: 1.5;
         }
 
         &__important-section > &__important p {
@@ -1627,6 +1654,7 @@
         &__payment &__bracket-heading {
             margin-bottom: 4.3vw;
             font-size: 2.08vw;
+            line-height: 1.5;
         }
 
         &__payment-group {
@@ -1676,6 +1704,7 @@
         &__services &__bracket-heading {
             margin-bottom: 4.3vw;
             font-size: 2.08vw;
+            line-height: 1.5;
         }
 
         &__service-grid {
@@ -1686,7 +1715,8 @@
             margin-left: auto;
 
             li {
-                    line-height: 1.45;
+                font-size: 1.56vw;
+                line-height: 1.45;
             }
 
             span {
@@ -1742,7 +1772,8 @@
                     width: 13.41vw;
                     aspect-ratio: 125.21 / 36.02;
                     padding: 0;
-                        }
+                    font-size: 1.56vw;
+                }
             }
 
             .c-campaign-content-caption {
@@ -1788,6 +1819,7 @@
             height: auto;
         }
         &__news &__slider-dots {
+            gap: 1.56vw;
             margin-top: 5.07vw;
         }
 
@@ -1820,6 +1852,7 @@
         &__manager {
             width: 100%;
             margin: 2.34vw 0 0;
+            font-size: 1.82vw;
             line-height: 1.6;
         }
 
@@ -1898,7 +1931,8 @@
 
             p {
                 margin-bottom: 0.78vw;
-                    line-height: 1.29;
+                font-size: 1.82vw;
+                line-height: 1.29;
             }
 
             p:last-of-type {
@@ -1906,7 +1940,8 @@
             }
 
             strong {
-                }
+                font-size: 1.82vw;
+            }
 
             a {
                 width: 18.79vw;
@@ -1918,6 +1953,7 @@
         }
 
         &__recruit &__slider-dots {
+            gap: 1.56vw;
             margin-top: 3.12vw;
         }
 
@@ -1929,6 +1965,7 @@
             width: 18.79vw;
             min-height: 5.89vw;
             margin-top: 3.52vw;
+            font-size: 1.82vw;
         }
 
         &__recruit-banner {
@@ -1963,7 +2000,8 @@
 
             .c-shop-card__name {
                 margin-bottom: 2.15vw;
-                }
+                font-size: 1.82vw;
+            }
 
             .c-shop-card__detail {
                 padding-left: 0;
@@ -1976,12 +2014,14 @@
 
             .c-shop-card__detail__title {
                 width: 6.64vw;
-                    line-height: 1.6;
+                font-size: 1.56vw;
+                line-height: 1.6;
             }
 
             .c-shop-card__detail__content {
                 padding: 0 0 1.82vw 1.56vw;
-                    --dot-size: 0.2vw;
+                line-height: 1.5;
+                --dot-size: 0.2vw;
                 --dot-gap: 0.56vw;
                 --line-width: 0.1vw;
             }
@@ -1991,7 +2031,8 @@
             .c-shop-card__detail__address__zip,
             .c-shop-card__detail__address__street,
             .c-shop-card__detail__tel {
-                    line-height: 1.6;
+                font-size: 1.56vw;
+                line-height: 1.6;
             }
 
             .c-shop-card__detail__time__note,
@@ -2020,7 +2061,8 @@
                 width: auto;
                 min-width: 0;
                 gap: 0.52vw;
-                }
+                font-size: 1.56vw;
+            }
 
             .c-shop-card__link__icon,
             .c-shop-card__link svg {
@@ -2029,7 +2071,8 @@
             }
 
             .p-single-shop__slider-dots {
-                    margin-top: 3.52vw;
+                gap: 1.56vw;
+                margin-top: 3.52vw;
             }
 
             .p-single-shop__slider-dots button {
@@ -2039,7 +2082,8 @@
             .p-single-shop__more {
                 width: 18.23vw;
                 margin-top: 3.52vw;
-                }
+                font-size: 1.82vw;
+            }
         }
 
         &__deals &__important {
@@ -2065,7 +2109,8 @@
                 height: auto;
                 margin-bottom: 0.59vw;
                 font-size: 2.08vw;
-                }
+                line-height: 1.5;
+            }
 
             p {
                 font-size: 2.08vw;
@@ -2090,6 +2135,13 @@
 }
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
     .p-single-shop {
+        &__breadcrumb {
+            gap: 1.56vw;
+            width: 93.75vw;
+            margin: 3.13vw auto 5.47vw;
+            font-size: 1.56vw;
+            line-height: 1.5;
+        }
 
         &__hero {
             margin-bottom: 4.69vw;
@@ -2102,6 +2154,7 @@
         }
 
         &__title-sub {
+            font-size: 1.56vw;
             line-height: 1;
             letter-spacing: 0.18em;
         }
@@ -2137,6 +2190,7 @@
         &__period {
             margin-bottom: 3.13vw;
             font-size: 1.76vw;
+            line-height: 1.5;
         }
 
         &__flyer-list {
@@ -2264,7 +2318,8 @@
                 width: 8.59vw;
                 padding-bottom: 1.17vw;
                 background-size: 100% 100%;
-                    line-height: 1.31;
+                font-size: 1.56vw;
+                line-height: 1.31;
                 letter-spacing: 0.15em;
             }
         }
@@ -2278,6 +2333,7 @@
         }
 
         &__deal-date-main {
+            font-size: 1.56vw;
             line-height: normal;
         }
 
@@ -2336,6 +2392,7 @@
         }
 
         &__deals .p-front-page__special-offers__item__details__title__highlight {
+            font-size: 1.56vw;
             line-height: normal;
             overflow-wrap: anywhere;
             word-break: normal;
@@ -2346,7 +2403,8 @@
             line-height: normal;
 
             &__label {
-                    line-height: 1;
+                font-size: 1.56vw;
+                line-height: 1;
             }
 
             &__value {
@@ -2402,6 +2460,7 @@
         }
 
         &__deals &__slider-dots {
+            gap: 1.56vw;
         }
 
         &__deals &__slider-dots button {
@@ -2420,6 +2479,7 @@
         &__deals &__important h2 {
             gap: 0.59vw;
             margin-bottom: 1.56vw;
+            font-size: 1.56vw;
             line-height: 1;
         }
 
@@ -2428,6 +2488,7 @@
         }
 
         &__deals &__important p {
+            font-size: 1.56vw;
             line-height: 1.85;
         }
 
@@ -2470,11 +2531,13 @@
             }
 
             dt {
-                    line-height: 1.7;
+                font-size: 1.56vw;
+                line-height: 1.7;
             }
 
             dd {
-                    line-height: 1.8;
+                font-size: 1.56vw;
+                line-height: 1.8;
             }
 
             span {
@@ -2509,6 +2572,7 @@
         &__payment &__bracket-heading {
             margin-bottom: 3.91vw;
             font-size: 1.95vw;
+            line-height: 1.5;
         }
 
         &__payment-group {
@@ -2557,6 +2621,7 @@
         &__services &__bracket-heading {
             margin-bottom: 3.91vw;
             font-size: 1.95vw;
+            line-height: 1.5;
         }
 
         &__service-grid {
@@ -2634,7 +2699,8 @@
 
             .c-campaign-content-caption {
                 margin-top: 0.78vw;
-                    font-weight: 700;
+                font-size: 1.56vw;
+                font-weight: 700;
                 line-height: 1.6;
                 letter-spacing: 0.18em;
             }
@@ -2703,12 +2769,14 @@
         }
 
         &__message p {
+            font-size: 1.56vw;
             line-height: 1.85;
         }
 
         &__manager {
             width: 46.87vw;
             margin: 2.34vw auto 0;
+            font-size: 1.56vw;
             line-height: 1.6;
         }
 
@@ -2744,6 +2812,7 @@
             width: 28.81vw;
             margin-bottom: 3.2vw;
             font-size: 1.95vw;
+            line-height: 1.5;
 
             &::before,
             &::after {
@@ -2785,7 +2854,8 @@
 
             p {
                 margin-bottom: 0.68vw;
-                    line-height: 1.35;
+                font-size: 1.56vw;
+                line-height: 1.35;
             }
 
             p:last-of-type {
@@ -2793,14 +2863,16 @@
             }
 
             strong {
-                }
+                font-size: 1.56vw;
+            }
 
             a {
                 width: 14.14vw;
                 min-height: 5.47vw;
                 margin-right: auto;
                 margin-left: auto;
-                }
+                font-size: 1.56vw;
+            }
         }
 
         &__recruit &__slider-dots {
@@ -2816,6 +2888,7 @@
             width: 17.58vw;
             min-height: 5.47vw;
             margin-top: 2vw;
+            font-size: 1.56vw;
         }
 
         &__recruit-banner {
@@ -2877,7 +2950,8 @@
 
             .c-campaign-content-caption {
                 margin-top: 2vw;
-                    font-weight: 700;
+                font-size: 1.56vw;
+                font-weight: 700;
                 line-height: 1.6;
                 letter-spacing: 0.18em;
             }
@@ -2974,7 +3048,8 @@
 
             .c-shop-card__detail__content {
                 padding: 0 0 1.56vw 1.37vw;
-                    --dot-size: 0.2vw;
+                line-height: 1.5;
+                --dot-size: 0.2vw;
                 --dot-gap: 0.49vw;
                 --line-width: 0.1vw;
             }
@@ -3036,7 +3111,8 @@
                 width: 17.58vw;
                 min-height: 5.47vw;
                 margin-top: 3.13vw;
-                }
+                font-size: 1.56vw;
+            }
         }
 
         &__zoom {
@@ -3065,8 +3141,11 @@
 @media screen and (min-width: 1280px) {
     .p-single-shop {
         &__breadcrumb {
+            gap: 1.0417vw;
             width: min(93.75vw, 62.5vw);
-            margin: 0 auto 3.6458vw;
+            margin: 2.0833vw auto 3.6458vw;
+            font-size: 0.8333vw;
+            line-height: 1.5;
         }
 
         &__hero {
@@ -3116,6 +3195,7 @@
         &__period {
             margin-bottom: 2.0833vw;
             font-size: 1.1458vw;
+            line-height: 1.5;
         }
 
         &__flyer-list {
@@ -3542,7 +3622,8 @@
             }
 
             dd {
-                    line-height: 1.75;
+                font-size: 0.8333vw;
+                line-height: 1.75;
             }
 
             span {
@@ -3718,7 +3799,8 @@
 
             .c-campaign-content-caption {
                 margin-top: 0.9375vw;
-                    font-weight: 700;
+                font-size: 0.8333vw;
+                font-weight: 700;
                 line-height: 1.6;
                 letter-spacing: 0.18em;
             }
@@ -3790,12 +3872,15 @@
         }
 
         &__message p {
+            font-size: 0.8333vw;
             line-height: 1.75;
         }
 
         &__manager {
             width: 25vw;
             margin: 1vw auto 0;
+            font-size: 0.8333vw;
+            line-height: 1.5;
         }
 
         &__message .p-single-shop__manager-photo {
@@ -3831,6 +3916,7 @@
             width: 15.3646vw;
             margin-bottom: 1.8229vw;
             font-size: 1.0417vw;
+            line-height: 1.5;
 
             &::before,
             &::after {
@@ -3866,7 +3952,8 @@
                 height: auto;
                 min-height: 2.2396vw;
                 margin-bottom: 0.625vw;
-                    line-height: 1.25;
+                font-size: 0.8333vw;
+                line-height: 1.25;
             }
 
             p {
@@ -3889,7 +3976,8 @@
                 min-height: 2.3577vw;
                 margin: auto auto 0;
                 padding-top: 0.4167vw;
-                }
+                font-size: 0.8333vw;
+            }
         }
 
         &__recruit &__slider-dots {
@@ -3905,6 +3993,7 @@
             width: 9.0104vw;
             min-height: 2.8125vw;
             margin-top: 2.1354vw;
+            font-size: 0.8333vw;
         }
 
         &__recruit-banner {
@@ -3919,12 +4008,14 @@
             .p-single-shop__heading {
                 margin-bottom: 0.8333vw;
                 font-size: 1.0417vw;
-                }
+                line-height: 1.5;
+            }
 
             .c-shop-card-list {
                 display: grid;
                 grid-template-columns: repeat(3, 18.2292vw);
-                    width: 56.7708vw;
+                gap: 1.0417vw;
+                width: 56.7708vw;
                 margin: 0 auto;
             }
 
@@ -3937,7 +4028,8 @@
 
             .c-shop-card__name {
                 margin-bottom: 1.0417vw;
-                    line-height: 1;
+                font-size: 0.8333vw;
+                line-height: 1;
             }
 
             .c-shop-card__detail {
@@ -3951,7 +4043,8 @@
 
             .c-shop-card__detail__title {
                 width: 4.6vw;
-                    line-height: 1;
+                font-size: 0.8333vw;
+                line-height: 1;
             }
 
             .c-shop-card__detail__content {
@@ -3973,7 +4066,8 @@
 
             .c-shop-card__detail__time__note,
             .c-shop-card__detail__address__place {
-                    line-height: 1.5625;
+                font-size: 0.8333vw;
+                line-height: 1.5625;
             }
 
             .c-shop-card__detail__address::after {
@@ -3997,7 +4091,8 @@
                 min-height: 2.414vw;
                 min-width: 0;
                 gap: 0.3125vw;
-                }
+                font-size: 0.8333vw;
+            }
 
             .c-shop-card__link__icon,
             .c-shop-card__link svg {
@@ -4018,7 +4113,8 @@
                 width: 9.0104vw;
                 min-height: 2.8125vw;
                 margin-top: 1.5104vw;
-                    line-height: 1;
+                font-size: 0.8333vw;
+                line-height: 1;
             }
         }
     }
