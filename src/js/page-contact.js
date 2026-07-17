@@ -192,8 +192,9 @@ const validateContact = (root) => {
 
 const setupContactValidation = () => {
     const root = document.querySelector('.p-contact');
+    const inputForm = root?.querySelector('.p-contact-form');
 
-    if (!root) {
+    if (!root || !inputForm) {
         return;
     }
 
@@ -207,16 +208,7 @@ const setupContactValidation = () => {
         });
     });
 
-    const form = root.querySelector('form');
-    const confirmButton = root.querySelector('.p-contact-actions__button');
-
-    form?.addEventListener('submit', (event) => {
-        if (!validateContact(root)) {
-            event.preventDefault();
-        }
-    });
-
-    confirmButton?.addEventListener('click', (event) => {
+    inputForm.addEventListener('submit', (event) => {
         if (!validateContact(root)) {
             event.preventDefault();
         }

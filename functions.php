@@ -22,6 +22,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-main-js',
         'foods-front-page-js',
         'foods-page-contact-js',
+        'foods-page-contact-thanks-js',
         'foods-page-privacy-js',
         'foods-page-shop-js',
         'foods-single-shop-js',
@@ -134,6 +135,7 @@ function foods_theme_scripts() {
     $main_entry       = 'src/js/main.js';
     $front_page_entry = 'src/js/front-page.js';
     $page_contact_entry = 'src/js/page-contact.js';
+    $page_contact_thanks_entry = 'src/js/page-contact-thanks.js';
     $page_privacy_entry = 'src/js/page-privacy.js';
     $page_shop_entry  = 'src/js/page-shop.js';
     $single_shop_entry = 'src/js/single-shop.js';
@@ -179,6 +181,16 @@ function foods_theme_scripts() {
         foods_enqueue_vite_entry(
             'foods-page-contact',
             $page_contact_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+    // お問い合わせ完了ページ専用アセット
+    if (is_page() && basename((string) get_page_template()) === 'page-contact-thanks.php') {
+        foods_enqueue_vite_entry(
+            'foods-page-contact-thanks',
+            $page_contact_thanks_entry,
             $dev_server,
             $manifest,
             $is_local
