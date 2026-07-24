@@ -3169,3 +3169,62 @@
     }
 }
 }
+
+// ノートPCでは、デスクトップ用の固定サイズを画面幅に合わせて縮小する
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .p-front-page__shop {
+        .c-shop-card-list {
+            width: 52.08vw;
+            gap: 1.04vw;
+
+            .c-shop-card {
+                flex: 0 0 12.18vw;
+                width: 12.18vw;
+                height: 16.88vw;
+                padding: 1.25vw 1.04vw 0.89vw;
+                border-radius: 0.52vw;
+
+                &__name {
+                    font-size: calc(1.04vw * var(--pc-font-scale));
+                    margin: 0 auto 1.3vw;
+                }
+
+                &__wrapper {
+                    font-size: calc(0.93vw * var(--pc-font-scale));
+                    line-height: 1.45;
+
+                    &:first-of-type {
+                        margin-bottom: 0.78vw;
+                    }
+                }
+
+                &__address {
+                    bottom: -0.12vw;
+                    flex: 0 0 0.72vw;
+                    width: 0.72vw;
+                    margin-right: 0.41vw;
+
+                    &__link {
+                        font-size: calc(0.72vw * var(--pc-font-scale));
+                        margin-top: 0.67vw;
+                    }
+                }
+
+                &__time {
+                    flex: 0 0 0.78vw;
+                    width: 0.78vw;
+                    margin-right: 0.41vw;
+                }
+
+                &__link {
+                    width: 9.92vw;
+
+                    .c-btn--common--blue {
+                        width: 9.92vw;
+                        font-size: calc(0.83vw * var(--pc-font-scale));
+                    }
+                }
+            }
+        }
+    }
+}
