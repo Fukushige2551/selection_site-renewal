@@ -1474,11 +1474,23 @@ function foods_get_recipe_field_group() {
         'title' => 'レシピ',
         'fields' => [
             [
+                'key' => 'field_recipe_eyecatch_image',
+                'label' => 'アイキャッチ画像',
+                'name' => 'recipe_eyecatch_image',
+                'type' => 'image',
+                'required' => 0,
+                'instructions' => 'レシピ一覧や関連レシピなど、詳細画面以外で表示する画像です。',
+                'return_format' => 'id',
+                'preview_size' => 'medium',
+                'library' => 'all',
+            ],
+            [
                 'key' => 'field_recipe_photo',
-                'label' => '写真',
+                'label' => '詳細画像',
                 'name' => 'recipe_photo',
                 'type' => 'image',
                 'required' => 0,
+                'instructions' => 'レシピ詳細画面で表示する画像です。',
                 'return_format' => 'id',
                 'preview_size' => 'medium',
                 'library' => 'all',
@@ -1682,7 +1694,7 @@ function foods_register_recipe_scf_fields() {
         return;
     }
 
-    $version = '20260710-04';
+    $version = '20260727-01';
     if (get_option('foods_recipe_scf_fields_version') === $version) {
         return;
     }

@@ -97,6 +97,23 @@ function foods_recipe_detail_get_recipe_image_data($post_id, $size = 'large') {
     return null;
 }
 
+function foods_recipe_detail_get_recipe_eyecatch_data($post_id, $size = 'large') {
+    $recipe_eyecatch = foods_recipe_detail_get_field_value($post_id, 'recipe_eyecatch_image');
+    $recipe_eyecatch_data = foods_recipe_detail_get_image_data($recipe_eyecatch, $size);
+
+    if (!empty($recipe_eyecatch_data['url'])) {
+        return $recipe_eyecatch_data;
+    }
+
+    if (has_post_thumbnail($post_id)) {
+        return foods_recipe_detail_get_image_data(get_post_thumbnail_id($post_id), $size);
+    }
+
+    $recipe_photo = foods_recipe_detail_get_field_value($post_id, 'recipe_photo');
+
+    return foods_recipe_detail_get_image_data($recipe_photo, $size);
+}
+
 function foods_recipe_detail_get_terms($post_id, $taxonomy) {
     if (!taxonomy_exists($taxonomy)) {
         return [];
@@ -399,6 +416,7 @@ function foods_recipe_detail_format_item($recipe_post) {
         'excerpt' => get_the_excerpt($recipe_id),
         'content' => wp_strip_all_tags(apply_filters('the_content', $recipe_post->post_content)),
         'image' => foods_recipe_detail_get_recipe_image_data($recipe_id, 'large'),
+        'eyecatch_image' => foods_recipe_detail_get_recipe_eyecatch_data($recipe_id, 'large'),
         'summary' => foods_recipe_detail_normalize_value(foods_recipe_detail_get_field_value($recipe_id, 'recipe_summary')),
         'cooking_time' => foods_recipe_detail_normalize_value(foods_recipe_detail_get_field_value($recipe_id, 'recipe_cooking_time')),
         'servings' => foods_recipe_detail_normalize_value(foods_recipe_detail_get_field_value($recipe_id, 'recipe_servings')),
@@ -677,7 +695,7 @@ get_header();
                     <?php
                     $related_recipe_title = $related_recipe_item['title'] ?? '';
                     $related_recipe_url = $related_recipe_item['permalink'] ?? '#';
-                    $related_recipe_image = $related_recipe_item['image'] ?? null;
+                    $related_recipe_image = $related_recipe_item['eyecatch_image'] ?? null;
                     $related_recipe_image_url = !empty($related_recipe_image['url']) ? $related_recipe_image['url'] : $theme_uri . '/img/component/no-image.png';
                     $related_recipe_image_alt = !empty($related_recipe_image['alt']) ? $related_recipe_image['alt'] : $related_recipe_title;
                     $related_recipe_category = foods_recipe_detail_get_primary_term_name($related_recipe_item['terms']['recipe_categories'] ?? []);

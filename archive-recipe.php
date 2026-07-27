@@ -83,18 +83,20 @@ function foods_recipe_archive_get_image_data($image, $size = 'large') {
 }
 
 function foods_recipe_archive_get_recipe_image_data($post_id, $size = 'large') {
-    $recipe_photo = foods_recipe_archive_get_field_value($post_id, 'recipe_photo');
-    $recipe_photo_data = foods_recipe_archive_get_image_data($recipe_photo, $size);
+    $recipe_eyecatch = foods_recipe_archive_get_field_value($post_id, 'recipe_eyecatch_image');
+    $recipe_eyecatch_data = foods_recipe_archive_get_image_data($recipe_eyecatch, $size);
 
-    if (!empty($recipe_photo_data['url'])) {
-        return $recipe_photo_data;
+    if (!empty($recipe_eyecatch_data['url'])) {
+        return $recipe_eyecatch_data;
     }
 
     if (has_post_thumbnail($post_id)) {
         return foods_recipe_archive_get_image_data(get_post_thumbnail_id($post_id), $size);
     }
 
-    return null;
+    $recipe_photo = foods_recipe_archive_get_field_value($post_id, 'recipe_photo');
+
+    return foods_recipe_archive_get_image_data($recipe_photo, $size);
 }
 
 function foods_recipe_archive_get_primary_term_name($terms) {

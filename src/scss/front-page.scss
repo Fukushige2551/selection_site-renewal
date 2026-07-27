@@ -702,6 +702,9 @@
                 }
                 &__link {
                     .c-btn--common--blue {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         color: #fff;
                         font-family: $font-family-NotoSans;
                         font-weight: bold;
@@ -732,7 +735,8 @@
         }
         &__all {
             display: block;
-            width: 34.35vw;
+            width: 44.35vw;
+            aspect-ratio: 173 / 54;
             margin: 5.38vw auto 0;
         }
     }
@@ -1860,7 +1864,8 @@
             }
         }
         &__all {
-            width: 17.44vw;
+            width: 22.52vw;
+            aspect-ratio: 173 / 54;
             margin: 3.64vw auto 0;
         }
     }
@@ -1977,7 +1982,7 @@
             margin: 0 auto 9.63vw 16.53vw;
         }
         .c-recipe-card-wrapper-link {
-            &:nth-child(5) {
+            &:nth-child(4) {
                 display: block;
             }
         }
@@ -2812,6 +2817,11 @@
             &__dot {
                 width: 0.41vw;
             }
+        }
+        &__all {
+            width: 10.80vw;
+            aspect-ratio: 207.38 / 65;
+            margin: 1.87vw auto 0;
         }
     }
     &__campaign {
