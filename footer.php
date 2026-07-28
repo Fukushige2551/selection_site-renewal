@@ -1,12 +1,12 @@
 <footer class="l-footer">
     <picture class="l-footer__logo l-footer__logo--sp">
-        <a href="/">
+        <a href="<?php echo esc_url(home_url('/')); ?>">
             <source srcset="<?php echo get_template_directory_uri(); ?>/img/footer/footer_logo-sp.webp" type="image/webp">
             <img class="l-footer__logo__img" src="<?php echo get_template_directory_uri(); ?>/img/footer/footer_logo-sp.png" alt="会社ロゴ">
         </a>
     </picture>
     <picture class="l-footer__logo l-footer__logo--pc">
-        <a href="/">
+        <a href="<?php echo esc_url(home_url('/')); ?>">
             <source srcset="<?php echo get_template_directory_uri(); ?>/img/footer/footer_logo-pc.webp" type="image/webp">
             <img class="l-footer__logo__img" src="<?php echo get_template_directory_uri(); ?>/img/footer/footer_logo-pc.png" alt="会社ロゴ">
         </a>
@@ -15,23 +15,23 @@
     <!-- ナビゲーション -->
     <nav class="l-footer__nav">
         <div class="l-footer__nav__group">
-            <a class="l-footer__nav__item list-title" href="/shop">チラシ・店舗情報</a>
+            <a class="l-footer__nav__item list-title" href="<?php echo esc_url(get_post_type_archive_link('shop')); ?>">チラシ・店舗情報</a>
             <ul class="l-footer__nav__list shop-info">
-                <li class="l-footer__nav__list__item"><a href="">行徳店</a></li>
-                <li class="l-footer__nav__list__item"><a href="">花野井店</a></li>
-                <li class="l-footer__nav__list__item"><a href="">三郷店</a></li>
-                <li class="l-footer__nav__list__item"><a href="">しいの木台店</a></li>
-                <li class="l-footer__nav__list__item"><a href="">八潮店</a></li>
-                <li class="l-footer__nav__list__item"><a href="">青葉台店</a></li>
-                <li class="l-footer__nav__list__item"><a href="">西原店</a></li>
-                <li class="l-footer__nav__list__item"><a href="">松戸店</a></li>
-                <li class="l-footer__nav__list__item"><a href="">西船橋店</a></li>
-                <li class="l-footer__nav__list__item"><a href="">西新井店</a></li>
+                <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/shop/gyoutoku/')); ?>">行徳店</a></li>
+                <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/shop/hananoi/')); ?>">花野井店</a></li>
+                <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/shop/misato/')); ?>">三郷店</a></li>
+                <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/shop/shiinokidai/')); ?>">しいの木台店</a></li>
+                <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/shop/yashio/')); ?>">八潮店</a></li>
+                <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/shop/aobadai/')); ?>">青葉台店</a></li>
+                <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/shop/nishihara/')); ?>">西原店</a></li>
+                <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/shop/matsudo/')); ?>">松戸店</a></li>
+                <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/shop/nishifunabashi/')); ?>">西船橋店</a></li>
+                <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/shop/nishiarai/')); ?>">西新井店</a></li>
             </ul>
         </div>
 
         <div class="l-footer__nav__group">
-            <a class="l-footer__nav__item">新着情報</a>
+            <a class="l-footer__nav__item" href="<?php echo esc_url(get_post_type_archive_link('news')); ?>">新着情報</a>
         </div>
         <div class="l-footer__nav__group">
             <a class="l-footer__nav__item">セレクションのこだわり</a>
@@ -50,37 +50,37 @@
             <a class="l-footer__nav__item">パート・アルバイト募集</a>
         </div>
         <div class="l-footer__nav__group">
-            <a class="l-footer__nav__item">レシピ</a>
+            <a class="l-footer__nav__item" href="<?php echo esc_url(get_post_type_archive_link('recipe')); ?>">レシピ</a>
         </div>
         <div class="l-footer__nav__group">
-            <a class="l-footer__nav__item">オンラインショップ</a>
+            <a class="l-footer__nav__item" href="https://foods-selection.shops.jp/" target="_blank" rel="noopener noreferrer">オンラインショップ</a>
         </div>
         <div class="l-footer__nav__group">
-            <a class="l-footer__nav__item">プライバシーポリシー</a>
+            <a class="l-footer__nav__item" href="<?php echo esc_url(home_url('/privacy/')); ?>">プライバシーポリシー</a>
         </div>
         <div class="l-footer__nav__group">
-            <a class="l-footer__nav__item">お問い合わせ</a>
+            <a class="l-footer__nav__item" href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a>
         </div>
     </nav>
     <nav class="l-footer__nav l-footer__nav--tab">
         <div class="l-footer__nav__column l-footer__nav__column--left">
             <div class="l-footer__nav__group">
-                <a class="l-footer__nav__item list-title">チラシ・店舗情報</a>
+                <a class="l-footer__nav__item list-title" href="<?php echo esc_url(get_post_type_archive_link('shop')); ?>">チラシ・店舗情報</a>
                 <ul class="l-footer__nav__list shop-info">
-                    <li class="l-footer__nav__list__item"><a href="">行徳店</a></li>
-                    <li class="l-footer__nav__list__item"><a href="">花野井店</a></li>
-                    <li class="l-footer__nav__list__item"><a href="">三郷店</a></li>
-                    <li class="l-footer__nav__list__item"><a href="">しいの木台店</a></li>
-                    <li class="l-footer__nav__list__item"><a href="">八潮店</a></li>
-                    <li class="l-footer__nav__list__item"><a href="">青葉台店</a></li>
-                    <li class="l-footer__nav__list__item"><a href="">西原店</a></li>
-                    <li class="l-footer__nav__list__item"><a href="">松戸店</a></li>
-                    <li class="l-footer__nav__list__item"><a href="">西船橋店</a></li>
-                    <li class="l-footer__nav__list__item"><a href="">西新井店</a></li>
+                    <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/shop/gyoutoku/')); ?>">行徳店</a></li>
+                    <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/shop/hananoi/')); ?>">花野井店</a></li>
+                    <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/shop/misato/')); ?>">三郷店</a></li>
+                    <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/shop/shiinokidai/')); ?>">しいの木台店</a></li>
+                    <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/shop/yashio/')); ?>">八潮店</a></li>
+                    <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/shop/aobadai/')); ?>">青葉台店</a></li>
+                    <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/shop/nishihara/')); ?>">西原店</a></li>
+                    <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/shop/matsudo/')); ?>">松戸店</a></li>
+                    <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/shop/nishifunabashi/')); ?>">西船橋店</a></li>
+                    <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/shop/nishiarai/')); ?>">西新井店</a></li>
                 </ul>
             </div>
             <div class="l-footer__nav__group">
-                <a class="l-footer__nav__item">新着情報</a>
+                <a class="l-footer__nav__item" href="<?php echo esc_url(get_post_type_archive_link('news')); ?>">新着情報</a>
             </div>
             <div class="l-footer__nav__group">
                 <a class="l-footer__nav__item">セレクションのこだわり</a>
@@ -100,16 +100,16 @@
                 <a class="l-footer__nav__item">パート・アルバイト募集</a>
             </div>
             <div class="l-footer__nav__group">
-                <a class="l-footer__nav__item">レシピ</a>
+                <a class="l-footer__nav__item" href="<?php echo esc_url(get_post_type_archive_link('recipe')); ?>">レシピ</a>
             </div>
             <div class="l-footer__nav__group">
-                <a class="l-footer__nav__item">オンラインショップ</a>
+                <a class="l-footer__nav__item" href="https://foods-selection.shops.jp/" target="_blank" rel="noopener noreferrer">オンラインショップ</a>
             </div>
             <div class="l-footer__nav__group">
-                <a class="l-footer__nav__item">プライバシーポリシー</a>
+                <a class="l-footer__nav__item" href="<?php echo esc_url(home_url('/privacy/')); ?>">プライバシーポリシー</a>
             </div>
             <div class="l-footer__nav__group">
-                <a class="l-footer__nav__item">お問い合わせ</a>
+                <a class="l-footer__nav__item" href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a>
             </div>
         </div>
     </nav>

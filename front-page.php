@@ -1198,7 +1198,7 @@
                     </button>
                 </ul>
             </div>
-            <a class="p-front-page__shop__all" href="">
+            <a class="p-front-page__shop__all" href="<?php echo esc_url(get_post_type_archive_link('shop')); ?>">
                 <button class="c-btn c-btn--common--green">一覧</button>
             </a>
         </section>
