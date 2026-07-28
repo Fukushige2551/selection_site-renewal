@@ -1,7 +1,7 @@
 @use "../foundation/global" as *;
 
 .l-footer {
-    @include backgroundImg("#{$img-path}footer/footer_bg-sp.png");
+    @include backgroundImg("#{$img-path}footer/footer_bg-sp.svg");
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -143,8 +143,10 @@
 
 @media screen and (min-width: 768px) {
 .l-footer {
-    @include backgroundImg("#{$img-path}footer/svg/footer_bg-tab.svg");
-    background-size: cover;
+    // @include backgroundImg("#{$img-path}footer/svg/footer_bg-tab.svg");
+    // background-size: cover;
+    @include backgroundImg("#{$img-path}footer/footer_bg-tab.svg");
+    background-size: contain;
     background-position: center top;
     aspect-ratio: 768 / 1305;
     padding: 9.11vw 0 0;

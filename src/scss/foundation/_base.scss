@@ -15,13 +15,6 @@ html {
 }
 
 /**
- * ヘッダー分の余白調整
- */
-main {
-    padding-top: $header-height;
-}
-
-/**
  * モーダル表示の場合はスクロール不可
  */
 body.is-fixed {

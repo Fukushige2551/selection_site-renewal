@@ -208,13 +208,15 @@ jQuery(function($) {
 
 			// PC用のドットに復元
 			var $paginationPc = $('.p-front-page__hero__pagination');
-			$paginationPc.html(
-				'<button class="p-front-page__hero__dot hero__dot--01 is-active" type="button" aria-label="スライド1を表示" aria-current="true"></button>' +
-				'<button class="p-front-page__hero__dot hero__dot--02" type="button" aria-label="スライド2を表示"></button>' +
-				'<button class="p-front-page__hero__dot hero__dot--03" type="button" aria-label="スライド3を表示"></button>' +
-				'<button class="p-front-page__hero__dot hero__dot--04" type="button" aria-label="スライド4を表示"></button>' +
-				'<button class="p-front-page__hero__dot hero__dot--05" type="button" aria-label="スライド5を表示"></button>'
-			);
+			$paginationPc.empty();
+			$slides.each(function (index) {
+				var number = String(index + 1).padStart(2, '0');
+				var $dot = $('<button type="button" class="p-front-page__hero__dot hero__dot--' + number + '" aria-label="スライド' + (index + 1) + 'を表示"></button>');
+				if (index === 0) {
+					$dot.addClass('is-active').attr('aria-current', 'true');
+				}
+				$paginationPc.append($dot);
+			});
 		}
 	}
 
@@ -1161,20 +1163,11 @@ jQuery(function($) {
 			return Math.max(1, Math.ceil($filtered.length / perPage));
 		}
 
-		$tabs.each(function(index) {
+		$tabs.each(function() {
 			$(this).on('click', function() {
 				$tabs.removeClass('is-active active');
 				$(this).addClass('is-active active');
-
-				if (index === 0) {
-					currentFilter = 'all';
-				} else if (index === 1) {
-					currentFilter = 'chiba';
-				} else if (index === 2) {
-					currentFilter = 'tokyo';
-				} else {
-					currentFilter = 'saitama';
-				}
+				currentFilter = $(this).attr('data-shop-filter') || 'all';
 
 				currentPage = 0;
 				updateVisibleItems();

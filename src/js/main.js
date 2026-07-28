@@ -114,24 +114,24 @@ jQuery(function($) {
         updateScrollTopButton();
     }
 
-    /**
-     * vw算出(SP)
-     */
-    const valueSP = (12.67) / 390;
+    // /**
+    //  * vw算出(SP)
+    //  */
+    const valueSP = (22.75) / 390;
     const resultSP = Math.floor(valueSP * 10000) / 100;
     console.log('SP: ' + resultSP.toFixed(2) + 'vw');
 
-    /**
-     * vw算出(Tablet)
-     */
-    const valueTablet = (20) / 768;
-    const resultTablet = Math.floor(valueTablet * 10000) / 100;
-    console.log('Tablet: ' + resultTablet.toFixed(2) + 'vw');
+    // /**
+    //  * vw算出(Tablet)
+    //  */
+    // const valueTablet = (706.95) / 768;
+    // const resultTablet = Math.floor(valueTablet * 10000) / 100;
+    // console.log('Tablet: ' + resultTablet.toFixed(2) + 'vw');
 
     /**
      * vw算出(PC)
      */
-    const valuePC = (10) / 1920;
-    const resultPC = Math.floor(valuePC * 10000) / 100;
-    console.log('PC: ' + resultPC.toFixed(2) + 'vw');
+    // const valuePC = (20) / 1920;
+    // const resultPC = Math.floor(valuePC * 10000) / 100;
+    // console.log('PC: ' + resultPC.toFixed(2) + 'vw');
 });
