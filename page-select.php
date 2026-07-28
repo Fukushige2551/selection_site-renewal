@@ -14,13 +14,13 @@ get_header();
     </nav>
     <!-- ヒーロー start -->
     <div class="p-page-select__hero">
-         <!-- タイトル start -->
+        <!-- タイトル start -->
             <h1 class="c-section__title">セレクションのこだわり</h1>
             <p class="c-section__title--sub">Commitment</p>
         <!-- タイトル end -->
-         <div class="p-page-select__hero__inner">
+        <div class="p-page-select__hero__inner">
             <img class="p-page-select__hero__img--top-sp" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/img_selectTop-sp.svg" alt="家族で食事を楽しむ様子">
-             <img class="p-page-select__hero__img--top-pc" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/img_selectTop-pc.svg" alt="家族で食事を楽しむ様子">
+            <img class="p-page-select__hero__img--top-pc" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/img_selectTop-pc.svg" alt="家族で食事を楽しむ様子">
             <img class="p-page-select__hero__img--toptext" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/img_selectToptext.svg" alt="いい商品を皆様に">
         </div>
             <p class="p-page-select__hero__text">
@@ -40,7 +40,6 @@ get_header();
                 売場の一つひとつに込めています。
             </p>
     </div>
-  
     <!-- ヒーロー end -->
 
 
@@ -108,7 +107,6 @@ get_header();
                     <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-11.svg" alt="こだわり　お酒">
                 </picture>
             </a>
-            
         </section>
     </div>
     <!-- セレクションのこだわり end -->
