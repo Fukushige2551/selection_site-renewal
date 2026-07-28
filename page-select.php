@@ -1,4 +1,10 @@
-<?php get_header(); ?>
+<?php
+/*
+Template Name: セレクションのこだわり
+*/
+
+get_header();
+?>
 
 <main id="page-select" class="p-page-select">
     <nav class="c-breadcrumb" aria-label="パンくずリスト">
