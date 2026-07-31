@@ -105,6 +105,7 @@ foreach ($recipes as $index => $recipe) {
     }
 
     $meta = [
+        'recipe_eyecatch_image' => '',
         'recipe_photo' => '',
         'recipe_summary' => sprintf('%sを主役にした、毎日の食卓で使いやすいテストレシピです。', $recipe['main']),
         'recipe_cooking_time' => $recipe['time'],

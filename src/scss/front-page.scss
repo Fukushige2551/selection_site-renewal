@@ -679,7 +679,6 @@
                 }
                 &__wrapper {
                     font-size: 3.58vw;
-                    gap: 2vw;
 
                     &:first-of-type {
                         margin-bottom: 2.6vw;
@@ -688,7 +687,9 @@
                 &__address {
                     position: relative;
                     bottom: 0.6vw;
-                    width: 7vw;
+                    flex: 0 0 4.1vw;
+                    width: 4.1vw;
+                    margin-right: 1.15vw;
 
                     &__link {
                         font-size: 3.07vw;
@@ -697,9 +698,13 @@
                 }
                 &__time {
                     width: 3.7vw;
+                    margin-right: 1.79vw;
                 }
                 &__link {
                     .c-btn--common--blue {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         color: #fff;
                         font-family: $font-family-NotoSans;
                         font-weight: bold;
@@ -730,7 +735,8 @@
         }
         &__all {
             display: block;
-            width: 34.35vw;
+            width: 44.35vw;
+            aspect-ratio: 173 / 54;
             margin: 5.38vw auto 0;
         }
     }
@@ -1823,7 +1829,8 @@
                 }
                 &__address {
                     position: relative;
-                    bottom: -0.12vw;
+                    bottom: 0.2vw;
+                    flex: 0 0 1.82vw;
                     width: 1.82vw;
                     margin-right: 0.6vw;
 
@@ -1857,7 +1864,8 @@
             }
         }
         &__all {
-            width: 17.44vw;
+            width: 22.52vw;
+            aspect-ratio: 173 / 54;
             margin: 3.64vw auto 0;
         }
     }
@@ -1974,7 +1982,7 @@
             margin: 0 auto 9.63vw 16.53vw;
         }
         .c-recipe-card-wrapper-link {
-            &:nth-child(5) {
+            &:nth-child(4) {
                 display: block;
             }
         }
@@ -2731,8 +2739,8 @@
             }
         }
         .c-shop-card-list {
-            width: 52.08vw;
-            gap: 1.04vw;
+            width: min(1000px, calc(100% - 24px));
+            gap: 20px;
 
             .c-slider--btn {
                 position: absolute;
@@ -2751,48 +2759,53 @@
             }
 
             .c-shop-card {
-                width: 12.18vw;
-                padding: 1.25vw 1.04vw 0.89vw 1.04vw;
-                border-radius: 0.52vw;
+                flex: 0 0 234px;
+                width: 234px;
+                height: 324px;
+                padding: 21px 16px 16px 19px;
+                border-radius: 10px;
 
                 &__name {
-                    font-size: calc(1.04vw * var(--pc-font-scale));
+                    font-size: 20px;
                     padding-bottom: 2px;
-                    margin: 0 auto 1.30vw;
+                    margin: 0 auto 25px;
                 }
                 &__wrapper {
-                    font-size: calc(0.93vw * var(--pc-font-scale));
+                    font-size: 18px;
+                    line-height: 26px;
 
                     &:first-of-type {
-                        margin-bottom: 0.78vw;
-                    }
-                    &:last-of-type {
-                        align-items: center;
+                        margin-bottom: 15px;
                     }
                 }
                 &__address {
                     position: relative;
-                    bottom: -0.12vw;
-                    width: 0.72vw;
-                    margin-right: 0.41vw;
+                    bottom: -4px;
+                    flex: 0 0 14px;
+                    width: 14px;
+                    margin-right: 6px;
 
                     &__link {
                         display: block;
-                        font-size: calc(0.72vw * var(--pc-font-scale));
+                        font-size: 14px;
                         margin-left: 0;
-                        margin-top: 0.67vw;
+                        margin-top: 12px;
                     }
                 }
                 &__time {
-                    width: 0.78vw;
-                    margin-right: 0.41vw;
+                    position: relative;
+                    top: 6px;
+                    flex: 0 0 15px;
+                    width: 15px;
+                    margin-right: 10px;
                 }
                 &__link {
-                    margin-top: 1vw;
+                    width: 191px;
+                    margin-top: auto;
 
                     .c-btn--common--blue {
-                        width: 9.92vw;
-                        font-size: calc(0.83vw * var(--pc-font-scale));
+                        width: 191px;
+                        font-size: 16px;
                     }
                 }
             }
@@ -2804,6 +2817,11 @@
             &__dot {
                 width: 0.41vw;
             }
+        }
+        &__all {
+            width: 10.80vw;
+            aspect-ratio: 207.38 / 65;
+            margin: 1.87vw auto 0;
         }
     }
     &__campaign {
@@ -3160,4 +3178,63 @@
         }
     }
 }
+}
+
+// ノートPCでは、デスクトップ用の固定サイズを画面幅に合わせて縮小する
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .p-front-page__shop {
+        .c-shop-card-list {
+            width: 52.08vw;
+            gap: 1.04vw;
+
+            .c-shop-card {
+                flex: 0 0 12.18vw;
+                width: 12.18vw;
+                height: 16.88vw;
+                padding: 1.25vw 1.04vw 0.89vw;
+                border-radius: 0.52vw;
+
+                &__name {
+                    font-size: calc(1.04vw * var(--pc-font-scale));
+                    margin: 0 auto 1.3vw;
+                }
+
+                &__wrapper {
+                    font-size: calc(0.93vw * var(--pc-font-scale));
+                    line-height: 1.45;
+
+                    &:first-of-type {
+                        margin-bottom: 0.78vw;
+                    }
+                }
+
+                &__address {
+                    bottom: -0.12vw;
+                    flex: 0 0 0.72vw;
+                    width: 0.72vw;
+                    margin-right: 0.41vw;
+
+                    &__link {
+                        font-size: calc(0.72vw * var(--pc-font-scale));
+                        margin-top: 0.67vw;
+                    }
+                }
+
+                &__time {
+                    flex: 0 0 0.78vw;
+                    width: 0.78vw;
+                    margin-right: 0.41vw;
+                }
+
+                &__link {
+                    width: 9.92vw;
+
+                    .c-btn--common--blue {
+                        width: 9.92vw;
+                        font-size: calc(0.83vw * var(--pc-font-scale));
+                    }
+                }
+            }
+        }
+    }
 }

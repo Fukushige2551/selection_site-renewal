@@ -1,4 +1,3 @@
-<main>
-    <h1>エラーが発生しました。</h1>
-    <p>※ フォールバックして表示しています。-> index.php</p>
-</main>
+<?php get_header(); ?>
+
+<?php get_footer(); ?>

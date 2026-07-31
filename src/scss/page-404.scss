@@ -1,0 +1,212 @@
+@use "foundation/global" as *;
+
+.p-404 {
+    background-color: #fff;
+    padding-bottom: 27.17vw;
+
+    &__content {
+        width: 87.44vw;
+        margin: 10.77vw auto 0;
+        text-align: center;
+    }
+
+    &__message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 72.56vw;
+        min-height: 20.51vw;
+        margin: 0 auto;
+        padding: 4.36vw 3vw 4.1vw;
+        border-radius: 4.1vw;
+        background-color: #f7f7f7;
+        box-sizing: border-box;
+    }
+
+    &__title {
+        color: #000;
+        font-family: $font-family-ZenKaku;
+        font-size: 6.66vw;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 0.04em;
+    }
+
+    &__text {
+        margin-top: 2.31vw;
+        color: #000;
+        font-family: $font-family-ZenKaku;
+        font-size: 3.58vw;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+    }
+
+    &__lead {
+        margin: 8.97vw auto 0;
+        color: #111;
+        font-family: $font-family-ZenKaku;
+        font-size: 3.59vw;
+        font-weight: 400;
+        line-height: 1.86;
+        letter-spacing: 0.02em;
+    }
+
+    &__lead-desktop {
+        display: none;
+    }
+
+    &__button {
+        @include backgroundImg("#{$img-path}page/404/btn_top.svg");
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        aspect-ratio: 341 / 48;
+        margin-top: 7.69vw;
+        color: #fff;
+        font-family: $font-family-ZenKaku;
+        font-size: 4.1vw;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.12em;
+        text-decoration: none;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .p-404 {
+        padding-bottom: 14.32vw;
+
+        &__content {
+            width: 58.2vw;
+            margin-top: 7.42vw;
+        }
+
+        &__message {
+            width: 44.4vw;
+            min-height: 12.63vw;
+            padding: 2.6vw 2vw 2.47vw;
+            border-radius: 2.08vw;
+        }
+
+        &__title {
+            font-size: 3.13vw;
+        }
+
+        &__text {
+            margin-top: 1.17vw;
+            font-size: 1.69vw;
+        }
+
+        &__lead {
+            margin-top: 5.08vw;
+            font-size: 1.82vw;
+            line-height: 1.86;
+        }
+
+        &__button {
+            width: 44.4vw;
+            margin: 4.69vw auto 0;
+            font-size: 2.08vw;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .p-404 {
+        padding-bottom: 9.38vw;
+
+        &__content {
+            width: 42vw;
+            margin-top: 4.69vw;
+        }
+
+        &__message {
+            width: 33.3vw;
+            min-height: 9.38vw;
+            padding: 1.95vw 1.56vw 1.86vw;
+            border-radius: 1.56vw;
+        }
+
+        &__title {
+            font-size: 2.34vw;
+        }
+
+        &__text {
+            margin-top: 0.88vw;
+            font-size: 1.27vw;
+        }
+
+        &__lead {
+            margin-top: 3.52vw;
+            font-size: 1.37vw;
+            line-height: 1.86;
+        }
+
+        &__button {
+            width: 33.3vw;
+            margin: 3.52vw auto 0;
+            font-size: 1.56vw;
+            transition: opacity 0.3s ease;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+@media screen and (min-width: 1280px) {
+    .p-404 {
+        padding-bottom: 4vw;
+
+        &__content {
+            width: 27.4vw;
+            margin-top: 5.52vw;
+        }
+
+        &__message {
+            width: 25.83vw;
+            min-height: 6.25vw;
+            padding: 1.46vw 1.04vw 1.41vw;
+            border-radius: 0.89vw;
+        }
+
+        &__title {
+            font-size: 1.56vw;
+        }
+
+        &__text {
+            margin-top: 0.83vw;
+            font-size: 0.83vw;
+        }
+
+        &__lead {
+            display: block;
+            margin-top: 2.24vw;
+            font-size: 0.83vw;
+            line-height: 2.1;
+            letter-spacing: 0.03em;
+        }
+
+        &__lead-sp {
+            display: none;
+        }
+
+        &__lead-desktop {
+            display: inline;
+        }
+
+        &__button {
+            width: 17.76vw;
+            margin: 2.24vw auto 0;
+            font-size: 0.83vw;
+            transition: opacity 0.3s ease;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}

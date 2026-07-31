@@ -44,14 +44,14 @@
 
 <!-- ヘッダー(SP) start -->
 <header class="l-header l-header--sp">
-    <a href="/" class="l-header__btn l-header__btn__bascket js-toggle--nav js-transparent">
+    <a href="https://foods-selection.shops.jp/" class="l-header__btn l-header__btn__bascket js-toggle--nav js-transparent" target="_blank" rel="noopener noreferrer">
         <picture class="l-header__bascket">
             <source srcset="<?php echo get_template_directory_uri(); ?>/img/component/btn_bascket.webp" type="image/webp">
             <img class="l-header__bascket__img" src="<?php echo get_template_directory_uri(); ?>/img/component/btn_bascket.png" alt="オンラインショップ">
         </picture>
     </a>
 
-    <a href="/" class="l-header__logo js-transparent" aria-label="トップページへ"></a>
+    <a href="<?php echo esc_url(home_url('/')); ?>" class="l-header__logo js-transparent" aria-label="トップページへ"></a>
 
     <button class="l-header__btn js-toggle--nav" aria-label="メニューを開く" aria-expanded="false" type="button">
         <picture class="l-header__hamburger">
@@ -68,42 +68,42 @@
     <div class="l-header__nav__inner">
         <div class="l-header__nav__group shop-info u-border-top--header js-toggle--pulldown">
             <p class="l-header__nav__group__title c-btn--pulldown">
-                <a href="/shop" class="l-header__nav__group__title--position-fix">チラシ・店舗情報</a>
+                <a href="<?php echo esc_url(get_post_type_archive_link('shop')); ?>" class="l-header__nav__group__title--position-fix">チラシ・店舗情報</a>
             </p>
         </div>
 
         <div class="shop-info__group js-toggle--pulldown">
             <p class="shop-info__prefecture c-btn--pulldown">千葉県</p>
             <ul>
-                <li class="shop-info__shop"><a href="">行徳店</a></li>
-                <li class="shop-info__shop"><a href="">西船橋店</a></li>
-                <li class="shop-info__shop"><a href="">西原店</a></li>
-                <li class="shop-info__shop"><a href="">花野井店</a></li>
-                <li class="shop-info__shop"><a href="">しいの木台店</a></li>
-                <li class="shop-info__shop"><a href="">八潮店</a></li>
-                <li class="shop-info__shop"><a href="">青葉台店</a></li>
-                <li class="shop-info__shop"><a href="">松戸店</a></li>
+                <li class="shop-info__shop"><a href="<?php echo esc_url(home_url('/shop/gyoutoku/')); ?>">行徳店</a></li>
+                <li class="shop-info__shop"><a href="<?php echo esc_url(home_url('/shop/nishifunabashi/')); ?>">西船橋店</a></li>
+                <li class="shop-info__shop"><a href="<?php echo esc_url(home_url('/shop/nishihara/')); ?>">西原店</a></li>
+                <li class="shop-info__shop"><a href="<?php echo esc_url(home_url('/shop/hananoi/')); ?>">花野井店</a></li>
+                <li class="shop-info__shop"><a href="<?php echo esc_url(home_url('/shop/shiinokidai/')); ?>">しいの木台店</a></li>
+                <li class="shop-info__shop"><a href="<?php echo esc_url(home_url('/shop/yashio/')); ?>">八潮店</a></li>
+                <li class="shop-info__shop"><a href="<?php echo esc_url(home_url('/shop/aobadai/')); ?>">青葉台店</a></li>
+                <li class="shop-info__shop"><a href="<?php echo esc_url(home_url('/shop/matsudo/')); ?>">松戸店</a></li>
             </ul>
         </div>
 
         <div class="shop-info__group js-toggle--pulldown">
             <p class="shop-info__prefecture c-btn--pulldown">東京都</p>
             <ul>
-                <li class="shop-info__shop"><a href="">西新井店</a></li>
+                <li class="shop-info__shop"><a href="<?php echo esc_url(home_url('/shop/nishiarai/')); ?>">西新井店</a></li>
             </ul>
         </div>
 
         <div class="shop-info__group js-toggle--pulldown is-saitama">
             <p class="shop-info__prefecture c-btn--pulldown">埼玉県</p>
             <ul>
-                <li class="shop-info__shop"><a href="">三郷店</a></li>
-                <li class="shop-info__shop u-border-bottom--none"><a href="">八潮店</a></li>
+                <li class="shop-info__shop"><a href="<?php echo esc_url(home_url('/shop/misato/')); ?>">三郷店</a></li>
+                <li class="shop-info__shop u-border-bottom--none"><a href="<?php echo esc_url(home_url('/shop/yashio/')); ?>">八潮店</a></li>
             </ul>
         </div>
 
         <div class="l-header__nav__group u-border-top--header js-toggle--pulldown">
             <p class="l-header__nav__group__title c-btn--pulldown">
-                <span class="l-header__nav__group__title--position-fix">レシピ</span>
+                <a href="<?php echo esc_url(get_post_type_archive_link('recipe')); ?>" class="l-header__nav__group__title--position-fix">レシピ</a>
             </p>
         </div>
         <div class="l-header__nav__group">
@@ -113,7 +113,7 @@
         </div>
         <div class="l-header__nav__group">
             <p class="l-header__nav__group__title">
-                <span class="l-header__nav__group__title--position-fix">お問い合わせ</span>
+                <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="l-header__nav__group__title--position-fix">お問い合わせ</a>
             </p>
         </div>
 
@@ -134,16 +134,16 @@
 <header class="l-header-pc" aria-label="PCヘッダー">
     <div class="l-header-pc__inner">
         <nav class="l-header-pc__nav" aria-label="グローバルナビゲーション">
-            <a class="l-header-pc__nav__link" href="">チラシ・店舗情報</a>
-            <a class="l-header-pc__nav__link" href="">レシピ</a>
-            <a class="l-header-pc__nav__link" href="">
+            <a class="l-header-pc__nav__link" href="<?php echo esc_url(get_post_type_archive_link('shop')); ?>">チラシ・店舗情報</a>
+            <a class="l-header-pc__nav__link" href="<?php echo esc_url(get_post_type_archive_link('recipe')); ?>">レシピ</a>
+            <a class="l-header-pc__nav__link" href="<?php echo esc_url(home_url('/')); ?>">
                 <picture>
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/header/webp/header-logo-pc.webp" type="image/webp">
                     <img class="l-header-pc__nav__logo" src="<?php echo get_template_directory_uri(); ?>/img/header/header-logo-pc.png" alt="セレクションのロゴ画像">
                 </picture>
             </a>
             <a class="l-header-pc__nav__link recruit--part-time" href="">パート・アルバイト募集</a>
-            <a class="l-header-pc__nav__link" href="">お問い合わせ</a>
+            <a class="l-header-pc__nav__link" href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a>
             <a class="l-header-pc__nav__link online-shop" href="https://foods-selection.shops.jp/" target="_blank" rel="noopener noreferrer">
                 <picture>
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/component/btn_bascket--white.webp" type="image/webp">

@@ -526,6 +526,16 @@ font-family: $font-family-ZenKakuAntique;
 /**
 * UIコンポーネント
 */
+// パンくず
+// .c-breadcrumb {
+//     font-size: 1.6vw;
+//     margin: 0 3.8vw 3vw;
+
+//     &__arrow {
+//         margin: 0 0.5vw 0 1vw;
+//         width: 0.8vw;
+//     }
+// }
 // メイン
 .c-main {
     padding-top: $header-height-tab;
@@ -754,7 +764,7 @@ font-size: 0.83vw;
     font-weight: 400;
     line-height: 1.23;
     letter-spacing: 0.05em;
-    padding-top: 3.84vw;
+    padding-top: 5vw;
     margin-left: 5.38vw;
 
     a,
