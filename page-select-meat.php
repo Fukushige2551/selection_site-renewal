@@ -39,10 +39,20 @@ get_header();
         <div class="p-page-select-meat__message__bg">
             <div class="p-page-select-meat__message__header">
                 <div class="p-page-select-meat__message--bg">
-                    <img class="p-page-select-meat__message--bubbleSp" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select-meat/svg/img_message-sp.svg"alt="吹き出し">
-                    <img class="p-page-select-meat__message--bubblePc" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select-meat/svg/img_message-pc.svg"alt="吹き出し">
-                    <img class="p-page-select-meat__message--buyer" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select-meat/svg/img_message-buyer.svg"alt="バイヤー">
-                     <div class="p-page-select-meat__message--text">
+                    <div class="p-page-select-meat__message--shape" aria-hidden="true">
+                        <span class="p-page-select-meat__message--shapeBase"></span>
+                        <span class="p-page-select-meat__message--blob p-page-select-meat__message--blob-top"></span>
+                        <span class="p-page-select-meat__message--blob p-page-select-meat__message--blob-bottom"></span>
+                        <span class="p-page-select-meat__message--blob p-page-select-meat__message--blob-l1"></span>
+                        <span class="p-page-select-meat__message--blob p-page-select-meat__message--blob-l2"></span>
+                        <span class="p-page-select-meat__message--blob p-page-select-meat__message--blob-r1"></span>
+                        <span class="p-page-select-meat__message--blob p-page-select-meat__message--blob-r2"></span>
+                    </div>
+
+                    <img class="p-page-select-meat__message--bubbleSp" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select-meat/svg/img_message-sp.svg" alt="吹き出し" >
+                    <img class="p-page-select-meat__message--bubblePc"  src="<?php echo get_template_directory_uri(); ?>/img/page/page-select-meat/svg/img_message-pc.svg" alt="吹き出し" >
+                    <img class="p-page-select-meat__message--buyer" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select-meat/svg/img_message-buyer.svg" alt="バイヤー">
+                    <div class="p-page-select-meat__message--text">
                         <p>
                             毎日の使いやすさと、週末のごちそう感。<br>
                             その両方を叶える“肉の売場”。<br>
