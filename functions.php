@@ -26,6 +26,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-page-privacy-js',
         'foods-page-shop-js',
         'foods-page-select-js',
+        'foods-page-select-fish-js',
         'foods-single-shop-js',
         'foods-archive-news-js',
         'foods-single-news-js',
@@ -140,6 +141,7 @@ function foods_theme_scripts() {
     $page_privacy_entry = 'src/js/page-privacy.js';
     $page_shop_entry  = 'src/js/page-shop.js';
     $page_select_entry  = 'src/js/page-select.js';
+    $page_select_fish_entry = 'src/js/page-select-fish.js';
     $single_shop_entry = 'src/js/single-shop.js';
     $archive_news_entry = 'src/js/archive-news.js';
     $single_news_entry = 'src/js/single-news.js';
@@ -226,6 +228,17 @@ function foods_theme_scripts() {
         foods_enqueue_vite_entry(
             'foods-page-select',
             $page_select_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    // page-select-fish.php 専用アセット
+    if (is_page() && basename((string) get_page_template()) === 'page-select-fish.php') {
+        foods_enqueue_vite_entry(
+            'foods-page-select-fish',
+            $page_select_fish_entry,
             $dev_server,
             $manifest,
             $is_local

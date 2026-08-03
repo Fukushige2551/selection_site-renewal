@@ -1,0 +1,416 @@
+@use "foundation/global" as *;
+
+.p-page-select-fish {
+    &__intro {
+        text-align: center;
+    }
+
+    &__intro-title {
+        font-family: $font-family-ZenKaku;
+        font-size: 20px;
+        font-weight: 900;
+        letter-spacing: 3px;
+        line-height: 1;
+        margin: 0;
+    }
+
+    &__intro-description {
+        font-family: $font-family-ZenKaku;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 30px;
+        margin: 20px auto 0;
+        max-width: 321px;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    &__intro-image {
+        display: block;
+        height: auto;
+        margin: 20px auto 0;
+        width: min(363px, calc(100% - 27px));
+    }
+
+    &__buyer {
+        height: 927px;
+        margin-top: 28px;
+        position: relative;
+    }
+
+    &__buyer-bg {
+        height: 868px;
+        left: 50%;
+        position: absolute;
+        top: 59px;
+        transform: translateX(-50%) rotate(-0.5deg);
+        width: min(362px, calc(100% - 28px));
+    }
+
+    &__buyer-heading {
+        height: 143px;
+        left: 36px;
+        position: absolute;
+        top: 61px;
+        width: 234px;
+        z-index: 2;
+    }
+
+    &__buyer-balloon {
+        height: 143px;
+        inset: 0;
+        position: absolute;
+        width: 234px;
+    }
+
+    &__buyer-title {
+        color: #103675;
+        font-family: "Zen Maru Gothic", sans-serif;
+        font-size: 18px;
+        font-weight: 900;
+        left: 22px;
+        letter-spacing: 0.9px;
+        line-height: 1;
+        margin: 0;
+        position: absolute;
+        top: 16px;
+        white-space: nowrap;
+    }
+
+    &__buyer-decoration {
+        height: auto;
+        left: 34px;
+        position: absolute;
+        top: 43px;
+        width: 142px;
+    }
+
+    &__buyer-catch {
+        font-family: "Zen Kurenaido", cursive;
+        font-size: 20px;
+        left: 20px;
+        letter-spacing: 3px;
+        line-height: 30px;
+        margin: 0;
+        position: absolute;
+        text-align: center;
+        top: 55px;
+        transform: rotate(-0.97deg);
+        width: 170px;
+    }
+
+    &__buyer-manager {
+        height: 142px;
+        object-fit: contain;
+        position: absolute;
+        right: 9px;
+        top: 0;
+        width: 144px;
+        z-index: 3;
+    }
+
+    &__buyer-message {
+        font-family: $font-family-ZenKakuAntique;
+        font-size: 16px;
+        font-weight: 400;
+        left: 50%;
+        line-height: 30px;
+        margin: 0;
+        position: absolute;
+        text-align: center;
+        top: 205px;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        width: calc(100% - 40px);
+        z-index: 1;
+    }
+
+    &__field {
+        background-image: url("#{$img-path}page/page-select-fish/field-bg.png");
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        padding: 131px 27px 72px;
+    }
+
+    &__field-header {
+        text-align: center;
+    }
+
+    &__field-pickup {
+        display: block;
+        height: auto;
+        margin: 0 auto;
+        width: 138px;
+    }
+
+    &__field-title-wrap {
+        height: 68px;
+        margin: -3px auto 0;
+        position: relative;
+        width: 250px;
+    }
+
+    &__field-title-bg {
+        height: 68px;
+        inset: 0;
+        position: absolute;
+        width: 250px;
+    }
+
+    &__field-title {
+        font-family: $font-family-ZenKaku;
+        font-size: 20px;
+        font-weight: 900;
+        left: 50%;
+        letter-spacing: 3px;
+        line-height: 1;
+        margin: 0;
+        position: absolute;
+        top: 22px;
+        transform: translateX(-50%);
+        white-space: nowrap;
+    }
+
+    &__field-article {
+        margin-top: 40px;
+    }
+
+    &__field-shop {
+        font-family: "Zen Maru Gothic", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        line-height: 33px;
+        margin: 0;
+        text-align: center;
+
+        span {
+            display: block;
+            font-size: 18px;
+        }
+
+        small {
+            font-size: 14px;
+        }
+    }
+
+    &__field-main-image {
+        display: block;
+        height: auto;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    &__field-lead,
+    &__field-copy {
+        font-family: $font-family-ZenKakuAntique;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 30px;
+    }
+
+    &__field-lead {
+        margin: 20px 0 0;
+    }
+
+    &__field-heading {
+        font-family: "Zen Maru Gothic", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 2.7px;
+        line-height: 30px;
+        margin: 22px 0 0;
+    }
+
+    &__field-copy {
+        margin-top: 20px;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    &__field-gallery {
+        display: grid;
+        gap: 8px 16px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 22px;
+
+        img {
+            display: block;
+            height: auto;
+            width: 100%;
+        }
+    }
+
+    &__field-gallery--three img:last-child {
+        grid-column: 1;
+    }
+
+    &__field-divider {
+        border: 0;
+        border-top: 1px solid #000;
+        margin: 34px 0 0;
+    }
+
+    &__more {
+        min-height: 818px;
+        padding: 84px 14px 180px;
+        position: relative;
+
+        &::before {
+            background-image: url("#{$img-path}page/page-select-fish/more-bg-texture.png");
+            background-position: center;
+            background-size: cover;
+            content: "";
+            inset: 0;
+            mask-image: url("#{$img-path}page/page-select-fish/more-bg-mask.svg");
+            mask-position: center;
+            mask-repeat: no-repeat;
+            mask-size: 100% 100%;
+            opacity: 0.5;
+            position: absolute;
+            z-index: 0;
+        }
+
+        > * {
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    &__more-title {
+        font-family: $font-family-ZenKaku;
+        font-size: 20px;
+        font-weight: 900;
+        letter-spacing: 3px;
+        line-height: 1.45;
+        margin: 0;
+        text-align: center;
+    }
+
+    &__more-list {
+        display: grid;
+        gap: 15px;
+        margin-top: 28px;
+    }
+
+    &__more-card {
+        background-color: #fff;
+        border-radius: 10px;
+        color: #000;
+        display: block;
+        min-height: 139px;
+        padding: 15px 12px 11px;
+        text-decoration: none;
+    }
+
+    &__more-card-header {
+        align-items: center;
+        display: flex;
+        gap: 9px;
+
+        time {
+            color: #00a684;
+            font-family: $font-family-SecularOne;
+            font-size: 12px;
+            letter-spacing: 1.2px;
+            line-height: 1;
+        }
+    }
+
+    &__more-category {
+        border: 1px solid currentColor;
+        border-radius: 5px;
+        font-family: $font-family-NotoSans;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 18px;
+        padding: 0 6px;
+
+        &--notice {
+            color: #e60039;
+        }
+
+        &--campaign {
+            color: #a7a219;
+        }
+
+        &--shop {
+            color: #166db4;
+        }
+
+        &--commitment {
+            color: #00a684;
+        }
+
+        &--important {
+            color: #d95400;
+        }
+    }
+
+    &__more-card-body {
+        display: grid;
+        gap: 15px;
+        grid-template-columns: 100px minmax(0, 1fr);
+        margin-top: 12px;
+
+        img {
+            border-radius: 3px;
+            height: 70px;
+            object-fit: cover;
+            width: 100px;
+        }
+
+        p {
+            display: -webkit-box;
+            font-family: $font-family-ZenKakuAntique;
+            font-size: 16px;
+            line-height: 30px;
+            margin: -5px 0 0;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+        }
+    }
+
+    &__more-commitment-link {
+        color: #10a3ff;
+        display: block;
+        font-family: $font-family-ZenKakuAntique;
+        font-size: 16px;
+        margin: 15px 0 0 auto;
+        text-decoration: underline;
+        width: fit-content;
+    }
+
+    &__more-back {
+        color: #fff;
+        display: block;
+        height: 54px;
+        margin: 40px auto 0;
+        position: relative;
+        width: 173px;
+
+        img {
+            height: 54px;
+            inset: 0;
+            position: absolute;
+            width: 173px;
+        }
+
+        span {
+            font-family: $font-family-NotoSans;
+            font-size: 16px;
+            font-weight: 700;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+        }
+    }
+}
