@@ -16,6 +16,8 @@
 @use 'object/component';
 @use 'object/utility';
 @use 'page-404';
+@use 'page-select';
+@use 'page-select-detail';
 
 :root {
 	--pc-font-scale: 1;
