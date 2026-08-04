@@ -705,215 +705,361 @@
 	}
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1440px) {
 	.p-page-select-meat {
 		&__hero {
-			padding-top: 10vw;
+			width: min(760px, calc(100% - 48px));
+			margin: 0 auto;
+			padding-top: 120px;
 
 			.c-section__title {
+				margin: 0;
+				font-family: $font-family-ZenKaku;
 				font-size: 2rem;
+				font-weight: 900;
+				line-height: 1.45;
+				letter-spacing: 0.15em;
+			}
+			&__inner {
+				width: 100%;
 			}
 			&__text {
+				width: 100%;
+				margin: 29px auto 0;
 				font-size: 1.6rem;
-				line-height: 2;
+				line-height: 3rem;
 			}
 			&__img {
 				&--top {
-					width: 74vw;
+					width: 100%;
+					height: auto;
+					margin: 29px auto 0;
 				}
 			}
 		}
 		&__message {
-            &--bg {
-                padding: 18vw 3.8vw 4vw;
-                width: 70vw;
+			width: min(760px, calc(100% - 48px));
+			margin: 15px auto 0;
+
+			&__bg,
+			&__header {
+				width: 100%;
+			}
+
+			&--bg {
+				width: 100%;
+				height: 744px;
+				margin: 0;
+				padding: 214px 54px 44px;
+				box-sizing: border-box;
+			}
+			&--shape {
+				inset: 14px 0 0;
+			}
+			&--shapeBase {
+				inset: 0;
+				border-radius: 84px 84px 58px 58px / 75px 75px 53px 53px;
+			}
+			&--blob {
+				display: none;
 			}
 			&--bubbleSp {
 				display: none;
 			}
 			&--bubblePc {
 				display: block;
-				width: 33vw;
-				top: 3vw;
-				left: 13vw;
+				width: 323px;
+				height: 143px;
+				top: 35px;
+				left: 173px;
 				z-index: 3;
 			}
 			&--buyer {
-				width: 15vw;
-				top: -1vw;
-				right:  20vw;
+				width: 144px;
+				height: 142px;
+				top: 0;
+				right: 147px;
 			}
 			&--text {
+				width: 652px;
+				margin: 0 auto;
+				font-family: $font-family-ZenKakuAntique;
 				font-size: 1.6rem;
-				margin: 3vw auto 0;
-				line-height: 2;
+				font-weight: 400;
+				line-height: 3rem;
+
+				p {
+					margin: 0;
+				}
 			}
 		}
 
 		&__about {
+			z-index: 1;
 			overflow: hidden;
+			margin-top: -298px;
+
 			&__bg {
-				padding: 40vw 3.8vw 16vw;
-				background-size: 1.7vw 1.7vw;
+				padding: 358px 0 234px;
+				background-size: 32px 32px;
+
+				&::before {
+					top: -58px;
+					height: 145px;
+				}
+
+				&::after {
+					bottom: -58px;
+					height: 145px;
+				}
 			}
 			&__title {
+				&--wrap {
+					width: 271px;
+					height: 102px;
+					margin: 0 auto;
+				}
+
 				&--text {
-					width: 28.4vw;
-					margin: 0 auto 3vw;
-					height: 13.2vw;
+					width: 271px;
+					height: 103px;
+					margin: 0 auto;
+					background-size: 250px 103px;
+
 					& span {
-						font-size: 2.6vw;
-						transform: translateY(7.5vw);
+						font-size: 2rem;
+						font-weight: 900;
+						line-height: 2.3rem;
+						letter-spacing: 0.15em;
+						transform: translateY(54px);
 					}
 				}
 
 				&--decorationPC {
-					left: -14vw;
-					width: 21vw;
-					top: -1vw;
+					left: -190px;
+					width: 336px;
+					top: 8px;
 				}
 			}
 			&__content {
-				width: 74.2vw;
+				width: 760px;
 				margin: 0 auto;
 
+				.p-page-select-meat__about__title--wrap + & {
+					margin-top: 24px;
+				}
+
 				& + & {
-					margin-top: 4.6vw;
+					margin-top: 60px;
+					padding-top: 42px;
+					border-top: 1px dashed #848484;
 				}
 				&--decoration2 {
-					top: 73vw;
-					right: -4vw;
+					top: 1385px;
+					right: -82px;
+					width: 86px;
 				}
 				&--decoration3 {
-					width: 17.1vw;
-					top: -2vw;
-					left: -3.7vw;
+					width: 171px;
+					top: 12px;
+					left: -190px;
 				}
 				&--decoration4 {
 					position: absolute;
-					right: -17vw;
+					right: -190px;
 					display: block;
 					transform: scaleX(-1);
-					width: 16vw;
-					top: -15vw;
+					width: 160px;
+					top: -150px;
 				}
 				&--decoration5 {
-					width: 22.4vw;
-					top: -68vw;
-					left: 57vw;
+					width: 224px;
+					top: -680px;
+					left: 570px;
 				}
 				&--decoration7 {
-					width: 12.4vw;
-					top: 16vw;
-					right: -8vw;
+					width: 124px;
+					top: 160px;
+					right: -80px;
 					display: block;
 					position: absolute;
 				}
 				&--title {
-					line-height: 1.5;
+					margin: 0 0 39px;
+					font-family: $font-family-ZenKaku;
+					font-size: 1.8rem;
+					font-weight: 700;
+					line-height: 3.3rem;
+					letter-spacing: 0.05em;
 					text-align: center;
-					font-size: 1.9vw;
-					margin: 0 0 2vw;
+
 					& span {
-						font-size: 1.3vw;
-						line-height: 2.5;
+						font-size: 1.4rem;
+						line-height: 3.3rem;
 					}
 				}
 				&--image {
 					display: block;
 					width: 100%;
+					height: 475px;
 					margin: 0 auto;
+					border-radius: 40px;
+					object-fit: cover;
 				}
 				p {
 					width: 100%;
-					font-size: 1.5vw;
-					margin: 1vw auto 0;
+					margin: 12px auto 0;
+					font-family: $font-family-ZenKakuAntique;
+					font-size: 1.6rem;
+					font-weight: 400;
+					line-height: 3rem;
 				}
 				&--sub {
-					font-size: 1.75vw;
 					width: 100%;
-					margin: 3vw 0 1vw;
-					text-align: center;
+					margin: 36px 0 23px;
+					font-family: $font-family-ZenKaku;
+					font-size: 1.8rem;
+					font-weight: 700;
+					line-height: 2.5rem;
+					letter-spacing: 0.15em;
+					text-align: left;
 				}
 				&--imgWrap {
 					width: 100%;
-					row-gap: 3.3vw;
-					margin: 2vw auto;
-					padding-bottom: 5vw;
+					margin: 24px auto 0;
+					padding-bottom: 0;
+					gap: 32px;
+					border-bottom: 0;
+
 					.p-page-select-meat__about__content + .p-page-select-meat__about__content & {
-						padding-bottom: 5vw;
+						padding-bottom: 0;
 					}
 				}
 				&--imgSmall {
-					width: 35.5vw;
+					width: 364px;
+					height: 223px;
+					border-radius: 20px;
+					object-fit: cover;
 				}
 			}
 		}
 		&__news {
+			z-index: 1;
+			margin-top: -72px;
+
 			&__bg {
-				padding: 16vw 3.8vw 0;
-				margin: -8vw auto -17vw;
-				height: 86vw;
+				height: 1900px;
+				margin: 0 auto;
+				padding: 135px 0 0;
+				box-sizing: border-box;
+				background-position: center top;
+				background-size: 1920px 1900px;
 			}
 			&__title {
+				width: auto;
+				margin: 0 auto 35px;
+				font-family: $font-family-ZenKaku;
 				font-size: 2rem;
-				margin-bottom: 4vw;
+				font-weight: 900;
+				line-height: 3rem;
+				letter-spacing: 0.15em;
 			}
 			&__decoration6 {
-				width: 17vw;
-				top: -5vw;
-				right: 6vw;
+				display: none;
 			}
 			&__wrap {
 				margin: 0 auto;
-				width: 74vw;
+				width: 760px;
 				height: fit-content;
 			}
 			&__item {
-				padding: 1.5vw;
-				height: auto;
-				border-radius: 1.5vw;
+				height: 173px;
+				padding: 15px 12px 16px;
+				box-sizing: border-box;
+				border-radius: 10px;
 
 				& + & {
-					margin-top: 1.5vw;
+					margin-top: 15px;
 				}
 			}
 			&__head {
-				gap: 2vw;
-				margin-bottom: 1.5vw;
+				gap: 8px;
+				height: 20px;
+				margin-bottom: 17px;
 			}
 			&__date {
+				width: 85px;
+				font-family: "Secular One", sans-serif;
 				font-size: 1.2rem;
+				font-weight: 400;
+				line-height: 1.4;
+				letter-spacing: 0.1em;
 			}
 			&__tag {
-				padding: 0.2vw 1.3vw;
-				border-radius: 0.6vw;
+				height: 20px;
+				padding: 1px 7px;
+				box-sizing: border-box;
+				border-radius: 5px;
 				font-size: 1.3rem;
+				line-height: 1.6rem;
+
+				&--commitment {
+					color: #a27a40;
+					border-color: #a27a40;
+				}
+
+				&--shop-news {
+					color: #199ba7;
+					border-color: #199ba7;
+				}
+
+				&--important {
+					color: #ff5b03;
+					border-color: #ff5b03;
+				}
 			}
 			&__body {
-				gap: 1.8vw;
-				align-items: center;
+				gap: 20px;
+				align-items: flex-start;
 			}
 			&__image {
-				width: 14.6vw;
-				height: 10.2vw;
-				border-radius: 0.6vw;
+				width: 150px;
+				height: 105px;
+				border-radius: 5px;
 			}
 			&__text {
+				width: 566px;
+				font-family: $font-family-ZenKakuAntique;
 				font-size: 1.6rem;
+				font-weight: 400;
+				line-height: 3rem;
 			}
 			&__link {
+				width: fit-content;
 				font-size: 1.6rem;
-				margin: 3vw 0 0 auto;
+				line-height: 2.5rem;
+				margin: 20px 0 0 auto;
 			}
 			&__seeMore {
-				width: 16vw;
-				margin: 4vw auto 0;
+				width: 173px;
+				margin: 21px auto 0;
 			}
 			.c-btn--common--green {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 173px;
+				height: 54px;
 				font-size: 1.6rem;
-				height: 5vw;
 			}
 		}
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.p-page-select-meat + .l-footer {
+		position: relative;
+		z-index: 2;
+		margin-top: -220px;
 	}
 }
