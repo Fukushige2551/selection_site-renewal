@@ -19,6 +19,10 @@
 			line-height: 2.18;
 			margin: 5.2vw auto 0;
 			word-break: keep-all;
+
+			&--pc {
+				display: none;
+			}
 		}
 		&__img {
 			&--top {
@@ -521,6 +525,14 @@
 				line-height: 2.18;
 				margin: 2vw auto 0;
 				word-break: keep-all;
+
+				&--sp:has(+ &--pc) {
+					display: none;
+				}
+
+				&--pc {
+					display: block;
+				}
 			}
 			&__img {
 				&--top {
@@ -1111,6 +1123,136 @@
 				width: 173px;
 				height: 54px;
 				font-size: 1.6rem;
+			}
+		}
+	}
+}
+
+// お魚ページ固有の素材・コンテンツ構造のみを調整する。
+.p-page-select-detail--fish {
+	.p-page-select-detail {
+		&__message {
+			&--heading {
+				position: absolute;
+				top: 11vw;
+				left: 10vw;
+				z-index: 4;
+				width: 48vw;
+				text-align: center;
+			}
+
+			&--title {
+				margin: 0;
+				color: #133973;
+				font-family: $font-family-ZenKaku;
+				font-size: 3.6vw;
+				font-weight: 900;
+				line-height: 1.4;
+			}
+
+			&--decoration {
+				display: block;
+				width: 23vw;
+				margin: 0.5vw auto 0;
+			}
+
+			&--catch {
+				margin: 0.5vw 0 0;
+				font-family: $font-family-ZenKaku;
+				font-size: 4.1vw;
+				font-weight: 500;
+				line-height: 1.5;
+			}
+		}
+
+		&__about {
+			&__content {
+				&--location {
+					display: block;
+					font-size: 3.5vw;
+					line-height: 1.8;
+				}
+
+				&--copy p + p {
+					margin-top: 3vw;
+				}
+
+				&--gallery-three .p-page-select-detail__about__content--imgWrap picture:last-of-type {
+					margin-right: auto;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.p-page-select-detail--fish {
+		.p-page-select-detail {
+			&__message {
+				&--heading {
+					top: 6vw;
+					left: 18vw;
+					width: 34vw;
+				}
+
+				&--title {
+					font-size: 2vw;
+				}
+
+				&--decoration {
+					width: 15vw;
+				}
+
+				&--catch {
+					font-size: 2.2vw;
+				}
+			}
+
+			&__about {
+				&__content--location {
+					font-size: 1.8vw;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.p-page-select-detail--fish {
+		.p-page-select-detail {
+			&__message {
+				&--heading {
+					top: 52px;
+					left: 173px;
+					width: 234px;
+				}
+
+				&--title {
+					font-size: 1.4rem;
+				}
+
+				&--decoration {
+					width: 105px;
+					margin-top: 3px;
+				}
+
+				&--catch {
+					margin-top: 3px;
+					font-size: 1.6rem;
+					line-height: 2.4rem;
+				}
+			}
+			&__about {
+				&__content {
+					&--location {
+						font-size: 1.4rem;
+						line-height: 2.5rem;
+					}
+
+					&--copy p + p {
+						margin-top: 18px;
+					}
+				}
 			}
 		}
 	}

@@ -5,7 +5,9 @@ $news = $config['news'];
 ?>
 <section class="<?php echo esc_attr($block_class); ?>__news">
     <div class="<?php echo esc_attr($block_class); ?>__news__bg">
-        <img class="<?php echo esc_attr($block_class); ?>__news__decoration6" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $news['decoration'])); ?>" alt="<?php echo esc_attr($config['title']); ?>">
+        <?php if (!empty($news['decoration'])) : ?>
+            <img class="<?php echo esc_attr($block_class); ?>__news__decoration6" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $news['decoration'])); ?>" alt="<?php echo esc_attr($config['title']); ?>">
+        <?php endif; ?>
         <h2 class="<?php echo esc_attr($block_class); ?>__news__title"><?php echo esc_html($news['title']); ?></h2>
 
         <div class="<?php echo esc_attr($block_class); ?>__news__wrap">
@@ -13,7 +15,7 @@ $news = $config['news'];
             $news_query = new WP_Query([
                 'post_type' => 'news',
                 'post_status' => 'publish',
-                'posts_per_page' => 6,
+                'posts_per_page' => isset($news['posts_per_page']) ? (int) $news['posts_per_page'] : 6,
                 'orderby' => [
                     'date' => 'DESC',
                     'ID' => 'DESC',

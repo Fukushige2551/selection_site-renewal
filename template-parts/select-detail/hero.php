@@ -17,7 +17,10 @@ $hero = $config['hero'];
 <div class="<?php echo esc_attr($block_class); ?>__hero">
     <h1 class="c-section__title"><?php echo esc_html($config['title']); ?></h1>
     <div class="<?php echo esc_attr($block_class); ?>__hero__inner">
-        <p class="<?php echo esc_attr($block_class); ?>__hero__text"><?php echo wp_kses_post($hero['lead']); ?></p>
+        <p class="<?php echo esc_attr($block_class); ?>__hero__text <?php echo esc_attr($block_class); ?>__hero__text--sp"><?php echo wp_kses_post($hero['lead']); ?></p>
+        <?php if (!empty($hero['lead_pc'])) : ?>
+            <p class="<?php echo esc_attr($block_class); ?>__hero__text <?php echo esc_attr($block_class); ?>__hero__text--pc"><?php echo wp_kses_post($hero['lead_pc']); ?></p>
+        <?php endif; ?>
         <img class="<?php echo esc_attr($block_class); ?>__hero__img--top" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $hero['image'])); ?>" alt="<?php echo esc_attr($hero['image_alt']); ?>">
     </div>
 </div>
