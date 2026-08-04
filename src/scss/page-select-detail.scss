@@ -1,6 +1,6 @@
 @use "foundation/global" as *;
 
-.p-page-select-meat {
+.p-page-select-detail {
 	&__hero {
 		padding-top: 20vw;
 		&__inner {
@@ -40,7 +40,7 @@
 		}
 
 		&--shape {
-			--message-bg: #e7f9f5;
+			--message-bg: var(--select-message-bg, #e7f9f5);
 			position: absolute;
 			inset: 0;
 			z-index: 0;
@@ -141,9 +141,13 @@
 			z-index: 2;
 			width: auto;
 			font-size: 4.1vw;
-			line-height: 2;
+			line-height: 1.875;
 			text-align: center;
 			word-break: keep-all;
+		}
+
+		&--textPc {
+			display: none;
 		}
 	}
 
@@ -155,7 +159,7 @@
 		&__bg {
 			position: relative;
 			padding: 47vw 3.8vw 25vw;
-			background-image: url("#{$img-path}page/page-select-meat/brick.png");
+			background-image: var(--select-about-background);
 			background-repeat: repeat;
 			background-position: left top;
 			background-size: 4vw 4vw;
@@ -178,7 +182,7 @@
 				top: -3vw;
 				height: 15vw;
 
-				background-image: url("#{$img-path}page/page-select-meat/svg/upper_wave.svg");
+				background-image: var(--select-about-wave-sp-top);
 				background-position: center top;
 			}
 
@@ -186,7 +190,7 @@
 				bottom: -6vw;
 				height: 17vw;
 
-				background-image: url("#{$img-path}page/page-select-meat/svg/bottom_wave.svg");
+				background-image: var(--select-about-wave-sp-bottom);
 				background-position: center bottom;
 			}
 		}
@@ -209,7 +213,7 @@
 				text-align: center;
 
 				background: {
-					image: url("#{$img-path}page/page-select-meat/svg/meat_about_title.svg");
+					image: var(--select-about-title-background);
 					repeat: no-repeat;
 					position: center;
 				}
@@ -329,11 +333,11 @@
 				row-gap: 3.3vw;
 				border-bottom: 1px dashed #848484;
 
-				.p-page-select-meat__about__content + .p-page-select-meat__about__content & {
+				.p-page-select-detail__about__content + .p-page-select-detail__about__content & {
 					padding-bottom: 15vw;
 				}
 
-				.p-page-select-meat__about__content:last-child & {
+				.p-page-select-detail__about__content:last-child & {
 					padding-bottom: 0;
 					border-bottom: none;
 				}
@@ -357,7 +361,7 @@
 			margin: -3vw auto -24vw;
 			padding: 16vw 3.8vw 0;
 			background: {
-				image: url("#{$img-path}page/page-select-meat/meat_news_bgSP.png");
+				image: var(--select-news-background-sp);
 				repeat: no-repeat;
 				position: top center;
 				size: 100% auto;
@@ -500,7 +504,7 @@
 	}
 }
 @media screen and (min-width: 768px) {
-	.p-page-select-meat {
+	.p-page-select-detail {
 		&__hero {
 			padding-top: 10vw;
 			.c-section__title {
@@ -629,7 +633,7 @@
 					row-gap: 3.3vw;
 					margin: 2vw auto;
 					padding-bottom: 5vw;
-					.p-page-select-meat__about__content + .p-page-select-meat__about__content & {
+					.p-page-select-detail__about__content + .p-page-select-detail__about__content & {
 						padding-bottom: 5vw;
 					}
 				}
@@ -640,7 +644,7 @@
 		}
 		&__news {
 			&__bg {
-				@include backgroundImg("#{$img-path}page/page-select-meat/meat_news_bgPC.png");
+				background-image: var(--select-news-background-pc);
 				background-repeat: no-repeat;
 				background-position: center top;
 				background-size: auto 100%;
@@ -715,7 +719,7 @@
 // ノートPC・デスクトップPC
 // 1024px以上は、デスクトップ版の固定幅レイアウトを共通で使用する
 @media screen and (min-width: 1024px) {
-	.p-page-select-meat {
+	.p-page-select-detail {
 		&__hero {
 			width: min(760px, calc(100% - 48px));
 			margin: 0 auto;
@@ -764,10 +768,13 @@
 			}
 			&--shape {
 				inset: 14px 0 0;
+				background-image: var(--select-message-background-pc);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 100% 100%;
 			}
 			&--shapeBase {
-				inset: 0;
-				border-radius: 84px 84px 58px 58px / 75px 75px 53px 53px;
+				display: none;
 			}
 			&--blob {
 				display: none;
@@ -801,6 +808,12 @@
 					margin: 0;
 				}
 			}
+			&--textSp {
+				display: none;
+			}
+			&--textPc {
+				display: block;
+			}
 		}
 
 		&__about {
@@ -817,14 +830,14 @@
 				&::before {
 					top: 0;
 					height: 8.28125vw;
-					background-image: url("#{$img-path}page/page-select-meat/svg/meat_about_wave-top-pc.svg");
+					background-image: var(--select-about-wave-pc-top);
 					background-position: center top;
 				}
 
 				&::after {
 					bottom: 0;
 					height: 8.4375vw;
-					background-image: url("#{$img-path}page/page-select-meat/svg/meat_about_wave-bottom-pc.svg");
+					background-image: var(--select-about-wave-pc-bottom);
 					background-position: center bottom;
 				}
 			}
@@ -860,7 +873,7 @@
 				width: 760px;
 				margin: 0 auto;
 
-				.p-page-select-meat__about__title--wrap + & {
+				.p-page-select-detail__about__title--wrap + & {
 					margin-top: 24px;
 				}
 
@@ -946,7 +959,7 @@
 					gap: 32px;
 					border-bottom: 0;
 
-					.p-page-select-meat__about__content + .p-page-select-meat__about__content & {
+					.p-page-select-detail__about__content + .p-page-select-detail__about__content & {
 						padding-bottom: 0;
 					}
 				}
@@ -1076,7 +1089,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-	.p-page-select-meat + .l-footer {
+	.p-page-select-detail + .l-footer {
 		position: relative;
 		z-index: 2;
 		// 1920px幅で約367px重ね、戻るボタンとの間に約100px（5.2083vw）を確保
