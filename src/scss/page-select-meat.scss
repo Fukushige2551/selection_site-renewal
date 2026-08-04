@@ -395,6 +395,10 @@
 			background: #fff;
 			border-radius: 2.5vw;
 
+			&:nth-of-type(n + 3) {
+				display: none;
+			}
+
 			& + & {
 				margin-top: 4vw;
 			}
@@ -805,17 +809,23 @@
 			margin-top: -298px;
 
 			&__bg {
+				box-sizing: border-box;
 				padding: 358px 0 234px;
+				background-position: left top;
 				background-size: 32px 32px;
 
 				&::before {
-					top: -58px;
-					height: 145px;
+					top: 0;
+					height: 8.28125vw;
+					background-image: url("#{$img-path}page/page-select-meat/svg/meat_about_wave-top-pc.svg");
+					background-position: center top;
 				}
 
 				&::after {
-					bottom: -58px;
-					height: 145px;
+					bottom: 0;
+					height: 8.4375vw;
+					background-image: url("#{$img-path}page/page-select-meat/svg/meat_about_wave-bottom-pc.svg");
+					background-position: center bottom;
 				}
 			}
 			&__title {
@@ -953,12 +963,12 @@
 			margin-top: -72px;
 
 			&__bg {
-				height: 1900px;
+				height: auto;
 				margin: 0 auto;
-				padding: 135px 0 0;
+				padding: 135px 0 calc(19.1146vw + 5.2083vw);
 				box-sizing: border-box;
 				background-position: center top;
-				background-size: 1920px 1900px;
+				background-size: 1920px 100%;
 			}
 			&__title {
 				width: auto;
@@ -982,6 +992,10 @@
 				padding: 15px 12px 16px;
 				box-sizing: border-box;
 				border-radius: 10px;
+
+				&:nth-of-type(n + 3) {
+					display: block;
+				}
 
 				& + & {
 					margin-top: 15px;
@@ -1065,6 +1079,7 @@
 	.p-page-select-meat + .l-footer {
 		position: relative;
 		z-index: 2;
-		margin-top: -220px;
+		// 1920px幅で約367px重ね、戻るボタンとの間に約100px（5.2083vw）を確保
+		margin-top: -19.1146vw;
 	}
 }
