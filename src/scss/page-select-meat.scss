@@ -485,8 +485,12 @@
 		}
 
 		.c-btn--common--green {
-			width: auto;
-			height: 13vw;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: auto;
+			aspect-ratio: 268 / 84;
 
 			color: #fff;
 			font-family: $font-family-NotoSans;
@@ -703,18 +707,14 @@
 			}
 			.c-btn--common--green {
 				font-size: 2.6vw;
-				height: 8vw;
 			}
 		}
 	}
 }
 
-// ノートPC：現時点ではタブレット版の設定を継承
-@media screen and (min-width: 1024px) and (max-width: 1279px) {
-}
-
-// デスクトップPC
-@media screen and (min-width: 1280px) {
+// ノートPC・デスクトップPC
+// 1024px以上は、デスクトップ版の固定幅レイアウトを共通で使用する
+@media screen and (min-width: 1024px) {
 	.p-page-select-meat {
 		&__hero {
 			width: min(760px, calc(100% - 48px));
@@ -1075,7 +1075,7 @@
 	}
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
 	.p-page-select-meat + .l-footer {
 		position: relative;
 		z-index: 2;
