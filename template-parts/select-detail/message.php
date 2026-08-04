@@ -9,6 +9,9 @@ $message = $config['message'];
             <div class="<?php echo esc_attr($block_class); ?>__message--bg">
                 <div class="<?php echo esc_attr($block_class); ?>__message--shape" aria-hidden="true">
                     <span class="<?php echo esc_attr($block_class); ?>__message--shapeBase"></span>
+                    <span class="<?php echo esc_attr($block_class); ?>__message--shapeTop"></span>
+                    <span class="<?php echo esc_attr($block_class); ?>__message--shapeMiddle"></span>
+                    <span class="<?php echo esc_attr($block_class); ?>__message--shapeBottom"></span>
                     <span class="<?php echo esc_attr($block_class); ?>__message--blob <?php echo esc_attr($block_class); ?>__message--blob-top"></span>
                     <span class="<?php echo esc_attr($block_class); ?>__message--blob <?php echo esc_attr($block_class); ?>__message--blob-bottom"></span>
                     <span class="<?php echo esc_attr($block_class); ?>__message--blob <?php echo esc_attr($block_class); ?>__message--blob-l1"></span>
