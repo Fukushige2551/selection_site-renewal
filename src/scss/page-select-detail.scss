@@ -367,14 +367,14 @@
 		z-index: -1;
 		&__bg {
 			position: relative;
-			height: 176vw;
+			height: auto;
 			margin: -3vw auto -24vw;
-			padding: 16vw 3.8vw 0;
+			padding: 16vw 3.8vw 32vw;
 			background: {
 				image: var(--select-news-background-sp);
 				repeat: no-repeat;
 				position: top center;
-				size: 100% auto;
+				size: 100% 100%;
 			}
 		}
 
@@ -408,10 +408,6 @@
 
 			background: #fff;
 			border-radius: 2.5vw;
-
-			&:nth-of-type(n + 3) {
-				display: none;
-			}
 
 			& + & {
 				margin-top: 4vw;
@@ -665,10 +661,10 @@
 				background-image: var(--select-news-background-pc);
 				background-repeat: no-repeat;
 				background-position: center top;
-				background-size: auto 100%;
-				padding: 16vw 3.8vw 0;
+				background-size: 100% 100%;
+				padding: 16vw 3.8vw 38vw;
 				margin: -8vw auto -34vw;
-				height: 130vw;
+				height: auto;
 			}
 			&__title {
 				font-size: 2.6vw;
