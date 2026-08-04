@@ -705,7 +705,12 @@
 	}
 }
 
-@media screen and (min-width: 1440px) {
+// ノートPC：現時点ではタブレット版の設定を継承
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+}
+
+// デスクトップPC
+@media screen and (min-width: 1280px) {
 	.p-page-select-meat {
 		&__hero {
 			width: min(760px, calc(100% - 48px));
@@ -1056,7 +1061,7 @@
 	}
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1280px) {
 	.p-page-select-meat + .l-footer {
 		position: relative;
 		z-index: 2;
