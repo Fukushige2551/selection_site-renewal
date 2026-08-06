@@ -137,9 +137,13 @@ function foods_get_select_detail_configs() {
                 'wave_sp_bottom' => '@theme/img/page/page-select-meat/svg/bottom_wave.svg',
                 'wave_pc_top' => '@theme/img/page/page-select-meat/svg/meat_about_wave-top-pc.svg',
                 'wave_pc_bottom' => '@theme/img/page/page-select-meat/svg/meat_about_wave-bottom-pc.svg',
-                'decorations' => [
-                    'title_sp' => ['src' => '@theme/img/page/page-select-meat/svg/meat_about_deco1.svg', 'alt' => '生産現場'],
-                    'title_pc' => ['src' => '@theme/img/page/page-select-meat/svg/meat_about_deco1-pc.svg', 'alt' => '生産現場'],
+                'decorations' => [],
+                'background_decorations' => [
+                    ['key' => 'wave', 'src' => 'wave.svg', 'alt' => ''],
+                    ['key' => 'fisherman', 'src' => 'fisherman.svg', 'alt' => ''],
+                    ['key' => 'cat-and-worker', 'src' => 'cat-and-worker.svg', 'alt' => ''],
+                    ['key' => 'worker', 'src' => 'worker.svg', 'alt' => ''],
+                    ['key' => 'fish', 'src' => 'fish.svg', 'alt' => ''],
                 ],
                 'sections' => [
                     [
@@ -195,7 +199,6 @@ function foods_get_select_detail_configs() {
                 'term' => 'fish',
                 'title' => 'お魚のこだわりをもっと見る',
                 'archive_label' => 'お魚のこだわり一覧',
-                'decoration' => '@theme/img/page/page-select-meat/svg/meat_about_deco6.svg',
                 'background_sp' => '@theme/img/page/page-select-meat/meat_news_bgSP.png',
                 'background_pc' => '@theme/img/page/page-select-meat/meat_news_bgPC.png',
                 'back_image' => 'more-back-button.png',

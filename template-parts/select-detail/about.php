@@ -4,9 +4,18 @@ $block_class = $args['block_class'];
 $about = $config['about'];
 $title_sp = $about['decorations']['title_sp'] ?? null;
 $title_pc = $about['decorations']['title_pc'] ?? null;
+$background_decorations = isset($about['background_decorations']) && is_array($about['background_decorations'])
+    ? $about['background_decorations']
+    : [];
 ?>
 <section class="<?php echo esc_attr($block_class); ?>__about">
     <div class="<?php echo esc_attr($block_class); ?>__about__bg">
+        <?php foreach ($background_decorations as $decoration) : ?>
+            <?php if (!empty($decoration['key']) && !empty($decoration['src'])) : ?>
+                <img class="<?php echo esc_attr($block_class . '__about__backgroundDecoration ' . $block_class . '__about__backgroundDecoration--' . sanitize_html_class($decoration['key'])); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt'] ?? ''); ?>">
+            <?php endif; ?>
+        <?php endforeach; ?>
+
         <div class="<?php echo esc_attr($block_class); ?>__about__title--wrap">
             <?php if (!empty($about['pickup'])) : ?>
                 <img class="<?php echo esc_attr($block_class); ?>__about__title--pickup" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $about['pickup'])); ?>" alt="PICK UP">

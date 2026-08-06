@@ -166,6 +166,13 @@
 		z-index: -2;
 		margin-top: -35vw;
 
+		&__backgroundDecoration {
+			position: absolute;
+			z-index: 3;
+			display: block;
+			pointer-events: none;
+		}
+
 		&__bg {
 			position: relative;
 			padding: 47vw 3.8vw 25vw;
@@ -1126,6 +1133,8 @@
 
 // お魚ページ固有の素材・コンテンツ構造のみを調整する。
 .p-page-select-detail--fish {
+	overflow-x: clip;
+
 	.p-page-select-detail {
 		&__message {
 			&--heading {
@@ -1162,6 +1171,45 @@
 		}
 
 		&__about {
+			z-index: auto;
+
+			&__backgroundDecoration {
+				&--wave {
+					top: 5.87vw;
+					right: -7vw;
+					width: 36.41vw;
+					height: 34.87vw;
+				}
+
+				&--fisherman {
+					top: 53.33vw;
+					left: -0.26vw;
+					width: 24.1vw;
+					height: 21.54vw;
+				}
+
+				&--cat-and-worker {
+					top: 427.95vw;
+					left: 55.9vw;
+					width: 32.99vw;
+					height: 18.46vw;
+				}
+
+				&--worker {
+					top: 850.26vw;
+					left: 4.36vw;
+					width: 26.15vw;
+					height: 26.92vw;
+				}
+
+				&--fish {
+					top: 881.68vw;
+					left: 48.99vw;
+					width: 50.66vw;
+					height: 29.41vw;
+				}
+			}
+
 			&__content {
 				&--location {
 					display: block;
@@ -1205,6 +1253,10 @@
 			}
 
 			&__about {
+				&__backgroundDecoration {
+					display: none;
+				}
+
 				&__content--location {
 					font-size: 1.8vw;
 				}
