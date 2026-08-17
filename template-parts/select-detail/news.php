@@ -5,6 +5,11 @@ $news = $config['news'];
 ?>
 <section class="<?php echo esc_attr($block_class); ?>__news">
     <div class="<?php echo esc_attr($block_class); ?>__news__bg">
+        <?php foreach (($news['foreground_decorations'] ?? []) as $decoration) : ?>
+            <?php if (!empty($decoration['key']) && !empty($decoration['src'])) : ?>
+                <img class="<?php echo esc_attr($block_class . '__news__foregroundDecoration ' . $block_class . '__news__foregroundDecoration--' . sanitize_html_class($decoration['key'])); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt'] ?? ''); ?>">
+            <?php endif; ?>
+        <?php endforeach; ?>
         <?php if (!empty($news['decoration'])) : ?>
             <img class="<?php echo esc_attr($block_class); ?>__news__decoration6" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $news['decoration'])); ?>" alt="<?php echo esc_attr($config['title']); ?>">
         <?php endif; ?>

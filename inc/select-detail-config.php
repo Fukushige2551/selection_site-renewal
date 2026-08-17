@@ -40,7 +40,7 @@ function foods_get_select_detail_configs() {
                 'title_background' => '@theme/img/page/page-select-detail/svg/meat_about_title.svg',
                 'background' => '@theme/img/page/page-select-detail/brick.png',
                 'wave_sp_top' => '@theme/img/page/page-select-detail/svg/upper_wave.svg',
-                'wave_sp_bottom' => '@theme/img/page/page-select-detail/svg/bottom_wave.svg',
+                'wave_sp_bottom' => '@theme/img/page/page-select-detail/svg/about-wave-bottom-sp.svg',
                 'wave_pc_top' => '@theme/img/page/page-select-detail/svg/meat_about_wave-top-pc.svg',
                 'wave_pc_bottom' => '@theme/img/page/page-select-detail/svg/meat_about_wave-bottom-pc.svg',
                 'decorations' => [
@@ -134,7 +134,7 @@ function foods_get_select_detail_configs() {
                 'title_background' => '@theme/img/page/page-select-detail/svg/meat_about_title.svg',
                 'background' => '@theme/img/page/page-select-detail/brick.png',
                 'wave_sp_top' => '@theme/img/page/page-select-detail/svg/upper_wave.svg',
-                'wave_sp_bottom' => '@theme/img/page/page-select-detail/svg/bottom_wave.svg',
+                'wave_sp_bottom' => '@theme/img/page/page-select-detail/svg/about-wave-bottom-sp.svg',
                 'wave_pc_top' => '@theme/img/page/page-select-detail/svg/meat_about_wave-top-pc.svg',
                 'wave_pc_bottom' => '@theme/img/page/page-select-detail/svg/meat_about_wave-bottom-pc.svg',
                 'decorations' => [],
@@ -143,7 +143,6 @@ function foods_get_select_detail_configs() {
                     ['key' => 'fisherman', 'src' => 'svg/fisherman.svg', 'alt' => ''],
                     ['key' => 'cat-and-worker', 'src' => 'svg/cat-and-worker.svg', 'alt' => ''],
                     ['key' => 'worker', 'src' => 'svg/worker.svg', 'alt' => ''],
-                    ['key' => 'fish', 'src' => 'svg/fish.svg', 'alt' => ''],
                 ],
                 'sections' => [
                     [
@@ -199,6 +198,9 @@ function foods_get_select_detail_configs() {
                 'term' => 'fish',
                 'title' => 'お魚のこだわりをもっと見る',
                 'archive_label' => 'お魚のこだわり一覧',
+                'foreground_decorations' => [
+                    ['key' => 'fish', 'src' => 'svg/fish.svg', 'alt' => ''],
+                ],
                 'background_sp' => '@theme/img/page/page-select-detail/meat_news_bgSP.png',
                 'background_pc' => '@theme/img/page/page-select-detail/meat_news_bgPC.png',
             ],

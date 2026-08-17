@@ -26,6 +26,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-page-privacy-js',
         'foods-page-shop-js',
         'foods-page-select-js',
+        'foods-page-select-meat-js',
         'foods-page-select-fish-js',
         'foods-single-shop-js',
         'foods-archive-news-js',
@@ -141,6 +142,7 @@ function foods_theme_scripts() {
     $page_privacy_entry = 'src/js/page-privacy.js';
     $page_shop_entry  = 'src/js/page-shop.js';
     $page_select_entry  = 'src/js/page-select.js';
+    $page_select_meat_entry = 'src/js/page-select-meat.js';
     $page_select_fish_entry = 'src/js/page-select-fish.js';
     $single_shop_entry = 'src/js/single-shop.js';
     $archive_news_entry = 'src/js/archive-news.js';
@@ -235,6 +237,25 @@ function foods_theme_scripts() {
     }
 
     // page-select-fish.php 専用アセット
+    $current_page_template = is_page() ? basename((string) get_page_template()) : '';
+    $current_page_slug = is_page() ? (string) get_post_field('post_name', get_queried_object_id()) : '';
+
+    if (
+        is_page()
+        && (
+            $current_page_template === 'page-select-meat.php'
+            || ($current_page_template === 'page-select-detail.php' && in_array($current_page_slug, ['meat', 'select-meat'], true))
+        )
+    ) {
+        foods_enqueue_vite_entry(
+            'foods-page-select-meat',
+            $page_select_meat_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
     if (is_page() && basename((string) get_page_template()) === 'page-select-fish.php') {
         foods_enqueue_vite_entry(
             'foods-page-select-fish',

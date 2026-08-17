@@ -184,7 +184,7 @@
 
 		&__bg {
 			position: relative;
-			padding: 31vw 3.8vw 25vw;
+			padding: 31vw 3.8vw 34.46vw;
 			background-image: var(--select-about-background);
 			background-repeat: repeat;
 			background-position: left top;
@@ -213,8 +213,8 @@
 			}
 
 			&::after {
-				bottom: -6vw;
-				height: 17vw;
+				bottom: 0;
+				height: 21.8vw;
 
 				background-image: var(--select-about-wave-sp-bottom);
 				background-position: center bottom;
@@ -251,17 +251,6 @@
 				}
 			}
 
-			&--decoration1 {
-				position: absolute;
-				top: 43vw;
-				left: 14vw;
-
-				width: 8.3vw;
-			}
-
-			&--decorationPC {
-				display: none;
-			}
 		}
 
 		&__content {
@@ -273,38 +262,6 @@
 
 			& + & {
 				margin-top: 5.6vw;
-			}
-
-			&--decoration2 {
-				position: absolute;
-				top: 0;
-				right: 5vw;
-				width: 8.6vw;
-			}
-
-			&--decoration3 {
-				position: absolute;
-				top: 12vw;
-				left: -3.7vw;
-				width: 21.1vw;
-			}
-
-			&--decoration4 {
-				position: absolute;
-				top: 12vw;
-				right: -3vw;
-				width: 27.6vw;
-			}
-
-			&--decoration5 {
-				position: absolute;
-				top: 51vw;
-				left: 0;
-				width: 38.4vw;
-			}
-
-			&--decoration7 {
-				display: none;
 			}
 
 			&--title {
@@ -384,7 +341,7 @@
 		&__bg {
 			position: relative;
 			height: auto;
-			margin: -3vw auto -24vw;
+			margin: 3vw auto -24vw;
 			padding: 16vw 3.8vw 32vw;
 			background: {
 				image: var(--select-news-background-sp);
@@ -407,12 +364,11 @@
 			text-align: center;
 		}
 
-		&__decoration6 {
+		&__foregroundDecoration {
 			position: absolute;
-			top: -15vw;
-			right: 4vw;
-
-			width: 32vw;
+			z-index: 10;
+			display: block;
+			pointer-events: none;
 		}
 
 		&__wrap {
@@ -587,6 +543,20 @@
 			&__bg {
 				padding: 50vw 3.8vw 19vw;
 				background-size: 2.5vw 2.5vw;
+
+				&::before {
+					top: 0;
+					height: 8.28125vw;
+					background-image: var(--select-about-wave-pc-top);
+					background-position: center top;
+				}
+
+				&::after {
+					bottom: 0;
+					height: 8.4375vw;
+					background-image: var(--select-about-wave-pc-bottom);
+					background-position: center bottom;
+				}
 			}
 			&__title {
 				&--text {
@@ -601,15 +571,6 @@
 					}
 				}
 
-				&--decoration1 {
-					display: none;
-				}
-				&--decorationPC {
-					display: block;
-					width: 25vw;
-					position: absolute;
-					top:-6vw;
-				}
 			}
 			&__content {
 				width: 91vw;
@@ -617,24 +578,6 @@
 
 				& + & {
 					margin-top: 4.6vw;
-				}
-				&--decoration2 {
-					width: 5.6vw;
-					top: 78vw;
-					right: 5vw;
-				}
-				&--decoration3 {
-					width: 17.1vw;
-					top: -2vw;
-					left: -3.7vw;
-				}
-				&--decoration4 {
-					display: none;
-				}
-				&--decoration5 {
-					width: 26.4vw;
-					top: -85vw;
-					left: 67vw;
 				}
 				&--title {
 					line-height: 1.5;
@@ -689,11 +632,6 @@
 			&__title {
 				font-size: 2.6vw;
 				margin-bottom: 4vw;
-			}
-			&__decoration6 {
-				width: 25vw;
-				top: -9vw;
-				right: 6vw;
 			}
 			&__wrap {
 				margin: 0 auto;
@@ -919,11 +857,6 @@
 					}
 				}
 
-				&--decorationPC {
-					left: -190px;
-					width: 336px;
-					top: 8px;
-				}
 			}
 			&__content {
 				width: 760px;
@@ -937,36 +870,6 @@
 					margin-top: 60px;
 					padding-top: 42px;
 					border-top: 1px dashed #848484;
-				}
-				&--decoration2 {
-					top: 1385px;
-					right: -82px;
-					width: 86px;
-				}
-				&--decoration3 {
-					width: 171px;
-					top: 12px;
-					left: -190px;
-				}
-				&--decoration4 {
-					position: absolute;
-					right: -190px;
-					display: block;
-					transform: scaleX(-1);
-					width: 160px;
-					top: -150px;
-				}
-				&--decoration5 {
-					width: 224px;
-					top: -680px;
-					left: 570px;
-				}
-				&--decoration7 {
-					width: 124px;
-					top: 160px;
-					right: -80px;
-					display: block;
-					position: absolute;
 				}
 				&--title {
 					margin: 0 0 39px;
@@ -1047,9 +950,6 @@
 				font-weight: 900;
 				line-height: 3rem;
 				letter-spacing: 0.15em;
-			}
-			&__decoration6 {
-				display: none;
 			}
 			&__wrap {
 				margin: 0 auto;
@@ -1198,43 +1098,6 @@
 }
 
 // お魚ページ固有の差分は、装飾画像の配置だけに限定する。
-.p-page-select-detail--fish .p-page-select-detail__about__backgroundDecoration {
-	&--fisherman {
-		top: 53.33vw;
-		left: -0.26vw;
-		width: 24.1vw;
-		height: 21.54vw;
-	}
-
-	&--cat-and-worker {
-		top: 427.95vw;
-		left: 55.9vw;
-		width: 32.99vw;
-		height: 18.46vw;
-	}
-
-	&--worker {
-		top: 850.26vw;
-		left: 4.36vw;
-		width: 26.15vw;
-		height: 26.92vw;
-	}
-
-	&--fish {
-		top: 881.68vw;
-		left: 48.99vw;
-		width: 50.66vw;
-		height: 29.41vw;
-	}
-}
-
-.p-page-select-detail--fish .p-page-select-detail__message--backgroundDecoration-wave {
-	right: 2vw;
-	bottom: -14vw;
-	width: 36.41vw;
-	height: 34.87vw;
-}
-
 @media screen and (min-width: 768px) {
 	.p-page-select-detail {
 		&__message {
@@ -1260,14 +1123,6 @@
 		&__about__content--location {
 			font-size: 1.8vw;
 		}
-	}
-
-	.p-page-select-detail--fish .p-page-select-detail__about__backgroundDecoration {
-		display: none;
-	}
-
-	.p-page-select-detail--fish .p-page-select-detail__message--backgroundDecoration-wave {
-		display: none;
 	}
 }
 

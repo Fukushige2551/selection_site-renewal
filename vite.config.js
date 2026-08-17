@@ -33,6 +33,7 @@ export default defineConfig({
                 'page-privacy': path.resolve(__dirname, 'src/js/page-privacy.js'),
                 'page-shop': path.resolve(__dirname, 'src/js/page-shop.js'),
                 'page-select': path.resolve(__dirname, 'src/js/page-select.js'),
+                'page-select-meat': path.resolve(__dirname, 'src/js/page-select-meat.js'),
                 'page-select-fish': path.resolve(__dirname, 'src/js/page-select-fish.js'),
                 'single-shop': path.resolve(__dirname, 'src/js/single-shop.js'),
                 'archive-news': path.resolve(__dirname, 'src/js/archive-news.js'),
