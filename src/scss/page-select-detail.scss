@@ -485,6 +485,59 @@
 		}
 	}
 }
+// ページ固有のコンテンツが存在する場合も、詳細ページ共通の構造として扱う。
+.p-page-select-detail {
+	&__message {
+		&--heading {
+			position: absolute;
+			top: 11vw;
+			left: 10vw;
+			z-index: 4;
+			width: 48vw;
+			text-align: center;
+		}
+
+		&--title {
+			margin: 0;
+			color: #133973;
+			font-family: $font-family-ZenKaku;
+			font-size: 3.6vw;
+			font-weight: 900;
+			line-height: 1.4;
+		}
+
+		&--decoration {
+			display: block;
+			width: 23vw;
+			margin: 0.5vw auto 0;
+		}
+
+		&--catch {
+			margin: 0.5vw 0 0;
+			font-family: $font-family-ZenKaku;
+			font-size: 4.1vw;
+			font-weight: 500;
+			line-height: 1.5;
+		}
+	}
+
+	&__about__content {
+		&--location {
+			display: block;
+			font-size: 3.5vw;
+			line-height: 1.8;
+		}
+
+		&--copy p + p {
+			margin-top: 3vw;
+		}
+
+		&--gallery-three .p-page-select-detail__about__content--imgWrap picture:last-of-type {
+			margin-right: auto;
+		}
+	}
+}
+
 @media screen and (min-width: 768px) {
 	.p-page-select-detail {
 		&__hero {
@@ -514,6 +567,24 @@
 			}
 		}
 		&__message {
+			&--heading {
+				top: 6vw;
+				left: 18vw;
+				width: 34vw;
+			}
+
+			&--title {
+				font-size: 2vw;
+			}
+
+			&--decoration {
+				width: 15vw;
+			}
+
+			&--catch {
+				font-size: 2.2vw;
+			}
+
             &--bg {
                 padding: 25vw 3.8vw 9vw;
 			}
@@ -573,6 +644,9 @@
 
 			}
 			&__content {
+				&--location {
+					font-size: 1.8vw;
+				}
 				width: 91vw;
 				margin: 0 auto;
 
@@ -656,11 +730,6 @@
 				border-radius: 0.8vw;
 
 				font-size: 1.8vw;
-
-				&--campaign {
-					color: #9c9700;
-					border-color: #9c9700;
-				}
 			}
 			&__body {
 				gap: 2.5vw;
@@ -691,6 +760,12 @@
 // ノートPC・デスクトップPC
 // 1024px以上は、デスクトップ版の固定幅レイアウトを共通で使用する
 @media screen and (min-width: 1024px) {
+	.p-page-select-detail + .l-footer {
+		position: relative;
+		z-index: 2;
+		margin-top: -19.1146vw;
+	}
+
 	.p-page-select-detail {
 		&__hero {
 			width: min(760px, calc(100% - 48px));
@@ -725,6 +800,27 @@
 		&__message {
 			width: min(760px, calc(100% - 48px));
 			margin: 15px auto 0;
+
+			&--heading {
+				top: 52px;
+				left: 173px;
+				width: 234px;
+			}
+
+			&--title {
+				font-size: 1.4rem;
+			}
+
+			&--decoration {
+				width: 105px;
+				margin-top: 3px;
+			}
+
+			&--catch {
+				margin-top: 3px;
+				font-size: 1.6rem;
+				line-height: 2.4rem;
+			}
 
 			&__bg,
 			&__header {
@@ -771,9 +867,6 @@
 				mask: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/svg/message_section_bg-pc-bottom.svg") center bottom / 760px 120px no-repeat;
 			}
 			&--blob {
-				display: none;
-			}
-			&--bubbleSp {
 				display: none;
 			}
 			&--bubblePc {
@@ -862,6 +955,15 @@
 				width: 760px;
 				margin: 0 auto;
 
+				&--location {
+					font-size: 1.4rem;
+					line-height: 2.5rem;
+				}
+
+				&--copy p + p {
+					margin-top: 18px;
+				}
+
 				.p-page-select-detail__about__title--wrap + & {
 					margin-top: 24px;
 				}
@@ -886,7 +988,6 @@
 					}
 				}
 				&--image {
-					display: block;
 					width: 100%;
 					height: 475px;
 					margin: 0 auto;
@@ -1033,142 +1134,10 @@
 				margin: 21px auto 0;
 			}
 			.c-btn--common--green {
-				display: flex;
-				align-items: center;
-				justify-content: center;
 				width: 173px;
 				height: 54px;
 				font-size: 1.6rem;
 			}
 		}
-	}
-}
-
-// ページ固有のコンテンツが存在する場合も、詳細ページ共通の構造として扱う。
-.p-page-select-detail {
-	&__message {
-		&--heading {
-			position: absolute;
-			top: 11vw;
-			left: 10vw;
-			z-index: 4;
-			width: 48vw;
-			text-align: center;
-		}
-
-		&--title {
-			margin: 0;
-			color: #133973;
-			font-family: $font-family-ZenKaku;
-			font-size: 3.6vw;
-			font-weight: 900;
-			line-height: 1.4;
-		}
-
-		&--decoration {
-			display: block;
-			width: 23vw;
-			margin: 0.5vw auto 0;
-		}
-
-		&--catch {
-			margin: 0.5vw 0 0;
-			font-family: $font-family-ZenKaku;
-			font-size: 4.1vw;
-			font-weight: 500;
-			line-height: 1.5;
-		}
-	}
-
-	&__about__content {
-		&--location {
-			display: block;
-			font-size: 3.5vw;
-			line-height: 1.8;
-		}
-
-		&--copy p + p {
-			margin-top: 3vw;
-		}
-
-		&--gallery-three .p-page-select-detail__about__content--imgWrap picture:last-of-type {
-			margin-right: auto;
-		}
-	}
-}
-
-// お魚ページ固有の差分は、装飾画像の配置だけに限定する。
-@media screen and (min-width: 768px) {
-	.p-page-select-detail {
-		&__message {
-			&--heading {
-				top: 6vw;
-				left: 18vw;
-				width: 34vw;
-			}
-
-			&--title {
-				font-size: 2vw;
-			}
-
-			&--decoration {
-				width: 15vw;
-			}
-
-			&--catch {
-				font-size: 2.2vw;
-			}
-		}
-
-		&__about__content--location {
-			font-size: 1.8vw;
-		}
-	}
-}
-
-@media screen and (min-width: 1024px) {
-	.p-page-select-detail {
-		&__message {
-			&--heading {
-				top: 52px;
-				left: 173px;
-				width: 234px;
-			}
-
-			&--title {
-				font-size: 1.4rem;
-			}
-
-			&--decoration {
-				width: 105px;
-				margin-top: 3px;
-			}
-
-			&--catch {
-				margin-top: 3px;
-				font-size: 1.6rem;
-				line-height: 2.4rem;
-			}
-		}
-
-		&__about__content {
-			&--location {
-				font-size: 1.4rem;
-				line-height: 2.5rem;
-			}
-
-			&--copy p + p {
-				margin-top: 18px;
-			}
-		}
-	}
-}
-
-@media screen and (min-width: 1024px) {
-	.p-page-select-detail + .l-footer {
-		position: relative;
-		z-index: 2;
-		// 1920px幅で約367px重ね、戻るボタンとの間に約100px（5.2083vw）を確保
-		margin-top: -19.1146vw;
 	}
 }

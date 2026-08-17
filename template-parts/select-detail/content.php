@@ -12,7 +12,6 @@ $news = $config['news'];
 $theme = $config['theme'];
 $css_variables = [
     '--select-message-bg:' . $theme['message_background'],
-    '--select-message-background-pc:url("' . foods_get_select_detail_asset_url($config, $config['message']['background_pc']) . '")',
     '--select-about-background:url("' . foods_get_select_detail_asset_url($config, $about['background']) . '")',
     '--select-about-title-background:url("' . foods_get_select_detail_asset_url($config, $about['title_background']) . '")',
     '--select-news-background-sp:url("' . foods_get_select_detail_asset_url($config, $news['background_sp']) . '")',
@@ -28,10 +27,6 @@ foreach ([
     if (!empty($about[$asset_key])) {
         $css_variables[] = $variable_name . ':url("' . foods_get_select_detail_asset_url($config, $about[$asset_key]) . '")';
     }
-}
-
-if (!empty($news['background_mask'])) {
-    $css_variables[] = '--select-news-background-mask:url("' . foods_get_select_detail_asset_url($config, $news['background_mask']) . '")';
 }
 
 $css_variables = implode(';', $css_variables);
