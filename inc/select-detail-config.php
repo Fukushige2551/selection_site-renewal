@@ -118,12 +118,12 @@ function foods_get_select_detail_configs() {
             'hero' => [
                 'lead' => '旬や鮮度はもちろん、<br>仕入れから売り場に並ぶまでの<br>スピードを大切に。<br>その日いちばん美味しい状態で<br>お魚をお届けするための工夫を<br>積み重ねています。',
                 'lead_pc' => '旬や鮮度はもちろん、仕入れから売り場に並ぶまでのスピードを大切に。<br>その日いちばん美味しい状態でお魚をお届けするための<br>工夫を積み重ねています。',
-                'image' => 'fishery.svg',
+                'image' => 'svg/fishery.svg',
                 'image_alt' => '漁港で新鮮な魚を仕分けする様子',
             ],
             'message' => [
-                'bubble_sp' => 'buyer-message-balloon-sp.svg',
-                'bubble_pc' => 'buyer-message-balloon-pc.svg',
+                'bubble_sp' => 'svg/buyer-message-balloon-sp.svg',
+                'bubble_pc' => 'svg/buyer-message-balloon-pc.svg',
                 'buyer_image' => 'buyer-manager.png',
                 'background_pc' => '@theme/img/page/page-select-detail/svg/message_section_bg-pc.svg',
                 'text' => '鮮度はもちろん、<br>産地や漁法、脂の乗りまで<br>“目で見て選ぶ”。<br>セレクションのお魚は、<br>全国の産直に加え、<br>地元・千葉県の漁港から届く鮮度の良い<br>「地魚」を中心に買付を行っています。<br>季節ごとに変わる<br>“旬のいちばん”を逃さず、<br>切身・刺身・焼魚まで、<br>今日いちばんおいしい形で<br>食卓に届けます。<br>魚は「鮮度」だけでなく、<br>今の状態に合った食べ方でおいしさが<br>決まります。<br>私たちは、脂の乗り・身質・サイズを見て<br>売場に出し、刺身、焼き、煮付けなど<br>おすすめの食べ方も一緒にご案内します。<br>売場では旬の打ち出しも強め、<br>迷わず選べるように。<br>迷ったら気軽に声をかけてください。',
@@ -139,11 +139,11 @@ function foods_get_select_detail_configs() {
                 'wave_pc_bottom' => '@theme/img/page/page-select-detail/svg/meat_about_wave-bottom-pc.svg',
                 'decorations' => [],
                 'background_decorations' => [
-                    ['key' => 'wave', 'src' => 'wave.svg', 'alt' => ''],
-                    ['key' => 'fisherman', 'src' => 'fisherman.svg', 'alt' => ''],
-                    ['key' => 'cat-and-worker', 'src' => 'cat-and-worker.svg', 'alt' => ''],
-                    ['key' => 'worker', 'src' => 'worker.svg', 'alt' => ''],
-                    ['key' => 'fish', 'src' => 'fish.svg', 'alt' => ''],
+                    ['key' => 'wave', 'src' => 'svg/wave.svg', 'alt' => ''],
+                    ['key' => 'fisherman', 'src' => 'svg/fisherman.svg', 'alt' => ''],
+                    ['key' => 'cat-and-worker', 'src' => 'svg/cat-and-worker.svg', 'alt' => ''],
+                    ['key' => 'worker', 'src' => 'svg/worker.svg', 'alt' => ''],
+                    ['key' => 'fish', 'src' => 'svg/fish.svg', 'alt' => ''],
                 ],
                 'sections' => [
                     [
