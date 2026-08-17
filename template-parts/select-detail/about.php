@@ -11,7 +11,7 @@ $background_decorations = isset($about['background_decorations']) && is_array($a
 <section class="<?php echo esc_attr($block_class); ?>__about">
     <div class="<?php echo esc_attr($block_class); ?>__about__bg">
         <?php foreach ($background_decorations as $decoration) : ?>
-            <?php if (!empty($decoration['key']) && !empty($decoration['src'])) : ?>
+            <?php if (!empty($decoration['key']) && 'wave' !== $decoration['key'] && !empty($decoration['src'])) : ?>
                 <img class="<?php echo esc_attr($block_class . '__about__backgroundDecoration ' . $block_class . '__about__backgroundDecoration--' . sanitize_html_class($decoration['key'])); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt'] ?? ''); ?>">
             <?php endif; ?>
         <?php endforeach; ?>

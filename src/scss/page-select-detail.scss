@@ -1,6 +1,8 @@
 @use "foundation/global" as *;
 
 .p-page-select-detail {
+	overflow-x: clip;
+
 	&__hero {
 		padding-top: 20vw;
 		&__inner {
@@ -36,11 +38,18 @@
 		position: relative;
 		z-index: 2;
 
+		&--backgroundDecoration {
+			position: absolute;
+			z-index: 10;
+			display: block;
+			pointer-events: none;
+		}
+
 		&--bg {
 			position: relative;
 			width: 88vw;
 			margin: 10vw auto 0;
-			padding: 48vw 3.8vw 9vw;
+			padding: 48vw 3.8vw 13vw;
 		}
 
 		&--shape {
@@ -57,8 +66,8 @@
 			inset: 0.8vw 0.9vw;
 			background: var(--message-bg);
 			border-radius:
-			7vw 6vw 8vw 5vw /
-			5vw 7vw 6vw 8vw;
+			7vw 6vw 16vw 16vw /
+			5vw 7vw 16vw 16vw;
 		}
 
 		&--blob {
@@ -164,18 +173,18 @@
 	&__about {
 		position: relative;
 		z-index: -2;
-		margin-top: -35vw;
+		margin-top: -27vw;
 
 		&__backgroundDecoration {
 			position: absolute;
-			z-index: 3;
+			z-index: 10;
 			display: block;
 			pointer-events: none;
 		}
 
 		&__bg {
 			position: relative;
-			padding: 47vw 3.8vw 25vw;
+			padding: 31vw 3.8vw 25vw;
 			background-image: var(--select-about-background);
 			background-repeat: repeat;
 			background-position: left top;
@@ -415,6 +424,10 @@
 
 			background: #fff;
 			border-radius: 2.5vw;
+
+			&:nth-of-type(n + 3) {
+				display: none;
+			}
 
 			& + & {
 				margin-top: 4vw;
@@ -804,20 +817,20 @@
 			&--shapeTop {
 				top: 0;
 				height: 120px;
-				-webkit-mask: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-meat/svg/message_section_bg-pc-top.svg") center top / 760px 120px no-repeat;
-				mask: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-meat/svg/message_section_bg-pc-top.svg") center top / 760px 120px no-repeat;
+				-webkit-mask: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/svg/message_section_bg-pc-top.svg") center top / 760px 120px no-repeat;
+				mask: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/svg/message_section_bg-pc-top.svg") center top / 760px 120px no-repeat;
 			}
 			&--shapeMiddle {
 				top: 120px;
 				bottom: 120px;
-				-webkit-mask: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-meat/svg/message_section_bg-pc-wave-tile.svg") center top / 760px 245px repeat-y;
-				mask: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-meat/svg/message_section_bg-pc-wave-tile.svg") center top / 760px 245px repeat-y;
+				-webkit-mask: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/svg/message_section_bg-pc-wave-tile.svg") center top / 760px 245px repeat-y;
+				mask: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/svg/message_section_bg-pc-wave-tile.svg") center top / 760px 245px repeat-y;
 			}
 			&--shapeBottom {
 				bottom: 0;
 				height: 120px;
-				-webkit-mask: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-meat/svg/message_section_bg-pc-bottom.svg") center bottom / 760px 120px no-repeat;
-				mask: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-meat/svg/message_section_bg-pc-bottom.svg") center bottom / 760px 120px no-repeat;
+				-webkit-mask: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/svg/message_section_bg-pc-bottom.svg") center bottom / 760px 120px no-repeat;
+				mask: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/svg/message_section_bg-pc-bottom.svg") center bottom / 760px 120px no-repeat;
 			}
 			&--blob {
 				display: none;
@@ -1131,176 +1144,166 @@
 	}
 }
 
-// お魚ページ固有の素材・コンテンツ構造のみを調整する。
-.p-page-select-detail--fish {
-	overflow-x: clip;
-
-	.p-page-select-detail {
-		&__message {
-			&--heading {
-				position: absolute;
-				top: 11vw;
-				left: 10vw;
-				z-index: 4;
-				width: 48vw;
-				text-align: center;
-			}
-
-			&--title {
-				margin: 0;
-				color: #133973;
-				font-family: $font-family-ZenKaku;
-				font-size: 3.6vw;
-				font-weight: 900;
-				line-height: 1.4;
-			}
-
-			&--decoration {
-				display: block;
-				width: 23vw;
-				margin: 0.5vw auto 0;
-			}
-
-			&--catch {
-				margin: 0.5vw 0 0;
-				font-family: $font-family-ZenKaku;
-				font-size: 4.1vw;
-				font-weight: 500;
-				line-height: 1.5;
-			}
+// ページ固有のコンテンツが存在する場合も、詳細ページ共通の構造として扱う。
+.p-page-select-detail {
+	&__message {
+		&--heading {
+			position: absolute;
+			top: 11vw;
+			left: 10vw;
+			z-index: 4;
+			width: 48vw;
+			text-align: center;
 		}
 
-		&__about {
-			z-index: auto;
+		&--title {
+			margin: 0;
+			color: #133973;
+			font-family: $font-family-ZenKaku;
+			font-size: 3.6vw;
+			font-weight: 900;
+			line-height: 1.4;
+		}
 
-			&__backgroundDecoration {
-				&--wave {
-					top: 5.87vw;
-					right: -7vw;
-					width: 36.41vw;
-					height: 34.87vw;
-				}
+		&--decoration {
+			display: block;
+			width: 23vw;
+			margin: 0.5vw auto 0;
+		}
 
-				&--fisherman {
-					top: 53.33vw;
-					left: -0.26vw;
-					width: 24.1vw;
-					height: 21.54vw;
-				}
+		&--catch {
+			margin: 0.5vw 0 0;
+			font-family: $font-family-ZenKaku;
+			font-size: 4.1vw;
+			font-weight: 500;
+			line-height: 1.5;
+		}
+	}
 
-				&--cat-and-worker {
-					top: 427.95vw;
-					left: 55.9vw;
-					width: 32.99vw;
-					height: 18.46vw;
-				}
+	&__about__content {
+		&--location {
+			display: block;
+			font-size: 3.5vw;
+			line-height: 1.8;
+		}
 
-				&--worker {
-					top: 850.26vw;
-					left: 4.36vw;
-					width: 26.15vw;
-					height: 26.92vw;
-				}
+		&--copy p + p {
+			margin-top: 3vw;
+		}
 
-				&--fish {
-					top: 881.68vw;
-					left: 48.99vw;
-					width: 50.66vw;
-					height: 29.41vw;
-				}
-			}
-
-			&__content {
-				&--location {
-					display: block;
-					font-size: 3.5vw;
-					line-height: 1.8;
-				}
-
-				&--copy p + p {
-					margin-top: 3vw;
-				}
-
-				&--gallery-three .p-page-select-detail__about__content--imgWrap picture:last-of-type {
-					margin-right: auto;
-				}
-			}
+		&--gallery-three .p-page-select-detail__about__content--imgWrap picture:last-of-type {
+			margin-right: auto;
 		}
 	}
 }
 
+// お魚ページ固有の差分は、装飾画像の配置だけに限定する。
+.p-page-select-detail--fish .p-page-select-detail__about__backgroundDecoration {
+	&--fisherman {
+		top: 53.33vw;
+		left: -0.26vw;
+		width: 24.1vw;
+		height: 21.54vw;
+	}
+
+	&--cat-and-worker {
+		top: 427.95vw;
+		left: 55.9vw;
+		width: 32.99vw;
+		height: 18.46vw;
+	}
+
+	&--worker {
+		top: 850.26vw;
+		left: 4.36vw;
+		width: 26.15vw;
+		height: 26.92vw;
+	}
+
+	&--fish {
+		top: 881.68vw;
+		left: 48.99vw;
+		width: 50.66vw;
+		height: 29.41vw;
+	}
+}
+
+.p-page-select-detail--fish .p-page-select-detail__message--backgroundDecoration-wave {
+	right: 2vw;
+	bottom: -14vw;
+	width: 36.41vw;
+	height: 34.87vw;
+}
+
 @media screen and (min-width: 768px) {
-	.p-page-select-detail--fish {
-		.p-page-select-detail {
-			&__message {
-				&--heading {
-					top: 6vw;
-					left: 18vw;
-					width: 34vw;
-				}
-
-				&--title {
-					font-size: 2vw;
-				}
-
-				&--decoration {
-					width: 15vw;
-				}
-
-				&--catch {
-					font-size: 2.2vw;
-				}
+	.p-page-select-detail {
+		&__message {
+			&--heading {
+				top: 6vw;
+				left: 18vw;
+				width: 34vw;
 			}
 
-			&__about {
-				&__backgroundDecoration {
-					display: none;
-				}
+			&--title {
+				font-size: 2vw;
+			}
 
-				&__content--location {
-					font-size: 1.8vw;
-				}
+			&--decoration {
+				width: 15vw;
+			}
+
+			&--catch {
+				font-size: 2.2vw;
 			}
 		}
+
+		&__about__content--location {
+			font-size: 1.8vw;
+		}
+	}
+
+	.p-page-select-detail--fish .p-page-select-detail__about__backgroundDecoration {
+		display: none;
+	}
+
+	.p-page-select-detail--fish .p-page-select-detail__message--backgroundDecoration-wave {
+		display: none;
 	}
 }
 
 @media screen and (min-width: 1024px) {
-	.p-page-select-detail--fish {
-		.p-page-select-detail {
-			&__message {
-				&--heading {
-					top: 52px;
-					left: 173px;
-					width: 234px;
-				}
-
-				&--title {
-					font-size: 1.4rem;
-				}
-
-				&--decoration {
-					width: 105px;
-					margin-top: 3px;
-				}
-
-				&--catch {
-					margin-top: 3px;
-					font-size: 1.6rem;
-					line-height: 2.4rem;
-				}
+	.p-page-select-detail {
+		&__message {
+			&--heading {
+				top: 52px;
+				left: 173px;
+				width: 234px;
 			}
-			&__about {
-				&__content {
-					&--location {
-						font-size: 1.4rem;
-						line-height: 2.5rem;
-					}
 
-					&--copy p + p {
-						margin-top: 18px;
-					}
-				}
+			&--title {
+				font-size: 1.4rem;
+			}
+
+			&--decoration {
+				width: 105px;
+				margin-top: 3px;
+			}
+
+			&--catch {
+				margin-top: 3px;
+				font-size: 1.6rem;
+				line-height: 2.4rem;
+			}
+		}
+
+		&__about__content {
+			&--location {
+				font-size: 1.4rem;
+				line-height: 2.5rem;
+			}
+
+			&--copy p + p {
+				margin-top: 18px;
 			}
 		}
 	}

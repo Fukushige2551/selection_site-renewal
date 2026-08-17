@@ -127,13 +127,9 @@
         z-index: 1;
     }
 
-    &__field {
-        background-image: url("#{$img-path}page/page-select-fish/field-bg.png");
-        background-position: center top;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        padding: 131px 27px 72px;
-    }
+	&__field {
+		padding: 131px 27px 72px;
+	}
 
     &__field-header {
         text-align: center;
@@ -256,27 +252,12 @@
         margin: 34px 0 0;
     }
 
-    &__more {
-        min-height: 818px;
-        padding: 84px 14px 180px;
-        position: relative;
+	&__more {
+		min-height: 818px;
+		padding: 84px 14px 180px;
+		position: relative;
 
-        &::before {
-            background-image: url("#{$img-path}page/page-select-fish/more-bg-texture.png");
-            background-position: center;
-            background-size: cover;
-            content: "";
-            inset: 0;
-            mask-image: url("#{$img-path}page/page-select-fish/more-bg-mask.svg");
-            mask-position: center;
-            mask-repeat: no-repeat;
-            mask-size: 100% 100%;
-            opacity: 0.5;
-            position: absolute;
-            z-index: 0;
-        }
-
-        > * {
+		> * {
             position: relative;
             z-index: 1;
         }

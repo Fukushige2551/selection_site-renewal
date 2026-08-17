@@ -2,8 +2,19 @@
 $config = $args['config'];
 $block_class = $args['block_class'];
 $message = $config['message'];
+$message_background_decorations = array_values(array_filter(
+    $config['about']['background_decorations'] ?? [],
+    static function ($decoration) {
+        return isset($decoration['key']) && 'wave' === $decoration['key'];
+    }
+));
 ?>
 <section class="<?php echo esc_attr($block_class); ?>__message">
+    <?php foreach ($message_background_decorations as $decoration) : ?>
+        <?php if (!empty($decoration['src'])) : ?>
+            <img class="<?php echo esc_attr($block_class . '__message--backgroundDecoration ' . $block_class . '__message--backgroundDecoration-' . sanitize_html_class($decoration['key'])); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt'] ?? ''); ?>">
+        <?php endif; ?>
+    <?php endforeach; ?>
     <div class="<?php echo esc_attr($block_class); ?>__message__bg">
         <div class="<?php echo esc_attr($block_class); ?>__message__header">
             <div class="<?php echo esc_attr($block_class); ?>__message--bg">
