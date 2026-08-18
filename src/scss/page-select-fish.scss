@@ -36,3 +36,70 @@
 		height: 29.41vw;
 	}
 }
+
+@media screen and (min-width: 768px) {
+	.p-page-select-detail--fish {
+		.p-page-select-detail__message--backgroundDecoration-wave {
+			width: 26vw;
+		}
+
+		.p-page-select-detail__about__backgroundDecoration {
+			&--fisherman {
+				width: 20vw;
+			}
+
+			&--cat-and-worker {
+				top: 288vw;
+				left: 58vw;
+				width: 28vw;
+			}
+
+			&--worker {
+				display: none;
+			}
+		}
+
+		.p-page-select-detail__news__foregroundDecoration--fish {
+			width: 36vw;
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.p-page-select-detail--fish {
+		.p-page-select-detail__message--backgroundDecoration-wave {
+			right: 56vw;
+			bottom: -44vw;
+			width: 18vw;
+		}
+
+		.p-page-select-detail__about__backgroundDecoration {
+			&--fisherman {
+				top: 43vw;
+				width: 18vw;
+			}
+
+			&--cat-and-worker {
+				top: 224vw;
+				left: 57vw;
+				width: 24vw;
+			}
+
+			&--worker {
+				// display: block;
+				// top: 276vw;
+				// left: auto;
+				// right: 0;
+				// width: 26.15vw;
+				// transform: scaleX(-1);
+			}
+		}
+
+		.p-page-select-detail__news__foregroundDecoration--fish {
+			top: -12vw;
+			right: 11vw;
+			width: 22vw;
+			height: 29.41vw;
+		}
+	}
+}
