@@ -10,12 +10,14 @@ $news = $config['news'];
                 <img class="<?php echo esc_attr($block_class . '__news__foregroundDecoration ' . $block_class . '__news__foregroundDecoration--' . sanitize_html_class($decoration['key'])); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt'] ?? ''); ?>">
             <?php endif; ?>
         <?php endforeach; ?>
-        <?php if (!empty($news['decoration'])) : ?>
-            <img class="<?php echo esc_attr($block_class); ?>__news__decoration6" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $news['decoration'])); ?>" alt="<?php echo esc_attr($config['title']); ?>">
-        <?php endif; ?>
-        <h2 class="<?php echo esc_attr($block_class); ?>__news__title"><?php echo esc_html($news['title']); ?></h2>
+        <div class="<?php echo esc_attr($block_class); ?>__news__titleWrap">
+            <h2 class="<?php echo esc_attr($block_class); ?>__news__title"><?php echo esc_html($news['title']); ?></h2>
+        </div>
 
         <div class="<?php echo esc_attr($block_class); ?>__news__wrap">
+            <?php if (!empty($news['decoration'])) : ?>
+                <img class="<?php echo esc_attr($block_class); ?>__news__decoration6" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $news['decoration'])); ?>" alt="<?php echo esc_attr($config['title']); ?>">
+            <?php endif; ?>
             <?php
             $news_query = new WP_Query([
                 'post_type' => 'news',

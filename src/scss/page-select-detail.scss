@@ -364,6 +364,11 @@
 			text-align: center;
 		}
 
+		&__titleWrap {
+			position: relative;
+			width: 100%;
+		}
+
 		&__foregroundDecoration {
 			position: absolute;
 			z-index: 10;
@@ -372,6 +377,7 @@
 		}
 
 		&__wrap {
+			position: relative;
 			width: 92.5vw;
 		}
 
@@ -760,6 +766,187 @@
 }
 
 
+// ノートPC
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+	.p-page-select-detail + .l-footer {
+		position: relative;
+		z-index: 2;
+		margin-top: -19.1146vw;
+	}
+
+	.p-page-select-detail {
+		&__hero {
+			width: 62.5vw;
+			margin: 0 auto;
+			padding-top: 9.38vw;
+
+			.c-section__title {
+				margin: 0;
+				font-family: $font-family-ZenKaku;
+				font-size: 2.34vw;
+				font-weight: 900;
+				line-height: 1.45;
+				letter-spacing: 0.15em;
+			}
+
+			&__text {
+				margin-top: 2.34vw;
+				font-size: 1.56vw;
+				line-height: 2.93vw;
+			}
+
+			&__img--top {
+				width: 100%;
+				margin-top: 2.34vw;
+			}
+		}
+
+		&__message {
+			width: 62.5vw;
+			margin: 1.17vw auto 0;
+
+			&--heading {
+				top: 4.28vw;
+				left: 14.26vw;
+				width: 19.24vw;
+			}
+
+			&--title { font-size: 1.37vw; }
+			&--decoration { width: 8.63vw; }
+			&--catch { font-size: 1.56vw; line-height: 2.34vw; }
+
+			&--bg {
+				width: 100%;
+				min-height: 61.18vw;
+				margin: 0;
+				padding: 17.6vw 4.44vw 3.62vw;
+				box-sizing: border-box;
+			}
+
+			&--shape { inset: 1.17vw 0 0; }
+			&--shapeBase { display: none; }
+
+			&--shapeTop,
+			&--shapeMiddle,
+			&--shapeBottom {
+				position: absolute;
+				display: block;
+				width: 100%;
+				background: var(--message-bg);
+			}
+
+			&--shapeTop {
+				top: 0;
+				height: 9.87vw;
+				-webkit-mask: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/svg/message_section_bg-pc-top.svg") center top / 62.5vw 9.87vw no-repeat;
+				mask: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/svg/message_section_bg-pc-top.svg") center top / 62.5vw 9.87vw no-repeat;
+			}
+
+			&--shapeMiddle {
+				top: 9.87vw;
+				bottom: 9.87vw;
+				-webkit-mask: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/svg/message_section_bg-pc-wave-tile.svg") center top / 62.5vw 20.15vw repeat-y;
+				mask: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/svg/message_section_bg-pc-wave-tile.svg") center top / 62.5vw 20.15vw repeat-y;
+			}
+
+			&--shapeBottom {
+				bottom: 0;
+				height: 9.87vw;
+				-webkit-mask: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/svg/message_section_bg-pc-bottom.svg") center bottom / 62.5vw 9.87vw no-repeat;
+				mask: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/svg/message_section_bg-pc-bottom.svg") center bottom / 62.5vw 9.87vw no-repeat;
+			}
+
+			&--blob { display: none; }
+			&--bubblePc { width: 26.56vw; height: 11.76vw; top: 2.88vw; left: 14.26vw; }
+			&--buyer { width: 11.84vw; height: 11.68vw; top: 0; right: 12.09vw; }
+			&--text {
+				width: 53.62vw;
+				margin: 0 auto;
+				font-family: $font-family-ZenKakuAntique;
+				font-size: 1.56vw;
+				line-height: 2.93vw;
+			}
+			&--textSp { display: none; }
+			&--textPc { display: block; }
+		}
+
+		&__about {
+			z-index: 1;
+			overflow: hidden;
+			margin-top: -24.51vw;
+
+			&__bg {
+				padding: 29.44vw 0 19.24vw;
+				box-sizing: border-box;
+				background-size: 2.63vw 2.63vw;
+			}
+
+			&__title--wrap { width: 35vw; height: 14.42vw; margin: 0 auto; }
+			&__title--text {
+				width: 35vw;
+				height: 14.42vw;
+				margin: 0 auto;
+				background-size: 35vw 14.42vw;
+
+				span {
+					font-size: 2.8vw;
+					line-height: 4.2vw;
+					letter-spacing: 0.15em;
+					transform: translateY(7.55vw);
+				}
+			}
+
+			&__content {
+				width: 62.5vw;
+				margin: 0 auto;
+
+				&--location { font-size: 1.37vw; line-height: 2.44vw; }
+				&--copy p + p { margin-top: 1.48vw; }
+				.p-page-select-detail__about__title--wrap + & { margin-top: 1.95vw; }
+				& + & { margin-top: 4.93vw; padding-top: 3.45vw; border-top: 1px dashed #848484; }
+				&--title {
+					margin: 0 0 3.21vw;
+					font-size: 1.76vw;
+					line-height: 3.22vw;
+					letter-spacing: 0.05em;
+				}
+				&--title span { font-size: 1.37vw; line-height: 3.22vw; }
+				&--image { width: 100%; height: 39.06vw; border-radius: 3.29vw; object-fit: cover; }
+				p { width: 100%; margin-top: 0.99vw; font-size: 1.56vw; line-height: 2.93vw; }
+				&--sub { margin: 2.96vw 0 1.89vw; font-size: 1.76vw; line-height: 2.44vw; text-align: left; }
+				&--imgWrap { margin-top: 1.97vw; padding-bottom: 0; gap: 2.63vw; border-bottom: 0; }
+				&--imgSmall { width: 29.93vw; height: 18.34vw; border-radius: 1.64vw; object-fit: cover; }
+			}
+		}
+
+		&__news {
+			z-index: 1;
+			margin-top: -5.92vw;
+
+			&__bg {
+				margin: 0 auto;
+				padding: 11.1vw 0 calc(19.1146vw + 4.28vw);
+				background-position: center top;
+				background-size: 157.89vw 100%;
+			}
+			&__title { width: auto; margin: 0 auto 2.88vw; font-size: 1.95vw; line-height: 2.93vw; letter-spacing: 0.15em; }
+			&__wrap { width: 62.5vw; margin: 0 auto; }
+			&__item { height: 14.23vw; padding: 1.23vw 0.99vw 1.32vw; border-radius: 0.82vw; }
+			&__item:nth-of-type(n + 3) { display: block; }
+			&__item + &__item { margin-top: 1.23vw; }
+			&__head { gap: 0.66vw; height: 1.64vw; margin-bottom: 1.4vw; }
+			&__date { width: 6.99vw; font-size: 1.17vw; }
+			&__tag { height: 1.64vw; padding: 0.08vw 0.58vw; border-radius: 0.41vw; font-size: 1.27vw; line-height: 1.32vw; }
+			&__body { gap: 0.82vw; }
+			&__image { width: 12.58vw; height: 8.22vw; border-radius: 0.82vw; }
+			&__text { width: 43.42vw; font-size: 1.37vw; line-height: 2.25vw; -webkit-line-clamp: 2; line-clamp: 2; }
+			&__link { margin: 0.82vw 0 0 auto; font-size: 1.17vw; }
+			&__seeMore { width: 19.74vw; margin: 3.7vw auto 0; }
+			.c-btn--common--green { font-size: 1.56vw; }
+		}
+	}
+}
+
 // デスクトップPC
 @media screen and (min-width: 1280px) {
 	.p-page-select-detail + .l-footer {
@@ -946,7 +1133,7 @@
 					& span {
 						font-size: 2rem;
 						font-weight: 900;
-						line-height: 2.3rem;
+						line-height: 3.2rem;
 						letter-spacing: 0.15em;
 						transform: translateY(54px);
 					}

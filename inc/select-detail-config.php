@@ -75,6 +75,7 @@ function foods_get_select_detail_configs() {
                         'decorations' => [
                             ['key' => 'decoration3', 'src' => 'svg/meat_about_deco3.svg', 'alt' => 'お肉のこだわり', 'placement' => 'content'],
                             ['key' => 'decoration4', 'src' => 'svg/meat_about_deco4.svg', 'alt' => 'お肉のこだわり', 'placement' => 'gallery_before'],
+                            ['key' => 'kamimura-cow', 'src' => 'svg/kamimura-cow.svg', 'alt' => '', 'placement' => 'gallery_before'],
                         ],
                     ],
                     [
