@@ -759,9 +759,9 @@
 	}
 }
 
-// ノートPC・デスクトップPC
-// 1024px以上は、デスクトップ版の固定幅レイアウトを共通で使用する
-@media screen and (min-width: 1024px) {
+
+// デスクトップPC
+@media screen and (min-width: 1280px) {
 	.p-page-select-detail + .l-footer {
 		position: relative;
 		z-index: 2;
