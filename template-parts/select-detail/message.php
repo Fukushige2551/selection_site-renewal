@@ -12,7 +12,7 @@ $message_background_decorations = array_values(array_filter(
 <section class="<?php echo esc_attr($block_class); ?>__message">
     <?php foreach ($message_background_decorations as $decoration) : ?>
         <?php if (!empty($decoration['src'])) : ?>
-            <img class="<?php echo esc_attr($block_class . '__message--backgroundDecoration ' . $block_class . '__message--backgroundDecoration-' . sanitize_html_class($decoration['key'])); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt'] ?? ''); ?>">
+            <img class="<?php echo esc_attr($block_class . '__message--backgroundDecoration ' . $block_class . '__message--backgroundDecoration-' . sanitize_html_class($decoration['key']) . ' ' . $block_class . '__message--backgroundDecoration-legacyAnchor'); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt'] ?? ''); ?>">
         <?php endif; ?>
     <?php endforeach; ?>
     <div class="<?php echo esc_attr($block_class); ?>__message__bg">

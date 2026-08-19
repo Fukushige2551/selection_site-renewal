@@ -1,106 +1,212 @@
-.p-page-select-detail--fish {
-	.p-page-select-detail__message--backgroundDecoration-wave {
-		right: 2vw;
-		bottom: -14vw;
-		width: 36.41vw;
-		height: 34.87vw;
-	}
+.p-page-select-detail {
+	$detail: &;
 
-	.p-page-select-detail__about__backgroundDecoration {
-		&--fisherman {
-			top: 52vw;
-			left: -0.26vw;
-			width: 24.1vw;
-			height: 21.54vw;
+	&--fish {
+		#{$detail}__message--backgroundDecoration-wave {
+			right: 2vw;
+			bottom: -14vw;
+			width: 36.41vw;
+			aspect-ratio: 36.41 / 34.87;
 		}
 
-		&--cat-and-worker {
-			top: 433vw;
-			left: 55.9vw;
-			width: 32.99vw;
-			height: 18.46vw;
-		}
+		#{$detail}__about__backgroundDecoration {
+			&--desktopAnchor { display: none; }
+			&--laptopAnchor { display: none; }
 
-		&--worker {
-			top: 876vw;
-			left: 4.36vw;
-			width: 26.15vw;
-			height: 26.92vw;
-		}
-	}
-
-	.p-page-select-detail__news__foregroundDecoration--fish {
-		top: -11vw;
-		right: 6vw;
-		width: 50.66vw;
-		height: 29.41vw;
-	}
-}
-
-@media screen and (min-width: 768px) {
-	.p-page-select-detail--fish {
-		.p-page-select-detail__message--backgroundDecoration-wave {
-			width: 26vw;
-		}
-
-		.p-page-select-detail__about__backgroundDecoration {
-			&--fisherman {
-				width: 20vw;
+			&--fisherman#{$detail}__about__backgroundDecoration--legacyAnchor {
+				top: 52vw;
+				left: -0.26vw;
+				width: 24.1vw;
+				aspect-ratio: 24.1 / 21.54;
 			}
 
 			&--cat-and-worker {
-				top: 288vw;
-				left: 58vw;
-				width: 28vw;
+				z-index: 2;
+				top: 433vw;
+				left: 55.9vw;
+				width: 32.99vw;
+				aspect-ratio: 32.99 / 18.46;
 			}
 
-			&--worker {
+			&--calico-cat {
+				z-index: 1;
 				display: none;
 			}
-		}
-
-		.p-page-select-detail__news__foregroundDecoration--fish {
-			width: 36vw;
-		}
-	}
-}
-
-
-@media screen and (min-width: 1280px) {
-	.p-page-select-detail--fish {
-		.p-page-select-detail__message--backgroundDecoration-wave {
-			right: 56vw;
-			bottom: -44vw;
-			width: 18vw;
-		}
-
-		.p-page-select-detail__about__backgroundDecoration {
-			&--fisherman {
-				top: 43vw;
-				width: 18vw;
-			}
-
-			&--cat-and-worker {
-				top: 224vw;
-				left: 57vw;
-				width: 24vw;
-			}
 
 			&--worker {
-				// display: block;
-				// top: 276vw;
-				// left: auto;
-				// right: 0;
-				// width: 26.15vw;
-				// transform: scaleX(-1);
+				top: 876vw;
+				left: 4.36vw;
+				width: 26.15vw;
+				aspect-ratio: 26.15 / 26.92;
 			}
 		}
 
-		.p-page-select-detail__news__foregroundDecoration--fish {
-			top: -12vw;
-			right: 11vw;
-			width: 22vw;
-			height: 29.41vw;
+		#{$detail}__news__foregroundDecoration--fish {
+			top: -11vw;
+			right: 6vw;
+			width: 50.66vw;
+			aspect-ratio: 50.66 / 29.41;
+		}
+
+		#{$detail}__news__foregroundDecoration--desktopAnchor {
+			display: none;
+		}
+
+		@media screen and (min-width: 768px) {
+			#{$detail}__message--backgroundDecoration-wave {
+				width: 26vw;
+				right: 12vw;
+				bottom: -16vw;
+			}
+
+			#{$detail}__about__backgroundDecoration {
+				&--fisherman#{$detail}__about__backgroundDecoration--legacyAnchor {
+					width: 20vw;
+					top: 57vw;
+					left: 15.74vw;
+				}
+
+				&--cat-and-worker {
+					top: 288vw;
+					left: 58vw;
+					width: 28vw;
+				}
+
+				&--worker { display: none; }
+			}
+
+			#{$detail}__news__foregroundDecoration--fish { width: 36vw; }
+		}
+
+		@media screen and (min-width: 1024px) {
+			#{$detail}__about__content--secondaryImageAnchor {
+				position: relative;
+				display: block;
+				width: 100%;
+			}
+
+			#{$detail}__message--backgroundDecoration-wave {
+				display: none;
+			}
+
+			#{$detail}__about__backgroundDecoration {
+				&--worker-and-cat-2#{$detail}__about__backgroundDecoration--desktopAnchor {
+					z-index: 3;
+					top: -9vw;
+					right: -12vw;
+					display: block;
+					width: 14vw;
+					aspect-ratio: 177 / 293;
+				}
+
+				&--wave#{$detail}__about__backgroundDecoration--laptopAnchor {
+					z-index: 3;
+					top: 45.6vw;
+					left: 18vw;
+					display: block;
+					width: 17vw;
+					aspect-ratio: 36.41 / 34.87;
+				}
+
+				&--fisherman#{$detail}__about__backgroundDecoration--legacyAnchor {
+					z-index: 4;
+					top: 44.6vw;
+					left: 6vw;
+					width: 17vw;
+				}
+
+				&--cat-and-worker {
+					top: 209vw;
+					left: 60vw;
+					width: 24vw;
+				}
+
+				&--calico-cat {
+					display: block;
+					top: 214.2vw;
+					left: 56vw;
+					width: 6vw;
+				}
+
+				&--worker {
+					display: block;
+					top: 281vw;
+					left: 75vw;
+					width: 16vw;
+					transform: scaleX(-1);
+				}
+			}
+
+			#{$detail}__news__foregroundDecoration--fish {
+				top: -1vw;
+				right: 15vw;
+				width: 19vw;
+			}
+		}
+
+		@media screen and (min-width: 1280px) {
+			#{$detail}__message--backgroundDecoration-wave {
+				display: block;
+			}
+
+			#{$detail}__message--backgroundDecoration-legacyAnchor,
+			#{$detail}__about__backgroundDecoration--legacyAnchor {
+				display: none;
+			}
+
+			#{$detail}__news__foregroundDecoration--legacyAnchor {
+				display: none;
+			}
+
+			#{$detail}__about__backgroundDecoration {
+				&--desktopAnchor { display: block; }
+				&--wave#{$detail}__about__backgroundDecoration--laptopAnchor { display: none; }
+
+				&--wave#{$detail}__about__backgroundDecoration--desktopAnchor {
+					top: -58px;
+					left: -9px;
+					width: 268.8px;
+				}
+
+				&--fisherman#{$detail}__about__backgroundDecoration--desktopAnchor {
+					top: -70px;
+					left: -200px;
+					width: 264px;
+				}
+
+				&--cat-and-worker#{$detail}__about__backgroundDecoration--desktopAnchor {
+					top: 63px;
+					right: -429px;
+					left: auto;
+					width: 302px;
+				}
+
+				&--calico-cat#{$detail}__about__backgroundDecoration--desktopAnchor {
+					top: 124px;
+					left: 435px;
+					width: 79.67px;
+				}
+
+				&--worker#{$detail}__about__backgroundDecoration--desktopAnchor {
+					top: -140px;
+					right: -147px;
+					left: auto;
+					width: 240px;
+				}
+
+				&--worker-and-cat-2#{$detail}__about__backgroundDecoration--desktopAnchor {
+					top: -156px;
+					right: -220px;
+					width: 177px;
+				}
+			}
+
+			#{$detail}__news__foregroundDecoration--fish#{$detail}__news__foregroundDecoration--desktopAnchor {
+				display: block;
+				top: -202px;
+				right: -42px;
+				width: 217.69px;
+			}
 		}
 	}
 }

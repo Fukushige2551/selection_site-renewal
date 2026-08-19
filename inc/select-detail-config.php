@@ -143,7 +143,9 @@ function foods_get_select_detail_configs() {
                     ['key' => 'wave', 'src' => 'svg/wave.svg', 'alt' => ''],
                     ['key' => 'fisherman', 'src' => 'svg/fisherman.svg', 'alt' => ''],
                     ['key' => 'cat-and-worker', 'src' => 'svg/cat-and-worker.svg', 'alt' => ''],
+                    ['key' => 'calico-cat', 'src' => 'svg/cat.svg', 'alt' => 'ぶち猫'],
                     ['key' => 'worker', 'src' => 'svg/worker.svg', 'alt' => ''],
+                    ['key' => 'worker-and-cat-2', 'src' => 'svg/worker-and-cat-2.svg', 'alt' => '', 'anchored_only' => true],
                 ],
                 'sections' => [
                     [
@@ -154,7 +156,11 @@ function foods_get_select_detail_configs() {
                             '高知県の西の端に位置する宿毛湾。雄大な自然に囲まれた豊かな海域で、丹精込めて育てた自慢の逸品。それが「荒木さん家のブリ」。海とともに生きる荒木さんたちが、真心を込めてお届けします。',
                         ],
                         'sub_title' => '愛情をかけて育てる！自慢の逸品<br>「荒木さん家のブリ」',
-                        'secondary_image' => ['src' => 'field-yellowtail-sashimi.png', 'alt' => '荒木さん家のブリの刺身'],
+                        'secondary_image' => [
+                            'src' => 'field-yellowtail-sashimi.png',
+                            'alt' => '荒木さん家のブリの刺身',
+                            'decoration_anchors' => ['worker-and-cat-2'],
+                        ],
                         'secondary_text_blocks' => [
                             '「荒木さん家のブリ」は名前の通り、1軒の生産者（荒木さん）が養殖から加工、販売まで一貫して行っているのですが、その全てにこだわりを持っています。',
                             '宿毛湾は黒潮と豊後水道が交わり、栄養豊富な松田川が流れ込む肥沃な海域。まさに日本有数の飼育環境です。尚且つ、恵まれた海域で大型いけすを使っています。潮通しの環境が良く、水深50mの海で頻繁に餌をあげられるので成長が早く、ゴンゴン泳ぐので身も引き締まっています。',
@@ -163,7 +169,11 @@ function foods_get_select_detail_configs() {
                         'gallery' => [
                             ['src' => 'field-yellowtail-farm.png', 'alt' => 'ブリの養殖場'],
                             ['src' => 'field-yellowtail-processing.png', 'alt' => '水産加工の様子'],
-                            ['src' => 'field-yellowtail-packing.png', 'alt' => 'ブリを包装する様子'],
+                            [
+                                'src' => 'field-yellowtail-packing.png',
+                                'alt' => 'ブリを包装する様子',
+                                'decoration_anchors' => ['cat-and-worker', 'calico-cat'],
+                            ],
                         ],
                         'gallery_variant' => 'three',
                         'decorations' => [],
@@ -171,12 +181,19 @@ function foods_get_select_detail_configs() {
                     [
                         'location' => '千葉県鴨川市',
                         'title' => '島津商店 千産千消「房州ひじき」',
-                        'main_image' => ['src' => 'field-hijiki-processing.png', 'alt' => '房州ひじきを加工する様子'],
+                        'main_image' => [
+                            'src' => 'field-hijiki-processing.png',
+                            'alt' => '房州ひじきを加工する様子',
+                        ],
                         'text_blocks' => [
                             '嶋津商店の「房州ひじき」は千葉県南部の沿岸の磯で採れたものを、新鮮なうちに、じっくりと炊き上げてあります。ふっくらとしたやわらかさと、磯の香りをお楽しみください。',
                         ],
                         'sub_title' => '旬の時期だけに採れる上質ひじき<br>産地指定で届ける千葉の味',
-                        'secondary_image' => ['src' => 'field-hijiki.png', 'alt' => '房州ひじき'],
+                        'secondary_image' => [
+                            'src' => 'field-hijiki.png',
+                            'alt' => '房州ひじき',
+                            'decoration_anchors' => ['worker'],
+                        ],
                         'secondary_text_blocks' => [
                             'ひじきは成長が進むと芽の部分が開き柔らかくなるため、芽の閉まっている2月～3月中旬に良質のひじきが採れる勝浦地区、鴨川地区の原料を指定して入札しております。',
                             '浜で入札されたひじきはすぐに嶋津商店の加工場に運ばれ、洗浄⇒釜蒸し⇒乾燥⇒選別、異物検査の順で加工されます。原料の鮮度がよく、水揚げ後すぐにボイルされるため、ひじきの風味や味わいが格段に違います。',

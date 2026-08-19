@@ -332,6 +332,14 @@
 
 				border-radius: 2.6vw;
 			}
+
+			&--catWorkerAnchor {
+				display: contents;
+			}
+
+			&--secondaryImageAnchor {
+				display: contents;
+			}
 		}
 	}
 
@@ -536,10 +544,6 @@
 
 		&--copy p + p {
 			margin-top: 3vw;
-		}
-
-		&--gallery-three .p-page-select-detail__about__content--imgWrap picture:last-of-type {
-			margin-right: auto;
 		}
 	}
 }
@@ -920,7 +924,7 @@
 		}
 
 		&__news {
-			z-index: 1;
+			z-index: 3;
 			margin-top: -5.92vw;
 
 			&__bg {
@@ -1217,6 +1221,18 @@
 					height: 223px;
 					border-radius: 20px;
 					object-fit: cover;
+				}
+
+				&--catWorkerAnchor {
+					position: relative;
+					display: block;
+					width: 364px;
+				}
+
+				&--secondaryImageAnchor {
+					position: relative;
+					display: block;
+					width: 100%;
 				}
 			}
 		}
