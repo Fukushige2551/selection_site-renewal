@@ -495,6 +495,23 @@
 	}
 }
 
+@media screen and (max-width: 767px) {
+	.p-page-select-detail {
+		&__message {
+			&--shape {
+				background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/svg/message-section-bg-sp.svg');
+				background-repeat: no-repeat;
+				background-position: center top;
+				background-size: 100% 100%;
+			}
+
+			&--shapeBase {
+				display: none;
+			}
+		}
+	}
+}
+
 @media screen and (min-width: 768px) {
 	.p-page-select-detail {
 		&__hero {
@@ -718,6 +735,29 @@
 
 
 // ノートPC
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+	.p-page-select-detail {
+		&__message {
+			&--text {
+				width: fit-content;
+				max-width: 100%;
+				margin-inline: auto;
+			}
+
+			&--shape {
+				background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/svg/message-section-bg-tab.svg');
+				background-repeat: no-repeat;
+				background-position: center top;
+				background-size: 100% 100%;
+			}
+
+			&--shapeBase {
+				display: none;
+			}
+		}
+	}
+}
+
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
 	.p-page-select-detail + .l-footer {
 		position: relative;
@@ -770,17 +810,19 @@
 				width: 100%;
 				min-height: 61.18vw;
 				margin: 0;
-				padding: 17.6vw 4.44vw 3.62vw;
+				padding: 17.6vw 4.44vw 10.62vw;
 				box-sizing: border-box;
 			}
 
-			&--shape { inset: 1.17vw 0 0; }
+			&--shape {
+				inset: 1.17vw 0 0;
+				background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/svg/message-section-bg-desktop.svg');
+				background-repeat: no-repeat;
+				background-position: center top;
+				background-size: 100% 100%;
+			}
 			&--shapeBase {
-				display: block;
-				inset: 0 0.625vw 0.625vw;
-				border-radius:
-					5.94vw 7.19vw 5.63vw 6.25vw /
-					4.22vw 4.84vw 2.97vw 3.44vw;
+				display: none;
 			}
 
 			&--shapeTop,
@@ -952,14 +994,13 @@
 			}
 			&--shape {
 				inset: 14px 0 0;
+				background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/svg/message-section-bg-desktop.svg');
+				background-repeat: no-repeat;
+				background-position: center top;
+				background-size: 100% 100%;
 			}
 			&--shapeBase {
-				display: block;
-				inset: 0 8px 8px;
-				z-index: 1;
-				border-radius:
-					76px 92px 72px 80px /
-					54px 62px 38px 44px;
+				display: none;
 			}
 			&--shapeTop,
 			&--shapeMiddle,
