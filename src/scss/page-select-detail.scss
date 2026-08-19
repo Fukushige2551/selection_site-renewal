@@ -498,6 +498,10 @@
 
 @media screen and (max-width: 767px) {
 	.p-page-select-detail--vegetables-fruit {
+		.p-page-select-detail__message--shape {
+			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-vegetables-fruit/svg/buyer-message-background-sp.svg');
+		}
+
 		.p-page-select-detail__hero {
 			.c-section__title {
 				font-size: 5.13vw;
@@ -1320,6 +1324,14 @@
 				height: 54px;
 				font-size: 1.6rem;
 			}
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.p-page-select-detail--vegetables-fruit {
+		.p-page-select-detail__message--shape {
+			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-vegetables-fruit/svg/buyer-message-background-pc.svg');
 		}
 	}
 }
