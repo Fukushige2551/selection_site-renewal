@@ -446,6 +446,7 @@
 		}
 	}
 }
+
 // ページ固有のコンテンツが存在する場合も、詳細ページ共通の構造として扱う。
 .p-page-select-detail {
 	&__message {
@@ -496,6 +497,35 @@
 }
 
 @media screen and (max-width: 767px) {
+	.p-page-select-detail--vegetables-fruit {
+		.p-page-select-detail__hero {
+			.c-section__title {
+				font-size: 5.13vw;
+				font-weight: 900;
+				line-height: 1;
+				letter-spacing: 0.15em;
+			}
+
+			&__text {
+				width: 82.31vw;
+				margin-top: 5.13vw;
+				font-size: 4.1vw;
+				line-height: 1.875;
+			}
+
+			&__img--top {
+				width: min(93.08vw, 363px);
+				margin-top: 6.67vw;
+			}
+		}
+
+		.p-page-select-detail__news {
+			&__title {
+				width: 78.5vw;
+			}
+		}
+	}
+
 	.p-page-select-detail {
 		&__message {
 			&--shape {

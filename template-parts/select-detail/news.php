@@ -11,7 +11,7 @@ $news = $config['news'];
             <?php endif; ?>
         <?php endforeach; ?>
         <div class="<?php echo esc_attr($block_class); ?>__news__titleWrap">
-            <h2 class="<?php echo esc_attr($block_class); ?>__news__title"><?php echo esc_html($news['title']); ?></h2>
+            <h2 class="<?php echo esc_attr($block_class); ?>__news__title"><?php echo wp_kses_post($news['title']); ?></h2>
         </div>
 
         <div class="<?php echo esc_attr($block_class); ?>__news__wrap">
@@ -36,7 +36,7 @@ $news = $config['news'];
                 'tax_query' => [[
                     'taxonomy' => $news['taxonomy'],
                     'field' => 'slug',
-                    'terms' => [$news['term']],
+                    'terms' => (array) $news['term'],
                 ]],
                 'no_found_rows' => true,
             ]);

@@ -10,6 +10,101 @@
  */
 function foods_get_select_detail_configs() {
     return [
+        'vegetables-fruit' => [
+            'page_slug' => 'select-vegetables-fruit',
+            'modifier' => 'vegetables-fruit',
+            'title' => 'お野菜・果物のこだわり',
+            'asset_base' => 'img/page/page-select-vegetables-fruit',
+            'theme' => [
+                'message_background' => '#e7f9f5',
+            ],
+            'breadcrumb' => [
+                'parent_label' => 'セレクションのこだわり',
+                'parent_url' => '/select/',
+            ],
+            'hero' => [
+                'lead' => '季節の移ろいを感じられる、<br>みずみずしい美味しさを。<br>産地や育て方に目を向け、<br>鮮度・味・安心感に<br>こだわった野菜とくだものを揃えています。',
+                'image' => 'svg/hero.svg',
+                'image_alt' => '畑で野菜を収穫する様子',
+            ],
+            'message' => [
+                'bubble_sp' => 'svg/buyer-message-balloon-sp.svg',
+                'bubble_pc' => 'svg/buyer-message-balloon-pc.svg',
+                'buyer_image' => '@theme/img/page/page-select-detail/svg/img_message-buyer.svg',
+                'background_pc' => '@theme/img/page/page-select-detail/svg/message_section_bg-pc.svg',
+                'text' => '味は、畑で決まる。<br>だから、私たちは“仕入れ”に<br>妥協しません。<br>セレクションの青果は、安心・安全を大前提に、おいしさで選び抜く。<br>産地は「有名だから」ではなく、<br>その季節にいちばん旨い場所を選ぶ。<br>そして、生産者とつながることで、<br>顔が見える品質と<br>ぶれない基準を手に入れる。<br>市場任せでは届かない旬がある。<br>セレクションは、独自の産直ルートで<br>“季節の主役”を先回りし、<br>売場で旬がひと目で伝わる<br>提案をつくります。<br>さらに入荷後も勝負どころ。<br>温度・水分・陳列の細部まで<br>鮮度管理を行い、<br>今日も、明日も、ちゃんとおいしい――<br>ご家庭でいちばんおいしくなる状態で<br>お渡しします。<br>野菜は料理で選ぶ。<br>果物は食べる日で選ぶ。<br>サラダ、炒め物、煮込み――<br>用途に合う品種と使い方。<br>追熟や保存のコツまで、<br>売場で一緒にご案内します。<br>今日のおすすめ、ぜひ聞いてください。<br>いちばんおいしいタイミングまで<br>ご提案します。',
+                'text_pc' => '味は、畑で決まる。<br>だから、私たちは“仕入れ”に妥協しません。<br>セレクションの青果は、安心・安全を大前提に、おいしさで選び抜く。<br>産地は「有名だから」ではなく、その季節にいちばん旨い場所を選ぶ。<br>そして、生産者とつながることで、顔が見える品質と<br>ぶれない基準を手に入れる。<br>市場任せでは届かない旬がある。<br>セレクションは、独自の産直ルートで“季節の主役”を先回りし、<br>売場で旬がひと目で伝わる提案をつくります。<br>さらに入荷後も勝負どころ。<br>温度・水分・陳列の細部まで鮮度管理を行い、<br>今日も、明日も、ちゃんとおいしい――<br>ご家庭でいちばんおいしくなる状態でお渡しします。<br>野菜は料理で選ぶ。果物は食べる日で選ぶ。<br>サラダ、炒め物、煮込み――用途に合う品種と使い方。<br>追熟や保存のコツまで、売場で一緒にご案内します。<br>今日のおすすめ、ぜひ聞いてください。<br>いちばんおいしいタイミングまでご提案します。',
+            ],
+            'about' => [
+                'title' => 'こだわりの現場から',
+                'title_background' => '@theme/img/page/page-select-detail/svg/meat_about_title.svg',
+                'background' => '@theme/img/page/page-select-detail/brick.png',
+                'wave_sp_top' => '@theme/img/page/page-select-detail/svg/upper_wave.svg',
+                'wave_sp_bottom' => '@theme/img/page/page-select-detail/svg/about-wave-bottom-sp.svg',
+                'wave_pc_top' => '@theme/img/page/page-select-detail/svg/meat_about_wave-top-pc.svg',
+                'wave_pc_bottom' => '@theme/img/page/page-select-detail/svg/meat_about_wave-bottom-pc.svg',
+                'decorations' => [],
+                'sections' => [
+                    [
+                        'title' => '群馬発祥。<br>”感動農業”を信念に<br>品質にこだわった野菜をお届け<br>野菜くらぶ',
+                        'main_image' => [
+                            'src' => 'vegetable-club.png',
+                            'alt' => '野菜くらぶの社屋',
+                        ],
+                        'text_blocks' => [
+                            '野菜くらぶでは「適地適作」を大切にし、作物ごと、時期ごとに最適な産地で野菜づくりを行っています。土づくりから栽培方法まで、自社独自基準で丁寧に管理。化学肥料や農薬に極力頼らず、環境に配慮した農業で野菜本来の味を引き出します。',
+                            '収穫後の管理にも気を遣い、例えばレタスであれば早朝に収穫したものを真空冷却機で急速冷却し、長期間シャキシャキの鮮度が維持するよう徹底的な品質管理を行っています。',
+                            '毎日食べるものだからこそ、品質には妥協しません。',
+                            '安心・安全な野菜を、新鮮なまま食卓へお届けします。',
+                        ],
+                        'gallery' => [
+                            ['src' => 'vegetable-farmers.png', 'alt' => '野菜くらぶの生産者たち'],
+                            ['src' => 'vegetable-sprout.png', 'alt' => '畑で育つ野菜の芽'],
+                            ['src' => 'lettuce-field.png', 'alt' => '畑で育つレタス'],
+                        ],
+                        'gallery_variant' => 'three',
+                        'decorations' => [],
+                    ],
+                    [
+                        'location' => '熊本県河内のみかん農家',
+                        'title' => 'ウシジマ青果',
+                        'main_image' => [
+                            'src' => 'ushijima-farmer.png',
+                            'alt' => 'ウシジマ青果の生産者とみかん',
+                        ],
+                        'text_blocks' => [
+                            '熊本県河内地方。有明海を臨む段々畑は、「太陽の光」「石垣の照り返し」「海からの照り返し」の”３つの太陽”の恵みを最大限に吸収できる最高の立地。',
+                            'ウシジマ青果のこだわりは”自然農法”。農薬や化学肥料には極力頼らず、水分のバランス調整や高度な選定技術を駆使し、より自然に近い環境で樹に適度なストレスを与えることでみかん本来のおいしさを引き出します。',
+                        ],
+                        'sub_title' => '40年間、みかんと向き合い続けてきた<br>”職人のみかん”をお届け',
+                        'secondary_image' => [
+                            'src' => 'cut-mikan.png',
+                            'alt' => '切ったみかん',
+                        ],
+                        'secondary_text_blocks' => [
+                            '収穫したみかんは自社光センサーで厳しく選定。甘いだけでなくコクのある、糖酸バランスの良い美味しいみかんだけを出荷します。',
+                            'みかんだけではなく、冬から春にかけてはポンカンや不知火など、その時一番美味しい柑橘をお届けします。',
+                            'セレクションが惚れ込んだ”職人の味”を是非ご堪能ください。',
+                        ],
+                        'gallery' => [
+                            ['src' => 'mikan-field.png', 'alt' => '熊本県河内地方のみかん畑'],
+                            ['src' => 'mikan-tree.png', 'alt' => '木に実るみかん'],
+                            ['src' => 'mikan-packing.png', 'alt' => 'みかんの選果と梱包作業'],
+                        ],
+                        'gallery_variant' => 'three',
+                        'decorations' => [],
+                    ],
+                ],
+            ],
+            'news' => [
+                'taxonomy' => 'news_commitment',
+                'term' => ['vegetables', 'fruit'],
+                'title' => 'お野菜・果物のこだわりを<br>もっと見る',
+                'archive_label' => 'お野菜・果物のこだわり一覧',
+                'background_sp' => '@theme/img/page/page-select-detail/meat_news_bgSP.png',
+                'background_pc' => '@theme/img/page/page-select-detail/meat_news_bgPC.png',
+            ],
+        ],
         'meat' => [
             'page_slug' => 'select-meat',
             'modifier' => 'meat',
