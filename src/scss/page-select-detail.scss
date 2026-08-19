@@ -178,7 +178,7 @@
 				position: relative;
 
 				width: 74vw;
-				height: 30vw;
+				height: calc(74vw * 103 / 250);
 				margin: 0 auto;
 
 				font-family: $font-family-ZenKaku;
@@ -189,12 +189,13 @@
 					image: var(--select-about-title-background);
 					repeat: no-repeat;
 					position: center;
+					size: 100% 100%;
 				}
 
 				span {
 					display: inline-block;
 					font-size: 5.1vw;
-					transform: translateY(17vw);
+					transform: translateY(18vw);
 				}
 			}
 
