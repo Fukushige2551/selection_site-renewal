@@ -70,62 +70,6 @@
 			5vw 7vw 16vw 16vw;
 		}
 
-		&--blob {
-			position: absolute;
-			z-index: 1;
-			background: var(--message-bg);
-			border-radius: 50%;
-			pointer-events: none;
-		}
-
-		&--blob-top {
-			top: 0;
-			left: 66%;
-			width: 30vw;
-			height: 3vw;
-			transform: translateX(-50%) rotate(-0.15deg);
-		}
-
-		&--blob-bottom {
-			bottom: 0;
-			left: 33%;
-			width: 29vw;
-			height: 2.2vw;
-			transform: translateX(-50%) rotate(0.15deg);
-		}
-
-		&--blob-l1 {
-			top: 6%;
-			left: 0vw;
-			width: 5.2vw;
-			height: 27vw;
-			transform: rotate(-0.25deg);
-		}
-
-		&--blob-l2 {
-			bottom: 7%;
-			left: 0.7vw;
-			width: 3vw;
-			height: 23.5vw;
-			transform: rotate(0.2deg);
-		}
-
-		&--blob-r1 {
-			top: 15%;
-			right: 0.5vw;
-			width: 3.2vw;
-			height: 34vw;
-			transform: rotate(0.25deg);
-		}
-
-		&--blob-r2 {
-			right: 0;
-			bottom: 10%;
-			width: 3vw;
-			height: 29.5vw;
-			transform: rotate(-0.2deg);
-		}
-
 		&--bubbleSp {
 			position: absolute;
 			top: 7vw;
@@ -845,7 +789,6 @@
 				display: none;
 			}
 
-			&--blob { display: none; }
 			&--bubblePc { width: 26.56vw; height: 11.76vw; top: 2.88vw; left: 14.26vw; }
 			&--buyer { width: 11.84vw; height: 11.68vw; top: 0; right: 12.09vw; }
 			&--text {
@@ -1000,11 +943,6 @@
 				line-height: 2.4rem;
 			}
 
-			&__bg,
-			&__header {
-				width: 100%;
-			}
-
 			&--bg {
 				width: 100%;
 				min-height: 562px;
@@ -1018,6 +956,7 @@
 			&--shapeBase {
 				display: block;
 				inset: 0 8px 8px;
+				z-index: 1;
 				border-radius:
 					76px 92px 72px 80px /
 					54px 62px 38px 44px;
@@ -1025,9 +964,6 @@
 			&--shapeTop,
 			&--shapeMiddle,
 			&--shapeBottom {
-				display: none;
-			}
-			&--blob {
 				display: none;
 			}
 			&--bubblePc {
