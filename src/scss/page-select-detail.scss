@@ -530,6 +530,12 @@
 		}
 	}
 
+	.p-page-select-detail--fish {
+		.p-page-select-detail__message--shape {
+			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-fish/svg/buyer-message-background-sp.svg');
+		}
+	}
+
 	.p-page-select-detail {
 		&__message {
 			&--shape {
@@ -1332,6 +1338,12 @@
 	.p-page-select-detail--vegetables-fruit {
 		.p-page-select-detail__message--shape {
 			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-vegetables-fruit/svg/buyer-message-background-pc.svg');
+		}
+	}
+
+	.p-page-select-detail--fish {
+		.p-page-select-detail__message--shape {
+			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-fish/svg/buyer-message-background-pc.svg');
 		}
 	}
 }
