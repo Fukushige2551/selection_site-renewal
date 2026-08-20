@@ -81,6 +81,7 @@ function foods_get_select_detail_configs() {
                             [
                                 'key' => 'truck-farmer',
                                 'src' => 'svg/truck-farmer.svg',
+                                'src_pc' => 'svg/truck-farmer-pc.svg',
                                 'alt' => '',
                                 'placement' => 'gallery_after',
                             ],
