@@ -1,0 +1,34 @@
+$detail: '.p-page-select-detail';
+
+#{$detail}--deli {
+	#{$detail}__hero__img--top {
+		width: min(100%, 760px);
+	}
+
+	#{$detail}__message--shape {
+		background: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-deli/svg/buyer-message-background-sp.svg') center top / 100% 100% no-repeat;
+	}
+
+	#{$detail}__message--shapeBase,
+	#{$detail}__message--shapeTop,
+	#{$detail}__message--shapeMiddle,
+	#{$detail}__message--shapeBottom {
+		display: none;
+	}
+
+	#{$detail}__message--buyer {
+		object-fit: cover;
+		aspect-ratio: 1 / 1;
+	}
+
+	#{$detail}__about__content--image,
+	#{$detail}__about__content--imgSmall {
+		object-fit: cover;
+	}
+
+	@media screen and (min-width: 768px) {
+		#{$detail}__message--shape {
+			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-deli/svg/buyer-message-background-pc.svg');
+		}
+	}
+}

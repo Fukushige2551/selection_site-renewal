@@ -29,6 +29,8 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-page-select-vegetables-fruit-js',
         'foods-page-select-meat-js',
         'foods-page-select-fish-js',
+        'foods-page-select-rice-js',
+        'foods-page-select-deli-js',
         'foods-single-shop-js',
         'foods-archive-news-js',
         'foods-single-news-js',
@@ -146,6 +148,8 @@ function foods_theme_scripts() {
     $page_select_vegetables_fruit_entry = 'src/js/page-select-vegetables-fruit.js';
     $page_select_meat_entry = 'src/js/page-select-meat.js';
     $page_select_fish_entry = 'src/js/page-select-fish.js';
+    $page_select_rice_entry = 'src/js/page-select-rice.js';
+    $page_select_deli_entry = 'src/js/page-select-deli.js';
     $single_shop_entry = 'src/js/single-shop.js';
     $archive_news_entry = 'src/js/archive-news.js';
     $single_news_entry = 'src/js/single-news.js';
@@ -272,6 +276,26 @@ function foods_theme_scripts() {
         foods_enqueue_vite_entry(
             'foods-page-select-fish',
             $page_select_fish_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    if (is_page() && basename((string) get_page_template()) === 'page-select-rice.php') {
+        foods_enqueue_vite_entry(
+            'foods-page-select-rice',
+            $page_select_rice_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    if (is_page() && basename((string) get_page_template()) === 'page-select-deli.php') {
+        foods_enqueue_vite_entry(
+            'foods-page-select-deli',
+            $page_select_deli_entry,
             $dev_server,
             $manifest,
             $is_local

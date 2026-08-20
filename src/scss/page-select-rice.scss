@@ -1,0 +1,248 @@
+$detail: '.p-page-select-detail';
+
+#{$detail}--rice {
+	#{$detail}__message--cornerDecoration,
+	#{$detail}__about__content--rice-and-farmer,
+	#{$detail}__about__content--rice-plant,
+	#{$detail}__about__content--rice-bales-and-farmer,
+	#{$detail}__about__content--sun-drying,
+	#{$detail}__news__wrapDecoration--rice-design {
+		position: absolute;
+		display: block;
+		height: auto;
+		pointer-events: none;
+	}
+
+	#{$detail}__message--cornerDecoration {
+		right: 4vw;
+		bottom: -10vw;
+		z-index: 4;
+		width: 26.42vw;
+	}
+
+	#{$detail}__about__content--gallery-four,
+	#{$detail}__about__content--mainImageWrap,
+	#{$detail}__about__content--secondaryImageWrap,
+	#{$detail}__news__wrap {
+		position: relative;
+	}
+
+	#{$detail}__about__content--gallery-four > #{$detail}__about__content--title {
+		white-space: nowrap;
+
+		#{$detail}__about__content--location {
+			display: block;
+		}
+	}
+
+	#{$detail}__about__content + #{$detail}__about__content > #{$detail}__about__content--title {
+		white-space: nowrap;
+
+		#{$detail}__about__content--location {
+			display: block;
+		}
+	}
+
+	#{$detail}__about__content--rice-and-farmer {
+		top: -27vw;
+		left: 0vw;
+		z-index: 4;
+		width: 14.35vw;
+	}
+
+	#{$detail}__about__content--rice-plant {
+		top: -17vw;
+		right: 3vw;
+		z-index: 4;
+		width: 11.29vw;
+	}
+
+	#{$detail}__about__content--rice-bales-and-farmer {
+		top: -22vw;
+		left: 1vw;
+		z-index: 4;
+		width: 11.53vw;
+	}
+
+	#{$detail}__about__content--sun-drying {
+		top: -131vw;
+		right: -1vw;
+		z-index: 4;
+		width: 24.26vw;
+	}
+
+	#{$detail}__news__wrapDecoration--rice-design {
+		top: -56vw;
+		right: 1vw;
+		z-index: 4;
+		width: 25.38vw;
+	}
+
+	#{$detail}__message--shape {
+		background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-rice/svg/buyer-message-background-sp.svg');
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-size: 100% 100%;
+	}
+
+	#{$detail}__message--shapeBase,
+	#{$detail}__message--shapeTop,
+	#{$detail}__message--shapeMiddle,
+	#{$detail}__message--shapeBottom {
+		display: none;
+	}
+
+	#{$detail}__hero__img--top {
+		width: 100%;
+	}
+
+	#{$detail}__about__content--imgWrap {
+		align-items: stretch;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+	#{$detail}--rice {
+		#{$detail}__message--shape {
+			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-rice/svg/buyer-message-background-tab.svg');
+			background-size: 100% 100%;
+		}
+
+		#{$detail}__message--cornerDecoration {
+			right: 11vw;
+			bottom: -8vw;
+			width: 20.42vw;
+		}
+
+		#{$detail}__about__content--rice-and-farmer {
+			top: -15vw;
+			left: 21vw;
+			width: 9.35vw;
+		}
+
+		#{$detail}__about__content--rice-plant {
+			top: -7vw;
+			right: 26vw;
+			width: 5.29vw;
+		}
+
+		#{$detail}__about__content--rice-bales-and-farmer {
+			top: -12vw;
+			left: 13vw;
+			width: 6.53vw;
+		}
+
+		#{$detail}__about__content--sun-drying {
+			top: -93vw;
+			right: 6vw;
+			width: 18.26vw;
+		}
+
+		#{$detail}__news__wrapDecoration--rice-design {
+			top: -26vw;
+			right: 5vw;
+			width: 16.38vw;
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+	#{$detail}--rice {
+		#{$detail}__message--shape {
+			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-rice/svg/buyer-message-background-pc.svg');
+		}
+
+		#{$detail}__message--cornerDecoration {
+			right: -7vw;
+			bottom: 2.6vw;
+			width: 14vw;
+		}
+
+		#{$detail}__about__content--rice-and-farmer {
+			top: -5vw;
+			left: -6vw;
+			width: 9.2vw;
+		}
+
+		#{$detail}__about__content--rice-plant {
+			top: -3vw;
+			right: -1vw;
+			width: 5.9vw;
+		}
+
+		#{$detail}__about__content--rice-bales-and-farmer {
+			top: -7vw;
+			left: -9.2vw;
+			width: 9.2vw;
+		}
+
+		#{$detail}__about__content--sun-drying {
+			top: 5.7vw;
+			right: -16.9vw;
+			width: 19.2vw;
+		}
+
+		#{$detail}__news__wrapDecoration--rice-design {
+			top: -19vw;
+			right: -1vw;
+			width: 10.8vw;
+		}
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	#{$detail}--rice {
+		#{$detail}__message--shape {
+			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-rice/svg/buyer-message-background-pc.svg');
+		}
+
+		#{$detail}__message--cornerDecoration {
+			right: -66px;
+			bottom: -44px;
+			width: 142px;
+		}
+
+		#{$detail}__about__content--rice-and-farmer {
+			top: -134px;
+			left: -106px;
+			width: 144px;
+		}
+
+		#{$detail}__about__content--rice-plant {
+			top: -93px;
+			right: 31px;
+			width: 88px;
+		}
+
+		#{$detail}__about__content--rice-bales-and-farmer {
+			top: -88px;
+			left: -117px;
+			width: 117px;
+		}
+
+		#{$detail}__about__content--sun-drying {
+			top: 73px;
+			right: -216px;
+			width: 246px;
+		}
+
+		#{$detail}__news__wrapDecoration--rice-design {
+			top: -258px;
+			right: -8px;
+			width: 151px;
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	#{$detail}--rice {
+		#{$detail}__hero__img--top {
+			width: min(93.08vw, 760px);
+		}
+
+		#{$detail}__about__content--imgSmall {
+			height: 27.5vw;
+			object-fit: cover;
+		}
+	}
+}
