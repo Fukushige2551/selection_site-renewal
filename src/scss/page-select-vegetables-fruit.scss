@@ -1,0 +1,265 @@
+$detail: '.p-page-select-detail';
+
+@mixin decoration($z-index: 3) {
+	position: absolute;
+	z-index: $z-index;
+	display: block;
+	height: auto;
+	pointer-events: none;
+}
+
+#{$detail}--vegetables-fruit {
+	#{$detail} {
+		&__message {
+			&--bg { isolation: isolate; }
+			&--shape { z-index: 0; }
+
+			&--cornerDecoration {
+				@include decoration(10);
+				right: 3.6vw;
+				bottom: -8vw;
+				width: 33.6vw;
+			}
+		}
+
+		&__about {
+			&__title--wrap { z-index: 4; }
+
+			&__content {
+				&--location { display: block; }
+				&--mainImageWrap { position: relative; }
+
+				&--rice-planting,
+				&--cabbage-farmer,
+				&--truck-farmer,
+				&--mikan,
+				&--mikan-harvest,
+				&--mikan-farmer {
+					@include decoration;
+				}
+
+				&--rice-planting {
+					top: -15vw;
+					left: -7vw;
+					width: 21.28vw;
+				}
+
+				&--cabbage-farmer {
+					top: -20vw;
+					right: -3vw;
+					width: 28.46vw;
+				}
+
+				&--truck-farmer {
+					right: -2vw;
+					bottom: 4.5vw;
+					width: 34.36vw;
+				}
+
+				&--mikan {
+					top: -21vw;
+					left: -7vw;
+					width: 17.95vw;
+				}
+
+				&--mikan-harvest {
+					top: -23vw;
+					right: 0;
+					width: 12.05vw;
+				}
+
+				&--mikan-farmer {
+					right: -7vw;
+					bottom: -13vw;
+					width: 49.23vw;
+				}
+			}
+		}
+
+		&__news__wrapDecoration {
+			@include decoration(4);
+
+			&--cabbage {
+				top: -52vw;
+				left: 4vw;
+				width: 24.1vw;
+			}
+
+			&--apple {
+				top: -42vw;
+				right: 2vw;
+				width: 19.74vw;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+	#{$detail}--vegetables-fruit {
+		#{$detail} {
+			&__message--cornerDecoration {
+				right: 12vw;
+				bottom: -3vw;
+				width: 20vw;
+			}
+
+			&__about__content {
+				&--rice-planting {
+					width: 16.81vw;
+					top: -14vw;
+					left: -7vw;
+				}
+				&--cabbage-farmer {
+					width: 18.45vw;
+					top: -16vw;
+					right: -3vw;
+				}
+
+				&--truck-farmer {
+					bottom: 3vw;
+					right: -2vw;
+					width: 35.45vw;
+				}
+
+				&--mikan {
+					top: -11vw;
+					left: -4.5vw;
+					width: 13.11vw;
+				}
+
+				&--mikan-harvest {
+					top: -13vw;
+					right: 1vw;
+					width: 8.12vw;
+				}
+
+				&--mikan-farmer {
+					right: -4.5vw;
+					bottom: 2vw;
+					width: 39vw;
+				}
+			}
+
+			&__news__wrapDecoration {
+				&--cabbage {
+					top: -31vw;
+					left: 9.5vw;
+					width: 12.24vw;
+				}
+
+				&--apple {
+					top: -25vw;
+					right: 8vw;
+					width: 10.03vw;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+	#{$detail}--vegetables-fruit {
+		#{$detail} {
+			&__message--cornerDecoration {
+				right: -7vw;
+				bottom: -40vw;
+				width: 12.66vw;
+			}
+
+			&__about__content {
+				&--rice-planting {
+					top: 1vw;
+					left: -12vw;
+					width: 17.32vw;
+				}
+				&--cabbage-farmer {
+					display: none;
+				}
+				&--truck-farmer {
+					width: 22.98vw;
+					right: -2vw;
+					bottom: -1.5vw;
+				}
+
+				&--mikan {
+					top: -7.5vw;
+					left: 55.25vw;
+					width: 11.65vw;
+					transform: scaleX(-1);
+				}
+
+				&--mikan-harvest {
+					top: -5.5vw;
+					right: 60vw;
+					width: 10.45vw;
+					transform: scaleX(-1);
+				}
+
+				&--mikan-farmer {
+					right: -14vw;
+					bottom: 0.5vw;
+					width: 41vw;
+				}
+			}
+
+			&__news__wrapDecoration {
+				&--cabbage {
+					top: -20vw;
+					left: 9vw;
+					width: 6vw;
+				}
+
+				&--apple {
+					top: -13vw;
+					right: 9vw;
+					width: 6vw;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	#{$detail}--vegetables-fruit {
+		#{$detail} {
+			&__message--cornerDecoration { display: none; }
+
+			&__about__content {
+				&--rice-planting { width: 4.32vw; }
+				&--cabbage-farmer { width: 5.78vw; }
+				&--truck-farmer { width: 6.98vw; }
+
+				&--mikan {
+					top: -1.5vw;
+					left: -0.75vw;
+					width: 3.65vw;
+				}
+
+				&--mikan-harvest {
+					top: -1.5vw;
+					right: -0.5vw;
+					width: 2.45vw;
+				}
+
+				&--mikan-farmer {
+					right: -1.25vw;
+					bottom: -0.5vw;
+					width: 10vw;
+				}
+			}
+
+			&__news__wrapDecoration {
+				&--cabbage {
+					top: -3vw;
+					left: -0.75vw;
+					width: 4.9vw;
+				}
+
+				&--apple {
+					top: -3vw;
+					width: 4.01vw;
+				}
+			}
+		}
+	}
+}

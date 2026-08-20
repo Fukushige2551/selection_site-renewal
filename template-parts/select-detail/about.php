@@ -72,17 +72,29 @@ foreach ($background_decorations as $decoration) {
                 <?php endif; ?>
                 <?php foreach ($decorations as $decoration) : ?>
                     <?php if ('content' === $decoration['placement']) : ?>
-                        <img class="<?php echo esc_attr($block_class . '__about__content--' . $decoration['key']); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt']); ?>">
+                        <?php if (!empty($decoration['src_pc'])) : ?><picture><?php endif; ?>
+                            <?php if (!empty($decoration['src_pc'])) : ?>
+                                <source media="(min-width: 1024px)" srcset="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src_pc'])); ?>">
+                            <?php endif; ?>
+                            <img class="<?php echo esc_attr($block_class . '__about__content--' . $decoration['key']); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt']); ?>">
+                        <?php if (!empty($decoration['src_pc'])) : ?></picture><?php endif; ?>
                     <?php endif; ?>
                 <?php endforeach; ?>
 
                 <?php $main_image = $section['main_image']; ?>
-                <picture>
-                    <?php if (!empty($main_image['webp'])) : ?>
-                        <source srcset="<?php echo esc_url(foods_get_select_detail_asset_url($config, $main_image['webp'])); ?>" type="image/webp">
-                    <?php endif; ?>
-                    <img class="<?php echo esc_attr($block_class); ?>__about__content--image" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $main_image['src'])); ?>" alt="<?php echo esc_attr($main_image['alt']); ?>">
-                </picture>
+                <div class="<?php echo esc_attr($block_class); ?>__about__content--mainImageWrap">
+                    <picture>
+                        <?php if (!empty($main_image['webp'])) : ?>
+                            <source srcset="<?php echo esc_url(foods_get_select_detail_asset_url($config, $main_image['webp'])); ?>" type="image/webp">
+                        <?php endif; ?>
+                        <img class="<?php echo esc_attr($block_class); ?>__about__content--image" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $main_image['src'])); ?>" alt="<?php echo esc_attr($main_image['alt']); ?>">
+                    </picture>
+                    <?php foreach ($decorations as $decoration) : ?>
+                        <?php if ('main_image' === $decoration['placement']) : ?>
+                            <img class="<?php echo esc_attr($block_class . '__about__content--' . $decoration['key']); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt']); ?>">
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </div>
                 <div class="<?php echo esc_attr($block_class); ?>__about__content--copy">
                     <?php foreach ($text_blocks as $text_block) : ?>
                         <?php if ('' !== $text_block) : ?><p><?php echo esc_html($text_block); ?></p><?php endif; ?>
@@ -169,7 +181,12 @@ foreach ($background_decorations as $decoration) {
 
                     <?php foreach ($decorations as $decoration) : ?>
                         <?php if ('gallery_after' === $decoration['placement']) : ?>
-                            <img class="<?php echo esc_attr($block_class); ?>__about__title--decoration7" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt']); ?>">
+                            <?php if (!empty($decoration['src_pc'])) : ?><picture><?php endif; ?>
+                                <?php if (!empty($decoration['src_pc'])) : ?>
+                                    <source media="(min-width: 1024px)" srcset="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src_pc'])); ?>">
+                                <?php endif; ?>
+                                <img class="<?php echo esc_attr($block_class . '__about__content--' . $decoration['key'] . ' ' . $block_class . '__about__title--decoration7'); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt']); ?>">
+                            <?php if (!empty($decoration['src_pc'])) : ?></picture><?php endif; ?>
                         <?php endif; ?>
                     <?php endforeach; ?>
                 </div>

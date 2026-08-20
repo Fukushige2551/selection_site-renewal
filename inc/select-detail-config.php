@@ -31,6 +31,7 @@ function foods_get_select_detail_configs() {
                 'bubble_sp' => 'svg/buyer-message-balloon-sp.svg',
                 'bubble_pc' => 'svg/buyer-message-balloon-pc.svg',
                 'buyer_image' => '@theme/img/page/page-select-detail/svg/img_message-buyer.svg',
+                'corner_decoration' => 'svg/seedlings.svg',
                 'background_pc' => '@theme/img/page/page-select-detail/svg/message_section_bg-pc.svg',
                 'text' => '味は、畑で決まる。<br>だから、私たちは“仕入れ”に<br>妥協しません。<br>セレクションの青果は、安心・安全を大前提に、おいしさで選び抜く。<br>産地は「有名だから」ではなく、<br>その季節にいちばん旨い場所を選ぶ。<br>そして、生産者とつながることで、<br>顔が見える品質と<br>ぶれない基準を手に入れる。<br>市場任せでは届かない旬がある。<br>セレクションは、独自の産直ルートで<br>“季節の主役”を先回りし、<br>売場で旬がひと目で伝わる<br>提案をつくります。<br>さらに入荷後も勝負どころ。<br>温度・水分・陳列の細部まで<br>鮮度管理を行い、<br>今日も、明日も、ちゃんとおいしい――<br>ご家庭でいちばんおいしくなる状態で<br>お渡しします。<br>野菜は料理で選ぶ。<br>果物は食べる日で選ぶ。<br>サラダ、炒め物、煮込み――<br>用途に合う品種と使い方。<br>追熟や保存のコツまで、<br>売場で一緒にご案内します。<br>今日のおすすめ、ぜひ聞いてください。<br>いちばんおいしいタイミングまで<br>ご提案します。',
                 'text_pc' => '味は、畑で決まる。<br>だから、私たちは“仕入れ”に妥協しません。<br>セレクションの青果は、安心・安全を大前提に、おいしさで選び抜く。<br>産地は「有名だから」ではなく、その季節にいちばん旨い場所を選ぶ。<br>そして、生産者とつながることで、顔が見える品質と<br>ぶれない基準を手に入れる。<br>市場任せでは届かない旬がある。<br>セレクションは、独自の産直ルートで“季節の主役”を先回りし、<br>売場で旬がひと目で伝わる提案をつくります。<br>さらに入荷後も勝負どころ。<br>温度・水分・陳列の細部まで鮮度管理を行い、<br>今日も、明日も、ちゃんとおいしい――<br>ご家庭でいちばんおいしくなる状態でお渡しします。<br>野菜は料理で選ぶ。果物は食べる日で選ぶ。<br>サラダ、炒め物、煮込み――用途に合う品種と使い方。<br>追熟や保存のコツまで、売場で一緒にご案内します。<br>今日のおすすめ、ぜひ聞いてください。<br>いちばんおいしいタイミングまでご提案します。',
@@ -63,7 +64,27 @@ function foods_get_select_detail_configs() {
                             ['src' => 'lettuce-field.png', 'alt' => '畑で育つレタス'],
                         ],
                         'gallery_variant' => 'three',
-                        'decorations' => [],
+                        'decorations' => [
+                            [
+                                'key' => 'rice-planting',
+                                'src' => 'svg/rice-planting.svg',
+                                'src_pc' => 'svg/rice-planting-pc.svg',
+                                'alt' => '',
+                                'placement' => 'content',
+                            ],
+                            [
+                                'key' => 'cabbage-farmer',
+                                'src' => 'svg/cabbage-farmer.svg',
+                                'alt' => '',
+                                'placement' => 'content',
+                            ],
+                            [
+                                'key' => 'truck-farmer',
+                                'src' => 'svg/truck-farmer.svg',
+                                'alt' => '',
+                                'placement' => 'gallery_after',
+                            ],
+                        ],
                     ],
                     [
                         'location' => '熊本県河内のみかん農家',
@@ -92,7 +113,27 @@ function foods_get_select_detail_configs() {
                             ['src' => 'mikan-packing.png', 'alt' => 'みかんの選果と梱包作業'],
                         ],
                         'gallery_variant' => 'three',
-                        'decorations' => [],
+                        'decorations' => [
+                            [
+                                'key' => 'mikan',
+                                'src' => 'svg/mikan.svg',
+                                'alt' => '',
+                                'placement' => 'main_image',
+                            ],
+                            [
+                                'key' => 'mikan-harvest',
+                                'src' => 'svg/mikan-harvest.svg',
+                                'alt' => '',
+                                'placement' => 'main_image',
+                            ],
+                            [
+                                'key' => 'mikan-farmer',
+                                'src' => 'svg/mikan-farmer.svg',
+                                'src_pc' => 'svg/mikan-farmer-pc.svg',
+                                'alt' => '',
+                                'placement' => 'gallery_after',
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -103,6 +144,18 @@ function foods_get_select_detail_configs() {
                 'archive_label' => 'お野菜・果物のこだわり一覧',
                 'background_sp' => '@theme/img/page/page-select-detail/meat_news_bgSP.png',
                 'background_pc' => '@theme/img/page/page-select-detail/meat_news_bgPC.png',
+                'wrap_decorations' => [
+                    [
+                        'key' => 'cabbage',
+                        'src' => 'svg/cabbage.svg',
+                        'alt' => '',
+                    ],
+                    [
+                        'key' => 'apple',
+                        'src' => 'svg/apple.svg',
+                        'alt' => '',
+                    ],
+                ],
             ],
         ],
         'meat' => [

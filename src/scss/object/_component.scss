@@ -755,9 +755,8 @@ font-size: 0.83vw;
 }
 // パンくず
 .c-breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 3.07vw;
+    --breadcrumb-gap: 3.07vw;
+    display: block;
     color: #000;
     font-family: $font-family-ZenKaku;
     font-size: 3.33vw;
@@ -765,11 +764,24 @@ font-size: 0.83vw;
     line-height: 1.23;
     letter-spacing: 0.05em;
     padding-top: 5vw;
-    margin-left: 5.38vw;
+    margin-inline: 5.38vw;
+
+    > * {
+        vertical-align: middle;
+    }
+
+    > * + * {
+        margin-left: var(--breadcrumb-gap);
+    }
 
     a,
-    span {
+    &__separator {
         white-space: nowrap;
+    }
+
+    &__current {
+        white-space: normal;
+        overflow-wrap: anywhere;
     }
 
     a {
@@ -784,8 +796,7 @@ font-size: 0.83vw;
         flex: 0 0 1.28vw;
         width: 1.28vw;
         height: 2.56vw;
-        margin-right: 0.77vw;
-        margin-left: 0.77vw;
+        margin-right: 0;
     }
 
     &__separator::before {
@@ -803,18 +814,17 @@ font-size: 0.83vw;
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .c-breadcrumb {
-        gap: 1.56vw;
+        --breadcrumb-gap: 1.56vw;
         font-size: 1.82vw;
         line-height: 1.5;
         padding-top: 4.6vw;
-        margin-left: 7.81vw;
+        margin-inline: 7.81vw;
 
         &__separator {
             flex-basis: 0.65vw;
             width: 0.65vw;
             height: 1.3vw;
-            margin-right: 0.39vw;
-            margin-left: 0.39vw;
+            margin-right: 0;
         }
 
         &__separator::before {
@@ -828,18 +838,17 @@ font-size: 0.83vw;
 
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
     .c-breadcrumb {
-        gap: 1.56vw;
+        --breadcrumb-gap: 1.56vw;
         font-size: 1.56vw;
         line-height: 1.5;
         padding-top: 3vw;
-        margin-left: 4vw;
+        margin-inline: 4vw;
 
         &__separator {
             flex-basis: 0.49vw;
             width: 0.49vw;
             height: 0.98vw;
-            margin-right: 0.29vw;
-            margin-left: 0.29vw;
+            margin-right: 0;
         }
 
         &__separator::before {
@@ -853,18 +862,17 @@ font-size: 0.83vw;
 
 @media screen and (min-width: 1280px) {
     .c-breadcrumb {
-        gap: 1.0417vw;
+        --breadcrumb-gap: 1.0417vw;
         font-size: 0.8333vw;
         line-height: 1.5;
         padding-top: 2.2vw;
-        margin-left: 24.06vw;
+        margin-inline: 24.06vw;
 
         &__separator {
             flex-basis: 0.2604vw;
             width: 0.2604vw;
             height: 0.5208vw;
-            margin-right: 0.2083vw;
-            margin-left: 0.2083vw;
+            margin-right: 0;
         }
 
         &__separator::before {

@@ -162,7 +162,6 @@
 			&::after {
 				bottom: 0;
 				height: 21.8vw;
-
 				background-image: var(--select-about-wave-sp-bottom);
 				background-position: center bottom;
 			}
@@ -176,15 +175,12 @@
 
 			&--text {
 				position: relative;
-
-				width: 74vw;
+				width: 62vw;
 				height: calc(74vw * 103 / 250);
 				margin: 0 auto;
-
 				font-family: $font-family-ZenKaku;
 				font-weight: bold;
 				text-align: center;
-
 				background: {
 					image: var(--select-about-title-background);
 					repeat: no-repeat;
@@ -195,7 +191,7 @@
 				span {
 					display: inline-block;
 					font-size: 5.1vw;
-					transform: translateY(18vw);
+					transform: translateY(17vw);
 				}
 			}
 
@@ -215,7 +211,7 @@
 			&--title {
 				margin: 5vw 0;
 
-				font-size: 4.6vw;
+				font-size: 5.12vw;
 				line-height: 1.5;
 				text-align: center;
 
@@ -674,7 +670,8 @@
 					line-height: 1.5;
 					text-align: center;
 					font-size: 2.3vw;
-					margin: 0 0 2vw;
+					margin: 0 0 4vw;
+
 					& span {
 						font-size: 1.8vw;
 						line-height: 2.5;
@@ -693,7 +690,7 @@
 				&--sub {
 					font-size: 2.3vw;
 					width: 100%;
-					margin: 5vw 0 2vw;
+					margin: 5vw 0 4vw;
 					text-align: center;
 				}
 				&--imgWrap {
@@ -946,7 +943,7 @@
 			}
 			&__title { width: auto; margin: 0 auto 2.88vw; font-size: 1.95vw; line-height: 2.93vw; letter-spacing: 0.15em; }
 			&__wrap { width: 62.5vw; margin: 0 auto; }
-			&__item { height: 14.23vw; padding: 1.23vw 0.99vw 1.32vw; border-radius: 0.82vw; }
+			&__item { padding: 1.23vw 0.99vw 1.32vw; border-radius: 0.82vw; }
 			&__item:nth-of-type(n + 3) { display: block; }
 			&__item + &__item { margin-top: 1.23vw; }
 			&__head { gap: 0.66vw; height: 1.64vw; margin-bottom: 1.4vw; }

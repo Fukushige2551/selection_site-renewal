@@ -1,6 +1,8 @@
 @use "../foundation/global" as *;
 
 .l-footer {
+    position: relative;
+    z-index: 100 !important;
     @include backgroundImg("#{$img-path}footer/footer_bg-sp.svg");
     display: flex;
     flex-flow: column;

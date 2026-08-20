@@ -15,6 +15,12 @@ $news = $config['news'];
         </div>
 
         <div class="<?php echo esc_attr($block_class); ?>__news__wrap">
+            <?php foreach (($news['wrap_decorations'] ?? []) as $decoration) : ?>
+                <?php if (!empty($decoration['key']) && !empty($decoration['src'])) : ?>
+                    <img class="<?php echo esc_attr($block_class . '__news__wrapDecoration ' . $block_class . '__news__wrapDecoration--' . sanitize_html_class($decoration['key'])); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt'] ?? ''); ?>">
+                <?php endif; ?>
+            <?php endforeach; ?>
+
             <?php foreach (($news['foreground_decorations'] ?? []) as $decoration) : ?>
                 <?php if (!empty($decoration['key']) && !empty($decoration['src'])) : ?>
                     <img class="<?php echo esc_attr($block_class . '__news__foregroundDecoration ' . $block_class . '__news__foregroundDecoration--' . sanitize_html_class($decoration['key']) . ' ' . $block_class . '__news__foregroundDecoration--desktopAnchor'); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt'] ?? ''); ?>">

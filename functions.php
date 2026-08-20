@@ -26,6 +26,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-page-privacy-js',
         'foods-page-shop-js',
         'foods-page-select-js',
+        'foods-page-select-vegetables-fruit-js',
         'foods-page-select-meat-js',
         'foods-page-select-fish-js',
         'foods-single-shop-js',
@@ -142,6 +143,7 @@ function foods_theme_scripts() {
     $page_privacy_entry = 'src/js/page-privacy.js';
     $page_shop_entry  = 'src/js/page-shop.js';
     $page_select_entry  = 'src/js/page-select.js';
+    $page_select_vegetables_fruit_entry = 'src/js/page-select-vegetables-fruit.js';
     $page_select_meat_entry = 'src/js/page-select-meat.js';
     $page_select_fish_entry = 'src/js/page-select-fish.js';
     $single_shop_entry = 'src/js/single-shop.js';
@@ -236,9 +238,19 @@ function foods_theme_scripts() {
         );
     }
 
-    // page-select-fish.php 専用アセット
+    // セレクション詳細ページ専用アセット
     $current_page_template = is_page() ? basename((string) get_page_template()) : '';
     $current_page_slug = is_page() ? (string) get_post_field('post_name', get_queried_object_id()) : '';
+
+    if (is_page() && $current_page_template === 'page-select-vegetables-fruit.php') {
+        foods_enqueue_vite_entry(
+            'foods-page-select-vegetables-fruit',
+            $page_select_vegetables_fruit_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
 
     if (
         is_page()
