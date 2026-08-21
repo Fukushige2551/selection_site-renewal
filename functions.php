@@ -2287,16 +2287,16 @@ function foods_get_news_default_terms() {
                 'slug' => 'fish',
             ],
             [
-                'name' => '果物',
-                'slug' => 'fruit',
-            ],
-            [
                 'name' => 'お米',
                 'slug' => 'rice',
             ],
             [
-                'name' => 'お野菜',
+                'name' => 'お野菜・果物',
                 'slug' => 'vegetables',
+            ],
+            [
+                'name' => 'お惣菜',
+                'slug' => 'deli',
             ],
             [
                 'name' => '乳製品',
@@ -2313,6 +2313,10 @@ function foods_get_news_default_terms() {
             [
                 'name' => 'お菓子',
                 'slug' => 'snacks',
+            ],
+            [
+                'name' => 'お酒',
+                'slug' => 'alcohol',
             ],
         ],
     ];

@@ -92,10 +92,6 @@ $detail: '.p-page-select-detail';
 		display: none;
 	}
 
-	#{$detail}__hero__img--top {
-		width: 100%;
-	}
-
 	#{$detail}__about__content--imgWrap {
 		align-items: stretch;
 	}
@@ -236,10 +232,6 @@ $detail: '.p-page-select-detail';
 
 @media screen and (max-width: 767px) {
 	#{$detail}--rice {
-		#{$detail}__hero__img--top {
-			width: min(93.08vw, 760px);
-		}
-
 		#{$detail}__about__content--imgSmall {
 			height: 27.5vw;
 			object-fit: cover;

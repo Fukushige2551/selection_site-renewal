@@ -140,7 +140,7 @@ function foods_get_select_detail_configs() {
             ],
             'news' => [
                 'taxonomy' => 'news_commitment',
-                'term' => ['vegetables', 'fruit'],
+                'term' => 'vegetables',
                 'title' => 'お野菜・果物のこだわりを<br>もっと見る',
                 'archive_label' => 'お野菜・果物のこだわり一覧',
                 'background_sp' => '@theme/img/page/page-select-detail/meat_news_bgSP.png',
@@ -271,7 +271,7 @@ function foods_get_select_detail_configs() {
                 'image_alt' => '田植えをする生産者の様子',
             ],
             'message' => [
-                'bubble_sp' => 'svg/buyer-message.svg',
+                'bubble_sp' => 'svg/buyer-message-sp.svg',
                 'bubble_pc' => 'svg/buyer-message.svg',
                 'buyer_image' => '@theme/img/page/page-select-detail/svg/img_message-buyer.svg',
                 'corner_decoration' => 'svg/swallows.svg',
@@ -368,10 +368,10 @@ function foods_get_select_detail_configs() {
             'message' => [
                 'bubble_sp' => 'svg/buyer-message-balloon-sp.svg',
                 'bubble_pc' => 'svg/buyer-message-balloon-pc.svg',
-                'buyer_image' => '@theme/img/component/no-image.png',
-                'catch' => '組み合わせまで考えたお惣菜',
-                'text' => 'セレクションの惣菜は、<br>店内のこだわり食材を活かした<br>「自慢の惣菜」を中心に、<br>素材と味に自信のあるラインアップを<br>揃えています。<br>毎日の食卓にもう一品、<br>忙しい日でもちゃんとおいしい――<br>そんな場面で頼れる惣菜売場を<br>目指しています。<br>素材の旬や季節行事、行楽などの<br>生活シーンに合わせて売場の提案を更新し、<br>主菜・副菜の組み合わせまで<br>選びやすく整えています。<br>迷ったら、今日のおすすめを<br>気軽に聞いてください。',
+                'buyer_image' => '@theme/img/page/page-select-detail/svg/img_message-buyer.svg',
+                'text' => 'セレクションの惣菜は、<br>店内のこだわり食材を活かした<br>「自慢の惣菜」を中心に、<br>素材と味に自信のある<br>ラインアップを揃えています。<br>毎日の食卓にもう一品、<br>忙しい日でもちゃんとおいしい――<br>そんな場面で頼れる惣菜売場を<br>目指しています。<br>素材の旬や季節行事、<br>行楽などの生活シーンに<br>合わせて売場の提案を更新し、<br>主菜・副菜の組み合わせまで<br>選びやすく整えています。<br>迷ったら、今日のおすすめを気軽に<br>聞いてください。',
                 'text_pc' => 'セレクションの惣菜は、<br>店内のこだわり食材を活かした「自慢の惣菜」を中心に、<br>素材と味に自信のあるラインアップを揃えています。<br>毎日の食卓にもう一品、<br>忙しい日でもちゃんとおいしい――<br>そんな場面で頼れる惣菜売場を目指しています。<br>素材の旬や季節行事、行楽などの生活シーンに合わせて売場の提案を更新し、<br>主菜・副菜の組み合わせまで選びやすく整えています。<br>迷ったら、今日のおすすめを気軽に聞いてください。',
+                'corner_decoration' => 'svg/deli-cookware.svg',
             ],
             'about' => [
                 'title' => 'こだわりの現場から',
@@ -383,20 +383,33 @@ function foods_get_select_detail_configs() {
                 'wave_pc_bottom' => '@theme/img/page/page-select-detail/svg/meat_about_wave-bottom-pc.svg',
                 'decorations' => [],
                 'sections' => [[
-                    'title' => '店内で生地から。焼きたてを、そのまま食卓へ<br>セレクションオリジナルピザ',
-                    'main_image' => ['src' => '@theme/img/component/no-image.png', 'alt' => 'セレクションオリジナルピザ（撮影予定）'],
+                    'title' => '店内で生地から。焼きたてを、<br class="u-deli-title-break-sp-tab">そのまま食卓へ<br>セレクションオリジナルピザ',
+                    'main_image' => ['src' => '@theme/img/page/page-select-rice/rice-cooked.png', 'alt' => '炊きたての房の黄金米'],
                     'text_blocks' => [
                         '店内で生地から仕込み、毎日焼き上げるセレクションオリジナルピザ。',
                         '一枚ずつ直径30cmになるように伸ばし、400℃のピザ窯で高温・短時間で焼き上げることで、香ばしい焼き目と中はもちもちのナポリ風食感に仕上げています。種類は10種類以上。定番から気分で選べるラインアップで、家族の食卓にも週末のごちそうにもぴったりです。',
                     ],
                     'gallery' => [
-                        ['src' => '@theme/img/component/no-image.png', 'alt' => 'ピザ作りの様子（撮影予定）'],
-                        ['src' => '@theme/img/component/no-image.png', 'alt' => 'ピザ作りの様子（撮影予定）'],
-                        ['src' => '@theme/img/component/no-image.png', 'alt' => 'ピザ作りの様子（撮影予定）'],
-                        ['src' => '@theme/img/component/no-image.png', 'alt' => 'ピザ作りの様子（撮影予定）'],
+                        ['src' => '@theme/img/page/page-select-rice/tractor.png', 'alt' => '田植えを行うトラクター'],
+                        ['src' => '@theme/img/page/page-select-rice/rice-grains.png', 'alt' => '収穫されたお米'],
+                        ['src' => '@theme/img/page/page-select-rice/rice-product.png', 'alt' => '房の黄金米の商品'],
+                        ['src' => '@theme/img/page/page-select-rice/award.png', 'alt' => '受賞した米のたけやまの生産者'],
                     ],
                     'gallery_variant' => 'four',
-                    'decorations' => [],
+                    'decorations' => [
+                        [
+                            'key' => 'staff',
+                            'src' => 'svg/deli-staff.svg',
+                            'alt' => '',
+                            'placement' => 'content',
+                        ],
+                        [
+                            'key' => 'bread-making',
+                            'src' => 'svg/deli-bread-making.svg',
+                            'alt' => '',
+                            'placement' => 'gallery_before',
+                        ],
+                    ],
                 ]],
             ],
             'news' => [
@@ -406,6 +419,10 @@ function foods_get_select_detail_configs() {
                 'archive_label' => 'お惣菜のこだわり一覧',
                 'background_sp' => '@theme/img/page/page-select-detail/meat_news_bgSP.png',
                 'background_pc' => '@theme/img/page/page-select-detail/meat_news_bgPC.png',
+                'wrap_decorations' => [
+                    ['key' => 'karaage', 'src' => 'svg/deli-karaage.svg', 'alt' => ''],
+                    ['key' => 'nikujaga', 'src' => 'svg/deli-nikujaga.svg', 'alt' => ''],
+                ],
             ],
         ],
         'fish' => [
@@ -429,7 +446,7 @@ function foods_get_select_detail_configs() {
             'message' => [
                 'bubble_sp' => 'svg/buyer-message-balloon-sp.svg',
                 'bubble_pc' => 'svg/buyer-message-balloon-pc.svg',
-                'buyer_image' => 'buyer-manager.png',
+                'buyer_image' => '@theme/img/page/page-select-detail/svg/img_message-buyer.svg',
                 'background_pc' => '@theme/img/page/page-select-detail/svg/message_section_bg-pc.svg',
                 'text' => '鮮度はもちろん、<br>産地や漁法、脂の乗りまで<br>“目で見て選ぶ”。<br>セレクションのお魚は、<br>全国の産直に加え、<br>地元・千葉県の漁港から届く鮮度の良い<br>「地魚」を中心に買付を行っています。<br>季節ごとに変わる<br>“旬のいちばん”を逃さず、<br>切身・刺身・焼魚まで、<br>今日いちばんおいしい形で<br>食卓に届けます。<br>魚は「鮮度」だけでなく、<br>今の状態に合った食べ方でおいしさが<br>決まります。<br>私たちは、脂の乗り・身質・サイズを見て<br>売場に出し、刺身、焼き、煮付けなど<br>おすすめの食べ方も一緒にご案内します。<br>売場では旬の打ち出しも強め、<br>迷わず選べるように。<br>迷ったら気軽に声をかけてください。',
                 'text_pc' => '鮮度はもちろん、産地や漁法、脂の乗りまで<br>“目で見て選ぶ”。<br>セレクションのお魚は、全国の産直に加え、<br>地元・千葉県の漁港から届く鮮度の良い<br>「地魚」を中心に買付を行っています。<br>季節ごとに変わる“旬のいちばん”を逃さず、<br>切身・刺身・焼魚まで、<br>今日いちばんおいしい形で食卓に届けます。<br>魚は「鮮度」だけでなく、<br>今の状態に合った食べ方でおいしさが決まります。<br>私たちは、脂の乗り・身質・サイズを見て<br>売場に出し、刺身、焼き、煮付けなど<br>おすすめの食べ方も一緒にご案内します。<br>売場では旬の打ち出しも強め、迷わず選べるように。<br>迷ったら気軽に声をかけてください。',

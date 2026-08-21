@@ -87,13 +87,14 @@ foreach ($shop_terms as $shop_term) {
 $commitment_terms = [
     ['name' => 'お肉', 'slug' => 'meat'],
     ['name' => 'お魚', 'slug' => 'fish'],
-    ['name' => '果物', 'slug' => 'fruit'],
     ['name' => 'お米', 'slug' => 'rice'],
-    ['name' => 'お野菜', 'slug' => 'vegetables'],
+    ['name' => 'お野菜・果物', 'slug' => 'vegetables'],
+    ['name' => 'お惣菜', 'slug' => 'deli'],
     ['name' => '乳製品', 'slug' => 'dairy-products'],
     ['name' => '和日配', 'slug' => 'japanese-daily-foods'],
     ['name' => '加工食品', 'slug' => 'processed-foods'],
     ['name' => 'お菓子', 'slug' => 'snacks'],
+    ['name' => 'お酒', 'slug' => 'alcohol'],
 ];
 
 foreach ($commitment_terms as $commitment_term) {
