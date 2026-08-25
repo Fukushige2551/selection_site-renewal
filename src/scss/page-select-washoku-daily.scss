@@ -1,0 +1,50 @@
+$detail: '.p-page-select-detail';
+
+#{$detail}--washoku-daily {
+	#{$detail}__message--bubbleSp {
+		display: block;
+	}
+
+	#{$detail}__message--bubblePc {
+		display: none;
+	}
+
+	#{$detail}__message--shape {
+		background: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-washoku-daily/svg/buyer-message-background-sp.svg') center top / 100% 100% no-repeat;
+	}
+
+	#{$detail}__message--shapeBase,
+	#{$detail}__message--shapeTop,
+	#{$detail}__message--shapeMiddle,
+	#{$detail}__message--shapeBottom {
+		display: none;
+	}
+
+	#{$detail}__about__content--imgWrap {
+		align-items: stretch;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	#{$detail}--washoku-daily {
+		#{$detail}__message--bubbleSp {
+			display: none;
+		}
+
+		#{$detail}__message--bubblePc {
+			display: block;
+		}
+
+		#{$detail}__message--shape {
+			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-washoku-daily/svg/buyer-message-background-tab.svg');
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	#{$detail}--washoku-daily {
+		#{$detail}__message--shape {
+			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-washoku-daily/svg/buyer-message-background-pc.svg');
+		}
+	}
+}
