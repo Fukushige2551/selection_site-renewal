@@ -159,6 +159,103 @@ function foods_get_select_detail_configs() {
                 ],
             ],
         ],
+        'foods' => [
+            'page_slug' => 'select-foods',
+            'modifier' => 'foods',
+            'title' => '加工食品のこだわり',
+            'asset_base' => 'img/page/page-select-foods',
+            'theme' => [
+                'message_background' => '#e7f9f5',
+            ],
+            'breadcrumb' => [
+                'parent_label' => 'セレクションのこだわり',
+                'parent_url' => '/select/',
+            ],
+            'hero' => [
+                'lead' => '料理の味を支える、なくてはならない存在。<br>原材料や製法にこだわった商品を中心に、<br>毎日の料理が楽しくなる食品を厳選しています。',
+                'image' => '加工.svg',
+                'image_alt' => '加工食品をつくる現場',
+            ],
+            'message' => [
+                'bubble_sp' => '吹き出しsp.svg',
+                'bubble_pc' => '吹き出しpc.svg',
+                'buyer_image' => '@theme/img/page/page-select-detail/svg/img_message-buyer.svg',
+                'corner_decoration' => 'スプーン.svg',
+                'text' => '料理の決め手になる調味料から、<br>コーヒーなどの嗜好品まで。<br>セレクションの加工食品は、<br>お客様の食卓が「ちゃんとおいしく整う」品ぞろえを大切にしています。<br>世界の一流メーカーの定番はもちろん、<br>日本の小さな町で丁寧につくられた<br>こだわりの商品まで、<br>使う場面が想像できるものを<br>選び抜きました。<br>毎日の料理がラクになる“基本の一本”、<br>いつもの味が変わる“ひとさじ”、<br>手土産にもなる“ちょっと良いもの”。<br>定番は切らさず、<br>季節や話題で新しい出会いもつくる。<br>迷ったら、料理や好みに合わせて<br>おすすめします。',
+                'text_pc' => '料理の決め手になる調味料から、コーヒーなどの嗜好品まで。<br>セレクションの加工食品は、<br>お客様の食卓が「ちゃんとおいしく整う」品ぞろえを大切にしています。<br>世界の一流メーカーの定番はもちろん、<br>日本の小さな町で丁寧につくられた<br>こだわりの商品まで、使う場面が想像できるものを選び抜きました。<br>毎日の料理がラクになる“基本の一本”、<br>いつもの味が変わる“ひとさじ”、<br>手土産にもなる“ちょっと良いもの”。<br>定番は切らさず、季節や話題で新しい出会いもつくる。<br>迷ったら、料理や好みに合わせておすすめします。',
+            ],
+            'about' => [
+                'title' => 'こだわりの現場から',
+                'title_background' => '@theme/img/page/page-select-detail/svg/meat_about_title.svg',
+                'background' => '@theme/img/page/page-select-detail/brick.png',
+                'wave_sp_top' => '@theme/img/page/page-select-detail/svg/upper_wave.svg',
+                'wave_sp_bottom' => '@theme/img/page/page-select-detail/svg/about-wave-bottom-sp.svg',
+                'wave_pc_top' => '@theme/img/page/page-select-detail/svg/meat_about_wave-top-pc.svg',
+                'wave_pc_bottom' => '@theme/img/page/page-select-detail/svg/meat_about_wave-bottom-pc.svg',
+                'decorations' => [],
+                'sections' => [
+                    [
+                        'location' => '自家焙煎珈琲専門店',
+                        'title' => 'イデカフェ',
+                        'main_image' => ['src' => '珈琲豆.png', 'alt' => '自家焙煎珈琲専門店 イデカフェの珈琲豆'],
+                        'text_blocks' => [
+                            '世界各国のコーヒー農園から、厳選を重ねて品質の高いアラビカ種の生豆を仕入れています。生産地や豆の状態を丁寧に見極めながら、確かな品質の原料を選び抜いています。',
+                        ],
+                        'sub_title' => '焙煎マイスターが仕上げる<br>鮮度にこだわった自家焙煎コーヒー',
+                        'secondary_image' => ['src' => '撮影予定1.png', 'alt' => 'セレクションオリジナルコーヒー'],
+                        'secondary_text_blocks' => [
+                            'コーヒーは鮮度が命！マイスター資格をもつ焙煎師が、気温や豆の状態に合わせて、最適な火入れで香り高く焙煎。パッキングまでの全行程を、自社で一括管理することで、安全で高品質なコーヒーを、新鮮な状態でお届けしています。「毎日飲むからこそ本当に美味しいコーヒーを」「１杯のコーヒーが生活を彩る名脇役であるために」そんな願いを込めた、自家焙煎専門店イデカフェのこだわりの１杯をお楽しみ下さい。',
+                        ],
+                        'gallery' => [
+                            [
+                                'src' => 'イデカフェのこだわり.png',
+                                'src_sp' => 'イデカフェのこだわりsp.png',
+                                'alt' => '品質、焙煎技術、鮮度にこだわるイデカフェ',
+                            ],
+                        ],
+                        'decorations' => [
+                            ['key' => 'coffee-staff', 'src' => 'スタッフ.svg', 'alt' => '', 'placement' => 'content'],
+                            ['key' => 'coffee-beans', 'src' => '珈琲豆デザイン.svg', 'alt' => '', 'placement' => 'content'],
+                            ['key' => 'coffee-shop', 'src' => '珈琲売店.svg', 'src_sp' => '珈琲売店sp.svg', 'alt' => '', 'placement' => 'gallery_after'],
+                        ],
+                    ],
+                    [
+                        'title' => '大分県日田<br>川津食品',
+                        'main_image' => ['src' => '川津スタッフ.png', 'alt' => '川津食品のスタッフ'],
+                        'text_blocks' => [
+                            '川津食品は、柚子こしょうを世に広めた先駆けとして知られています。今から60数年前――「わさびのように、刺身に合う新しい薬味は作れないだろうか？」そのひとつの問いから、柚子・唐辛子・塩を絶妙に掛け合わせた、新しい薬味「柚子こしょう」が誕生しました。',
+                        ],
+                        'sub_title' => '柚子こしょうを広めた先駆け。<br>川津食品が守り続ける本物の味',
+                        'secondary_image' => ['src' => '撮影予定2.png', 'alt' => '川津食品の柚子こしょう'],
+                        'secondary_text_blocks' => [
+                            '素材はシンプル。だからこそ、ごまかしはききません。香り高い柚子の風味、唐辛子の切れ味、塩のうまみ。そのすべてが調和した、凛とした味わい。',
+                            '誕生当時の製法は、今もなお変わることなく受け継がれています。',
+                            '時代が移り変わっても、守り続ける“昔ながらの本物の味”。それが、川津食品の柚子こしょうです。',
+                        ],
+                        'gallery' => [
+                            ['src' => 'ゆずこしょう.png', 'alt' => '柚子こしょう'],
+                            ['src' => '加工場.png', 'alt' => '柚子を加工する川津食品の工場'],
+                        ],
+                        'decorations' => [
+                            ['key' => 'yuzu-processing', 'src' => 'ゆず加工.svg', 'alt' => '', 'placement' => 'content'],
+                            ['key' => 'yuzu', 'src' => 'ゆず.svg', 'alt' => '', 'placement' => 'content'],
+                            ['key' => 'yuzu-machine', 'src' => 'ゆずこしょう加工機.svg', 'alt' => '', 'placement' => 'gallery_before'],
+                        ],
+                    ],
+                ],
+            ],
+            'news' => [
+                'taxonomy' => 'news_commitment',
+                'term' => 'foods',
+                'title' => '加工食品のこだわりを<br>もっと見る',
+                'archive_label' => '加工食品のこだわり一覧',
+                'background_sp' => '@theme/img/page/page-select-detail/meat_news_bgSP.png',
+                'background_pc' => '@theme/img/page/page-select-detail/meat_news_bgPC.png',
+                'wrap_decorations' => [
+                    ['key' => 'yuzu-kosho', 'src' => '柚子胡椒@2x 2.svg', 'alt' => ''],
+                ],
+            ],
+        ],
         'meat' => [
             'page_slug' => 'select-meat',
             'modifier' => 'meat',

@@ -39,6 +39,7 @@ export default defineConfig({
                 'page-select-rice': path.resolve(__dirname, 'src/js/page-select-rice.js'),
                 'page-select-deli': path.resolve(__dirname, 'src/js/page-select-deli.js'),
                 'page-select-washoku-daily': path.resolve(__dirname, 'src/js/page-select-washoku-daily.js'),
+                'page-select-foods': path.resolve(__dirname, 'src/js/page-select-foods.js'),
                 'single-shop': path.resolve(__dirname, 'src/js/single-shop.js'),
                 'archive-news': path.resolve(__dirname, 'src/js/archive-news.js'),
                 'single-news': path.resolve(__dirname, 'src/js/single-news.js'),
