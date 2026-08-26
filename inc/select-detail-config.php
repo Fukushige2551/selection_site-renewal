@@ -246,7 +246,7 @@ function foods_get_select_detail_configs() {
             'news' => [
                 'taxonomy' => 'news_commitment',
                 'term' => 'meat',
-                'title' => 'お肉のこだわりをもっと見る',
+                'title' => 'お肉のこだわりを<br>もっと見る',
                 'archive_label' => 'お肉のこだわり一覧はこちら',
                 'decoration' => 'svg/meat_about_deco6.svg',
                 'background_sp' => '@theme/img/page/page-select-detail/meat_news_bgSP.png',
@@ -339,7 +339,7 @@ function foods_get_select_detail_configs() {
             'news' => [
                 'taxonomy' => 'news_commitment',
                 'term' => 'rice',
-                'title' => 'お米のこだわりをもっと見る',
+                'title' => 'お米のこだわりを<br>もっと見る',
                 'archive_label' => 'お米のこだわり一覧',
                 'wrap_decorations' => [
                     ['key' => 'rice-design', 'src' => 'svg/rice-design.svg', 'alt' => ''],
@@ -415,7 +415,7 @@ function foods_get_select_detail_configs() {
             'news' => [
                 'taxonomy' => 'news_commitment',
                 'term' => 'deli',
-                'title' => 'お惣菜のこだわりをもっと見る',
+                'title' => 'お惣菜のこだわりを<br>もっと見る',
                 'archive_label' => 'お惣菜のこだわり一覧',
                 'background_sp' => '@theme/img/page/page-select-detail/meat_news_bgSP.png',
                 'background_pc' => '@theme/img/page/page-select-detail/meat_news_bgPC.png',
@@ -468,7 +468,7 @@ function foods_get_select_detail_configs() {
                         '自社農園を構え、土作りからの製品作りまで管理しつつ、品質を高いレベルで安定させる。これが濱田のこだわりです。',
                     ],
                     'sub_title' => '自然の恵みと人の技が融合した、<br>最高の梅干を作るための農園。',
-                    'secondary_image' => ['src' => 'plums.png', 'alt' => '農園で実る梅'],
+                    'secondary_image' => ['src' => 'plums.png', 'alt' => '農園で実る梅', 'background_decoration' => true],
                     'secondary_text_blocks' => ['梅を通じた「おいしさ」と「楽しさ」を提供しつづけます。'],
                     'gallery' => [
                         ['src' => 'umeboshi.png', 'alt' => '濱田農園の梅干し'],
@@ -482,6 +482,7 @@ function foods_get_select_detail_configs() {
                 'taxonomy' => 'news_commitment',
                 'term' => 'washoku-daily',
                 'title' => '和日配のこだわりを<br>もっと見る',
+                'title_pc' => '和日配のこだわり<br>をもっと見る',
                 'archive_label' => '和日配のこだわり一覧',
                 'background_sp' => '@theme/img/page/page-select-detail/meat_news_bgSP.png',
                 'background_pc' => '@theme/img/page/page-select-detail/meat_news_bgPC.png',
@@ -597,7 +598,7 @@ function foods_get_select_detail_configs() {
             'news' => [
                 'taxonomy' => 'news_commitment',
                 'term' => 'fish',
-                'title' => 'お魚のこだわりをもっと見る',
+                'title' => 'お魚のこだわりを<br>もっと見る',
                 'archive_label' => 'お魚のこだわり一覧',
                 'foreground_decorations' => [
                     ['key' => 'fish', 'src' => 'svg/fish.svg', 'alt' => ''],

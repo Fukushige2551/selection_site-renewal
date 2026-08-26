@@ -23,6 +23,76 @@ $detail: '.p-page-select-detail';
 	#{$detail}__about__content--imgWrap {
 		align-items: stretch;
 	}
+
+	#{$detail}__message--bg,
+	#{$detail}__about__content--mainImageWrap,
+	#{$detail}__about__content--secondaryImageWrap,
+	#{$detail}__about__content--imgWrap,
+	#{$detail}__news__wrap {
+		position: relative;
+	}
+
+	#{$detail}__message--bg::after,
+	#{$detail}__message--bg::before,
+	#{$detail}__about__content--mainImageWrap::after,
+	#{$detail}__about__content--secondaryImageWrap::after,
+	#{$detail}__about__content--imgWrap::before,
+	#{$detail}__news__wrap::after {
+		content: '';
+		position: absolute;
+		z-index: 3;
+		display: block;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		pointer-events: none;
+	}
+
+	#{$detail}__message--bg::after {
+		right: 0vw;
+		bottom: 1vw;
+		width: 18.62vw;
+		aspect-ratio: 72.63 / 80;
+		background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-washoku-daily/svg/decoration-vegetables.svg');
+	}
+
+	#{$detail}__message--bg::before {
+		bottom: -21vw;
+		left: 3vw;
+		width: 15.12vw;
+		aspect-ratio: 59 / 113.95;
+		background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-washoku-daily/svg/decoration-plum-harvest.svg');
+	}
+
+	#{$detail}__about__content--mainImageWrap::after {
+		top: -56vw;
+		right: 5vw;
+		width: 15.38vw;
+		aspect-ratio: 60 / 31.27;
+		background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-washoku-daily/svg/decoration-plum.svg');
+	}
+
+	#{$detail}__about__content--secondaryImageWrap::after {
+		top: -15vw;
+		right: -1vw;
+		width: 10.95vw;
+		aspect-ratio: 42.72 / 93.11;
+		background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-washoku-daily/svg/decoration-plum-and-farmer.svg');
+	}
+
+	#{$detail}__about__content--imgWrap::before {
+		display: none;
+		aspect-ratio: 559 / 399;
+		background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-washoku-daily/svg/decoration-plum-and-farmers.svg');
+	}
+
+	#{$detail}__news__wrap::after {
+		top: -52vw;
+		right: 2vw;
+		width: 33.33vw;
+		aspect-ratio: 130 / 85;
+		background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-washoku-daily/svg/decoration-news-plum.svg');
+	}
 }
 
 @media screen and (min-width: 768px) {
@@ -38,6 +108,38 @@ $detail: '.p-page-select-detail';
 		#{$detail}__message--shape {
 			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-washoku-daily/svg/buyer-message-background-tab.svg');
 		}
+
+		#{$detail}__message--bg::after {
+			right: 0vw;
+			bottom: -7vw;
+			width: 17vw;
+		}
+
+		#{$detail}__message--bg::before {
+			bottom: -18vw;
+			left: 3vw;
+			width: 12vw;
+		}
+		#{$detail}__about__content--mainImageWrap::after {
+			top: -4vw;
+			right: -3vw;
+			width: 19vw;
+		}
+		#{$detail}__about__content--secondaryImageWrap::after {
+			top: -13vw;
+			right: -1vw;
+			width: 12vw;
+		}
+		#{$detail}__about__content--imgWrap::before {
+			top: -18vw;
+			right: 10vw;
+			width: 18vw;
+		}
+		#{$detail}__news__wrap::after {
+			top: -30vw;
+			right: 10vw;
+			width: 20vw;
+		}
 	}
 }
 
@@ -45,6 +147,77 @@ $detail: '.p-page-select-detail';
 	#{$detail}--washoku-daily {
 		#{$detail}__message--shape {
 			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-washoku-daily/svg/buyer-message-background-pc.svg');
+		}
+
+		#{$detail}__message--bg::after {
+			right: -2vw;
+			bottom: 1.6vw;
+			width: 13vw;
+		}
+		#{$detail}__message--bg::before {
+			bottom: -40vw;
+			left: -11vw;
+			width: 13vw;
+		}
+		#{$detail}__about__content--mainImageWrap::after {
+			top: -6vw;
+			right: -4.6vw;
+			width: 14vw;
+		}
+		#{$detail}__about__content--secondaryImageWrap::after {
+			top: -11vw;
+			right: -11vw;
+			width: 9vw;
+		}
+		#{$detail}__news__wrap::after {
+			top: -22vw;
+			right: 1vw;
+			width: 14vw;
+		}
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	#{$detail}--washoku-daily {
+		#{$detail}__message--bg::after {
+			right: -24px;
+			bottom: -55px;
+			width: 164.45px;
+		}
+
+		#{$detail}__message--bg::before {
+			bottom: -392px;
+			left: -110px;
+			width: 171.07px;
+		}
+
+		#{$detail}__about__content--mainImageWrap::after {
+			top: -58px;
+			right: -35px;
+			width: 136.09px;
+		}
+
+		#{$detail}__about__content--secondaryImageWrap::after {
+			top: -171px;
+			right: -174px;
+			width: 132px;
+		}
+
+		#{$detail}__news__wrap::after {
+			top: -248px;
+			right: 0;
+			width: 192px;
+		}
+	}
+}
+
+@media screen and (min-width: 1685px) {
+	#{$detail}--washoku-daily {
+		#{$detail}__about__content--imgWrap::before {
+			display: block;
+			top: -52px;
+			left: -458px;
+			width: 559px;
 		}
 	}
 }

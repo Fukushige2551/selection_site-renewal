@@ -306,7 +306,6 @@
 		&__title {
 			position: relative;
 
-			width: 42.1vw;
 			margin: 0 auto 8vw;
 
 			font-family: $font-family-ZenKaku;
@@ -319,6 +318,10 @@
 		&__titleWrap {
 			position: relative;
 			width: 100%;
+		}
+
+		&__titlePc {
+			display: none;
 		}
 
 		&__foregroundDecoration {
@@ -550,6 +553,10 @@
 }
 
 @media screen and (min-width: 768px) {
+	.p-page-select-detail__news__title br {
+		display: none;
+	}
+
 	.p-page-select-detail {
 		&__hero {
 			padding-top: 10vw;
@@ -1333,6 +1340,20 @@
 }
 
 @media screen and (min-width: 1024px) {
+	.p-page-select-detail__news__title--responsive {
+		.p-page-select-detail__news__titleSp {
+			display: none;
+		}
+
+		.p-page-select-detail__news__titlePc {
+			display: inline;
+		}
+
+		.p-page-select-detail__news__titlePc br {
+			display: block;
+		}
+	}
+
 	.p-page-select-detail--vegetables-fruit {
 		.p-page-select-detail__message--shape {
 			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-vegetables-fruit/svg/buyer-message-background-pc.svg');

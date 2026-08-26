@@ -126,7 +126,7 @@ foreach ($background_decorations as $decoration) {
                     <?php if ($secondary_image_decorations) : ?>
                         <div class="<?php echo esc_attr($block_class); ?>__about__content--secondaryImageAnchor">
                     <?php endif; ?>
-                    <?php if ($secondary_inline_decorations) : ?>
+                    <?php if ($secondary_inline_decorations || !empty($secondary_image['background_decoration'])) : ?>
                         <div class="<?php echo esc_attr($block_class); ?>__about__content--secondaryImageWrap">
                     <?php endif; ?>
                     <picture>
@@ -138,7 +138,7 @@ foreach ($background_decorations as $decoration) {
                     <?php foreach ($secondary_inline_decorations as $decoration) : ?>
                         <img class="<?php echo esc_attr($block_class . '__about__content--' . sanitize_html_class($decoration['key'])); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt'] ?? ''); ?>">
                     <?php endforeach; ?>
-                    <?php if ($secondary_inline_decorations) : ?>
+                    <?php if ($secondary_inline_decorations || !empty($secondary_image['background_decoration'])) : ?>
                         </div>
                     <?php endif; ?>
                     <?php if ($secondary_image_decorations) : ?>
