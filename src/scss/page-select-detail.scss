@@ -18,7 +18,7 @@
 			font-family: $font-family-ZenMaru;
 			font-weight: $font-weight-medium;
 			font-size: 4.10vw;
-			line-height: 2.18;
+			line-height: 1.875;
 			margin: 5.2vw auto 0;
 			word-break: keep-all;
 
@@ -99,6 +99,8 @@
 			width: auto;
 			font-size: 4.1vw;
 			line-height: 1.875;
+			font-family: $font-family-ZenKakuAntique;
+			font-weight: 400;
 			text-align: center;
 			word-break: keep-all;
 		}
@@ -175,8 +177,8 @@
 
 			&--text {
 				position: relative;
-				width: 62vw;
-				height: calc(74vw * 103 / 250);
+				width: 69.49vw;
+				height: 26.15vw;
 				margin: 0 auto;
 				font-family: $font-family-ZenKaku;
 				font-weight: bold;
@@ -191,7 +193,10 @@
 				span {
 					display: inline-block;
 					font-size: 5.1vw;
-					transform: translateY(17vw);
+					line-height: 1.6;
+					font-weight: 900;
+					letter-spacing: 0.15em;
+					transform: translateY(13.85vw);
 				}
 			}
 
@@ -214,13 +219,13 @@
 				font-family: $font-family-ZenMaru;
 				font-size: 5.12vw;
 				font-weight: 700;
-				line-height: 1.5;
+				line-height: 8.46vw;
 				text-align: center;
 
 				span {
 					display: inline-block;
-					font-size: 3.5vw;
-					line-height: 2.5;
+					font-size: 4.62vw;
+					line-height: 8.46vw;
 				}
 			}
 
@@ -237,17 +242,17 @@
 				margin: 3vw auto 0;
 
 				font-size: 4.1vw;
-				line-height: 2;
+				line-height: 7.69vw;
 			}
 
 			&--sub {
-				width: 70vw;
+				width: 100%;
 				margin: 5vw 0 4vw;
 
 				font-family: $font-family-ZenMaru;
-				font-size: 4.1vw;
+				font-size: 4.62vw;
 				font-weight: 700;
-				line-height: 1.5;
+				line-height: 7.69vw;
 			}
 
 			&--imgWrap {
@@ -314,7 +319,7 @@
 
 			font-family: $font-family-ZenKaku;
 			font-size: 5.1vw;
-			font-weight: bold;
+			font-weight: 900;
 			line-height: 1.5;
 			text-align: center;
 		}
@@ -365,8 +370,9 @@
 
 		&__date {
 			color: #00a88e;
+			font-family: "Secular One", sans-serif;
 			font-size: 3vw;
-			font-weight: 700;
+			font-weight: 400;
 			letter-spacing: 0.08em;
 		}
 
@@ -397,7 +403,7 @@
 			display: block;
 			flex-shrink: 0;
 
-			width: 27vw;
+			width: 25.64vw;
 			height: 18vw;
 
 			border-radius: 1vw;
@@ -405,14 +411,14 @@
 		}
 
 		&__text {
-			width: 57vw;
+			width: 58.36vw;
 			margin: 0;
 
 			display: -webkit-box;
 			overflow: hidden;
 
 			font-size: 4.1vw;
-			line-height: 1.5;
+			line-height: 7.69vw;
 
 			-webkit-box-orient: vertical;
 			-webkit-line-clamp: 3;
@@ -422,7 +428,7 @@
 		&__link {
 			display: block;
 			width: fit-content;
-			margin: 7vw 0 0 auto;
+			margin: 2.05vw 0 0 auto;
 
 			color: #00a8ff;
 			font-size: 4vw;
@@ -1145,8 +1151,13 @@
 				margin: 0 auto;
 
 				&--location {
-					font-size: 1.4rem;
-					line-height: 2.5rem;
+					font-size: 1.8rem;
+					line-height: 3.3rem;
+
+					span {
+						font-size: inherit;
+						line-height: inherit;
+					}
 				}
 
 				&--copy p + p {
@@ -1154,12 +1165,12 @@
 				}
 
 				.p-page-select-detail__about__title--wrap + & {
-					margin-top: 24px;
+					margin-top: 13px;
 				}
 
 				& + & {
 					margin-top: 60px;
-					padding-top: 42px;
+					padding-top: 58px;
 					border-top: 1px dashed #848484;
 				}
 				&--title {
@@ -1172,9 +1183,22 @@
 					text-align: center;
 
 					& span {
-						font-size: 1.4rem;
+						font-size: 1.8rem;
 						line-height: 3.3rem;
 					}
+				}
+
+				&--titleText {
+					font-size: 2rem;
+					line-height: 3.3rem;
+				}
+
+				&--section-1 &--title {
+					margin-bottom: 23px;
+				}
+
+				&--section-2 &--title {
+					margin-bottom: 30px;
 				}
 				&--image {
 					width: 100%;
@@ -1197,9 +1221,31 @@
 					font-family: $font-family-ZenMaru;
 					font-size: 1.8rem;
 					font-weight: 700;
-					line-height: 2.5rem;
+					line-height: 3rem;
 					letter-spacing: 0.15em;
 					text-align: left;
+				}
+
+				&--section-1 &--sub {
+					margin-top: 35px;
+					margin-bottom: 20px;
+				}
+
+				&--section-1 &--sub + picture + &--copy p {
+					margin-top: 20px;
+				}
+
+				&--section-1 &--imgWrap {
+					margin-top: 27px;
+				}
+
+				&--section-2 &--sub {
+					margin-top: 23px;
+					margin-bottom: 30px;
+				}
+
+				&--section-2 &--imgWrap {
+					margin-top: 0;
 				}
 				&--imgWrap {
 					width: 100%;

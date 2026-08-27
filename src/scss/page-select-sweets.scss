@@ -127,6 +127,29 @@ $detail: '.p-page-select-detail';
 	}
 }
 
+@media screen and (max-width: 767px) {
+	#{$detail}--sweets {
+		#{$detail}__hero__img--top {
+			width: min(93.08vw, 363px);
+			margin-top: 6.67vw;
+		}
+
+		#{$detail}__message--bg {
+			width: min(97.18vw, 379px);
+		}
+
+		#{$detail}__about__content--location {
+			font-size: 4.62vw;
+			line-height: 8.46vw;
+		}
+
+		#{$detail}__about__content--titleText {
+			font-size: 5.13vw;
+			line-height: 8.46vw;
+		}
+	}
+}
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 	#{$detail}--sweets #{$detail}__message--bubbleSp {
 		display: none;
@@ -230,57 +253,6 @@ $detail: '.p-page-select-detail';
 }
 
 @media screen and (min-width: 1280px) {
-	#{$detail}--sweets #{$detail}__about__title--wrap + #{$detail}__about__content {
-		margin-top: 13px;
-	}
-
-	#{$detail}--sweets #{$detail}__about__content--location,
-	#{$detail}--sweets #{$detail}__about__content--location span {
-		font-size: 1.8rem;
-		line-height: 3.3rem;
-	}
-
-	#{$detail}--sweets #{$detail}__about__content--titleText {
-		font-size: 2rem;
-		line-height: 3.3rem;
-	}
-
-	#{$detail}--sweets #{$detail}__about__content--section-1 #{$detail}__about__content--title {
-		margin-bottom: 23px;
-	}
-
-	#{$detail}--sweets #{$detail}__about__content--section-2 {
-		padding-top: 58px;
-
-		#{$detail}__about__content--title {
-			margin-bottom: 30px;
-		}
-	}
-
-	#{$detail}--sweets #{$detail}__about__content--section-1 #{$detail}__about__content--sub {
-		margin-top: 35px;
-		margin-bottom: 20px;
-		line-height: 3rem;
-	}
-
-	#{$detail}--sweets #{$detail}__about__content--section-1 #{$detail}__about__content--sub + picture + #{$detail}__about__content--copy p {
-		margin-top: 20px;
-	}
-
-	#{$detail}--sweets #{$detail}__about__content--section-1 #{$detail}__about__content--imgWrap {
-		margin-top: 27px;
-	}
-
-	#{$detail}--sweets #{$detail}__about__content--section-2 #{$detail}__about__content--sub {
-		margin-top: 23px;
-		margin-bottom: 30px;
-		line-height: 3rem;
-	}
-
-	#{$detail}--sweets #{$detail}__about__content--section-2 #{$detail}__about__content--imgWrap {
-		margin-top: 0;
-	}
-
 	#{$detail}--sweets #{$detail}__about__content--section-2 #{$detail}__about__content--imgWrap picture:only-child,
 	#{$detail}--sweets #{$detail}__about__content--section-2 #{$detail}__about__content--imgWrap picture:only-child #{$detail}__about__content--imgSmall {
 		width: 444px;
