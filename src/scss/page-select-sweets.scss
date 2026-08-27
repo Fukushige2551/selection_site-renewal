@@ -1,17 +1,6 @@
 $detail: '.p-page-select-detail';
 
 #{$detail}--sweets {
-	#{$detail}__hero__text {
-		font-family: "Zen Maru Gothic", sans-serif;
-		font-weight: 500;
-	}
-
-	#{$detail}__about__content--title,
-	#{$detail}__about__content--sub {
-		font-family: "Zen Maru Gothic", sans-serif;
-		font-weight: 700;
-	}
-
 	#{$detail}__about__content--locationPc {
 		display: none;
 	}

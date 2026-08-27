@@ -15,7 +15,7 @@
 		}
 		&__text {
 			text-align: center;
-			font-family: $font-family-ZenKaku;
+			font-family: $font-family-ZenMaru;
 			font-weight: $font-weight-medium;
 			font-size: 4.10vw;
 			line-height: 2.18;
@@ -211,7 +211,9 @@
 			&--title {
 				margin: 5vw 0;
 
+				font-family: $font-family-ZenMaru;
 				font-size: 5.12vw;
+				font-weight: 700;
 				line-height: 1.5;
 				text-align: center;
 
@@ -242,7 +244,9 @@
 				width: 70vw;
 				margin: 5vw 0 4vw;
 
+				font-family: $font-family-ZenMaru;
 				font-size: 4.1vw;
+				font-weight: 700;
 				line-height: 1.5;
 			}
 
@@ -1160,7 +1164,7 @@
 				}
 				&--title {
 					margin: 0 0 39px;
-					font-family: $font-family-ZenKaku;
+					font-family: $font-family-ZenMaru;
 					font-size: 1.8rem;
 					font-weight: 700;
 					line-height: 3.3rem;
@@ -1190,7 +1194,7 @@
 				&--sub {
 					width: 100%;
 					margin: 36px 0 23px;
-					font-family: $font-family-ZenKaku;
+					font-family: $font-family-ZenMaru;
 					font-size: 1.8rem;
 					font-weight: 700;
 					line-height: 2.5rem;
