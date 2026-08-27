@@ -15,7 +15,7 @@ $select_detail_urls = [
 ];
 ?>
 
-<main id="page-select" class="p-page-select">
+<main id="page-select" class="p-page-select c-main">
     <nav class="c-breadcrumb" aria-label="パンくずリスト">
         <a class="c-breadcrumb__link" href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
         <img class="c-breadcrumb__arrow"src="<?php echo get_template_directory_uri(); ?>/img/component/svg/icon_breadcrumb.svg"alt="矢印">

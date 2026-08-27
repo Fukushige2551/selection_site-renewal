@@ -3,6 +3,8 @@
 .p-page-select {
 
     &__hero {
+        padding-top: 20vw;
+
         &__inner {
             position: relative;
         }
@@ -165,6 +167,8 @@
     .p-page-select {
 
     &__hero {
+        padding-top: 10vw;
+
         &__inner {
             position: relative;
         }
@@ -195,6 +199,15 @@
         }
         &__commitment {
         padding: 5vw 3.8vw;
+
+        &__link {
+            transition: transform 0.4s ease;
+
+            &:hover {
+                transform: scale(1.04);
+            }
+        }
+
         &--bg {
             margin: 5vw 0 -25vw;
             padding: 14vw 3.8vw 0 ;
@@ -278,6 +291,7 @@
     .p-page-select {
 
         &__hero {
+            padding-top: 9.38vw;
 
             .c-section__title {
                 font-size: 1.9vw;
@@ -402,6 +416,14 @@
                     right: 11vw;
                 }
             }
+        }
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .p-page-select {
+        &__hero {
+            padding-top: 120px;
         }
     }
 }
