@@ -4,11 +4,20 @@ Template Name: セレクションのこだわり
 */
 
 get_header();
+
+$select_detail_urls = [
+    'meat' => home_url('/select/meat/'),
+    'fish' => home_url('/select/fish/'),
+    'vegetables-fruit' => home_url('/select/vegetables-fruit/'),
+    'rice' => home_url('/select/rice/'),
+    'deli' => home_url('/select/deli/'),
+    'washoku-daily' => home_url('/select/washoku-daily/'),
+];
 ?>
 
-<main id="page-select" class="p-page-select">
+<main id="page-select" class="p-page-select c-main">
     <nav class="c-breadcrumb" aria-label="パンくずリスト">
-        <a class="c-breadcrumb__link" href="/">TOP</a>
+        <a class="c-breadcrumb__link" href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
         <img class="c-breadcrumb__arrow"src="<?php echo get_template_directory_uri(); ?>/img/component/svg/icon_breadcrumb.svg"alt="矢印">
         <span class="c-breadcrumb__current">セレクションのこだわり</span>
     </nav>
@@ -50,32 +59,32 @@ get_header();
             <span>こだわりを選択</span>
         </h2>
         <section class="p-page-select__commitment">
-            <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--01" href="/">
+            <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--01" href="<?php echo esc_url($select_detail_urls['meat']); ?>">
                 <picture>
                     <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-01.svg" alt="こだわり　お肉">
                 </picture>
             </a>
-            <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--02" href="/">
+            <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--02" href="<?php echo esc_url($select_detail_urls['fish']); ?>">
                 <picture>
                     <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-02.svg" alt="こだわり　お魚">
                 </picture>
             </a>
-            <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--03" href="/">
+            <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--03" href="<?php echo esc_url($select_detail_urls['vegetables-fruit']); ?>">
                 <picture>
                     <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-03.svg" alt="こだわり　お野菜・果物">
                 </picture>
             </a>
-            <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--04" href="/">
+            <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--04" href="<?php echo esc_url($select_detail_urls['rice']); ?>">
                 <picture>
                     <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-04.svg" alt="こだわり　お米">
                 </picture>
             </a>
-            <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--05" href="/">
+            <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--05" href="<?php echo esc_url($select_detail_urls['deli']); ?>">
                 <picture>
                     <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-05.svg" alt="こだわり　お惣菜">
                 </picture>
             </a>
-            <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--06" href="/">
+            <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--06" href="<?php echo esc_url($select_detail_urls['washoku-daily']); ?>">
                 <picture>
                     <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-06.svg" alt="こだわり　和日配">
                 </picture>
