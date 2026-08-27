@@ -65,9 +65,14 @@ foreach ($background_decorations as $decoration) {
                 <?php endif; ?>
                 <h3 class="<?php echo esc_attr($block_class); ?>__about__content--title">
                     <?php if (!empty($section['location'])) : ?>
-                        <span class="<?php echo esc_attr($block_class); ?>__about__content--location"><?php echo esc_html($section['location']); ?></span>
+                        <span class="<?php echo esc_attr($block_class . '__about__content--location' . (!empty($section['location_pc']) ? ' ' . $block_class . '__about__content--locationResponsive' : '')); ?>">
+                            <span class="<?php echo esc_attr($block_class); ?>__about__content--locationSp"><?php echo wp_kses_post($section['location']); ?></span>
+                            <?php if (!empty($section['location_pc'])) : ?>
+                                <span class="<?php echo esc_attr($block_class); ?>__about__content--locationPc"><?php echo esc_html($section['location_pc']); ?></span>
+                            <?php endif; ?>
+                        </span>
                     <?php endif; ?>
-                    <?php echo wp_kses_post($section['title']); ?>
+                    <span class="<?php echo esc_attr($block_class); ?>__about__content--titleText"><?php echo wp_kses_post($section['title']); ?></span>
                 </h3>
 
                 <?php if (0 === $section_index && is_array($title_pc) && !empty($title_pc['src'])) : ?>

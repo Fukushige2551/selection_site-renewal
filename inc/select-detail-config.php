@@ -585,6 +585,91 @@ function foods_get_select_detail_configs() {
                 'background_pc' => '@theme/img/page/page-select-detail/meat_news_bgPC.png',
             ],
         ],
+        'sweets' => [
+            'page_slug' => 'select-sweets',
+            'modifier' => 'sweets',
+            'title' => 'お菓子のこだわり',
+            'asset_base' => 'img/page/page-select-sweets',
+            'theme' => [
+                'message_background' => '#e7f9f5',
+            ],
+            'breadcrumb' => [
+                'parent_label' => 'セレクションのこだわり',
+                'parent_url' => '/select/',
+            ],
+            'hero' => [
+                'lead' => 'ちょっとしたご褒美や、家族の団らんの時間に。<br>定番から話題の商品まで、選ぶ楽しさと美味しさを感じられる<br>お菓子を揃えています。',
+                'image' => '製造工場.svg',
+                'image_alt' => 'お菓子の製造工場',
+            ],
+            'message' => [
+                'bubble_sp' => 'buyer-message-balloon-sp.svg',
+                'bubble_pc' => 'buyer-message-balloon-pc.svg',
+                'buyer_image' => '@theme/img/page/page-select-detail/svg/img_message-buyer.svg',
+                'text' => 'お菓子は、暮らしの気分を整える“<br>毎日のごほうび”。<br>だから、選び方に理由がある。<br>セレクションの菓子売場は、<br>おいしさの納得感と選びやすさを<br>大切にしています。<br>家族の団らん、仕事の合間、<br>お茶の時間、手土産――<br>日常のシーンに寄り添いながら、<br>定番からこだわりまで<br>“ちゃんと選べる”品揃えを整えました。<br>せんべいは、米の旨みと<br>焼きの香ばしさ、食感まで。<br>素材や製法にこだわった<br>“ちゃんと旨い”一枚を中心に、<br>堅焼・醤油・海苔・甘辛など、<br>好みに合わせて選べるラインアップに。<br>地域の銘菓は、<br>その土地の個性が感じられる味わいを。<br>自宅用はもちろん、<br>ちょっとした手土産にも<br>「間違いない」品を揃えています。<br>お子さま向けは、<br>体にやさしい視点を大切に。<br>素材選びや甘さの設計、<br>食べやすさに配慮した<br>お菓子も充実させ、<br>毎日でも手に取りやすい<br>コーナーに仕上げました。<br>そしてチョコレートは、世界の厳選品を。<br>産地やカカオの個性、<br>香りと余韻まで楽しめる<br>“ごほうびの一粒”から、<br>毎日の一枚まで幅広く。<br>季節のイベントや贈り物にも、<br>気分で選べる楽しさを揃えています。<br>定番で整える日も、少し贅沢したい日も。<br>セレクションのお菓子で、<br>“選ぶ時間まで楽しい”ひとときをどうぞ。',
+                'text_pc' => 'お菓子は、暮らしの気分を整える“毎日のごほうび”。<br>だから、選び方に理由がある。<br>セレクションの菓子売場は、おいしさの納得感と選びやすさを大切にしています。<br>家族の団らん、仕事の合間、<br>お茶の時間、手土産――日常のシーンに寄り添いながら、<br>定番からこだわりまで“ちゃんと選べる”品揃えを整えました。<br>せんべいは、米の旨みと焼きの香ばしさ、食感まで。<br>素材や製法にこだわった“ちゃんと旨い”一枚を中心に、<br>堅焼・醤油・海苔・甘辛など、好みに合わせて選べるラインアップに。<br>地域の銘菓は、その土地の個性が感じられる味わいを。<br>自宅用はもちろん、ちょっとした手土産にも「間違いない」品を揃えています。<br>お子さま向けは、体にやさしい視点を大切に。<br>素材選びや甘さの設計、食べやすさに配慮した<br>お菓子も充実させ、毎日でも手に取りやすい<br>コーナーに仕上げました。<br>そしてチョコレートは、世界の厳選品を。<br>産地やカカオの個性、香りと余韻まで楽しめる<br>“ごほうびの一粒”から、毎日の一枚まで幅広く。<br>季節のイベントや贈り物にも、気分で選べる楽しさを揃えています。<br>定番で整える日も、少し贅沢したい日も。<br>セレクションのお菓子で、“選ぶ時間まで楽しい”ひとときをどうぞ。',
+                'foreground_decorations' => [
+                    ['key' => 'potato', 'src' => 'ジャガイモ.svg', 'alt' => ''],
+                    ['key' => 'cacao', 'src' => 'カカオ.svg', 'alt' => ''],
+                ],
+            ],
+            'about' => [
+                'title' => 'こだわりの現場から',
+                'title_background' => '@theme/img/page/page-select-detail/svg/meat_about_title.svg',
+                'background' => '@theme/img/page/page-select-detail/brick.png',
+                'wave_sp_top' => '@theme/img/page/page-select-detail/svg/upper_wave.svg',
+                'wave_sp_bottom' => '@theme/img/page/page-select-detail/svg/about-wave-bottom-sp.svg',
+                'wave_pc_top' => '@theme/img/page/page-select-detail/svg/meat_about_wave-top-pc.svg',
+                'wave_pc_bottom' => '@theme/img/page/page-select-detail/svg/meat_about_wave-bottom-pc.svg',
+                'decorations' => [],
+                'sections' => [
+                    [
+                        'location' => '福井県の日本でも数少ない<br>チョコレート専門メーカー',
+                        'location_pc' => '福井県の日本でも数少ないチョコレート専門メーカー',
+                        'title' => '横井チョコレート',
+                        'main_image' => ['src' => '横井チョコレート.png', 'alt' => '横井チョコレートの商品'],
+                        'text_blocks' => ['福井県の横井チョコレートは添加物はなるべく使用しないなど身体に良い素材を厳選し、誰もが安心して美味しく食べられるチョコレート作りを目指しています。'],
+                        'sub_title' => '上質な”クーベルチュールチョコレート”を使用',
+                        'secondary_image' => ['src' => 'クーベルチュールチョコレート.png', 'alt' => 'クーベルチュールチョコレートの商品'],
+                        'secondary_text_blocks' => ['横井チョコレートで主に使用するのは、総カカオ分35％以上、ココアバター31%以上といった厳しい国際基準を満たす「クーベルチュールチョコレート」。産地もガーナ産に指定した特注品です。またアーモンドは使用するたびに焙煎するなど、すべての素材に手抜きなし。「日本一の材料で」と、素材にはこだわり尽くしています。'],
+                        'gallery' => [
+                            ['src' => '販売.png', 'alt' => 'チョコレートの販売風景'],
+                            ['src' => 'チョコとパン.png', 'alt' => 'チョコレートとパン'],
+                        ],
+                        'gallery_variant' => 'two',
+                        'decorations' => [
+                            ['key' => 'cacao-beans', 'src' => 'カカオ豆.svg', 'alt' => '', 'placement' => 'main_image'],
+                            ['key' => 'patissier', 'src' => 'パティシエ.svg', 'alt' => '', 'placement' => 'main_image'],
+                        ],
+                    ],
+                    [
+                        'title' => '安心な北海道の原料にこだわったお菓子作り<br>ノースカラーズ',
+                        'main_image' => ['src' => 'ノースカラーズ.png', 'alt' => 'ノースカラーズの北海道の風景'],
+                        'text_blocks' => ['純国産シリーズは化学添加物や合成着色料を使わず、厳選された自然素材を使用。素材の美味しさと自然の魅力を最大限引き出す商品づくり。特に北海道産の原材料を活かし、子どもから大人まで安心して食べられるお菓子で、健康と笑顔を届けることを目指しています。'],
+                        'sub_title' => '北海道の恵みと自然素材から生まれる、やさしくて安心なお菓子。',
+                        'gallery' => [
+                            ['src' => 'ノースカラーズの思い.png', 'alt' => 'ノースカラーズの思い'],
+                        ],
+                        'decorations' => [
+                            ['key' => 'cook', 'src' => 'コック.svg', 'alt' => '', 'placement' => 'main_image'],
+                            ['key' => 'yuzu', 'src' => 'ゆず.svg', 'alt' => '', 'placement' => 'main_image'],
+                            ['key' => 'forklift', 'src' => 'フォークリフト.svg', 'alt' => '', 'placement' => 'gallery_after'],
+                        ],
+                    ],
+                ],
+            ],
+            'news' => [
+                'taxonomy' => 'news_commitment',
+                'term' => 'snacks',
+                'title' => 'お菓子のこだわりを<br>もっと見る',
+                'archive_label' => 'お菓子のこだわり一覧',
+                'background_sp' => '@theme/img/page/page-select-detail/meat_news_bgSP.png',
+                'background_pc' => '@theme/img/page/page-select-detail/meat_news_bgPC.png',
+                'foreground_decorations' => [
+                    ['key' => 'baumkuchen', 'src' => 'バウムクーヘン@2x 2.svg', 'alt' => ''],
+                ],
+            ],
+        ],
         'fish' => [
             'page_slug' => 'select-fish',
             'modifier' => 'fish',
