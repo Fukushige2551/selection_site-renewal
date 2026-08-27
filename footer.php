@@ -34,7 +34,7 @@
             <a class="l-footer__nav__item" href="<?php echo esc_url(get_post_type_archive_link('news')); ?>">新着情報</a>
         </div>
         <div class="l-footer__nav__group">
-            <a class="l-footer__nav__item">セレクションのこだわり</a>
+            <a class="l-footer__nav__item" href="<?php echo esc_url(home_url('/select/')); ?>">セレクションのこだわり</a>
         </div>
 
         <div class="l-footer__nav__group">
@@ -83,7 +83,7 @@
                 <a class="l-footer__nav__item" href="<?php echo esc_url(get_post_type_archive_link('news')); ?>">新着情報</a>
             </div>
             <div class="l-footer__nav__group">
-                <a class="l-footer__nav__item">セレクションのこだわり</a>
+                <a class="l-footer__nav__item" href="<?php echo esc_url(home_url('/select/')); ?>">セレクションのこだわり</a>
             </div>
         </div>
 
