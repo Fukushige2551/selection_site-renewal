@@ -184,11 +184,14 @@ foreach ($background_decorations as $decoration) {
                             },
                             $anchor_keys
                         )));
+                        $gallery_modifier_class = !empty($gallery_image['modifier'])
+                            ? $block_class . '__about__content--img-' . sanitize_html_class($gallery_image['modifier'])
+                            : '';
                         ?>
                         <?php if ($gallery_anchor_decorations) : ?>
                             <div class="<?php echo esc_attr($block_class); ?>__about__content--catWorkerAnchor">
                         <?php endif; ?>
-                        <picture>
+                        <picture<?php echo $gallery_modifier_class ? ' class="' . esc_attr($gallery_modifier_class . '-picture') . '"' : ''; ?>>
                             <?php if (!empty($gallery_image['src_tab'])) : ?>
                                 <source media="(min-width: 768px) and (max-width: 1023px)" srcset="<?php echo esc_url(foods_get_select_detail_asset_url($config, $gallery_image['src_tab'])); ?>">
                             <?php endif; ?>
@@ -198,7 +201,7 @@ foreach ($background_decorations as $decoration) {
                             <?php if (!empty($gallery_image['webp'])) : ?>
                                 <source srcset="<?php echo esc_url(foods_get_select_detail_asset_url($config, $gallery_image['webp'])); ?>" type="image/webp">
                             <?php endif; ?>
-                            <img class="<?php echo esc_attr($block_class); ?>__about__content--imgSmall" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $gallery_image['src'])); ?>" alt="<?php echo esc_attr($gallery_image['alt']); ?>">
+                            <img class="<?php echo esc_attr(trim($block_class . '__about__content--imgSmall ' . $gallery_modifier_class)); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $gallery_image['src'])); ?>" alt="<?php echo esc_attr($gallery_image['alt']); ?>">
                         </picture>
                         <?php if ($gallery_anchor_decorations) : ?>
                             <?php foreach ($gallery_anchor_decorations as $anchor_decoration) : ?>

@@ -1,28 +1,6 @@
 $detail: '.p-page-select-detail';
 
 #{$detail}--sweets {
-	#{$detail}__about__content--locationPc {
-		display: none;
-	}
-
-	#{$detail}__about__content--locationSp {
-		display: block;
-	}
-
-	#{$detail}__about__content--titleText {
-		display: block;
-		font-size: inherit;
-		line-height: inherit;
-	}
-
-	#{$detail}__message--bubbleSp {
-		display: block;
-	}
-
-	#{$detail}__message--bubblePc {
-		display: none;
-	}
-
 	#{$detail}__message--shape {
 		background: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-sweets/buyer-message-background-sp.svg') center top / 100% 100% no-repeat;
 	}
@@ -39,7 +17,7 @@ $detail: '.p-page-select-detail';
 	#{$detail}__about__content--patissier,
 	#{$detail}__about__content--cook,
 	#{$detail}__about__content--yuzu,
-	#{$detail}__about__content--forklift,
+	#{$detail}__news__foregroundDecoration--forklift,
 	#{$detail}__news__foregroundDecoration--baumkuchen {
 		position: absolute;
 		z-index: 3;
@@ -49,16 +27,10 @@ $detail: '.p-page-select-detail';
 	}
 
 	#{$detail}__message--foregroundDecoration-potato {
-		right: 4vw;
-		bottom: -2vw;
-		width: 17.94vw;
 		aspect-ratio: 109 / 88;
 	}
 
 	#{$detail}__message--foregroundDecoration-cacao {
-		bottom: -20.6vw;
-		left: 1vw;
-		width: 32vw;
 		aspect-ratio: 194 / 184;
 	}
 
@@ -68,194 +40,130 @@ $detail: '.p-page-select-detail';
 	}
 
 	#{$detail}__about__content--cacao-beans {
-		top: -7vw;
-		left: -2vw;
-		width: 14.4vw;
 		aspect-ratio: 72 / 73;
 	}
 
 	#{$detail}__about__content--patissier {
-		top: -13vw;
-		right: -3vw;
-		width: 19vw;
 		aspect-ratio: 132 / 256;
 	}
 
 	#{$detail}__about__content--cook {
-		top: -15vw;
-		left: 0;
-		width: 13vw;
 		aspect-ratio: 82 / 249;
 	}
 
 	#{$detail}__about__content--yuzu {
-		top: -5vw;
-		right: -2vw;
-		width: 28vw;
 		aspect-ratio: 159 / 76;
 	}
 
-	#{$detail}__about__content--forklift {
-		right: -7vw;
-		bottom: -12vw;
-		width: 43vw;
-		aspect-ratio: 371 / 294;
+	#{$detail}__news__foregroundDecoration--baumkuchen {
+		aspect-ratio: 142 / 148;
 	}
 
-	#{$detail}__news__foregroundDecoration--baumkuchen {
-		top: 7vw;
-		right: 2vw;
-		width: 24vw;
-		aspect-ratio: 142 / 148;
+	#{$detail}__news__foregroundDecoration--forklift {
+		aspect-ratio: 371 / 294;
 	}
 
 	#{$detail}__news__foregroundDecoration--baumkuchen#{$detail}__news__foregroundDecoration--desktopAnchor {
 		display: none;
 	}
 
-	#{$detail}__about__content--image,
-	#{$detail}__about__content--imgSmall {
-		object-fit: cover;
+}
+
+// SP
+@media screen and (max-width: 767px) {
+	#{$detail}--sweets {
+		#{$detail}__message--foregroundDecoration-potato { right: 5vw; bottom: -1vw; width: 17.94vw; }
+		#{$detail}__message--foregroundDecoration-cacao { bottom: -20vw; left: 1vw; width: 32vw; }
+		#{$detail}__about__content--cacao-beans { top: -37vw; left: -2vw; width: 14.4vw; }
+		#{$detail}__about__content--patissier { top: -24vw; right: -3vw; width: 13.07vw; }
+		#{$detail}__about__content--cook { top: -29vw; left: 0; width: 10.25vw; }
+		#{$detail}__about__content--yuzu { top: -5vw; right: -2vw; width: 28vw; }
+		#{$detail}__news__foregroundDecoration--baumkuchen { top: -13vw; right: 2vw; width: 27.17vw; }
+		#{$detail}__news__foregroundDecoration--forklift { top: -69vw; right: 49vw; width: 49.48vw; }
+	}
+}
+
+@media screen and (max-width: 1023px) {
+	#{$detail}--sweets #{$detail}__about__content--yuzu {
+		display: none;
 	}
 
-	#{$detail}__about__content--section-2 #{$detail}__about__content--imgWrap picture:only-child,
-	#{$detail}__about__content--section-2 #{$detail}__about__content--imgWrap picture:only-child #{$detail}__about__content--imgSmall {
+	#{$detail}--sweets #{$detail}__about__content--img-north-colors-thought-picture,
+	#{$detail}--sweets #{$detail}__about__content--img-north-colors-thought {
 		display: block;
 		width: 100%;
 		max-width: none;
-		aspect-ratio: 444 / 381.8928527832031;
 	}
 }
 
-@media screen and (max-width: 767px) {
-	#{$detail}--sweets {
-		#{$detail}__hero__img--top {
-			width: min(93.08vw, 363px);
-			margin-top: 6.67vw;
-		}
-
-		#{$detail}__message--bg {
-			width: min(97.18vw, 379px);
-		}
-
-		#{$detail}__about__content--location {
-			font-size: 4.62vw;
-			line-height: 8.46vw;
-		}
-
-		#{$detail}__about__content--titleText {
-			font-size: 5.13vw;
-			line-height: 8.46vw;
-		}
-	}
-}
-
+// TAB
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-	#{$detail}--sweets #{$detail}__message--bubbleSp {
-		display: none;
-	}
-
-	#{$detail}--sweets #{$detail}__message--bubblePc {
-		display: block;
-	}
-
-	#{$detail}--sweets #{$detail}__message--shape {
-		background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-sweets/buyer-message-background-tab.svg');
-	}
-
-	#{$detail}--sweets #{$detail}__message--foregroundDecoration-potato {
-		right: 0;
-		bottom: 3vw;
-		width: 16vw;
-	}
-
-	#{$detail}--sweets #{$detail}__message--foregroundDecoration-cacao {
-		bottom: 1vw;
-		left: -2vw;
-		width: 23vw;
-	}
-}
-
-@media screen and (min-width: 1024px) {
-	#{$detail}--sweets #{$detail}__about__content--locationSp {
-		display: none;
-	}
-
-	#{$detail}--sweets #{$detail}__about__content--locationPc {
-		display: block;
-	}
-
-	#{$detail}--sweets #{$detail}__message--bubbleSp {
-		display: none;
-	}
-
-	#{$detail}--sweets #{$detail}__message--bubblePc {
-		display: block;
-	}
-
-	#{$detail}--sweets #{$detail}__message--shape {
-		background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-sweets/buyer-message-background-pc.svg');
-	}
-
-	#{$detail}--sweets #{$detail}__message--foregroundDecoration-potato {
-		right: -1vw;
-		bottom: 1vw;
-		width: 8.515625vw;
-	}
-
-	#{$detail}--sweets #{$detail}__message--foregroundDecoration-cacao {
-		bottom: 0;
-		left: -1vw;
-		width: 15.15625vw;
-	}
-
-	#{$detail}--sweets #{$detail}__about__content--cacao-beans {
-		top: -3.5vw;
-		left: -2vw;
-		width: 5.625vw;
-	}
-
-	#{$detail}--sweets #{$detail}__about__content--patissier {
-		top: -8vw;
-		right: -5vw;
-		width: 10.3125vw;
-	}
-
-	#{$detail}--sweets #{$detail}__about__content--cook {
-		top: -8vw;
-		left: -4vw;
-		width: 6.40625vw;
-	}
-
-	#{$detail}--sweets #{$detail}__about__content--yuzu {
-		top: -3vw;
-		right: -3vw;
-		width: 12.421875vw;
-	}
-
-	#{$detail}--sweets #{$detail}__about__content--forklift {
-		right: -31vw;
-		bottom: 1vw;
-		width: 28.984375vw;
-	}
-
-	#{$detail}--sweets #{$detail}__news__foregroundDecoration--baumkuchen {
-		top: 5vw;
-		right: 6vw;
-		width: 11.09375vw;
-	}
-
-	#{$detail}--sweets #{$detail}__about__content--section-2 #{$detail}__about__content--imgWrap picture:only-child,
-	#{$detail}--sweets #{$detail}__about__content--section-2 #{$detail}__about__content--imgWrap picture:only-child #{$detail}__about__content--imgSmall {
-		width: 34.6875vw;
-		aspect-ratio: 444 / 381.8928527832031;
+	#{$detail}--sweets {
+		#{$detail}__message--shape { background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-sweets/buyer-message-background-tab.svg'); }
+		#{$detail}__message--foregroundDecoration-potato {
+			right: 4vw;
+			bottom: -6vw;
+			width: 14vw;
+		}
+		#{$detail}__message--foregroundDecoration-cacao {
+			bottom: -15vw;
+			left: 2vw;
+			width: 20vw;
+		}
+		#{$detail}__about__content--cacao-beans {
+			top: -24vw;
+			left: 14vw;
+			width: 10.4vw;
+		}
+		#{$detail}__about__content--patissier {
+			top: -20vw;
+			right: -1vw;
+			width: 11.07vw;
+		}
+		#{$detail}__about__content--cook {
+			top: -17vw;
+			left: 2vw;
+			width: 6.25vw;
+		}
+		#{$detail}__news__foregroundDecoration--baumkuchen {
+			top: -7vw;
+			right: 10vw;
+			width: 21.17vw;
+		}
+		#{$detail}__news__foregroundDecoration--forklift {
+			top: -45vw;
+			right: 61vw;
+			width: 39.48vw;
+		}
 	}
 }
 
+// NPC
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+	#{$detail}--sweets {
+		#{$detail}__message--shape { background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-sweets/buyer-message-background-pc.svg'); }
+		#{$detail}__message--foregroundDecoration-potato { right: -1vw; bottom: 1vw; width: 8.515625vw; }
+		#{$detail}__message--foregroundDecoration-cacao { bottom: 0; left: -1vw; width: 15.15625vw; }
+		#{$detail}__about__content--cacao-beans { top: -3.5vw; left: -2vw; width: 5.625vw; }
+		#{$detail}__about__content--patissier { top: -8vw; right: -5vw; width: 10.3125vw; }
+		#{$detail}__about__content--cook { top: -8vw; left: -4vw; width: 6.40625vw; }
+		#{$detail}__about__content--yuzu { top: -3vw; right: -3vw; width: 12.421875vw; }
+		#{$detail}__news__foregroundDecoration--baumkuchen { top: 5vw; right: 6vw; width: 11.09375vw; }
+		#{$detail}__news__foregroundDecoration--forklift { top: 10vw; right: 4vw; width: 18vw; }
+	}
+}
+
+// DPC
 @media screen and (min-width: 1280px) {
-	#{$detail}--sweets #{$detail}__about__content--section-2 #{$detail}__about__content--imgWrap picture:only-child,
-	#{$detail}--sweets #{$detail}__about__content--section-2 #{$detail}__about__content--imgWrap picture:only-child #{$detail}__about__content--imgSmall {
-		width: 444px;
-		aspect-ratio: 444 / 381.8928527832031;
+	#{$detail}--sweets {
+		#{$detail}__message--shape { background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-sweets/buyer-message-background-pc.svg'); }
+		#{$detail}__message--foregroundDecoration-potato { right: -1vw; bottom: 1vw; width: 8.515625vw; }
+		#{$detail}__message--foregroundDecoration-cacao { bottom: 0; left: -1vw; width: 15.15625vw; }
+		#{$detail}__about__content--cacao-beans { top: -3.5vw; left: -2vw; width: 5.625vw; }
+		#{$detail}__about__content--patissier { top: -8vw; right: -5vw; width: 10.3125vw; }
+		#{$detail}__about__content--cook { top: -8vw; left: -4vw; width: 6.40625vw; }
+		#{$detail}__about__content--yuzu { top: -3vw; right: -3vw; width: 12.421875vw; }
+		#{$detail}__news__foregroundDecoration--baumkuchen { top: 5vw; right: 6vw; width: 11.09375vw; }
+		#{$detail}__news__foregroundDecoration--forklift { top: 10vw; right: 4vw; width: 18vw; }
 	}
 }

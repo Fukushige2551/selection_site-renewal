@@ -494,6 +494,15 @@
 	}
 
 	&__about__content {
+		&--title &--locationPc {
+			display: none;
+		}
+
+		&--title &--locationSp,
+		&--title &--titleText {
+			display: block;
+		}
+
 		&--location {
 			display: block;
 			font-size: 3.5vw;
@@ -702,6 +711,7 @@
 				p {
 					width: 100%;
 					font-size: 2vw;
+					line-height: 5.69vw;
 					margin: 2vw auto 0;
 				}
 				&--sub {
@@ -848,7 +858,7 @@
 		}
 
 		&__message {
-			width: 62.5vw;
+			width: 70vw;
 			margin: 1.17vw auto 0;
 
 			&--heading {
@@ -889,7 +899,6 @@
 			&--bubblePc { width: 26.56vw; height: 11.76vw; top: 2.88vw; left: 14.26vw; }
 			&--buyer { width: 11.84vw; height: 11.68vw; top: 0; right: 12.09vw; }
 			&--text {
-				width: 53.62vw;
 				margin: 0 auto;
 				font-family: $font-family-ZenKakuAntique;
 				font-size: 1.56vw;
@@ -1390,6 +1399,14 @@
 }
 
 @media screen and (min-width: 1024px) {
+	.p-page-select-detail__about__content--title .p-page-select-detail__about__content--locationSp {
+		display: none;
+	}
+
+	.p-page-select-detail__about__content--title .p-page-select-detail__about__content--locationPc {
+		display: block;
+	}
+
 	.p-page-select-detail__news__title--responsive {
 		.p-page-select-detail__news__titleSp {
 			display: none;

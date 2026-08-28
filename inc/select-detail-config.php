@@ -643,17 +643,22 @@ function foods_get_select_detail_configs() {
                         ],
                     ],
                     [
-                        'title' => '安心な北海道の原料にこだわったお菓子作り<br>ノースカラーズ',
+						'location' => '安心な北海道の原料に<br>こだわったお菓子作り',
+						'location_pc' => '安心な北海道の原料にこだわったお菓子作り',
+						'title' => 'ノースカラーズ',
                         'main_image' => ['src' => 'ノースカラーズ.png', 'alt' => 'ノースカラーズの北海道の風景'],
                         'text_blocks' => ['純国産シリーズは化学添加物や合成着色料を使わず、厳選された自然素材を使用。素材の美味しさと自然の魅力を最大限引き出す商品づくり。特に北海道産の原材料を活かし、子どもから大人まで安心して食べられるお菓子で、健康と笑顔を届けることを目指しています。'],
                         'sub_title' => '北海道の恵みと自然素材から生まれる、やさしくて安心なお菓子。',
                         'gallery' => [
-                            ['src' => 'ノースカラーズの思い.png', 'alt' => 'ノースカラーズの思い'],
+                            [
+                                'src' => 'ノースカラーズの思い.png',
+                                'alt' => 'ノースカラーズの想い',
+                                'modifier' => 'north-colors-thought',
+                            ],
                         ],
                         'decorations' => [
                             ['key' => 'cook', 'src' => 'コック.svg', 'alt' => '', 'placement' => 'main_image'],
                             ['key' => 'yuzu', 'src' => 'ゆず.svg', 'alt' => '', 'placement' => 'main_image'],
-                            ['key' => 'forklift', 'src' => 'フォークリフト.svg', 'alt' => '', 'placement' => 'gallery_after'],
                         ],
                     ],
                 ],
@@ -667,6 +672,7 @@ function foods_get_select_detail_configs() {
                 'background_pc' => '@theme/img/page/page-select-detail/meat_news_bgPC.png',
                 'foreground_decorations' => [
                     ['key' => 'baumkuchen', 'src' => 'バウムクーヘン@2x 2.svg', 'alt' => ''],
+                    ['key' => 'forklift', 'src' => 'フォークリフト.svg', 'alt' => '', 'wrap_anchor_only' => true],
                 ],
             ],
         ],
