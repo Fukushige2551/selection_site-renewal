@@ -38,6 +38,7 @@ export default defineConfig({
                 'page-select-fish': path.resolve(__dirname, 'src/js/page-select-fish.js'),
                 'page-select-rice': path.resolve(__dirname, 'src/js/page-select-rice.js'),
                 'page-select-deli': path.resolve(__dirname, 'src/js/page-select-deli.js'),
+                'page-company': path.resolve(__dirname, 'src/js/page-company.js'),
                 'single-shop': path.resolve(__dirname, 'src/js/single-shop.js'),
                 'archive-news': path.resolve(__dirname, 'src/js/archive-news.js'),
                 'single-news': path.resolve(__dirname, 'src/js/single-news.js'),

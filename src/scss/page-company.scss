@@ -1,0 +1,1739 @@
+@use "foundation/global" as *;
+.sp-only {
+    display: inline;
+}
+.pc-only {
+    display: none;
+}
+.p-page-company__person {
+    position: absolute;
+    z-index: 20;
+    top: 186vw;
+    right: 5vw;
+    display: block;
+    width: 20vw;
+    height: auto;
+    pointer-events: none;
+}
+.p-page-company {
+    position: relative;
+
+    /**
+     * ヒーロー
+     */
+    &__hero {
+        position: relative;
+        z-index: auto;
+        overflow: visible;
+
+        &__slider {
+            position: relative;
+            display: grid;
+            width: 100%;
+            overflow: visible;
+        }
+
+        &__slide {
+            grid-area: 1 / 1;
+            opacity: 0;
+            transition: opacity 1s ease;
+
+            picture {
+                display: block;
+                width: 100%;
+            }
+
+            &.is-active {
+                opacity: 1;
+            }
+        }
+
+        &__img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        &__cloud {
+            position: absolute;
+            left: 0;
+            bottom: -13vw;
+            z-index: 6;
+            width: 100%;
+            pointer-events: none;
+        }
+
+        &__cloudImg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        &__content {
+            position: absolute;
+            top: 21vw;
+            left: 7.7vw;
+            z-index: 7;
+        }
+
+        &__title {
+            margin: 0;
+            color: #0f3675;
+            font-family: "Zen Kaku Gothic Antique", sans-serif;
+            font-size: 7.6vw;
+            font-weight: 500;
+            line-height: 1.5;
+            letter-spacing: .04em;
+        }
+
+        &__text {
+            margin: 1vw 0 0;
+            color: #484848;
+            font-size: 4.1vw;
+            line-height: 1.85;
+            letter-spacing: .02em;
+        }
+    }
+
+    /**
+     * 私たちセレクションについて
+     */
+    &__about {
+        position: relative;
+        z-index: 2;
+        margin-top: -4vw;
+        box-shadow: 0 -6px 16px rgba(0, 0, 0, .08);
+
+        &__inner {
+            position: relative;
+            overflow: hidden;
+            padding: 12vw 0 19vw;
+            background: #00aa8d;
+            border-radius: 4vw 4vw 0 0;
+            margin-bottom: -3vw;
+        }
+
+        &__content {
+            position: relative;
+            z-index: 1;
+            padding: 0 4vw;
+        }
+
+        &__heading {
+            position: relative;
+        }
+
+        &__decor {
+            position: absolute;
+            top: -4vw;
+            left: -2vw;
+            z-index: 0;
+            width: 83vw;
+        }
+
+        &__title {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            color: #FFED49;
+            font-family: $font-family-ZenKaku;
+            font-size: 6.6vw;
+            font-weight: 700;
+            line-height: 1.45;
+        }
+
+        &__text {
+            position: relative;
+            z-index: 1;
+            margin: 2vw 0 0;
+            color: #fff;
+            font-size: 4.1vw;
+            line-height: 1.8;
+        }
+
+        &__slider {
+            position: relative;
+            width: 100%;
+            margin-top: 8vw;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+            cursor: grab;
+            touch-action: pan-y pinch-zoom;
+            user-select: none;
+            -webkit-user-select: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            &.is-dragging {
+                cursor: grabbing;
+                scroll-behavior: auto;
+            }
+        }
+
+        &__track {
+            display: flex;
+            align-items: flex-start;
+            width: max-content;
+            gap: 0;
+        }
+
+        &__item {
+            flex: 0 0 calc((100vw - 9.2vw) / 3);
+            height: 70vw;
+            overflow: hidden;
+
+            picture {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+
+            &--1,
+            &--3,
+            &--5 {
+                margin-top: 7vw;
+                border-radius: 0 0 4vw 0;
+            }
+
+            &--2,
+            &--4 {
+                border-radius: 4vw 0 0 0;
+            }
+        }
+
+        &__img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    /**
+     * 生産者・取引先の皆さまへ
+     */
+    &__partner {
+        position: relative;
+        z-index: 2;
+
+        &__inner {
+            position: relative;
+            background: #0F3675;
+            border-radius: 4vw 0 4vw 0;
+        }
+
+        &__body {
+            position: relative;
+            padding: 11vw 5vw 0;
+        }
+
+        &__content {
+            position: relative;
+            z-index: 2;
+        }
+
+        &__title {
+            margin: 0;
+            color: #FFED49;
+            font-family: $font-family-ZenKaku;
+            font-size: 6.6vw;
+            font-weight: 700;
+            line-height: 1.45;
+            letter-spacing: .04em;
+        }
+
+        &__text {
+            margin: 4vw 0 0;
+            color: #fff;
+            font-size: 4.1vw;
+            line-height: 1.8;
+
+            span {
+                font-size: 4.6vw;
+                font-weight: 700;
+            }
+        }
+
+        &__guide {
+            position: relative;
+            z-index: 2;
+            width: 50vw;
+            margin: 8vw 0 0 auto;
+            color: #fff;
+            font-size: 4.1vw;
+            line-height: 1.8;
+        }
+
+        &__guideLink {
+            color: #B8F0FF;
+            text-decoration: underline;
+            text-underline-offset: .2em;
+
+            &:hover {
+                opacity: .7;
+            }
+        }
+
+        &__person {
+            position: absolute;
+            top: -39vw;
+            left: 9vw;
+            z-index: 4;
+            width: 17vw;
+            pointer-events: none;
+        }
+
+        &__products {
+            position: absolute;
+            top: -4vw;
+            right: 0;
+            z-index: 3;
+            width: 34vw;
+            pointer-events: none;
+        }
+
+        &__showcase {
+            position: absolute;
+            top: 63vw;
+            left: 0;
+            z-index: 2;
+            width: 36vw;
+            pointer-events: none;
+        }
+
+        &__decor {
+            position: absolute;
+            top: 92vw;
+            left: 8vw;
+            z-index: 1;
+            width: 80vw;
+            opacity: .8;
+            pointer-events: none;
+        }
+
+        &__mainImg {
+            position: relative;
+            z-index: 2;
+            display: block;
+            width: 93vw;
+            height: auto;
+            margin-top: 29vw;
+            left: -5vw;
+        }
+
+        &__more {
+            position: relative;
+            z-index: 4;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 18vw;
+            padding: 0 16vw 0 5vw;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        &__moreText {
+            position: relative;
+            font-size: 3.8vw;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: .1em;
+            font-family: $font-family-ZenKaku;
+
+            &::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                bottom: -2vw;
+                width: 100%;
+                border-bottom: 1px dotted #fff;
+            }
+        }
+
+        &__moreArrow {
+            position: absolute;
+            top: 58%;
+            right: 10vw;
+            width: 18vw;
+            height: 18vw;
+            border-top: 1px solid #fff;
+            border-right: 1px solid #fff;
+            transform: translateY(-50%) rotate(45deg);
+            pointer-events: none;
+        }
+    }
+
+    /**
+     * 採用情報
+     */
+    &__recruit {
+        position: relative;
+        margin-top: -4vw;
+        overflow: visible;
+        z-index: 1;
+
+        &__inner {
+            position: relative;
+            overflow: visible;
+            padding: 15vw 0  15vw;
+            background: #00A784;
+            z-index: -2;
+            border-radius: 0 0 7vw 0;
+        }
+
+        &__content {
+            position: relative;
+            z-index: 2;
+            width: 69vw;
+            margin: 0 auto;
+            padding: 10vw 7vw 10vw;
+            background: #FFED49;
+            border-radius: 7vw 7vw 0 0;
+        }
+
+        &__title {
+            margin: 0;
+            color: #00A784;
+            font-family: $font-family-ZenKaku;
+            font-size: 6.6vw;
+            font-weight: 700;
+            line-height: 1.45;
+            letter-spacing: .04em;
+        }
+
+        &__text {
+            margin: 4vw 0 0;
+            color: #00AA8D;
+            font-size: 4.1vw;
+            line-height: 1.8;
+            letter-spacing: .02em;
+        }
+
+        &__person--top {
+            position: absolute;
+            top: 10vw;
+            right: 10vw;
+            z-index: 4;
+            width: 25vw;
+            pointer-events: none;
+        }
+
+        &__decor {
+            position: absolute;
+            top: 55vw;
+            left: 0;
+            z-index: 3;
+            width: 100%;
+            pointer-events: none;
+            mix-blend-mode: multiply;
+        }
+
+        &__images {
+            position: relative;
+            z-index: 2;
+        }
+
+        &__imageBlock {
+            position: relative;
+
+            picture {
+                display: block;
+            }
+        }
+        &__imageBlock {
+            &:nth-child(2) {
+                .p-page-company__recruit__img {
+                    border-radius: 0 0 4vw 0;
+                }
+            }
+        }
+
+        &__img {
+            display: block;
+            width: 93vw;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        &__label {
+            position: absolute;
+            z-index: 3;
+            margin: 0;
+            background: #EF7201;
+            color: #fff;
+            font-family: $font-family-ZenKaku;
+            font-weight: 700;
+            line-height: 1.25;
+        }
+
+        &__label--career {
+            top: -4vw;
+            right: 0;
+            z-index: 5;
+            padding: 2.4vw 4vw 2.4vw 6vw;
+            clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%);
+            font-size: 5.2vw;
+            white-space: nowrap;
+        }
+
+        &__label--part {
+            top: 0;
+            left: 0;
+            padding: 2.5vw 4vw;
+            clip-path: polygon(0 0, 100% 0, 100% 82%, 78% 100%, 0 100%);
+            font-size: 4vw;
+            text-align: center;
+        }
+
+        &__person--bottom {
+            position: absolute;
+            left: -1vw;
+            bottom: -8vw;
+            z-index: 4;
+            width: 20vw;
+            pointer-events: none;
+        }
+    }
+
+    /**
+     * 企業情報
+     */
+    &__info {
+        position: relative;
+        background: #fff;
+        z-index: -1;
+
+        &__inner {
+            position: relative;
+            padding: 15vw 10vw 38vw;
+        }
+
+        &__decor {
+            position: absolute;
+            top: 5vw;
+            left: 4vw;
+            z-index: 0;
+            width: 95vw;
+            max-width: calc(100% - 4vw);
+        }
+
+        &__heading {
+            position: relative;
+            z-index: 1;
+        }
+
+        &__title {
+            margin: 0;
+            color: #0F3675;
+            font-family: $font-family-ZenKaku;
+            font-size: 6.1vw;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        &__text {
+            margin: 4vw 0 0;
+            color: #333;
+            font-size: 4.1vw;
+            line-height: 1.8;
+        }
+
+        &__nav {
+            position: relative;
+            z-index: 2;
+            width: 62vw;
+            margin: 7vw auto 0;
+        }
+
+        &__item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 5vw;
+            min-height: 19vw;
+            padding: 2vw 5vw;
+            color: #111;
+            font-size: 5.1vw;
+            font-weight: 700;
+            text-decoration: none;
+
+            &:not(:last-child)::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border-bottom: 1px dashed #0F3675;
+            }
+        }
+
+        &__icon {
+            flex: 0 0 auto;
+            width: 15vw;
+            height: 15vw;
+        }
+
+        &__person {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            z-index: 2;
+            width: 40vw;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+    }
+}
+
+/**
+ * タブレット
+ */
+@media screen and (min-width: 768px) {
+    .p-page-company__person {
+        top: 110vw;
+        right: 9vw;
+        width: 13vw;
+    }
+
+    .sp-only {
+        display: none;
+    }
+    .p-page-company {
+
+        /**
+         * ヒーロー
+         */
+        &__hero {
+            position: relative;
+            overflow: visible;
+
+            &__slider {
+                position: relative;
+                height: 90vw;
+                overflow: visible;
+            }
+
+            &__slide {
+                height: 100%;
+                overflow: hidden;
+
+                picture {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            &__img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            &__cloud {
+                left: 0;
+                bottom: -9vw;
+                z-index: 3;
+                width: 76vw;
+            }
+
+            &__cloudImg {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+
+            &__content {
+                top: 10vw;
+                left: 8vw;
+                z-index: 4;
+                width: 48vw;
+            }
+
+            &__title {
+                font-size: 3.8vw;
+                line-height: 1.5;
+            }
+
+            &__text {
+                margin-top: 1vw;
+                font-size: 2.2vw;
+                line-height: 1.8;
+                width: 59vw;
+            }
+        }
+
+        /**
+         * 私たちセレクションについて
+         */
+        &__about {
+
+            &__inner {
+                padding: 16vw 0 12vw;
+                border-radius: 3vw 3vw 0 0;
+                margin-bottom: -3vw;
+            }
+
+            &__content {
+                padding: 0 8vw;
+            }
+
+            &__decor {
+                top: -3vw;
+                left: 0;
+                width: 60vw;
+            }
+
+            &__title {
+                font-size: 3.8vw;
+                line-height: 1.4;
+            }
+
+            &__text {
+                margin-top: 2vw;
+                font-size: 2.2vw;
+                line-height: 1.8;
+            }
+
+            &__slider {
+                margin-top: 6vw;
+            }
+
+            &__item {
+                flex: 0 0 20vw;
+                height: 42vw;
+
+                &--1,
+                &--3,
+                &--5 {
+                    margin-top: 5vw;
+                    border-radius: 0 0 3vw 0;
+                }
+
+                &--2,
+                &--4 {
+                    border-radius: 3vw 0 0 0;
+                }
+            }
+        }
+
+        /**
+         * 生産者・取引先の皆さまへ
+         */
+        &__partner {
+
+            &__inner {
+                border-radius: 3vw 0 3vw 0;
+            }
+
+            &__body {
+                padding: 8vw 7vw 0;
+            }
+
+            &__title {
+                font-size: 3.8vw;
+                line-height: 1.4;
+            }
+
+            &__text {
+                width: 69vw;
+                margin-top: 2.5vw;
+                font-size: 2.2vw;
+                line-height: 1.8;
+
+                span {
+                    font-size: 2.5vw;
+                }
+            }
+
+            &__guide {
+                width: 52vw;
+                margin: 5vw 0 0 auto;
+                font-size: 2.2vw;
+                line-height: 1.8;
+            }
+
+            &__person {
+                top: -26vw;
+                left: 10vw;
+                width: 12vw;
+            }
+
+            &__products {
+                top: -3vw;
+                width: 25vw;
+            }
+
+            &__showcase {
+                top: 32vw;
+                width: 27vw;
+            }
+
+            &__decor {
+                top: 49vw;
+                left: 22vw;
+                width: 55vw;
+            }
+
+            &__mainImg {
+                width: 86vw;
+                margin-top: 18vw;
+                left: -7vw;
+            }
+
+            &__more {
+                height: 12vw;
+                padding: 0 12vw 0 5vw;
+            }
+
+            &__moreText {
+                font-size: 2.5vw;
+
+                &::after {
+                    bottom: -1.2vw;
+                }
+            }
+
+            &__moreArrow {
+                top: 58%;
+                right: 8vw;
+                width: 12vw;
+                height: 12vw;
+            }
+        }
+
+        /**
+         * 採用情報
+         */
+        &__recruit {
+            margin-top: -3vw;
+
+            &__inner {
+                padding: 10vw 0 10vw;
+                border-radius: 0 0 5vw 0;
+            }
+
+            &__content {
+                width: 55vw;
+                padding: 7vw 6vw 7vw;
+                border-radius: 5vw 5vw 0 0;
+            }
+
+            &__title {
+                font-size: 3.8vw;
+            }
+
+            &__text {
+                margin-top: 2.5vw;
+                font-size: 2.2vw;
+                line-height: 1.8;
+            }
+
+            &__person--top {
+                top: 7vw;
+                right: 15vw;
+                width: 18vw;
+            }
+
+            &__decor {
+                top: 10vw;
+                width: 50%;
+                left: 3.5%;
+            }
+
+            &__img {
+                width: 72vw;
+            }
+
+            &__imageBlock {
+
+                &:nth-child(2) {
+                    .p-page-company__recruit__img {
+                        border-radius: 0 0 3vw 0;
+                    }
+                }
+            }
+
+            &__label--career {
+                top: -3vw;
+                right: 8vw;
+                padding: 1.6vw 3vw 1.6vw 4vw;
+                font-size: 3.5vw;
+            }
+
+            &__person--bottom {
+                left: 2vw;
+                bottom: -6vw;
+                width: 14vw;
+            }
+        }
+
+        /**
+         * 企業情報
+         */
+        &__info {
+
+            &__inner {
+                padding: 9vw 13vw 27vw;
+            }
+
+            &__decor {
+                top: 3vw;
+                left: 8vw;
+                width: 52vw;
+            }
+
+            &__heading {
+                margin-left: 16vw;
+            }
+
+            &__title {
+                font-size: 3.8vw;
+            }
+
+            &__text {
+                margin-top: 2.5vw;
+                font-size: 2.2vw;
+                line-height: 1.8;
+            }
+
+            &__nav {
+                width: 65%;
+                margin-top: 3vw;
+            }
+
+            &__item {
+                gap: 3vw;
+                min-height: 12vw;
+                font-size: 2.8vw;
+
+                &:not(:last-child)::after {
+                    left: 6vw;
+                }
+            }
+
+            &__icon {
+                width: 9vw;
+                height: 9vw;
+            }
+
+            &__person {
+                width: 29vw;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .sp-only {
+        display: none;
+    }
+    .pc-only {
+        display: inline;
+    }
+    .p-page-company__person {
+        top: 61vw;
+        right: 10vw;
+        width: 7vw;
+    }
+    .p-page-company {
+
+        /**
+         * ヒーロー
+         */
+        &__hero {
+            &__slider {
+                height: 46vw;
+            }
+
+            &__cloud {
+                bottom: -1vw;
+                width: 48vw;
+            }
+
+            &__content {
+                top: 7vw;
+                left: 4vw;
+                width: 36vw;
+            }
+
+            &__title {
+                font-size: 2.5vw;
+            }
+
+            &__text {
+                margin-top: 1vw;
+                width: 39vw;
+                font-size: 1.25vw;
+                line-height: 1.8;
+            }
+
+            &__person {
+                display: block;
+                right: 27vw;
+                bottom: -5vw;
+                width: 7vw;
+            }
+        }
+
+        /**
+         * 私たちセレクションについて
+         */
+        &__about {
+            &__inner {
+                padding: 6vw 0 12vw;
+                border-radius: 2vw 2vw 0 0;
+            }
+
+            &__content {
+                width: 55vw;
+                margin: 0 auto;
+                padding: 0;
+                text-align: center;
+            }
+
+            &__decor {
+                top: -3vw;
+                left: 1vw;
+                width: 21vw;
+            }
+
+            &__title {
+                font-size: 2.5vw;
+            }
+
+            &__text {
+                margin-top: 1.5vw;
+                font-size: 1.3vw;
+                line-height: 1.8;
+            }
+
+            &__slider {
+                margin-top: 4vw;
+                overflow: visible;
+            }
+
+            &__track {
+                width: 100%;
+            }
+
+            &__item {
+                flex: 0 0 20%;
+                height: 22vw;
+                margin-top: 0;
+
+                &--1,
+                &--3,
+                &--5 {
+                    transform: translateY(3vw);
+                    border-radius: 0 0 1.8vw 0;
+                }
+
+                &--2,
+                &--4 {
+                    border-radius: 1.8vw 0 0 0;
+                }
+            }
+        }
+
+        /**
+         * 生産者・取引先の皆さまへ
+         */
+        &__partner {
+            &__inner {
+                border-radius: 2vw 0 2vw 0;
+            }
+
+            &__body {
+                min-height: 31vw;
+                padding: 4vw 5vw 0;
+            }
+
+            &__content {
+                width: 39vw;
+                margin-left: auto;
+            }
+
+            &__title {
+                font-size: 1.7vw;
+            }
+
+            &__text {
+                width: 100%;
+                margin-top: 1.2vw;
+                font-size: 1.25vw;
+                line-height: 1.8;
+
+                span {
+                    font-size: 1vw;
+                }
+            }
+
+            &__guide {
+                width: 19vw;
+                margin: 2.5vw 0 0 auto;
+                font-size: 1.25vw;
+                line-height: 1.8;
+            }
+
+            &__person {
+                top: -11vw;
+                left: 12vw;
+                width: 6vw;
+            }
+
+            &__products {
+                top: -1vw;
+                right: 6vw;
+                width: 10vw;
+            }
+
+            &__showcase {
+                top: 23vw;
+                left: 52vw;
+                width: 11vw;
+            }
+
+            &__decor {
+                top: 3vw;
+                left: 54vw;
+                width: 25vw;
+            }
+
+            &__mainImg {
+                position: absolute;
+                top: 3vw;
+                left: 0;
+                width: 53vw;
+                margin: 0;
+            }
+
+            &__more {
+                position: absolute;
+                right: 8vw;
+                bottom: 3vw;
+                width: 14vw;
+                height: 5vw;
+                padding: 0 4vw 0 0;
+            }
+
+            &__moreText {
+                font-size: 1.25vw;
+
+                &::after {
+                    bottom: -.5vw;
+                }
+            }
+
+            &__moreArrow {
+                right: 2vw;
+                width: 5vw;
+                height: 5vw;
+            }
+        }
+
+        /**
+         * 採用情報
+         */
+        &__recruit {
+            margin-top: -2.0833vw;
+
+            &__inner {
+                height: 47.7083vw;
+                min-height: 0;
+                padding: 0;
+                border-radius: 0 0 1.5625vw 0;
+            }
+
+            &__content {
+                position: absolute;
+                top: 16.7188vw;
+                left: 24.7396%;
+                box-sizing: border-box;
+                width: 50.5208%;
+                height: 30.9896vw;
+                margin: 0;
+                padding: 3vw 3.1771vw 2.8125vw;
+                border-radius: 1.5625vw 1.5625vw 0 0;
+            }
+
+            &__title {
+                font-size: 22px;
+                line-height: normal;
+            }
+
+            &__text {
+                width: 25.2083vw;
+                margin-top: 1vw;
+                font-size: 14px;
+                line-height: 21px;
+            }
+
+            &__person--top {
+                top: 3.4vw;
+                right: 21%;
+                width: 7.3%;
+            }
+
+            &__decor {
+                top: 25.625vw;
+                left: 21.8229%;
+                width: 20.8854%;
+            }
+
+            &__images {
+                position: absolute;
+                top: 12.7083vw;
+                right: 24.7396%;
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                width: 21.1458%;
+            }
+
+            &__imageBlock {
+                overflow: visible;
+                line-height: 0;
+
+                picture {
+                    display: block;
+                    overflow: hidden;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            &__img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            &__imageBlock:first-child {
+                height: 18.4375vw;
+            }
+
+            &__imageBlock:nth-child(2) {
+                height: 16.5625vw;
+            }
+
+            &__label--career {
+                top: -.8333vw;
+                right: 0;
+                padding: .3646vw .9375vw .4167vw 1.3021vw;
+                font-size: 18px;
+            }
+
+            &__label--part {
+                padding: .4167vw .8333vw;
+                font-size: 15px;
+            }
+
+            &__person--bottom {
+                left: 19.8958%;
+                bottom: -1.4063vw;
+                width: 5.4688%;
+            }
+        }
+
+        /**
+         * 企業情報
+         */
+        &__info {
+            &__inner {
+                padding: 6vw 13vw 15vw;
+            }
+
+            &__decor {
+                top: 2vw;
+                left: 11vw;
+                width: 36vw;
+            }
+
+            &__heading {
+                margin-left: 10vw;
+            }
+
+            &__title {
+                font-size: 2.3vw;
+            }
+
+            &__text {
+                margin-top: 1.5vw;
+                font-size: 1.2vw;
+            }
+
+            &__nav {
+                width: 48%;
+                margin: 3vw 0 0 10vw;
+            }
+
+            &__item {
+                gap: 2vw;
+                min-height: 7vw;
+                padding: 1vw 2vw;
+                font-size: 1.5vw;
+
+                &:not(:last-child)::after {
+                    left: 0;
+                }
+            }
+
+            &__icon {
+                width: 5vw;
+                height: 5vw;
+            }
+
+            &__person {
+                width: 18vw;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .sp-only {
+        display: none;
+    }
+    .pc-only {
+        display: inline;
+    }
+    .p-page-company__person {
+        top: 944px;
+        right: calc(50% - 450px);
+        width: 97px;
+    }
+    .p-page-company {
+
+        /**
+         * ヒーロー
+         */
+        &__hero {
+            &__slider {
+                height: 922px;
+            }
+
+            &__cloud {
+                bottom: clamp(35px, calc(8.6364vw - 75.55px), 54px);
+                width: clamp(614px, calc(128.6364vw - 1032.55px), 897px);
+            }
+
+            &__content {
+                top: 22.31%;
+                left: 17.53%;
+                width: 60%;
+            }
+
+            &__title {
+                font-size: clamp(32px, calc(4.5455vw - 26.18px), 42px);
+                line-height: clamp(48px, calc(7.7273vw - 50.91px), 65px);
+            }
+
+            &__text {
+                margin-top: clamp(10px, calc(1.8182vw - 13.27px), 14px);
+                width: 94.41%;
+                font-size: clamp(16px, calc(0.9091vw + 4.36px), 18px);
+                line-height: clamp(28px, calc(3.1818vw - 12.73px), 35px);
+            }
+        }
+
+        /**
+         * 私たちセレクションについて
+         */
+        &__about {
+            margin-top: -105px;
+
+            &__inner {
+                min-height: 0;
+                margin-bottom: 0;
+                padding: 97px 0 min(7.6563vw, 147px);
+                border-radius: 30px 30px 0 0;
+                box-sizing: border-box;
+            }
+
+            &__content {
+                width: 550px;
+                margin: 0 auto;
+                padding: 0;
+                text-align: center;
+            }
+
+            &__decor {
+                top: -37px;
+                left: -100px;
+                width: 341px;
+            }
+
+            &__title {
+                font-size: 26px;
+                line-height: normal;
+            }
+
+            &__text {
+                margin-top: 41px;
+                font-size: 16px;
+                line-height: 28px;
+            }
+
+            &__slider {
+                margin-top: 56px;
+                overflow: hidden;
+            }
+
+            &__track {
+                width: 100%;
+            }
+
+            &__item {
+                flex: 0 0 20%;
+                width: 20%;
+                height: auto;
+                aspect-ratio: 400 / 486;
+                margin-top: 0;
+
+                &--1,
+                &--3,
+                &--5 {
+                    margin-top: min(1.6146vw, 31px);
+                    transform: none;
+                    border-radius: 0 0 30px 0;
+                }
+
+                &--2,
+                &--4 {
+                    border-radius: 30px 0 0 0;
+                }
+            }
+        }
+
+        /**
+         * 生産者・取引先の皆さまへ
+         */
+        &__partner {
+            margin-top: max(-1.7708vw, -26.56px);
+
+            &__inner {
+                height: min(32.8125vw, 492.19px);
+                border-radius: 30px 0 30px 0;
+            }
+
+            &__body {
+                height: min(32.8125vw, 492.19px);
+                min-height: 0;
+                padding: 0;
+            }
+
+            &__content {
+                position: absolute;
+                top: min(6.25vw, 93.75px);
+                left: min(58.4375%, 876.56px);
+                width: min(31vw, 443px);
+                margin: 0;
+            }
+
+            &__title {
+                font-size: 26px;
+                line-height: normal;
+            }
+
+            &__text {
+                width: 100%;
+                margin-top: 22px;
+                font-size: 16px;
+                line-height: 30px;
+
+                span {
+                    font-size: 18px;
+                }
+            }
+
+            &__guide {
+                width: min(22vw, 313px);
+                margin: 30px 0 0 5px;
+                font-size: 16px;
+                line-height: 30px;
+            }
+
+            &__person {
+                top: max(-12.3958vw, -185.94px);
+                left: min(17.0833%, 256.25px);
+                width: min(4.9479%, 74.22px);
+            }
+
+            &__products {
+                top: max(-1.4583vw, -21.88px);
+                right: auto;
+                left: min(82.6042%, 1239.06px);
+                width: min(10.4167%, 156.25px);
+            }
+
+            &__showcase {
+                top: min(28.75vw, 431.25px);
+                left: min(50.5%, 757.5px);
+                z-index: 3;
+                width: min(8.7%, 130.5px);
+            }
+
+            &__decor {
+                top: min(5.4688vw, 82.03px);
+                left: min(55.4688%, 832.03px);
+                width: min(20.9375%, 314.06px);
+            }
+
+            &__mainImg {
+                position: absolute;
+                top: min(3.4896vw, 52.34px);
+                left: 0;
+                width: min(52%, 780px);
+                height: min(34.6667vw, 520px);
+                margin: 0;
+                object-fit: cover;
+            }
+
+            &__more {
+                position: absolute;
+                top: min(21.9792vw, 329.69px);
+                right: auto;
+                left: min(79.2708%, 1189.06px);
+                bottom: auto;
+                box-sizing: border-box;
+                align-items: flex-start;
+                justify-content: flex-start;
+                width: 126px;
+                height: 105px;
+                padding: 34px 0 0;
+            }
+
+            &__moreText {
+                font-size: 15px;
+
+                &::after {
+                    bottom: -6px;
+                }
+            }
+
+            &__moreArrow {
+                top: 44%;
+                right: 0;
+                width: 52px;
+                height: 52px;
+            }
+        }
+
+        /**
+         * 採用情報
+         */
+        &__recruit {
+            margin-top: max(-2.0833vw, -31.25px);
+
+            &__inner {
+                height: min(47.7083vw, 715.63px);
+                min-height: 0;
+                padding: 0;
+                border-radius: 0 0 30px 0;
+            }
+
+            &__content {
+                box-sizing: border-box;
+                width: min(50.5208%, 757.81px);
+                height: min(30.9896vw, 464.84px);
+                margin: 0;
+                padding: min(4.3vw, 64.5px) min(3.1771vw, 47.66px) min(2.8125vw, 42.19px);
+                position: absolute;
+                top: min(16.7188vw, 250.78px);
+                left: max(24.7396%, calc(50% - 378.91px));
+                border-radius: 30px 30px 0 0;
+            }
+
+            &__title {
+                font-size: 26px;
+                line-height: normal;
+            }
+
+            &__text {
+                width: min(25.2083vw, 378.13px);
+                margin-top: 14px;
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            &__person--top {
+                top: min(2.4vw, 36px);
+                right: max(16%, calc(50% - 510px));
+                width: min(9.3%, 139.5px);
+            }
+
+            &__decor {
+                top: min(25.625vw, 384.38px);
+                left: max(21.8229%, calc(50% - 422.66px));
+                width: min(20.8854%, 313.28px);
+            }
+
+            &__images {
+                position: absolute;
+                top: min(12.7083vw, 190.63px);
+                right: max(24.7396%, calc(50% - 378.91px));
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                width: min(21.1458%, 317.19px);
+            }
+
+            &__imageBlock {
+                overflow: visible;
+                line-height: 0;
+
+                picture {
+                    display: block;
+                    overflow: hidden;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            &__img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            &__imageBlock:first-child {
+                height: min(18.4375vw, 276.56px);
+            }
+
+            &__imageBlock:nth-child(2) {
+                height: min(16.5625vw, 248.44px);
+            }
+
+            &__label--career {
+                top: -16px;
+                right: -12px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 230px;
+                height: 48px;
+                padding: 0 18px 0 25px;
+                font-size: 23px;
+                line-height: 1;
+            }
+
+            &__label--part {
+                padding: 8px 16px;
+                font-size: 18px;
+            }
+
+            &__person--bottom {
+                left: max(19.8958%, calc(50% - 451.56px));
+                bottom: max(-1.4063vw, -21.09px);
+                width: min(5.4688%, 82.03px);
+            }
+        }
+
+        /**
+         * 企業情報
+         */
+        &__info {
+            &__inner {
+                box-sizing: border-box;
+                min-height: 961px;
+                padding: 129px 0 148px;
+            }
+
+            &__decor {
+                top: 68px;
+                left: calc(50% - 516px);
+                width: 436px;
+            }
+
+            &__heading {
+                width: 612px;
+                margin-left: calc(50% - 325px);
+            }
+
+            &__title {
+                font-size: 24px;
+                line-height: normal;
+            }
+
+            &__text {
+                width: 612px;
+                margin-top: 13px;
+                font-size: 16px;
+                line-height: 30px;
+            }
+
+            &__nav {
+                width: 700px;
+                margin: 43px 0 0 calc(50% - 329px);
+            }
+
+            &__item {
+                gap: 22px;
+                min-height: 150px;
+                padding: 24px 0;
+                font-size: 20px;
+
+                &:not(:last-child)::after {
+                    left: 0;
+                }
+            }
+
+            &__icon {
+                width: 100px;
+                height: 100px;
+            }
+
+            &__person {
+                width: 252px;
+            }
+        }
+    }
+}
+
+/**
+ * 複製した写真も含め、配置順で上下を交互に切り替える
+ */
+.p-page-company__about {
+    --stagger-offset: 7vw;
+    --stagger-radius: 4vw;
+
+    .p-page-company__about__slider {
+        overflow: hidden;
+        scroll-behavior: auto;
+    }
+
+    .p-page-company__about__item:nth-child(odd) {
+        margin-top: var(--stagger-offset);
+        transform: none;
+        border-radius: 0 0 var(--stagger-radius) 0;
+    }
+
+    .p-page-company__about__item:nth-child(even) {
+        margin-top: 0;
+        transform: none;
+        border-radius: var(--stagger-radius) 0 0 0;
+    }
+
+    @media (min-width: 768px) {
+        --stagger-offset: 5vw;
+        --stagger-radius: 3vw;
+    }
+
+    @media (min-width: 1024px) {
+        --stagger-offset: 3vw;
+        --stagger-radius: 1.8vw;
+    }
+
+    @media (min-width: 1280px) {
+        --stagger-offset: min(1.6146vw, 31px);
+        --stagger-radius: 30px;
+    }
+}

@@ -1,0 +1,313 @@
+@use "../foundation/global" as *;
+
+/**
+ * 企業ページ共通ヘッダー
+ */
+.l-company-header {
+    z-index: 100;
+    box-sizing: border-box;
+    font-family: Zen Kaku Gothic New, sans-serif;
+    position: absolute;
+    inset: 0 4% auto;
+
+    & *, & :before, & :after {
+        box-sizing: border-box;
+    }
+
+    /**
+     * 背景
+     */
+    &__bar {
+        background: #00a784;
+        border-radius: 0 0 24px 24px;
+        flex-wrap: wrap;
+        align-items: center;
+        min-height: 60px;
+        display: flex;
+        position: relative;
+    }
+
+    /**
+     * ロゴ
+     */
+    &__logo {
+        background: #fff;
+        border-radius: 0 0 0 24px;
+        flex: 0 0 110px;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        display: flex;
+    }
+
+    &__logo, &__logo:hover {
+        opacity: 1;
+        transition: none;
+        transform: none;
+    }
+
+    &__logo img {
+        object-fit: contain;
+        width: 78px;
+        height: 39px;
+        display: block;
+    }
+
+    /**
+     * メニュー開閉ボタン
+     */
+    &__toggle {
+        cursor: pointer;
+        background: 0 0;
+        border: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        width: 48px;
+        height: 48px;
+        margin: 0 10px 0 auto;
+        padding: 0;
+        display: flex;
+    }
+
+    &__toggle[hidden] {
+        display: none;
+    }
+
+    &__toggle span {
+        background: #fff;
+        width: 30px;
+        height: 2px;
+        transition: transform 0.2s, opacity 0.2s;
+        display: block;
+    }
+
+    &__toggle[aria-expanded=true] span:first-child {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    &__toggle[aria-expanded=true] span:nth-child(2) {
+        opacity: 0;
+    }
+
+    &__toggle[aria-expanded=true] span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /**
+     * ナビゲーション
+     */
+    &__nav {
+        width: 100%;
+        max-height: calc(100dvh - 60px);
+        padding: 12px 24px 24px;
+        overflow-y: auto;
+    }
+
+    &__nav[hidden] {
+        display: none;
+    }
+
+    &__links {
+        flex-direction: column;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+    }
+
+    /**
+     * ナビゲーションリンク
+     */
+    &__link {
+        color: #fff;
+        justify-content: center;
+        align-items: center;
+        min-height: 44px;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.5;
+        text-decoration: none;
+        display: flex;
+    }
+
+    &__link--recruit, &__link--contact {
+        border: 2px solid #fff;
+        border-radius: 24px;
+        padding: 6px 16px;
+    }
+
+    &__link--contact {
+        color: #0f3675;
+        background: #fff;
+    }
+
+    & a:focus-visible, & button:focus-visible {
+        outline-offset: -4px;
+        outline: 3px solid #ffed49;
+    }
+
+    /**
+     * スマートフォン・タブレットのメニュー展開時
+     */
+    @media (width < 1024px) {
+        &.is-open &__bar {
+            background: linear-gradient(#fff 60px, #00a784 60px);
+        }
+        &.is-open &__logo {
+            border-radius: 0;
+        }
+        &.is-open &__toggle span {
+            background: #00a784;
+        }
+    }
+    /**
+     * パソコン（1024px以上）
+     */
+    @media (width >= 1024px) {
+        & {
+            inset-inline: 16px;
+        }
+        &__bar {
+            flex-wrap: nowrap;
+            height: 72px;
+        }
+        &__logo {
+            flex-basis: 136px;
+            height: 72px;
+        }
+        &__logo img {
+            width: 92px;
+            height: 46px;
+        }
+        &__toggle {
+            display: none;
+        }
+        &__nav {
+            width: auto;
+            min-width: 0;
+            max-height: none;
+            margin-left: auto;
+            padding: 0 16px;
+            overflow: visible;
+        }
+        &__nav, &__nav[hidden] {
+            display: block;
+        }
+        &__links {
+            flex-direction: row;
+            align-items: center;
+            gap: 14px;
+        }
+        &__link {
+            white-space: nowrap;
+            font-size: 14px;
+        }
+        &__link--recruit {
+            min-width: 194px;
+            height: 44px;
+            padding-inline: 12px;
+        }
+        &__link--contact {
+            min-width: 148px;
+            height: 44px;
+            padding-inline: 12px;
+        }
+    }
+    /**
+     * パソコン（1280px以上）
+     */
+    @media (width >= 1280px) {
+        & {
+            inset-inline: max(32px, 50% - 857px);
+        }
+        &__bar {
+            border-radius: 0 0 30px 30px;
+            flex-wrap: nowrap;
+            height: 85px;
+        }
+        &__logo {
+            border-radius: 0 0 0 30px;
+            flex-basis: 196px;
+            height: 85px;
+        }
+        &__logo img {
+            width: 123px;
+            height: 61px;
+        }
+        &__toggle {
+            display: none;
+        }
+        &__nav {
+            width: auto;
+            min-width: 0;
+            max-height: none;
+            margin-left: auto;
+            padding: 0 32px 0 24px;
+            overflow: visible;
+        }
+        &__links {
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+        }
+        &__link {
+            white-space: nowrap;
+            font-size: 16px;
+        }
+        &__link--recruit {
+            min-width: 240px;
+            height: 46px;
+        }
+        &__link--contact {
+            min-width: 190px;
+            height: 46px;
+        }
+    }
+    /**
+     * パソコン（1600px以上）
+     */
+    @media (width >= 1600px) {
+        &__links {
+            gap: 40px;
+        }
+        &__link {
+            font-size: 18px;
+        }
+        &__link--recruit {
+            min-width: 284px;
+        }
+        &__link--contact {
+            min-width: 213px;
+        }
+    }
+    /**
+     * 動きを抑える設定への対応
+     */
+    @media (prefers-reduced-motion: reduce) {
+        &__toggle span {
+            transition: none;
+        }
+    }
+
+}
+
+/**
+ * ヘッダーの重なりと管理バーの位置調整
+ */
+@media (width >= 1024px) {
+    .has-company-header main {
+        padding-top: 0;
+    }
+}
+.admin-bar .l-company-header {
+    top: 46px;
+}
+
+@media (width >= 783px) {
+    .admin-bar .l-company-header {
+        top: 32px;
+    }
+}

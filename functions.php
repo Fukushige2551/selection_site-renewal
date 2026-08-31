@@ -36,6 +36,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-single-news-js',
         'foods-archive-recipe-js',
         'foods-single-recipe-js',
+        'foods-page-company-js',
     ];
 
     if (in_array($handle, $module_handles, true)) {
@@ -155,6 +156,7 @@ function foods_theme_scripts() {
     $single_news_entry = 'src/js/single-news.js';
     $archive_recipe_entry = 'src/js/archive-recipe.js';
     $single_recipe_entry = 'src/js/single-recipe.js';
+    $page_company_entry = 'src/js/page-company.js';
 
     if ($is_local) {
         wp_enqueue_script(
@@ -236,6 +238,17 @@ function foods_theme_scripts() {
         foods_enqueue_vite_entry(
             'foods-page-select',
             $page_select_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    // page-company.php 専用アセット
+    if (is_page() && basename((string) get_page_template()) === 'page-company.php') {
+        foods_enqueue_vite_entry(
+            'foods-page-company',
+            $page_company_entry,
             $dev_server,
             $manifest,
             $is_local
