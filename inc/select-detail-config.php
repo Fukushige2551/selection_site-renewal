@@ -305,6 +305,7 @@ function foods_get_select_detail_configs() {
                             ['src' => 'meat_about_img3.png', 'webp' => 'webp/meat_about_img3.webp', 'alt' => '美味北総豚の生産風景'],
                             ['src' => 'meat_about_img4.png', 'webp' => 'webp/meat_about_img4.webp', 'alt' => '美味北総豚の生産風景'],
                         ],
+						'gallery_variant' => 'two',
                         'decorations' => [
                             ['key' => 'decoration2', 'src' => 'svg/meat_about_deco2.svg', 'alt' => 'お肉のこだわり', 'placement' => 'content'],
                             ['key' => 'decoration7', 'src' => 'svg/meat_about_deco7.svg', 'alt' => 'ファーム作業人', 'placement' => 'gallery_after'],
@@ -318,6 +319,7 @@ function foods_get_select_detail_configs() {
                             ['src' => 'meat_about_img6.png', 'webp' => 'webp/meat_about_img6.webp', 'alt' => 'かみむら牛の生産風景'],
                             ['src' => 'meat_about_img7.png', 'webp' => 'webp/meat_about_img7.webp', 'alt' => 'かみむら牛の生産風景'],
                         ],
+						'gallery_variant' => 'two',
                         'decorations' => [
                             ['key' => 'decoration3', 'src' => 'svg/meat_about_deco3.svg', 'alt' => 'お肉のこだわり', 'placement' => 'content'],
                             ['key' => 'decoration4', 'src' => 'svg/meat_about_deco4.svg', 'alt' => 'お肉のこだわり', 'placement' => 'gallery_before'],
@@ -426,6 +428,7 @@ function foods_get_select_detail_configs() {
                             ['src' => 'cultivation.png', 'alt' => '実った稲穂'],
                             ['src' => 'farmer.png', 'alt' => '田んぼで作業する生産者'],
                         ],
+						'gallery_variant' => 'two',
                         'decorations' => [
                             ['key' => 'rice-bales-and-farmer', 'src' => 'svg/rice-bales-and-farmer.svg', 'alt' => '', 'placement' => 'main_image'],
                             ['key' => 'sun-drying', 'src' => 'svg/sun-drying.svg', 'alt' => '', 'placement' => 'secondary_image'],

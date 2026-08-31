@@ -285,6 +285,15 @@
 				border-radius: 2.6vw;
 			}
 
+			&--gallery-two &--imgWrap > picture {
+				flex: 0 0 41vw;
+				width: 41vw;
+
+				& > .p-page-select-detail__about__content--imgSmall {
+					width: 100%;
+				}
+			}
+
 			&--catWorkerAnchor {
 				display: contents;
 			}
@@ -731,6 +740,11 @@
 				&--imgSmall {
 					width: 44.2vw;
 				}
+
+				&--gallery-two &--imgWrap > picture {
+					flex-basis: 44.2vw;
+					width: 44.2vw;
+				}
 			}
 		}
 		&__news {
@@ -958,6 +972,11 @@
 					width: 29.93vw;
 					border-radius: 1.64vw;
 					object-fit: cover;
+				}
+
+				&--gallery-two &--imgWrap > picture {
+					flex-basis: 29.93vw;
+					width: 29.93vw;
 				}
 			}
 		}
@@ -1274,6 +1293,11 @@
 					width: 364px;
 					border-radius: 20px;
 					object-fit: cover;
+				}
+
+				&--gallery-two &--imgWrap > picture {
+					flex-basis: 364px;
+					width: 364px;
 				}
 
 				&--catWorkerAnchor {

@@ -89,9 +89,9 @@ $detail: '.p-page-select-detail';
 		#{$detail}__news__foregroundDecoration--forklift { top: -69vw; right: 49vw; width: 49.48vw; }
 	}
 
-	.p-page-select-detail__about__content--imgSmall {
-        width: 57.81vw;
-    }
+	#{$detail}--sweets #{$detail}__about__content--img-north-colors-thought {
+		width: 57.81vw;
+	}
 }
 
 @media screen and (max-width: 1023px) {
@@ -254,7 +254,7 @@ $detail: '.p-page-select-detail';
 		}
 	}
 
-	.p-page-select-detail__about__content--imgSmall {
-        width: 444px;
-    }
+	#{$detail}__about__content--img-north-colors-thought {
+		width: 444px;
+	}
 }
