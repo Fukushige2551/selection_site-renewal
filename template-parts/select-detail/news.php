@@ -6,12 +6,17 @@ $news = $config['news'];
 <section class="<?php echo esc_attr($block_class); ?>__news">
     <div class="<?php echo esc_attr($block_class); ?>__news__bg">
         <?php foreach (($news['foreground_decorations'] ?? []) as $decoration) : ?>
-            <?php if (!empty($decoration['key']) && !empty($decoration['src'])) : ?>
+            <?php if (!empty($decoration['key']) && !empty($decoration['src']) && empty($decoration['wrap_anchor_only'])) : ?>
                 <img class="<?php echo esc_attr($block_class . '__news__foregroundDecoration ' . $block_class . '__news__foregroundDecoration--' . sanitize_html_class($decoration['key']) . ' ' . $block_class . '__news__foregroundDecoration--legacyAnchor'); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt'] ?? ''); ?>">
             <?php endif; ?>
         <?php endforeach; ?>
         <div class="<?php echo esc_attr($block_class); ?>__news__titleWrap">
-            <h2 class="<?php echo esc_attr($block_class); ?>__news__title"><?php echo wp_kses_post($news['title']); ?></h2>
+            <h2 class="<?php echo esc_attr($block_class . '__news__title' . (!empty($news['title_pc']) ? ' ' . $block_class . '__news__title--responsive' : '')); ?>">
+                <span class="<?php echo esc_attr($block_class); ?>__news__titleSp"><?php echo wp_kses_post($news['title']); ?></span>
+                <?php if (!empty($news['title_pc'])) : ?>
+                    <span class="<?php echo esc_attr($block_class); ?>__news__titlePc"><?php echo wp_kses_post($news['title_pc']); ?></span>
+                <?php endif; ?>
+            </h2>
         </div>
 
         <div class="<?php echo esc_attr($block_class); ?>__news__wrap">

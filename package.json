@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build && node tools/optimize-images.mjs"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,8 @@
   },
   "devDependencies": {
     "sass": "^1.98.0",
+    "sharp": "^0.35.3",
+    "svgo": "^4.1.0",
     "vite-plugin-full-reload": "^1.2.0"
   }
 }

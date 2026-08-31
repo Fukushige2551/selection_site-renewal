@@ -31,6 +31,9 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-page-select-fish-js',
         'foods-page-select-rice-js',
         'foods-page-select-deli-js',
+        'foods-page-select-washoku-daily-js',
+        'foods-page-select-foods-js',
+        'foods-page-select-sweets-js',
         'foods-single-shop-js',
         'foods-archive-news-js',
         'foods-single-news-js',
@@ -151,6 +154,9 @@ function foods_theme_scripts() {
     $page_select_fish_entry = 'src/js/page-select-fish.js';
     $page_select_rice_entry = 'src/js/page-select-rice.js';
     $page_select_deli_entry = 'src/js/page-select-deli.js';
+    $page_select_washoku_daily_entry = 'src/js/page-select-washoku-daily.js';
+    $page_select_foods_entry = 'src/js/page-select-foods.js';
+    $page_select_sweets_entry = 'src/js/page-select-sweets.js';
     $single_shop_entry = 'src/js/single-shop.js';
     $archive_news_entry = 'src/js/archive-news.js';
     $single_news_entry = 'src/js/single-news.js';
@@ -309,6 +315,42 @@ function foods_theme_scripts() {
         foods_enqueue_vite_entry(
             'foods-page-select-deli',
             $page_select_deli_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    if (
+        is_page()
+        && (
+            $current_page_template === 'page-select-washoku-daily.php'
+            || ($current_page_template === 'page-select-detail.php' && in_array($current_page_slug, ['washoku-daily', 'select-washoku-daily'], true))
+        )
+    ) {
+        foods_enqueue_vite_entry(
+            'foods-page-select-washoku-daily',
+            $page_select_washoku_daily_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    if (is_page() && $current_page_template === 'page-select-foods.php') {
+        foods_enqueue_vite_entry(
+            'foods-page-select-foods',
+            $page_select_foods_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    if (is_page() && $current_page_template === 'page-select-sweets.php') {
+        foods_enqueue_vite_entry(
+            'foods-page-select-sweets',
+            $page_select_sweets_entry,
             $dev_server,
             $manifest,
             $is_local

@@ -47,7 +47,10 @@ foreach ($background_decorations as $decoration) {
 
         <?php foreach ($about['sections'] as $section_index => $section) : ?>
             <?php
-            $section_classes = [$block_class . '__about__content'];
+            $section_classes = [
+                $block_class . '__about__content',
+                $block_class . '__about__content--section-' . ($section_index + 1),
+            ];
             if (!empty($section['gallery_variant'])) {
                 $section_classes[] = $block_class . '__about__content--gallery-' . sanitize_html_class($section['gallery_variant']);
             }
@@ -62,9 +65,14 @@ foreach ($background_decorations as $decoration) {
                 <?php endif; ?>
                 <h3 class="<?php echo esc_attr($block_class); ?>__about__content--title">
                     <?php if (!empty($section['location'])) : ?>
-                        <span class="<?php echo esc_attr($block_class); ?>__about__content--location"><?php echo esc_html($section['location']); ?></span>
+                        <span class="<?php echo esc_attr($block_class . '__about__content--location' . (!empty($section['location_pc']) ? ' ' . $block_class . '__about__content--locationResponsive' : '')); ?>">
+                            <span class="<?php echo esc_attr($block_class); ?>__about__content--locationSp"><?php echo wp_kses_post($section['location']); ?></span>
+                            <?php if (!empty($section['location_pc'])) : ?>
+                                <span class="<?php echo esc_attr($block_class); ?>__about__content--locationPc"><?php echo esc_html($section['location_pc']); ?></span>
+                            <?php endif; ?>
+                        </span>
                     <?php endif; ?>
-                    <?php echo wp_kses_post($section['title']); ?>
+                    <span class="<?php echo esc_attr($block_class); ?>__about__content--titleText"><?php echo wp_kses_post($section['title']); ?></span>
                 </h3>
 
                 <?php if (0 === $section_index && is_array($title_pc) && !empty($title_pc['src'])) : ?>
@@ -126,7 +134,7 @@ foreach ($background_decorations as $decoration) {
                     <?php if ($secondary_image_decorations) : ?>
                         <div class="<?php echo esc_attr($block_class); ?>__about__content--secondaryImageAnchor">
                     <?php endif; ?>
-                    <?php if ($secondary_inline_decorations) : ?>
+                    <?php if ($secondary_inline_decorations || !empty($secondary_image['background_decoration'])) : ?>
                         <div class="<?php echo esc_attr($block_class); ?>__about__content--secondaryImageWrap">
                     <?php endif; ?>
                     <picture>
@@ -138,7 +146,7 @@ foreach ($background_decorations as $decoration) {
                     <?php foreach ($secondary_inline_decorations as $decoration) : ?>
                         <img class="<?php echo esc_attr($block_class . '__about__content--' . sanitize_html_class($decoration['key'])); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt'] ?? ''); ?>">
                     <?php endforeach; ?>
-                    <?php if ($secondary_inline_decorations) : ?>
+                    <?php if ($secondary_inline_decorations || !empty($secondary_image['background_decoration'])) : ?>
                         </div>
                     <?php endif; ?>
                     <?php if ($secondary_image_decorations) : ?>
@@ -176,15 +184,24 @@ foreach ($background_decorations as $decoration) {
                             },
                             $anchor_keys
                         )));
+                        $gallery_modifier_class = !empty($gallery_image['modifier'])
+                            ? $block_class . '__about__content--img-' . sanitize_html_class($gallery_image['modifier'])
+                            : '';
                         ?>
                         <?php if ($gallery_anchor_decorations) : ?>
                             <div class="<?php echo esc_attr($block_class); ?>__about__content--catWorkerAnchor">
                         <?php endif; ?>
-                        <picture>
+                        <picture<?php echo $gallery_modifier_class ? ' class="' . esc_attr($gallery_modifier_class . '-picture') . '"' : ''; ?>>
+                            <?php if (!empty($gallery_image['src_tab'])) : ?>
+                                <source media="(min-width: 768px) and (max-width: 1023px)" srcset="<?php echo esc_url(foods_get_select_detail_asset_url($config, $gallery_image['src_tab'])); ?>">
+                            <?php endif; ?>
+                            <?php if (!empty($gallery_image['src_sp'])) : ?>
+                                <source media="(max-width: 767px)" srcset="<?php echo esc_url(foods_get_select_detail_asset_url($config, $gallery_image['src_sp'])); ?>">
+                            <?php endif; ?>
                             <?php if (!empty($gallery_image['webp'])) : ?>
                                 <source srcset="<?php echo esc_url(foods_get_select_detail_asset_url($config, $gallery_image['webp'])); ?>" type="image/webp">
                             <?php endif; ?>
-                            <img class="<?php echo esc_attr($block_class); ?>__about__content--imgSmall" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $gallery_image['src'])); ?>" alt="<?php echo esc_attr($gallery_image['alt']); ?>">
+                            <img class="<?php echo esc_attr(trim($block_class . '__about__content--imgSmall ' . $gallery_modifier_class)); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $gallery_image['src'])); ?>" alt="<?php echo esc_attr($gallery_image['alt']); ?>">
                         </picture>
                         <?php if ($gallery_anchor_decorations) : ?>
                             <?php foreach ($gallery_anchor_decorations as $anchor_decoration) : ?>
@@ -196,12 +213,15 @@ foreach ($background_decorations as $decoration) {
 
                     <?php foreach ($decorations as $decoration) : ?>
                         <?php if ('gallery_after' === $decoration['placement']) : ?>
-                            <?php if (!empty($decoration['src_pc'])) : ?><picture><?php endif; ?>
+                            <?php if (!empty($decoration['src_pc']) || !empty($decoration['src_sp'])) : ?><picture><?php endif; ?>
+                                <?php if (!empty($decoration['src_sp'])) : ?>
+                                    <source media="(max-width: 767px)" srcset="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src_sp'])); ?>">
+                                <?php endif; ?>
                                 <?php if (!empty($decoration['src_pc'])) : ?>
                                     <source media="(min-width: 1024px)" srcset="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src_pc'])); ?>">
                                 <?php endif; ?>
                                 <img class="<?php echo esc_attr($block_class . '__about__content--' . $decoration['key'] . ' ' . $block_class . '__about__title--decoration7'); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt']); ?>">
-                            <?php if (!empty($decoration['src_pc'])) : ?></picture><?php endif; ?>
+                            <?php if (!empty($decoration['src_pc']) || !empty($decoration['src_sp'])) : ?></picture><?php endif; ?>
                         <?php endif; ?>
                     <?php endforeach; ?>
                 </div>

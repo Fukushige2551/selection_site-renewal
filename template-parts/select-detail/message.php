@@ -39,6 +39,11 @@ $message_background_decorations = array_values(array_filter(
                     <p class="<?php echo esc_attr($block_class); ?>__message--textSp"><?php echo wp_kses_post($message['text']); ?></p>
                     <p class="<?php echo esc_attr($block_class); ?>__message--textPc"><?php echo wp_kses_post($message['text_pc']); ?></p>
                 </div>
+                <?php foreach (($message['foreground_decorations'] ?? []) as $decoration) : ?>
+                    <?php if (!empty($decoration['key']) && !empty($decoration['src'])) : ?>
+                        <img class="<?php echo esc_attr($block_class . '__message--foregroundDecoration ' . $block_class . '__message--foregroundDecoration-' . sanitize_html_class($decoration['key'])); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt'] ?? ''); ?>">
+                    <?php endif; ?>
+                <?php endforeach; ?>
                 <?php if (!empty($message['corner_decoration'])) : ?>
                     <img class="<?php echo esc_attr($block_class); ?>__message--cornerDecoration" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $message['corner_decoration'])); ?>" alt="">
                 <?php endif; ?>
