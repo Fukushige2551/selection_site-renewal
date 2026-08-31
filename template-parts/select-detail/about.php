@@ -160,7 +160,7 @@ foreach ($background_decorations as $decoration) {
                         ? $section['secondary_text_blocks']
                         : [($section['secondary_text'] ?? '')];
                     ?>
-                    <div class="<?php echo esc_attr($block_class); ?>__about__content--copy">
+                    <div class="<?php echo esc_attr($block_class); ?>__about__content--copy <?php echo esc_attr($block_class); ?>__about__content--copyBeforeGallery">
                         <?php foreach ($secondary_text_blocks as $text_block) : ?>
                             <?php if ('' !== $text_block) : ?><p><?php echo esc_html($text_block); ?></p><?php endif; ?>
                         <?php endforeach; ?>
