@@ -1,6 +1,10 @@
 $detail: '.p-page-select-detail';
 
 #{$detail}--sweets {
+	#{$detail}__news__title br {
+		display: block;
+	}
+
 	#{$detail}__message--shape {
 		background: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-sweets/buyer-message-background-sp.svg') center top / 100% 100% no-repeat;
 	}
@@ -142,15 +146,56 @@ $detail: '.p-page-select-detail';
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
 	#{$detail}--sweets {
 		#{$detail}__message--shape { background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-sweets/buyer-message-background-pc.svg'); }
-		#{$detail}__message--foregroundDecoration-potato { right: -1vw; bottom: 1vw; width: 8.515625vw; }
-		#{$detail}__message--foregroundDecoration-cacao { bottom: 0; left: -1vw; width: 15.15625vw; }
-		#{$detail}__about__content--cacao-beans { top: -3.5vw; left: -2vw; width: 5.625vw; }
-		#{$detail}__about__content--patissier { top: -8vw; right: -5vw; width: 10.3125vw; }
-		#{$detail}__about__content--cook { top: -8vw; left: -4vw; width: 6.40625vw; }
-		#{$detail}__about__content--yuzu { top: -3vw; right: -3vw; width: 12.421875vw; }
-		#{$detail}__news__foregroundDecoration--baumkuchen { top: 5vw; right: 6vw; width: 11.09375vw; }
-		#{$detail}__news__foregroundDecoration--forklift { top: 10vw; right: 4vw; width: 18vw; }
+		#{$detail}__message--foregroundDecoration-potato {
+			right: -1vw;
+			bottom: 1vw;
+			width: 10vw;
+		}
+		#{$detail}__message--foregroundDecoration-cacao {
+			bottom: -25.4vw;
+			left: -2vw;
+			width: 17vw;
+		}
+		#{$detail}__about__content--cacao-beans {
+			top: -6vw;
+			left: -10vw;
+			width: 6vw;
+		}
+		#{$detail}__about__content--patissier {
+			top: -12vw;
+			right: -8vw;
+			width: 10.31vw;
+		}
+		#{$detail}__about__content--cook {
+			top: -8vw;
+			left: -8vw;
+			width: 6.40vw;
+		}
+		#{$detail}__about__content--yuzu {
+			top: -7.6vw;
+			right: -1.6vw;
+			width: 12.42vw;
+		}
+		#{$detail}__news__foregroundDecoration--baumkuchen {
+			top: 2vw;
+			right: 23vw;
+			width: 11vw;
+		}
+		#{$detail}__news__foregroundDecoration--forklift {
+			top: -49vw;
+			right: 2vw;
+			width: 25vw;
+		}
 	}
+	.p-page-select-detail__about__bg {
+		padding: 29.44vw 0 10vw;
+		box-sizing: border-box;
+		background-size: 2.63vw 2.63vw;
+	}
+	.p-page-select-detail__news {
+        z-index: 3;
+        margin-top: -9.92vw;
+    }
 }
 
 // DPC
