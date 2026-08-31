@@ -697,6 +697,9 @@ function foods_get_select_detail_configs() {
                 'buyer_image' => '@theme/img/page/page-select-detail/svg/img_message-buyer.svg',
                 'text' => '蔵元とつながる。<br>だから、酒がまっすぐ旨い。<br>セレクションの酒売場は、<br>スーパーマーケットでは珍しい<br>「蔵元特約店」。<br>惚れ込んだ地酒蔵と正規に取り組み、<br>清酒・焼酎を正規価格でお届けします。<br>“安さで選ぶ酒”ではなく、<br>“旨い理由がある酒”を並べる。<br>だから、品揃えが他店と違う。<br>ワインも同じ。<br>フランスの生産者・蔵元直送を軸に、<br>世界中から料理で映える一本を厳選。<br>肉・魚・チーズ・惣菜――<br>食材が揃うセレクションだからこそ、<br>「今日の献立に合うワイン」が選べます。<br>さらに、ウイスキー、ジンなどの<br>スピリッツも<br>“飲み方まで楽しくなる”ラインアップで。<br>毎日の一杯から、週末のごほうびまで。<br>選ぶ時間ごと、うまい酒をどうぞ。',
                 'text_pc' => '蔵元とつながる。<br>だから、酒がまっすぐ旨い。<br>セレクションの酒売場は、スーパーマーケットでは珍しい<br>「蔵元特約店」。<br>惚れ込んだ地酒蔵と正規に取り組み、清酒・焼酎を正規価格でお届けします。<br>“安さで選ぶ酒”ではなく、“旨い理由がある酒”を並べる。<br>だから、品揃えが他店と違う。<br>ワインも同じ。<br>フランスの生産者・蔵元直送を軸に、世界中から料理で映える一本を厳選。<br>肉・魚・チーズ・惣菜――<br>食材が揃うセレクションだからこそ、「今日の献立に合うワイン」が選べます。<br>さらに、ウイスキー、ジンなどの<br>スピリッツも“飲み方まで楽しくなる”ラインアップで。<br>毎日の一杯から、週末のごほうびまで。<br>選ぶ時間ごと、うまい酒をどうぞ。',
+                'foreground_decorations' => [
+                    ['key' => 'sake-masu-wine', 'src' => '酒枡とワイン.svg', 'alt' => ''],
+                ],
             ],
             'about' => [
                 'title' => 'こだわりの現場から',
@@ -721,6 +724,10 @@ function foods_get_select_detail_configs() {
                             '代表銘柄「純黒」は、まろやかでコクがあり、料理を引き立てる味わい。土地の恵みと蔵人の技が息づく一本を、ぜひお楽しみください。',
                         ],
                         'gallery' => [],
+                        'decorations' => [
+                            ['key' => 'brewery-staff', 'src' => '酒造スタッフ.svg', 'alt' => '', 'placement' => 'main_image'],
+                            ['key' => 'farmer', 'src' => '農夫.svg', 'alt' => '', 'placement' => 'secondary_image'],
+                        ],
                     ],
                     [
                         'location' => 'フランス直輸入の自然派ワイナリー',
@@ -738,6 +745,11 @@ function foods_get_select_detail_configs() {
                             ['src' => '試飲準備.png', 'alt' => 'ワインの試飲準備'],
                             ['src' => '注がれるワイン.png', 'alt' => 'グラスに注がれる赤ワイン'],
                         ],
+                        'decorations' => [
+                            ['key' => 'wine-farmer', 'src' => 'ワインと農夫.svg', 'alt' => '', 'placement' => 'main_image'],
+                            ['key' => 'barrel', 'src' => '酒樽.svg', 'alt' => '', 'placement' => 'main_image'],
+                            ['key' => 'pitcher-wine', 'src' => 'ピッチャーとワイン.svg', 'alt' => '', 'placement' => 'gallery_after'],
+                        ],
                     ],
                 ],
             ],
@@ -748,6 +760,10 @@ function foods_get_select_detail_configs() {
                 'archive_label' => 'お酒のこだわり一覧',
                 'background_sp' => '@theme/img/page/page-select-detail/meat_news_bgSP.png',
                 'background_pc' => '@theme/img/page/page-select-detail/meat_news_bgPC.png',
+                'foreground_decorations' => [
+                    ['key' => 'sake', 'src' => '酒@2x 2.svg', 'alt' => ''],
+                    ['key' => 'ochoko', 'src' => 'おちょこ@2x 2.svg', 'alt' => ''],
+                ],
             ],
         ],
         'fish' => [
