@@ -1272,7 +1272,6 @@
 				}
 				&--imgSmall {
 					width: 364px;
-					height: 223px;
 					border-radius: 20px;
 					object-fit: cover;
 				}
@@ -1292,12 +1291,12 @@
 		}
 		&__news {
 			z-index: 1;
-			margin-top: -72px;
+			margin-top: -152px;
 
 			&__bg {
 				height: auto;
 				margin: 0 auto;
-				padding: 135px 0 calc(19.1146vw + 5.2083vw);
+				padding: 190px 0 calc(19.1146vw + 5.2083vw);
 				box-sizing: border-box;
 				background-position: center top;
 				background-size: 1920px 100%;

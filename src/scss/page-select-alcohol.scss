@@ -1,0 +1,39 @@
+$detail: '.p-page-select-detail';
+
+#{$detail}--alcohol {
+	#{$detail}__message--shape {
+		background: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-alcohol/背景sp.svg') center top / 100% 100% no-repeat;
+	}
+
+	#{$detail}__message--shapeBase,
+	#{$detail}__message--shapeTop,
+	#{$detail}__message--shapeMiddle,
+	#{$detail}__message--shapeBottom {
+		display: none;
+	}
+
+	#{$detail}__about__content--image,
+	#{$detail}__about__content--imgSmall {
+		object-fit: cover;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	#{$detail}--alcohol {
+		#{$detail}__hero__img--top { width: min(93.08vw, 363px); }
+		#{$detail}__about__content--image { height: 62vw; }
+	}
+}
+
+@media screen and (min-width: 768px) {
+	#{$detail}--alcohol #{$detail}__message--shape {
+		background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-alcohol/背景pc.svg');
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	#{$detail}--alcohol {
+		#{$detail}__about__content--section-1 #{$detail}__about__content--image,
+		#{$detail}__about__content--section-2 #{$detail}__about__content--image { height: 475px; }
+	}
+}

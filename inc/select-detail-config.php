@@ -676,6 +676,83 @@ function foods_get_select_detail_configs() {
                 ],
             ],
         ],
+        'alcohol' => [
+            'page_slug' => 'select-alcohol',
+            'modifier' => 'alcohol',
+            'title' => 'お酒のこだわり',
+            'asset_base' => 'img/page/page-select-alcohol',
+            'theme' => [
+                'message_background' => '#e7f9f5',
+            ],
+            'breadcrumb' => [
+                'parent_label' => 'セレクションのこだわり',
+                'parent_url' => '/select/',
+            ],
+            'hero' => [
+                'lead' => '日常の一杯から特別な日の乾杯まで。<br>味わい・造り手・料理との相性に目を向け、<br>シーンに合わせて選べるお酒をご提案しています。',
+                'image' => 'お酒造り.svg',
+                'image_alt' => '酒蔵でお酒を造る職人たち',
+            ],
+            'message' => [
+                'bubble_sp' => '吹き出しsp.svg',
+                'bubble_pc' => '吹き出しpc.svg',
+                'buyer_image' => '@theme/img/page/page-select-detail/svg/img_message-buyer.svg',
+                'text' => '蔵元とつながる。<br>だから、酒がまっすぐ旨い。<br>セレクションの酒売場は、スーパーマーケットでは珍しい「蔵元特約店」。<br>惚れ込んだ地酒蔵と正規に取り組み、清酒・焼酎を正規価格でお届けします。<br>“安さで選ぶ酒”ではなく、“旨い理由がある酒”を並べる。<br>だから、品揃えが他店と違う。<br>ワインも同じ。<br>フランスの生産者・蔵元直送を軸に、世界中から料理で映える一本を厳選。<br>肉・魚・チーズ・惣菜――<br>食材が揃うセレクションだからこそ、「今日の献立に合うワイン」が選べます。<br>さらに、ウイスキー、ジンなどのスピリッツも“飲み方まで楽しくなる”ラインアップで。<br>毎日の一杯から、週末のごほうびまで。<br>選ぶ時間ごと、うまい酒をどうぞ。',
+                'text_pc' => '蔵元とつながる。<br>だから、酒がまっすぐ旨い。<br>セレクションの酒売場は、スーパーマーケットでは珍しい「蔵元特約店」。<br>惚れ込んだ地酒蔵と正規に取り組み、清酒・焼酎を正規価格でお届けします。<br>“安さで選ぶ酒”ではなく、“旨い理由がある酒”を並べる。<br>だから、品揃えが他店と違う。<br>ワインも同じ。<br>フランスの生産者・蔵元直送を軸に、世界中から料理で映える一本を厳選。<br>肉・魚・チーズ・惣菜――<br>食材が揃うセレクションだからこそ、「今日の献立に合うワイン」が選べます。<br>さらに、ウイスキー、ジンなどの<br>スピリッツも“飲み方まで楽しくなる”ラインアップで。<br>毎日の一杯から、週末のごほうびまで。<br>選ぶ時間ごと、うまい酒をどうぞ。',
+            ],
+            'about' => [
+                'title' => 'こだわりの現場から',
+                'title_background' => '@theme/img/page/page-select-detail/svg/meat_about_title.svg',
+                'background' => '@theme/img/page/page-select-detail/brick.png',
+                'wave_sp_top' => '@theme/img/page/page-select-detail/svg/upper_wave.svg',
+                'wave_sp_bottom' => '@theme/img/page/page-select-detail/svg/about-wave-bottom-sp.svg',
+                'wave_pc_top' => '@theme/img/page/page-select-detail/svg/meat_about_wave-top-pc.svg',
+                'wave_pc_bottom' => '@theme/img/page/page-select-detail/svg/meat_about_wave-bottom-pc.svg',
+                'decorations' => [],
+                'sections' => [
+                    [
+                        'location' => '特約焼酎蔵元',
+                        'title' => '田村合名会社',
+                        'main_image' => ['src' => '焼酎蔵元.png', 'alt' => '田村合名会社の焼酎蔵'],
+                        'text_blocks' => [
+                            '鹿児島県指宿市山川。薩摩焼酎を造り続ける田村合名会社は、昔ながらの甕仕込みで丁寧に焼酎を育てています。手仕事を大切にしながら、芋の個性をまっすぐ引き出します。',
+                        ],
+                        'sub_title' => '明治創業　百年以上の歴史が育てる、<br>自然の手造り芋焼酎「純黒」。',
+                        'secondary_image' => ['src' => '純黒.png', 'alt' => '開聞岳とさつま芋畑、純黒をはじめとする焼酎'],
+                        'secondary_text_blocks' => [
+                            '代表銘柄「純黒」は、まろやかでコクがあり、料理を引き立てる味わい。土地の恵みと蔵人の技が息づく一本を、ぜひお楽しみください。',
+                        ],
+                        'gallery' => [],
+                    ],
+                    [
+                        'location' => 'フランス直輸入の自然派ワイナリー',
+                        'title' => 'ドメーヌ・ド・パスキエ',
+                        'main_image' => ['src' => 'ブドウ園.png', 'alt' => 'ドメーヌ・ド・パスキエのブドウ園'],
+                        'text_blocks' => [
+                            'フランスの豊かな土地で育ったぶどうを使い、自然な味わいを大切にしたワイン造りを続けています。料理に寄り添い、日々の食卓を豊かにするワインです。',
+                        ],
+                        'sub_title' => '1935年創業。守りと攻めのワイン村で育まれる、<br>濃くて穏やかな南仏ローヌのワイン。',
+                        'secondary_image' => ['src' => 'スイーツとワイン.png', 'alt' => 'チョコレートのスイーツと赤ワイン'],
+                        'secondary_text_blocks' => [
+                            '上品な果実味とやわらかな余韻。料理はもちろん、デザートとのペアリングにもおすすめです。セレクションでは、食卓のシーンまで思い浮かべながら一本一本を選んでいます。',
+                        ],
+                        'gallery' => [
+                            ['src' => '試飲準備.png', 'alt' => 'ワインの試飲準備'],
+                            ['src' => '注がれるワイン.png', 'alt' => 'グラスに注がれる赤ワイン'],
+                        ],
+                        'gallery_variant' => 'two',
+                    ],
+                ],
+            ],
+            'news' => [
+                'taxonomy' => 'news_commitment',
+                'term' => 'alcohol',
+                'title' => 'こだわりのお酒を<br>もっと見る',
+                'archive_label' => 'お酒のこだわり一覧',
+                'background_sp' => '@theme/img/page/page-select-detail/meat_news_bgSP.png',
+                'background_pc' => '@theme/img/page/page-select-detail/meat_news_bgPC.png',
+            ],
+        ],
         'fish' => [
             'page_slug' => 'select-fish',
             'modifier' => 'fish',
