@@ -146,6 +146,7 @@ $detail: '.p-page-select-detail';
 			right: 0vw;
 			width: 30vw;
 		}
+		#{$detail}__about__content--img-north-colors-thought-picture,
 		#{$detail}__about__content--img-north-colors-thought {
 			width: 57.81vw;
 		}
@@ -254,6 +255,7 @@ $detail: '.p-page-select-detail';
 		}
 	}
 
+	#{$detail}__about__content--img-north-colors-thought-picture,
 	#{$detail}__about__content--img-north-colors-thought {
 		width: 444px;
 	}
