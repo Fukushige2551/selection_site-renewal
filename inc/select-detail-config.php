@@ -764,9 +764,10 @@ function foods_get_select_detail_configs() {
             ],
             'news' => [
                 'taxonomy' => 'news_commitment',
-                'term' => 'alcohol',
-                'title' => 'こだわりのお酒を<br>もっと見る',
-                'archive_label' => 'お酒のこだわり一覧',
+				'term' => 'alcohol',
+				'title' => 'お酒のこだわりを<br>もっと見る',
+				'title_pc' => 'お酒のこだわりを<br>もっと見る',
+				'archive_label' => 'お酒のこだわり一覧',
                 'background_sp' => '@theme/img/page/page-select-detail/meat_news_bgSP.png',
                 'background_pc' => '@theme/img/page/page-select-detail/meat_news_bgPC.png',
                 'foreground_decorations' => [
