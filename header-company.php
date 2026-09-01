@@ -27,7 +27,7 @@ $company_header_links = [
     <?php wp_head(); ?>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Scope+One&family=Secular+One&family=Ysabeau:ital,wght@0,1..1000;1,1..1000&family=Zen+Kaku+Gothic+Antique:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Kurenaido&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=REM:wght@500&family=Scope+One&family=Secular+One&family=Sen&family=Ysabeau:ital,wght@0,1..1000;1,1..1000&family=Zen+Kaku+Gothic+Antique:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Kurenaido&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body <?php body_class('has-company-header'); ?>>
 <?php wp_body_open(); ?>

@@ -4,6 +4,7 @@
  * 企業ページ共通ヘッダー
  */
 .l-company-header {
+    --logo-width: 110px;
     z-index: 100;
     box-sizing: border-box;
     font-family: Zen Kaku Gothic New, sans-serif;
@@ -18,7 +19,8 @@
      * 背景
      */
     &__bar {
-        background: #00a784;
+        // ロゴの角の下地も白くし、緑色の縁が透けないようにする。
+        background: linear-gradient(to right, #fff var(--logo-width), #00a784 var(--logo-width));
         border-radius: 0 0 24px 24px;
         flex-wrap: wrap;
         align-items: center;
@@ -33,7 +35,7 @@
     &__logo {
         background: #fff;
         border-radius: 0 0 0 24px;
-        flex: 0 0 110px;
+        flex: 0 0 var(--logo-width);
         justify-content: center;
         align-items: center;
         height: 60px;
@@ -168,6 +170,7 @@
      */
     @media (width >= 1024px) {
         & {
+            --logo-width: 136px;
             inset-inline: 16px;
         }
         &__bar {
@@ -175,7 +178,6 @@
             height: 72px;
         }
         &__logo {
-            flex-basis: 136px;
             height: 72px;
         }
         &__logo img {
@@ -221,6 +223,7 @@
      */
     @media (width >= 1280px) {
         & {
+            --logo-width: 196px;
             inset-inline: max(32px, 50% - 857px);
         }
         &__bar {
@@ -230,7 +233,6 @@
         }
         &__logo {
             border-radius: 0 0 0 30px;
-            flex-basis: 196px;
             height: 85px;
         }
         &__logo img {
