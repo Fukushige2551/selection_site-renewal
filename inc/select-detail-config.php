@@ -280,6 +280,10 @@ function foods_get_select_detail_configs() {
                 'buyer_image' => '@theme/img/page/page-select-detail/svg/img_message-buyer.svg',
                 'text' => '食事は、毎日の暮らしそのものです。<br>忙しい日の晩ごはん。家族で囲む夕食。<br>休日のちょっとしたごちそう。<br>「今日は何を食べようか」と<br>考える時間も、<br>食卓を囲む時間も、<br>私たちの大切な日常です。<br>私たち セレクション は、<br>地域の皆さまの毎日の食卓を支える<br>“街の台所”でありたいと考えています。<br>ただ商品を並べるだけではなく、<br>今日の食卓が少し楽しくなること。<br>忙しい毎日の中でも、<br>「ここに来れば何とかなる」と思って<br>いただけること。<br>そして、毎日安心して利用できる<br>お店であること。<br>そのために私たちは、<br>地域に根差した商品、<br>体にやさしい商品、<br>食卓が楽しくなる商品を、<br>一つひとつ丁寧に選び続けています。<br>昔ながらの八百屋さん、魚屋さん、<br>肉屋さん、<br>惣菜屋さんのように、旬や美味しさ、<br>人の温かさを感じられるお店。<br>毎日ふらっと立ち寄れて、<br>自然と今夜のおかずが決まる。<br>セレクションは、<br>そんなお店を目指しています。',
                 'text_pc' => '食事は、毎日の暮らしそのものです。<br>忙しい日の晩ごはん。家族で囲む夕食。<br>休日のちょっとしたごちそう。<br>「今日は何を食べようか」と考える時間も、食卓を囲む時間も、<br>私たちの大切な日常です。<br>私たち セレクション は、地域の皆さまの毎日の食卓を支える<br>“街の台所”でありたいと考えています。<br>ただ商品を並べるだけではなく、今日の食卓が少し楽しくなること。<br>忙しい毎日の中でも、「ここに来れば何とかなる」と思っていただけること。<br>そして、毎日安心して利用できるお店であること。<br>そのために私たちは、地域に根差した商品、体にやさしい商品、<br>食卓が楽しくなる商品を、一つひとつ丁寧に選び続けています。<br>昔ながらの八百屋さん、魚屋さん、肉屋さん、惣菜屋さんのように、旬や美味しさ、<br>人の温かさを感じられるお店。<br>毎日ふらっと立ち寄れて、自然と今夜のおかずが決まる。<br>セレクションは、そんなお店を目指しています。',
+                'foreground_decorations' => [
+                    ['key' => 'stocking-staff', 'src' => '陳列するスタッフ.svg', 'src_sp' => '陳列するスタッフsp.svg', 'alt' => '商品を陳列するスタッフ'],
+                    ['key' => 'shopping-cart', 'src' => 'ショッピングカート.svg', 'alt' => '商品を載せたショッピングカート'],
+                ],
             ],
             'about' => [
                 'title' => 'こだわりの現場から',
@@ -333,6 +337,9 @@ function foods_get_select_detail_configs() {
                             ['src' => 'サラダ.png', 'alt' => '新鮮なサラダ野菜'],
                         ],
                         'gallery_variant' => 'three',
+                        'decorations' => [
+                            ['key' => 'staff-and-products', 'src' => 'スタッフと商品.svg', 'alt' => '商品を案内するスタッフ', 'placement' => 'gallery_before'],
+                        ],
                     ],
                     [
                         'title' => '食卓が楽しくなる提案',
@@ -356,6 +363,9 @@ function foods_get_select_detail_configs() {
                             ['src' => '店内撮影予定1.png', 'alt' => '店内で肉を加工する様子'],
                             ['src' => '店内撮影予定2.png', 'alt' => '店内で販売する加工肉'],
                         ],
+                        'decorations' => [
+                            ['key' => 'shopping-couple', 'src' => '買い物中の夫婦.svg', 'alt' => '店内で買い物をする夫婦', 'placement' => 'content'],
+                        ],
                     ],
                     [
                         'title' => 'これからも、地域の食卓のそばに。',
@@ -368,6 +378,9 @@ function foods_get_select_detail_configs() {
                             'これからもセレクションは、「より良いものを選ぶ」という想いを大切にしながら、地域の皆さまに愛されるお店づくりを続けてまいります。',
                         ],
                         'gallery' => [],
+                        'decorations' => [
+                            ['key' => 'cart-and-customer', 'src' => 'ショッピングカートとお客さん.svg', 'alt' => '店内で買い物をするお客様', 'placement' => 'content'],
+                        ],
                     ],
                 ],
             ],
@@ -378,6 +391,11 @@ function foods_get_select_detail_configs() {
                 'archive_label' => 'お店のこだわり一覧',
                 'background_sp' => '@theme/img/page/page-select-detail/meat_news_bgSP.png',
                 'background_pc' => '@theme/img/page/page-select-detail/meat_news_bgPC.png',
+                'wrap_decorations' => [
+                    ['key' => 'store', 'src' => 'お店 2.svg', 'alt' => 'セレクションの店舗'],
+                    ['key' => 'cart-and-customer-sp', 'src' => 'ショッピングカートとお客さん.svg', 'alt' => '店内で買い物をするお客様'],
+                    ['key' => 'shopping-couple-sp', 'src' => '買い物中の夫婦.svg', 'alt' => '店内で買い物をする夫婦'],
+                ],
             ],
         ],
         'meat' => [
