@@ -11,8 +11,12 @@ $detail: '.p-page-select-detail';
 #{$detail}--vegetables-fruit {
 	#{$detail} {
 		&__message {
-			&--bg { isolation: isolate; }
-			&--shape { z-index: 0; }
+			&--bg {
+				isolation: isolate;
+			}
+			&--shape {
+				z-index: 0;
+			}
 
 			&--cornerDecoration {
 				@include decoration(10);
@@ -23,11 +27,17 @@ $detail: '.p-page-select-detail';
 		}
 
 		&__about {
-			&__title--wrap { z-index: 4; }
+			&__title--wrap {
+				z-index: 4;
+			}
 
 			&__content {
-				&--location { display: block; }
-				&--mainImageWrap { position: relative; }
+				&--location {
+					display: block;
+				}
+				&--mainImageWrap {
+					position: relative;
+				}
 
 				&--rice-planting,
 				&--cabbage-farmer,

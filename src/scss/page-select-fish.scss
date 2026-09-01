@@ -10,8 +10,12 @@
 		}
 
 		#{$detail}__about__backgroundDecoration {
-			&--desktopAnchor { display: none; }
-			&--laptopAnchor { display: none; }
+			&--desktopAnchor {
+				display: none;
+			}
+			&--laptopAnchor {
+				display: none;
+			}
 
 			&--fisherman#{$detail}__about__backgroundDecoration--legacyAnchor {
 				top: 52vw;
@@ -72,10 +76,14 @@
 					width: 28vw;
 				}
 
-				&--worker { display: none; }
+				&--worker {
+					display: none;
+				}
 			}
 
-			#{$detail}__news__foregroundDecoration--fish { width: 36vw; }
+			#{$detail}__news__foregroundDecoration--fish {
+				width: 36vw;
+			}
 		}
 
 		@media screen and (min-width: 1024px) {
@@ -159,8 +167,12 @@
 			}
 
 			#{$detail}__about__backgroundDecoration {
-				&--desktopAnchor { display: block; }
-				&--wave#{$detail}__about__backgroundDecoration--laptopAnchor { display: none; }
+				&--desktopAnchor {
+					display: block;
+				}
+				&--wave#{$detail}__about__backgroundDecoration--laptopAnchor {
+					display: none;
+				}
 
 				&--wave#{$detail}__about__backgroundDecoration--desktopAnchor {
 					top: -58px;
