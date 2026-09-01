@@ -87,57 +87,54 @@ $detail: '.p-page-select-detail';
 		#{$detail}__hero__img--top {
 			width: min(93.08vw, 363px);
 		}
-		#{$detail}__about__content--image {
-			height: 62vw;
-		}
 
 		#{$detail}__message--foregroundDecoration-sake-masu-wine {
 			right: 2vw;
-			bottom: -5vw;
+			bottom: -14vw;
 			width: 28vw;
 		}
 
 		#{$detail}__about__content--brewery-staff {
-			top: -24vw;
-			left: -4vw;
-			width: 16vw;
+			top: -30.6vw;
+			left: 1vw;
+			width: 13vw;
 		}
 
 		#{$detail}__about__content--farmer {
-			top: 14vw;
-			right: -8vw;
+			top: -110vw;
+			right: -1vw;
 			width: 22vw;
 		}
 
 		#{$detail}__about__content--wine-farmer {
-			top: -2vw;
-			left: -7vw;
-			width: 12vw;
+			top: 31.8vw;
+			left: 76vw;
+			width: 10vw;
+			transform: scaleX(-1);
 		}
 
 		#{$detail}__about__content--barrel {
-			top: -10vw;
-			right: -5vw;
+			top: 40vw;
+			right: 4vw;
 			width: 21vw;
 		}
 
 		#{$detail}__about__content--pitcher-wine {
-			top: -18vw;
-			right: -8vw;
+			top: 22vw;
+			right: -1vw;
 			width: 24vw;
-			transform: scaleX(-1);
 		}
 
 		#{$detail}__news__foregroundDecoration--sake {
-			top: 8vw;
-			left: 4vw;
-			width: 12vw;
+			top: -13vw;
+			left: 15vw;
+			width: 10vw;
 		}
 
 		#{$detail}__news__foregroundDecoration--ochoko {
-			top: 8vw;
-			right: 4vw;
-			width: 18vw;
+			top: 13vw;
+			right: 8vw;
+			width: 17vw;
 		}
 	}
 }
