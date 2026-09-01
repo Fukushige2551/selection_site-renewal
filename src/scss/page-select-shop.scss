@@ -1,0 +1,43 @@
+$detail: '.p-page-select-detail';
+
+#{$detail}--shop {
+	#{$detail}__message--shape {
+		background: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-shop/背景sp.svg') center top / 100% 100% no-repeat;
+	}
+
+	#{$detail}__message--shapeBase,
+	#{$detail}__message--shapeTop,
+	#{$detail}__message--shapeMiddle,
+	#{$detail}__message--shapeBottom {
+		display: none;
+	}
+
+	#{$detail}__about__content--image,
+	#{$detail}__about__content--imgSmall {
+		object-fit: cover;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+	#{$detail}--shop {
+		#{$detail}__message--shape {
+			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-shop/背景tab.svg');
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+	#{$detail}--shop {
+		#{$detail}__message--shape {
+			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-shop/背景pc.svg');
+		}
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	#{$detail}--shop {
+		#{$detail}__message--shape {
+			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-shop/背景pc.svg');
+		}
+	}
+}
