@@ -2,6 +2,10 @@
 	$detail: &;
 
 	&--fish {
+		#{$detail}__news__titleSp {
+			white-space: nowrap;
+		}
+
 		@media screen and (max-width: 767px) {
 			#{$detail}__news__bg {
 				padding-top: 22vw;
@@ -100,6 +104,12 @@
 			}
 		}
 
+		@media screen and (min-width: 1024px) and (max-width: 1279px) {
+			#{$detail}__news {
+				margin-top: -7.92vw;
+			}
+		}
+
 		@media screen and (min-width: 1024px) {
 			#{$detail}__about__content--secondaryImageAnchor {
 				position: relative;
@@ -114,16 +124,16 @@
 			#{$detail}__about__backgroundDecoration {
 				&--worker-and-cat-2#{$detail}__about__backgroundDecoration--desktopAnchor {
 					z-index: 3;
-					top: -9vw;
-					right: -12vw;
+					top: -11vw;
+					right: -15vw;
 					display: block;
-					width: 14vw;
+					width: 12vw;
 					aspect-ratio: 177 / 293;
 				}
 
 				&--wave#{$detail}__about__backgroundDecoration--laptopAnchor {
 					z-index: 3;
-					top: 45.6vw;
+					top: 42.6vw;
 					left: 18vw;
 					display: block;
 					width: 17vw;
@@ -132,7 +142,7 @@
 
 				&--fisherman#{$detail}__about__backgroundDecoration--legacyAnchor {
 					z-index: 4;
-					top: 44.6vw;
+					top: 42.6vw;
 					left: 6vw;
 					width: 17vw;
 				}
@@ -152,7 +162,7 @@
 
 				&--worker {
 					display: block;
-					top: 281vw;
+					top: 289vw;
 					left: 75vw;
 					width: 16vw;
 					transform: scaleX(-1);
@@ -167,6 +177,10 @@
 		}
 
 		@media screen and (min-width: 1280px) {
+			#{$detail}__news {
+				margin-top: -130px;
+			}
+
 			#{$detail}__message--backgroundDecoration-wave {
 				display: block;
 			}
@@ -189,14 +203,14 @@
 				}
 
 				&--wave#{$detail}__about__backgroundDecoration--desktopAnchor {
-					top: -58px;
+					top: -42px;
 					left: -9px;
 					width: 268.8px;
 				}
 
 				&--fisherman#{$detail}__about__backgroundDecoration--desktopAnchor {
-					top: -70px;
-					left: -200px;
+					top: -53px;
+					left: -190px;
 					width: 264px;
 				}
 
@@ -229,8 +243,8 @@
 
 			#{$detail}__news__foregroundDecoration--fish#{$detail}__news__foregroundDecoration--desktopAnchor {
 				display: block;
-				top: -202px;
-				right: -42px;
+				top: -212px;
+				right: -46px;
 				width: 217.69px;
 			}
 		}

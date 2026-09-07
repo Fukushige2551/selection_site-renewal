@@ -495,7 +495,7 @@ function foods_get_select_detail_configs() {
             'news' => [
                 'taxonomy' => 'news_commitment',
                 'term' => 'meat',
-                'title' => 'お肉のこだわりを<br>もっと見る',
+                'title' => 'お肉のこだわりをもっと見る',
                 'archive_label' => 'お肉のこだわり一覧はこちら',
                 'decoration' => 'svg/meat_about_deco6.svg',
                 'background_sp' => '@theme/img/page/page-select-detail/meat_news_bgSP.png',
@@ -1041,10 +1041,10 @@ function foods_get_select_detail_configs() {
             'news' => [
                 'taxonomy' => 'news_commitment',
                 'term' => 'fish',
-                'title' => 'お魚のこだわりを<br>もっと見る',
+                'title' => 'お魚のこだわりをもっと見る',
                 'archive_label' => 'お魚のこだわり一覧',
                 'foreground_decorations' => [
-                    ['key' => 'fish', 'src' => 'svg/fish.svg', 'alt' => ''],
+                    ['key' => 'fish', 'src' => 'svg/fish-news.svg', 'alt' => ''],
                 ],
                 'background_sp' => '@theme/img/page/page-select-detail/meat_news_bgSP.png',
                 'background_pc' => '@theme/img/page/page-select-detail/meat_news_bgPC.png',
