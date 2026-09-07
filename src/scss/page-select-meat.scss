@@ -164,9 +164,17 @@
 		}
 
 		.p-page-select-detail__news__decoration6 {
-			top: -13.91vw;
-			right: 1.25vw;
+			top: -18.91vw;
+			right: 5.25vw;
 			width: 12vw;
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+	.p-page-select-detail--meat {
+		.p-page-select-detail__news {
+			margin-top: -2.92vw;
 		}
 	}
 }
@@ -228,9 +236,13 @@
 		}
 
 		.p-page-select-detail__news__decoration6 {
-			top: -200px;
+			top: -282px;
 			right: -26px;
 			width: 167px;
+		}
+
+		.p-page-select-detail__news {
+			margin-top: -63px;
 		}
 	}
 }
