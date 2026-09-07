@@ -137,6 +137,10 @@ $detail: '.p-page-select-detail';
 
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
 	#{$detail}--shop {
+		#{$detail}__about__bg {
+			background-size: 24px 23px;
+		}
+
 		#{$detail}__message--shape {
 			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-shop/背景pc.svg');
 		}
@@ -181,6 +185,10 @@ $detail: '.p-page-select-detail';
 
 @media screen and (min-width: 1280px) {
 	#{$detail}--shop {
+		#{$detail}__about__bg {
+			background-size: 24px 23px;
+		}
+
 		#{$detail}__message--shape {
 			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-shop/背景pc.svg');
 		}
