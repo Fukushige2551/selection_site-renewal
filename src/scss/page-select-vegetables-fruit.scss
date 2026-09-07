@@ -10,6 +10,12 @@ $detail: '.p-page-select-detail';
 
 #{$detail}--vegetables-fruit {
 	#{$detail} {
+		@media screen and (max-width: 767px) {
+			&__news__bg {
+				margin-top: -10vw;
+			}
+		}
+
 		&__message {
 			&--bg {
 				isolation: isolate;
@@ -55,7 +61,7 @@ $detail: '.p-page-select-detail';
 				}
 
 				&--cabbage-farmer {
-					top: -20vw;
+					top: -17vw;
 					right: -3vw;
 					width: 28.46vw;
 				}
