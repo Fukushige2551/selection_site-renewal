@@ -950,8 +950,8 @@ function foods_get_select_detail_configs() {
                 'image_alt' => '漁港で新鮮な魚を仕分けする様子',
             ],
             'message' => [
-                'bubble_sp' => 'svg/buyer-message-balloon-sp.svg',
-                'bubble_pc' => 'svg/buyer-message-balloon-pc.svg',
+                'bubble_sp' => 'svg/buyer-message-balloon-sp-fish.svg',
+                'bubble_pc' => 'svg/buyer-message-balloon-tab-pc-fish.svg',
                 'buyer_image' => '@theme/img/page/page-select-detail/svg/img_message-buyer.svg',
                 'background_pc' => '@theme/img/page/page-select-detail/svg/message_section_bg-pc.svg',
                 'text' => '鮮度はもちろん、<br>産地や漁法、脂の乗りまで<br>“目で見て選ぶ”。<br>セレクションのお魚は、<br>全国の産直に加え、<br>地元・千葉県の漁港から届く鮮度の良い<br>「地魚」を中心に買付を行っています。<br>季節ごとに変わる<br>“旬のいちばん”を逃さず、<br>切身・刺身・焼魚まで、<br>今日いちばんおいしい形で<br>食卓に届けます。<br>魚は「鮮度」だけでなく、<br>今の状態に合った食べ方でおいしさが<br>決まります。<br>私たちは、脂の乗り・身質・サイズを見て<br>売場に出し、刺身、焼き、煮付けなど<br>おすすめの食べ方も一緒にご案内します。<br>売場では旬の打ち出しも強め、<br>迷わず選べるように。<br>迷ったら気軽に声をかけてください。',
