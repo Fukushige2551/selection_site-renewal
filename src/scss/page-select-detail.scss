@@ -270,15 +270,11 @@
 			&--secondaryImageAnchor,
 			&--secondaryImageWrap,
 			&--sub + picture {
-				margin-bottom: 3vw;
+				margin-bottom: 2vw;
 			}
 
 			&--sub + picture {
 				display: block;
-			}
-
-			&--secondaryImageAnchor &--secondaryImageWrap {
-				margin-bottom: 0;
 			}
 
 			&--secondaryImageAnchor + &--copy,
