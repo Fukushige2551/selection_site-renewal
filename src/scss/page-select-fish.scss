@@ -2,6 +2,12 @@
 	$detail: &;
 
 	&--fish {
+		@media screen and (max-width: 767px) {
+			#{$detail}__news__bg {
+				padding-top: 22vw;
+			}
+		}
+
 		#{$detail}__message--backgroundDecoration-wave {
 			right: 2vw;
 			bottom: -14vw;
@@ -60,7 +66,7 @@
 			#{$detail}__message--backgroundDecoration-wave {
 				width: 26vw;
 				right: 12vw;
-				bottom: -16vw;
+				bottom: -11vw;
 			}
 
 			#{$detail}__about__backgroundDecoration {
@@ -71,9 +77,9 @@
 				}
 
 				&--cat-and-worker {
-					top: 288vw;
-					left: 58vw;
-					width: 28vw;
+					top: 301vw;
+					left: 57vw;
+					width: 34vw;
 				}
 
 				&--worker {
@@ -82,7 +88,15 @@
 			}
 
 			#{$detail}__news__foregroundDecoration--fish {
-				width: 36vw;
+				width: 30vw;
+				top: -1vw;
+				right: 8vw;
+			}
+		}
+
+		@media screen and (min-width: 768px) and (max-width: 1023px) {
+			#{$detail}__news__bg {
+				margin-top: -4vw;
 			}
 		}
 
