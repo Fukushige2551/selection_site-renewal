@@ -47,7 +47,9 @@ function foods_get_select_detail_configs() {
                 'decorations' => [],
                 'sections' => [
                     [
-                        'title' => '群馬発祥。<br>”感動農業”を信念に<br>品質にこだわった野菜をお届け<br>野菜くらぶ',
+                        'location' => '群馬発祥。<br>”感動農業”を信念に<br>品質にこだわった野菜をお届け',
+                        'location_pc' => '群馬発祥。”感動農業”を信念に品質にこだわった野菜をお届け',
+                        'title' => '野菜くらぶ',
                         'main_image' => [
                             'src' => 'vegetable-club.png',
                             'alt' => '野菜くらぶの社屋',
@@ -220,7 +222,8 @@ function foods_get_select_detail_configs() {
                         ],
                     ],
                     [
-                        'title' => '大分県日田<br>川津食品',
+                        'location' => '大分県日田',
+                        'title' => '川津食品',
                         'main_image' => ['src' => '川津スタッフ.png', 'alt' => '川津食品のスタッフ'],
                         'text_blocks' => [
                             '川津食品は、柚子こしょうを世に広めた先駆けとして知られています。今から60数年前――「わさびのように、刺身に合う新しい薬味は作れないだろうか？」そのひとつの問いから、柚子・唐辛子・塩を絶妙に掛け合わせた、新しい薬味「柚子こしょう」が誕生しました。',
@@ -437,7 +440,8 @@ function foods_get_select_detail_configs() {
                 ],
                 'sections' => [
                     [
-                        'title' => '美味北総豚<br><span>代表生産者</span> 井上農場',
+                        'location' => '美味北総豚',
+                        'title' => '<small>代表生産者</small> 井上農場',
                         'main_image' => ['src' => 'meat_about_img1.png', 'webp' => 'webp/meat_about_img1.webp', 'alt' => '美味北総豚を育てる井上農場'],
                         'text' => '豚肉の味は、品種と飼育環境が大きく影響されるといわれています。「美味北総豚」は千葉県九十九里の緑豊かで温暖な気候の北総大地の 中で日々の健康管理、飼料や飼育環境に目を配りストレスを極力かけず大切に育てられています。',
                         'sub_title' => '豊かな自然と丁寧な飼育から生まれる千葉が誇るブランド豚',
@@ -453,7 +457,8 @@ function foods_get_select_detail_configs() {
                         ],
                     ],
                     [
-                        'title' => '毎日たべらるリーズナブルな国産牛肉<br>かみむらファーム かみむら牛',
+                        'location' => '毎日たべらるリーズナブルな国産牛肉',
+                        'title' => 'かみむらファーム かみむら牛',
                         'main_image' => ['src' => 'meat_about_img5.png', 'webp' => 'webp/meat_about_img5.webp', 'alt' => 'かみむら牛'],
                         'text' => 'かみむらファームでは、牛のエサづくりから製造・加工まで一貫して行い、ニーズに応える技術を集結。『一頭一頭、完璧なトレーサビリティ』を掲げ、カミチクファームの飼料用米・イネを発酵飼料に加工して肥育する「玄米黒牛」など、あっさり口どけの良い脂を目指すオリジナルブランド牛を展開。安全・安心で毎日食卓へ届けています。',
                         'gallery' => [
@@ -467,7 +472,8 @@ function foods_get_select_detail_configs() {
                         ],
                     ],
                     [
-                        'title' => '素材だけで、ここまで旨い <br>The Better Table ホワイトスモーク',
+                        'location' => '素材だけで、ここまで旨い',
+                        'title' => 'The Better Table ホワイトスモーク',
                         'main_image' => ['src' => 'meat_about_img8.png', 'webp' => 'webp/meat_about_img8.webp', 'alt' => 'The Better Table ホワイトスモーク'],
                         'text' => 'かみむらファームでは、牛のエサづくりから製造・加工まで一貫して行い、ニーズに応える技術を集結。『一頭一頭、完璧なトレーサビリティ』を掲げ、カミチクファームの飼料用米・イネを発酵飼料に加工して肥育する「玄米黒牛」など、あっさり口どけの良い脂を目指すオリジナルブランド牛を展開。安全・安心で毎日食卓へ届けています。',
                         'gallery' => [
@@ -622,7 +628,9 @@ function foods_get_select_detail_configs() {
                 'wave_pc_bottom' => '@theme/img/page/page-select-detail/svg/meat_about_wave-bottom-pc.svg',
                 'decorations' => [],
                 'sections' => [[
-                    'title' => '店内で生地から。焼きたてを、<br class="u-deli-title-break-sp-tab">そのまま食卓へ<br>セレクションオリジナルピザ',
+                    'location' => '店内で生地から。焼きたてを、<br class="u-deli-title-break-sp-tab">そのまま食卓へ',
+                    'location_pc' => '店内で生地から。焼きたてを、そのまま食卓へ',
+                    'title' => 'セレクションオリジナルピザ',
                     'main_image' => ['src' => '@theme/img/page/page-select-rice/rice-cooked.png', 'alt' => '炊きたての房の黄金米'],
                     'text_blocks' => [
                         '店内で生地から仕込み、毎日焼き上げるセレクションオリジナルピザ。',
@@ -699,7 +707,8 @@ function foods_get_select_detail_configs() {
                 'wave_pc_bottom' => '@theme/img/page/page-select-detail/svg/meat_about_wave-bottom-pc.svg',
                 'decorations' => [],
                 'sections' => [[
-                    'title' => '世界が認めた、梅の郷に息づく伝統。<br>濱田農園 株式会社濱田',
+                    'location' => '世界が認めた、梅の郷に息づく伝統。',
+                    'title' => '濱田農園 株式会社濱田',
                     'main_image' => ['src' => 'farmer.png', 'alt' => '梅農園の生産者'],
                     'text_blocks' => [
                         '江戸の昔からつづく、梅の郷・和歌山県田辺市石神。株式会社濱田の自社農園も、その一角に位置しています。',
