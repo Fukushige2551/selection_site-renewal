@@ -41,6 +41,9 @@ $detail: '.p-page-select-detail';
 				&--location {
 					display: block;
 				}
+				&--secondaryImageWrap {
+					position: relative;
+				}
 				&--mainImageWrap {
 					position: relative;
 				}
@@ -89,6 +92,10 @@ $detail: '.p-page-select-detail';
 					bottom: -13vw;
 					width: 49.23vw;
 				}
+
+				&--mikan-pile {
+					display: none;
+				}
 			}
 		}
 
@@ -113,6 +120,10 @@ $detail: '.p-page-select-detail';
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 	#{$detail}--vegetables-fruit {
 		#{$detail} {
+			&__news__bg {
+				margin-top: -15vw;
+			}
+
 			&__message--cornerDecoration {
 				right: 12vw;
 				bottom: -3vw;
@@ -126,25 +137,25 @@ $detail: '.p-page-select-detail';
 					left: -7vw;
 				}
 				&--cabbage-farmer {
-					width: 18.45vw;
-					top: -16vw;
-					right: -3vw;
+					width: 21vw;
+					top: -10vw;
+					right: -5vw;
 				}
 
 				&--truck-farmer {
 					bottom: 3vw;
-					right: -2vw;
+					right: -1vw;
 					width: 35.45vw;
 				}
 
 				&--mikan {
-					top: -11vw;
+					top: -14vw;
 					left: -4.5vw;
 					width: 13.11vw;
 				}
 
 				&--mikan-harvest {
-					top: -13vw;
+					top: -15vw;
 					right: 1vw;
 					width: 8.12vw;
 				}
@@ -176,15 +187,19 @@ $detail: '.p-page-select-detail';
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
 	#{$detail}--vegetables-fruit {
 		#{$detail} {
+			&__news {
+				margin-top: -4.92vw;
+			}
+
 			&__message--cornerDecoration {
-				right: -7vw;
-				bottom: -40vw;
+				right: -3vw;
+				bottom: -27.6vw;
 				width: 12.66vw;
 			}
 
 			&__about__content {
 				&--rice-planting {
-					top: 1vw;
+					top: -6vw;
 					left: -12vw;
 					width: 17.32vw;
 				}
@@ -192,8 +207,8 @@ $detail: '.p-page-select-detail';
 					display: none;
 				}
 				&--truck-farmer {
-					width: 22.98vw;
-					right: -2vw;
+					width: 25vw;
+					right: -5vw;
 					bottom: -1.5vw;
 				}
 
@@ -205,9 +220,9 @@ $detail: '.p-page-select-detail';
 				}
 
 				&--mikan-harvest {
-					top: -5.5vw;
-					right: 60vw;
-					width: 10.45vw;
+					top: -6.5vw;
+					right: 59vw;
+					width: 10vw;
 					transform: scaleX(-1);
 				}
 
@@ -215,6 +230,14 @@ $detail: '.p-page-select-detail';
 					right: -14vw;
 					bottom: 0.5vw;
 					width: 41vw;
+				}
+
+				&--mikan-pile {
+					@include decoration;
+					top: -5.6vw;
+					right: -6.95vw;
+					width: 10.42vw;
+					aspect-ratio: 134 / 106;
 				}
 			}
 
@@ -238,21 +261,25 @@ $detail: '.p-page-select-detail';
 @media screen and (min-width: 1280px) {
 	#{$detail}--vegetables-fruit {
 		#{$detail} {
+			&__news {
+				margin-top: -90px;
+			}
+
 			&__message--cornerDecoration {
-				width: 180.94px;
-				right: -93px;
-				bottom: -395px;
+				width: 158.94px;
+				right: -102px;
+				bottom: -282px;
 			}
 
 			&__about__content {
 				&--rice-planting {
-					width: 311.47px;
-					top: -90px;
-					left: -211px;
+					width: 234.47px;
+					top: -112px;
+					left: -170px;
 				}
 				&--cabbage-farmer {
 					width: 231.08px;
-					top: 502px;
+					top: 478px;
 					right: -257px;
 				}
 				&--truck-farmer {
@@ -280,18 +307,25 @@ $detail: '.p-page-select-detail';
 					bottom: -54px;
 					width: 504px;
 				}
+
+				&--mikan-pile {
+					@include decoration;
+					top: -76px;
+					right: -89px;
+					width: 134px;
+				}
 			}
 
 			&__news__wrapDecoration {
 				&--cabbage {
-					top: -193px;
-					left: 122px;
+					top: -212px;
+					left: 124px;
 					width: 84px;
 				}
 
 				&--apple {
-					top: -136px;
-					right: 104px;
+					top: -144px;
+					right: 100px;
 					width: 70px;
 				}
 			}

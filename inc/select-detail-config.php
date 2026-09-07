@@ -136,6 +136,12 @@ function foods_get_select_detail_configs() {
                                 'alt' => '',
                                 'placement' => 'gallery_after',
                             ],
+                            [
+                                'key' => 'mikan-pile',
+                                'src' => 'svg/mikan-pile.svg',
+                                'alt' => '',
+                                'placement' => 'secondary_image',
+                            ],
                         ],
                     ],
                 ],

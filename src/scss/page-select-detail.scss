@@ -637,7 +637,7 @@
 			&__img {
 				&--top {
 					width: 80vw;
-					margin: 0 auto 0;
+					margin: 3vw auto 0;
 				}
 			}
 		}
@@ -715,6 +715,7 @@
 
 					& span {
 						font-size: 2.6vw;
+						line-height: 1.2;
 						transform: translateY(7.5vw);
 					}
 				}
