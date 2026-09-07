@@ -475,7 +475,11 @@ function foods_get_select_detail_configs() {
                         'location' => '素材だけで、ここまで旨い',
                         'title' => 'The Better Table ホワイトスモーク',
                         'main_image' => ['src' => 'meat_about_img8.png', 'webp' => 'webp/meat_about_img8.webp', 'alt' => 'The Better Table ホワイトスモーク'],
-                        'text' => 'かみむらファームでは、牛のエサづくりから製造・加工まで一貫して行い、ニーズに応える技術を集結。『一頭一頭、完璧なトレーサビリティ』を掲げ、カミチクファームの飼料用米・イネを発酵飼料に加工して肥育する「玄米黒牛」など、あっさり口どけの良い脂を目指すオリジナルブランド牛を展開。安全・安心で毎日食卓へ届けています。',
+                        'text_blocks' => [
+                            'The Better Table ホワイトスモークが大切にする価値は、Tasty（美味しさ）・Healthy（健康を意識）・Natural（自然）。',
+                            '原材料は豚肉・塩・砂糖・香辛料のみ。余計なものを足さず、オリジナルのスモーク機でじっくり燻すことで、肉本来の力強い旨味と香りを最大限に引き出しました。',
+                            '噛むほどに広がる豊かな燻香と、しっかりとした肉感をお楽しみいただけます',
+                        ],
                         'gallery' => [
                             ['src' => 'meat_about_img9.png', 'webp' => 'webp/meat_about_img9.webp', 'alt' => 'ホワイトスモークの商品'],
                             ['src' => 'meat_about_img10.png', 'webp' => 'webp/meat_about_img10.webp', 'alt' => 'ホワイトスモークの商品'],
