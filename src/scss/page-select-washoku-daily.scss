@@ -1,6 +1,12 @@
 $detail: '.p-page-select-detail';
 
 #{$detail}--washoku-daily {
+	@media screen and (max-width: 767px) {
+		#{$detail}__news__bg {
+			margin-top: -15vw;
+		}
+	}
+
 	#{$detail}__message--bubbleSp {
 		display: block;
 	}
@@ -87,9 +93,9 @@ $detail: '.p-page-select-detail';
 	}
 
 	#{$detail}__news__wrap::after {
-		top: -52vw;
-		right: 2vw;
-		width: 33.33vw;
+		top: -46vw;
+		right: 3vw;
+		width: 30vw;
 		aspect-ratio: 130 / 85;
 		background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-washoku-daily/svg/decoration-news-plum.svg');
 	}
@@ -143,6 +149,22 @@ $detail: '.p-page-select-detail';
 	}
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+	#{$detail}--washoku-daily {
+		#{$detail}__about__bg {
+			padding-bottom: 14.24vw;
+		}
+
+		#{$detail}__news {
+			margin-top: -7.92vw;
+		}
+
+		#{$detail}__news__bg {
+			padding-top: 15vw;
+		}
+	}
+}
+
 @media screen and (min-width: 1024px) {
 	#{$detail}--washoku-daily {
 		#{$detail}__message--shape {
@@ -155,8 +177,8 @@ $detail: '.p-page-select-detail';
 			width: 13vw;
 		}
 		#{$detail}__message--bg::before {
-			bottom: -40vw;
-			left: -11vw;
+			bottom: -33vw;
+			left: -5vw;
 			width: 13vw;
 		}
 		#{$detail}__about__content--mainImageWrap::after {
@@ -170,7 +192,7 @@ $detail: '.p-page-select-detail';
 			width: 9vw;
 		}
 		#{$detail}__news__wrap::after {
-			top: -22vw;
+			top: -20vw;
 			right: 1vw;
 			width: 14vw;
 		}
@@ -179,6 +201,10 @@ $detail: '.p-page-select-detail';
 
 @media screen and (min-width: 1280px) {
 	#{$detail}--washoku-daily {
+		#{$detail}__news {
+			margin-top: -52px;
+		}
+
 		#{$detail}__message--bg::after {
 			right: -24px;
 			bottom: -55px;
