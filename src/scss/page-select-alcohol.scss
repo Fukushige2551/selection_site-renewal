@@ -1,6 +1,16 @@
 $detail: '.p-page-select-detail';
 
 #{$detail}--alcohol {
+	#{$detail}__news__bg {
+		margin-top: -4vw;
+	}
+
+	@media screen and (min-width: 768px) {
+		.u-alcohol-break-sp {
+			display: none;
+		}
+	}
+
 	#{$detail}__message--shape {
 		background: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-alcohol/背景sp.svg') center top / 100% 100% no-repeat;
 	}
@@ -141,19 +151,23 @@ $detail: '.p-page-select-detail';
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 	#{$detail}--alcohol {
+		#{$detail}__news__bg {
+			margin-top: -9vw;
+		}
+
 		#{$detail}__message--shape {
 			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-alcohol/背景tab.svg');
 		}
 
 		#{$detail}__message--foregroundDecoration-sake-masu-wine {
-			right: 12vw;
-			bottom: -10vw;
+			right: 9vw;
+			bottom: -5vw;
 			width: 18vw;
 		}
 
 		#{$detail}__about__content--brewery-staff {
-			top: -18.8vw;
-			left: 7vw;
+			top: -17.8vw;
+			left: 1vw;
 			width: 8vw;
 		}
 		#{$detail}__about__content--farmer {
@@ -197,6 +211,10 @@ $detail: '.p-page-select-detail';
 
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
 	#{$detail}--alcohol {
+		#{$detail}__news__bg {
+			margin-top: -9vw;
+		}
+
 		#{$detail}__message--shape {
 			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-alcohol/背景pc.svg');
 		}
@@ -311,7 +329,7 @@ $detail: '.p-page-select-detail';
 
 		#{$detail}__news__foregroundDecoration--sake {
 			top: -290px;
-			left: -2px;
+			left: -22px;
 			width: 73px;
 		}
 
