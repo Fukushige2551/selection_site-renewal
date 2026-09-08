@@ -144,26 +144,30 @@ $detail: '.p-page-select-detail';
 
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
 	#{$detail}--rice {
+		#{$detail}__news {
+			margin-top: -8vw;
+		}
+
 		#{$detail}__message--shape {
 			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-rice/svg/buyer-message-background-pc.svg');
 		}
 
 		#{$detail}__message--cornerDecoration {
 			right: -7vw;
-			bottom: 2.6vw;
+			bottom: 1vw;
 			width: 14vw;
 		}
 
 		#{$detail}__about__content--rice-and-farmer {
-			top: -5vw;
-			left: -6vw;
+			top: -6.2vw;
+			left: -6.6vw;
 			width: 9.2vw;
 		}
 
 		#{$detail}__about__content--rice-plant {
-			top: -3vw;
-			right: -1vw;
-			width: 5.9vw;
+			top: -6vw;
+			right: 2vw;
+			width: 7vw;
 		}
 
 		#{$detail}__about__content--rice-bales-and-farmer {
@@ -188,6 +192,10 @@ $detail: '.p-page-select-detail';
 
 @media screen and (min-width: 1280px) {
 	#{$detail}--rice {
+		#{$detail}__news {
+			margin-top: -140px;
+		}
+
 		#{$detail}__message--shape {
 			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-rice/svg/buyer-message-background-pc.svg');
 		}
@@ -232,6 +240,10 @@ $detail: '.p-page-select-detail';
 
 @media screen and (max-width: 767px) {
 	#{$detail}--rice {
+		#{$detail}__news__bg {
+			margin-top: -10vw;
+		}
+
 		#{$detail}__about__content--imgSmall {
 			height: 27.5vw;
 			object-fit: cover;
