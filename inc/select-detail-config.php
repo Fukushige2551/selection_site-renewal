@@ -180,7 +180,8 @@ function foods_get_select_detail_configs() {
                 'parent_url' => '/select/',
             ],
             'hero' => [
-                'lead' => '料理の味を支える、なくてはならない存在。<br>原材料や製法にこだわった商品を中心に、<br>毎日の料理が楽しくなる食品を厳選しています。',
+                'lead' => '料理の味を支える、<br>なくてはならない存在。<br>原材料や製法にこだわった商品を中心に、<br>毎日の料理が楽しくなる<br>食品を厳選しています。',
+                'lead_pc' => '料理の味を支える、なくてはならない存在。<br>原材料や製法にこだわった商品を中心に、<br>毎日の料理が楽しくなる食品を厳選しています。',
                 'image' => '加工.svg',
                 'image_alt' => '加工食品をつくる現場',
             ],
@@ -209,8 +210,8 @@ function foods_get_select_detail_configs() {
                         'text_blocks' => [
                             '世界各国のコーヒー農園から、厳選を重ねて品質の高いアラビカ種の生豆を仕入れています。生産地や豆の状態を丁寧に見極めながら、確かな品質の原料を選び抜いています。',
                         ],
-                        'sub_title' => '焙煎マイスターが仕上げる<br>鮮度にこだわった自家焙煎コーヒー',
-                        'secondary_image' => ['src' => '撮影予定1.png', 'alt' => 'セレクションオリジナルコーヒー'],
+                        'sub_title' => '焙煎マイスターが仕上げる<br class="u-foods-coffee-break-sp-tab">鮮度にこだわった自家焙煎コーヒー',
+                        'secondary_image' => ['src' => 'house-roasted-coffee.png', 'alt' => 'セレクションオリジナルコーヒー'],
                         'secondary_text_blocks' => [
                             'コーヒーは鮮度が命！マイスター資格をもつ焙煎師が、気温や豆の状態に合わせて、最適な火入れで香り高く焙煎。パッキングまでの全行程を、自社で一括管理することで、安全で高品質なコーヒーを、新鮮な状態でお届けしています。「毎日飲むからこそ本当に美味しいコーヒーを」「１杯のコーヒーが生活を彩る名脇役であるために」そんな願いを込めた、自家焙煎専門店イデカフェのこだわりの１杯をお楽しみ下さい。',
                         ],
@@ -232,10 +233,10 @@ function foods_get_select_detail_configs() {
                         'title' => '川津食品',
                         'main_image' => ['src' => '川津スタッフ.png', 'alt' => '川津食品のスタッフ'],
                         'text_blocks' => [
-                            '川津食品は、柚子こしょうを世に広めた先駆けとして知られています。今から60数年前――「わさびのように、刺身に合う新しい薬味は作れないだろうか？」そのひとつの問いから、柚子・唐辛子・塩を絶妙に掛け合わせた、新しい薬味「柚子こしょう」が誕生しました。',
+                            '川津食品は、柚子こしょうを世に広めた先駆けとして知られています。' . "\n" . '今から60数年前――「わさびのように、刺身に合う新しい薬味は作れないだろうか？」そのひとつの問いから、柚子・唐辛子・塩を絶妙に掛け合わせた、新しい薬味「柚子こしょう」が誕生しました。',
                         ],
-                        'sub_title' => '柚子こしょうを広めた先駆け。<br>川津食品が守り続ける本物の味',
-                        'secondary_image' => ['src' => '撮影予定2.png', 'alt' => '川津食品の柚子こしょう'],
+                        'sub_title' => '柚子こしょうを広めた先駆け。<br class="u-foods-yuzu-break-sp-tab">川津食品が守り続ける本物の味',
+                        'secondary_image' => ['src' => 'kawatsu-yuzu-kosho.png', 'alt' => '川津食品の柚子こしょう'],
                         'secondary_text_blocks' => [
                             '素材はシンプル。だからこそ、ごまかしはききません。香り高い柚子の風味、唐辛子の切れ味、塩のうまみ。そのすべてが調和した、凛とした味わい。',
                             '誕生当時の製法は、今もなお変わることなく受け継がれています。',
@@ -642,16 +643,16 @@ function foods_get_select_detail_configs() {
                     'location' => '店内で生地から。焼きたてを、<br class="u-deli-title-break-sp-tab">そのまま食卓へ',
                     'location_pc' => '店内で生地から。焼きたてを、そのまま食卓へ',
                     'title' => 'セレクションオリジナルピザ',
-                    'main_image' => ['src' => '@theme/img/page/page-select-rice/rice-cooked.png', 'alt' => '炊きたての房の黄金米'],
+                    'main_image' => ['src' => '@theme/img/page/page-select-deli/original-pizza.png', 'alt' => 'セレクションオリジナルピザ'],
                     'text_blocks' => [
                         '店内で生地から仕込み、毎日焼き上げるセレクションオリジナルピザ。',
                         '一枚ずつ直径30cmになるように伸ばし、400℃のピザ窯で高温・短時間で焼き上げることで、香ばしい焼き目と中はもちもちのナポリ風食感に仕上げています。種類は10種類以上。定番から気分で選べるラインアップで、家族の食卓にも週末のごちそうにもぴったりです。',
                     ],
                     'gallery' => [
-                        ['src' => '@theme/img/page/page-select-rice/tractor.png', 'alt' => '田植えを行うトラクター'],
-                        ['src' => '@theme/img/page/page-select-rice/rice-grains.png', 'alt' => '収穫されたお米'],
-                        ['src' => '@theme/img/page/page-select-rice/rice-product.png', 'alt' => '房の黄金米の商品'],
-                        ['src' => '@theme/img/page/page-select-rice/award.png', 'alt' => '受賞した米のたけやまの生産者'],
+                        ['src' => '@theme/img/page/page-select-deli/pizza-corner.png', 'alt' => 'ピザコーナー'],
+                        ['src' => '@theme/img/page/page-select-deli/pizza-sales.png', 'alt' => 'ピザの販売'],
+                        ['src' => '@theme/img/page/page-select-deli/pizza-making.png', 'alt' => 'ピザの作成'],
+                        ['src' => '@theme/img/page/page-select-deli/pizza-baking.png', 'alt' => 'ピザを焼く'],
                     ],
                     'gallery_variant' => 'four',
                     'decorations' => [

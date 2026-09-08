@@ -117,9 +117,8 @@ $detail: '.p-page-select-detail';
 		}
 
 		#{$detail}__message--bg {
-			min-height: 54.18vw;
-			padding-top: 19.6vw;
-			padding-bottom: 7.62vw;
+			min-height: 53.18vw;
+			padding: 19vw 4.44vw 7.62vw;
 		}
 
 		#{$detail}__about__bg {
@@ -135,8 +134,8 @@ $detail: '.p-page-select-detail';
 		}
 
 		#{$detail}__message--cornerDecoration {
-			right: -2vw;
-			bottom: -7vw;
+			right: 2vw;
+			bottom: -4vw;
 			width: 13vw;
 		}
 

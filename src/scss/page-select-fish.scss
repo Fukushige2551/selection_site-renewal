@@ -2,6 +2,10 @@
 	$detail: &;
 
 	&--fish {
+		#{$detail}__message--bg {
+			padding-bottom: 4vw;
+		}
+
 		#{$detail}__news__titleSp {
 			white-space: nowrap;
 		}
@@ -133,7 +137,7 @@
 
 				&--wave#{$detail}__about__backgroundDecoration--laptopAnchor {
 					z-index: 3;
-					top: 42.6vw;
+					top: 41.6vw;
 					left: 18vw;
 					display: block;
 					width: 17vw;
@@ -142,27 +146,27 @@
 
 				&--fisherman#{$detail}__about__backgroundDecoration--legacyAnchor {
 					z-index: 4;
-					top: 42.6vw;
+					top: 41vw;
 					left: 6vw;
 					width: 17vw;
 				}
 
 				&--cat-and-worker {
-					top: 209vw;
+					top: 208vw;
 					left: 60vw;
 					width: 24vw;
 				}
 
 				&--calico-cat {
 					display: block;
-					top: 214.2vw;
+					top: 213.2vw;
 					left: 56vw;
 					width: 6vw;
 				}
 
 				&--worker {
 					display: block;
-					top: 289vw;
+					top: 286vw;
 					left: 75vw;
 					width: 16vw;
 					transform: scaleX(-1);
@@ -170,9 +174,9 @@
 			}
 
 			#{$detail}__news__foregroundDecoration--fish {
-				top: -1vw;
-				right: 15vw;
-				width: 19vw;
+				top: 2vw;
+				right: 16vw;
+				width: 17vw;
 			}
 		}
 
