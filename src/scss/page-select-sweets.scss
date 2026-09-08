@@ -1,6 +1,25 @@
 $detail: '.p-page-select-detail';
 
 #{$detail}--sweets {
+	@media screen and (min-width: 768px) {
+		.u-sweets-break-sp {
+			display: none;
+		}
+	}
+
+	#{$detail}__about__content--section-1 #{$detail}__about__content--copyBeforeGallery p {
+		white-space: pre-line;
+	}
+
+	@media screen and (min-width: 768px) and (max-width: 1023px) {
+		#{$detail}__hero__text--sp {
+			display: block;
+		}
+		#{$detail}__hero__text--pc {
+			display: none;
+		}
+	}
+
 	#{$detail}__news__title br {
 		display: block;
 	}
@@ -79,6 +98,20 @@ $detail: '.p-page-select-detail';
 // SP
 @media screen and (max-width: 767px) {
 	#{$detail}--sweets {
+		#{$detail}__about__content--img-north-colors-thought-picture {
+			flex: 0 0 100%;
+			width: 100%;
+		}
+
+		#{$detail}__about__content--img-north-colors-thought {
+			width: 100%;
+			height: auto;
+		}
+
+		#{$detail}__news__bg {
+			margin-top: -8vw;
+		}
+
 		#{$detail}__message--foregroundDecoration-potato {
 			right: 5vw;
 			bottom: -1vw;
@@ -110,7 +143,7 @@ $detail: '.p-page-select-detail';
 			width: 28vw;
 		}
 		#{$detail}__news__foregroundDecoration--baumkuchen {
-			top: -13vw;
+			top: -11vw;
 			right: 2vw;
 			width: 27.17vw;
 		}
@@ -156,9 +189,9 @@ $detail: '.p-page-select-detail';
 			width: 20vw;
 		}
 		#{$detail}__about__content--cacao-beans {
-			top: -24vw;
-			left: 14vw;
-			width: 10.4vw;
+			top: -21vw;
+			left: 21vw;
+			width: 7.4vw;
 		}
 		#{$detail}__about__content--patissier {
 			top: -20vw;
@@ -190,6 +223,11 @@ $detail: '.p-page-select-detail';
 // NPC
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
 	#{$detail}--sweets {
+		#{$detail}__about__content--imgWrap > picture {
+			width: 37.93vw;
+			flex-basis: 37.93vw;
+		}
+
 		#{$detail}__message--shape {
 			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-sweets/buyer-message-background-pc.svg');
 		}
@@ -224,20 +262,19 @@ $detail: '.p-page-select-detail';
 			width: 12.42vw;
 		}
 		#{$detail}__news__foregroundDecoration--baumkuchen {
-			top: 2vw;
-			right: 23vw;
-			width: 11vw;
+			top: 6.2vw;
+			right: 28vw;
+			width: 8vw;
 		}
 		#{$detail}__news__foregroundDecoration--forklift {
-			top: -49vw;
-			right: 2vw;
-			width: 25vw;
+			top: -53vw;
+			right: -12vw;
+			width: 26vw;
 		}
 	}
 	.p-page-select-detail__about__bg {
 		padding: 29.44vw 0 10vw;
 		box-sizing: border-box;
-		background-size: 2.63vw 2.63vw;
 	}
 	.p-page-select-detail__news {
         z-index: 3;
@@ -282,9 +319,9 @@ $detail: '.p-page-select-detail';
 			width: 157.96px;
 		}
 		#{$detail}__news__foregroundDecoration--baumkuchen {
-			top: 29px;
-			right: 652px;
-			width: 142px;
+			top: 92px;
+			right: 636px;
+			width: 125px;
 		}
 		#{$detail}__news__foregroundDecoration--forklift {
 			top: -694px;
