@@ -72,7 +72,7 @@ $detail: '.p-page-select-detail';
 	}
 
 	#{$detail}__news__wrapDecoration--rice-design {
-		top: -56vw;
+		top: -51vw;
 		right: 1vw;
 		z-index: 4;
 		width: 25.38vw;
@@ -240,8 +240,13 @@ $detail: '.p-page-select-detail';
 
 @media screen and (max-width: 767px) {
 	#{$detail}--rice {
+		#{$detail}__about__bg {
+			padding-bottom: 27.46vw;
+		}
+
 		#{$detail}__news__bg {
 			margin-top: -10vw;
+			padding-top: 20vw;
 		}
 
 		#{$detail}__about__content--imgSmall {
