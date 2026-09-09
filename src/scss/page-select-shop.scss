@@ -35,6 +35,14 @@ $detail: '.p-page-select-detail';
 
 @media screen and (max-width: 767px) {
 	#{$detail}--shop {
+		#{$detail}__about__content--section-2 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy p,
+		#{$detail}__about__content--section-2 #{$detail}__about__content--copyBeforeGallery p,
+		#{$detail}__about__content--section-1 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy p,
+		#{$detail}__about__content--section-1 #{$detail}__about__content--copyBeforeGallery p {
+			white-space: pre-line;
+			margin-bottom: 0;
+		}
+
 		#{$detail}__message--foregroundDecoration-stocking-staff {
 			bottom: -28vw;
 			left: -3vw;
@@ -42,8 +50,8 @@ $detail: '.p-page-select-detail';
 		}
 
 		#{$detail}__message--foregroundDecoration-shopping-cart {
-			right: 1vw;
-			bottom: -2vw;
+			right: 6vw;
+			bottom: -7vw;
 			width: 18vw;
 		}
 

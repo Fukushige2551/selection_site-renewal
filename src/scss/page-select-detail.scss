@@ -913,6 +913,23 @@
 	}
 }
 
+@media screen and (max-width: 767px) {
+	.p-page-select-detail__about__content p {
+		width: 86vw;
+	}
+
+	.p-page-select-detail__about__content--copy.p-page-select-detail__about__content--copyBeforeGallery,
+	.p-page-select-detail__about__content--secondaryImageAnchor,
+	.p-page-select-detail__about__content--secondaryImageWrap,
+	.p-page-select-detail__about__content--sub + picture {
+		margin-bottom: 5vw;
+	}
+
+	.p-page-select-detail__about__content--title .p-page-select-detail__about__content--titleText {
+		font-size: 4.62vw;
+	}
+}
+
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
 	.p-page-select-detail + .l-footer {
 		position: relative;
