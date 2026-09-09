@@ -354,6 +354,7 @@ function foods_get_select_detail_configs() {
                     ],
                     [
                         'title' => '食卓が楽しくなる提案',
+                        'gallery_before_secondary_copy' => true,
                         'main_image' => ['src' => '食卓の様子.png', 'alt' => '家族で食卓を囲む様子'],
                         'text_blocks' => [
                             '食卓には、人を笑顔にする力があります。' . "\n" . '美味しいものを食べた時。' . "\n" . '新しい味に出会った時。' . "\n" . '家族や友人と楽しい時間を過ごした時。' . "\n" . '食卓は、日々の暮らしを豊かにしてくれます。',

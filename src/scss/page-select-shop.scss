@@ -1,7 +1,8 @@
 $detail: '.p-page-select-detail';
 
 @media screen and (max-width: 1023px) {
-	#{$detail}--shop #{$detail}__about__content + #{$detail}__about__content--section-2 {
+	#{$detail}--shop #{$detail}__about__content + #{$detail}__about__content--section-2,
+	#{$detail}--shop #{$detail}__about__content + #{$detail}__about__content--section-3 {
 		#{$detail}__about__content--imgWrap {
 			border-bottom: none;
 			padding-bottom: 0;
@@ -53,6 +54,10 @@ $detail: '.p-page-select-detail';
 
 @media screen and (max-width: 767px) {
 	#{$detail}--shop {
+		#{$detail}__news__bg {
+			margin-top: -10.6vw;
+		}
+
 		#{$detail}__about__content--section-2 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy p,
 		#{$detail}__about__content--section-3 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy p,
 		#{$detail}__about__content--section-3 #{$detail}__about__content--copyBeforeGallery p,
