@@ -871,8 +871,23 @@
 // ノートPC
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 	.p-page-select-detail {
+		&__about__content {
+			width: 75vw;
+			margin-inline: auto;
+		}
+
+		&__about__content--imgWrap > picture {
+			flex-basis: calc((100% - 2.6vw) / 2);
+			width: calc((100% - 2.6vw) / 2);
+		}
+
+		&__about__content--imgWrap > .p-page-select-detail__about__content--imgSmall {
+			width: calc((100% - 2.6vw) / 2);
+		}
+
 		&__message {
 			&--text {
+				width: 75vw;
 				margin-inline: auto;
 			}
 

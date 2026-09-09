@@ -1,6 +1,18 @@
 .p-page-select-detail {
 	$detail: &;
 
+	@media screen and (min-width: 768px) and (max-width: 1023px) {
+		&--fish #{$detail}__about__content--imgWrap > #{$detail}__about__content--catWorkerAnchor > picture {
+			flex: 0 0 calc((100% - 2.6vw) / 2);
+			width: calc((100% - 2.6vw) / 2);
+
+			> #{$detail}__about__content--imgSmall {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+
 	&--fish {
 		#{$detail}__message--bg {
 			padding-bottom: 4vw;
@@ -93,7 +105,7 @@
 				}
 
 				&--cat-and-worker {
-					top: 301vw;
+					top: 284vw;
 					left: 57vw;
 					width: 34vw;
 				}

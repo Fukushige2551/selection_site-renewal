@@ -121,7 +121,7 @@ $detail: '.p-page-select-detail';
 	#{$detail}--vegetables-fruit {
 		#{$detail} {
 			&__news__bg {
-				margin-top: -15vw;
+				margin-top: -9vw;
 			}
 
 			&__message--cornerDecoration {
@@ -134,7 +134,7 @@ $detail: '.p-page-select-detail';
 				&--rice-planting {
 					width: 16.81vw;
 					top: -14vw;
-					left: -7vw;
+					left: -13vw;
 				}
 				&--cabbage-farmer {
 					width: 21vw;
@@ -143,9 +143,9 @@ $detail: '.p-page-select-detail';
 				}
 
 				&--truck-farmer {
-					bottom: 3vw;
+					bottom: 5vw;
 					right: -1vw;
-					width: 35.45vw;
+					width: 30vw;
 				}
 
 				&--mikan {
@@ -161,8 +161,8 @@ $detail: '.p-page-select-detail';
 				}
 
 				&--mikan-farmer {
-					right: -4.5vw;
-					bottom: 2vw;
+					right: -12.5vw;
+					bottom: -4vw;
 					width: 39vw;
 				}
 			}
