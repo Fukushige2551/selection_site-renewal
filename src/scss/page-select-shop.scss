@@ -1,6 +1,24 @@
 $detail: '.p-page-select-detail';
 
+@media screen and (max-width: 1023px) {
+	#{$detail}--shop #{$detail}__about__content + #{$detail}__about__content--section-2 {
+		#{$detail}__about__content--imgWrap {
+			border-bottom: none;
+			padding-bottom: 0;
+		}
+
+		#{$detail}__about__content--secondaryImageWrap {
+			padding-bottom: 5vw;
+			border-bottom: 1px dashed #848484;
+		}
+	}
+}
+
 #{$detail}--shop {
+	#{$detail}__about__content--section-2 #{$detail}__about__content--imgWrap {
+		margin-bottom: 5vw;
+	}
+
 	#{$detail}__message--shape {
 		background: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-shop/背景sp.svg') center top / 100% 100% no-repeat;
 	}
@@ -36,6 +54,8 @@ $detail: '.p-page-select-detail';
 @media screen and (max-width: 767px) {
 	#{$detail}--shop {
 		#{$detail}__about__content--section-2 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy p,
+		#{$detail}__about__content--section-3 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy p,
+		#{$detail}__about__content--section-3 #{$detail}__about__content--copyBeforeGallery p,
 		#{$detail}__about__content--section-2 #{$detail}__about__content--copyBeforeGallery p,
 		#{$detail}__about__content--section-1 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy p,
 		#{$detail}__about__content--section-1 #{$detail}__about__content--copyBeforeGallery p {

@@ -113,6 +113,10 @@ foreach ($background_decorations as $decoration) {
                     <h4 class="<?php echo esc_attr($block_class); ?>__about__content--sub"><?php echo wp_kses_post($section['sub_title']); ?></h4>
                 <?php endif; ?>
 
+                <?php
+                $gallery_first = !empty($section['gallery_before_secondary_copy']) && !empty($section['secondary_image']);
+                if ($gallery_first) { ob_start(); }
+                ?>
                 <?php if (!empty($section['secondary_image'])) : ?>
                     <?php $secondary_image = $section['secondary_image']; ?>
                     <?php
@@ -152,6 +156,10 @@ foreach ($background_decorations as $decoration) {
                         </div>
                     <?php endif; ?>
                     <?php
+                    if ($gallery_first) {
+                        $secondary_image_html = ob_get_clean();
+                        ob_start();
+                    }
                     $secondary_text_blocks = isset($section['secondary_text_blocks']) && is_array($section['secondary_text_blocks'])
                         ? $section['secondary_text_blocks']
                         : [($section['secondary_text'] ?? '')];
@@ -163,6 +171,11 @@ foreach ($background_decorations as $decoration) {
                     </div>
                 <?php endif; ?>
 
+                <?php
+                if ($gallery_first) {
+                    $secondary_copy_html = ob_get_clean();
+                }
+                ?>
                 <div class="<?php echo esc_attr($block_class); ?>__about__content--imgWrap">
                     <?php foreach ($decorations as $decoration) : ?>
                         <?php if ('gallery_before' === $decoration['placement']) : ?>
@@ -221,6 +234,12 @@ foreach ($background_decorations as $decoration) {
                         <?php endif; ?>
                     <?php endforeach; ?>
                 </div>
+                <?php
+                if ($gallery_first) {
+                    // Both fragments use the escaped template markup above.
+                    echo $secondary_copy_html . $secondary_image_html;
+                }
+                ?>
             </div>
         <?php endforeach; ?>
     </div>
