@@ -260,6 +260,21 @@ $detail: '.p-page-select-detail';
 }
 
 @media screen and (min-width: 1280px) {
+	#{$detail}--shop #{$detail}__about__content--section-2 #{$detail}__about__content--imgWrap,
+	#{$detail}--shop #{$detail}__about__content--section-3 #{$detail}__about__content--imgWrap,
+	#{$detail}--shop #{$detail}__about__content--section-3 #{$detail}__about__content--copy#{$detail}__about__content--copyBeforeGallery,
+	#{$detail}--shop #{$detail}__about__content--section-2 #{$detail}__about__content--copy#{$detail}__about__content--copyBeforeGallery {
+		margin-bottom: 35px;
+	}
+
+	#{$detail}--shop #{$detail}__about__content--section-2 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy {
+		margin-bottom: 35px;
+	}
+
+	#{$detail}--shop #{$detail}__about__content--copy#{$detail}__about__content--copyBeforeGallery {
+		margin-bottom: 0;
+	}
+
 	#{$detail}--shop {
 		#{$detail}__about__bg {
 			background-size: 24px 23px;
@@ -307,6 +322,6 @@ $detail: '.p-page-select-detail';
 	}
 
 	.p-page-select-detail__news {
-		margin-top: -102px;
+		margin-top: -156px;
 	}
 }
