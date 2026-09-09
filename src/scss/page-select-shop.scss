@@ -140,6 +140,24 @@ $detail: '.p-page-select-detail';
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 	#{$detail}--shop {
+		#{$detail}__about__content--section-1 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy,
+		#{$detail}__about__content--section-2 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy,
+		#{$detail}__about__content--section-3 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy,
+		#{$detail}__about__content--section-4 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy,
+		#{$detail}__about__content--section-2 #{$detail}__about__content--copyBeforeGallery,
+		#{$detail}__about__content--section-3 #{$detail}__about__content--copyBeforeGallery,
+		#{$detail}__about__content--section-1 #{$detail}__about__content--copyBeforeGallery {
+			p.u-select-copy-pc {
+				display: block;
+				white-space: pre-line;
+				margin-bottom: 0;
+			}
+
+			p.u-select-copy-sp-tab {
+				display: none;
+			}
+		}
+
 		#{$detail}__about__bg {
 			padding-bottom: 14vw;
 		}

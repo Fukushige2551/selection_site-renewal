@@ -871,6 +871,19 @@
 // ノートPC
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 	.p-page-select-detail {
+		&__about__content--copy.p-page-select-detail__about__content--copyBeforeGallery {
+			margin-bottom: 5vw;
+		}
+
+		&__about__content--sub {
+			margin-bottom: 2vw;
+			line-height: 4.2vw;
+		}
+
+		&__about__content--secondaryImageAnchor &__about__content--secondaryImageWrap {
+			margin-bottom: 2vw;
+		}
+
 		&__about__content {
 			width: 75vw;
 			margin-inline: auto;
