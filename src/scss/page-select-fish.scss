@@ -11,6 +11,14 @@
 		}
 
 		@media screen and (max-width: 767px) {
+			#{$detail}__about__bg {
+				padding-bottom: 32.46vw;
+			}
+
+			#{$detail}__message--bg {
+				padding-bottom: 14vw;
+			}
+
 			#{$detail}__news__bg {
 				padding-top: 22vw;
 			}
@@ -40,7 +48,7 @@
 
 			&--cat-and-worker {
 				z-index: 2;
-				top: 426vw;
+				top: 435vw;
 				left: 55.9vw;
 				width: 32.99vw;
 				aspect-ratio: 32.99 / 18.46;
@@ -52,7 +60,7 @@
 			}
 
 			&--worker {
-				top: 859vw;
+				top: 866vw;
 				left: 4.36vw;
 				width: 26.15vw;
 				aspect-ratio: 26.15 / 26.92;

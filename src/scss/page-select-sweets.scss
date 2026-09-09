@@ -223,11 +223,6 @@ $detail: '.p-page-select-detail';
 // NPC
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
 	#{$detail}--sweets {
-		#{$detail}__about__content--imgWrap > picture {
-			width: 37.93vw;
-			flex-basis: 37.93vw;
-		}
-
 		#{$detail}__message--shape {
 			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-sweets/buyer-message-background-pc.svg');
 		}
@@ -273,7 +268,7 @@ $detail: '.p-page-select-detail';
 		}
 	}
 	.p-page-select-detail__about__bg {
-		padding: 29.44vw 0 10vw;
+		padding: 25.44vw 0 10vw;
 		box-sizing: border-box;
 	}
 	.p-page-select-detail__news {
