@@ -104,8 +104,11 @@ foreach ($background_decorations as $decoration) {
                     <?php endforeach; ?>
                 </div>
                 <div class="<?php echo esc_attr($block_class); ?>__about__content--copy">
+                    <?php if (!empty($section['text_pc'])) : ?>
+                        <p class="u-select-copy-pc"><?php echo esc_html($section['text_pc']); ?></p>
+                    <?php endif; ?>
                     <?php foreach ($text_blocks as $text_block) : ?>
-                        <?php if ('' !== $text_block) : ?><p><?php echo esc_html($text_block); ?></p><?php endif; ?>
+                        <?php if ('' !== $text_block) : ?><p<?php if (!empty($section['text_pc'])) : ?> class="u-select-copy-sp-tab"<?php endif; ?>><?php echo esc_html($text_block); ?></p><?php endif; ?>
                     <?php endforeach; ?>
                 </div>
 
@@ -165,8 +168,11 @@ foreach ($background_decorations as $decoration) {
                         : [($section['secondary_text'] ?? '')];
                     ?>
                     <div class="<?php echo esc_attr($block_class); ?>__about__content--copy <?php echo esc_attr($block_class); ?>__about__content--copyBeforeGallery">
+                        <?php if (!empty($section['secondary_text_pc'])) : ?>
+                            <p class="u-select-copy-pc"><?php echo esc_html($section['secondary_text_pc']); ?></p>
+                        <?php endif; ?>
                         <?php foreach ($secondary_text_blocks as $text_block) : ?>
-                            <?php if ('' !== $text_block) : ?><p><?php echo esc_html($text_block); ?></p><?php endif; ?>
+                            <?php if ('' !== $text_block) : ?><p<?php if (!empty($section['secondary_text_pc'])) : ?> class="u-select-copy-sp-tab"<?php endif; ?>><?php echo esc_html($text_block); ?></p><?php endif; ?>
                         <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
