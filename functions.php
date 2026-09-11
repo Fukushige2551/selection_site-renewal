@@ -1307,7 +1307,7 @@ function foods_sync_flyer_scf_fields() {
 
     if (!empty($result['field_group_id'])) {
         $result['trashed_obsolete_item_images_fields'] = foods_remove_obsolete_flyer_item_images_field();
-        foods_migrate_legacy_flyer_image_field();
+        // 定義の同期では既存投稿の画像データを変更しない。
     }
 
     return $result;
@@ -2105,7 +2105,7 @@ function foods_assign_recipe_default_terms_to_existing_posts() {
 
     update_option('foods_recipe_default_terms_assigned_version', $version);
 }
-add_action('init', 'foods_assign_recipe_default_terms_to_existing_posts', 30);
+// 既定の分類項目は同期するが、既存投稿への割り当ては自動実行しない。
 /**
  * カスタムタクソノミー
  */
