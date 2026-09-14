@@ -41,6 +41,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-single-news-js',
         'foods-archive-recipe-js',
         'foods-single-recipe-js',
+        'foods-page-recruit-js',
     ];
 
     if (in_array($handle, $module_handles, true)) {
@@ -165,6 +166,7 @@ function foods_theme_scripts() {
     $single_news_entry = 'src/js/single-news.js';
     $archive_recipe_entry = 'src/js/archive-recipe.js';
     $single_recipe_entry = 'src/js/single-recipe.js';
+    $page_recruit_entry = 'src/js/page-recruit.js';
 
     if ($is_local) {
         wp_enqueue_script(
@@ -368,7 +370,24 @@ function foods_theme_scripts() {
         );
     }
 
-    // single-shop.php 専用アセット
+    // page-recruit.php専用アセット
+    if (is_page() && basename((string) get_page_template()) === 'page-recruit.php') {
+        wp_enqueue_style(
+            'foods-page-recruit-fonts',
+            'https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=REM:wght@500&display=swap',
+            [],
+            null
+        );
+        foods_enqueue_vite_entry(
+            'foods-page-recruit',
+            $page_recruit_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    // single-shop.php専用アセット
     if (is_singular('shop')) {
         foods_enqueue_vite_entry(
             'foods-single-shop',
