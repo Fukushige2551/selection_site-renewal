@@ -1,0 +1,906 @@
+@use "foundation/global" as *;
+
+/**
+ * 事業内容ページ
+ */
+.p-page-company-business {
+    box-sizing: border-box;
+    padding-top: 60px;
+    background: #fff;
+    color: #000;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    :where(h1, h2, h3, p, ol, dl, dd) {
+        margin: 0;
+    }
+
+    :where(ol) {
+        padding: 0;
+        list-style: none;
+    }
+
+    :where(picture, img) {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    img {
+        object-fit: cover;
+    }
+
+    // パンくずリスト・共通見出し
+    &__breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        min-height: 44px;
+        padding: 4px 1.79vw 8px;
+        font-family: "Zen Kaku Gothic New", sans-serif;
+        font-size: 13px;
+        line-height: 25px;
+
+        a {
+            color: #10a3ff;
+            text-decoration: underline;
+        }
+
+        span {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            &::before {
+                content: "";
+                width: 6px;
+                height: 6px;
+                border-top: 1px solid #4c4c4c;
+                border-right: 1px solid #4c4c4c;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    &__heading {
+        padding-inline: 4.87vw;
+        text-align: center;
+    }
+
+    &__title {
+        font-family: "Zen Kaku Gothic New", sans-serif;
+        font-size: 26px;
+        font-weight: 900;
+        line-height: 35px;
+        letter-spacing: .05em;
+    }
+
+    &__titleNumber {
+        font-size: 32px;
+    }
+
+    // 語句単位で折り返し、横幅に余裕があれば一行に並べる。
+    &__titlePart {
+        display: inline-block;
+        max-width: 100%;
+    }
+
+    &__headingEn {
+        margin-top: 8px;
+        color: #00a784;
+        font-family: "REM", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 22px;
+        letter-spacing: .1em;
+    }
+
+    // メインビジュアル・メッセージ
+    &__intro {
+        padding-bottom: 47px;
+
+        .p-page-company-business__heading {
+            margin-top: 28px;
+        }
+
+        .p-page-company-business__title {
+            letter-spacing: 0;
+        }
+    }
+
+    &__heroPicture {
+        height: clamp(220px, 69.23vw, 380px);
+
+        img {
+            object-position: center;
+        }
+    }
+
+    &__lead {
+        margin: 33px 4.87vw 18px;
+        color: #103675;
+        font-family: "Zen Kaku Gothic New", sans-serif;
+        font-size: 24px;
+        font-weight: 900;
+        line-height: 35px;
+        text-align: center;
+    }
+
+    &__introText {
+        width: 90%;
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    // セレクションの3つのこだわり
+    &__commitments {
+        padding: 42px 0 72px;
+        background: #f9faf5;
+        border-radius: 30px 30px 0 0;
+    }
+
+    &__commitmentList {
+        margin-top: 44px;
+    }
+
+    &__commitment {
+        position: relative;
+        padding-bottom: 32px;
+
+        & + & {
+            padding-top: 40px;
+
+            .p-page-company-business__number {
+                top: 30px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 10.77%;
+                border-top: 1px solid #00a784;
+            }
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+
+        &:first-child h3 {
+            width: 64.62vw;
+        }
+
+        // Figmaのマスク位置に合わせて元画像を配置する。
+        &:nth-child(2) picture img {
+            width: 128.86%;
+            max-width: none;
+            margin-left: -4.36%;
+        }
+
+        &:nth-child(3) picture img {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+
+    &__commitmentVisual {
+        position: relative;
+        padding-left: 23.59%;
+
+        picture {
+            height: clamp(160px, 47.44vw, 260px);
+            overflow: hidden;
+            border-radius: 30px 0 0 30px;
+        }
+    }
+
+    &__number {
+        position: absolute;
+        top: -10px;
+        left: 8.21%;
+        color: #bcbcbc;
+        font-family: "REM", sans-serif;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 36px;
+        letter-spacing: .1em;
+    }
+
+    &__commitmentText {
+        margin: 24px 7.69% 0 10.77%;
+
+        h3 {
+            width: 67.95vw;
+            max-width: 100%;
+            color: #00a784;
+            font-family: "Zen Kaku Gothic New", sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 35px;
+        }
+
+        p {
+            margin-top: 16px;
+        }
+    }
+
+    // お取引企業様の声
+    &__testimonials {
+        position: relative;
+        margin-top: -30px;
+        padding: 62px 0 60px;
+        background: #fff;
+        border-radius: 30px 30px 0 0;
+    }
+
+    &__testimonialList {
+        display: grid;
+        gap: 39px;
+        margin: 36px 6.79vw 0;
+    }
+
+    &__partner {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        padding-inline: 4.36vw 0;
+
+        picture {
+            flex: 0 0 84px;
+            width: 84px;
+            height: 84px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+    }
+
+    &__partnerLocation {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    &__testimonial:first-child .p-page-company-business__partner img {
+        object-position: 9% center;
+    }
+
+    &__testimonial:last-child .p-page-company-business__partner img {
+        object-position: left center;
+    }
+
+    &__partnerName {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 28px;
+    }
+
+    &__quote {
+        position: relative;
+        margin-top: 42px;
+        padding: 34px 5.64vw;
+        background: #f9faf5;
+        border-radius: 30px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 42px;
+            border-right: 15px solid transparent;
+            border-bottom: 40px solid #f9faf5;
+            border-left: 15px solid transparent;
+        }
+
+        h3 {
+            margin-bottom: 17px;
+            color: #103675;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 28px;
+            letter-spacing: .05em;
+        }
+    }
+
+    // お取引のメリット：写真とオーバーレイを分離する。
+    &__benefits {
+        padding-bottom: 60px;
+        background: #f9faf5;
+        border-radius: 30px 30px 0 0;
+    }
+
+    &__benefitsVisual {
+        position: relative;
+        height: clamp(190px, 50.45vw, 210px);
+        overflow: hidden;
+        border-radius: 30px 30px 0 0;
+        isolation: isolate;
+
+        picture {
+            position: absolute;
+            inset: 0;
+        }
+
+        img {
+            width: 185.44%;
+            max-width: none;
+            margin-left: -76.26%;
+            object-position: center;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 54, 117, .6);
+            mix-blend-mode: multiply;
+        }
+
+        .p-page-company-business__heading {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            color: #fff;
+        }
+
+        .p-page-company-business__title {
+            font-family: "Noto Sans JP", sans-serif;
+        }
+
+        .p-page-company-business__headingEn {
+            color: #fff;
+            font-weight: 500;
+            line-height: 24px;
+        }
+    }
+
+    &__benefitList {
+        display: grid;
+        gap: 84px;
+        margin: 82px 6.79vw 0;
+    }
+
+    &__benefit {
+        position: relative;
+        padding: 48px 5.64vw 34px;
+        background: #fff;
+        border-radius: 30px;
+
+        h3 {
+            position: relative;
+            margin-top: 12px;
+            color: #103675;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 28px;
+            letter-spacing: .05em;
+            text-align: center;
+        }
+    }
+
+    &__benefitIcon {
+        position: absolute;
+        top: -55px;
+        left: 50%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        width: 122px;
+        height: 122px;
+        padding-top: 37px;
+        background: #fff;
+        border-radius: 50%;
+        transform: translateX(-50%);
+
+        > img {
+            width: 67px;
+            height: 45px;
+            object-fit: contain;
+        }
+        &--wide > img {
+            width: 80px;
+            height: 34px;
+        }
+    }
+
+    &__benefitNumber {
+        position: relative;
+        color: #00a784;
+        font-family: "REM", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+        letter-spacing: .1em;
+        text-align: center;
+    }
+
+    &__benefitText {
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px dashed #000;
+    }
+
+    &__contact {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        margin: 42px 6.79vw 0;
+        padding: 49px 0 23px;
+        background: #00a784;
+        border-radius: 30px;
+        color: #fff;
+        text-align: center;
+
+        > p {
+            position: relative;
+            padding-inline: 8px;
+            font-weight: 500;
+        }
+
+        a {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            margin-top: 44px;
+            padding-top: 23px;
+            border-top: 1px solid rgba(255, 255, 255, .6);
+            color: inherit;
+            font-size: 20px;
+            font-weight: 900;
+            text-decoration: none;
+        }
+    }
+
+    &__contactDecoration {
+        position: absolute;
+        z-index: -1;
+        top: 41px;
+        left: 50%;
+        // 装飾文字は拡大せず、狭い画面でのみ縮小する。
+        width: 348px;
+        max-width: 100%;
+        height: auto;
+        transform: translateX(-50%);
+        mix-blend-mode: multiply;
+        pointer-events: none;
+    }
+
+    &__contactMail {
+        width: 38px;
+        height: 26px;
+        object-fit: contain;
+    }
+
+    &__contactArrow {
+        position: absolute;
+        top: 37px;
+        right: 17px;
+        width: 34px;
+        height: 34px;
+        object-fit: contain;
+    }
+
+    // 新規店舗物件情報募集
+    &__locations {
+        padding: 60px 0 80px;
+    }
+
+    &__locationsIntro {
+        margin: 32px 6.79vw 0;
+        text-align: center;
+    }
+
+    &__conditions {
+        display: grid;
+        gap: 30px;
+        margin: 42px 6.79vw 0;
+    }
+
+    &__condition {
+        min-width: 0;
+        overflow: hidden;
+        background: #f9faf5;
+        border: 1px solid #00a784;
+        border-radius: 30px;
+
+        h3 {
+            padding: 12px 16px;
+            border-bottom: 1px dashed #00a784;
+            color: #00a784;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 30px;
+            text-align: center;
+        }
+    }
+
+    &__conditionBody {
+        padding: 18px 4.36vw 24px;
+        overflow-wrap: break-word;
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+        }
+    }
+
+    &__areas {
+        dt {
+            font-weight: 500;
+
+            &:not(:first-child) {
+                margin-top: 28px;
+            }
+        }
+    }
+
+    &__breakSmallPc {
+        display: none;
+    }
+
+    // タブレット以上：導入文と募集条件のレイアウト
+    @media (min-width: 768px) {
+        &__breakSp {
+            display: none;
+        }
+
+        &__introText {
+            width: 90%;
+            max-width: 900px;
+        }
+
+        &__conditions {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            align-items: start;
+            gap: 24px;
+            margin-inline: 4.17vw;
+        }
+
+        &__conditionBody {
+            padding-inline: 20px;
+        }
+
+        // 出店エリアは先頭の一段を使用する。
+        &__condition:first-child {
+            grid-column: 1 / -1;
+        }
+
+        // 最後の二枚は、内容が多いカードに高さを揃える。
+        &__condition:nth-last-child(-n + 2) {
+            align-self: stretch;
+        }
+    }
+
+    // パソコン：写真と本文を横並びにし、各セクションの最大幅を揃える。
+    @media (min-width: 1024px) {
+        &__breakUntilPc {
+            display: none;
+        }
+
+        &__intro {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 80px;
+
+            .p-page-company-business__heading {
+                margin-top: 50px;
+            }
+        }
+
+        &__heroPicture {
+            order: -1;
+            height: clamp(460px, 44.17vw, 848px);
+        }
+
+        &__breadcrumb {
+            position: relative;
+            margin-top: -31px;
+            min-height: 67px;
+            padding: 28px 5.36% 8px;
+            border-radius: 30px 30px 0 0;
+            background: #fff;
+        }
+
+        &__lead {
+            margin: 30px 32px 30px;
+        }
+
+        &__commitments {
+            padding-top: 96px;
+            padding-bottom: 70px;
+        }
+
+        &__commitmentList {
+            display: grid;
+            grid-auto-rows: 1fr;
+            margin-top: 20px;
+        }
+
+        &__commitment {
+            display: grid;
+            grid-template-columns: clamp(380px, 34vw, 440px) minmax(0, 1fr);
+            align-items: center;
+            gap: 40px;
+            margin-left: max(48px, calc((100% - 1350px) / 2));
+            padding-block: 60px;
+
+            &:last-child {
+                padding-bottom: 60px;
+            }
+
+            & + & {
+                padding-top: 60px;
+
+                &::before {
+                    left: -40px;
+                }
+            }
+
+            &:first-child h3 {
+                width: auto;
+            }
+
+            &:nth-child(2) picture img {
+                width: 109.58%;
+                margin-left: -3.67%;
+            }
+
+            &:nth-child(3) picture img {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+
+        &__commitmentVisual {
+            position: static;
+            align-self: center;
+            grid-column: 2;
+            grid-row: 1;
+            padding: 0;
+
+            picture {
+                position: relative;
+                height: auto;
+                aspect-ratio: 1117 / 580;
+                // ワイド画面でも写真が縦に大きくなりすぎないようにする。
+                max-height: 480px;
+
+                img {
+                    position: absolute;
+                    inset: 0;
+                }
+            }
+        }
+
+        &__number {
+            top: 0;
+            left: 0;
+            font-size: 36px;
+            line-height: 44px;
+            transform: none;
+        }
+
+        &__commitmentText {
+            position: relative;
+            grid-column: 1;
+            grid-row: 1;
+            margin: 0;
+            padding-top: 80px;
+
+            h3 {
+                width: auto;
+            }
+
+            p {
+                margin-top: 28px;
+            }
+        }
+
+        &__commitment + &__commitment .p-page-company-business__number {
+            top: 0;
+        }
+
+        &__testimonials {
+            padding: 80px 0;
+        }
+
+        &__testimonialList {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 36px;
+            width: calc(100% - 96px);
+            max-width: 1136px;
+            margin: 56px auto 0;
+        }
+
+        &__testimonial {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        &__partner {
+            align-items: end;
+            gap: 17px;
+            padding: 0;
+
+            picture {
+                flex-basis: 170px;
+                width: 170px;
+                height: 170px;
+            }
+        }
+
+        &__quote {
+            flex: 1;
+            margin-top: 60px;
+            padding: 34px 35px;
+        }
+
+        &__benefits {
+            padding-bottom: 80px;
+            border-radius: 0;
+            background: linear-gradient(to bottom, #fff 237px, #f9faf5 237px);
+        }
+
+        &__benefitsVisual {
+            width: calc(100% - 96px);
+            max-width: 1200px;
+            height: 237px;
+            margin-inline: auto;
+
+            img {
+                // Figmaのマスク（1200×237）と元画像の位置を再現する。
+                width: 202.17%;
+                margin-left: -88.75%;
+                object-position: center 53.44%;
+            }
+        }
+
+        &__benefitList {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 30px;
+            width: calc(100% - 96px);
+            max-width: 1200px;
+            margin: 44px auto 0;
+        }
+
+        &__benefit {
+            display: flex;
+            flex-direction: column;
+            align-self: stretch;
+            min-width: 0;
+            padding: 48px 25px 34px;
+
+            h3 {
+                display: flex;
+                flex-wrap: wrap;
+                align-content: center;
+                justify-content: center;
+                min-height: 84px;
+                width: 100%;
+                max-width: 335px;
+                margin-inline: auto;
+            }
+        }
+
+        &__benefit:nth-child(2) h3 {
+            max-width: 297px;
+        }
+
+        &__benefitText {
+            margin-top: 15px;
+            padding-top: 20px;
+            font-size: 16px;
+            line-height: 28px;
+        }
+
+        &__benefitIcon {
+            top: -72px;
+            width: 140px;
+            height: 140px;
+            padding-top: 40px;
+
+            > img {
+                width: 82px;
+                height: 55px;
+            }
+
+            &--wide > img {
+                width: 82px;
+                height: 55px;
+            }
+        }
+
+        &__contact {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            align-items: center;
+            width: calc(100% - 96px);
+            max-width: 900px;
+            margin: 40px auto 0;
+            padding: 32px 36px;
+            text-align: left;
+
+            > p {
+                padding: 0 28px 0 0;
+            }
+
+            a {
+                align-self: stretch;
+                justify-content: center;
+                gap: 24px;
+                margin: 0;
+                padding: 24px 50px 24px 16px;
+                border-top: 0;
+                border-left: 1px solid rgba(255, 255, 255, .6);
+                text-align: center;
+            }
+        }
+
+        &__contactDecoration {
+            top: 10px;
+            left: 48px;
+            transform: none;
+        }
+
+        &__contactMail {
+            width: 48px;
+            height: 33px;
+        }
+
+        &__contactArrow {
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+
+        &__locations {
+            padding: 80px 0 128px;
+        }
+
+        &__locationsIntro {
+            width: calc(100% - 96px);
+            max-width: 700px;
+            margin: 32px auto 0;
+        }
+
+        &__conditions {
+            width: calc(100% - 96px);
+            max-width: 900px;
+            gap: 30px;
+            align-items: stretch;
+            margin: 60px auto 0;
+        }
+
+        &__conditionBody {
+            padding: 18px 26px 24px;
+        }
+    }
+
+    @media (min-width: 1280px) {
+        &__commitment {
+            grid-template-columns: clamp(478px, 27vw, 520px) minmax(0, 1fr);
+        }
+
+        &__benefit h3 {
+            min-height: 56px;
+        }
+    }
+
+    // 小さなパソコンでは、見出しを意味のまとまりで改行する。
+    @media (min-width: 1024px) and (max-width: 1279px) {
+        &__breakSmallPc {
+            display: inline;
+        }
+    }
+}
