@@ -1,0 +1,345 @@
+$detail: '.p-page-select-detail';
+
+@media screen and (max-width: 1023px) {
+	#{$detail}--shop #{$detail}__about__content + #{$detail}__about__content--section-2,
+	#{$detail}--shop #{$detail}__about__content + #{$detail}__about__content--section-3 {
+		#{$detail}__about__content--imgWrap {
+			border-bottom: none;
+			padding-bottom: 0;
+		}
+
+		#{$detail}__about__content--secondaryImageWrap {
+			padding-bottom: 5vw;
+			border-bottom: 1px dashed #848484;
+		}
+	}
+}
+
+#{$detail}--shop {
+	.u-select-copy-pc {
+		display: none;
+	}
+
+	@media screen and (min-width: 1024px) {
+		#{$detail}__about__content--copy p.u-select-copy-pc {
+			display: block;
+			white-space: pre-line;
+			margin-bottom: 0;
+		}
+		.u-select-copy-sp-tab {
+			display: none;
+		}
+	}
+
+	#{$detail}__about__content--section-2 #{$detail}__about__content--imgWrap {
+		margin-bottom: 5vw;
+	}
+
+	#{$detail}__message--shape {
+		background: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-shop/背景sp.svg') center top / 100% 100% no-repeat;
+	}
+
+	#{$detail}__message--shapeBase,
+	#{$detail}__message--shapeTop,
+	#{$detail}__message--shapeMiddle,
+	#{$detail}__message--shapeBottom {
+		display: none;
+	}
+
+	#{$detail}__about__content--image,
+	#{$detail}__about__content--imgSmall {
+		object-fit: cover;
+	}
+
+	#{$detail}__message--foregroundDecoration,
+	#{$detail}__about__content--staff-and-products,
+	#{$detail}__about__content--shopping-couple,
+	#{$detail}__about__content--cart-and-customer,
+	#{$detail}__news__wrapDecoration--store,
+	#{$detail}__news__wrapDecoration--cart-and-customer-sp,
+	#{$detail}__news__wrapDecoration--shopping-couple-sp {
+		position: absolute;
+		z-index: 3;
+		display: block;
+		height: auto;
+		object-fit: contain;
+		pointer-events: none;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	#{$detail}--shop {
+		#{$detail}__news__bg {
+			margin-top: -10.6vw;
+		}
+
+		#{$detail}__about__content--section-2 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy p,
+		#{$detail}__about__content--section-3 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy p,
+		#{$detail}__about__content--section-3 #{$detail}__about__content--copyBeforeGallery p,
+		#{$detail}__about__content--section-2 #{$detail}__about__content--copyBeforeGallery p,
+		#{$detail}__about__content--section-1 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy p,
+		#{$detail}__about__content--section-1 #{$detail}__about__content--copyBeforeGallery p {
+			white-space: pre-line;
+			margin-bottom: 0;
+		}
+
+		#{$detail}__message--foregroundDecoration-stocking-staff {
+			bottom: -28vw;
+			left: -3vw;
+			width: 22vw;
+		}
+
+		#{$detail}__message--foregroundDecoration-shopping-cart {
+			right: 6vw;
+			bottom: -7vw;
+			width: 18vw;
+		}
+
+		#{$detail}__about__content--staff-and-products {
+			top: 22vw;
+			left: 49.5vw;
+			width: 34.5vw;
+		}
+
+		#{$detail}__about__content--shopping-couple {
+			display: none;
+		}
+
+		#{$detail}__about__content--cart-and-customer {
+			display: none;
+		}
+
+		#{$detail}__news__wrapDecoration--store {
+			top: -46vw;
+			right: 2vw;
+			width: 30vw;
+		}
+
+		#{$detail}__news__wrapDecoration--cart-and-customer-sp {
+			top: -62vw;
+			left: 2vw;
+			width: 28vw;
+		}
+
+		#{$detail}__news__wrapDecoration--shopping-couple-sp {
+			top: -70vw;
+			right: 36vw;
+			width: 21vw;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	#{$detail}--shop {
+		#{$detail}__news__wrapDecoration--cart-and-customer-sp,
+		#{$detail}__news__wrapDecoration--shopping-couple-sp {
+			display: none;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+	#{$detail}--shop {
+		#{$detail}__about__content--section-1 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy,
+		#{$detail}__about__content--section-2 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy,
+		#{$detail}__about__content--section-3 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy,
+		#{$detail}__about__content--section-4 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy,
+		#{$detail}__about__content--section-2 #{$detail}__about__content--copyBeforeGallery,
+		#{$detail}__about__content--section-3 #{$detail}__about__content--copyBeforeGallery,
+		#{$detail}__about__content--section-1 #{$detail}__about__content--copyBeforeGallery {
+			p.u-select-copy-pc {
+				display: block;
+				white-space: pre-line;
+				margin-bottom: 0;
+			}
+
+			p.u-select-copy-sp-tab {
+				display: none;
+			}
+		}
+
+		#{$detail}__about__bg {
+			padding-bottom: 14vw;
+		}
+
+		#{$detail}__news__wrapDecoration--cart-and-customer-sp {
+			display: block;
+			top: -37vw;
+			left: 2vw;
+			width: 18vw;
+		}
+
+		#{$detail}__news__wrapDecoration--shopping-couple-sp {
+			display: block;
+			top: -42vw;
+			right: 52vw;
+			width: 15vw;
+		}
+
+		#{$detail}__message--shape {
+			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-shop/背景tab.svg');
+		}
+
+		#{$detail}__message--foregroundDecoration-stocking-staff {
+			bottom: -22vw;
+			left: 3vw;
+			width: 14vw;
+		}
+
+		#{$detail}__message--foregroundDecoration-shopping-cart {
+			right: 1.8vw;
+			bottom: -5.6vw;
+			width: 13vw;
+		}
+
+		#{$detail}__about__content--staff-and-products {
+			top: 20.2vw;
+			left: 42.3vw;
+			width: 30.5vw;
+		}
+
+		#{$detail}__about__content--shopping-couple {
+			display: none;
+		}
+
+		#{$detail}__about__content--cart-and-customer {
+			display: none;
+		}
+
+		#{$detail}__news__wrapDecoration--store {
+			top: -28vw;
+			right: 8vw;
+			width: 20vw;
+		}
+	}
+
+	.p-page-select-detail__news {
+        z-index: 3;
+        margin-top: -5.92vw;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+	#{$detail}--shop #{$detail}__news {
+		margin-top: -6.92vw;
+	}
+
+	#{$detail}--shop #{$detail}__about__content #{$detail}__about__content--imgWrap,
+	#{$detail}--shop #{$detail}__about__content + #{$detail}__about__content #{$detail}__about__content--imgWrap {
+		padding-bottom: 0;
+		margin-bottom: 2.96vw;
+	}
+
+	#{$detail}--shop {
+		#{$detail}__about__bg {
+			background-size: 24px 23px;
+		}
+
+		#{$detail}__message--shape {
+			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-shop/背景pc.svg');
+		}
+
+		#{$detail}__message--foregroundDecoration-stocking-staff {
+			top: 67vw;
+			left: -12vw;
+			width: 15vw;
+		}
+
+		#{$detail}__message--foregroundDecoration-shopping-cart {
+			top: 67.4vw;
+			left: 60.4vw;
+			width: 11.5vw;
+		}
+
+		#{$detail}__about__content--staff-and-products {
+			top: 16.16vw;
+			left: 34.14vw;
+			width: 23.79vw;
+		}
+
+		#{$detail}__about__content--shopping-couple {
+			top: 61.22vw;
+			left: 63.75vw;
+			width: 14.47vw;
+		}
+
+		#{$detail}__about__content--cart-and-customer {
+			top: 6vw;
+			left: -16.03vw;
+			width: 17.32vw;
+		}
+
+		#{$detail}__news__wrapDecoration--store {
+			top: -18.4vw;
+			right: -0.3vw;
+			width: 16.7vw;
+		}
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	#{$detail}--shop #{$detail}__about__content--section-2 #{$detail}__about__content--imgWrap,
+	#{$detail}--shop #{$detail}__about__content--section-3 #{$detail}__about__content--imgWrap,
+	#{$detail}--shop #{$detail}__about__content--section-3 #{$detail}__about__content--copy#{$detail}__about__content--copyBeforeGallery,
+	#{$detail}--shop #{$detail}__about__content--section-2 #{$detail}__about__content--copy#{$detail}__about__content--copyBeforeGallery {
+		margin-bottom: 35px;
+	}
+
+	#{$detail}--shop #{$detail}__about__content--section-2 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy {
+		margin-bottom: 35px;
+	}
+
+	#{$detail}--shop #{$detail}__about__content--copy#{$detail}__about__content--copyBeforeGallery {
+		margin-bottom: 0;
+	}
+
+	#{$detail}--shop {
+		#{$detail}__about__bg {
+			background-size: 24px 23px;
+		}
+
+		#{$detail}__message--shape {
+			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-shop/背景pc.svg');
+		}
+
+		#{$detail}__message--foregroundDecoration-stocking-staff {
+			top: 694px;
+			left: -154px;
+			width: 198px;
+		}
+
+		#{$detail}__message--foregroundDecoration-shopping-cart {
+			top: 691px;
+			left: 640px;
+			width: 148px;
+		}
+
+		#{$detail}__about__content--staff-and-products {
+			top: 194px;
+			left: 437px;
+			width: 305px;
+		}
+
+		#{$detail}__about__content--shopping-couple {
+			top: 758px;
+			left: 816px;
+			width: 224px;
+		}
+
+		#{$detail}__about__content--cart-and-customer {
+			top: 0;
+			left: -295px;
+			width: 312px;
+		}
+
+		#{$detail}__news__wrapDecoration--store {
+			top: -221px;
+			right: -119px;
+			width: 265px;
+		}
+	}
+
+	.p-page-select-detail__news {
+		margin-top: -156px;
+	}
+}
