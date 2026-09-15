@@ -106,7 +106,11 @@ get_header('company');
         <?php endforeach; ?>
       </div>
     </div>
-    <div class="p-page-recruit__voice-dots" aria-hidden="true"><b>01</b><span class="is-active">02</span><span>03</span></div>
+    <div class="p-page-recruit__voice-dots" role="group" aria-label="先輩社員の紹介を切り替える">
+      <button type="button" aria-label="1人目の先輩社員" aria-pressed="false">01</button>
+      <button type="button" class="is-active" aria-label="2人目の先輩社員" aria-pressed="true">02</button>
+      <button type="button" aria-label="3人目の先輩社員" aria-pressed="false">03</button>
+    </div>
   </section>
 
   <div class="p-page-recruit__entry-group-layer" aria-hidden="true">
