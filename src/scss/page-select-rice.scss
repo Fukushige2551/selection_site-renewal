@@ -72,7 +72,7 @@ $detail: '.p-page-select-detail';
 	}
 
 	#{$detail}__news__wrapDecoration--rice-design {
-		top: -56vw;
+		top: -51vw;
 		right: 1vw;
 		z-index: 4;
 		width: 25.38vw;
@@ -111,26 +111,26 @@ $detail: '.p-page-select-detail';
 		}
 
 		#{$detail}__about__content--rice-and-farmer {
-			top: -15vw;
-			left: 21vw;
+			top: -2vw;
+			left: 0vw;
 			width: 9.35vw;
 		}
 
 		#{$detail}__about__content--rice-plant {
-			top: -7vw;
-			right: 26vw;
-			width: 5.29vw;
+			top: 1vw;
+			right: 6vw;
+			width: 6.29vw;
 		}
 
 		#{$detail}__about__content--rice-bales-and-farmer {
-			top: -12vw;
-			left: 13vw;
-			width: 6.53vw;
+			top: -14vw;
+			left: 3vw;
+			width: 7.53vw;
 		}
 
 		#{$detail}__about__content--sun-drying {
-			top: -93vw;
-			right: 6vw;
+			top: -82vw;
+			right: -2vw;
 			width: 18.26vw;
 		}
 
@@ -144,26 +144,30 @@ $detail: '.p-page-select-detail';
 
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
 	#{$detail}--rice {
+		#{$detail}__news {
+			margin-top: -8vw;
+		}
+
 		#{$detail}__message--shape {
 			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-rice/svg/buyer-message-background-pc.svg');
 		}
 
 		#{$detail}__message--cornerDecoration {
 			right: -7vw;
-			bottom: 2.6vw;
+			bottom: 1vw;
 			width: 14vw;
 		}
 
 		#{$detail}__about__content--rice-and-farmer {
-			top: -5vw;
-			left: -6vw;
+			top: -6.2vw;
+			left: -6.6vw;
 			width: 9.2vw;
 		}
 
 		#{$detail}__about__content--rice-plant {
-			top: -3vw;
-			right: -1vw;
-			width: 5.9vw;
+			top: -6vw;
+			right: 2vw;
+			width: 7vw;
 		}
 
 		#{$detail}__about__content--rice-bales-and-farmer {
@@ -188,6 +192,10 @@ $detail: '.p-page-select-detail';
 
 @media screen and (min-width: 1280px) {
 	#{$detail}--rice {
+		#{$detail}__news {
+			margin-top: -140px;
+		}
+
 		#{$detail}__message--shape {
 			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-rice/svg/buyer-message-background-pc.svg');
 		}
@@ -232,6 +240,15 @@ $detail: '.p-page-select-detail';
 
 @media screen and (max-width: 767px) {
 	#{$detail}--rice {
+		#{$detail}__about__bg {
+			padding-bottom: 27.46vw;
+		}
+
+		#{$detail}__news__bg {
+			margin-top: -10vw;
+			padding-top: 20vw;
+		}
+
 		#{$detail}__about__content--imgSmall {
 			height: 27.5vw;
 			object-fit: cover;

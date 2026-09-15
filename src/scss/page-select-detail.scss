@@ -4,7 +4,8 @@
 	overflow-x: clip;
 
 	&__hero {
-		padding-top: 20vw;
+		padding-top: 6.41vw;
+
 		&__inner {
 			position: relative;
 		}
@@ -136,7 +137,7 @@
 			background-image: var(--select-about-background);
 			background-repeat: repeat;
 			background-position: left top;
-			background-size: 4vw 4vw;
+    background-size: 6.15vw 5.9vw;
 
 			&::before,
 			&::after {
@@ -221,9 +222,9 @@
 				line-height: 8.46vw;
 				text-align: center;
 
-				span {
+				.p-page-select-detail__about__content--titleText small {
 					display: inline-block;
-					font-size: 4.62vw;
+					font-size: 3.5vw;
 					line-height: 8.46vw;
 				}
 			}
@@ -269,15 +270,11 @@
 			&--secondaryImageAnchor,
 			&--secondaryImageWrap,
 			&--sub + picture {
-				margin-bottom: 3vw;
+				margin-bottom: 2vw;
 			}
 
 			&--sub + picture {
 				display: block;
-			}
-
-			&--secondaryImageAnchor &--secondaryImageWrap {
-				margin-bottom: 0;
 			}
 
 			&--secondaryImageAnchor + &--copy,
@@ -462,7 +459,7 @@
 			overflow: hidden;
 
 			font-size: 4.1vw;
-			line-height: 7.69vw;
+			line-height: 1.8;
 
 			-webkit-box-orient: vertical;
 			-webkit-line-clamp: 3;
@@ -640,7 +637,7 @@
 			&__img {
 				&--top {
 					width: 80vw;
-					margin: 0 auto 0;
+					margin: 3vw auto 0;
 				}
 			}
 		}
@@ -718,6 +715,7 @@
 
 					& span {
 						font-size: 2.6vw;
+						line-height: 1.2;
 						transform: translateY(7.5vw);
 					}
 				}
@@ -739,8 +737,8 @@
 					font-size: 2.3vw;
 					margin: 0 0 4vw;
 
-					& span {
-						font-size: 1.8vw;
+					& .p-page-select-detail__about__content--titleText small {
+						font-size: 1.61vw;
 						line-height: 2.5;
 					}
 				}
@@ -769,7 +767,6 @@
 					line-height: 5.69vw;
 					width: 100%;
 					margin: 0 0 4vw;
-					text-align: center;
 				}
 				&--secondaryImageAnchor,
 				&--secondaryImageWrap,
@@ -874,8 +871,36 @@
 // ノートPC
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 	.p-page-select-detail {
+		&__about__content--copy.p-page-select-detail__about__content--copyBeforeGallery {
+			margin-bottom: 5vw;
+		}
+
+		&__about__content--sub {
+			margin-bottom: 2vw;
+			line-height: 4.2vw;
+		}
+
+		&__about__content--secondaryImageAnchor &__about__content--secondaryImageWrap {
+			margin-bottom: 2vw;
+		}
+
+		&__about__content {
+			width: 75vw;
+			margin-inline: auto;
+		}
+
+		&__about__content--imgWrap > picture {
+			flex-basis: calc((100% - 2.6vw) / 2);
+			width: calc((100% - 2.6vw) / 2);
+		}
+
+		&__about__content--imgWrap > .p-page-select-detail__about__content--imgSmall {
+			width: calc((100% - 2.6vw) / 2);
+		}
+
 		&__message {
 			&--text {
+				width: 75vw;
 				margin-inline: auto;
 			}
 
@@ -890,6 +915,46 @@
 				display: none;
 			}
 		}
+	}
+}
+
+// SP・TABのコンテンツ見出しは、FigmaのSP版と同じ固定サイズで階層化する。
+@media screen and (max-width: 1023px) {
+	.p-page-select-detail__about__content--title {
+		font-size: 20px;
+		line-height: 33px;
+	}
+
+	.p-page-select-detail__about__content--title .p-page-select-detail__about__content--location {
+		font-size: 18px;
+		line-height: 33px;
+	}
+
+	.p-page-select-detail__about__content--title .p-page-select-detail__about__content--titleText {
+		font-size: 20px;
+		line-height: 33px;
+	}
+
+	.p-page-select-detail__about__content--title .p-page-select-detail__about__content--titleText small {
+		font-size: 14px;
+		line-height: 33px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.p-page-select-detail__about__content p {
+		width: 86vw;
+	}
+
+	.p-page-select-detail__about__content--copy.p-page-select-detail__about__content--copyBeforeGallery,
+	.p-page-select-detail__about__content--secondaryImageAnchor,
+	.p-page-select-detail__about__content--secondaryImageWrap,
+	.p-page-select-detail__about__content--sub + picture {
+		margin-bottom: 5vw;
+	}
+
+	.p-page-select-detail__about__content--title .p-page-select-detail__about__content--titleText {
+		font-size: 4.62vw;
 	}
 }
 
@@ -1005,9 +1070,9 @@
 			margin-top: -24.51vw;
 
 			&__bg {
-				padding: 29.44vw 0 19.24vw;
+				padding: 28.44vw 0 6.24vw;
 				box-sizing: border-box;
-				background-size: 2.63vw 2.63vw;
+				background-size: 2vw 2vw;
 			}
 
 			&__title--wrap {
@@ -1049,13 +1114,17 @@
 					border-top: 1px dashed #848484;
 				}
 				&--title {
-					margin: 0 0 2vw;
+					margin: 0 0 3vw;
 					font-size: 1.76vw;
 					line-height: 3.22vw;
+					@media screen and (max-width: 1279px) {
+						margin-bottom: 2.4vw;
+						line-height: 2.4vw;
+					}
 					letter-spacing: 0.05em;
 				}
-				&--title span {
-					font-size: 1.37vw;
+				&--title &--titleText small {
+					font-size: 1.23vw;
 					line-height: 3.22vw;
 				}
 				&--image {
@@ -1064,7 +1133,7 @@
 					object-fit: cover;
 				}
 				&--mainImageWrap {
-					margin-bottom: 0.99vw;
+					margin-bottom: 1.89vw;
 				}
 				p {
 					width: 100%;
@@ -1082,9 +1151,11 @@
 					text-align: left;
 				}
 				&--secondaryImageAnchor,
-				&--secondaryImageWrap,
 				&--sub + picture {
 					margin-bottom: 0.99vw;
+				}
+				&--secondaryImageWrap {
+					margin-bottom: 2vw;
 				}
 				&--secondaryImageAnchor &--secondaryImageWrap {
 					margin-bottom: 0;
@@ -1095,7 +1166,7 @@
 					margin-bottom: 1.97vw;
 				}
 				&--copyBeforeGallery {
-					margin-bottom: 1.97vw;
+					margin-bottom: 2vw;
 				}
 				&--imgWrap {
 					margin: 0 auto 2vw;
@@ -1118,13 +1189,13 @@
 
 		&__news {
 			z-index: 3;
-			margin-top: -5.92vw;
+			margin-top: -9.92vw;
 
 			&__bg {
 				margin: 0 auto;
 				padding: 11.1vw 0 calc(19.1146vw + 4.28vw);
 				background-position: center top;
-				background-size: 157.89vw 100%;
+				background-size: 110vw 100%;
 			}
 			&__title {
 				width: auto;
@@ -1177,6 +1248,12 @@
 				line-height: 2.25vw;
 				-webkit-line-clamp: 2;
 				line-clamp: 2;
+				@media screen and (max-width: 1279px) {
+					align-self: flex-start;
+					max-height: 6.75vw;
+					-webkit-line-clamp: 3;
+					line-clamp: 3;
+				}
 			}
 			&__link {
 				margin: 0.82vw 0 0 auto;
@@ -1397,8 +1474,8 @@
 					letter-spacing: 0.05em;
 					text-align: center;
 
-					& span {
-						font-size: 1.8rem;
+					& .p-page-select-detail__about__content--titleText small {
+						font-size: 1.4rem;
 						line-height: 3.3rem;
 					}
 				}
@@ -1422,7 +1499,7 @@
 					object-fit: cover;
 				}
 				&--mainImageWrap {
-					margin-bottom: 12px;
+					margin-bottom: 35px;
 				}
 				p {
 					width: 100%;
@@ -1641,7 +1718,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-	.p-page-select-detail__about__content--title .p-page-select-detail__about__content--locationSp {
+	.p-page-select-detail__about__content--locationResponsive .p-page-select-detail__about__content--locationSp {
 		display: none;
 	}
 
