@@ -43,6 +43,7 @@ if (aboutSlider && aboutTrack) {
 
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const mobile = window.matchMedia('(max-width: 767px)');
+    const desktop = window.matchMedia('(min-width: 1024px)');
     let cycleWidth = 0;
     let position = 0;
     let pointerId = null;
@@ -50,7 +51,7 @@ if (aboutSlider && aboutTrack) {
     let lastTime = 0;
 
     const renderPosition = () => {
-        if (!cycleWidth) return;
+        if (desktop.matches || !cycleWidth) return;
         // 前後に一周期ずつ余裕を残し、中央の複製範囲内で位置を循環させる。
         position = cycleWidth + ((position - cycleWidth) % cycleWidth + cycleWidth) % cycleWidth;
         aboutSlider.scrollLeft = position;
@@ -58,6 +59,13 @@ if (aboutSlider && aboutTrack) {
 
     // 画面幅の変更後も、周期内の相対位置を維持する。
     const measure = () => {
+        // PC画面では元の写真だけを先頭から並べる。
+        if (desktop.matches) {
+            cycleWidth = 0;
+            position = 0;
+            aboutSlider.scrollLeft = 0;
+            return;
+        }
         const phase = cycleWidth ? (position - cycleWidth) / cycleWidth : 0;
         const items = aboutTrack.children;
         cycleWidth = items[cycleCount].getBoundingClientRect().left - items[0].getBoundingClientRect().left;
@@ -76,7 +84,7 @@ if (aboutSlider && aboutTrack) {
 
     // ドラッグ中は自動移動を止め、指やマウスの移動量を反映する。
     aboutSlider.addEventListener('pointerdown', (event) => {
-        if (!event.isPrimary || event.button !== 0 || pointerId !== null) return;
+        if (desktop.matches || !event.isPrimary || event.button !== 0 || pointerId !== null) return;
         pointerId = event.pointerId;
         lastX = event.clientX;
         aboutSlider.classList.add('is-dragging');
@@ -110,7 +118,7 @@ if (aboutSlider && aboutTrack) {
         stopDrag();
         measure();
     });
-    new ResizeObserver(measure).observe(aboutSlider);
+    if (typeof ResizeObserver === 'function') new ResizeObserver(measure).observe(aboutSlider);
     measure();
     requestAnimationFrame(tick);
 }
