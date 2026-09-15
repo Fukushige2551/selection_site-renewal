@@ -22,8 +22,7 @@
      * 背景
      */
     &__bar {
-        // ロゴの角の下地も白くし、緑色の縁が透けないようにする。
-        background: linear-gradient(to right, #fff var(--logo-width), #00a784 var(--logo-width));
+        background: #00a784;
         border-radius: 0 0 24px 24px;
         flex-wrap: wrap;
         align-items: center;
@@ -32,10 +31,25 @@
         position: relative;
     }
 
+    // 上部の白い背景は高さを固定し、ロゴ側へ横方向に戻す。
+    &__bar::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: var(--logo-width);
+        height: 60px;
+        border-radius: 0 0 0 24px;
+        background: #fff;
+        content: "";
+        pointer-events: none;
+        transition: width .45s cubic-bezier(.4, 0, .2, 1), border-radius .45s;
+    }
+
     /**
      * ロゴ
      */
     &__logo {
+        position: relative;
         background: #fff;
         border-radius: 0 0 0 24px;
         flex: 0 0 var(--logo-width);
@@ -62,6 +76,7 @@
      * メニュー開閉ボタン
      */
     &__toggle {
+        position: relative;
         cursor: pointer;
         background: 0 0;
         border: 0;
@@ -150,7 +165,9 @@
         background: #fff;
     }
 
-    & a:focus, & button:focus {
+    & a:focus, & button:focus { outline: none; }
+
+    &.is-keyboard-focus a:focus, &.is-keyboard-focus button:focus {
         outline-offset: -4px;
         outline: 3px solid #ffed49;
     }
@@ -159,8 +176,9 @@
      * スマートフォン・タブレットのメニュー展開時
      */
     @media (max-width: 1023px) {
-        &.is-open &__bar {
-            background: linear-gradient(#fff 60px, #00a784 60px);
+        &.is-open &__bar::before {
+            width: 100%;
+            border-radius: 0;
         }
         &.is-open &__logo {
             border-radius: 0;
@@ -168,6 +186,10 @@
         &.is-open &__toggle span {
             background: #00a784;
         }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &__bar::before, &__toggle span { transition: none; }
     }
     /**
      * パソコン（1024px以上）
@@ -182,6 +204,7 @@
             flex-wrap: nowrap;
             height: 72px;
         }
+        &__bar::before { height: 72px; }
         &__logo {
             height: 72px;
         }
@@ -239,6 +262,7 @@
             flex-wrap: nowrap;
             height: 85px;
         }
+        &__bar::before { height: 85px; border-radius: 0 0 0 30px; }
         &__logo {
             border-radius: 0 0 0 30px;
             height: 85px;
