@@ -1597,6 +1597,15 @@
   }
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .p-page-recruit__voices {
+    // 装飾が折り返された社員情報に重ならないよう、下部に余白を確保する。
+    height: auto;
+    min-height: 890px;
+    padding-bottom: 240px;
+  }
+}
+
 @media (min-width: 1024px) {
   .p-page-recruit {
     --desktop-card-offset: calc((100% - 1024px) / 2);
