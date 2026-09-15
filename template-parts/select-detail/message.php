@@ -41,7 +41,12 @@ $message_background_decorations = array_values(array_filter(
                 </div>
                 <?php foreach (($message['foreground_decorations'] ?? []) as $decoration) : ?>
                     <?php if (!empty($decoration['key']) && !empty($decoration['src'])) : ?>
-                        <img class="<?php echo esc_attr($block_class . '__message--foregroundDecoration ' . $block_class . '__message--foregroundDecoration-' . sanitize_html_class($decoration['key'])); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt'] ?? ''); ?>">
+                        <?php if (!empty($decoration['src_sp'])) : ?><picture><?php endif; ?>
+                            <?php if (!empty($decoration['src_sp'])) : ?>
+                                <source media="(max-width: 767px)" srcset="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src_sp'])); ?>">
+                            <?php endif; ?>
+                            <img class="<?php echo esc_attr($block_class . '__message--foregroundDecoration ' . $block_class . '__message--foregroundDecoration-' . sanitize_html_class($decoration['key'])); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt'] ?? ''); ?>">
+                        <?php if (!empty($decoration['src_sp'])) : ?></picture><?php endif; ?>
                     <?php endif; ?>
                 <?php endforeach; ?>
                 <?php if (!empty($message['corner_decoration'])) : ?>

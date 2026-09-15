@@ -47,7 +47,9 @@ function foods_get_select_detail_configs() {
                 'decorations' => [],
                 'sections' => [
                     [
-                        'title' => '群馬発祥。<br>”感動農業”を信念に<br>品質にこだわった野菜をお届け<br>野菜くらぶ',
+                        'location' => '群馬発祥。<br>”感動農業”を信念に<br>品質にこだわった野菜をお届け',
+                        'location_pc' => '群馬発祥。”感動農業”を信念に品質にこだわった野菜をお届け',
+                        'title' => '野菜くらぶ',
                         'main_image' => [
                             'src' => 'vegetable-club.png',
                             'alt' => '野菜くらぶの社屋',
@@ -134,6 +136,12 @@ function foods_get_select_detail_configs() {
                                 'alt' => '',
                                 'placement' => 'gallery_after',
                             ],
+                            [
+                                'key' => 'mikan-pile',
+                                'src' => 'svg/mikan-pile.svg',
+                                'alt' => '',
+                                'placement' => 'secondary_image',
+                            ],
                         ],
                     ],
                 ],
@@ -172,7 +180,8 @@ function foods_get_select_detail_configs() {
                 'parent_url' => '/select/',
             ],
             'hero' => [
-                'lead' => '料理の味を支える、なくてはならない存在。<br>原材料や製法にこだわった商品を中心に、<br>毎日の料理が楽しくなる食品を厳選しています。',
+                'lead' => '料理の味を支える、<br>なくてはならない存在。<br>原材料や製法にこだわった商品を中心に、<br>毎日の料理が楽しくなる<br>食品を厳選しています。',
+                'lead_pc' => '料理の味を支える、なくてはならない存在。<br>原材料や製法にこだわった商品を中心に、<br>毎日の料理が楽しくなる食品を厳選しています。',
                 'image' => '加工.svg',
                 'image_alt' => '加工食品をつくる現場',
             ],
@@ -201,8 +210,8 @@ function foods_get_select_detail_configs() {
                         'text_blocks' => [
                             '世界各国のコーヒー農園から、厳選を重ねて品質の高いアラビカ種の生豆を仕入れています。生産地や豆の状態を丁寧に見極めながら、確かな品質の原料を選び抜いています。',
                         ],
-                        'sub_title' => '焙煎マイスターが仕上げる<br>鮮度にこだわった自家焙煎コーヒー',
-                        'secondary_image' => ['src' => '撮影予定1.png', 'alt' => 'セレクションオリジナルコーヒー'],
+                        'sub_title' => '焙煎マイスターが仕上げる<br class="u-foods-coffee-break-sp-tab">鮮度にこだわった自家焙煎コーヒー',
+                        'secondary_image' => ['src' => 'house-roasted-coffee.png', 'alt' => 'セレクションオリジナルコーヒー'],
                         'secondary_text_blocks' => [
                             'コーヒーは鮮度が命！マイスター資格をもつ焙煎師が、気温や豆の状態に合わせて、最適な火入れで香り高く焙煎。パッキングまでの全行程を、自社で一括管理することで、安全で高品質なコーヒーを、新鮮な状態でお届けしています。「毎日飲むからこそ本当に美味しいコーヒーを」「１杯のコーヒーが生活を彩る名脇役であるために」そんな願いを込めた、自家焙煎専門店イデカフェのこだわりの１杯をお楽しみ下さい。',
                         ],
@@ -220,13 +229,14 @@ function foods_get_select_detail_configs() {
                         ],
                     ],
                     [
-                        'title' => '大分県日田<br>川津食品',
+                        'location' => '大分県日田',
+                        'title' => '川津食品',
                         'main_image' => ['src' => '川津スタッフ.png', 'alt' => '川津食品のスタッフ'],
                         'text_blocks' => [
-                            '川津食品は、柚子こしょうを世に広めた先駆けとして知られています。今から60数年前――「わさびのように、刺身に合う新しい薬味は作れないだろうか？」そのひとつの問いから、柚子・唐辛子・塩を絶妙に掛け合わせた、新しい薬味「柚子こしょう」が誕生しました。',
+                            '川津食品は、柚子こしょうを世に広めた先駆けとして知られています。' . "\n" . '今から60数年前――「わさびのように、刺身に合う新しい薬味は作れないだろうか？」そのひとつの問いから、柚子・唐辛子・塩を絶妙に掛け合わせた、新しい薬味「柚子こしょう」が誕生しました。',
                         ],
-                        'sub_title' => '柚子こしょうを広めた先駆け。<br>川津食品が守り続ける本物の味',
-                        'secondary_image' => ['src' => '撮影予定2.png', 'alt' => '川津食品の柚子こしょう'],
+                        'sub_title' => '柚子こしょうを広めた先駆け。<br class="u-foods-yuzu-break-sp-tab">川津食品が守り続ける本物の味',
+                        'secondary_image' => ['src' => 'kawatsu-yuzu-kosho.png', 'alt' => '川津食品の柚子こしょう'],
                         'secondary_text_blocks' => [
                             '素材はシンプル。だからこそ、ごまかしはききません。香り高い柚子の風味、唐辛子の切れ味、塩のうまみ。そのすべてが調和した、凛とした味わい。',
                             '誕生当時の製法は、今もなお変わることなく受け継がれています。',
@@ -253,6 +263,157 @@ function foods_get_select_detail_configs() {
                 'background_pc' => '@theme/img/page/page-select-detail/meat_news_bgPC.png',
                 'wrap_decorations' => [
                     ['key' => 'yuzu-kosho', 'src' => '柚子胡椒@2x 2.svg', 'alt' => ''],
+                ],
+            ],
+        ],
+        'shop' => [
+            'page_slug' => 'shop',
+            'modifier' => 'shop',
+            'title' => 'お店のこだわり',
+            'asset_base' => 'img/page/page-select-shop',
+            'theme' => [
+                'message_background' => '#e7f9f5',
+            ],
+            'breadcrumb' => [
+                'parent_label' => 'セレクションのこだわり',
+                'parent_url' => '/select/',
+            ],
+            'hero' => [
+                'lead' => '毎日の食卓を、<br>もっと身近に、もっと豊かに。',
+                'lead_pc' => '毎日の食卓を、<br>もっと身近に、もっと豊かに。',
+                'image' => '販売スタッフ.svg',
+                'image_alt' => '売場で商品を並べる販売スタッフ',
+            ],
+            'message' => [
+                'bubble_sp' => '吹き出しsp.svg',
+                'bubble_pc' => '吹き出しpc.svg',
+                'buyer_image' => '@theme/img/page/page-select-detail/svg/img_message-buyer.svg',
+                'text' => '食事は、毎日の暮らしそのものです。<br>忙しい日の晩ごはん。家族で囲む夕食。<br>休日のちょっとしたごちそう。<br>「今日は何を食べようか」と<br>考える時間も、<br>食卓を囲む時間も、<br>私たちの大切な日常です。<br>私たち セレクション は、<br>地域の皆さまの毎日の食卓を支える<br>“街の台所”でありたいと考えています。<br>ただ商品を並べるだけではなく、<br>今日の食卓が少し楽しくなること。<br>忙しい毎日の中でも、<br>「ここに来れば何とかなる」と思って<br>いただけること。<br>そして、毎日安心して利用できる<br>お店であること。<br>そのために私たちは、<br>地域に根差した商品、<br>体にやさしい商品、<br>食卓が楽しくなる商品を、<br>一つひとつ丁寧に選び続けています。<br>昔ながらの八百屋さん、魚屋さん、<br>肉屋さん、<br>惣菜屋さんのように、旬や美味しさ、<br>人の温かさを感じられるお店。<br>毎日ふらっと立ち寄れて、<br>自然と今夜のおかずが決まる。<br>セレクションは、<br>そんなお店を目指しています。',
+                'text_pc' => '食事は、毎日の暮らしそのものです。<br>忙しい日の晩ごはん。家族で囲む夕食。<br>休日のちょっとしたごちそう。<br>「今日は何を食べようか」と考える時間も、食卓を囲む時間も、<br>私たちの大切な日常です。<br>私たち セレクション は、地域の皆さまの毎日の食卓を支える<br>“街の台所”でありたいと考えています。<br>ただ商品を並べるだけではなく、今日の食卓が少し楽しくなること。<br>忙しい毎日の中でも、「ここに来れば何とかなる」と思っていただけること。<br>そして、毎日安心して利用できるお店であること。<br>そのために私たちは、地域に根差した商品、体にやさしい商品、<br>食卓が楽しくなる商品を、一つひとつ丁寧に選び続けています。<br>昔ながらの八百屋さん、魚屋さん、肉屋さん、惣菜屋さんのように、旬や美味しさ、<br>人の温かさを感じられるお店。<br>毎日ふらっと立ち寄れて、自然と今夜のおかずが決まる。<br>セレクションは、そんなお店を目指しています。',
+                'foreground_decorations' => [
+                    ['key' => 'stocking-staff', 'src' => '陳列するスタッフ.svg', 'src_sp' => '陳列するスタッフsp.svg', 'alt' => '商品を陳列するスタッフ'],
+                    ['key' => 'shopping-cart', 'src' => 'ショッピングカート.svg', 'alt' => '商品を載せたショッピングカート'],
+                ],
+            ],
+            'about' => [
+                'title' => 'こだわりの現場から',
+                'title_background' => '@theme/img/page/page-select-detail/svg/meat_about_title.svg',
+                'background' => '@theme/img/page/page-select-detail/brick.png',
+                'wave_sp_top' => '@theme/img/page/page-select-detail/svg/upper_wave.svg',
+                'wave_sp_bottom' => '@theme/img/page/page-select-detail/svg/about-wave-bottom-sp.svg',
+                'wave_pc_top' => '@theme/img/page/page-select-detail/svg/meat_about_wave-top-pc.svg',
+                'wave_pc_bottom' => '@theme/img/page/page-select-detail/svg/meat_about_wave-bottom-pc.svg',
+                'decorations' => [],
+                'sections' => [
+                    [
+                        'title' => '地域に根差したお店づくり',
+                        'text_pc' => "セレクションが大切にしているのは、「地域の暮らしに合ったお店」であることです。\n同じスーパーマーケットでも、地域によって求められるものは大きく違います。\nファミリーが多い地域。高齢のお客様が多い地域。働く女性が多い地域。単身世帯が多い地域。\nだから私たちは、全店一律ではなく、その地域のお客様の暮らしに合わせた売場づくりを大切にしています。\n青果売場では、地元野菜や旬の野菜を積極的に取り扱い、「今美味しいもの」を提案しています。\n水産売場では、近海鮮魚や旬の魚を中心に、焼くだけ・煮るだけで食べられる商品提案を強化しています。\n食肉売場では、毎日の使いやすさを重視し、平日は時短、週末はごちそうといった生活シーンに合わせた売場づくりを行っています。\nまた、惣菜売場では、「今日の夕飯が決まる」ことを重視しています。\n仕事帰りでも、忙しい日でも、家庭で作るような温かみのあるおかずを気軽に選べる。\nそんな売場を目指しています。",
+                        'main_image' => ['src' => 'ちょいセレ.png', 'alt' => '地域貢献活動「ちょいセレ」の案内'],
+                        'text_blocks' => [
+                            'セレクションが大切にしているのは、「地域の暮らしに合ったお店」であることです。',
+                            '同じスーパーマーケットでも、地域によって求められるものは大きく違います。' . "\n" . 'ファミリーが多い地域。' . "\n" . '高齢のお客様が多い地域。' . "\n" . '働く女性が多い地域。' . "\n" . '単身世帯が多い地域。',
+                            'だから私たちは、全店一律ではなく、その地域のお客様の暮らしに合わせた売場づくりを大切にしています。',
+                            '青果売場では、地元野菜や旬の野菜を積極的に取り扱い、「今美味しいもの」を提案しています。' . "\n" . '水産売場では、近海鮮魚や旬の魚を中心に、焼くだけ・煮るだけで食べられる商品提案を強化しています。' . "\n" . '食肉売場では、毎日の使いやすさを重視し、平日は時短、週末はごちそうといった生活シーンに合わせた売場づくりを行っています。',
+                            'また、惣菜売場では、「今日の夕飯が決まる」ことを重視しています。' . "\n" . '仕事帰りでも、忙しい日でも、家庭で作るような温かみのあるおかずを気軽に選べる。' . "\n" . 'そんな売場を目指しています。',
+                        ],
+                        'secondary_image' => ['src' => 'product-display.png', 'alt' => '売場で商品を陳列するスタッフ'],
+                        'secondary_text_pc' => "私たちは、昔ながらの商店街のような温かさを大切にしています。\n「今日はこれがおすすめですよ」\n「今が旬ですよ」\n「この食べ方がおいしいですよ」\nそんな会話が自然に生まれるお店には、単なる安さだけではない魅力があります。\n旬を知っていること。食べ方を知っていること。地域の食文化を知っていること。\nそして、お客様の暮らしを知っていること。\nセレクションは、地域のお客様の毎日の食卓に寄り添いながら、“地域の台所”として愛されるお店づくりを続けています。",
+                        'secondary_text_blocks' => [
+                            '私たちは、昔ながらの商店街のような温かさを大切にしています。',
+                            '「今日はこれがおすすめですよ」' . "\n" . '「今が旬ですよ」' . "\n" . '「この食べ方がおいしいですよ」',
+                            'そんな会話が自然に生まれるお店には、単なる安さだけではない魅力があります。',
+                            '旬を知っていること。' . "\n" . '食べ方を知っていること。' . "\n" . '地域の食文化を知っていること。' . "\n" . 'そして、お客様の暮らしを知っていること。',
+                            'セレクションは、地域のお客様の毎日の食卓に寄り添いながら、“地域の台所”として愛されるお店づくりを続けています。',
+                        ],
+                        'gallery' => [],
+                    ],
+                    [
+                        'title' => '「より良いものを選ぶ」という考え方',
+                        'text_pc' => "私たちの体は、毎日の食事からできています。\nどんな食材を選ぶか。\nどんな調味料を使うか。\nどんなものを毎日食べ続けるか。\nそれは、未来の健康にもつながっています。\nだからこそセレクションでは、「食べるもの」をとても大切に考えています。\n私たちが目指しているのは、“特別な時だけの高級食材”ではなく、毎日の暮らしの中で安心して食べ続けられる商品です。\nたとえば食肉では、飼育方法や飼料に配慮した商品、必要以上の投薬を抑えた畜産物など、安心して食べられる商品選びを大切にしています。\n加工食品でも、必要以上の添加物に頼らず、素材本来の味を感じられる商品を積極的に取り扱っています。\nまた、野菜や果物でも、見た目だけではなく、味や鮮度、生産背景を重視しています。\n旬のものを旬の時期に食べることは、美味しさだけではなく、自然な食生活にもつながります。",
+                        'gallery_before_secondary_copy' => true,
+                        'main_image' => ['src' => '彩商品.png', 'alt' => '食卓を彩る生鮮食品'],
+                        'text_blocks' => [
+                            '私たちの体は、毎日の食事からできています。' . "\n" . 'どんな食材を選ぶか。' . "\n" . 'どんな調味料を使うか。' . "\n" . 'どんなものを毎日食べ続けるか。' . "\n" . 'それは、未来の健康にもつながっています。',
+                            'だからこそセレクションでは、「食べるもの」をとても大切に考えています。' . "\n" . '私たちが目指しているのは、“特別な時だけの高級食材”ではなく、毎日の暮らしの中で安心して食べ続けられる商品です。',
+                            'たとえば食肉では、飼育方法や飼料に配慮した商品、必要以上の投薬を抑えた畜産物など、安心して食べられる商品選びを大切にしています。' . "\n" . '加工食品でも、必要以上の添加物に頼らず、素材本来の味を感じられる商品を積極的に取り扱っています。',
+                            'また、野菜や果物でも、見た目だけではなく、味や鮮度、生産背景を重視しています。' . "\n" . '旬のものを旬の時期に食べることは、美味しさだけではなく、自然な食生活にもつながります。',
+                        ],
+                        'secondary_image' => ['src' => '検品するスタッフ.png', 'alt' => '入荷した野菜を検品するスタッフ'],
+                        'secondary_text_pc' => "しかし私たちは、「良い商品だから高くて当然」とは考えていません。\n近年、食品価格や光熱費など、暮らしを取り巻く環境は大きく変化しています。\nだからこそ、“良いものを毎日の価格で届けること”が大切だと考えています。\n「美味しいけれど高すぎる」\n「安いけれど不安がある」\nそのどちらでもなく、品質・価格・美味しさのバランスを大切にした商品選びを行っています。\n毎日食べるものだからこそ、安心して選べること。\n毎日使うものだからこそ、無理なく続けられること。\nセレクションは、体にも家計にもやさしい商品を、これからも丁寧に選び続けていきます。",
+                        'secondary_text_blocks' => [
+                            'しかし私たちは、「良い商品だから高くて当然」とは考えていません。' . "\n" . '近年、食品価格や光熱費など、暮らしを取り巻く環境は大きく変化しています。' . "\n" . 'だからこそ、“良いものを毎日の価格で届けること”が大切だと考えています。',
+                            '「美味しいけれど高すぎる」' . "\n" . '「安いけれど不安がある」' . "\n" . 'そのどちらでもなく、品質・価格・美味しさのバランスを大切にした商品選びを行っています。',
+                            '毎日食べるものだからこそ、安心して選べること。' . "\n" . '毎日使うものだからこそ、無理なく続けられること。',
+                            'セレクションは、体にも家計にもやさしい商品を、これからも丁寧に選び続けていきます。',
+                        ],
+                        'gallery' => [
+                            ['src' => 'お肉のカット.png', 'alt' => '店内で肉をカットする様子'],
+                            ['src' => 'おかず.png', 'alt' => '食卓に並ぶおかず'],
+                            ['src' => 'サラダ.png', 'alt' => '新鮮なサラダ野菜'],
+                        ],
+                        'gallery_variant' => 'three',
+                        'decorations' => [
+                            ['key' => 'staff-and-products', 'src' => 'スタッフと商品.svg', 'alt' => '商品を案内するスタッフ', 'placement' => 'gallery_before'],
+                        ],
+                    ],
+                    [
+                        'title' => '食卓が楽しくなる提案',
+                        'text_pc' => "食卓には、人を笑顔にする力があります。\n美味しいものを食べた時。\n新しい味に出会った時。\n家族や友人と楽しい時間を過ごした時。\n食卓は、日々の暮らしを豊かにしてくれます。\nセレクションでは、「毎日の買い物の中に、小さな楽しさや発見を届けること」を大切にしています。\nそのため、一般的なスーパーには少ない、“ちょっと珍しい商品”や“専門店のような楽しさ”を感じられる商品を積極的に取り扱っています。\n地元でしか出回らない少量生産の商品。\n専門店でしか見かけないようなお酒。\nこだわりの調味料。\n季節限定の商品。\n地域色のある食材。\n輸入食品や話題の商品。\n「こんな商品があったんだ」\n「食べてみたい」\n「今日はこれを試してみよう」\nそんな小さな発見が、毎日の買い物を少し楽しくしてくれると私たちは考えています。\nまた、店内や加工センターで製造する惣菜や生鮮食品にも力を入れています。",
+                        'gallery_before_secondary_copy' => true,
+                        'main_image' => ['src' => '食卓の様子.png', 'alt' => '家族で食卓を囲む様子'],
+                        'text_blocks' => [
+                            '食卓には、人を笑顔にする力があります。' . "\n" . '美味しいものを食べた時。' . "\n" . '新しい味に出会った時。' . "\n" . '家族や友人と楽しい時間を過ごした時。' . "\n" . '食卓は、日々の暮らしを豊かにしてくれます。',
+                            'セレクションでは、「毎日の買い物の中に、小さな楽しさや発見を届けること」を大切にしています。',
+                            'そのため、一般的なスーパーには少ない、“ちょっと珍しい商品”や“専門店のような楽しさ”を感じられる商品を積極的に取り扱っています。' . "\n" . '地元でしか出回らない少量生産の商品。' . "\n" . '専門店でしか見かけないようなお酒。' . "\n" . 'こだわりの調味料。' . "\n" . '季節限定の商品。' . "\n" . '地域色のある食材。' . "\n" . '輸入食品や話題の商品。',
+                            '「こんな商品があったんだ」' . "\n" . '「食べてみたい」' . "\n" . '「今日はこれを試してみよう」' . "\n" . 'そんな小さな発見が、毎日の買い物を少し楽しくしてくれると私たちは考えています。',
+                            'また、店内や加工センターで製造する惣菜や生鮮食品にも力を入れています。',
+                        ],
+                        'secondary_image' => ['src' => '惣菜撮影予定.png', 'alt' => '店内で販売する惣菜'],
+                        'secondary_text_pc' => "忙しい日でも、美味しいものを手軽に食べたい。\n外食ほど高くなく、家庭では作りづらい料理を楽しみたい。\nそんなお客様の声に応えられるよう、出来立て感や素材感を大切にした商品づくりを行っています。\n魚屋だからできる焼魚。\n肉屋だからできる肉惣菜。\nお酒に合うおつまみ。\n季節感のあるおかず。\n少人数でも使いやすいおかずセット。\n単に「便利」なだけではなく、「また食べたい」と思っていただける味づくりを目指しています。\nさらに、売場では季節感も大切にしています。\n春は山菜。\n夏は涼味やスタミナ。\n秋は旬の味覚。\n冬は鍋やごちそう。\n季節ごとの美味しさや楽しさを感じられる売場づくりを通して、毎日の食卓をもっと豊かにしていきたいと考えています。",
+                        'secondary_text_blocks' => [
+                            '忙しい日でも、美味しいものを手軽に食べたい。' . "\n" . '外食ほど高くなく、家庭では作りづらい料理を楽しみたい。' . "\n" . 'そんなお客様の声に応えられるよう、出来立て感や素材感を大切にした商品づくりを行っています。',
+                            '魚屋だからできる焼魚。' . "\n" . '肉屋だからできる肉惣菜。' . "\n" . 'お酒に合うおつまみ。' . "\n" . '季節感のあるおかず。' . "\n" . '少人数でも使いやすいおかずセット。',
+                            '単に「便利」なだけではなく、「また食べたい」と思っていただける味づくりを目指しています。',
+                            'さらに、売場では季節感も大切にしています。' . "\n" . '春は山菜。' . "\n" . '夏は涼味やスタミナ。' . "\n" . '秋は旬の味覚。' . "\n" . '冬は鍋やごちそう。',
+                            '季節ごとの美味しさや楽しさを感じられる売場づくりを通して、毎日の食卓をもっと豊かにしていきたいと考えています。',
+                        ],
+                        'gallery' => [
+                            ['src' => '店内撮影予定1.png', 'alt' => '店内で肉を加工する様子'],
+                            ['src' => '店内撮影予定2.png', 'alt' => '店内で販売する加工肉'],
+                        ],
+                        'decorations' => [
+                            ['key' => 'shopping-couple', 'src' => '買い物中の夫婦.svg', 'alt' => '店内で買い物をする夫婦', 'placement' => 'content'],
+                        ],
+                    ],
+                    [
+                        'title' => 'これからも、地域の食卓のそばに。',
+                        'text_pc' => "セレクション は、毎日の食卓を支える存在として、地域の皆さまの暮らしに寄り添い続けます。\n必要な時に、必要なものがあり、\n「今日のごはん、どうしよう」が解決できる。\n忙しい日も、特別な日も、食卓を支えられる。\n私たちは、皆さまの暮らしの中で、“もう一つの冷蔵庫”“地域のパントリー”のような存在でありたいと考えています。\n毎日の食卓に、美味しさと安心と楽しさを。\nこれからもセレクションは、「より良いものを選ぶ」という想いを大切にしながら、地域の皆さまに愛されるお店づくりを続けてまいります。",
+                        'main_image' => ['src' => '食卓のごはん.png', 'alt' => '食卓に並ぶ料理'],
+                        'text_blocks' => [
+                            'セレクションは、毎日の食卓を支える存在として、地域の皆さまの暮らしに寄り添い続けます。',
+                            '必要な時に、必要なものがあり、「今日のごはん、どうしよう」が解決できる。忙しい日も、特別な日も、食卓を支えられる。',
+                            '私たちは、皆さまの暮らしの中で、“もう一つの冷蔵庫”“地域のパントリー”のような存在でありたいと考えています。',
+                            '毎日の食卓に、美味しさと安心と楽しさを。',
+                            'これからもセレクションは、「より良いものを選ぶ」という想いを大切にしながら、地域の皆さまに愛されるお店づくりを続けてまいります。',
+                        ],
+                        'gallery' => [],
+                        'decorations' => [
+                            ['key' => 'cart-and-customer', 'src' => 'ショッピングカートとお客さん.svg', 'alt' => '店内で買い物をするお客様', 'placement' => 'content'],
+                        ],
+                    ],
+                ],
+            ],
+            'news' => [
+                'taxonomy' => 'news_commitment',
+                'term' => 'shop',
+                'title' => 'お店のこだわりを<br>もっと見る',
+                'archive_label' => 'お店のこだわり一覧',
+                'background_sp' => '@theme/img/page/page-select-detail/meat_news_bgSP.png',
+                'background_pc' => '@theme/img/page/page-select-detail/meat_news_bgPC.png',
+                'wrap_decorations' => [
+                    ['key' => 'store', 'src' => 'お店 2.svg', 'alt' => 'セレクションの店舗'],
+                    ['key' => 'cart-and-customer-sp', 'src' => 'ショッピングカートとお客さん.svg', 'alt' => '店内で買い物をするお客様'],
+                    ['key' => 'shopping-couple-sp', 'src' => '買い物中の夫婦.svg', 'alt' => '店内で買い物をする夫婦'],
                 ],
             ],
         ],
@@ -295,7 +456,8 @@ function foods_get_select_detail_configs() {
                 ],
                 'sections' => [
                     [
-                        'title' => '美味北総豚<br><span>代表生産者</span> 井上農場',
+                        'location' => '美味北総豚',
+                        'title' => '<small>代表生産者</small> 井上農場',
                         'main_image' => ['src' => 'meat_about_img1.png', 'webp' => 'webp/meat_about_img1.webp', 'alt' => '美味北総豚を育てる井上農場'],
                         'text' => '豚肉の味は、品種と飼育環境が大きく影響されるといわれています。「美味北総豚」は千葉県九十九里の緑豊かで温暖な気候の北総大地の 中で日々の健康管理、飼料や飼育環境に目を配りストレスを極力かけず大切に育てられています。',
                         'sub_title' => '豊かな自然と丁寧な飼育から生まれる千葉が誇るブランド豚',
@@ -311,7 +473,8 @@ function foods_get_select_detail_configs() {
                         ],
                     ],
                     [
-                        'title' => '毎日たべらるリーズナブルな国産牛肉<br>かみむらファーム かみむら牛',
+                        'location' => '毎日たべらるリーズナブルな国産牛肉',
+                        'title' => 'かみむらファーム かみむら牛',
                         'main_image' => ['src' => 'meat_about_img5.png', 'webp' => 'webp/meat_about_img5.webp', 'alt' => 'かみむら牛'],
                         'text' => 'かみむらファームでは、牛のエサづくりから製造・加工まで一貫して行い、ニーズに応える技術を集結。『一頭一頭、完璧なトレーサビリティ』を掲げ、カミチクファームの飼料用米・イネを発酵飼料に加工して肥育する「玄米黒牛」など、あっさり口どけの良い脂を目指すオリジナルブランド牛を展開。安全・安心で毎日食卓へ届けています。',
                         'gallery' => [
@@ -325,9 +488,14 @@ function foods_get_select_detail_configs() {
                         ],
                     ],
                     [
-                        'title' => '素材だけで、ここまで旨い <br>The Better Table ホワイトスモーク',
+                        'location' => '素材だけで、ここまで旨い',
+                        'title' => 'The Better Table ホワイトスモーク',
                         'main_image' => ['src' => 'meat_about_img8.png', 'webp' => 'webp/meat_about_img8.webp', 'alt' => 'The Better Table ホワイトスモーク'],
-                        'text' => 'かみむらファームでは、牛のエサづくりから製造・加工まで一貫して行い、ニーズに応える技術を集結。『一頭一頭、完璧なトレーサビリティ』を掲げ、カミチクファームの飼料用米・イネを発酵飼料に加工して肥育する「玄米黒牛」など、あっさり口どけの良い脂を目指すオリジナルブランド牛を展開。安全・安心で毎日食卓へ届けています。',
+                        'text_blocks' => [
+                            'The Better Table ホワイトスモークが大切にする価値は、Tasty（美味しさ）・Healthy（健康を意識）・Natural（自然）。',
+                            '原材料は豚肉・塩・砂糖・香辛料のみ。余計なものを足さず、オリジナルのスモーク機でじっくり燻すことで、肉本来の力強い旨味と香りを最大限に引き出しました。',
+                            '噛むほどに広がる豊かな燻香と、しっかりとした肉感をお楽しみいただけます',
+                        ],
                         'gallery' => [
                             ['src' => 'meat_about_img9.png', 'webp' => 'webp/meat_about_img9.webp', 'alt' => 'ホワイトスモークの商品'],
                             ['src' => 'meat_about_img10.png', 'webp' => 'webp/meat_about_img10.webp', 'alt' => 'ホワイトスモークの商品'],
@@ -343,7 +511,7 @@ function foods_get_select_detail_configs() {
             'news' => [
                 'taxonomy' => 'news_commitment',
                 'term' => 'meat',
-                'title' => 'お肉のこだわりを<br>もっと見る',
+                'title' => 'お肉のこだわりをもっと見る',
                 'archive_label' => 'お肉のこだわり一覧はこちら',
                 'decoration' => 'svg/meat_about_deco6.svg',
                 'background_sp' => '@theme/img/page/page-select-detail/meat_news_bgSP.png',
@@ -394,6 +562,7 @@ function foods_get_select_detail_configs() {
                             '「自然の力で、自然のままに」たけやまの圃場を訪れた方は、一帯に草が生い茂る水田の様子に驚くかもしれません。たけやまの水田からは、生育ムラがなく健康な稲が育ち、水が循環するため、稲が雑草の影響を受けることもありません。水田の除草も最低限に抑え、切磋琢磨するいのちの営みのなかでこそ、お米本来の美味しさが引き出されると考えるからです。',
                             'こうした取り組みが、安心・安全なお米づくりの基礎を支えています。',
                         ],
+                        'sub_title' => '美味しいお米を作るために<br>多大な努力と試行錯誤を重ねて',
                         'secondary_image' => ['src' => 'rice-farming.png', 'alt' => '稲の生育を見守る生産者'],
                         'secondary_text_blocks' => [
                             'たけやまが誇る「房の黄金米」をはじめ、ふさこがね・ふさおとめ・こしひかりなど、多彩な品種を栽培し、それぞれの特長である甘み・旨み・もっちり食感を引き出す工程に徹底的にこだわっています。',
@@ -480,17 +649,19 @@ function foods_get_select_detail_configs() {
                 'wave_pc_bottom' => '@theme/img/page/page-select-detail/svg/meat_about_wave-bottom-pc.svg',
                 'decorations' => [],
                 'sections' => [[
-                    'title' => '店内で生地から。焼きたてを、<br class="u-deli-title-break-sp-tab">そのまま食卓へ<br>セレクションオリジナルピザ',
-                    'main_image' => ['src' => '@theme/img/page/page-select-rice/rice-cooked.png', 'alt' => '炊きたての房の黄金米'],
+                    'location' => '店内で生地から。焼きたてを、<br class="u-deli-title-break-sp-tab">そのまま食卓へ',
+                    'location_pc' => '店内で生地から。焼きたてを、そのまま食卓へ',
+                    'title' => 'セレクションオリジナルピザ',
+                    'main_image' => ['src' => '@theme/img/page/page-select-deli/original-pizza.png', 'alt' => 'セレクションオリジナルピザ'],
                     'text_blocks' => [
                         '店内で生地から仕込み、毎日焼き上げるセレクションオリジナルピザ。',
                         '一枚ずつ直径30cmになるように伸ばし、400℃のピザ窯で高温・短時間で焼き上げることで、香ばしい焼き目と中はもちもちのナポリ風食感に仕上げています。種類は10種類以上。定番から気分で選べるラインアップで、家族の食卓にも週末のごちそうにもぴったりです。',
                     ],
                     'gallery' => [
-                        ['src' => '@theme/img/page/page-select-rice/tractor.png', 'alt' => '田植えを行うトラクター'],
-                        ['src' => '@theme/img/page/page-select-rice/rice-grains.png', 'alt' => '収穫されたお米'],
-                        ['src' => '@theme/img/page/page-select-rice/rice-product.png', 'alt' => '房の黄金米の商品'],
-                        ['src' => '@theme/img/page/page-select-rice/award.png', 'alt' => '受賞した米のたけやまの生産者'],
+                        ['src' => '@theme/img/page/page-select-deli/pizza-corner.png', 'alt' => 'ピザコーナー'],
+                        ['src' => '@theme/img/page/page-select-deli/pizza-sales.png', 'alt' => 'ピザの販売'],
+                        ['src' => '@theme/img/page/page-select-deli/pizza-making.png', 'alt' => 'ピザの作成'],
+                        ['src' => '@theme/img/page/page-select-deli/pizza-baking.png', 'alt' => 'ピザを焼く'],
                     ],
                     'gallery_variant' => 'four',
                     'decorations' => [
@@ -535,7 +706,7 @@ function foods_get_select_detail_configs() {
                 'parent_url' => '/select/',
             ],
             'hero' => [
-                'lead' => '毎日使うものだからこそ、品質と使いやすさを大切に。<br>日々の暮らしに寄り添う、<br>安心して選び続けられる商品を取り揃えています。',
+                'lead' => '毎日使うものだからこそ、<br>品質と使いやすさを大切に。<br>日々の暮らしに寄り添う、安心して<br>選び続けられる商品を取り揃えています。',
                 'lead_pc' => '毎日使うものだからこそ、品質と使いやすさを大切に。<br>日々の暮らしに寄り添う、<br>安心して選び続けられる商品を取り揃えています。',
                 'image' => 'svg/product-sorting.svg',
                 'image_alt' => '和日配の商品を仕分けする様子',
@@ -557,7 +728,8 @@ function foods_get_select_detail_configs() {
                 'wave_pc_bottom' => '@theme/img/page/page-select-detail/svg/meat_about_wave-bottom-pc.svg',
                 'decorations' => [],
                 'sections' => [[
-                    'title' => '世界が認めた、梅の郷に息づく伝統。<br>濱田農園 株式会社濱田',
+                    'location' => '世界が認めた、梅の郷に息づく伝統。',
+                    'title' => '濱田農園 株式会社濱田',
                     'main_image' => ['src' => 'farmer.png', 'alt' => '梅農園の生産者'],
                     'text_blocks' => [
                         '江戸の昔からつづく、梅の郷・和歌山県田辺市石神。株式会社濱田の自社農園も、その一角に位置しています。',
@@ -571,7 +743,6 @@ function foods_get_select_detail_configs() {
                         ['src' => 'umeboshi.png', 'alt' => '濱田農園の梅干し'],
                         ['src' => 'farmers.png', 'alt' => '梅を収穫する農家の皆さん'],
                     ],
-                    'gallery_variant' => 'two',
                     'decorations' => [],
                 ]],
             ],
@@ -598,7 +769,8 @@ function foods_get_select_detail_configs() {
                 'parent_url' => '/select/',
             ],
             'hero' => [
-                'lead' => 'ちょっとしたご褒美や、家族の団らんの時間に。<br>定番から話題の商品まで、選ぶ楽しさと美味しさを感じられる<br>お菓子を揃えています。',
+                'lead' => 'ちょっとしたご褒美や、<br>家族の団らんの時間に。<br>定番から話題の商品まで、<br>選ぶ楽しさと美味しさを感じられる<br>お菓子を揃えています。',
+                'lead_pc' => 'ちょっとしたご褒美や、家族の団らんの時間に。<br>定番から話題の商品まで、選ぶ楽しさと美味しさを感じられる<br>お菓子を揃えています。',
                 'image' => '製造工場.svg',
                 'image_alt' => 'お菓子の製造工場',
             ],
@@ -631,12 +803,11 @@ function foods_get_select_detail_configs() {
                         'text_blocks' => ['福井県の横井チョコレートは添加物はなるべく使用しないなど身体に良い素材を厳選し、誰もが安心して美味しく食べられるチョコレート作りを目指しています。'],
                         'sub_title' => '上質な”クーベルチュールチョコレート”を使用',
                         'secondary_image' => ['src' => 'クーベルチュールチョコレート.png', 'alt' => 'クーベルチュールチョコレートの商品'],
-                        'secondary_text_blocks' => ['横井チョコレートで主に使用するのは、総カカオ分35％以上、ココアバター31%以上といった厳しい国際基準を満たす「クーベルチュールチョコレート」。産地もガーナ産に指定した特注品です。またアーモンドは使用するたびに焙煎するなど、すべての素材に手抜きなし。「日本一の材料で」と、素材にはこだわり尽くしています。'],
+                        'secondary_text_blocks' => ['横井チョコレートで主に使用するのは、総カカオ分35％以上、ココアバター31%以上といった厳しい国際基準を満たす「クーベルチュールチョコレート」。' . "\n" . '産地もガーナ産に指定した特注品です。またアーモンドは使用するたびに焙煎するなど、すべての素材に手抜きなし。「日本一の材料で」と、素材にはこだわり尽くしています。'],
                         'gallery' => [
                             ['src' => '販売.png', 'alt' => 'チョコレートの販売風景'],
                             ['src' => 'チョコとパン.png', 'alt' => 'チョコレートとパン'],
                         ],
-                        'gallery_variant' => 'two',
                         'decorations' => [
                             ['key' => 'cacao-beans', 'src' => 'カカオ豆.svg', 'alt' => '', 'placement' => 'main_image'],
                             ['key' => 'patissier', 'src' => 'パティシエ.svg', 'alt' => '', 'placement' => 'main_image'],
@@ -648,7 +819,7 @@ function foods_get_select_detail_configs() {
 						'title' => 'ノースカラーズ',
                         'main_image' => ['src' => 'ノースカラーズ.png', 'alt' => 'ノースカラーズの北海道の風景'],
                         'text_blocks' => ['純国産シリーズは化学添加物や合成着色料を使わず、厳選された自然素材を使用。素材の美味しさと自然の魅力を最大限引き出す商品づくり。特に北海道産の原材料を活かし、子どもから大人まで安心して食べられるお菓子で、健康と笑顔を届けることを目指しています。'],
-                        'sub_title' => '北海道の恵みと自然素材から生まれる、やさしくて安心なお菓子。',
+                        'sub_title' => '北海道の恵みと<br class="u-sweets-break-sp">自然素材から生まれる、<br class="u-sweets-break-sp">やさしくて安心なお菓子。',
                         'gallery' => [
                             [
                                 'src' => 'ノースカラーズの思い.png',
@@ -676,6 +847,109 @@ function foods_get_select_detail_configs() {
                 ],
             ],
         ],
+        'alcohol' => [
+            'page_slug' => 'select-alcohol',
+            'modifier' => 'alcohol',
+            'title' => 'お酒のこだわり',
+            'asset_base' => 'img/page/page-select-alcohol',
+            'theme' => [
+                'message_background' => '#e7f9f5',
+            ],
+            'breadcrumb' => [
+                'parent_label' => 'セレクションのこだわり',
+                'parent_url' => '/select/',
+            ],
+            'hero' => [
+                'lead' => '日常の一杯から特別な日の乾杯まで。<br>味わい・造り手・料理との相性に目を向け、<br>シーンに合わせて選べるお酒を<br>ご提案しています。',
+                'lead_pc' => '日常の一杯から特別な日の乾杯まで。<br>味わい・造り手・料理との相性に目を向け、<br>シーンに合わせて選べるお酒をご提案しています。',
+                'image' => 'お酒造り.svg',
+                'image_alt' => '酒蔵でお酒を造る職人たち',
+            ],
+            'message' => [
+                'bubble_sp' => '吹き出しsp.svg',
+                'bubble_pc' => '吹き出しpc.svg',
+                'buyer_image' => '@theme/img/page/page-select-detail/svg/img_message-buyer.svg',
+                'text' => '蔵元とつながる。<br>だから、酒がまっすぐ旨い。<br>セレクションの酒売場は、<br>スーパーマーケットでは珍しい<br>「蔵元特約店」。<br>惚れ込んだ地酒蔵と正規に取り組み、<br>清酒・焼酎を正規価格でお届けします。<br>“安さで選ぶ酒”ではなく、<br>“旨い理由がある酒”を並べる。<br>だから、品揃えが他店と違う。<br>ワインも同じ。<br>フランスの生産者・蔵元直送を軸に、<br>世界中から料理で映える一本を厳選。<br>肉・魚・チーズ・惣菜――<br>食材が揃うセレクションだからこそ、<br>「今日の献立に合うワイン」が選べます。<br>さらに、ウイスキー、ジンなどの<br>スピリッツも<br>“飲み方まで楽しくなる”ラインアップで。<br>毎日の一杯から、週末のごほうびまで。<br>選ぶ時間ごと、うまい酒をどうぞ。',
+                'text_pc' => '蔵元とつながる。<br>だから、酒がまっすぐ旨い。<br>セレクションの酒売場は、スーパーマーケットでは珍しい<br>「蔵元特約店」。<br>惚れ込んだ地酒蔵と正規に取り組み、清酒・焼酎を正規価格でお届けします。<br>“安さで選ぶ酒”ではなく、“旨い理由がある酒”を並べる。<br>だから、品揃えが他店と違う。<br>ワインも同じ。<br>フランスの生産者・蔵元直送を軸に、世界中から料理で映える一本を厳選。<br>肉・魚・チーズ・惣菜――<br>食材が揃うセレクションだからこそ、「今日の献立に合うワイン」が選べます。<br>さらに、ウイスキー、ジンなどの<br>スピリッツも“飲み方まで楽しくなる”ラインアップで。<br>毎日の一杯から、週末のごほうびまで。<br>選ぶ時間ごと、うまい酒をどうぞ。',
+                'foreground_decorations' => [
+                    ['key' => 'sake-masu-wine', 'src' => '酒枡とワイン.svg', 'alt' => ''],
+                ],
+            ],
+            'about' => [
+                'title' => 'こだわりの現場から',
+                'title_background' => '@theme/img/page/page-select-detail/svg/meat_about_title.svg',
+                'background' => '@theme/img/page/page-select-detail/brick.png',
+                'wave_sp_top' => '@theme/img/page/page-select-detail/svg/upper_wave.svg',
+                'wave_sp_bottom' => '@theme/img/page/page-select-detail/svg/about-wave-bottom-sp.svg',
+                'wave_pc_top' => '@theme/img/page/page-select-detail/svg/meat_about_wave-top-pc.svg',
+                'wave_pc_bottom' => '@theme/img/page/page-select-detail/svg/meat_about_wave-bottom-pc.svg',
+                'decorations' => [],
+                'sections' => [
+                    [
+                        'location' => '特約焼酎蔵元',
+                        'location_pc' => '特約焼酎蔵元',
+                        'title' => '田村合名会社',
+                        'main_image' => ['src' => '焼酎蔵元.png', 'alt' => '田村合名会社の焼酎蔵'],
+                        'text_blocks' => [
+                            '鹿児島県指宿市山川。開聞岳を望む港町で、明治30年創業以来“芋焼酎一筋”を貫く蔵元です。
+田村合名会社の核は、代々受け継いできた和甕 （わがめ）仕込み。
+手間を惜しまない少量手造りが、やわらかな口当たりと奥行きを生みます。 ',
+                        ],
+                        'sub_title' => '明治創業　百年以上の甕が育てる、<br class="u-alcohol-break-sp">指宿の手造り芋焼酎「純黒」。',
+                        'secondary_image' => ['src' => '純黒.png', 'alt' => '開聞岳とさつま芋畑、純黒をはじめとする焼酎'],
+                        'secondary_text_blocks' => [
+                            '代表銘柄「純黒」は、まろやかでコクがあり、黒麹ならではの香ばしさとキレが食事に寄り添う一本。まずはお湯割りで、香りと旨みの広がりをお楽しみください。',
+                        ],
+                        'gallery' => [],
+                        'decorations' => [
+                            ['key' => 'brewery-staff', 'src' => '酒造スタッフ.svg', 'alt' => '', 'placement' => 'main_image'],
+                            ['key' => 'farmer', 'src' => '農夫.svg', 'alt' => '', 'placement' => 'secondary_image'],
+                        ],
+                    ],
+                    [
+                        'location' => 'フランス南ローヌの家族経営ワイナリー',
+                        'location_pc' => 'フランス南ローヌの家族経営ワイナリー',
+                        'title' => 'ドメーヌ・ド・パスキエ',
+                        'main_image' => ['src' => 'ブドウ園.png', 'alt' => 'ドメーヌ・ド・パスキエのブドウ園'],
+                        'text_blocks' => [
+                            '“砂と風”の村サブレ。
+ 1935年から4世代、87haの畑を守り、2010年からオーガニックへ。
+パスキエの持ち味は、果実が濃いのに、後味がすっと軽いこと。南ローヌの「重さ」ではなく、香りと余韻のきれいさで選ばれる造り手です。',
+                        ],
+                        'sub_title' => '1935年創業<br class="u-alcohol-break-sp">　“砂と風”のサブレ村で育まれる、<br>濃くて軽やかな南ローヌのワイン。',
+                        'secondary_image' => ['src' => 'スイーツとワイン.png', 'alt' => 'チョコレートのスイーツと赤ワイン'],
+                        'secondary_text_blocks' => [
+                            '太陽の力を受けたぶどうを、“濃い＝重い”にしないのがパスキエ流です.2010年から畑をオーガニック栽培へ切り替え、香りの純度を高めました。
+グラスに注ぐと、まず完熟ベリー、次に黒胡椒やハーブのニュアンス。
+口当たりはなめらかで、最後はきれいに切れて、もう一口が欲しくなる。
+同じ南ローヌでも「飲み疲れしない赤」を探している方に、まさに刺さる1本です。',
+                        ],
+                        'gallery' => [
+                            ['src' => '試飲準備.png', 'alt' => 'ワインの試飲準備'],
+                            ['src' => '注がれるワイン.png', 'alt' => 'グラスに注がれる赤ワイン'],
+                        ],
+                        'decorations' => [
+                            ['key' => 'wine-farmer', 'src' => 'ワインと農夫.svg', 'alt' => '', 'placement' => 'main_image'],
+                            ['key' => 'barrel', 'src' => '酒樽.svg', 'alt' => '', 'placement' => 'main_image'],
+                            ['key' => 'pitcher-wine', 'src' => 'ピッチャーとワイン.svg', 'alt' => '', 'placement' => 'gallery_after'],
+                        ],
+                    ],
+                ],
+            ],
+            'news' => [
+                'taxonomy' => 'news_commitment',
+				'term' => 'alcohol',
+				'title' => 'お酒のこだわりを<br>もっと見る',
+				'title_pc' => 'お酒のこだわりを<br>もっと見る',
+				'archive_label' => 'お酒のこだわり一覧',
+                'background_sp' => '@theme/img/page/page-select-detail/meat_news_bgSP.png',
+                'background_pc' => '@theme/img/page/page-select-detail/meat_news_bgPC.png',
+                'foreground_decorations' => [
+                    ['key' => 'sake', 'src' => '酒@2x 2.svg', 'alt' => ''],
+                    ['key' => 'ochoko', 'src' => 'おちょこ@2x 2.svg', 'alt' => ''],
+                ],
+            ],
+        ],
         'fish' => [
             'page_slug' => 'select-fish',
             'modifier' => 'fish',
@@ -695,8 +969,8 @@ function foods_get_select_detail_configs() {
                 'image_alt' => '漁港で新鮮な魚を仕分けする様子',
             ],
             'message' => [
-                'bubble_sp' => 'svg/buyer-message-balloon-sp.svg',
-                'bubble_pc' => 'svg/buyer-message-balloon-pc.svg',
+                'bubble_sp' => 'svg/buyer-message-balloon-sp-fish.svg',
+                'bubble_pc' => 'svg/buyer-message-balloon-tab-pc-fish.svg',
                 'buyer_image' => '@theme/img/page/page-select-detail/svg/img_message-buyer.svg',
                 'background_pc' => '@theme/img/page/page-select-detail/svg/message_section_bg-pc.svg',
                 'text' => '鮮度はもちろん、<br>産地や漁法、脂の乗りまで<br>“目で見て選ぶ”。<br>セレクションのお魚は、<br>全国の産直に加え、<br>地元・千葉県の漁港から届く鮮度の良い<br>「地魚」を中心に買付を行っています。<br>季節ごとに変わる<br>“旬のいちばん”を逃さず、<br>切身・刺身・焼魚まで、<br>今日いちばんおいしい形で<br>食卓に届けます。<br>魚は「鮮度」だけでなく、<br>今の状態に合った食べ方でおいしさが<br>決まります。<br>私たちは、脂の乗り・身質・サイズを見て<br>売場に出し、刺身、焼き、煮付けなど<br>おすすめの食べ方も一緒にご案内します。<br>売場では旬の打ち出しも強め、<br>迷わず選べるように。<br>迷ったら気軽に声をかけてください。',
@@ -786,10 +1060,10 @@ function foods_get_select_detail_configs() {
             'news' => [
                 'taxonomy' => 'news_commitment',
                 'term' => 'fish',
-                'title' => 'お魚のこだわりを<br>もっと見る',
+                'title' => 'お魚のこだわりをもっと見る',
                 'archive_label' => 'お魚のこだわり一覧',
                 'foreground_decorations' => [
-                    ['key' => 'fish', 'src' => 'svg/fish.svg', 'alt' => ''],
+                    ['key' => 'fish', 'src' => 'svg/fish-news.svg', 'alt' => ''],
                 ],
                 'background_sp' => '@theme/img/page/page-select-detail/meat_news_bgSP.png',
                 'background_pc' => '@theme/img/page/page-select-detail/meat_news_bgPC.png',

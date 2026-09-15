@@ -104,8 +104,11 @@ foreach ($background_decorations as $decoration) {
                     <?php endforeach; ?>
                 </div>
                 <div class="<?php echo esc_attr($block_class); ?>__about__content--copy">
+                    <?php if (!empty($section['text_pc'])) : ?>
+                        <p class="u-select-copy-pc"><?php echo esc_html($section['text_pc']); ?></p>
+                    <?php endif; ?>
                     <?php foreach ($text_blocks as $text_block) : ?>
-                        <?php if ('' !== $text_block) : ?><p><?php echo esc_html($text_block); ?></p><?php endif; ?>
+                        <?php if ('' !== $text_block) : ?><p<?php if (!empty($section['text_pc'])) : ?> class="u-select-copy-sp-tab"<?php endif; ?>><?php echo esc_html($text_block); ?></p><?php endif; ?>
                     <?php endforeach; ?>
                 </div>
 
@@ -113,6 +116,10 @@ foreach ($background_decorations as $decoration) {
                     <h4 class="<?php echo esc_attr($block_class); ?>__about__content--sub"><?php echo wp_kses_post($section['sub_title']); ?></h4>
                 <?php endif; ?>
 
+                <?php
+                $gallery_first = !empty($section['gallery_before_secondary_copy']) && !empty($section['secondary_image']);
+                if ($gallery_first) { ob_start(); }
+                ?>
                 <?php if (!empty($section['secondary_image'])) : ?>
                     <?php $secondary_image = $section['secondary_image']; ?>
                     <?php
@@ -134,21 +141,17 @@ foreach ($background_decorations as $decoration) {
                     <?php if ($secondary_image_decorations) : ?>
                         <div class="<?php echo esc_attr($block_class); ?>__about__content--secondaryImageAnchor">
                     <?php endif; ?>
-                    <?php if ($secondary_inline_decorations || !empty($secondary_image['background_decoration'])) : ?>
-                        <div class="<?php echo esc_attr($block_class); ?>__about__content--secondaryImageWrap">
-                    <?php endif; ?>
-                    <picture>
+                    <div class="<?php echo esc_attr($block_class); ?>__about__content--secondaryImageWrap">
+                        <picture>
                         <?php if (!empty($secondary_image['webp'])) : ?>
                             <source srcset="<?php echo esc_url(foods_get_select_detail_asset_url($config, $secondary_image['webp'])); ?>" type="image/webp">
                         <?php endif; ?>
                         <img class="<?php echo esc_attr($block_class); ?>__about__content--image" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $secondary_image['src'])); ?>" alt="<?php echo esc_attr($secondary_image['alt']); ?>">
-                    </picture>
-                    <?php foreach ($secondary_inline_decorations as $decoration) : ?>
-                        <img class="<?php echo esc_attr($block_class . '__about__content--' . sanitize_html_class($decoration['key'])); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt'] ?? ''); ?>">
-                    <?php endforeach; ?>
-                    <?php if ($secondary_inline_decorations || !empty($secondary_image['background_decoration'])) : ?>
-                        </div>
-                    <?php endif; ?>
+                        </picture>
+                        <?php foreach ($secondary_inline_decorations as $decoration) : ?>
+                            <img class="<?php echo esc_attr($block_class . '__about__content--' . sanitize_html_class($decoration['key'])); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $decoration['src'])); ?>" alt="<?php echo esc_attr($decoration['alt'] ?? ''); ?>">
+                        <?php endforeach; ?>
+                    </div>
                     <?php if ($secondary_image_decorations) : ?>
                         <?php foreach ($secondary_image_decorations as $anchor_decoration) : ?>
                             <img class="<?php echo esc_attr($block_class . '__about__backgroundDecoration ' . $block_class . '__about__backgroundDecoration--' . sanitize_html_class($anchor_decoration['key']) . ' ' . $block_class . '__about__backgroundDecoration--desktopAnchor'); ?>" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $anchor_decoration['src'])); ?>" alt="<?php echo esc_attr($anchor_decoration['alt'] ?? ''); ?>">
@@ -156,17 +159,29 @@ foreach ($background_decorations as $decoration) {
                         </div>
                     <?php endif; ?>
                     <?php
+                    if ($gallery_first) {
+                        $secondary_image_html = ob_get_clean();
+                        ob_start();
+                    }
                     $secondary_text_blocks = isset($section['secondary_text_blocks']) && is_array($section['secondary_text_blocks'])
                         ? $section['secondary_text_blocks']
                         : [($section['secondary_text'] ?? '')];
                     ?>
-                    <div class="<?php echo esc_attr($block_class); ?>__about__content--copy">
+                    <div class="<?php echo esc_attr($block_class); ?>__about__content--copy <?php echo esc_attr($block_class); ?>__about__content--copyBeforeGallery">
+                        <?php if (!empty($section['secondary_text_pc'])) : ?>
+                            <p class="u-select-copy-pc"><?php echo esc_html($section['secondary_text_pc']); ?></p>
+                        <?php endif; ?>
                         <?php foreach ($secondary_text_blocks as $text_block) : ?>
-                            <?php if ('' !== $text_block) : ?><p><?php echo esc_html($text_block); ?></p><?php endif; ?>
+                            <?php if ('' !== $text_block) : ?><p<?php if (!empty($section['secondary_text_pc'])) : ?> class="u-select-copy-sp-tab"<?php endif; ?>><?php echo esc_html($text_block); ?></p><?php endif; ?>
                         <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
 
+                <?php
+                if ($gallery_first) {
+                    $secondary_copy_html = ob_get_clean();
+                }
+                ?>
                 <div class="<?php echo esc_attr($block_class); ?>__about__content--imgWrap">
                     <?php foreach ($decorations as $decoration) : ?>
                         <?php if ('gallery_before' === $decoration['placement']) : ?>
@@ -225,6 +240,12 @@ foreach ($background_decorations as $decoration) {
                         <?php endif; ?>
                     <?php endforeach; ?>
                 </div>
+                <?php
+                if ($gallery_first) {
+                    // Both fragments use the escaped template markup above.
+                    echo $secondary_copy_html . $secondary_image_html;
+                }
+                ?>
             </div>
         <?php endforeach; ?>
     </div>

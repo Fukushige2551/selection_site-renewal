@@ -27,6 +27,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-page-shop-js',
         'foods-page-select-js',
         'foods-page-select-vegetables-fruit-js',
+        'foods-page-select-shop-js',
         'foods-page-select-meat-js',
         'foods-page-select-fish-js',
         'foods-page-select-rice-js',
@@ -34,6 +35,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-page-select-washoku-daily-js',
         'foods-page-select-foods-js',
         'foods-page-select-sweets-js',
+        'foods-page-select-alcohol-js',
         'foods-single-shop-js',
         'foods-archive-news-js',
         'foods-single-news-js',
@@ -150,6 +152,7 @@ function foods_theme_scripts() {
     $page_shop_entry  = 'src/js/page-shop.js';
     $page_select_entry  = 'src/js/page-select.js';
     $page_select_vegetables_fruit_entry = 'src/js/page-select-vegetables-fruit.js';
+    $page_select_shop_entry = 'src/js/page-select-shop.js';
     $page_select_meat_entry = 'src/js/page-select-meat.js';
     $page_select_fish_entry = 'src/js/page-select-fish.js';
     $page_select_rice_entry = 'src/js/page-select-rice.js';
@@ -157,6 +160,7 @@ function foods_theme_scripts() {
     $page_select_washoku_daily_entry = 'src/js/page-select-washoku-daily.js';
     $page_select_foods_entry = 'src/js/page-select-foods.js';
     $page_select_sweets_entry = 'src/js/page-select-sweets.js';
+    $page_select_alcohol_entry = 'src/js/page-select-alcohol.js';
     $single_shop_entry = 'src/js/single-shop.js';
     $archive_news_entry = 'src/js/archive-news.js';
     $single_news_entry = 'src/js/single-news.js';
@@ -275,6 +279,16 @@ function foods_theme_scripts() {
         );
     }
 
+    if (is_page() && $current_page_template === 'page-select-shop.php') {
+        foods_enqueue_vite_entry(
+            'foods-page-select-shop',
+            $page_select_shop_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
     if (
         is_page()
         && (
@@ -351,6 +365,16 @@ function foods_theme_scripts() {
         foods_enqueue_vite_entry(
             'foods-page-select-sweets',
             $page_select_sweets_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    if (is_page() && $current_page_template === 'page-select-alcohol.php') {
+        foods_enqueue_vite_entry(
+            'foods-page-select-alcohol',
+            $page_select_alcohol_entry,
             $dev_server,
             $manifest,
             $is_local
@@ -1296,7 +1320,7 @@ function foods_sync_flyer_scf_fields() {
 
     if (!empty($result['field_group_id'])) {
         $result['trashed_obsolete_item_images_fields'] = foods_remove_obsolete_flyer_item_images_field();
-        foods_migrate_legacy_flyer_image_field();
+        // 定義の同期では既存投稿の画像データを変更しない。
     }
 
     return $result;
@@ -2094,7 +2118,7 @@ function foods_assign_recipe_default_terms_to_existing_posts() {
 
     update_option('foods_recipe_default_terms_assigned_version', $version);
 }
-add_action('init', 'foods_assign_recipe_default_terms_to_existing_posts', 30);
+// 既定の分類項目は同期するが、既存投稿への割り当ては自動実行しない。
 /**
  * カスタムタクソノミー
  */
@@ -2372,6 +2396,10 @@ function foods_get_news_default_terms() {
             [
                 'name' => 'お酒',
                 'slug' => 'alcohol',
+            ],
+            [
+                'name' => 'お店',
+                'slug' => 'shop',
             ],
         ],
     ];
