@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/inc/recipe-search.php';
+
 function foods_recipe_archive_get_field_value($post_id, $field_name) {
     if (function_exists('get_field')) {
         $value = get_field($field_name, $post_id);
@@ -183,16 +185,34 @@ function foods_recipe_archive_format_item($recipe_post) {
     ];
 }
 
-$recipe_paged = max(1, (int) get_query_var('paged'));
+$recipe_search = isset($_GET['recipe_search']) && is_string($_GET['recipe_search'])
+    ? trim(sanitize_text_field(wp_unslash($_GET['recipe_search'])))
+    : '';
+$recipe_is_search = $recipe_search !== '';
+$recipe_archive_url = get_post_type_archive_link('recipe');
+$recipe_search_page = isset($_GET['recipe_page']) && is_string($_GET['recipe_page'])
+    ? absint($_GET['recipe_page'])
+    : 1;
+$recipe_paged = $recipe_is_search ? max(1, $recipe_search_page) : max(1, (int) get_query_var('paged'));
+
+add_filter('posts_where', 'foods_recipe_search_where', 10, 2);
 $recipe_query = new WP_Query([
     'post_type' => 'recipe',
     'posts_per_page' => 12,
     'paged' => $recipe_paged,
     'post_status' => 'publish',
-    'orderby' => 'date',
+    'has_password' => false,
+    'orderby' => ['date' => 'DESC', 'ID' => 'DESC'],
     'order' => 'DESC',
+    'foods_recipe_search' => $recipe_search,
 ]);
+remove_filter('posts_where', 'foods_recipe_search_where', 10);
 $recipe_total_pages = (int) $recipe_query->max_num_pages;
+$recipe_page_url = static function ($page) use ($recipe_is_search, $recipe_search, $recipe_archive_url) {
+    return $recipe_is_search
+        ? add_query_arg(['recipe_search' => $recipe_search, 'recipe_page' => $page], $recipe_archive_url)
+        : get_pagenum_link($page);
+};
 
 $recipe_items = [];
 
@@ -207,62 +227,72 @@ wp_reset_postdata();
 get_header();
 ?>
 
-<main class="p-recipe-archive c-main" aria-label="レシピ一覧">
+<main class="p-recipe-archive c-main<?php echo $recipe_is_search ? ' p-recipe-archive--results' : ''; ?>" aria-label="<?php echo $recipe_is_search ? 'レシピ検索結果' : 'レシピ一覧'; ?>">
     <nav class="c-breadcrumb p-recipe-archive__breadcrumb" aria-label="パンくず">
         <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
         <span class="c-breadcrumb__separator" aria-hidden="true"></span>
-        <span>レシピ</span>
+        <?php if ($recipe_is_search) : ?>
+            <a href="<?php echo esc_url($recipe_archive_url); ?>">レシピ</a>
+            <span class="c-breadcrumb__separator" aria-hidden="true"></span>
+            <span aria-current="page">検索結果</span>
+        <?php else : ?>
+            <span aria-current="page">レシピ</span>
+        <?php endif; ?>
     </nav>
 
+    <?php if (!$recipe_is_search) : ?>
     <div class="p-recipe-archive__heading">
         <h1 class="p-recipe-archive__title c-section__title">レシピ</h1>
         <p class="p-recipe-archive__title-en c-section__title--sub">RECIPE</p>
     </div>
 
-    <section class="p-recipe-archive__search" aria-label="レシピ検索">
+    <form class="p-recipe-archive__search" aria-label="レシピ検索" action="<?php echo esc_url($recipe_archive_url); ?>" method="get">
+        <?php if (!get_option('permalink_structure')) : ?>
+            <input type="hidden" name="post_type" value="recipe">
+        <?php endif; ?>
         <div class="p-recipe-archive__search-tabs" role="tablist" aria-label="検索方法">
-            <button class="p-recipe-archive__search-tab is-active" type="button" role="tab" aria-selected="true" data-recipe-search-tab="ingredient">
+            <button id="recipe-tab-ingredient" class="p-recipe-archive__search-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="recipe-search-panel" data-recipe-search-tab="ingredient">
                 食材から探す
             </button>
-            <button class="p-recipe-archive__search-tab" type="button" role="tab" aria-selected="false" data-recipe-search-tab="name">
+            <button id="recipe-tab-name" class="p-recipe-archive__search-tab" type="button" role="tab" aria-selected="false" aria-controls="recipe-search-panel" tabindex="-1" data-recipe-search-tab="name">
                 料理名から探す
             </button>
         </div>
 
-        <div class="p-recipe-archive__ingredient-panel" aria-label="食材カテゴリ">
-            <button class="p-recipe-archive__ingredient-button" type="button" data-recipe-category="vegetable">野菜</button>
-            <button class="p-recipe-archive__ingredient-button" type="button" data-recipe-category="meat">お肉</button>
-            <button class="p-recipe-archive__ingredient-button" type="button" data-recipe-category="fish">お魚</button>
-            <button class="p-recipe-archive__ingredient-button" type="button" data-recipe-category="noodle-rice">麺・ご飯</button>
-            <button class="p-recipe-archive__ingredient-button" type="button" data-recipe-category="side-dish">おかず</button>
-            <button class="p-recipe-archive__ingredient-button" type="button" data-recipe-category="other">その他</button>
+        <div id="recipe-search-panel" class="p-recipe-archive__ingredient-panel" role="tabpanel" aria-labelledby="recipe-tab-ingredient">
+            <button class="p-recipe-archive__ingredient-button" type="submit" name="recipe_search" value="野菜" data-recipe-category="vegetable">野菜</button>
+            <button class="p-recipe-archive__ingredient-button" type="submit" name="recipe_search" value="お肉" data-recipe-category="meat">お肉</button>
+            <button class="p-recipe-archive__ingredient-button" type="submit" name="recipe_search" value="お魚" data-recipe-category="fish">お魚</button>
+            <button class="p-recipe-archive__ingredient-button" type="submit" name="recipe_search" value="麺・ご飯" data-recipe-category="noodle-rice">麺・ご飯</button>
+            <button class="p-recipe-archive__ingredient-button" type="submit" name="recipe_search" value="おかず" data-recipe-category="side-dish">おかず</button>
+            <button class="p-recipe-archive__ingredient-button" type="submit" name="recipe_search" value="その他" data-recipe-category="other">その他</button>
         </div>
 
         <div class="p-recipe-archive__desktop-search" aria-label="レシピ検索">
             <section class="p-recipe-archive__desktop-search-group" aria-labelledby="recipe-desktop-ingredient-title">
                 <h2 id="recipe-desktop-ingredient-title" class="p-recipe-archive__desktop-search-title">食材から探す</h2>
                 <div class="p-recipe-archive__desktop-search-grid">
-                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-category="vegetable">
+                    <button class="p-recipe-archive__desktop-search-card" type="submit" name="recipe_search" value="野菜" data-recipe-category="vegetable">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-ingredient-vegetable.png'); ?>" alt="" loading="lazy">
                         <span>野菜</span>
                     </button>
-                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-category="meat">
+                    <button class="p-recipe-archive__desktop-search-card" type="submit" name="recipe_search" value="お肉" data-recipe-category="meat">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-ingredient-meat.png'); ?>" alt="" loading="lazy">
                         <span>お肉</span>
                     </button>
-                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-category="fish">
+                    <button class="p-recipe-archive__desktop-search-card" type="submit" name="recipe_search" value="お魚" data-recipe-category="fish">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-ingredient-fish.png'); ?>" alt="" loading="lazy">
                         <span>お魚</span>
                     </button>
-                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-category="noodle-rice">
+                    <button class="p-recipe-archive__desktop-search-card" type="submit" name="recipe_search" value="麺・ご飯" data-recipe-category="noodle-rice">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-ingredient-rice.png'); ?>" alt="" loading="lazy">
                         <span>麺・ご飯</span>
                     </button>
-                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-category="dairy">
+                    <button class="p-recipe-archive__desktop-search-card" type="submit" name="recipe_search" value="乳製品" data-recipe-category="dairy">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-ingredient-dairy.png'); ?>" alt="" loading="lazy">
                         <span>乳製品</span>
                     </button>
-                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-category="soy">
+                    <button class="p-recipe-archive__desktop-search-card" type="submit" name="recipe_search" value="大豆・豆腐" data-recipe-category="soy">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-ingredient-soy.png'); ?>" alt="" loading="lazy">
                         <span>大豆・豆腐</span>
                     </button>
@@ -271,27 +301,27 @@ get_header();
             <section class="p-recipe-archive__desktop-search-group" aria-labelledby="recipe-desktop-name-title">
                 <h2 id="recipe-desktop-name-title" class="p-recipe-archive__desktop-search-title">料理名から探す</h2>
                 <div class="p-recipe-archive__desktop-search-grid">
-                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-keyword="麺・ご飯">
+                    <button class="p-recipe-archive__desktop-search-card" type="submit" name="recipe_search" value="麺・ご飯" data-recipe-keyword="麺・ご飯">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-name-rice.png'); ?>" alt="" loading="lazy">
                         <span>麺・ご飯</span>
                     </button>
-                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-keyword="肉料理">
+                    <button class="p-recipe-archive__desktop-search-card" type="submit" name="recipe_search" value="肉料理" data-recipe-keyword="肉料理">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-name-meat.png'); ?>" alt="" loading="lazy">
                         <span>肉料理</span>
                     </button>
-                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-keyword="魚料理">
+                    <button class="p-recipe-archive__desktop-search-card" type="submit" name="recipe_search" value="魚料理" data-recipe-keyword="魚料理">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-name-fish.png'); ?>" alt="" loading="lazy">
                         <span>魚料理</span>
                     </button>
-                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-keyword="卵料理">
+                    <button class="p-recipe-archive__desktop-search-card" type="submit" name="recipe_search" value="卵料理" data-recipe-keyword="卵料理">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-name-egg.png'); ?>" alt="" loading="lazy">
                         <span>卵料理</span>
                     </button>
-                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-keyword="スープ・汁物">
+                    <button class="p-recipe-archive__desktop-search-card" type="submit" name="recipe_search" value="スープ・汁物" data-recipe-keyword="スープ・汁物">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-name-soup.png'); ?>" alt="" loading="lazy">
                         <span>スープ・汁物</span>
                     </button>
-                    <button class="p-recipe-archive__desktop-search-card" type="button" data-recipe-keyword="鍋">
+                    <button class="p-recipe-archive__desktop-search-card" type="submit" name="recipe_search" value="鍋" data-recipe-keyword="鍋">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-name-pot.png'); ?>" alt="" loading="lazy">
                         <span>鍋</span>
                     </button>
@@ -327,16 +357,18 @@ get_header();
 
                 foreach ($recipe_keywords as $recipe_keyword) :
                     ?>
-                    <button class="p-recipe-archive__keyword-button" type="button" data-recipe-keyword="<?php echo esc_attr($recipe_keyword); ?>">
+                    <button class="p-recipe-archive__keyword-button" type="submit" name="recipe_search" value="<?php echo esc_attr($recipe_keyword); ?>" data-recipe-keyword="<?php echo esc_attr($recipe_keyword); ?>">
                         #<?php echo esc_html($recipe_keyword); ?>
                     </button>
                 <?php endforeach; ?>
             </div>
         </section>
-    </section>
+    </form>
+    <?php endif; ?>
 
-    <?php if (!empty($recipe_items)) : ?>
-        <section class="p-recipe-archive__list" aria-label="新着レシピ">
+    <?php if ($recipe_is_search || !empty($recipe_items)) : ?>
+        <section class="p-recipe-archive__list" aria-labelledby="recipe-list-title">
+            <?php if (!$recipe_is_search) : ?>
             <div class="p-recipe-archive__decorations" aria-hidden="true">
                 <span class="p-recipe-archive__decoration p-recipe-archive__decoration--scale"></span>
                 <span class="p-recipe-archive__decoration p-recipe-archive__decoration--cup"></span>
@@ -350,7 +382,18 @@ get_header();
                 <span class="p-recipe-archive__decoration p-recipe-archive__decoration--apron"></span>
                 <span class="p-recipe-archive__decoration p-recipe-archive__decoration--tools"></span>
             </div>
-            <h2 class="p-recipe-archive__list-title">新着レシピ</h2>
+            <?php endif; ?>
+            <?php if ($recipe_is_search) : ?>
+                <h1 id="recipe-list-title" class="p-recipe-archive__list-title">検索結果</h1>
+            <?php else : ?>
+                <h2 id="recipe-list-title" class="p-recipe-archive__list-title">新着レシピ</h2>
+            <?php endif; ?>
+            <?php if (empty($recipe_items)) : ?>
+                <div class="p-recipe-archive__empty">
+                    <p>「<?php echo esc_html($recipe_search); ?>」に一致するレシピは見つかりませんでした。</p>
+                    <a href="<?php echo esc_url($recipe_archive_url); ?>">レシピトップへ戻る</a>
+                </div>
+            <?php else : ?>
             <div class="c-recipe-card-wrapper p-recipe-archive__card-list">
                 <?php foreach ($recipe_items as $recipe_item) :
                     $recipe_title = $recipe_item['title'] ?? '';
@@ -385,33 +428,30 @@ get_header();
                 <?php endforeach; ?>
             </div>
             <?php if ($recipe_total_pages > 1) : ?>
-                <nav class="c-archive-pagination p-recipe-archive__pagination" aria-label="???????????">
+                <nav class="c-archive-pagination p-recipe-archive__pagination" aria-label="レシピのページ切り替え">
                     <?php for ($page_number = 1; $page_number <= $recipe_total_pages; $page_number++) : ?>
                         <?php if ($page_number === $recipe_paged) : ?>
                             <span class="c-archive-pagination__item is-current" aria-current="page"><?php echo esc_html($page_number); ?></span>
                         <?php else : ?>
-                            <a class="c-archive-pagination__item" href="<?php echo esc_url(get_pagenum_link($page_number)); ?>"><?php echo esc_html($page_number); ?></a>
+                            <a class="c-archive-pagination__item" href="<?php echo esc_url($recipe_page_url($page_number)); ?>"><?php echo esc_html($page_number); ?></a>
                         <?php endif; ?>
                     <?php endfor; ?>
                     <?php if ($recipe_paged < $recipe_total_pages) : ?>
-                        <a class="c-archive-pagination__next" href="<?php echo esc_url(get_pagenum_link($recipe_paged + 1)); ?>" aria-label="??????"></a>
+                        <a class="c-archive-pagination__next" href="<?php echo esc_url($recipe_page_url($recipe_paged + 1)); ?>" aria-label="次のページ"></a>
                     <?php endif; ?>
                 </nav>
+            <?php endif; ?>
             <?php endif; ?>
             <div class="p-recipe-archive__source">
                 <span class="p-recipe-archive__source-label">【出典】</span>
                 <a class="p-recipe-archive__source-link" href="https://www.kurashiru.com/" target="_blank" rel="noopener noreferrer">
-                    <img class="p-recipe-archive__source-logo" src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/logo_kurashiru.svg'); ?>" alt="????">
+                    <img class="p-recipe-archive__source-logo" src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/logo_kurashiru.svg'); ?>" alt="クラシル">
                     <span class="p-recipe-archive__source-url">https://www.kurashiru.com/</span>
                 </a>
             </div>
         </section>
     <?php endif; ?>
 </main>
-
-<script>
-    window.foodsRecipeArchiveItems = <?php echo wp_json_encode($recipe_items, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
-</script>
 
 <?php
 get_footer();

@@ -1,4 +1,77 @@
 @use "foundation/global" as *;
+// Keep the existing responsive cards, with the spacing of the search results.
+.p-recipe-archive.p-recipe-archive--results {
+    .p-recipe-archive__list {
+        margin-top: 0;
+        padding-top: 12vw;
+        padding-bottom: 30vw;
+        background: none;
+    }
+
+    .p-recipe-archive__card-list {
+        grid-template-rows: none;
+    }
+
+    .p-recipe-archive__card-list > *:nth-child(n + 11) {
+        display: block;
+    }
+
+    .p-recipe-archive__empty {
+        margin: 3rem auto;
+        padding: 0 1.5rem;
+        text-align: center;
+        line-height: 2;
+        overflow-wrap: anywhere;
+
+        a {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #00856b;
+            text-decoration: underline;
+        }
+    }
+
+    .p-recipe-archive__pagination {
+        flex-wrap: wrap;
+        padding-inline: 1rem;
+    }
+}
+
+.p-recipe-archive__search button:focus-visible {
+    outline: 3px solid #00856b;
+    outline-offset: 3px;
+}
+
+@media screen and (min-width: 768px) {
+    .p-recipe-archive.p-recipe-archive--results .p-recipe-archive__list {
+        padding-top: 6vw;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .p-recipe-archive.p-recipe-archive--results {
+        .p-recipe-archive__list {
+            padding-top: 4.74vw;
+            padding-bottom: 24vw;
+        }
+
+        .p-recipe-archive__list-title {
+            line-height: 1.45;
+        }
+
+        .p-recipe-archive__card-list {
+            margin-top: 1.77vw;
+        }
+
+        .p-recipe-archive__pagination {
+            margin-top: 6.34vw;
+        }
+
+        .p-recipe-archive__source {
+            margin-top: 1.35vw;
+        }
+    }
+}
 
 .p-recipe-archive {
     &__breadcrumb {
