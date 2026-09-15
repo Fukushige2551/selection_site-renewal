@@ -157,6 +157,8 @@
     p { margin: 0; }
   }
 
+  &__message-break { display: none; }
+
   &__president {
     margin: 17px 3px 24px 0;
     text-align: right;
@@ -1611,6 +1613,7 @@
     --desktop-card-offset: calc((100% - 1024px) / 2);
 
     &__breadcrumb {
+      top: calc(clamp(560px, 46.88vw, 900px) - 44px + 18px);
       color: #0f3675;
       font-size: 16px;
     }
@@ -1618,7 +1621,7 @@
     &__movie-label { font-size: 24px; }
 
     &__message {
-      height: 750px;
+      height: 805px;
       margin-top: -44px;
       padding: 0;
       border-radius: 22px 22px 0 0;
@@ -1640,21 +1643,25 @@
 
     &__message-copy {
       top: 185px;
-      width: 760px;
+      width: min(calc(100% - 64px), 1000px);
       color: #000;
-      font-size: 16px;
+      font-size: clamp(14px, calc(.78vw + 6px), 16px);
       line-height: 28px;
+
+      p { text-align: center; }
     }
 
+    &__message-break { display: inline; }
+
     &__president-photo {
-      top: 350px;
+      top: 405px;
       width: 440px;
       height: 248px;
       border-radius: 16px;
     }
 
     &__president {
-      top: 615px;
+      top: 670px;
       width: 440px;
 
       span { font-size: 16px; }
@@ -1699,14 +1706,15 @@
       --about-photo-height: clamp(300px, calc(31.36vw - 21px), 581px);
       --about-card-width: clamp(440px, calc(8.93vw + 349px), 520px);
       --about-card-height: clamp(300px, calc(8.37vw + 214px), 375px);
-      --about-card-left: calc(100% - var(--about-photo-width) - var(--about-card-width));
+      --about-card-left: max(24px, calc(100% - var(--about-photo-width) - var(--about-card-width)));
       --about-card-top: calc(var(--about-photo-top) + (var(--about-photo-height) - var(--about-card-height)) / 2);
       --about-content-left: clamp(60px, calc(6.36vw - 5px), 117px);
       --about-title-top: clamp(80px, calc(3.57vw + 43px), 112px);
       --about-copy-top: clamp(133px, calc(3.46vw + 98px), 164px);
       --about-number-left: clamp(340px, calc(6.36vw + 275px), 397px);
       --about-number-top: clamp(84px, calc(4.24vw + 41px), 122px);
-      --about-link-width: clamp(132px, calc(3.35vw + 98px), 162px);
+      --about-link-gap: 12px;
+      --about-link-width: calc(80px + clamp(54px, calc(1.79vw + 36px), 70px) + var(--about-link-gap));
       --about-link-top: clamp(242px, calc(2.01vw + 221px), 260px);
       --about-link-overhang: clamp(11px, calc(1.12vw - 1px), 21px);
 
@@ -1789,13 +1797,16 @@
 
       > a {
         top: calc(var(--about-card-top) + var(--about-link-top));
-        left: calc(var(--about-card-left) + var(--about-card-width) - var(--about-link-width) + var(--about-link-overhang));
+        left: calc(100% - var(--about-photo-width) - var(--about-link-width) + var(--about-link-overhang));
         width: var(--about-link-width);
         height: clamp(54px, calc(1.79vw + 36px), 70px);
         color: #00a784;
         font-size: 16px;
+        gap: var(--about-link-gap);
+        white-space: nowrap;
 
         > span {
+          flex-shrink: 0;
           width: clamp(54px, calc(1.79vw + 36px), 70px);
           height: clamp(54px, calc(1.79vw + 36px), 70px);
         }
@@ -1811,8 +1822,9 @@
     }
 
     &__about-girl {
-      bottom: 0;
-      left: calc(var(--about-card-left) + clamp(12px, calc(1.45vw - 3px), 25px));
+      top: calc(var(--about-card-top) + var(--about-card-height) - clamp(190px, calc(2.79vw + 161px), 215px) + 24px);
+      bottom: auto;
+      left: calc(var(--about-card-left) - 32px);
       width: clamp(96px, calc(1.45vw + 81px), 109px);
       height: clamp(190px, calc(2.79vw + 161px), 215px);
     }
@@ -1999,6 +2011,26 @@
 
 @media (min-width: 1024px) and (max-width: 1279px) {
   .p-page-recruit {
+    &__about-item {
+      // 狭いPC幅でも左側の余白と写真下への重なりを保つ。
+      --about-photo-width: clamp(622px, calc(42.06vw + 191.28px), 729.68px);
+      --about-card-width: clamp(420px, calc(16.92vw + 246.73px), 463.3px);
+      --about-card-height: clamp(270px, calc(19.97vw + 65.48px), 321.14px);
+      --about-content-left: clamp(40px, calc(14.32vw - 106.64px), 76.41px);
+      --about-title-top: clamp(60px, calc(11.21vw - 54.79px), 88.7px);
+      --about-copy-top: clamp(110px, calc(12.61vw - 19.13px), 142.29px);
+      --about-number-left: clamp(330px, calc(10.32vw + 224.32px), 356.41px);
+      --about-number-top: clamp(64px, calc(12.21vw - 61.03px), 95.27px);
+      --about-link-top: clamp(200px, calc(18.25vw + 13.12px), 246.73px);
+
+      h3 { font-size: clamp(22px, calc(.78vw + 14px), 24px); }
+      > p {
+        width: min(342px, calc(100% - var(--about-photo-width) - var(--about-card-left) - var(--about-content-left) - 24px));
+        font-size: clamp(14px, calc(.78vw + 6px), 16px);
+        line-height: clamp(24px, calc(1.56vw + 8px), 28px);
+      }
+    }
+
     &__voice-slider {
       width: calc(100% - 48px);
       max-width: 1230px;
@@ -2075,6 +2107,8 @@
 
 @media (min-width: 1280px) {
   .p-page-recruit {
+    &__about-item { --about-link-gap: 18px; }
+
     &__voice-slider { width: 1230px; }
 
     &__voice-track {

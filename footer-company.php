@@ -33,10 +33,7 @@ $footer_link = static function ($label, $url, $class = '') {
 <footer class="l-company-footer">
     <div class="l-company-footer__inner">
         <a class="l-company-footer__logo" href="<?php echo esc_url(home_url('/')); ?>">
-            <picture>
-                <source srcset="<?php echo esc_url(get_template_directory_uri() . '/img/footer/footer_logo-pc.webp'); ?>" type="image/webp">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/footer/footer_logo-pc.png'); ?>" alt="FOODS MARKET Selection" width="200" height="100" loading="lazy">
-            </picture>
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/img/component/company-logo.png'); ?>" alt="FOODS MARKET Selection" width="1244" height="756" loading="lazy">
         </a>
 
         <!-- フッターナビゲーション 開始 -->
