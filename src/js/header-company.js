@@ -68,6 +68,13 @@
     // 初期状態と操作イベントを設定する。
     toggle.hidden = false;
     setOpen(false, true);
+    // タッチ・マウス操作では枠を出さず、キーボード操作時だけフォーカスを示す。
+    window.addEventListener('keydown', (event) => {
+        if (event.key === 'Tab') header.classList.add('is-keyboard-focus');
+    });
+    const clearKeyboardFocus = () => header.classList.remove('is-keyboard-focus');
+    header.addEventListener('mousedown', clearKeyboardFocus);
+    header.addEventListener('touchstart', clearKeyboardFocus, { passive: true });
     toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
     header.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {

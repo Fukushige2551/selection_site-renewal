@@ -1,0 +1,604 @@
+@use "foundation/global" as *;
+
+/**
+ * 会社概要ページ（SP）
+ */
+.p-page-company-about {
+    box-sizing: border-box;
+    overflow: hidden;
+    padding-top: 60px;
+    background: #fff;
+    color: #000;
+    font-family: "Noto Sans JP", sans-serif;
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    &__breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        min-height: 49px;
+        padding: 4px 7px 0;
+        color: #4c4c4c;
+        font-size: 12px;
+        line-height: 1.5;
+
+        span {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            &::before {
+                content: "";
+                width: 6px;
+                height: 6px;
+                border-top: 1px solid currentColor;
+                border-right: 1px solid currentColor;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    &__inner {
+        padding-inline: 5.64vw;
+    }
+
+    &__messagePicture,
+    &__messageImage,
+    &__visual picture,
+    &__visual img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__messageImage,
+    &__visual img {
+        object-fit: cover;
+    }
+
+    &__messagePicture {
+        height: 69.23vw;
+        overflow: hidden;
+    }
+
+    &__messageImage {
+        object-position: 50% 50%;
+    }
+
+    &__heading {
+        text-align: center;
+    }
+
+    &__title {
+        margin: 0;
+        font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+        font-size: 26px;
+        font-weight: 900;
+        line-height: 35px;
+    }
+
+    &__headingEn,
+    &__visualHeading p {
+        margin: 7px 0 0;
+        color: #00a784;
+        font-family: "REM", "Noto Sans JP", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: .1em;
+    }
+
+    &__message {
+        padding-bottom: 54px;
+
+        .p-page-company-about__heading {
+            padding-top: 23px;
+        }
+    }
+
+    &__messageLead {
+        margin: 14px 0 0;
+        color: #0f3675;
+        font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+        font-size: 24px;
+        font-weight: 900;
+        line-height: 35px;
+        text-align: center;
+    }
+
+    &__messageText {
+        margin-top: 10px;
+        font-size: 16px;
+        line-height: 28px;
+        letter-spacing: .02em;
+
+        p {
+            margin: 0;
+
+            + p {
+                margin-top: 28px;
+            }
+        }
+    }
+
+    &__signature {
+        width: 215px;
+        margin: 38px 0 0 auto;
+        text-align: right;
+        font-weight: 500;
+        line-height: 24px;
+
+        &Role {
+            font-size: 16px;
+        }
+
+        &Name {
+            font-size: 20px;
+        }
+
+        &En {
+            display: block;
+            color: #00a784;
+            font-family: "REM", sans-serif;
+            font-size: 12px;
+            letter-spacing: .06em;
+        }
+    }
+
+    &__visual {
+        position: relative;
+        height: clamp(190px, 50.26vw, 260px);
+        overflow: hidden;
+        border-radius: 30px 30px 0 0;
+
+        img {
+            object-position: center;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 54, 117, .6);
+            mix-blend-mode: multiply;
+        }
+    }
+
+    // FigmaのSPマスクに合わせ、買い物かごを中心に拡大表示する。
+    &__visual--profile {
+        picture {
+            position: relative;
+        }
+
+        img {
+            position: absolute;
+            bottom: -7.1%;
+            left: 50%;
+            width: 184.6%;
+            height: auto;
+            max-width: none;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__visualHeading {
+        position: absolute;
+        z-index: 1;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        text-align: center;
+
+        h2 {
+            margin: 0;
+            font-size: 26px;
+            font-weight: 900;
+            line-height: normal;
+            letter-spacing: .05em;
+        }
+
+        p {
+            color: #fff;
+        }
+    }
+
+    &__profile {
+        background: #f9faf5;
+        color: #000;
+    }
+
+    &__profileList {
+        margin: 0;
+        padding: 33px 4.87vw 44px 6.41vw;
+    }
+
+    &__profileRow {
+        display: grid;
+        grid-template-columns: 80px minmax(0, 1fr);
+        column-gap: 10px;
+        padding: 8px 0;
+        border-bottom: 1px dashed #b3b3b3;
+        font-size: 16px;
+        line-height: 28px;
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        dt, dd {
+            margin: 0;
+        }
+
+        dt {
+            font-weight: 500;
+            line-height: 30px;
+        }
+    }
+
+    &__office {
+        padding: 47px 6.15vw 62px;
+        background: #fff;
+
+        .p-page-company-about__headingEn {
+            margin-top: 4px;
+        }
+    }
+
+    &__officeList {
+        display: grid;
+        gap: 28px;
+        margin: 34px 1.28vw 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__officeItem {
+        min-height: 121px;
+        padding: 14px 0 17px 23px;
+        background: #f9faf5;
+        border-radius: 30px;
+        font-size: 16px;
+        line-height: 30px;
+
+        h3, address, p {
+            margin: 0;
+        }
+
+        h3 {
+            color: #10a3ff;
+            font-size: 16px;
+            font-weight: 400;
+        }
+    }
+
+    &__visual--history {
+        picture {
+            position: relative;
+        }
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 254.8%;
+            height: auto;
+            max-width: none;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__history {
+        background: #fff;
+    }
+
+    &__historyList {
+        position: relative;
+        margin: 0;
+        padding: 36px 6.15vw 80px 48px;
+        list-style: none;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 19px;
+            background: #d9d9d9;
+        }
+    }
+
+    &__historyItem {
+        position: relative;
+        min-height: 68px;
+        padding-bottom: 10px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -42px;
+            width: 25px;
+            height: 25px;
+            border: 4px solid #d9d9d9;
+            border-radius: 50%;
+            background: #fff;
+        }
+
+        time {
+            display: block;
+            color: #00a784;
+            font-family: "Sen", "Noto Sans JP", sans-serif;
+            font-size: 20px;
+            line-height: 24px;
+        }
+
+        p {
+            margin: 6px 0 0;
+            font-size: 16px;
+            line-height: 28px;
+        }
+
+        &:last-child {
+            min-height: 0;
+
+            p {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+/**
+ * 会社概要ページ（SP横幅拡張時）
+ */
+@media (min-width: 730px) and (max-width: 767px) {
+    .p-page-company-about {
+        &__office {
+            padding-inline: 21px;
+        }
+
+        &__officeList {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-inline: 0;
+        }
+
+        &__officeItem {
+            padding-inline: 20px;
+        }
+    }
+}
+
+/**
+ * 会社概要ページ（タブレット以上）
+ */
+@media (min-width: 768px) {
+    .p-page-company-about {
+        padding-top: 0;
+
+        &__message {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 32px;
+        }
+
+        &__messagePicture {
+            order: 1;
+            height: clamp(380px, 48vw, 470px);
+        }
+
+        &__messageImage {
+            object-position: center;
+        }
+
+        &__breadcrumb {
+            z-index: 1;
+            order: 2;
+            width: 100%;
+            min-height: 58px;
+            margin: -38px 0 0;
+            padding: 20px 28px 0;
+            border-radius: 30px 30px 0 0;
+            background: #fff;
+            font-size: 13px;
+        }
+
+        &__inner {
+            order: 3;
+            width: calc(100% - 64px);
+            margin-inline: auto;
+            padding-inline: 0;
+            background: #fff;
+        }
+
+        &__message .p-page-company-about__heading {
+            padding-top: 22px;
+        }
+
+        &__messageLead {
+            margin-top: 20px;
+
+            br {
+                display: none;
+            }
+        }
+
+        &__messageText {
+            width: calc(100% - 88px);
+            max-width: 900px;
+            margin: 22px auto 0;
+        }
+
+        &__signature {
+            margin: 42px 44px 0 auto;
+        }
+
+        &__profile {
+            padding: 36px 0 80px;
+            background: linear-gradient(to bottom, #fff 0 226px, #f9faf5 226px 100%);
+        }
+
+        &__visual {
+            width: calc(100% - 80px);
+            max-width: 880px;
+            height: 190px;
+            margin-inline: auto;
+        }
+
+        &__visual--profile img,
+        &__visual--history img {
+            position: static;
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            transform: none;
+        }
+
+        &__visual--profile img {
+            object-position: center 72%;
+        }
+
+        &__visual--history img {
+            object-position: center;
+        }
+
+        &__profileList {
+            position: relative;
+            z-index: 1;
+            width: calc(100% - 80px);
+            max-width: 880px;
+            margin: -18px auto 0;
+            padding: 36px clamp(38px, 6vw, 58px) 48px;
+            border-radius: 20px 20px 24px 24px;
+            background: #fff;
+        }
+
+        &__profileRow {
+            grid-template-columns: 110px minmax(0, 1fr);
+            padding: 10px 0;
+        }
+
+        &__office {
+            padding: 70px 28px 86px;
+        }
+
+        &__officeList {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 42px auto 0;
+        }
+
+        &__officeItem {
+            min-height: 128px;
+            padding: 17px 14px;
+        }
+
+        &__history {
+            padding: 64px 0 90px;
+            background: linear-gradient(to bottom, #fff 0 254px, #d9d9d9 254px 100%);
+        }
+
+        &__historyList {
+            z-index: 1;
+            width: calc(100% - 80px);
+            max-width: 880px;
+            margin: -18px auto 0;
+            padding: 42px 42px 72px;
+            border-radius: 20px 20px 24px 24px;
+            background: #fff;
+
+            &::before {
+                top: 0;
+                left: 150px;
+                width: 10px;
+            }
+        }
+
+        &__historyItem {
+            display: grid;
+            grid-template-columns: 100px 42px minmax(0, 1fr);
+            min-height: 70px;
+            padding: 0 0 12px;
+
+            &::before {
+                top: 0;
+                left: 107px;
+            }
+
+            time {
+                grid-column: 1;
+                font-size: 22px;
+            }
+
+            p {
+                grid-column: 3;
+                grid-row: 1;
+                margin: 0;
+            }
+
+            &:nth-child(2),
+            &:nth-child(4),
+            &:nth-child(9),
+            &:nth-child(10),
+            &:nth-child(22) {
+                br {
+                    display: none;
+                }
+            }
+
+            &:nth-child(18) {
+                .historyTabletInline,
+                .historySpacer {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+/**
+ * 会社概要ページ（PC）
+ */
+@media (min-width: 1024px) {
+    .p-page-company-about {
+        &__messagePicture {
+            height: clamp(520px, 44vw, 760px);
+        }
+
+        &__messageText {
+            width: calc(100% - 96px);
+            max-width: 1000px;
+            line-break: strict;
+            overflow-wrap: break-word;
+            word-break: normal;
+        }
+
+        &__signature {
+            width: calc(100% - 96px);
+            max-width: 1000px;
+            margin: 42px auto 0;
+        }
+
+        &__officeList {
+            max-width: 1200px;
+        }
+    }
+}
+
+@media (min-width: 1280px) {
+    .p-page-company-about__officeList {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
