@@ -2,13 +2,6 @@
 /**
  * 企業ページ共通ヘッダー
  */
-wp_enqueue_script(
-    'foods-company-header',
-    get_template_directory_uri() . '/src/js/header-company.js',
-    [],
-    filemtime(get_template_directory() . '/src/js/header-company.js'),
-    true
-);
 // グローバルナビゲーションのリンク一覧
 $company_header_links = [
     ['label' => '会社情報', 'url' => home_url('/company/')],

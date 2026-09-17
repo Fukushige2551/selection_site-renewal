@@ -116,7 +116,6 @@ $footer_link = static function ($label, $url, $class = '') {
 </footer>
 <!-- 企業ページ共通フッター 終了 -->
 <?php
-wp_enqueue_script('foods-company-footer', get_template_directory_uri() . '/src/js/footer-company.js', [], filemtime(get_template_directory() . '/src/js/footer-company.js'), true);
 wp_footer();
 ?>
 </body>

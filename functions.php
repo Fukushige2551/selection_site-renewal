@@ -42,6 +42,8 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-archive-recipe-js',
         'foods-single-recipe-js',
         'foods-page-company-js',
+        'foods-company-header-js',
+        'foods-company-footer-js',
         'foods-page-company-about-js',
         'foods-page-company-business-js',
     ];
@@ -256,6 +258,16 @@ function foods_theme_scripts() {
             $manifest,
             $is_local
         );
+    }
+
+    // 企業ページ共通ヘッダー・フッターのアセット
+    if (is_page() && in_array(basename((string) get_page_template()), [
+        'page-company.php',
+        'page-company-about.php',
+        'page-company-business.php',
+    ], true)) {
+        foods_enqueue_vite_entry('foods-company-header', 'src/js/header-company.js', $dev_server, $manifest, $is_local);
+        foods_enqueue_vite_entry('foods-company-footer', 'src/js/footer-company.js', $dev_server, $manifest, $is_local);
     }
 
     // page-company.php 専用アセット
