@@ -8,7 +8,8 @@
         height: 15.5vw;
 
         &__logo {
-            @include backgroundImg("#{$img-path}header/bg_header-logo-sp.png");
+            @include backgroundImg("#{$img-path}component/selection-logo.svg");
+            background-size: contain;
             position: absolute;
             top: 1.8vw;
             left: 37.4vw;

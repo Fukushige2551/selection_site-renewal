@@ -33,10 +33,7 @@ $footer_link = static function ($label, $url, $class = '') {
 <footer class="l-company-footer">
     <div class="l-company-footer__inner">
         <a class="l-company-footer__logo" href="<?php echo esc_url(home_url('/')); ?>">
-            <picture>
-                <source srcset="<?php echo esc_url(get_template_directory_uri() . '/img/footer/footer_logo-pc.webp'); ?>" type="image/webp">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/footer/footer_logo-pc.png'); ?>" alt="FOODS MARKET Selection" width="200" height="100" loading="lazy">
-            </picture>
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/img/component/selection-logo.svg'); ?>" alt="FOODS MARKET Selection" width="311" height="189" loading="lazy">
         </a>
 
         <!-- フッターナビゲーション 開始 -->
@@ -85,11 +82,8 @@ $footer_link = static function ($label, $url, $class = '') {
         <!-- バナー一覧 -->
         <div class="l-company-footer__banners">
             <?php foreach (['app' => ['selection-app', 'セレクション アプリ ダウンロード'], 'cgc' => ['cgc-colab', 'セレクションはCGCの加盟店です']] as $key => [$file, $alt]) : ?>
-                <?php if ($footer_destinations[$key]) : ?><a class="l-company-footer__banner" href="<?php echo esc_url($footer_destinations[$key]); ?>"><?php else : ?><div class="l-company-footer__banner"><?php endif; ?>
-                    <picture>
-                        <source srcset="<?php echo esc_url(get_template_directory_uri() . '/img/footer/footer_banner-' . $file . '.webp'); ?>" type="image/webp">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/img/footer/footer_banner-' . $file . '.jpg'); ?>" alt="<?php echo esc_attr($alt); ?>" width="<?php echo $key === 'app' ? 722 : 720; ?>" height="<?php echo $key === 'app' ? 257 : 254; ?>" loading="lazy">
-                    </picture>
+                <?php if ($footer_destinations[$key]) : ?><a class="l-company-footer__banner l-company-footer__banner--<?php echo esc_attr($key); ?>" href="<?php echo esc_url($footer_destinations[$key]); ?>"><?php else : ?><div class="l-company-footer__banner l-company-footer__banner--<?php echo esc_attr($key); ?>"><?php endif; ?>
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/img/footer/footer_banner-' . $file . '.png'); ?>" alt="<?php echo esc_attr($alt); ?>" width="<?php echo $key === 'app' ? 722 : 720; ?>" height="<?php echo $key === 'app' ? 257 : 254; ?>" loading="lazy">
                 <?php if ($footer_destinations[$key]) : ?></a><?php else : ?></div><?php endif; ?>
             <?php endforeach; ?>
         </div>

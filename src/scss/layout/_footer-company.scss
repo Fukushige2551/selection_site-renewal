@@ -226,7 +226,16 @@
     }
 
     &__banner {
+        overflow: hidden;
         min-width: 0;
+    }
+
+    &__banner--app {
+        aspect-ratio: 722 / 257;
+    }
+
+    &__banner--cgc {
+        aspect-ratio: 720 / 254;
     }
 
     &__banner picture, &__banner img {
@@ -235,7 +244,8 @@
     }
 
     &__banner img {
-        height: auto;
+        object-fit: cover;
+        height: 100%;
     }
 
     /**
