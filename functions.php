@@ -45,6 +45,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-page-company-js',
         'foods-page-company-about-js',
         'foods-page-company-business-js',
+        'foods-page-recruit-work-js',
     ];
 
     if (in_array($handle, $module_handles, true)) {
@@ -173,6 +174,7 @@ function foods_theme_scripts() {
     $page_company_entry = 'src/js/page-company.js';
     $page_company_about_entry = 'src/js/page-company-about.js';
     $page_company_business_entry = 'src/js/page-company-business.js';
+    $page_recruit_work_entry = 'src/js/page-recruit-work.js';
 
     if ($is_local) {
         wp_enqueue_script(
@@ -420,6 +422,17 @@ function foods_theme_scripts() {
         foods_enqueue_vite_entry(
             'foods-page-recruit',
             $page_recruit_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    // page-recruit-work.php専用アセット
+    if (is_page() && basename((string) get_page_template()) === 'page-recruit-work.php') {
+        foods_enqueue_vite_entry(
+            'foods-page-recruit-work',
+            $page_recruit_work_entry,
             $dev_server,
             $manifest,
             $is_local
