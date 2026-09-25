@@ -113,12 +113,29 @@
         }
     }
 
-    &__heroPicture {
+    &__heroVisual {
+        position: relative;
         height: clamp(220px, 69.23vw, 380px);
+        overflow: hidden;
+    }
+
+    &__heroPicture {
+        height: 100%;
 
         img {
             object-position: center;
         }
+    }
+
+    &__heroBadges {
+        position: absolute;
+        top: 51%;
+        left: 50%;
+        display: block;
+        width: min(100vw, 510px);
+        height: auto;
+        object-fit: contain;
+        transform: translate(-50%, -50%);
     }
 
     &__lead {
@@ -554,6 +571,10 @@
             display: none;
         }
 
+        &__heroBadges {
+            width: min(66vw, 780px);
+        }
+
         &__introText {
             width: 90%;
             max-width: 900px;
@@ -597,9 +618,14 @@
             }
         }
 
-        &__heroPicture {
+        &__heroVisual {
             order: -1;
             height: clamp(460px, 44.17vw, 848px);
+        }
+
+        &__heroBadges {
+            top: 53%;
+            width: min(54.4vw, 750px);
         }
 
         &__breadcrumb {
