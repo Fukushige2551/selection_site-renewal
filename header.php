@@ -137,10 +137,7 @@
             <a class="l-header-pc__nav__link" href="<?php echo esc_url(get_post_type_archive_link('shop')); ?>">チラシ・店舗情報</a>
             <a class="l-header-pc__nav__link" href="<?php echo esc_url(get_post_type_archive_link('recipe')); ?>">レシピ</a>
             <a class="l-header-pc__nav__link" href="<?php echo esc_url(home_url('/')); ?>">
-                <picture>
-                    <source srcset="<?php echo get_template_directory_uri(); ?>/img/header/webp/header-logo-pc.webp" type="image/webp">
-                    <img class="l-header-pc__nav__logo" src="<?php echo get_template_directory_uri(); ?>/img/header/header-logo-pc.png" alt="セレクションのロゴ画像">
-                </picture>
+                <img class="l-header-pc__nav__logo" src="<?php echo esc_url(get_template_directory_uri() . '/img/component/selection-logo.svg'); ?>" alt="FOODS MARKET Selection" width="311" height="189">
             </a>
             <a class="l-header-pc__nav__link recruit--part-time" href="">パート・アルバイト募集</a>
             <a class="l-header-pc__nav__link" href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a>

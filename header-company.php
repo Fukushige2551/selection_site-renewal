@@ -2,13 +2,6 @@
 /**
  * 企業ページ共通ヘッダー
  */
-wp_enqueue_script(
-    'foods-company-header',
-    get_template_directory_uri() . '/src/js/header-company.js',
-    [],
-    filemtime(get_template_directory() . '/src/js/header-company.js'),
-    true
-);
 // グローバルナビゲーションのリンク一覧
 $company_header_links = [
     ['label' => '会社情報', 'url' => home_url('/company/')],
@@ -36,7 +29,7 @@ $company_header_links = [
 <header class="l-company-header" data-company-header>
     <div class="l-company-header__bar">
         <a class="l-company-header__logo" href="<?php echo esc_url(home_url('/')); ?>" aria-label="セレクション トップページへ">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/img/header/header_logo-sp.svg'); ?>" width="123" height="61" alt="FOODS MARKET Selection">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/img/component/selection-logo.svg'); ?>" width="311" height="189" alt="FOODS MARKET Selection">
         </a>
         <button class="l-company-header__toggle" type="button" aria-label="メニューを開く" aria-controls="company-header-navigation" aria-expanded="false" hidden>
             <span></span><span></span><span></span>

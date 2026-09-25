@@ -8,11 +8,8 @@
     z-index: 100;
     box-sizing: border-box;
     font-family: Zen Kaku Gothic New, sans-serif;
-    position: absolute;
-    top: 0;
-    right: 4%;
-    bottom: auto;
-    left: 4%;
+    position: fixed;
+    inset: 0 4% auto;
 
     & *, & :before, & :after {
         box-sizing: border-box;

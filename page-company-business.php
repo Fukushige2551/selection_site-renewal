@@ -74,9 +74,6 @@ get_header('company');
         <span aria-current="page">企業の方へ</span>
     </nav>
         <picture class="p-page-company-business__heroPicture">
-            <?php if (file_exists($business_image_path . '/webp/img_business-fv.webp')) : ?>
-                <source srcset="<?php echo esc_url($business_image_uri . '/webp/img_business-fv.webp'); ?>" type="image/webp">
-            <?php endif; ?>
             <img src="<?php echo esc_url($business_image_uri . '/img_business-fv.png'); ?>" alt="セレクションと地域の生産者・取引先の皆さま" fetchpriority="high">
         </picture>
         <header class="p-page-company-business__heading">
@@ -179,7 +176,7 @@ get_header('company');
             <!-- 装飾文字は読み上げ対象から除外する。 -->
             <img class="p-page-company-business__contactDecoration" src="<?php echo esc_url($business_image_uri . '/svg/text_seeking-partners.svg'); ?>" alt="" aria-hidden="true">
             <p>セレクションでは、<br>地域のお客様に選ばれる売場を<br>ともにつくるパートナー企業様を<br class="p-page-company-business__breakUntilPc">募集しています。<br>お取引のご相談、商品のご提案、<br>新規お取り組みに<br class="p-page-company-business__breakUntilPc">関するお問い合わせはお気軽に<br>ご連絡ください。</p>
-            <a href="<?php echo esc_url(home_url('/contact/')); ?>"><img class="p-page-company-business__contactMail" src="<?php echo esc_url($business_image_uri . '/svg/icon_mail.svg'); ?>" alt="">
+            <a href="<?php echo esc_url(home_url('/company/business/contact/')); ?>"><img class="p-page-company-business__contactMail" src="<?php echo esc_url($business_image_uri . '/svg/icon_mail.svg'); ?>" alt="">
                 お問い合わせはこちら
                 <img class="p-page-company-business__contactArrow" src="<?php echo esc_url($business_image_uri . '/svg/icon_contact-arrow.svg'); ?>" alt="">
             </a>

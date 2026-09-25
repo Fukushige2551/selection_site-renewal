@@ -1,14 +1,12 @@
 <footer class="l-footer">
     <picture class="l-footer__logo l-footer__logo--sp">
         <a href="<?php echo esc_url(home_url('/')); ?>">
-            <source srcset="<?php echo get_template_directory_uri(); ?>/img/footer/footer_logo-sp.webp" type="image/webp">
-            <img class="l-footer__logo__img" src="<?php echo get_template_directory_uri(); ?>/img/footer/footer_logo-sp.png" alt="会社ロゴ">
+            <img class="l-footer__logo__img" src="<?php echo esc_url(get_template_directory_uri() . '/img/component/selection-logo.svg'); ?>" alt="FOODS MARKET Selection" width="311" height="189">
         </a>
     </picture>
     <picture class="l-footer__logo l-footer__logo--pc">
         <a href="<?php echo esc_url(home_url('/')); ?>">
-            <source srcset="<?php echo get_template_directory_uri(); ?>/img/footer/footer_logo-pc.webp" type="image/webp">
-            <img class="l-footer__logo__img" src="<?php echo get_template_directory_uri(); ?>/img/footer/footer_logo-pc.png" alt="会社ロゴ">
+            <img class="l-footer__logo__img" src="<?php echo esc_url(get_template_directory_uri() . '/img/component/selection-logo.svg'); ?>" alt="FOODS MARKET Selection" width="311" height="189">
         </a>
     </picture>
 

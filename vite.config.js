@@ -40,6 +40,8 @@ export default defineConfig({
                 'page-select-rice': path.resolve(__dirname, 'src/js/page-select-rice.js'),
                 'page-select-deli': path.resolve(__dirname, 'src/js/page-select-deli.js'),
                 'page-company': path.resolve(__dirname, 'src/js/page-company.js'),
+                'header-company': path.resolve(__dirname, 'src/js/header-company.js'),
+                'footer-company': path.resolve(__dirname, 'src/js/footer-company.js'),
                 'page-company-about': path.resolve(__dirname, 'src/js/page-company-about.js'),
                 'page-company-business': path.resolve(__dirname, 'src/js/page-company-business.js'),
                 'page-select-washoku-daily': path.resolve(__dirname, 'src/js/page-select-washoku-daily.js'),

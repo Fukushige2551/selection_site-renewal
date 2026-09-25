@@ -292,7 +292,6 @@ get_header('company');
             </nav>
 
             <picture>
-                <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/page-company/webp/img_company_info_person.webp" type="image/webp">
                 <img class="p-page-company__info__person" src="<?php echo get_template_directory_uri(); ?>/img/page/page-company/img_company_info_person.png" alt="">
             </picture>
 
