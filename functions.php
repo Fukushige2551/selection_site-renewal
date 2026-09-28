@@ -269,6 +269,8 @@ function foods_theme_scripts() {
         'page-company.php',
         'page-company-about.php',
         'page-company-business.php',
+        'page-recruit.php',
+        'page-recruit-work.php',
     ], true)) {
         foods_enqueue_vite_entry('foods-company-header', 'src/js/header-company.js', $dev_server, $manifest, $is_local);
         foods_enqueue_vite_entry('foods-company-footer', 'src/js/footer-company.js', $dev_server, $manifest, $is_local);
