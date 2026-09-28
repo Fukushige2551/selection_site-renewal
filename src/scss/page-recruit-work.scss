@@ -771,6 +771,449 @@
   }
 }
 
+body.is-job-modal-open {
+  overflow: hidden;
+}
+
+.p-page-recruit-work__job-trigger {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  &:focus-visible {
+    outline: 3px solid #103675;
+    outline-offset: 4px;
+  }
+}
+
+.p-page-recruit-work__job-modal {
+  position: fixed;
+  z-index: 10000;
+  inset: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 101px 17px 60px;
+
+  &[hidden] { display: none; }
+}
+
+.p-page-recruit-work__job-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(108, 108, 108, 0.7);
+}
+
+.p-page-recruit-work__job-modal-dialog {
+  position: relative;
+  width: min(356px, 100%);
+  margin: 0 auto;
+  border-radius: 30px;
+  background: #fff;
+  color: #000;
+  font-family: "Noto Sans JP", sans-serif;
+  outline: none;
+}
+
+.p-page-recruit-work__job-modal-icon-close {
+  position: absolute;
+  z-index: 1;
+  top: -62px;
+  right: -2px;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:focus-visible {
+    outline: 3px solid #103675;
+    outline-offset: 3px;
+  }
+}
+
+.p-page-recruit-work__job-modal-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  margin: 0;
+  border-radius: 30px 30px 0 0;
+  background: #00a784;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.05em;
+}
+
+.p-page-recruit-work__job-modal-content {
+  padding: 29px 17px 46px;
+}
+
+.p-page-recruit-work__job-modal-lead {
+  margin: 0 0 18px;
+  color: #103675;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 24px;
+  text-align: left;
+}
+
+.p-page-recruit-work__job-modal-lead--grocery,
+.p-page-recruit-work__job-modal-lead--produce {
+  margin-bottom: 16px;
+  line-height: 34px;
+}
+
+.p-page-recruit-work__job-modal-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 322 / 203;
+  overflow: hidden;
+  border-radius: 30px;
+
+  img {
+    position: absolute;
+    top: -28.1%;
+    left: -41.6%;
+    width: 147.8%;
+    height: auto;
+    max-width: none;
+  }
+}
+
+.p-page-recruit-work__job-modal-photo--deli img {
+  top: -111.3%;
+  left: -118.3%;
+  width: 228.6%;
+}
+
+.p-page-recruit-work__job-modal-photo--fish img {
+  top: -69%;
+  left: -49.4%;
+  width: 200%;
+}
+
+.p-page-recruit-work__job-modal-photo--grocery img {
+  top: -24.14%;
+  left: -21.12%;
+  width: 162.11%;
+}
+
+.p-page-recruit-work__job-modal-photo--produce img {
+  top: -66.5%;
+  left: -76.1%;
+  width: 205.6%;
+}
+
+.p-page-recruit-work__job-modal-photo--checker img {
+  top: -28.08%;
+  left: -29.19%;
+  width: 159.32%;
+}
+
+.p-page-recruit-work__job-modal-section {
+  padding: 17px 0 20px;
+  border-top: 1px dotted #9b9b9b;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+
+  &--description {
+    padding-top: 20px;
+    border-top: 0;
+  }
+
+  h3,
+  p,
+  ul { margin: 0; }
+
+  h3 {
+    color: #00a784;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.p-page-recruit-work__job-modal-text-close {
+  display: block;
+  margin: 11px auto 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #103675;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration: underline;
+  text-underline-position: from-font;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid #103675;
+    outline-offset: 4px;
+  }
+}
+
+@media (max-width: 767px) {
+  .p-page-recruit-work__job-modal {
+    padding: 25.897vw 4.359vw 15.385vw;
+  }
+
+  .p-page-recruit-work__job-modal-dialog {
+    width: 91.282vw;
+    border-radius: 7.692vw;
+  }
+
+  .p-page-recruit-work__job-modal-icon-close {
+    top: -15.897vw;
+    right: -0.513vw;
+    width: 10.769vw;
+    height: 10.769vw;
+
+    &:focus-visible {
+      outline-width: 0.769vw;
+      outline-offset: 0.769vw;
+    }
+  }
+
+  .p-page-recruit-work__job-modal-title {
+    height: 11.282vw;
+    border-radius: 7.692vw 7.692vw 0 0;
+    font-size: 4.615vw;
+    line-height: 7.179vw;
+  }
+
+  .p-page-recruit-work__job-modal-content {
+    padding: 7.436vw 4.359vw 11.795vw;
+  }
+
+  .p-page-recruit-work__job-modal-lead {
+    margin-bottom: 4.615vw;
+    font-size: 5.128vw;
+    line-height: 6.154vw;
+  }
+
+  .p-page-recruit-work__job-modal-lead--grocery,
+  .p-page-recruit-work__job-modal-lead--produce {
+    margin-bottom: 4.103vw;
+    line-height: 8.718vw;
+  }
+
+  .p-page-recruit-work__job-modal-photo {
+    border-radius: 7.692vw;
+  }
+
+  .p-page-recruit-work__job-modal-section {
+    padding: 4.359vw 0 5.128vw;
+    font-size: 4.103vw;
+    line-height: 7.179vw;
+
+    &--description {
+      padding-top: 5.128vw;
+    }
+
+    h3 {
+      font-size: 4.615vw;
+      line-height: 7.179vw;
+    }
+  }
+
+  .p-page-recruit-work__job-modal-text-close {
+    margin-top: 2.821vw;
+    font-size: 4.103vw;
+    line-height: 6.154vw;
+
+    &:focus-visible {
+      outline-width: 0.513vw;
+      outline-offset: 1.026vw;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .p-page-recruit-work__job-modal {
+    padding: 160px 24px 90px;
+  }
+
+  .p-page-recruit-work__job-modal-dialog {
+    width: 680px;
+  }
+
+  .p-page-recruit-work__job-modal-icon-close {
+    right: 0;
+    width: 40px;
+    height: 40px;
+  }
+
+  .p-page-recruit-work__job-modal-content {
+    padding: 29px 50px 56px;
+  }
+
+  .p-page-recruit-work__job-modal-lead {
+    margin-bottom: 28px;
+    text-align: center;
+  }
+
+  .p-page-recruit-work__job-modal-lead--grocery,
+  .p-page-recruit-work__job-modal-lead--produce {
+    margin-bottom: 27px;
+    line-height: 34px;
+  }
+
+  .p-page-recruit-work__job-modal-photo {
+    aspect-ratio: 680 / 380;
+
+    img {
+      top: -32.1%;
+      left: -41.6%;
+      width: 147.8%;
+    }
+  }
+
+  .p-page-recruit-work__job-modal-photo--fish img {
+    top: -64.7%;
+    left: -40.9%;
+    width: 175.15%;
+  }
+
+  .p-page-recruit-work__job-modal-photo--grocery img {
+    top: -12.9%;
+    left: -10%;
+    width: 110.29%;
+  }
+
+  .p-page-recruit-work__job-modal-photo--produce img {
+    top: -51.58%;
+    left: -31.18%;
+    width: 140.74%;
+  }
+
+  .p-page-recruit-work__job-modal-photo--checker img {
+    top: -25%;
+    left: -17.94%;
+    width: 125.74%;
+  }
+
+  .p-page-recruit-work__job-modal-section {
+    padding: 17px 0 20px;
+
+    &--description {
+      padding-top: 32px;
+    }
+  }
+
+  .p-page-recruit-work__job-modal-text-close {
+    margin-top: 22px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .p-page-recruit-work__job-modal {
+    padding: 221px 24px 120px;
+  }
+
+  .p-page-recruit-work__job-modal-dialog {
+    width: 800px;
+  }
+
+  .p-page-recruit-work__job-modal-icon-close {
+    right: 0;
+    width: 40px;
+    height: 40px;
+  }
+
+  .p-page-recruit-work__job-modal-content {
+    padding: 29px 60px 62px;
+  }
+
+  .p-page-recruit-work__job-modal-lead {
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .p-page-recruit-work__job-modal-lead--grocery,
+  .p-page-recruit-work__job-modal-lead--produce {
+    margin-bottom: 27px;
+    line-height: 34px;
+  }
+
+  .p-page-recruit-work__job-modal-photo {
+    aspect-ratio: 680 / 380;
+
+    img {
+      top: -32.1%;
+      left: -41.6%;
+      width: 147.8%;
+    }
+  }
+
+  .p-page-recruit-work__job-modal-photo--fish img {
+    top: -64.7%;
+    left: -40.9%;
+    width: 175.15%;
+  }
+
+  .p-page-recruit-work__job-modal-photo--grocery img {
+    top: -12.9%;
+    left: -10%;
+    width: 110.29%;
+  }
+
+  .p-page-recruit-work__job-modal-photo--produce img {
+    top: -51.58%;
+    left: -31.18%;
+    width: 140.74%;
+  }
+
+  .p-page-recruit-work__job-modal-photo--checker img {
+    top: -25%;
+    left: -17.94%;
+    width: 125.74%;
+  }
+
+  .p-page-recruit-work__job-modal-section {
+    padding: 17px 0 20px;
+
+    &--description { padding-top: 36px; }
+  }
+
+  .p-page-recruit-work__job-modal-text-close {
+    margin-top: 26px;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 1023px) {
   .p-page-recruit-work {
     padding-top: 84px;

@@ -14,6 +14,120 @@ $jobs = [
   ['チェッカー', 'お客様と最も近い<br>「お店の顔」。', 'job-checker.png', 'checker'],
 ];
 
+$job_modals = [
+  'meat' => [
+    'title' => '食肉部門',
+    'lead' => 'プロの技で“おいしさ”をつくる',
+    'image' => 'job-modal-meat.png',
+    'image_alt' => '食肉部門で商品を加工するスタッフ',
+    'description' => '精肉部門は、お客様の食卓に安全でおいしいお肉を届けるため、カット・パック・値付け・陳列などを行う部門です。肉の種類や部位によって扱い方や保存方法が異なるため、専門知識と丁寧な作業が求められます。',
+    'tasks' => [
+      '肉のカット、スライス、パック詰め',
+      '値付け、ラベル貼り',
+      '売場づくり（数字管理・陳列・装飾・POP作成）',
+      '在庫管理・品質管理',
+      'お客様からのご要望対応',
+      'マネジメント業務',
+    ],
+    'rewards' => [
+      '売り場の計画をたて量目を決め、計画通りにお肉が売れるときの達成感。',
+      'スライサーの加工技術を褒められた時の嬉しさ。',
+    ],
+  ],
+  'fish' => [
+    'title' => '水産部門',
+    'lead' => '鮮度と見栄えが勝負。',
+    'image' => 'job-modal-fish.png',
+    'image_alt' => '水産部門で商品を加工するスタッフ',
+    'description' => '水産部門は、鮮魚や切り身、お刺身などを通して、海の恵みをお客様の食卓へ届ける部門です。魚の種類や鮮度に合わせた加工・調理・陳列を行い、安全でおいしい商品づくりを担います。',
+    'tasks' => [
+      '魚の加工（下処理、切り身、お刺身づくり）',
+      'パック詰め、値付け、ラベル貼り',
+      '売場づくり（数字管理・陳列・装飾・POP作成）',
+      '在庫管理・鮮度、品質管理',
+      'お客様対応',
+      'マネジメント業務',
+    ],
+    'rewards' => [
+      '技術が特に大事になります。捌き方ひとつで鮮度の良し悪しが大きく変わり販売に直結する。難しい部門ですが自分の技術をお客様に披露する機会が多く「綺麗なお造り！」や「お寿司美味しそう！」などの誉め言葉を受けるたびに励みになります。',
+    ],
+  ],
+  'produce' => [
+    'title' => '青果部門',
+    'lead' => '季節の野菜や果物を通じて旬を届ける。',
+    'image' => 'job-modal-produce.png',
+    'image_alt' => '青果部門で野菜を加工するスタッフ',
+    'description' => '青果部門は、野菜や果物を通して「新鮮さ」と「季節感」を伝える部門です。鮮度管理や美しい売場づくりを行い、毎日の食卓を支えます。',
+    'tasks' => [
+      '野菜・果物の加工、袋詰め',
+      '値付け、ラベル貼り',
+      '売場づくり（数字管理・陳列・装飾・量目調整）',
+      '鮮度・在庫管理',
+      'お客様対応',
+      'マネジメント業務',
+    ],
+    'rewards' => [
+      '売り場計画をたてそれがハマるとき。',
+      '今日は葉物を多くしよう。この果物の売り場を拡げようなど商品知識、そして気候や季節を考えてつくるのが楽しいです。',
+    ],
+  ],
+  'deli' => [
+    'title' => '惣菜部門',
+    'lead' => '手づくりの味で毎日の食卓を応援。',
+    'image' => 'job-modal-deli.png',
+    'image_alt' => '惣菜部門で商品を調理するスタッフ',
+    'description' => '惣菜部門は、お弁当や揚げ物、煮物など、すぐに食べられる商品を提供する部門です。調理から売場づくりまで幅広く関わり、毎日の「助かる」「おいしい」を支えます。',
+    'tasks' => [
+      '惣菜・弁当の調理、盛り付け',
+      'パック詰め、値付け',
+      '売場づくり、品出し（数字管理・陳列・装飾・POP作成）',
+      '衛生管理',
+      '商品補充、製造数管理',
+    ],
+    'rewards' => [
+      '「美味しそう！」や「これ、こないだ買って美味しかったの」と言って買って下さったとき。',
+      'おいしいの一言が自分らの調理技術の腕や商品提案の成功に直結するのが嬉しいです。',
+    ],
+  ],
+  'grocery' => [
+    'title' => 'グロサリー部門',
+    'lead' => '毎日の生活を支える“定番商品”を扱う。',
+    'image' => 'job-modal-grocery.png',
+    'image_alt' => 'グロサリー部門で商品を補充するスタッフ',
+    'description' => 'グロサリー部門は、調味料・加工食品・お菓子・飲料など、日常に欠かせない商品を扱う部門です。売場管理を通して、お客様が買い物しやすい環境を整えます。',
+    'tasks' => [
+      '商品の品出し、補充',
+      '売場づくり（数字管理・陳列・棚割り調整）',
+      '発注、在庫管理',
+      '売価変更、POP設置',
+      '売場の整理整頓',
+      'マネジメント業務',
+    ],
+    'rewards' => [
+      '売り場づくりの工夫が売り上げに響いたと感じる時。',
+      '発注・在庫管理をし利益をあげてく、数字と現場をみて判断し膨大な種類の商品を販売するのが難しいですが、楽しいです。',
+    ],
+  ],
+  'checker' => [
+    'title' => 'チェッカー部門',
+    'lead' => 'お客様と最も近い「お店の顔」。',
+    'image' => 'job-modal-checker.png',
+    'image_alt' => 'チェッカー部門でお客様を接客するスタッフ',
+    'description' => 'チェッカー部門は、レジ対応を通してお客様と直接関わる「お店の顔」となる部門です。正確で丁寧な対応が、お店全体の印象を左右します。',
+    'tasks' => [
+      'レジでの会計業務',
+      '接客対応、声かけ',
+      '袋詰めサポート',
+      'レジ周りの整理整頓',
+      'サービスカウンター業務（店舗により）',
+    ],
+    'rewards' => [
+      '「ありがとう」「また来るね」と声をかけてもらえることが大きなやりがいです。',
+      '接客スキルが自然と身につき、人と接する楽しさを実感できます。',
+    ],
+  ],
+];
+
 $career_stages = [
   [
     'period' => '1〜4年目',
@@ -228,6 +342,11 @@ get_header('company');
           <div class="p-page-recruit-work__job-photo"><img class="p-page-recruit-work__job-photo-image p-page-recruit-work__job-photo-image--<?php echo esc_attr($slug); ?>" src="<?php echo esc_url($image_uri . '/' . $image); ?>" alt="<?php echo esc_attr($title . '部門'); ?>" loading="lazy"></div>
           <div class="p-page-recruit-work__job-copy"><h3><?php echo esc_html($title); ?></h3><p><?php echo wp_kses($description, ['br' => []]); ?></p></div>
           <img class="p-page-recruit-work__job-arrow" src="<?php echo esc_url($image_uri . '/job-arrow.svg'); ?>" alt="">
+          <?php if (isset($job_modals[$slug])) : ?>
+            <button class="p-page-recruit-work__job-trigger" type="button" data-job-modal-open="<?php echo esc_attr($slug); ?>" aria-haspopup="dialog" aria-controls="job-modal-<?php echo esc_attr($slug); ?>">
+              <span><?php echo esc_html($title); ?>部門の詳細を見る</span>
+            </button>
+          <?php endif; ?>
         </article>
       <?php endforeach; ?>
     </div>
@@ -312,5 +431,41 @@ get_header('company');
     </div>
   </section>
 </main>
+
+<?php foreach ($job_modals as $slug => $modal) : ?>
+  <div class="p-page-recruit-work__job-modal" data-job-modal="<?php echo esc_attr($slug); ?>" hidden>
+    <div class="p-page-recruit-work__job-modal-overlay" data-job-modal-close></div>
+    <section class="p-page-recruit-work__job-modal-dialog" id="job-modal-<?php echo esc_attr($slug); ?>" role="dialog" aria-modal="true" aria-labelledby="job-modal-<?php echo esc_attr($slug); ?>-title" tabindex="-1">
+      <button class="p-page-recruit-work__job-modal-icon-close" type="button" data-job-modal-close aria-label="閉じる">
+        <img src="<?php echo esc_url($image_uri . '/job-modal-close.svg'); ?>" alt="">
+      </button>
+      <h2 class="p-page-recruit-work__job-modal-title" id="job-modal-<?php echo esc_attr($slug); ?>-title"><?php echo esc_html($modal['title']); ?></h2>
+      <div class="p-page-recruit-work__job-modal-content">
+        <p class="p-page-recruit-work__job-modal-lead p-page-recruit-work__job-modal-lead--<?php echo esc_attr($slug); ?>"><?php echo esc_html($modal['lead']); ?></p>
+        <div class="p-page-recruit-work__job-modal-photo p-page-recruit-work__job-modal-photo--<?php echo esc_attr($slug); ?>">
+          <img src="<?php echo esc_url($image_uri . '/' . $modal['image']); ?>" alt="<?php echo esc_attr($modal['image_alt']); ?>">
+        </div>
+        <div class="p-page-recruit-work__job-modal-section p-page-recruit-work__job-modal-section--description">
+          <p><?php echo esc_html($modal['description']); ?></p>
+        </div>
+        <div class="p-page-recruit-work__job-modal-section">
+          <h3>【主な仕事内容】</h3>
+          <ul>
+            <?php foreach ($modal['tasks'] as $task) : ?>
+              <li>・<?php echo esc_html($task); ?></li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
+        <div class="p-page-recruit-work__job-modal-section">
+          <h3>【やりがい】</h3>
+          <?php foreach ($modal['rewards'] as $reward) : ?>
+            <p><?php echo esc_html($reward); ?></p>
+          <?php endforeach; ?>
+        </div>
+        <button class="p-page-recruit-work__job-modal-text-close" type="button" data-job-modal-close>× 閉じる</button>
+      </div>
+    </section>
+  </div>
+<?php endforeach; ?>
 
 <?php get_footer('company'); ?>
