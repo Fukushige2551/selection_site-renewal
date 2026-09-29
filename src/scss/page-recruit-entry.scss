@@ -1,0 +1,667 @@
+.p-recruit-entry {
+  color: #000;
+  background: #fff;
+  font-family: "Noto Sans JP", sans-serif;
+  line-break: strict;
+  word-break: auto-phrase;
+
+  *,
+  *::before,
+  *::after { box-sizing: border-box; }
+
+  &__breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    width: min(100% - 46px, 1200px);
+    min-height: 46px;
+    margin: 0 auto;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-size: 13px;
+    line-height: 25px;
+
+    a {
+      color: #10a3ff;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  }
+
+  &__requirements {
+    width: min(100% - 46px, 1200px);
+    margin: 0 auto;
+    padding-bottom: 92px;
+  }
+
+  &__hero {
+    width: 100%;
+    aspect-ratio: 345 / 218;
+    overflow: hidden;
+    border-radius: 30px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__table {
+    width: 100%;
+    margin: 19px 0 0;
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 80px minmax(0, 1fr);
+    gap: 10px;
+    padding: 8px 0 10px;
+    border-bottom: 1px dotted #9b9b9b;
+
+    &:last-child { border-bottom: 0; }
+
+    dt {
+      margin: 0;
+      font-weight: 500;
+      text-wrap: balance;
+    }
+
+    dd {
+      min-width: 0;
+      margin: 0;
+      font-weight: 400;
+      word-break: normal;
+      overflow-wrap: normal;
+      line-break: strict;
+      text-wrap: pretty;
+    }
+
+    small {
+      font-size: 14px;
+      line-height: 26px;
+    }
+  }
+
+  &__dot-line {
+    position: relative;
+    display: block;
+    padding-left: 15px;
+
+    &::before {
+      position: absolute;
+      top: 0.9375em;
+      left: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #d5d5d5;
+      content: "";
+      transform: translateY(-50%);
+    }
+  }
+
+  &__row strong {
+    display: inline-block;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  &__detail-indent {
+    display: block;
+    padding-left: 1em;
+  }
+
+  &__regular-note {
+    display: block;
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  &__application {
+    position: relative;
+    min-height: 2066px;
+    overflow: hidden;
+    color: #fff;
+  }
+
+  &__application-bg {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+  }
+
+  &__application-inner {
+    position: relative;
+    z-index: 1;
+    width: min(100% - 46px, 600px);
+    margin: 0 auto;
+    padding-top: 60px;
+  }
+
+  &__application-arrow {
+    position: absolute;
+    top: 9px;
+    left: 50%;
+    width: 44px;
+    transform: translateX(-50%);
+
+    img { display: block; width: 100%; height: auto; }
+  }
+
+  &__application-guide {
+    display: flex;
+    min-height: 146px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: #fff;
+    color: #00a784;
+    text-align: center;
+
+    h1,
+    p { margin: 0; }
+
+    h1 {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 30px;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 30px;
+    }
+  }
+
+  &__form {
+    margin-top: 32px;
+  }
+
+  &__type {
+    margin: 0 0 22px;
+    padding: 0;
+    border: 0;
+
+    legend {
+      margin-bottom: 7px;
+      font-size: 16px;
+      line-height: 30px;
+    }
+
+    > div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+    }
+
+    label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+    }
+
+    input {
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      margin: 0;
+      border: 0;
+      border-radius: 50%;
+      background: #fff;
+
+      &:checked {
+        background: radial-gradient(circle, #103675 0 4px, #fff 4.5px);
+      }
+    }
+  }
+
+  em {
+    color: #f8ed1b;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  &__field {
+    display: block;
+    margin-bottom: 13px;
+
+    > span {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+      border: 1px solid transparent;
+      border-radius: 20px;
+      background: #fff;
+      color: #000;
+      font: inherit;
+      font-size: 16px;
+      outline: none;
+
+      &:focus {
+        border-color: #103675;
+        box-shadow: 0 0 0 2px rgba(16, 54, 117, 0.2);
+      }
+    }
+
+    input {
+      height: 42px;
+      padding: 0 18px;
+    }
+
+    textarea {
+      height: 210px;
+      padding: 14px 18px;
+      resize: vertical;
+    }
+  }
+
+  &__form.is-validated :invalid {
+    border-color: #d60000;
+  }
+
+  &__privacy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 26px;
+    font-size: 12px;
+    line-height: 24px;
+
+    input {
+      appearance: none;
+      flex: 0 0 auto;
+      width: 20px;
+      height: 20px;
+      margin: 0;
+      border: 1px solid #cecece;
+      border-radius: 5px;
+      background: #fff;
+
+      &:checked {
+        background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23103675' stroke-width='2.5' d='m4 10 4 4 8-9'/%3E%3C/svg%3E") center / 90% no-repeat;
+      }
+    }
+
+    a {
+      color: #6cfff3;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  }
+
+  &__submit {
+    display: block;
+    width: 100%;
+    height: 60px;
+    margin: 29px auto 0;
+    border: 0;
+    border-radius: 20px;
+    background: #f8ed1b;
+    color: #00a784;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 767px) {
+  .p-recruit-entry {
+    padding-top: 14.1vw;
+
+    &__breadcrumb {
+      gap: 3.3vw;
+      width: 100%;
+      min-height: 15.4vw;
+      padding-right: 5.1vw;
+      padding-left: 5.1vw;
+      font-size: 3.3vw;
+      line-height: 6.4vw;
+
+      a { text-underline-offset: 0.5vw; }
+    }
+
+    &__requirements {
+      width: 100%;
+      padding-right: 5.1vw;
+      padding-bottom: 6.6vw;
+      padding-left: 5.1vw;
+    }
+
+    &__hero {
+      border-radius: 7.7vw;
+    }
+
+    &__table {
+      margin-top: 4.9vw;
+      font-size: 4.1vw;
+      line-height: 7.7vw;
+    }
+
+    &__row {
+      grid-template-columns: 20.5vw minmax(0, 1fr);
+      gap: 2.6vw;
+      padding: 2.1vw 0 2.6vw;
+
+      small {
+        font-size: 3.6vw;
+        line-height: 6.7vw;
+      }
+    }
+
+    &__application {
+      min-height: 0;
+    }
+
+    &__application-inner {
+      width: 100%;
+      padding-right: 6.2vw;
+      padding-top: 15.4vw;
+      padding-bottom: 18.7vw;
+      padding-left: 6.2vw;
+    }
+
+    &__application-arrow {
+      top: 2.3vw;
+      width: 11.3vw;
+    }
+
+    &__application-guide {
+      min-height: 37.4vw;
+      border-radius: 5.1vw;
+
+      h1,
+      p {
+        font-size: 4.1vw;
+        line-height: 7.7vw;
+        text-wrap: pretty;
+      }
+    }
+
+    &__form {
+      margin-top: 8.2vw;
+    }
+
+    &__type {
+      margin-bottom: 5.6vw;
+
+      legend {
+        margin-bottom: 1.8vw;
+        font-size: 4.1vw;
+        line-height: 7.7vw;
+      }
+
+      > div {
+        gap: 2.1vw 4.6vw;
+      }
+
+      label {
+        gap: 1.5vw;
+        font-size: 4.1vw;
+      }
+
+      input {
+        width: 4.6vw;
+        height: 4.6vw;
+
+        &:checked {
+          background: radial-gradient(circle, #103675 0 1vw, #fff 1.2vw);
+        }
+      }
+    }
+
+    em {
+      font-size: 14px;
+    }
+
+    &__field {
+      margin-bottom: 6.7vw;
+
+      > span {
+        margin-bottom: 1.3vw;
+        font-size: 4.1vw;
+        line-height: 6.2vw;
+        text-wrap: pretty;
+      }
+
+      input,
+      textarea {
+        font-size: 4.1vw;
+      }
+
+      input {
+        width: 87.7vw;
+        max-width: 100%;
+        height: 11.8vw;
+        padding: 0 4.6vw;
+        border-radius: 6vw;
+      }
+
+      textarea {
+        height: 72.6vw;
+        padding: 3.6vw 4.6vw;
+        border-radius: 5.1vw;
+      }
+    }
+
+    &__field--postal-code input {
+      width: 53.8vw;
+    }
+
+    &__dot-line {
+      padding-left: 3.8vw;
+
+      &::before {
+        width: 3.1vw;
+        height: 3.1vw;
+      }
+    }
+
+    &__row strong {
+      margin-top: 1.5vw;
+    }
+
+    &__privacy {
+      gap: 2.6vw;
+      margin-top: 6.7vw;
+      font-size: 4.1vw;
+      line-height: 7.7vw;
+      text-wrap: pretty;
+
+      input {
+        width: 5.1vw;
+        height: 5.1vw;
+      }
+
+      a { text-underline-offset: 0.5vw; }
+    }
+
+    &__submit {
+      height: 15.4vw;
+      margin-top: 7.4vw;
+      border-radius: 5.1vw;
+      font-size: 4.6vw;
+    }
+
+    & + .l-company-footer {
+      margin-top: -10.3vw;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .p-recruit-entry {
+    padding-top: 60px;
+
+    &__breadcrumb {
+      width: min(100% - 80px, 1200px);
+      min-height: 79px;
+    }
+
+    &__requirements {
+      width: min(100% - 80px, 1200px);
+      padding-bottom: clamp(48px, 6.2vw, 118px);
+    }
+
+    &__hero {
+      aspect-ratio: 1200 / 540;
+    }
+
+    &__table {
+      width: 800px;
+      max-width: 100%;
+      margin: 43px auto 0;
+    }
+
+    &__row {
+      grid-template-columns: 120px minmax(0, 1fr);
+      gap: 21px;
+      padding: 8px 0 9px;
+    }
+
+    &__application {
+      min-height: 2226px;
+    }
+
+    &__application-inner {
+      padding-top: 228px;
+    }
+
+    &__application-arrow {
+      top: 134px;
+      width: 80px;
+    }
+
+    &__application-guide {
+      h1,
+      p {
+        font-size: 18px;
+        line-height: 36px;
+      }
+    }
+
+    &__form {
+      margin-top: 39px;
+    }
+
+    &__type {
+      margin-bottom: 28px;
+
+      legend {
+        margin-bottom: 10px;
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      > div {
+        gap: 21px;
+      }
+
+      label {
+        gap: 9px;
+        font-size: 16px;
+        line-height: 30px;
+      }
+
+      input {
+        width: 27px;
+        height: 27px;
+
+        &:checked {
+          background: radial-gradient(circle, #103675 0 6px, #fff 6.5px);
+        }
+      }
+    }
+
+    em {
+      font-size: 14px;
+    }
+
+    &__field {
+      margin-bottom: 26px;
+
+      > span {
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+      }
+
+      input {
+        height: 46px;
+        border-radius: 23px;
+      }
+
+      textarea {
+        height: 283px;
+        border-radius: 20px;
+      }
+    }
+
+    &__field--postal-code input {
+      width: 210px;
+    }
+
+    &__privacy {
+      margin-top: 31px;
+      font-size: 16px;
+      line-height: 30px;
+
+      input {
+        width: 21px;
+        height: 20px;
+      }
+    }
+
+    &__submit {
+      width: 372px;
+      margin-top: 45px;
+    }
+
+    & + .l-company-footer {
+      margin-top: -78px;
+    }
+  }
+
+  .u-sp-only { display: none; }
+}
+
+@media (min-width: 1024px) {
+  .has-company-header .p-recruit-entry {
+    padding-top: 72px;
+  }
+
+  .p-recruit-entry {
+    &__breadcrumb,
+    &__requirements {
+      width: min(calc(100% - clamp(48px, 6.2vw, 120px)), 1200px);
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .has-company-header .p-recruit-entry {
+    padding-top: 85px;
+  }
+}

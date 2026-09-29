@@ -48,6 +48,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-page-company-about-js',
         'foods-page-company-business-js',
         'foods-page-recruit-work-js',
+        'foods-page-recruit-entry-js',
     ];
 
     if (in_array($handle, $module_handles, true)) {
@@ -177,6 +178,7 @@ function foods_theme_scripts() {
     $page_company_about_entry = 'src/js/page-company-about.js';
     $page_company_business_entry = 'src/js/page-company-business.js';
     $page_recruit_work_entry = 'src/js/page-recruit-work.js';
+    $page_recruit_entry_form_entry = 'src/js/page-recruit-entry.js';
 
     if ($is_local) {
         wp_enqueue_script(
@@ -271,6 +273,7 @@ function foods_theme_scripts() {
         'page-company-business.php',
         'page-recruit.php',
         'page-recruit-work.php',
+        'page-recruit-entry.php',
     ], true)) {
         foods_enqueue_vite_entry('foods-company-header', 'src/js/header-company.js', $dev_server, $manifest, $is_local);
         foods_enqueue_vite_entry('foods-company-footer', 'src/js/footer-company.js', $dev_server, $manifest, $is_local);
@@ -447,6 +450,17 @@ function foods_theme_scripts() {
         foods_enqueue_vite_entry(
             'foods-page-recruit-work',
             $page_recruit_work_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    // page-recruit-entry.php専用アセット
+    if (is_page() && basename((string) get_page_template()) === 'page-recruit-entry.php') {
+        foods_enqueue_vite_entry(
+            'foods-page-recruit-entry',
+            $page_recruit_entry_form_entry,
             $dev_server,
             $manifest,
             $is_local
