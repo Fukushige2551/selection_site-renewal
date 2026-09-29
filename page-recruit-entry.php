@@ -4,8 +4,9 @@
  */
 
 $image_uri = get_template_directory_uri() . '/img/page/page-recruit-entry';
+$is_career_entry = basename((string) get_page_template()) === 'page-recruit-career-entry.php';
 
-$requirements = [
+$graduate_requirements = [
   ['職種', '総合職（販売・バイヤー・商品管理）'],
   ['募集人数', '6 ~ 10名'],
   ['募集対象', '2026年3月、大学・大学院・専門・高専・短大卒業（修了）見込みの方<br>3年以内に大学・大学院・専門・高専・短大卒業（修了）された方'],
@@ -19,6 +20,27 @@ $requirements = [
   ['研修制度', '制度あり<br>新人研修'],
   ['自己啓発支援', '制度あり<br><strong>【スーパーマーケット検定】</strong><span class="p-recruit-entry__dot-line">通信教育受講費用・講習費用・<br>テキスト費用は会社負担</span><span class="p-recruit-entry__dot-line">試験受験費用は初回のみ会社負担</span><br><strong>【その他】</strong><br>・食品表示管理士<br>・第二種衛生管理者<br>・調理師<span class="p-recruit-entry__detail-indent">（食肉・水産・惣菜に配属の社員対象）</span>・チェッカー技能検定<br>・チーズ検定<br>・ワインアドバイザー'],
 ];
+
+$career_requirements = [
+  ['職種', '水産・青果・惣菜・食肉・グロサリーの販売担当者・販売管理者'],
+  ['資格・経験', '不問'],
+  ['年齢・学歴', '不問'],
+  ['給与', '【第二新卒】<span class="p-recruit-entry__dot-line">高卒：24.9万~</span><span class="p-recruit-entry__dot-line">短大・専門卒：25.1万~</span><span class="p-recruit-entry__dot-line">大卒：25.6万~</span>【中途】24.9万 ~ 27.5万<small>※経験・年齢に応じて <span class="p-recruit-entry__career-overtime">みなし残業30時間分含む</span><span class="p-recruit-entry__note-line">※短大・専門・高卒はみなし25時間分を含む</span><span class="p-recruit-entry__note-line">※25時間・30時間を超える場合は別途支給</span></small>'],
+  ['諸手当', '交通費支給'],
+  ['昇給', '年1回（査定による）'],
+  ['賞与', '年2回（7月・12月）<br><small>※業務実績による</small>'],
+  ['勤務時間', '7:00 ~ 16:15（シフト制による）'],
+  ['休日休暇', 'シフトによる週休2日制<br><small>（1ヶ月単位の変形労働時間制による）</small><br>年間休日107日<br>夏季6連休制度・冬季6連休制度有り'],
+  ['福利厚生', '健康保険・厚生年金・雇用保険・労災保険加入、資格取得支援制度有り<br><small>（スーパーマーケット検定・調理師免許・衛生管理者他）</small>'],
+  ['定年', '60歳（65歳継続雇用制度あり）'],
+  ['研修制度', '制度あり<br>新人研修'],
+  ['自己啓発支援', '制度あり<br><strong>【スーパーマーケット検定】</strong><span class="p-recruit-entry__dot-line">通信教育受講費用・講習費用・<br>テキスト費用は会社負担</span><span class="p-recruit-entry__dot-line">試験受験費用は初回のみ会社負担</span><br><strong>【その他】</strong><br>・食品表示管理士<br>・第二種衛生管理者<br>・調理師<span class="p-recruit-entry__detail-indent">（食肉・水産・惣菜に配属の社員対象）</span>・チェッカー技能検定<br>・チーズ検定<br>・ワインアドバイザー'],
+];
+
+$requirements = $is_career_entry ? $career_requirements : $graduate_requirements;
+$hero_filename = $is_career_entry ? 'hero-career.png' : 'hero-new-graduate.png';
+$form_action = $is_career_entry ? '/recruit/career-entry/confirm/' : '/recruit/entry/confirm/';
+$requirements_label = $is_career_entry ? 'キャリア採用募集要項' : '新卒採用募集要項';
 
 $fields = [
   ['name', 'お名前', 'text', 'name'],
@@ -43,9 +65,9 @@ get_header('company');
     <span>募集要項・エントリー</span>
   </nav>
 
-  <section class="p-recruit-entry__requirements" aria-label="新卒採用募集要項">
+  <section class="p-recruit-entry__requirements" aria-label="<?php echo esc_attr($requirements_label); ?>">
     <div class="p-recruit-entry__hero">
-      <img src="<?php echo esc_url($image_uri . '/hero-new-graduate.png'); ?>" alt="売場で働くセレクションのスタッフ">
+      <img src="<?php echo esc_url($image_uri . '/' . $hero_filename); ?>" alt="売場で働くセレクションのスタッフ">
     </div>
 
     <dl class="p-recruit-entry__table">
@@ -73,13 +95,13 @@ get_header('company');
         <p>各項目を入力の上、<br class="u-sp-only">「入力確認」ボタンを押してください。</p>
       </div>
 
-      <form class="p-recruit-entry__form" action="<?php echo esc_url(home_url('/recruit/entry/confirm/')); ?>" method="post" novalidate>
+      <form class="p-recruit-entry__form" action="<?php echo esc_url(home_url($form_action)); ?>" method="post" novalidate>
         <fieldset class="p-recruit-entry__type">
           <legend>応募区分 <em>*必須</em></legend>
           <div>
-            <label><input type="radio" name="application_type" value="新卒" required checked><span>新卒</span></label>
-            <label><input type="radio" name="application_type" value="インターン"><span>インターン</span></label>
-            <label><input type="radio" name="application_type" value="キャリア"><span>キャリア</span></label>
+            <label><input type="radio" name="application_type" value="新卒" required <?php checked(!$is_career_entry); ?>><span>新卒</span></label>
+            <label><input type="radio" name="application_type" value="インターン" required><span>インターン</span></label>
+            <label><input type="radio" name="application_type" value="キャリア" required <?php checked($is_career_entry); ?>><span>キャリア</span></label>
           </div>
         </fieldset>
 

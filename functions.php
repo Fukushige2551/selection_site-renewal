@@ -274,6 +274,7 @@ function foods_theme_scripts() {
         'page-recruit.php',
         'page-recruit-work.php',
         'page-recruit-entry.php',
+        'page-recruit-career-entry.php',
     ], true)) {
         foods_enqueue_vite_entry('foods-company-header', 'src/js/header-company.js', $dev_server, $manifest, $is_local);
         foods_enqueue_vite_entry('foods-company-footer', 'src/js/footer-company.js', $dev_server, $manifest, $is_local);
@@ -457,7 +458,10 @@ function foods_theme_scripts() {
     }
 
     // page-recruit-entry.php専用アセット
-    if (is_page() && basename((string) get_page_template()) === 'page-recruit-entry.php') {
+    if (is_page() && in_array(basename((string) get_page_template()), [
+        'page-recruit-entry.php',
+        'page-recruit-career-entry.php',
+    ], true)) {
         foods_enqueue_vite_entry(
             'foods-page-recruit-entry',
             $page_recruit_entry_form_entry,
