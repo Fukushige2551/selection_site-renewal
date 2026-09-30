@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: 企業の方へ：エントリーフォーム
+ * Template Name: パート・アルバイト：エントリーフォーム
  */
 
 $business_form_type = 'entry';

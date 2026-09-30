@@ -1,7 +1,7 @@
 <?php
 $is_entry = isset($business_form_type) && $business_form_type === 'entry';
 $page_title = $is_entry ? 'エントリーフォーム' : 'お問い合わせ';
-$form_action = $is_entry ? '/company/business/entry/confirm/' : '/company/business/contact/confirm/';
+$form_action = $is_entry ? '/job/entry/confirm/' : '/company/business/contact/confirm/';
 
 $contact_fields = [
     ['inquiry_type', 'お問い合わせ内容', 'select', true, ['お取引について', '商品について', 'その他']],
@@ -44,8 +44,8 @@ get_header('company');
         <?php if ($is_entry) : ?>
             <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a><span aria-hidden="true">›</span>
             <a href="<?php echo esc_url(home_url('/recruit/')); ?>">採用情報</a><span aria-hidden="true">›</span>
-            <a href="<?php echo esc_url(get_post_type_archive_link('recruit_part_time')); ?>">パートアルバイト募集</a><span aria-hidden="true">›</span>
-            <a href="<?php echo esc_url(get_post_type_archive_link('recruit_part_time')); ?>">検索結果</a><span aria-hidden="true">›</span>
+            <a href="<?php echo esc_url(home_url('/job/')); ?>">パートアルバイト募集</a><span aria-hidden="true">›</span>
+            <a href="<?php echo esc_url(home_url('/job/search/')); ?>">検索結果</a><span aria-hidden="true">›</span>
             <span><?php echo esc_html($page_title); ?></span>
         <?php else : ?>
             <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a><span aria-hidden="true">›</span>

@@ -175,6 +175,7 @@ function foods_theme_scripts() {
     $page_company_about_entry = 'src/js/page-company-about.js';
     $page_company_business_entry = 'src/js/page-company-business.js';
     $page_company_business_form_entry = 'src/js/page-company-business-form.js';
+    $page_job_entry = 'src/js/page-job.js';
 
     if ($is_local) {
         wp_enqueue_script(
@@ -268,7 +269,8 @@ function foods_theme_scripts() {
         'page-company-about.php',
         'page-company-business.php',
         'page-company-business-contact.php',
-        'page-company-business-entry.php',
+        'page-job.php',
+        'page-job-entry.php',
     ], true)) {
         foods_enqueue_vite_entry('foods-company-header', 'src/js/header-company.js', $dev_server, $manifest, $is_local);
         foods_enqueue_vite_entry('foods-company-footer', 'src/js/footer-company.js', $dev_server, $manifest, $is_local);
@@ -296,10 +298,21 @@ function foods_theme_scripts() {
         );
     }
 
-    // 企業向けお問い合わせ・エントリーフォーム専用アセット
+    // page-job.php 専用アセット
+    if (is_page() && basename((string) get_page_template()) === 'page-job.php') {
+        foods_enqueue_vite_entry(
+            'foods-page-job',
+            $page_job_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    // 企業向けお問い合わせ・パートアルバイト応募フォーム共通アセット
     if (is_page() && in_array(basename((string) get_page_template()), [
         'page-company-business-contact.php',
-        'page-company-business-entry.php',
+        'page-job-entry.php',
     ], true)) {
         foods_enqueue_vite_entry(
             'foods-page-company-business-form',

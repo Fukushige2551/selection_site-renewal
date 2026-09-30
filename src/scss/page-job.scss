@@ -1,0 +1,86 @@
+.p-job {
+  padding-top: 60px;
+  overflow-x: clip;
+  background: #fff;
+  color: #000;
+  font-family: "Noto Sans JP", sans-serif;
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  &__breadcrumb {
+    display: flex;
+    min-height: 15.4vw;
+    align-items: center;
+    gap: 3.3vw;
+    padding: 0 5.1vw;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-size: 3.3vw;
+    line-height: 1.8;
+
+    a { color: #10a3ff; text-decoration: underline; text-underline-offset: .2em; }
+  }
+
+  &__hero-image {
+    width: 100%;
+    height: 77.9vw;
+    background: #e7eae6;
+  }
+
+  &__hero-heading {
+    padding: 0 5.9vw;
+    text-align: center;
+
+    p { margin: -6vw -5.9vw 2.6vw; padding: 3.6vw 5vw; border-radius: 0 0 8vw 8vw; background: #fff; font-size: 5.1vw; font-weight: 700; }
+    h1 { margin: 0; font-size: 7.2vw; font-weight: 900; line-height: 1.5; }
+  }
+
+  &__hero-copy { margin: 6.7vw auto 10.3vw; padding: 0 5.1vw; font-size: 4.1vw; line-height: 2; text-align: center; }
+}
+
+.p-job-search {
+  padding: 11.5vw 6.2vw 15.4vw;
+  border-radius: 7.7vw 7.7vw 0 0;
+  background: #f9faf5;
+
+  h2 { margin: 0 0 10.3vw; color: #00a784; font-size: 6.2vw; text-align: center; }
+
+  &__group { margin: 0 0 11.5vw; padding: 0; border: 0; }
+  &__group h3,
+  &__group legend { margin: 0 auto 5.1vw; font-size: 5.1vw; font-weight: 700; text-align: center; }
+
+  input[type="search"] { display: block; width: 100%; height: 11.8vw; padding: 0 4.1vw; border: 1px solid #e7eae6; border-radius: 6vw; background: #fff; font: inherit; font-size: 4.1vw; }
+  &__options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4.1vw 3.1vw; }
+  &__options--jobs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  &__options label { display: flex; align-items: center; gap: 2.1vw; font-size: 3.6vw; }
+  &__options input { width: 5.1vw; height: 5.1vw; margin: 0; accent-color: #00a784; }
+
+  button { display: block; width: 100%; height: 15.4vw; margin: 0 auto; border: 0; border-radius: 5.1vw; background: #00a784; color: #fff; font-size: 4.6vw; font-weight: 700; }
+}
+
+@media (min-width: 768px) {
+  .p-job {
+    &__breadcrumb { width: min(calc(100% - 80px), 1714px); min-height: 79px; margin: 0 auto; padding: 0; gap: 24px; font-size: 13px; }
+    &__hero { width: min(calc(100% - 96px), 1200px); margin: 40px auto 0; }
+    &__hero-image { height: clamp(360px, 28.1vw, 540px); border-radius: 30px; }
+    &__hero-heading p { margin: 30px 0 15px; padding: 0; border-radius: 0; font-size: 20px; }
+    &__hero-heading h1 { font-size: clamp(28px, 2.1vw, 40px); }
+    &__hero-copy { margin: 35px auto 80px; font-size: 16px; line-height: 2; }
+  }
+
+  .p-job-search {
+    width: 100%;
+    padding: 80px max(48px, calc((100% - 600px) / 2)) 110px;
+    border-radius: 30px 30px 0 0;
+
+    h2 { margin-bottom: 55px; font-size: 28px; }
+    &__group { margin-bottom: 55px; }
+    &__group h3,
+    &__group legend { margin-bottom: 25px; font-size: 20px; }
+    input[type="search"] { width: 600px; height: 46px; padding: 0 20px; border-radius: 23px; font-size: 16px; }
+    &__options { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px 30px; }
+    &__options--jobs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    &__options label { gap: 10px; font-size: 16px; }
+    &__options input { width: 20px; height: 20px; }
+    button { width: 372px; height: 60px; border-radius: 20px; font-size: 18px; }
+  }
+}
