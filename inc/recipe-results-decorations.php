@@ -11,7 +11,8 @@ function foods_recipe_results_card_decorations($position) {
     static $placements = [
         'mobile' => [2 => ['cup'], 4 => ['spoon'], 5 => ['bowl'], 7 => ['glove'], 8 => ['strainer', 'small-01', 'small-02']],
         'tablet' => [2 => ['cup'], 3 => ['glove'], 8 => ['bowl'], 9 => ['cutter']],
-        'desktop' => [3 => ['cup'], 4 => ['glove'], 9 => ['bowl'], 10 => ['cutter']],
+        'tab-design' => [2 => ['cup'], 3 => ['glove'], 7 => ['strainer', 'small-01'], 12 => ['bowl']],
+        'desktop' => [3 => ['cup'], 4 => ['glove'], 9 => ['bowl'], 10 => ['strainer', 'small-01', 'small-02']],
     ];
 
     foreach ($placements as $viewport => $cards) {

@@ -456,6 +456,7 @@ get_header();
                 <div class="p-recipe-archive__results-ending" aria-hidden="true">
                     <?php foods_recipe_results_decoration('ladle', 'ending'); ?>
                     <?php foods_recipe_results_decoration('apron', 'ending'); ?>
+                    <?php foods_recipe_results_decoration('small-02', 'tab-ending'); ?>
                 </div>
             <?php endif; ?>
             <?php endif; ?>

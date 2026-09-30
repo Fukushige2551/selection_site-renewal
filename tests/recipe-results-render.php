@@ -49,7 +49,7 @@ foreach (range(0, 12) as $count) {
     check($cards->length === $count, 'Card count changed: ' . $count);
     check(strpos($html, 'p-recipe-archive__decorations"') === false, 'Legacy floating layer in results');
     check(strpos($html, '<script>') === false && strpos($html, '<Test>') === false, 'Unescaped dynamic content');
-    foreach (['mobile', 'tablet', 'desktop'] as $viewport) {
+    foreach (['mobile', 'tablet', 'tab-design', 'desktop'] as $viewport) {
         $ornaments = $xp->query('//span[' . $class('p-recipe-archive__decoration--' . $viewport) . ']');
         foreach ($ornaments as $ornament) {
             check($ornament->getAttribute('aria-hidden') === 'true', 'Decoration is exposed to assistive technology');
@@ -58,6 +58,23 @@ foreach (range(0, 12) as $count) {
         if ($count <= 1) { check($ornaments->length === 0, 'Sparse results contain list ornaments'); }
     }
     $ending = $xp->query('//*[' . $class('p-recipe-archive__results-ending') . ']');
+    if ($count >= 10) {
+        $desktopShapes = $xp->query('.//span[' . $class('p-recipe-archive__decoration--desktop') . ']', $cards->item(9));
+        check($desktopShapes->length === 3, 'DPC card 10 requires three separate ornaments');
+        foreach (['strainer', 'small-01', 'small-02'] as $index => $asset) {
+            check(strpos($desktopShapes->item($index)->getAttribute('class'), 'p-recipe-archive__decoration--' . $asset . ' ') !== false, 'DPC ornament differs from Figma');
+        }
+    }
+    $tabPlacements = [2 => ['cup'], 3 => ['glove'], 7 => ['strainer', 'small-01'], 12 => ['bowl']];
+    foreach ($cards as $index => $card) {
+        $tabOrnaments = $xp->query('.//span[' . $class('p-recipe-archive__decoration--tab-design') . ']', $card);
+        $expected = $tabPlacements[$index + 1] ?? [];
+        check($tabOrnaments->length === count($expected), 'TAB decoration count on card ' . ($index + 1));
+        foreach ($tabOrnaments as $assetIndex => $ornament) {
+            check(strpos($ornament->getAttribute('class'), 'p-recipe-archive__decoration--' . $expected[$assetIndex] . ' ') !== false, 'TAB decoration attached to wrong card');
+        }
+    }
+    check(substr_count($html, 'p-recipe-archive__decoration--tab-ending') === ($count === 12 ? 1 : 0), 'TAB star must appear only at the page limit');
     check($ending->length === ($count === 12 ? 1 : 0), 'Ending must appear only at the page limit');
     check(substr_count($html, 'p-recipe-archive__decoration--ending') === ($count === 12 ? 2 : 0), 'Ending ornaments leaked below the limit');
     if ($count === 0) {
