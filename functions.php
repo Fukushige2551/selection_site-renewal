@@ -268,7 +268,6 @@ function foods_theme_scripts() {
         'page-company-about.php',
         'page-company-business.php',
         'page-company-business-contact.php',
-        'page-company-business-entry.php',
     ], true)) {
         foods_enqueue_vite_entry('foods-company-header', 'src/js/header-company.js', $dev_server, $manifest, $is_local);
         foods_enqueue_vite_entry('foods-company-footer', 'src/js/footer-company.js', $dev_server, $manifest, $is_local);
@@ -296,10 +295,9 @@ function foods_theme_scripts() {
         );
     }
 
-    // 企業向けお問い合わせ・エントリーフォーム専用アセット
+    // 企業向けお問い合わせフォーム専用アセット
     if (is_page() && in_array(basename((string) get_page_template()), [
         'page-company-business-contact.php',
-        'page-company-business-entry.php',
     ], true)) {
         foods_enqueue_vite_entry(
             'foods-page-company-business-form',
