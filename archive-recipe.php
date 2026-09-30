@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/inc/recipe-search.php';
+require_once __DIR__ . '/inc/recipe-results-decorations.php';
 
 function foods_recipe_archive_get_field_value($post_id, $field_name) {
     if (function_exists('get_field')) {
@@ -188,17 +189,24 @@ function foods_recipe_archive_format_item($recipe_post) {
 $recipe_search = isset($_GET['recipe_search']) && is_string($_GET['recipe_search'])
     ? trim(sanitize_text_field(wp_unslash($_GET['recipe_search'])))
     : '';
-$recipe_is_search = $recipe_search !== '';
+// TODO RELEASE: Remove recipe_test_all and its pagination parameter after testing.
+$recipe_test_all = isset($_GET['recipe_test_all']) && $_GET['recipe_test_all'] === '1';
+if ($recipe_test_all) {
+    $recipe_search = '';
+}
+$recipe_is_search = $recipe_test_all || $recipe_search !== '';
 $recipe_archive_url = get_post_type_archive_link('recipe');
 $recipe_search_page = isset($_GET['recipe_page']) && is_string($_GET['recipe_page'])
     ? absint($_GET['recipe_page'])
     : 1;
 $recipe_paged = $recipe_is_search ? max(1, $recipe_search_page) : max(1, (int) get_query_var('paged'));
 
+// Match the CSS SP breakpoint via the validated viewport parameter.
+$recipe_per_page = $recipe_is_search && isset($_GET['recipe_view']) && $_GET['recipe_view'] === 'sp' ? 10 : 12;
 add_filter('posts_where', 'foods_recipe_search_where', 10, 2);
 $recipe_query = new WP_Query([
     'post_type' => 'recipe',
-    'posts_per_page' => 12,
+    'posts_per_page' => $recipe_per_page,
     'paged' => $recipe_paged,
     'post_status' => 'publish',
     'has_password' => false,
@@ -208,10 +216,20 @@ $recipe_query = new WP_Query([
 ]);
 remove_filter('posts_where', 'foods_recipe_search_where', 10);
 $recipe_total_pages = (int) $recipe_query->max_num_pages;
-$recipe_page_url = static function ($page) use ($recipe_is_search, $recipe_search, $recipe_archive_url) {
-    return $recipe_is_search
-        ? add_query_arg(['recipe_search' => $recipe_search, 'recipe_page' => $page], $recipe_archive_url)
-        : get_pagenum_link($page);
+$recipe_page_url = static function ($page) use ($recipe_is_search, $recipe_search, $recipe_archive_url, $recipe_per_page, $recipe_test_all) {
+    if (!$recipe_is_search) {
+        return get_pagenum_link($page);
+    }
+    $args = [
+        'recipe_search' => $recipe_search,
+        'recipe_page' => $page,
+        'recipe_view' => $recipe_per_page === 10 ? 'sp' : 'wide',
+    ];
+    // TODO RELEASE: Remove this test-only pagination parameter.
+    if ($recipe_test_all) {
+        $args['recipe_test_all'] = '1';
+    }
+    return add_query_arg($args, $recipe_archive_url);
 };
 
 $recipe_items = [];
@@ -227,7 +245,7 @@ wp_reset_postdata();
 get_header();
 ?>
 
-<main class="p-recipe-archive c-main<?php echo $recipe_is_search ? ' p-recipe-archive--results' : ''; ?>" aria-label="<?php echo $recipe_is_search ? 'レシピ検索結果' : 'レシピ一覧'; ?>">
+<main class="p-recipe-archive c-main<?php echo $recipe_is_search ? ' p-recipe-archive--results' : ''; ?>" data-recipe-page-size="<?php echo esc_attr($recipe_per_page); ?>" aria-label="<?php echo $recipe_is_search ? 'レシピ検索結果' : 'レシピ一覧'; ?>">
     <nav class="c-breadcrumb p-recipe-archive__breadcrumb" aria-label="パンくず">
         <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
         <span class="c-breadcrumb__separator" aria-hidden="true"></span>
@@ -384,7 +402,11 @@ get_header();
             </div>
             <?php endif; ?>
             <?php if ($recipe_is_search) : ?>
-                <h1 id="recipe-list-title" class="p-recipe-archive__list-title">検索結果</h1>
+                <div class="p-recipe-archive__results-heading">
+                    <h1 id="recipe-list-title" class="p-recipe-archive__list-title">検索結果</h1>
+                    <?php foods_recipe_results_decoration('scale', 'heading'); ?>
+                    <?php foods_recipe_results_decoration('tools', 'heading'); ?>
+                </div>
             <?php else : ?>
                 <h2 id="recipe-list-title" class="p-recipe-archive__list-title">新着レシピ</h2>
             <?php endif; ?>
@@ -395,7 +417,7 @@ get_header();
                 </div>
             <?php else : ?>
             <div class="c-recipe-card-wrapper p-recipe-archive__card-list">
-                <?php foreach ($recipe_items as $recipe_item) :
+                <?php foreach ($recipe_items as $recipe_index => $recipe_item) :
                     $recipe_title = $recipe_item['title'] ?? '';
                     $recipe_url = $recipe_item['permalink'] ?? '#';
                     $recipe_image = $recipe_item['image'] ?? null;
@@ -424,12 +446,22 @@ get_header();
                                 </time>
                             <?php endif; ?>
                         </article>
+                        <?php if ($recipe_is_search) : ?>
+                            <?php foods_recipe_results_card_decorations($recipe_index + 1); ?>
+                        <?php endif; ?>
                     </a>
                 <?php endforeach; ?>
             </div>
-            <?php if ($recipe_total_pages > 1) : ?>
+            <?php if ($recipe_is_search && count($recipe_items) === $recipe_per_page) : ?>
+                <div class="p-recipe-archive__results-ending" aria-hidden="true">
+                    <?php foods_recipe_results_decoration('ladle', 'ending'); ?>
+                    <?php foods_recipe_results_decoration('apron', 'ending'); ?>
+                </div>
+            <?php endif; ?>
+            <?php endif; ?>
+            <?php if ($recipe_is_search || $recipe_total_pages > 1) : ?>
                 <nav class="c-archive-pagination p-recipe-archive__pagination" aria-label="レシピのページ切り替え">
-                    <?php for ($page_number = 1; $page_number <= $recipe_total_pages; $page_number++) : ?>
+                    <?php for ($page_number = 1; $page_number <= max(1, $recipe_total_pages); $page_number++) : ?>
                         <?php if ($page_number === $recipe_paged) : ?>
                             <span class="c-archive-pagination__item is-current" aria-current="page"><?php echo esc_html($page_number); ?></span>
                         <?php else : ?>
@@ -440,7 +472,6 @@ get_header();
                         <a class="c-archive-pagination__next" href="<?php echo esc_url($recipe_page_url($recipe_paged + 1)); ?>" aria-label="次のページ"></a>
                     <?php endif; ?>
                 </nav>
-            <?php endif; ?>
             <?php endif; ?>
             <div class="p-recipe-archive__source">
                 <span class="p-recipe-archive__source-label">【出典】</span>

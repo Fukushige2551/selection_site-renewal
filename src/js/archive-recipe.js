@@ -1,6 +1,36 @@
 import '../scss/archive-recipe.scss';
 
 document.addEventListener('DOMContentLoaded', () => {
+    const mobileViewport = window.matchMedia('(max-width: 767px)');
+    const results = document.querySelector('.p-recipe-archive--results');
+    const syncResultPageSize = () => {
+        if (!results) return;
+        const size = mobileViewport.matches ? 10 : 12;
+        const previousSize = Number(results.dataset.recipePageSize);
+        if (size === previousSize) return;
+        const url = new URL(window.location.href);
+        const previousPage = Math.max(1, Number(url.searchParams.get('recipe_page')) || 1);
+        // Keep the previous page's first recipe within the new page after resizing.
+        const page = Math.floor((previousPage - 1) * previousSize / size) + 1;
+        url.searchParams.set('recipe_view', mobileViewport.matches ? 'sp' : 'wide');
+        url.searchParams.set('recipe_page', String(page));
+        window.location.replace(url.href);
+    };
+    syncResultPageSize();
+    mobileViewport.addEventListener('change', syncResultPageSize);
+    document.querySelectorAll('form.p-recipe-archive__search').forEach(form => {
+        form.addEventListener('submit', () => {
+            let field = form.querySelector('[name="recipe_view"]');
+            if (!field) {
+                field = document.createElement('input');
+                field.type = 'hidden';
+                field.name = 'recipe_view';
+                form.append(field);
+            }
+            field.value = mobileViewport.matches ? 'sp' : 'wide';
+        });
+    });
+
     const tabs = [...document.querySelectorAll('[data-recipe-search-tab]')];
     const panel = document.getElementById('recipe-search-panel');
     if (!panel || !tabs.length) return;
