@@ -47,6 +47,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-page-company-about-js',
         'foods-page-company-business-js',
         'foods-page-company-business-form-js',
+        'foods-page-job-js',
     ];
 
     if (in_array($handle, $module_handles, true)) {
