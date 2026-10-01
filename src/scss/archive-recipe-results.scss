@@ -1,0 +1,908 @@
+@use "sass:math";
+
+// Measurements from the existing 768px TAB design.
+@function tab-size($px) {
+    @return math.div($px, 768) * 100vw;
+}
+
+// Actual TAB recipe-top layout, reused by Figma search results 7039:1803.
+// Higher specificity keeps these rules independent of the shared archive styles.
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .p-recipe-archive.p-recipe-archive--results.p-recipe-archive {
+        padding-top: tab-size(72);
+
+        .p-recipe-archive__breadcrumb {
+            padding-top: tab-size(22);
+            margin-inline: tab-size(24);
+            font-size: tab-size(13);
+            line-height: tab-size(16);
+        }
+
+        .p-recipe-archive__list {
+            margin-top: tab-size(76);
+            padding-top: tab-size(58);
+        }
+
+        .p-recipe-archive__results-heading { width: 100%; }
+        .p-recipe-archive__list-title {
+            font-size: tab-size(20);
+            line-height: tab-size(29);
+        }
+
+        .p-recipe-archive__card-list {
+            width: tab-size(706.008);
+            margin: tab-size(25) 0 0 tab-size(32.992);
+            grid-template-columns: 337.008fr 345.458fr;
+            column-gap: tab-size(23.542);
+            row-gap: tab-size(25.1733);
+        }
+
+        .p-recipe-archive__card-link {
+            box-sizing: border-box;
+            min-height: tab-size(145.6267);
+            padding-top: tab-size(6);
+            padding-bottom: tab-size(9.6267);
+        }
+        .p-recipe-archive__card-link:nth-child(2n) {
+            top: tab-size(-7);
+            .p-recipe-archive__card { margin-left: tab-size(105.458); }
+            .c-recipe-card__img { left: tab-size(-105.458); }
+        }
+
+        .p-recipe-archive__card {
+            box-sizing: border-box;
+            width: tab-size(240);
+            min-height: tab-size(130);
+            margin-left: tab-size(97.008);
+            padding: tab-size(35) tab-size(6) tab-size(16) tab-size(75);
+            border-radius: 0 tab-size(72) tab-size(72) 0;
+            .c-recipe-card__img {
+                top: tab-size(-6);
+                left: tab-size(-97.008);
+                width: tab-size(154.274);
+                aspect-ratio: 154.274 / 145.6267;
+                transform: none;
+            }
+            .c-recipe-card__title {
+                font-size: tab-size(16);
+                line-height: tab-size(23);
+                margin-bottom: tab-size(12.42);
+            }
+            .c-recipe-card__category {
+                font-size: tab-size(16);
+                line-height: tab-size(16);
+            }
+            .c-recipe-card__time {
+                top: tab-size(3);
+                left: tab-size(-95);
+                width: tab-size(78.192);
+                aspect-ratio: 78.192 / 32.079;
+                font-size: tab-size(13);
+            }
+        }
+
+        // Ending ornaments overlap the pagination area, without moving pagination.
+        .p-recipe-archive__results-ending {
+            width: 100%;
+            height: 0;
+            margin: 0;
+        }
+        .p-recipe-archive__pagination,
+        .p-recipe-archive__results-ending + .p-recipe-archive__pagination {
+            margin-top: tab-size(79.3733);
+        }
+
+        .p-recipe-archive__decoration {
+            &--tablet { display: none; }
+            &--tab-design, &--tab-ending { display: block; }
+            &--scale {
+                top: tab-size(-64); left: tab-size(241); right: auto;
+                width: tab-size(55); aspect-ratio: 55 / 90;
+            }
+            &--tools {
+                top: tab-size(-108); left: tab-size(435); right: auto;
+                width: tab-size(113.632); aspect-ratio: 113.632 / 117.071;
+            }
+            &--cup {
+                top: tab-size(-44); left: tab-size(280.458); right: auto;
+                width: tab-size(74.148); aspect-ratio: 74.148 / 77.003;
+            }
+            &--glove {
+                top: calc(100% - #{tab-size(32.4267)});
+                left: tab-size(286.008); right: auto; width: tab-size(57);
+            }
+            &--strainer, &--small-01 {
+                top: calc(100% - #{tab-size(15.0267)}); right: auto;
+            }
+            &--strainer {
+                left: tab-size(294.008); width: tab-size(68); aspect-ratio: 68 / 41;
+                background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration-results-strainer.svg");
+            }
+            &--small-01 {
+                left: tab-size(248.008); width: tab-size(26); aspect-ratio: 26 / 28;
+                background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration-results-small-01.svg");
+            }
+            &--bowl {
+                top: calc(100% + #{tab-size(16.3733)});
+                left: tab-size(281.458); right: auto; width: tab-size(76);
+            }
+            &--ladle {
+                top: tab-size(24.3733); left: tab-size(60); right: auto;
+                width: tab-size(77.189); aspect-ratio: 77.189 / 75.865;
+            }
+            &--apron {
+                top: tab-size(83.3733); left: tab-size(589); right: auto;
+                width: tab-size(82.755); aspect-ratio: 82.755 / 91.018;
+            }
+            &--small-02 {
+                top: tab-size(100.3733); left: tab-size(160); right: auto;
+                width: tab-size(33.222); aspect-ratio: 33.222 / 30.377;
+                background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration-results-small-02.svg");
+            }
+        }
+    }
+}
+
+@function npc-size($px) {
+    @return math.div($px, 1024) * 100vw;
+}
+
+// Actual NPC recipe-top layout, reused by Figma search results 7043:1803.
+// Higher specificity keeps these rules independent of the shared archive styles.
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .p-recipe-archive.p-recipe-archive--results.p-recipe-archive {
+        padding-top: npc-size(72);
+
+        .p-recipe-archive__breadcrumb {
+            padding-top: npc-size(22);
+            margin-inline: npc-size(24);
+            font-size: npc-size(13);
+            line-height: npc-size(16);
+        }
+
+        .p-recipe-archive__list {
+            margin-top: npc-size(76);
+            padding-top: npc-size(58);
+        }
+
+        .p-recipe-archive__results-heading { width: 100%; }
+        .p-recipe-archive__list-title {
+            width: npc-size(205);
+            margin-left: npc-size(399);
+            font-size: npc-size(20);
+            line-height: npc-size(29);
+        }
+
+        .p-recipe-archive__card-list {
+            width: npc-size(705);
+            margin: npc-size(25) 0 0 npc-size(151);
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: npc-size(33);
+            row-gap: npc-size(25.1733);
+        }
+
+        .p-recipe-archive__card-link {
+            box-sizing: border-box;
+            min-height: npc-size(145.6267);
+            padding-top: npc-size(6);
+            padding-bottom: npc-size(9.6267);
+        }
+        .p-recipe-archive__card-link:nth-child(2n) {
+            top: npc-size(-7);
+            .p-recipe-archive__card { margin-left: npc-size(96); }
+            .c-recipe-card__img { left: npc-size(-96); }
+        }
+
+        .p-recipe-archive__card {
+            box-sizing: border-box;
+            width: npc-size(240);
+            min-height: npc-size(130);
+            margin-left: npc-size(96);
+            padding: npc-size(35) npc-size(6) npc-size(16) npc-size(75);
+            border-radius: 0 npc-size(72) npc-size(72) 0;
+            .c-recipe-card__img {
+                top: npc-size(-6);
+                left: npc-size(-96);
+                width: npc-size(157.891);
+                aspect-ratio: 157.891 / 145.6267;
+                transform: none;
+            }
+            .c-recipe-card__title {
+                font-size: npc-size(16);
+                line-height: npc-size(23);
+                margin-bottom: npc-size(12.42);
+            }
+            .c-recipe-card__category {
+                font-size: npc-size(16);
+                line-height: npc-size(16);
+            }
+            .c-recipe-card__time {
+                top: npc-size(3);
+                left: npc-size(-95);
+                width: npc-size(78.192);
+                aspect-ratio: 78.192 / 32.079;
+                font-size: npc-size(13);
+            }
+        }
+
+        // Ending ornaments overlap the pagination area, without moving pagination.
+        .p-recipe-archive__results-ending {
+            width: 100%;
+            height: 0;
+            margin: 0;
+        }
+        .p-recipe-archive__pagination,
+        .p-recipe-archive__results-ending + .p-recipe-archive__pagination {
+            margin-top: npc-size(79.3733);
+        }
+
+        .p-recipe-archive__decoration {
+            &--tablet { display: none; }
+            &--tab-design, &--tab-ending { display: block; }
+            &--scale {
+                top: npc-size(-64); left: npc-size(358); right: auto;
+                width: npc-size(55); aspect-ratio: 55 / 90;
+            }
+            &--tools {
+                top: npc-size(-108); left: npc-size(552); right: auto;
+                width: npc-size(113.632); aspect-ratio: 113.632 / 117.071;
+            }
+            &--cup {
+                top: npc-size(-44); left: npc-size(271); right: auto;
+                width: npc-size(74.148); aspect-ratio: 74.148 / 77.003;
+            }
+            &--glove {
+                top: calc(100% - #{npc-size(32.4267)});
+                left: npc-size(285); right: auto; width: npc-size(57);
+            }
+            &--strainer, &--small-01 {
+                top: calc(100% - #{npc-size(15.0267)}); right: auto;
+            }
+            &--strainer {
+                left: npc-size(293); width: npc-size(68); aspect-ratio: 68 / 41;
+                background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration-results-strainer.svg");
+            }
+            &--small-01 {
+                left: npc-size(247); width: npc-size(26); aspect-ratio: 26 / 28;
+                background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration-results-small-01.svg");
+            }
+            &--bowl {
+                top: calc(100% + #{npc-size(16.3733)});
+                left: npc-size(272); right: auto; width: npc-size(76);
+            }
+            &--ladle {
+                top: npc-size(24.3733); left: npc-size(157); right: auto;
+                width: npc-size(77.189); aspect-ratio: 77.189 / 75.865;
+            }
+            &--apron {
+                top: npc-size(83.3733); left: npc-size(696); right: auto;
+                width: npc-size(82.755); aspect-ratio: 82.755 / 91.018;
+            }
+            &--small-02 {
+                top: npc-size(100.3733); left: npc-size(267); right: auto;
+                width: npc-size(33.222); aspect-ratio: 33.222 / 30.377;
+                background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration-results-small-02.svg");
+            }
+        }
+    }
+}
+
+// Search results only. Adjust decoration positions here independently of the recipe top page.
+// Keep the existing responsive cards, with the spacing of the search results.
+.p-recipe-archive.p-recipe-archive--results {
+    .p-recipe-archive__list {
+        --recipe-results-tile-size: calc(22 / 390 * 100vw) calc(21 / 390 * 100vw);
+        --recipe-results-wave: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/recipe-results-wave-top.svg");
+        --recipe-results-wave-height: 16.410256vw;
+        margin-top: 0;
+        // Figma: background starts at y=90, heading starts at y=156.
+        padding-top: calc(66 / 390 * 100vw);
+        padding-bottom: 30vw;
+        isolation: isolate;
+        background: none;
+
+        // Mask only the tiled background, leaving cards and decorations unclipped.
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/brick.png");
+            background-repeat: repeat;
+            background-position: left top;
+            background-size: var(--recipe-results-tile-size);
+            mask-image: var(--recipe-results-wave), linear-gradient(#fff, #fff);
+            mask-size: 100% var(--recipe-results-wave-height), 100% calc(100% - var(--recipe-results-wave-height) + 1px);
+            mask-position: center top, center bottom;
+            mask-repeat: no-repeat;
+            mask-mode: alpha;
+            mask-composite: add;
+        }
+    }
+
+    .p-recipe-archive__card-list {
+        grid-template-rows: none;
+    }
+
+    .p-recipe-archive__card-list > *:nth-child(n + 11) {
+        display: block;
+    }
+
+    .p-recipe-archive__empty {
+        margin: 3rem auto;
+        padding: 0 1.5rem;
+        text-align: center;
+        line-height: 2;
+        overflow-wrap: anywhere;
+
+        a {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #00856b;
+            text-decoration: underline;
+        }
+    }
+
+    .p-recipe-archive__pagination {
+        flex-wrap: wrap;
+        padding-inline: 1rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .p-recipe-archive.p-recipe-archive--results .p-recipe-archive__list {
+        --recipe-results-tile-size: 2.5vw 2.5vw;
+        --recipe-results-wave: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/recipe-results-wave-top-tablet.svg");
+        --recipe-results-wave-height: 19.53125vw;
+        padding-top: 6vw;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .p-recipe-archive.p-recipe-archive--results {
+        .p-recipe-archive__list {
+            --recipe-results-tile-size: 2vw 2vw;
+            --recipe-results-wave: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/recipe-results-wave-top-laptop.svg");
+            --recipe-results-wave-height: 14.6484375vw;
+        }
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .p-recipe-archive.p-recipe-archive--results {
+        .p-recipe-archive__list {
+            --recipe-results-tile-size: 32px 32px;
+            --recipe-results-wave: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/recipe-results-wave-top-desktop.svg");
+            --recipe-results-wave-height: 7.816571vw;
+            padding-top: 4.74vw;
+            padding-bottom: 24vw;
+        }
+
+        .p-recipe-archive__list-title {
+            line-height: 1.45;
+        }
+
+        .p-recipe-archive__card-list {
+            margin-top: 1.77vw;
+        }
+
+        .p-recipe-archive__pagination {
+            margin-top: 6.34vw;
+        }
+
+        .p-recipe-archive__source {
+            margin-top: 1.35vw;
+        }
+    }
+}
+
+// Result-only anchors. Keep the ordinary recipe archive unchanged.
+.p-recipe-archive.p-recipe-archive--results {
+    .p-recipe-archive {
+        &__results-heading {
+            position: relative;
+            width: 100%;
+            margin-inline: auto;
+        }
+
+        &__card-list {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            // Include the photo overhang above the card background (8.12px).
+            margin-top: calc(38.12 / 390 * 100vw);
+            row-gap: calc(20.762 / 390 * 100vw);
+        }
+
+        &__card-link {
+            position: relative;
+            top: auto;
+            min-width: 0;
+        }
+
+        &__card {
+            margin-bottom: 0;
+        }
+
+        &__results-ending {
+            position: relative;
+            width: calc(344 / 390 * 100vw);
+            height: calc(91.018 / 390 * 100vw);
+            margin: calc(-25.238 / 390 * 100vw) auto 0;
+        }
+
+        &__pagination {
+            margin-top: 12vw;
+        }
+
+        &__results-ending + .p-recipe-archive__pagination {
+            margin-top: 3vw;
+        }
+
+        &__decoration {
+            position: absolute;
+            inset: auto;
+            display: none;
+            z-index: 2;
+            pointer-events: none;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+
+            &--heading,
+            &--ending,
+            &--mobile {
+                display: block;
+            }
+
+            // Reset shared archive geometry before applying each local anchor.
+            &--scale {
+                top: calc(-36 / 390 * 100vw);
+                left: calc(47 / 390 * 100vw);
+                width: calc(51 / 390 * 100vw);
+                aspect-ratio: 51 / 83;
+                background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_scale.png");
+            }
+
+            &--tools {
+                top: calc(-12.762 / 390 * 100vw);
+                right: auto;
+                width: calc(101.26 / 390 * 100vw);
+                aspect-ratio: 114 / 118;
+                background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_tools.svg");
+
+                left: calc(263.58 / 390 * 100vw);
+            }
+
+            &--cup,
+            &--bowl,
+            &--glove {
+                top: calc(100% - calc(28.238 / 390 * 100vw));
+                right: calc(-8 / 390 * 100vw);
+                width: calc(57 / 390 * 100vw);
+            }
+
+            &--cup {
+                aspect-ratio: 75 / 77;
+                background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_measuring-cup.svg");
+
+                top: calc(100% - calc(26.238 / 390 * 100vw));
+
+                right: calc(-9.148 / 390 * 100vw);
+
+                width: calc(74.148 / 390 * 100vw);
+            }
+
+            &--bowl {
+                aspect-ratio: 76 / 74;
+                background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_bowl.svg");
+
+                top: calc(100% - calc(37.238 / 390 * 100vw));
+
+                right: calc(-8 / 390 * 100vw);
+
+                width: calc(76 / 390 * 100vw);
+            }
+
+            &--glove {
+                width: calc(57 / 390 * 100vw);
+                aspect-ratio: 57 / 79;
+                background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_glove.svg");
+
+                top: calc(100% - calc(28.238 / 390 * 100vw));
+
+                right: calc(-8 / 390 * 100vw);
+            }
+
+            &--spoon {
+                top: calc(100% - calc(7.238 / 390 * 100vw));
+                left: calc(9 / 390 * 100vw);
+                width: calc(55 / 390 * 100vw);
+                aspect-ratio: 55 / 26;
+                background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_spoon.svg");
+            }
+
+            &--cutter {
+                top: calc(100% - calc(23.238 / 390 * 100vw));
+                left: calc(-3 / 390 * 100vw);
+                width: calc(114 / 390 * 100vw);
+                aspect-ratio: 150 / 52;
+                background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_cutter.svg");
+            }
+
+            &--ladle {
+                top: 0;
+                left: calc(11 / 390 * 100vw);
+                width: calc(77.189 / 390 * 100vw);
+                aspect-ratio: 78 / 76;
+                background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_ladle.svg");
+            }
+
+            &--apron {
+                top: 0;
+                right: calc(3.235 / 390 * 100vw);
+                width: calc(82.755 / 390 * 100vw);
+                aspect-ratio: 83 / 92;
+                background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_apron.svg");
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .p-recipe-archive {
+            &__results-heading {
+                width: 68vw;
+            }
+
+            &__card-list {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                margin-top: calc(30 / 390 * 100vw);
+                row-gap: 6vw;
+            }
+
+            &__card-link:nth-child(2n) {
+                position: relative;
+                top: auto;
+            }
+
+            &__results-ending {
+                width: 68vw;
+                height: 12vw;
+                margin-top: 3vw;
+            }
+
+            &__pagination {
+                margin-top: 7vw;
+            }
+
+            &__decoration {
+                &--mobile {
+                    display: none;
+                }
+
+                &--tablet {
+                    display: block;
+                }
+
+                &--scale {
+                    top: -3vw;
+                    left: 15vw;
+                    width: 55px;
+
+                    aspect-ratio: 55 / 90;
+                }
+
+                &--tools {
+                    top: -3vw;
+                    right: 14vw;
+                    width: 105.737px;
+
+                    left: auto;
+                }
+
+                &--cup,
+                &--bowl {
+                    top: calc(100% + 0.5vw);
+                    right: 2vw;
+                    width: 76px;
+                }
+
+                &--glove {
+                    top: calc(100% + 0.5vw);
+                    left: 3vw;
+                    right: auto;
+                    width: 57px;
+                }
+
+                &--cutter {
+                    top: calc(100% + 0.5vw);
+                    left: 2vw;
+                    width: 125px;
+                }
+
+                &--ladle,
+                &--apron {
+                    width: 8vw;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 1280px) {
+        .p-recipe-archive {
+            &__results-heading {
+                width: 62.5vw;
+            }
+
+            &__card-list {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                row-gap: calc(21.762 / 1920 * 100vw);
+                margin-top: calc(34 / 1920 * 100vw);
+            }
+
+            &__results-ending {
+                width: 62.5vw;
+                height: calc(143.018 / 1920 * 100vw);
+                margin-top: calc(-20.238 / 1920 * 100vw);
+            }
+
+            &__pagination {
+                margin-top: 4vw;
+            }
+
+            &__results-ending + .p-recipe-archive__pagination {
+                margin-top: 1.5vw;
+            }
+
+            &__decoration {
+                &--tablet {
+                    display: none;
+                }
+
+                &--desktop {
+                    display: block;
+                }
+
+                &--scale {
+                    top: calc(-69 / 1920 * 100vw);
+                    left: calc(415 / 1920 * 100vw);
+                    width: calc(55 / 1920 * 100vw);
+                }
+
+                &--tools {
+                    top: calc(-53 / 1920 * 100vw);
+                    right: auto;
+                    width: calc(105.737 / 1920 * 100vw);
+
+                    left: calc(702 / 1920 * 100vw);
+                }
+
+                // Desktop ornaments occupy the outside gutters of the grid.
+                &--cup {
+                    top: calc(100% - (36.238 / 1920 * 100vw));
+                    right: calc(-37.148 / 1920 * 100vw);
+                    left: auto;
+                    width: calc(74.148 / 1920 * 100vw);
+                }
+                &--bowl {
+                    top: calc(-10 / 1920 * 100vw);
+                    right: calc(-157 / 1920 * 100vw);
+                    width: calc(76 / 1920 * 100vw);
+
+                    left: auto;
+                }
+
+                &--glove {
+                    top: calc(-22 / 1920 * 100vw);
+                    left: calc(-107 / 1920 * 100vw);
+                    width: calc(57 / 1920 * 100vw);
+
+                    right: auto;
+                }
+
+                &--cutter {
+                    top: calc(-28 / 1920 * 100vw);
+                    left: calc(-178 / 1920 * 100vw);
+                    width: calc(125 / 1920 * 100vw);
+                }
+
+                &--ladle {
+                    top: 0;
+                    left: calc(51 / 1920 * 100vw);
+                    width: calc(87.819 / 1920 * 100vw);
+                }
+
+                &--apron {
+                    top: calc(52 / 1920 * 100vw);
+                    right: calc(211.245 / 1920 * 100vw);
+                    width: calc(82.755 / 1920 * 100vw);
+
+                    left: auto;
+                }
+            }
+        }
+    }
+}
+
+
+// Match the full Figma card bounds, including the photo outside its white background.
+@media screen and (max-width: 767px) {
+    .p-recipe-archive.p-recipe-archive--results {
+        // Card links span the viewport; use Figma viewport coordinates here.
+        .p-recipe-archive__decoration--cup {
+            left: calc(301 / 390 * 100vw);
+            right: auto;
+        }
+
+        .p-recipe-archive__decoration--bowl {
+            left: calc(299.02 / 390 * 100vw);
+            right: auto;
+        }
+
+        .p-recipe-archive__decoration--glove {
+            left: calc(318 / 390 * 100vw);
+            right: auto;
+        }
+
+        .p-recipe-archive__decoration--spoon {
+            left: calc(32 / 390 * 100vw);
+        }
+
+        .p-recipe-archive__decoration--cutter {
+            left: calc(21 / 390 * 100vw);
+        }
+
+        .p-recipe-archive__card-list {
+            margin-top: calc(30 / 390 * 100vw);
+        }
+
+        .p-recipe-archive__card-link {
+            box-sizing: border-box;
+            min-height: calc(150.238 / 390 * 100vw);
+            padding-top: calc(9 / 390 * 100vw);
+            padding-bottom: calc(7.238 / 390 * 100vw);
+        }
+
+        .p-recipe-archive__card {
+            width: calc(247 / 390 * 100vw);
+            min-height: calc(134 / 390 * 100vw);
+            margin-left: calc(119 / 390 * 100vw);
+            padding: calc(32 / 390 * 100vw) calc(13 / 390 * 100vw) 0 calc(75 / 390 * 100vw);
+            border-radius: 0 calc(72 / 390 * 100vw) calc(72 / 390 * 100vw) 0;
+
+            .c-recipe-card__img {
+                top: calc(-9 / 390 * 100vw);
+                left: calc(-96 / 390 * 100vw);
+                width: calc(162.89 / 390 * 100vw);
+                aspect-ratio: 162.89 / 150.238;
+                transform: none;
+            }
+
+            .c-recipe-card__time {
+                left: calc(-95 / 390 * 100vw);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .p-recipe-archive.p-recipe-archive--results .p-recipe-archive__card {
+        width: calc(391 / 1920 * 100vw);
+        min-height: calc(150.238 / 1920 * 100vw);
+        // 391 - 171 - 9 = 211px of recipe text at the reference width.
+        padding: calc(41 / 1920 * 100vw) calc(9 / 1920 * 100vw) calc(20 / 1920 * 100vw) calc(171 / 1920 * 100vw);
+
+        .c-recipe-card__title {
+            font-size: calc(18 / 1920 * 100vw);
+            line-height: calc(30 / 1920 * 100vw);
+            margin-bottom: calc(7.42 / 1920 * 100vw);
+        }
+
+        .c-recipe-card__category {
+            font-size: calc(16 / 1920 * 100vw);
+        }
+    }
+}
+
+// SP card 8: three separate Figma exports, with their rotation baked in.
+@media screen and (max-width: 767px) {
+    .p-recipe-archive.p-recipe-archive--results {
+        .p-recipe-archive__decoration--strainer {
+            top: calc(100% - (21.238 / 390 * 100vw));
+            left: calc(21 / 390 * 100vw);
+            right: auto;
+            width: calc(68 / 390 * 100vw);
+            aspect-ratio: 68 / 41;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration-results-strainer.svg");
+        }
+        .p-recipe-archive__decoration--small-01 {
+            top: calc(100% - (23.238 / 390 * 100vw));
+            left: calc(341 / 390 * 100vw);
+            right: auto;
+            width: calc(26 / 390 * 100vw);
+            aspect-ratio: 26 / 28;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration-results-small-01.svg");
+        }
+        .p-recipe-archive__decoration--small-02 {
+            top: calc(100% - (8.238 / 390 * 100vw));
+            left: calc(299 / 390 * 100vw);
+            right: auto;
+            width: calc(33.222 / 390 * 100vw);
+            aspect-ratio: 33.222 / 30.377;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration-results-small-02.svg");
+        }
+    }
+}
+
+// DPC reference: 1752:10742, 1920px canvas. Keep ornaments tied to cards.
+@function dpc-size($px) { @return math.div($px, 1920) * 100vw; }
+@media screen and (min-width: 1280px) {
+    .p-recipe-archive.p-recipe-archive--results.p-recipe-archive {
+        padding-top: dpc-size(144);
+        .p-recipe-archive__breadcrumb {
+            padding-top: dpc-size(18);
+            margin-inline: dpc-size(462);
+            font-size: dpc-size(13);
+            line-height: dpc-size(16);
+        }
+        .p-recipe-archive__list { margin-top: dpc-size(-5); padding-top: dpc-size(69); }
+        .p-recipe-archive__list-title { font-size: dpc-size(20); line-height: dpc-size(29); }
+        .p-recipe-archive__card-list {
+            width: dpc-size(1200);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            column-gap: dpc-size(13.5);
+            row-gap: dpc-size(21.762);
+            margin-top: dpc-size(34);
+        }
+        .p-recipe-archive__card-link { width: auto; min-height: dpc-size(150.238); }
+        .p-recipe-archive__card {
+            box-sizing: border-box;
+            width: dpc-size(391); min-height: dpc-size(150.238);
+            padding: dpc-size(41) dpc-size(9) dpc-size(20) dpc-size(171);
+            &::before {
+                top: dpc-size(9); left: dpc-size(107);
+                width: dpc-size(284); height: dpc-size(134);
+                border-radius: 0 dpc-size(72) dpc-size(72) 0;
+            }
+            .c-recipe-card__img {
+                top: 0; left: 0; transform: none;
+                width: dpc-size(162.889); aspect-ratio: 162.889 / 150.238;
+            }
+            .c-recipe-card__title {
+                min-height: dpc-size(58);
+                font-size: dpc-size(18); line-height: dpc-size(30);
+                margin-bottom: dpc-size(7.42);
+            }
+            .c-recipe-card__category { font-size: dpc-size(16); line-height: dpc-size(16); }
+            .c-recipe-card__time {
+                top: dpc-size(9); left: dpc-size(1);
+                width: dpc-size(78.192); aspect-ratio: 78.192 / 32.079;
+                font-size: dpc-size(13);
+            }
+        }
+        .p-recipe-archive__results-ending { height: 0; margin-top: 0; }
+        .p-recipe-archive__pagination,
+        .p-recipe-archive__results-ending + .p-recipe-archive__pagination { margin-top: dpc-size(121.762); }
+        .p-recipe-archive__decoration {
+            &--tools { aspect-ratio: 105.737 / 108.937; }
+            &--cup { aspect-ratio: 74.148 / 77.003; }
+            &--ladle { top: dpc-size(-20.238); aspect-ratio: 87.819 / 86.313; }
+            &--apron { top: dpc-size(31.762); aspect-ratio: 82.755 / 91.018; }
+            &--strainer {
+                top: dpc-size(-28); left: dpc-size(-129); right: auto;
+                width: dpc-size(76); aspect-ratio: 76 / 46;
+                background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration-results-strainer.svg');
+            }
+            &--small-01 {
+                top: dpc-size(-28); left: dpc-size(-178); right: auto;
+                width: dpc-size(26); aspect-ratio: 26 / 28;
+                background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration-results-small-01.svg');
+            }
+            &--small-02 {
+                top: dpc-size(10); left: dpc-size(-169); right: auto;
+                width: dpc-size(33.222); aspect-ratio: 33.222 / 30.377;
+                background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration-results-small-02.svg');
+            }
+        }
+    }
+}

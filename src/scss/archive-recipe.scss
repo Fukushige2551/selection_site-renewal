@@ -1,4 +1,10 @@
 @use "foundation/global" as *;
+@use "archive-recipe-results";
+.p-recipe-archive__search button:focus-visible {
+    outline: 3px solid #00856b;
+    outline-offset: 3px;
+}
+
 
 .p-recipe-archive {
     &__breadcrumb {
@@ -248,7 +254,7 @@
         background-size: 100% auto;
     }
 
-    &__decorations {
+    &:not(.p-recipe-archive--results) .p-recipe-archive__decorations {
         position: absolute;
         inset: 0;
         z-index: 2;
@@ -256,7 +262,7 @@
         pointer-events: none;
     }
 
-    &__decoration {
+    &:not(.p-recipe-archive--results) .p-recipe-archive__decoration {
         position: absolute;
         display: block;
         background-repeat: no-repeat;
@@ -264,7 +270,7 @@
         background-size: contain;
     }
 
-    &__decoration--scale {
+    &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--scale {
         top: 1.8vw;
         left: 14.87vw;
         width: 14.1vw;
@@ -272,7 +278,7 @@
         background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_scale.png");
     }
 
-    &__decoration--cup {
+    &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--cup {
         top: 105vw;
         right: 3vw;
         width: 18vw;
@@ -280,7 +286,7 @@
         background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_measuring-cup.svg");
     }
 
-    &__decoration--spoon {
+    &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--spoon {
         top: 197vw;
         left: 9vw;
         width: 14.1vw;
@@ -288,7 +294,7 @@
         background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_spoon.svg");
     }
 
-    &__decoration--bowl {
+    &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--bowl {
         top: 233.6vw;
         right: 3.2vw;
         width: 18vw;
@@ -296,7 +302,7 @@
         background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_bowl.svg");
     }
 
-    &__decoration--glove {
+    &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--glove {
         top: 324vw;
         right: 4vw;
         width: 14vw;
@@ -304,7 +310,7 @@
         background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_glove.svg");
     }
 
-    &__decoration--cutter {
+    &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--cutter {
         top: 364vw;
         left: 4.1vw;
         width: 38.39vw;
@@ -312,22 +318,22 @@
         background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_cutter.svg");
     }
 
-    &__decoration--cutter-medium,
-    &__decoration--cutter-small {
+    &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--cutter-medium,
+    &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--cutter-small {
         display: none;
     }
 
-    &__decoration--cutter-medium {
+    &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--cutter-medium {
         aspect-ratio: 114 / 41;
         background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_cutter-medium.svg");
     }
 
-    &__decoration--cutter-small {
+    &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--cutter-small {
         aspect-ratio: 34 / 31;
         background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_cutter-small.svg");
     }
 
-    &__decoration--ladle {
+    &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--ladle {
         top: 453vw;
         left: 7vw;
         width: 20vw;
@@ -335,7 +341,7 @@
         background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_ladle.svg");
     }
 
-    &__decoration--apron {
+    &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--apron {
         top: 454.8vw;
         right: 6vw;
         width: 21.28vw;
@@ -343,7 +349,7 @@
         background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_apron.svg");
     }
 
-    &__decoration--tools {
+    &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--tools {
         top: -6vw;
         right: 6.24vw;
         width: 29.23vw;
@@ -594,70 +600,70 @@
             background-size: 100% auto;
         }
 
-        &__decorations {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decorations {
             z-index: 2;
             overflow: visible;
         }
 
-        &__decoration--scale {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--scale {
             top: -1.4vw;
             left: 31vw;
             width: 7.16vw;
         }
 
-        &__decoration--cup {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--cup {
             top: 7.94vw;
             right: 2.58vw;
             width: 10.16vw;
         }
 
-        &__decoration--spoon {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--spoon {
             display: none;
         }
 
-        &__decoration--bowl {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--bowl {
             top: 145.96vw;
             right: 2.45vw;
             width: 10.16vw;
         }
 
-        &__decoration--glove {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--glove {
             top: 51.56vw;
             left: 41.53vw;
             width: 7.42vw;
         }
 
-        &__decoration--cutter {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--cutter {
             display: none;
         }
 
-        &__decoration--cutter-medium {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--cutter-medium {
             display: block;
             top: 98.3vw;
             left: 36.59vw;
             width: 14.84vw;
         }
 
-        &__decoration--cutter-small {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--cutter-small {
             display: block;
             top: 157.81vw;
             left: 20.84vw;
             width: 4.42vw;
         }
 
-        &__decoration--ladle {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--ladle {
             top: 147.91vw;
             left: 7.82vw;
             width: 10.16vw;
         }
 
-        &__decoration--apron {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--apron {
             top: 155.59vw;
             right: 12.77vw;
             width: 10.8vw;
         }
 
-        &__decoration--tools {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--tools {
             top: -6.8vw;
             right: 28.56vw;
             width: 17.71vw;
@@ -899,64 +905,64 @@
             background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/bg_recipe-list-laptop.svg");
         }
 
-        &__decoration--scale {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--scale {
             top: -0.6vw;
             left: 34.96vw;
             width: 5.37vw;
         }
 
-        &__decoration--cup {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--cup {
             top: 6.2vw;
             right: 15.51vw;
             width: 7.24vw;
         }
 
-        &__decoration--spoon {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--spoon {
             display: none;
         }
 
-        &__decoration--bowl {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--bowl {
             top: 109.47vw;
             right: 15.42vw;
             width: 7.42vw;
         }
 
-        &__decoration--glove {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--glove {
             top: 38.67vw;
             right: 51.85vw;
             width: 5.57vw;
         }
 
-        &__decoration--cutter {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--cutter {
             display: none;
         }
 
-        &__decoration--cutter-medium {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--cutter-medium {
             top: 73.73vw;
             left: 38.76vw;
             width: 11.13vw;
         }
 
-        &__decoration--cutter-small {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--cutter-small {
             display: block;
             top: 118.35vw;
             left: 25.97vw;
             width: 3.22vw;
         }
 
-        &__decoration--ladle {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--ladle {
             top: 110.93vw;
             left: 15.23vw;
             width: 7.51vw;
         }
 
-        &__decoration--apron {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--apron {
             top: 116.69vw;
             right: 24.14vw;
             width: 8.08vw;
         }
 
-        &__decoration--tools {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--tools {
             top: -3.4vw;
             left: 53.9vw;
             width: 11.13vw;
@@ -1339,64 +1345,64 @@
             background-size: 100% auto;
         }
 
-        &__decorations {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decorations {
             display: block;
             overflow: visible;
         }
 
-        &__decoration--scale {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--scale {
             top: 2.7vw;
             left: 40.31vw;
             width: 2.86vw;
         }
 
-        &__decoration--cup {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--cup {
             top: 15.83vw;
             right: 16.76vw;
             width: 3.86vw;
         }
 
-        &__decoration--spoon {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--spoon {
             display: none;
         }
 
-        &__decoration--bowl {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--bowl {
             top: 27.29vw;
             right: 10.57vw;
             width: 3.96vw;
         }
 
-        &__decoration--glove {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--glove {
             top: 14.63vw;
             left: 13.18vw;
             width: 2.97vw;
         }
 
-        &__decoration--cutter {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--cutter {
             display: none;
         }
 
-        &__decoration--cutter-medium {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--cutter-medium {
             display: none;
         }
 
-        &__decoration--cutter-small {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--cutter-small {
             display: none;
         }
 
-        &__decoration--ladle {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--ladle {
             top: 46.82vw;
             left: 25.41vw;
             width: 4.31vw;
         }
 
-        &__decoration--apron {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--apron {
             top: 45.62vw;
             right: 29.17vw;
             width: 4.57vw;
         }
 
-        &__decoration--tools {
+        &:not(.p-recipe-archive--results) .p-recipe-archive__decoration--tools {
             top: 1.44vw;
             left: 54.66vw;
             width: 5.38vw;
