@@ -73,9 +73,12 @@ get_header('company');
         <span><a href="<?php echo esc_url(home_url('/company/')); ?>">企業情報</a></span>
         <span aria-current="page">企業の方へ</span>
     </nav>
-        <picture class="p-page-company-business__heroPicture">
-            <img src="<?php echo esc_url($business_image_uri . '/img_business-fv.png'); ?>" alt="セレクションと地域の生産者・取引先の皆さま" fetchpriority="high">
-        </picture>
+        <div class="p-page-company-business__heroVisual">
+            <picture class="p-page-company-business__heroPicture">
+                <img src="<?php echo esc_url($business_image_uri . '/img_business-fv-background.jpg'); ?>" alt="セレクションと地域の生産者・取引先の皆さま" fetchpriority="high">
+            </picture>
+            <img class="p-page-company-business__heroBadges" src="<?php echo esc_url($business_image_uri . '/svg/hero-quality-badges.svg'); ?>" alt="品質・鮮度・安全性">
+        </div>
         <header class="p-page-company-business__heading">
             <h1 id="business-title" class="p-page-company-business__title">生産者・取引先の皆さまへ</h1>
             <p class="p-page-company-business__headingEn">To Our Producers and<br class="p-page-company-business__breakSp"> Business Partners</p>

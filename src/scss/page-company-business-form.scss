@@ -1,0 +1,216 @@
+.p-business-form-page {
+  width: 100%;
+  padding-top: 60px;
+  overflow-x: clip;
+  background: #fff;
+  color: #000;
+  font-family: "Noto Sans JP", sans-serif;
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  &__breadcrumb {
+    display: flex;
+    min-height: 55px;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 3.3vw;
+    padding: 3.1vw 5.1vw 0;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-size: 3.1vw;
+    line-height: 1.7;
+
+    a, span { flex: 0 0 auto; white-space: nowrap; }
+    a { color: #10a3ff; text-decoration: underline; text-underline-offset: 0.2em; }
+  }
+
+  &__content {
+    width: 91.8%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 6.2vw 0 23vw;
+
+    h1 {
+      margin: 0;
+      font-family: "Zen Kaku Gothic New", sans-serif;
+      font-size: 5.1vw;
+      font-weight: 900;
+      letter-spacing: .15em;
+      line-height: 1.4;
+      text-align: center;
+    }
+  }
+
+  &__lead {
+    width: calc(100% + 12.3vw);
+    margin: 5.1vw -6.15vw 11vw;
+    font-size: 4.1vw;
+    line-height: 7.2vw;
+    text-align: center;
+  }
+}
+
+.p-business-form {
+  &.is-validated :invalid {
+    border-color: #d60000;
+  }
+
+  &__field { display: block; margin-bottom: 6.7vw; }
+
+  &__label {
+    display: block;
+    margin-bottom: 2.6vw;
+    font-size: 4.1vw;
+    font-weight: 500;
+    line-height: 6.2vw;
+
+    em { color: #ff0b0b; font-size: 3.6vw; font-style: normal; }
+  }
+
+  input, select, textarea {
+    display: block;
+    width: 100%;
+    border: 1px solid #e7eae6;
+    background: #f9faf5;
+    color: #000;
+    font: inherit;
+    font-size: 4.1vw;
+    font-weight: 500;
+    outline: none;
+  }
+
+  input, select { height: 11.8vw; padding: 0 4.1vw; border-radius: 6vw; }
+  textarea { height: 72.6vw; padding: 3.6vw 4.1vw; border-radius: 5.1vw; resize: vertical; }
+  textarea.is-small { height: 28vw; }
+
+  &__field--postal input { width: 53.8vw; }
+
+  &__select-wrap { position: relative; display: block; }
+  &__select-wrap::before {
+    position: absolute;
+    top: 50%;
+    right: 3.1vw;
+    width: 5.9vw;
+    height: 5.9vw;
+    border-radius: 50%;
+    background: url("/wp-content/themes/foods-selectioncojp-theme/img/component/svg/icon_select-chevron-rounded.svg") center / 100% 100% no-repeat;
+    content: "";
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  select {
+    appearance: none;
+    padding-right: 12vw;
+    cursor: pointer;
+
+    option {
+      background: #f9faf5;
+      color: #000;
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 4.1vw;
+      font-weight: 500;
+    }
+
+    option:checked {
+      background: #103675;
+      color: #fff;
+    }
+  }
+
+  &__privacy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.6vw;
+    margin-top: 10.3vw;
+    font-size: 4.1vw;
+    font-weight: 400;
+    line-height: 7.7vw;
+    text-wrap: pretty;
+
+    input {
+      appearance: none;
+      flex: 0 0 5.1vw;
+      width: 5.1vw;
+      min-width: 5.1vw;
+      max-width: 5.1vw;
+      height: 5.1vw;
+      min-height: 5.1vw;
+      max-height: 5.1vw;
+      aspect-ratio: 1 / 1;
+      margin: 0;
+      padding: 0;
+      border: 1px solid #cecece;
+      border-radius: 1.3vw;
+      background: #fff;
+    }
+    input:checked { background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23103675' stroke-width='2.5' d='m4 10 4 4 8-9'/%3E%3C/svg%3E") center / 90% no-repeat; }
+    span { min-width: 0; }
+    a { color: #10a3ff; text-decoration: underline; }
+  }
+
+  &__submit {
+    display: block;
+    width: 100%;
+    height: 15.4vw;
+    margin: 7.4vw auto 0;
+    border: 0;
+    border-radius: 5.1vw;
+    background: #00a784;
+    color: #fff;
+    font-size: 4.6vw;
+    font-weight: 700;
+    letter-spacing: .1em;
+  }
+}
+
+@media (min-width: 768px) {
+  .p-business-form-page {
+    padding-top: 60px;
+
+    &__breadcrumb { width: min(calc(100% - 80px), 1720px); min-height: 76px; margin: 0 auto; padding: 10px 0 0; gap: 24px; font-size: 13px; }
+    &__content { width: 600px; padding: 40px 0 175px; }
+    &__content h1 { font-size: 20px; }
+    &__lead { width: 1000px; margin: 30px -200px 70px; font-size: 16px; line-height: 28px; text-align: center; }
+  }
+
+  .p-business-form {
+    &__field { margin-bottom: 26px; }
+    &__label { margin-bottom: 10px; font-size: 16px; line-height: 24px; }
+    &__label em { font-size: 14px; }
+    input, select, textarea { font-size: 16px; }
+    input, select { height: 46px; padding: 0 16px; border-radius: 23px; }
+    textarea { height: 283px; padding: 14px 16px; border-radius: 20px; }
+    textarea.is-small { height: 109px; }
+    &__field--postal input { width: 210px; }
+    &__select-wrap::before { right: 10px; width: 23px; height: 23px; }
+    select {
+      padding-right: 50px;
+
+      option { font-size: 16px; }
+    }
+    &__privacy { gap: 10px; margin-top: 40px; font-size: 16px; line-height: 30px; text-wrap: pretty; }
+    &__privacy input {
+      flex: 0 0 20px;
+      width: 20px;
+      min-width: 20px;
+      max-width: 20px;
+      height: 20px;
+      min-height: 20px;
+      max-height: 20px;
+      padding: 0;
+      border-radius: 5px;
+    }
+    &__submit { width: 372px; height: 60px; margin-top: 45px; border-radius: 20px; font-size: 18px; }
+  }
+
+  .u-business-form-sp { display: none; }
+}
+
+@media (min-width: 1024px) {
+  .has-company-header .p-business-form-page { padding-top: 72px; }
+}
+
+@media (min-width: 1280px) {
+  .has-company-header .p-business-form-page { padding-top: 85px; }
+}

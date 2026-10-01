@@ -49,6 +49,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-page-company-business-js',
         'foods-page-recruit-work-js',
         'foods-page-recruit-entry-js',
+        'foods-page-company-business-form-js',
     ];
 
     if (in_array($handle, $module_handles, true)) {
@@ -179,6 +180,7 @@ function foods_theme_scripts() {
     $page_company_business_entry = 'src/js/page-company-business.js';
     $page_recruit_work_entry = 'src/js/page-recruit-work.js';
     $page_recruit_entry_form_entry = 'src/js/page-recruit-entry.js';
+    $page_company_business_form_entry = 'src/js/page-company-business-form.js';
 
     if ($is_local) {
         wp_enqueue_script(
@@ -275,6 +277,7 @@ function foods_theme_scripts() {
         'page-recruit-work.php',
         'page-recruit-entry.php',
         'page-recruit-career-entry.php',
+        'page-company-business-contact.php',
     ], true)) {
         foods_enqueue_vite_entry('foods-company-header', 'src/js/header-company.js', $dev_server, $manifest, $is_local);
         foods_enqueue_vite_entry('foods-company-footer', 'src/js/footer-company.js', $dev_server, $manifest, $is_local);
@@ -296,6 +299,19 @@ function foods_theme_scripts() {
         foods_enqueue_vite_entry(
             'foods-page-company-business',
             $page_company_business_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    // 企業向けお問い合わせフォーム専用アセット
+    if (is_page() && in_array(basename((string) get_page_template()), [
+        'page-company-business-contact.php',
+    ], true)) {
+        foods_enqueue_vite_entry(
+            'foods-page-company-business-form',
+            $page_company_business_form_entry,
             $dev_server,
             $manifest,
             $is_local
