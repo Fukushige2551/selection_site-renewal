@@ -8,7 +8,17 @@
     const nav = header.querySelector('.l-company-header__nav');
     const desktop = window.matchMedia('(min-width: 1024px)');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const supportsInert = 'inert' in nav;
     let menuAnimation = null;
+
+    const setNavigationState = (closed) => {
+        if (supportsInert) nav.inert = closed;
+        if (closed) {
+            nav.setAttribute('aria-hidden', 'true');
+        } else {
+            nav.removeAttribute('aria-hidden');
+        }
+    };
 
     // 表示状態とアクセシビリティ属性を同期し、必要に応じて開閉をアニメーションする。
     const setOpen = (open, immediate = false) => {
@@ -20,16 +30,17 @@
             paddingBottom: nav.hidden ? '0px' : currentStyle.paddingBottom,
             opacity: nav.hidden ? 0 : currentStyle.opacity,
         };
-        menuAnimation?.cancel();
+        if (menuAnimation) menuAnimation.cancel();
         menuAnimation = null;
         nav.style.removeProperty('overflow');
         header.classList.toggle('is-open', open && !desktop.matches);
         toggle.setAttribute('aria-expanded', String(open));
         toggle.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
-        nav.inert = !desktop.matches && !open;
+        const closed = !desktop.matches && !open;
+        setNavigationState(closed);
 
-        if (immediate || desktop.matches || reducedMotion.matches) {
-            nav.hidden = !desktop.matches && !open;
+        if (immediate || desktop.matches || reducedMotion.matches || !supportsInert || typeof nav.animate !== 'function') {
+            nav.hidden = closed;
             return;
         }
 
@@ -47,8 +58,8 @@
             easing: 'cubic-bezier(.4, 0, .2, 1)',
         });
         menuAnimation.onfinish = () => {
-            nav.hidden = !desktop.matches && !open;
-            nav.inert = !desktop.matches && !open;
+            nav.hidden = closed;
+            setNavigationState(closed);
             nav.style.removeProperty('overflow');
             menuAnimation = null;
         };
@@ -57,6 +68,13 @@
     // 初期状態と操作イベントを設定する。
     toggle.hidden = false;
     setOpen(false, true);
+    // タッチ・マウス操作では枠を出さず、キーボード操作時だけフォーカスを示す。
+    window.addEventListener('keydown', (event) => {
+        if (event.key === 'Tab') header.classList.add('is-keyboard-focus');
+    });
+    const clearKeyboardFocus = () => header.classList.remove('is-keyboard-focus');
+    header.addEventListener('mousedown', clearKeyboardFocus);
+    header.addEventListener('touchstart', clearKeyboardFocus, { passive: true });
     toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
     header.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
@@ -74,6 +92,11 @@
         if (event.relatedTarget && !header.contains(event.relatedTarget)) setOpen(false);
     });
     // 画面幅の変更や履歴からの復帰時に表示状態を整える。
-    desktop.addEventListener('change', () => setOpen(false, true));
-    window.addEventListener('pageshow', () => setOpen(false, true));
+    const resetNavigation = () => setOpen(false, true);
+    if (typeof desktop.addEventListener === 'function') {
+        desktop.addEventListener('change', resetNavigation);
+    } else {
+        desktop.addListener(resetNavigation);
+    }
+    window.addEventListener('pageshow', resetNavigation);
 })();

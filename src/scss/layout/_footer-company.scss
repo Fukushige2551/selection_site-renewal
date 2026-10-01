@@ -31,7 +31,7 @@
         text-decoration: none;
     }
 
-    & a:focus-visible, & summary:focus-visible {
+    & a:focus, & summary:focus {
         outline-offset: 3px;
         outline: 2px solid #00a784;
     }
@@ -304,7 +304,7 @@
     /**
      * タブレット（768px以上）
      */
-    @media (width >= 768px) {
+    @media (min-width: 768px) {
         & {
             padding-top: 50px;
         }
@@ -315,7 +315,7 @@
     /**
      * パソコン（1024px以上）
      */
-    @media (width >= 1024px) {
+    @media (min-width: 1024px) {
         & {
             padding: 80px 40px 22px;
         }
@@ -382,7 +382,7 @@
     /**
      * パソコン（1280px以上）
      */
-    @media (width >= 1280px) {
+    @media (min-width: 1280px) {
         & {
             padding-top: 100px;
         }
@@ -403,7 +403,7 @@
     /**
      * パソコン（1600px以上）
      */
-    @media (width >= 1600px) {
+    @media (min-width: 1600px) {
         &__group summary, &__row {
             padding-left: 20px;
             font-size: 18px;

@@ -596,8 +596,8 @@
 @media screen and (min-width: 768px) {
     .p-page-company__person {
         top: 110vw;
-        right: 9vw;
-        width: 13vw;
+        right: -1vw;
+        width: 11vw;
     }
 
     .sp-only {
@@ -938,7 +938,7 @@
         display: inline;
     }
     .p-page-company__person {
-        top: 61vw;
+        top: 50vw;
         right: 10vw;
         width: 7vw;
     }
@@ -1730,6 +1730,26 @@
     @media (min-width: 1024px) {
         --stagger-offset: 3vw;
         --stagger-radius: 1.8vw;
+
+        .p-page-company__about__slider {
+            cursor: auto;
+            touch-action: auto;
+        }
+
+        // 写真は五枚で一列に収め、超広幅でも一枚400pxを超えないようにする。
+        .p-page-company__about__track {
+            width: 100%;
+            max-width: 2000px;
+            margin: 0 auto;
+        }
+
+        .p-page-company__about__item {
+            flex: 0 0 20%;
+            width: 20%;
+            height: clamp(230px, 24.3vw, 486px);
+        }
+
+        .p-page-company__about__item[aria-hidden="true"] { display: none; }
     }
 
     @media (min-width: 1280px) {
