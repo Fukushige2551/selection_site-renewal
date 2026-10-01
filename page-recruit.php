@@ -124,7 +124,7 @@ get_header('company');
     </div>
     <div class="p-page-recruit__entry-title"><span>ENTRY</span><p>募集要項、ご応募はこちらから</p></div>
     <a href="<?php echo esc_url(home_url('/recruit/entry/')); ?>">新卒採用<span aria-hidden="true">→</span></a>
-    <a href="<?php echo esc_url(home_url('/recruit/entry/')); ?>">キャリア採用<span aria-hidden="true">→</span></a>
+    <a href="<?php echo esc_url(home_url('/recruit/career-entry/')); ?>">キャリア採用<span aria-hidden="true">→</span></a>
   </section>
 </main>
 
