@@ -49,6 +49,7 @@ export default defineConfig({
                 'page-select-sweets': path.resolve(__dirname, 'src/js/page-select-sweets.js'),
                 'page-select-alcohol': path.resolve(__dirname, 'src/js/page-select-alcohol.js'),
                 'page-recruit': path.resolve(__dirname, 'src/js/page-recruit.js'),
+                'page-recruit-work': path.resolve(__dirname, 'src/js/page-recruit-work.js'),
                 'single-shop': path.resolve(__dirname, 'src/js/single-shop.js'),
                 'archive-news': path.resolve(__dirname, 'src/js/archive-news.js'),
                 'single-news': path.resolve(__dirname, 'src/js/single-news.js'),
