@@ -1,0 +1,255 @@
+@use "sass:list";
+
+// NPC (notebook PC): retain the desktop composition at 1024–1279px.
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .p-interview.p-page-recruit {
+    // Figma Q&A heights are minimums: allow longer lines to grow at 1024px.
+    .p-interview__qa { min-height: var(--npc-qa-height, 176px); }
+    .p-interview__qa p { padding-bottom: var(--npc-answer-bottom, 23px); }
+    @each $person, $gaps in
+      ("01", (38, 42, 44, 40, 40, 0)),
+      ("02", (35, 35, 40, 40, 40, 0)),
+      ("03", (30, 30, 30, 40, 49, 0)) {
+      &.p-interview--#{$person} {
+        @for $index from 1 through 6 {
+          .p-interview__section--#{$index} { margin-bottom: #{list.nth($gaps, $index)}px; }
+        }
+      }
+    }
+    &.p-interview--01 .p-interview__photo--work { margin-bottom: -10px; }
+    &.p-interview--02 .p-interview__photo--work,
+    &.p-interview--03 .p-interview__photo--work { margin-bottom: -25px; }
+    @each $person, $heights, $bottoms in
+      ("01", (116, 201, 144, 176, 116, 176), (19, 20, 19, 23, 19, 23)),
+      ("02", (116, 176, 144, 176, 205, 176), (19, 23, 19, 23, 24, 23)),
+      ("03", (146, 143, 144, 176, 142, 176), (21, 18, 19, 23, 17, 23)) {
+      &.p-interview--#{$person} {
+        @for $index from 1 through 6 {
+          .p-interview__section--#{$index} .p-interview__qa {
+            --npc-qa-height: #{list.nth($heights, $index)}px;
+            --npc-answer-bottom: #{list.nth($bottoms, $index)}px;
+            min-height: var(--npc-qa-height);
+          }
+        }
+      }
+    }
+    padding-top: 85px;
+    margin-bottom: -91px;
+
+    .p-interview__breadcrumb {
+      position: absolute;
+      top: 101px;
+      left: 4%;
+      width: calc(100% - 96px);
+      min-height: 33px;
+      margin: 0 auto;
+    }
+
+    .p-interview__hero {
+      grid-template-columns: minmax(0, 400fr) minmax(0, 620fr);
+      gap: 52px;
+      width: calc(100% - 128px);
+      height: 440px;
+      align-items: start;
+      padding-top: 0;
+    }
+
+    .p-interview__portrait { margin-top: 48px; border-radius: 0 0 23px 23px; }
+    .p-interview__year { margin-bottom: 16px; line-height: 24px; }
+    .p-interview__role { font-size: 16px; line-height: 24px; }
+
+    .p-interview__profile {
+      min-width: 0;
+      padding: 0;
+      margin: 144px 0 0;
+
+      h1 {
+        font-size: 24px;
+        line-height: 40px;
+      }
+    }
+
+    .p-interview__related {
+      padding-top: 120px;
+      // Reserve room for the entry decoration below the right-hand card.
+      padding-bottom: clamp(190px, 19vw, 244px);
+
+      .p-page-recruit__voice-track {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        height: auto;
+        padding-bottom: 8px;
+      }
+
+      .p-page-recruit__voice-card {
+        width: auto;
+        min-width: 0;
+        max-width: none;
+        height: auto;
+      }
+      .p-page-recruit__voice-link {
+        height: auto;
+        padding-top: clamp(27px, calc(3.90625vw - 13px), 37px);
+      }
+      .p-page-recruit__voice-card.is-active .p-page-recruit__voice-link {
+        padding-top: clamp(26px, calc(2.34375vw + 2px), 32px);
+      }
+
+      // Keep the existing desktop photo crops and cutout sizes. Only put the
+      // photo and caption in normal flow so wrapped copy cannot escape its card.
+      .p-page-recruit__voice-photo,
+      .p-page-recruit__voice-card.is-active .p-page-recruit__voice-photo {
+        position: relative;
+        top: auto;
+      }
+      .p-page-recruit__voice-body,
+      .p-page-recruit__voice-card.is-active .p-page-recruit__voice-body {
+        position: relative;
+        top: auto;
+        height: auto;
+        padding: 24px 20px;
+        h3 {
+          min-height: 4.5em;
+        }
+      }
+      .p-page-recruit__voice-card .p-page-recruit__voice-body h3 br {
+        display: inline;
+      }
+      .p-page-recruit__voice-meta {
+        font-size: 14px;
+        line-height: 24px;
+        span, strong {
+          display: block;
+        }
+        strong {
+          float: none;
+          margin-top: 6px;
+          min-height: 48px;
+        }
+      }
+    }
+
+    .p-page-recruit__entry-group {
+      left: auto;
+      right: 24px;
+      width: clamp(164px, 16.4vw, 210px);
+      height: auto;
+    }
+    .p-page-recruit__entry .p-page-recruit__entry-word {
+      left: calc(50% - 174px);
+      // The tablet-only text span follows the SVG, so :last-child does not
+      // select the lettering image in the shared template.
+      > img:nth-of-type(2) {
+        position: absolute;
+        top: 20.24%;
+        left: 16.26%;
+        width: 61.42%;
+        height: 58.93%;
+      }
+    }
+  }
+
+  .p-interview__entry-person-layer .p-page-recruit__entry-person {
+    left: calc(50% - 8px);
+  }
+}
+
+// Approved Figma 1200px geometry. Keep these overrides scoped to NPC.
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .page-template-page-recruit-interview .l-company-header {
+    inset-inline: 4%; --logo-width: clamp(120px, 12.5vw, 160px);
+    .l-company-header__bar { height: 85px; min-height: 85px; flex-wrap: nowrap; }
+    .l-company-header__bar::before, .l-company-header__logo { height: 85px; }
+    .l-company-header__logo img { width: 100px; height: 49.3px; }
+    .l-company-header__nav { flex: 1; padding: 0 16px 0 30px; }
+    .l-company-header__links { justify-content: space-between; gap: 12px; }
+    .l-company-header__link { font-size: clamp(13px, calc(1.705vw - 4.46px), 16px); }
+    .l-company-header__link--recruit { min-width: 0; width: clamp(180px, 19.833vw, 238px); height: 46px; }
+    .l-company-header__link--contact { min-width: 0; width: clamp(112px, 12vw, 144px); height: 46px; }
+  }
+  .p-interview.p-page-recruit {
+    .p-interview__related {
+      --npc-unit: calc((100vw - 144px) / 1170);
+      height: 920px; padding: 120px 0 0;
+      > h2 { font-size: 26px; line-height: 31px; letter-spacing: 0; }
+      > p { margin: 13px 0 0; line-height: 36px; }
+      .p-page-recruit__voice-slider { position: absolute; top: 120px; left: 48px; width: calc(100% - 96px); margin: 0; overflow: visible; }
+      .p-page-recruit__voice-track { gap: 24px; height: auto; padding: 0; overflow: visible; }
+      .p-page-recruit__voice-card, .p-page-recruit__voice-card.is-active {
+        width: 100%; height: calc(461 * var(--npc-unit)); margin: 172px 0 0; padding: 0; transform: none;
+      }
+      .p-page-recruit__voice-card[data-slide="1"] { margin-top: 132px; }
+      .p-page-recruit__voice-card[data-slide="2"] { margin-top: calc(172px + 2 * var(--npc-unit)); }
+      .p-page-recruit__voice-link, .p-page-recruit__voice-card.is-active .p-page-recruit__voice-link { position: relative; height: 100%; padding: 0; }
+      .p-page-recruit__voice-photo, .p-page-recruit__voice-card.is-active .p-page-recruit__voice-photo { position: absolute; top: 0; height: calc(289 * var(--npc-unit)); }
+      .p-page-recruit__voice-background { border-radius: calc(30 * var(--npc-unit)) calc(30 * var(--npc-unit)) 0 0; opacity: .6; }
+      .p-page-recruit__voice-person { top: calc(-32 * var(--npc-unit)); left: calc(89 * var(--npc-unit)); right: auto; width: calc(221 * var(--npc-unit)); height: calc(347 * var(--npc-unit)); }
+      .p-page-recruit__voice-card[data-slide="0"] .p-page-recruit__voice-person { top: calc(-37 * var(--npc-unit)); left: calc(101 * var(--npc-unit)); width: calc(174 * var(--npc-unit)); height: calc(355 * var(--npc-unit)); }
+      .p-page-recruit__voice-card[data-slide="2"] .p-page-recruit__voice-person { top: calc(-13 * var(--npc-unit)); left: calc(105 * var(--npc-unit)); width: calc(179 * var(--npc-unit)); height: calc(326 * var(--npc-unit)); }
+      .p-page-recruit__voice-card[data-slide="2"] .p-page-recruit__voice-background { opacity: .7; }
+      .p-page-recruit__voice-body, .p-page-recruit__voice-card.is-active .p-page-recruit__voice-body {
+        position: absolute; top: calc(289 * var(--npc-unit)); height: calc(172 * var(--npc-unit));
+        padding: calc(40 * var(--npc-unit)) calc(23 * var(--npc-unit)) 0;
+        border-radius: 0 0 calc(30 * var(--npc-unit)) calc(30 * var(--npc-unit));
+        h3 { min-height: 0; margin: 0; font-size: calc(20 * var(--npc-unit)); line-height: calc(30 * var(--npc-unit)); }
+      }
+      .p-page-recruit__voice-card .p-page-recruit__voice-body h3 br { display: none; }
+      .p-page-recruit__voice-card[data-slide="0"] .p-page-recruit__voice-body h3 br { display: inline; }
+      .p-page-recruit__voice-meta {
+        position: absolute; top: calc(111 * var(--npc-unit)); left: calc(23 * var(--npc-unit)); right: calc(23 * var(--npc-unit));
+        margin: 0; padding-top: calc(14 * var(--npc-unit)); font-size: calc(16 * var(--npc-unit)); line-height: calc(24 * var(--npc-unit));
+        display: flex; justify-content: space-between;
+        span, strong { display: block; white-space: nowrap; }
+        strong { float: none; margin: 0; min-height: 0; }
+      }
+      .p-page-recruit__voice-card[data-slide="2"] {
+        .p-page-recruit__voice-body { padding-top: calc(37 * var(--npc-unit)); }
+        .p-page-recruit__voice-meta { top: calc(81 * var(--npc-unit)); display: block; }
+        .p-page-recruit__voice-meta strong { margin-top: calc(6 * var(--npc-unit)); }
+        .p-page-recruit__voice-meta strong br { display: none; }
+      }
+      .p-page-recruit__voice-dots { display: flex; position: absolute; top: 750px; left: calc(50% - 49px); width: 98px; margin: 0; font-size: 14px; line-height: 22px; }
+    }
+    .p-page-recruit__entry-group-layer { z-index: 3; }
+    .p-page-recruit__entry-group { left: auto; right: calc(50% - 495px); bottom: -23px; width: 179px; height: 225px; }
+    .p-page-recruit__entry {
+      z-index: 2; height: 771px; margin: 0; padding-top: 79px; border-radius: 30px 30px 0 0;
+      .p-page-recruit__entry-title { height: 99px; margin-bottom: 34px; }
+      .p-page-recruit__entry-title span { display: block; font-size: 55px; line-height: 75px; letter-spacing: 0; }
+      .p-page-recruit__entry-title p { margin: 0; font-size: 14px; line-height: 24px; }
+      > a { position: relative; height: 133px; font-size: 30px; font-weight: 900; }
+      > a > span { position: absolute; left: calc(50% + 132px); width: 50px; height: 50px; }
+      .p-page-recruit__entry-word { top: 454px; left: calc(50% - 145px); width: 197px; height: 168px; }
+      .p-page-recruit__entry-word > img:nth-of-type(2) { display: none; }
+      .p-interview__entry-tab-copy {
+        display: block; position: absolute; left: calc(50% - 140.68px); top: 490.89px;
+        width: 187px; height: 94px; transform: rotate(12.2deg);
+        color: #00a784; font: 700 20px/30px "Zen Kaku Gothic New", sans-serif; text-align: center;
+      }
+    }
+  }
+  .p-interview__entry-person-layer .p-page-recruit__entry-person { left: calc(50% - 12.5px); right: auto; bottom: -25.265px; width: 202.737px; height: 193.265px; }
+  .p-interview__entry-person-layer + .l-company-footer {
+    min-height: 920px; padding: 80px 48px 24px; border-radius: 40px 40px 0 0;
+    .l-company-footer__inner { max-width: 1104px; grid-template-columns: 22.12% minmax(0, 1fr); grid-template-rows: minmax(347.39px, auto) auto; column-gap: 4.55%; row-gap: 46px; }
+    .l-company-footer__logo { margin-top: 110px; max-width: 244px; }
+    .l-company-footer__nav { gap: 28px; }
+    .l-company-footer__group summary, .l-company-footer__row { min-height: 32px; padding: 5.5px 0 8.5px 16.49px; font-size: 14.134px; line-height: 17px; }
+    .l-company-footer__group summary::before, .l-company-footer__row::before { top: 12.56px; }
+    .l-company-footer__group .l-company-footer__list { padding: 15px 0 17.6px 16.49px; font-size: 12.563px; line-height: 25.912px; }
+    .l-company-footer__row--news { min-height: 46.33px; padding-top: .58px; }
+    .l-company-footer__row--recruit { min-height: 43.19px; padding-top: .58px; }
+    .l-company-footer__row--recipe { min-height: 44.76px; padding-top: .58px; }
+    .l-company-footer__row--online { min-height: 17.58px; padding-top: .58px; padding-bottom: 0; border-bottom: 0; }
+    .l-company-footer__group--company .l-company-footer__list { padding-top: 15px; padding-bottom: 3px; }
+    .l-company-footer__group--company .l-company-footer__list li { min-height: 38px; padding: 0; }
+    .l-company-footer__row--contact { min-height: 44px; }
+    .l-company-footer__banners { gap: 25px; margin-top: 0; }
+    .l-company-footer__banner--app { aspect-ratio: 393.087 / 145.796; }
+    .l-company-footer__socials { margin: 56px 0 113px !important; gap: 17px; }
+    .l-company-footer__social img { width: 31.4px; height: 31.6px; }
+    .l-company-footer__social--youtube img { width: 45.2px; }
+    .l-company-footer__company p, .l-company-footer__company address { font-size: 12px; line-height: 16px; }
+    .l-company-footer__copyright { margin-top: 39px; font-size: 12px; line-height: 13px; }
+  }
+}

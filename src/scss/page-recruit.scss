@@ -2174,3 +2174,13 @@
     }
   }
 }
+
+.p-page-recruit__voice-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 30px;
+  &:focus-visible { outline: 3px solid #00a784; outline-offset: 4px; }
+}

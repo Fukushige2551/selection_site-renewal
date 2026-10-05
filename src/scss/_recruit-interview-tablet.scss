@@ -1,0 +1,167 @@
+.p-interview__entry-tab-copy { display: none; }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .page-template-page-recruit-interview .l-company-header {
+    inset-inline: 48px;
+    --logo-width: 101px;
+    .l-company-header__bar { min-height: 64px; }
+    .l-company-header__logo { height: 64px; }
+    .l-company-header__logo img { width: 71px; height: 35px; }
+  }
+  .p-interview.p-page-recruit {
+    padding-top: 64px;
+    margin-bottom: -184px;
+    .p-interview__breadcrumb { min-height: 81px; padding: 24px 48px; }
+    .p-interview__hero { margin-bottom: 48px; }
+    .p-interview__portrait { height: 430px; aspect-ratio: auto; border-radius: 0 0 40px 40px; }
+    .p-interview__profile { width: 640px; margin: 32px auto 0; }
+    .p-interview__year { margin-bottom: 12px; font-size: 18px; line-height: 28px; }
+    .p-interview__role { font-size: 18px; line-height: 28px; }
+    .p-interview__profile h1 { margin-top: 12px; font-size: 32px; line-height: 48px; }
+    .p-interview__body { width: 640px; }
+    .p-interview__section { margin-bottom: 40px; }
+    .p-interview__section:last-child { margin-bottom: 0; }
+    .p-interview__photo {
+      height: 360px;
+      aspect-ratio: auto;
+      margin-bottom: -32px;
+      border-radius: 32px 32px 0 0;
+      img { inset: 0; width: 100%; height: 100%; }
+    }
+    .p-interview__qa {
+      --question-radius: 32px;
+      min-height: 0;
+      border-radius: 0 0 32px 32px;
+      background: transparent;
+      h2 { min-height: 66px; padding: 18px 32px; border-radius: 32px; font-size: 20px; line-height: 30px; }
+      h2 img { left: calc(50% - 20px); bottom: -18px; }
+      p { padding: 28px 32px; font-size: 18px; line-height: 32px; background: #f9faf5; border-radius: 0 0 32px 32px; }
+    }
+    .p-interview__section--1 .p-interview__qa {
+      --question-radius: 32px;
+      h2 { min-height: 66px; padding: 18px 32px; font-size: 20px; line-height: 30px; }
+    }
+    .p-interview__related {
+      height: 1015px;
+      padding: 80px 0 0;
+      > p { margin-bottom: 50px; }
+      .p-page-recruit__voice-slider { width: 100%; margin: 0; }
+      .p-page-recruit__voice-track {
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 20px;
+        height: 634px;
+        padding-inline: calc((100% - 278px) / 2);
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+      }
+      .p-page-recruit__voice-card {
+        display: block;
+        flex: 0 0 278px;
+        width: 278px;
+        min-width: 278px;
+        max-width: 278px;
+        height: 562px;
+        margin: 43px 0 0;
+        scroll-snap-align: center;
+        &.is-active { margin-top: 0; }
+      }
+      .p-page-recruit__voice-photo,
+      .p-page-recruit__voice-card.is-active .p-page-recruit__voice-photo { top: 40px; height: 289px; }
+      .p-page-recruit__voice-background { border-radius: 30px 30px 0 0; }
+      .p-page-recruit__voice-person { top: -40px; right: 20px; width: 221px; height: 347px; }
+      .p-page-recruit__voice-card[data-slide="0"] .p-page-recruit__voice-person {
+        top: -40px; left: 52px; right: auto; width: 174px; height: 355px;
+      }
+      .p-page-recruit__voice-card[data-slide="2"] .p-page-recruit__voice-person {
+        top: -11px; left: 53px; right: auto; width: 179px; height: 326px;
+      }
+      .p-page-recruit__voice-body,
+      .p-page-recruit__voice-card.is-active .p-page-recruit__voice-body {
+        top: 329px; height: 233px; padding: 54px 23px 20px; border-radius: 0 0 30px 30px;
+        h3 { font-size: 20px; line-height: 30px; }
+        h3 br { display: inline; }
+      }
+      .p-page-recruit__voice-meta {
+        margin-top: 29px; padding-top: 14px; font-size: 16px; line-height: 24px;
+        span, strong { display: block; }
+        strong { float: none; margin-top: 9px; }
+      }
+      .p-page-recruit__voice-card[data-slide="2"] .p-page-recruit__voice-body { padding-top: 41px; }
+      // Match Figma: photo tops 236px (center) / 279px (sides),
+      // card bottoms 758px / 801px, independent of the person's crop.
+      .p-page-recruit__voice-card[data-slide="2"] {
+        height: 533px;
+        margin-top: 72px;
+        &.is-active { margin-top: 29px; }
+        .p-page-recruit__voice-photo { top: 11px; }
+        .p-page-recruit__voice-body { top: 300px; }
+      }
+      .p-page-recruit__voice-card[data-slide="1"] {
+        height: 554px;
+        margin-top: 51px;
+        &.is-active { margin-top: 8px; }
+        .p-page-recruit__voice-photo { top: 32px; }
+        .p-page-recruit__voice-person { top: -32px; }
+        .p-page-recruit__voice-body { top: 321px; padding-top: 41px; }
+        // Three heading lines: place the divider 143px below the body top.
+        .p-page-recruit__voice-meta { margin-top: 12px; }
+      }
+      .p-page-recruit__voice-card[data-slide="2"] .p-page-recruit__voice-meta { margin-top: 15px; }
+      .p-page-recruit__voice-dots {
+        display: flex; position: absolute; top: 779px; left: calc(50% - 11px);
+        width: 98px; justify-content: space-between; gap: 0; margin: 0; font-size: 14px; line-height: 22px;
+      }
+    }
+    .p-page-recruit__entry-group-layer { z-index: 1; }
+    .p-page-recruit__entry-group { left: calc(50% - 216px); right: auto; bottom: -21px; width: 158px; height: 198px; }
+    .p-page-recruit__entry {
+      z-index: 2; height: 784px; margin: 0; padding: 72px 0 0; border-radius: 40px 40px 0 0;
+      .p-page-recruit__entry-title { height: 99px; margin-bottom: 53px; }
+      .p-page-recruit__entry-title span { font-size: 55px; line-height: 75px; }
+      .p-page-recruit__entry-title p { margin: 0; font-size: 14px; line-height: 24px; }
+      > a { height: 88px; padding: 0; font-size: 20px; justify-content: center; }
+      > a:first-of-type { border-top: 1px solid rgba(255,255,255,.65); }
+      > a > span {
+        position: absolute; left: calc(50% + 166px); right: auto;
+        width: 33px; height: 33px;
+        background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-recruit/svg/entry-arrow-line.svg");
+        transform: rotate(90deg);
+      }
+      > a:nth-of-type(2) > span { background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-recruit/svg/entry-arrow-head.svg"); }
+      .p-page-recruit__entry-word {
+        top: 420px; left: calc(50% - 157px); width: 197px; height: 168px;
+        > img:last-child { top: 34px; left: 33px; width: 121px; height: 99px; }
+        > img:nth-child(2) { display: none; }
+      }
+        .p-interview__entry-tab-copy {
+          display: block;
+          position: absolute;
+          left: calc(50% - 155.71px);
+          top: 456.89px;
+          width: 187px;
+          height: 94px;
+          transform: rotate(12.2deg);
+          color: #00a784;
+          font: 700 20px/30px "Zen Kaku Gothic New", sans-serif;
+          text-align: center;
+        }
+    }
+  }
+  .p-interview__entry-person-layer .p-page-recruit__entry-person {
+    left: calc(50% - 16px); right: auto; bottom: -18px; width: 159px; height: 152px;
+  }
+  .p-interview__entry-person-layer + .l-company-footer {
+    padding-top: 24px; border-radius: 40px 40px 0 0;
+    .l-company-footer__inner { max-width: 390px; }
+    .l-company-footer__logo { width: 192px; }
+    .l-company-footer__nav { margin-inline: 38px 42px; }
+    .l-company-footer__group summary, .l-company-footer__row { font-size: 18px; }
+    .l-company-footer__row--privacy { font-size: 14px; }
+    .l-company-footer__group .l-company-footer__list { font-size: 16px; }
+    .l-company-footer__banners { grid-template-columns: 1fr; width: 360px; margin-inline: auto; }
+    .l-company-footer__company { font-size: 16px; }
+    .l-company-footer__company address { font-size: 14px; line-height: 25px; }
+    .l-company-footer__copyright { font-size: 12px; }
+  }
+}

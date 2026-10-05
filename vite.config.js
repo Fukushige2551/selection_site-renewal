@@ -49,6 +49,7 @@ export default defineConfig({
                 'page-select-foods': path.resolve(__dirname, 'src/js/page-select-foods.js'),
                 'page-select-sweets': path.resolve(__dirname, 'src/js/page-select-sweets.js'),
                 'page-select-alcohol': path.resolve(__dirname, 'src/js/page-select-alcohol.js'),
+                'page-recruit-interview': path.resolve(__dirname, 'src/js/page-recruit-interview.js'),
                 'page-recruit': path.resolve(__dirname, 'src/js/page-recruit.js'),
                 'page-recruit-work': path.resolve(__dirname, 'src/js/page-recruit-work.js'),
                 'page-recruit-entry': path.resolve(__dirname, 'src/js/page-recruit-entry.js'),

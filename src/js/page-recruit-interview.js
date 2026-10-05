@@ -1,4 +1,4 @@
-import '../scss/page-recruit.scss';
+import '../scss/page-recruit-interview.scss';
 import { initRecruitSliders } from './components/recruit-slider';
 
 initRecruitSliders();

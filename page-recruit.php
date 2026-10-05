@@ -26,12 +26,6 @@ $about_items = [
   ['05', '1日の仕事の流れ', '入社●年目の先輩社員の1日をご紹介', 'img_day-flow-original', '#'],
 ];
 
-$voice_items = [
-  ['現場の気持ちがわかる<br>店長でありたい', '2010 年　新卒採用', '店舗運営部 店長：S さん', 'img_voice-left-bg-source.png', 'img_voice-left-person-source.png'],
-  ['お客様の期待を<br>裏切らない店づくり<br>人とのつながりを大切に', '1991 年　新卒採用', '店舗運営部 部長：K さん', 'img_voice-raw-01.png', 'img_voice-raw-03.png'],
-  ['自分の仕事が、<br>誰かの笑顔につながる', '2012 年　新卒採用', 'チェッカーチーム<br>本部トレーナー：K さん', 'img_voice-right-bg-source.png', 'img_voice-right-person-source.png'],
-];
-
 get_header('company');
 ?>
 
@@ -90,42 +84,10 @@ get_header('company');
     <header class="p-page-recruit__section-heading"><h2>先輩の声</h2></header>
     <img class="p-page-recruit__voices-decoration" src="<?php echo esc_url($recruit_image('img_voice-decoration.png', 'bg_recruit.png')); ?>" alt="">
     <p>「セレクションってどんなところ？」<br>そんな疑問に答えるべく、<br>働いている先輩たちに<br>インタビューしてみました。<br>仕事のこと、仲間のこと、未来のこと。<br>ちょっと覗いてみてください。</p>
-    <div class="p-page-recruit__voice-slider" data-recruit-slider>
-      <div class="p-page-recruit__voice-track">
-        <?php foreach ($voice_items as $index => [$voice_title, $voice_year, $voice_role, $voice_bg, $voice_person]) : ?>
-          <article class="p-page-recruit__voice-card<?php echo $index === 1 ? ' is-active' : ''; ?>" data-slide="<?php echo esc_attr($index); ?>">
-            <div class="p-page-recruit__voice-photo">
-              <img class="p-page-recruit__voice-background" src="<?php echo esc_url($image_uri . '/' . $voice_bg); ?>" alt="">
-              <img class="p-page-recruit__voice-person" src="<?php echo esc_url($image_uri . '/' . $voice_person); ?>" alt="">
-            </div>
-            <div class="p-page-recruit__voice-body">
-              <h3><?php echo wp_kses($voice_title, ['br' => []]); ?></h3>
-              <div class="p-page-recruit__voice-meta"><span><?php echo esc_html($voice_year); ?></span><strong><?php echo wp_kses($voice_role, ['br' => []]); ?></strong></div>
-            </div>
-          </article>
-        <?php endforeach; ?>
-      </div>
-    </div>
-    <div class="p-page-recruit__voice-dots" role="group" aria-label="先輩社員の紹介を切り替える">
-      <button type="button" aria-label="1人目の先輩社員" aria-pressed="false">01</button>
-      <button type="button" class="is-active" aria-label="2人目の先輩社員" aria-pressed="true">02</button>
-      <button type="button" aria-label="3人目の先輩社員" aria-pressed="false">03</button>
-    </div>
+    <?php get_template_part('template-parts/recruit/voices'); ?>
   </section>
 
-  <div class="p-page-recruit__entry-group-layer" aria-hidden="true">
-    <img class="p-page-recruit__entry-group" src="<?php echo esc_url($image_uri . '/img_entry-group-02.png'); ?>" alt="">
-  </div>
-
-  <section class="p-page-recruit__entry">
-    <div class="p-page-recruit__entry-word" aria-hidden="true">
-      <img src="<?php echo esc_url($image_uri . '/svg/decoration_entry.svg'); ?>" alt="">
-      <img src="<?php echo esc_url($image_uri . '/svg/text_entry-waiting.svg'); ?>" alt="">
-    </div>
-    <div class="p-page-recruit__entry-title"><span>ENTRY</span><p>募集要項、ご応募はこちらから</p></div>
-    <a href="<?php echo esc_url(home_url('/recruit/entry/')); ?>">新卒採用<span aria-hidden="true">→</span></a>
-    <a href="<?php echo esc_url(home_url('/recruit/career-entry/')); ?>">キャリア採用<span aria-hidden="true">→</span></a>
-  </section>
+  <?php get_template_part('template-parts/recruit/entry'); ?>
 </main>
 
 <div class="p-page-recruit__entry-person-layer" aria-hidden="true">

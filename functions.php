@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/inc/recruit-interview.php';
+
 /**
  * テーマのセットアップ
  */
@@ -42,6 +44,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-archive-recipe-js',
         'foods-single-recipe-js',
         'foods-page-recruit-js',
+        'foods-page-recruit-interview-js',
         'foods-page-company-js',
         'foods-company-header-js',
         'foods-company-footer-js',
@@ -274,6 +277,7 @@ function foods_theme_scripts() {
         'page-company-about.php',
         'page-company-business.php',
         'page-recruit.php',
+        'page-recruit-interview.php',
         'page-recruit-work.php',
         'page-recruit-entry.php',
         'page-recruit-career-entry.php',
@@ -460,6 +464,11 @@ function foods_theme_scripts() {
             $manifest,
             $is_local
         );
+    }
+
+    if (is_page_template('page-recruit-interview.php')) {
+        wp_enqueue_style('foods-page-recruit-fonts', 'https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=REM:wght@500&display=swap', [], null);
+        foods_enqueue_vite_entry('foods-page-recruit-interview', 'src/js/page-recruit-interview.js', $dev_server, $manifest, $is_local);
     }
 
     // page-recruit-work.php専用アセット

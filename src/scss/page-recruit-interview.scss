@@ -1,0 +1,273 @@
+@use "page-recruit";
+@use "sass:meta";
+
+.p-interview__copy-sp { display: inline; }
+.p-interview__copy-pc { display: none; }
+
+.p-interview.p-page-recruit {
+  &, *, *::before, *::after { box-sizing: border-box; }
+  max-width: none;
+  padding-top: 55px;
+  overflow: clip;
+
+  .p-interview__breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 49px;
+    padding: 0 6px;
+    font: 400 13px/25px "Zen Kaku Gothic New", sans-serif;
+    a { color: #10a3ff; text-decoration: underline; text-underline-offset: 3px; }
+  }
+
+  .p-interview__hero { margin-bottom: 45px; }
+  .p-interview__portrait {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 390 / 270;
+    overflow: hidden;
+    border-radius: 0 0 30px 30px;
+    img {
+      position: absolute;
+      max-width: none;
+      // Figma photo masks are exported at 2x; do not crop them a second time.
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .p-interview__profile { margin: 24px 24px 0; }
+  .p-interview__year { margin: 0 0 10px; color: #0f3675; font-size: 18px; font-weight: 700; line-height: 24px; }
+  .p-interview__role { margin: 0; font-size: 16px; font-weight: 500; line-height: 24px; }
+  .p-interview__profile h1 { margin: 12px 0 0; font: 900 24px/35px "Zen Kaku Gothic New", sans-serif; }
+  .p-interview__body { width: calc(100% - 30px); max-width: 1000px; margin: 0 auto; }
+  .p-interview__section { margin-bottom: 30px; }
+  .p-interview__section:last-child { margin-bottom: 0; }
+  .p-interview__photo {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 30px 30px 0 0;
+    aspect-ratio: 359 / 233;
+    margin-bottom: -45px;
+    img {
+      position: absolute;
+      max-width: none;
+      top: var(--photo-y);
+      left: var(--photo-x);
+      width: var(--photo-w);
+      height: var(--photo-h);
+      object-fit: cover;
+    }
+  }
+  .p-interview__photo--growth { aspect-ratio: 359 / 284; margin-bottom: -36px; }
+  .p-interview__photo--message { aspect-ratio: 359 / 263; }
+  .p-interview__qa {
+    --question-radius: 44px;
+    position: relative;
+    border-radius: 0 0 30px 30px;
+    // Leave the upper question corners transparent so the photo remains visible.
+    // Continue the answer background behind the lower half of the speech bubble.
+    background: linear-gradient(to bottom, transparent var(--question-radius), #f9faf5 var(--question-radius));
+    h2 {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 88px;
+      margin: 0;
+      padding: 14px 30px;
+      border-radius: var(--question-radius);
+      color: #fff;
+      background: #0f3675;
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 30px;
+      img { position: absolute; bottom: -13px; left: calc(50% - 14px); transform: rotate(12.92deg); }
+    }
+    p { margin: 0; padding: 17px 20px 22px 23px; font-size: 16px; line-height: 28px; }
+  }
+  .p-interview__section--1 .p-interview__qa { --question-radius: 26px; }
+  .p-interview__section--1 .p-interview__qa h2 { min-height: 52px; padding: 14px 11px 14px 32px; font-size: 18px; line-height: 24px; }
+  .p-interview__related {
+    position: relative;
+    padding: 80px 0 110px;
+    text-align: center;
+    > h2 { margin: 0; font-size: 26px; font-weight: 900; letter-spacing: 1.3px; line-height: 38px; }
+    > p { margin: 6px 0 48px; color: #00a784; font: 500 14px/22px "REM", sans-serif; letter-spacing: 1.4px; }
+    .p-page-recruit__voice-track { padding-right: calc((100% - 71.28vw) / 2); padding-left: calc((100% - 71.28vw) / 2); }
+    .p-page-recruit__voice-background { opacity: .6; }
+    .p-page-recruit__voice-person { z-index: 4; }
+    .p-page-recruit__voice-track.is-loop-rebasing .p-page-recruit__voice-card {
+      transition: none;
+    }
+    .p-page-recruit__voice-dots {
+      position: relative;
+      margin: 28px 0 0 58.72%;
+    }
+  }
+  .p-page-recruit__entry-group { width: 158px; height: 198px; bottom: -20px; left: 30px; }
+  .p-page-recruit__entry {
+    height: 556px;
+    margin: 0;
+    padding: 79px 0 0;
+    border-radius: 30px 30px 0 0;
+    .p-page-recruit__entry-title { margin-bottom: 38px; }
+    .p-page-recruit__entry-title span { font-size: 55px; }
+    .p-page-recruit__entry-title p { font-size: 14px; margin-top: 18px; }
+    > a { height: 88px; padding: 0 44px; font-size: 19px; }
+    .p-page-recruit__entry-word { top: 375px; left: 39px; width: 197px; height: 168px; }
+  }
+}
+.p-interview__entry-person-layer .p-page-recruit__entry-person { width: 159px; height: 152px; bottom: -14px; right: 52px; left: auto; object-fit: contain; }
+.p-interview__entry-person-layer { z-index: 9; }
+.p-interview__entry-person-layer + .l-company-footer { position: relative; z-index: 10; margin-top: 0; }
+
+// Source-image geometry comes from each Figma mask, keeping crops independent.
+.p-interview--01 {
+  --portrait-x: -4.103%; --portrait-y: -5.926%; --portrait-w: 131.026%; --portrait-h: 106.296%;
+  .p-interview__photo--work { --photo-x: -33.148%; --photo-y: -10.3%; --photo-w: 148.468%; --photo-h: 152.361%; }
+  .p-interview__photo--growth { --photo-x: -20.334%; --photo-y: -2.465%; --photo-w: 139.554%; --photo-h: 117.606%; }
+  .p-interview__photo--message { --photo-x: -43.733%; --photo-y: -20.532%; --photo-w: 167.131%; --photo-h: 128.517%; }
+}
+.p-interview--02 {
+  --portrait-x: -7.179%; --portrait-y: -8.148%; --portrait-w: 133.333%; --portrait-h: 108.148%;
+  .p-interview__photo--work { --photo-x: -11.699%; --photo-y: -6.438%; --photo-w: 115.877%; --photo-h: 118.884%; }
+  .p-interview__photo--growth { --photo-x: -16.156%; --photo-y: -1.056%; --photo-w: 123.677%; --photo-h: 104.225%; }
+  .p-interview__photo--message { --photo-x: -41.226%; --photo-y: -31.559%; --photo-w: 173.538%; --photo-h: 133.46%; }
+}
+.p-interview--03 {
+  --portrait-x: -4.359%; --portrait-y: -5.926%; --portrait-w: 130.256%; --portrait-h: 105.926%;
+  .p-interview__photo--work { --photo-x: -30.362%; --photo-y: -11.588%; --photo-w: 151.532%; --photo-h: 155.794%; }
+  .p-interview__photo--growth { --photo-x: -6.685%; --photo-y: 0%; --photo-w: 144.847%; --photo-h: 103.169%; }
+  .p-interview__photo--message { --photo-x: -42.897%; --photo-y: -19.011%; --photo-w: 176.323%; --photo-h: 135.361%; }
+}
+@media (max-width: 767px) {
+  .p-interview.p-page-recruit {
+    // ENTRY covers the overlapping feet; the group's children stay in this layer.
+    .p-page-recruit__entry-group-layer { z-index: 1; }
+    .p-page-recruit__entry { z-index: 2; }
+    .p-interview__related {
+      padding-bottom: 109px;
+      > p { margin-bottom: 50px; }
+      // The lowered side cards already reserve the space above the pagination.
+      .p-page-recruit__voice-dots {
+        margin-top: -3.333333vw;
+        line-height: 22px;
+      }
+    }
+    .p-page-recruit__entry-group { left: 27px; bottom: -21px; }
+  }
+  // The Figma footer starts at y=556, over the 740px entry background.
+  .p-interview.p-page-recruit {
+    margin-bottom: -184px;
+    .p-page-recruit__entry {
+      height: 740px;
+      .p-page-recruit__entry-title { height: 99px; margin-bottom: 62px; }
+      .p-page-recruit__entry-title p { position: absolute; top: 75px; width: 100%; margin: 0; line-height: 24px; }
+      > a { font-size: 20px; }
+      > a:first-of-type { border-top: 1px solid rgba(255,255,255,.65); }
+      > a > span { right: 20%; }
+      .p-page-recruit__entry-word { top: 383px; left: 37.53px; }
+    }
+  }
+  .p-interview__entry-person-layer .p-page-recruit__entry-person {
+    bottom: -25px;
+    left: 179px;
+    right: auto;
+  }
+  .p-interview__entry-person-layer + .l-company-footer {
+    position: relative;
+    z-index: 10;
+  }
+  .p-interview--03.p-page-recruit .p-interview__section--5 .p-interview__qa h2 { min-height: 60px; }
+  .p-interview.p-page-recruit .p-page-recruit__entry-word > img:last-child { top: 34px; left: 33px; width: 121px; height: 99px; }
+}
+
+@media (min-width: 1024px) {
+  .p-interview__copy-sp { display: none; }
+  .p-interview__copy-pc { display: inline; }
+  .p-interview.p-page-recruit {
+    padding-top: 85px;
+    .p-interview__breadcrumb { position: absolute; z-index: 2; top: 106px; left: 5.15625%; padding: 0; min-height: 25px; }
+    .p-interview__hero { display: grid; grid-template-columns: 33% 67%; align-items: center; width: min(1208px, calc(100% - 96px)); margin: 0 auto 60px; }
+    .p-interview__portrait { grid-column: 2; grid-row: 1; aspect-ratio: 803 / 483; }
+    .p-interview__profile { grid-column: 1; grid-row: 1; margin: 0; padding: 40px 20px 0 0; }
+    .p-interview__role { font-size: 18px; }
+    .p-interview__profile h1 { margin-top: 24px; line-height: 40px; }
+    .p-interview__body { width: min(1000px, calc(100% - 96px)); }
+    .p-interview__qa { --question-radius: 26px; }
+    .p-interview__qa h2, .p-interview__section--1 .p-interview__qa h2 { min-height: 52px; padding: 11px 32px; border-radius: 26px; font-size: 18px; line-height: 30px; }
+    .p-interview__qa h2 img { left: 16.4%; }
+    .p-interview__qa p { padding: 17px 24px 21px; }
+    .p-interview__photo { aspect-ratio: 1000 / 548; margin-bottom: -26px; }
+    .p-interview__section--1 .p-interview__qa { min-height: 124px; }
+    .p-interview__section--2 .p-interview__qa { min-height: 213px; }
+    .p-interview__section--3 .p-interview__qa { min-height: 158px; }
+    .p-interview__section--4 .p-interview__qa { min-height: 176px; }
+    .p-interview__section--5 .p-interview__qa { min-height: 126px; }
+    .p-interview__section--6 .p-interview__qa { min-height: 176px; }
+    .p-interview__related {
+      [data-loop-clone] { display: none; }
+      padding: 166px 0 100px;
+      > p { margin-bottom: 55px; }
+      .p-page-recruit__voice-slider { margin: 0 auto; width: min(1230px, calc(100% - 48px)); }
+      .p-page-recruit__voice-track { padding: 0; }
+      .p-page-recruit__voice-dots { margin: 0 auto; }
+    }
+    .p-page-recruit__entry-group { bottom: -35px; left: 79.69%; width: 210px; height: 264px; }
+    .p-page-recruit__entry {
+      height: 680px;
+      padding-top: 79px;
+      > a { height: 133px; padding: 0; font-size: 21px; }
+      .p-page-recruit__entry-title { margin-bottom: 34px; }
+      .p-page-recruit__entry-title span { font-size: 44px; }
+      .p-page-recruit__entry-title p { font-size: 12px; }
+      .p-page-recruit__entry-word { top: 454px; left: 40.89%; width: 203px; height: 168px; }
+    }
+  }
+  .p-interview__entry-person-layer .p-page-recruit__entry-person { bottom: -3px; left: 49.31%; right: auto; width: 203px; height: 193px; }
+  .p-interview__entry-person-layer + .l-company-footer { margin-top: 0; }
+  .p-interview--01 {
+    --portrait-x: -45.081%; --portrait-y: -16.563%; --portrait-w: 146.575%; --portrait-h: 137.06%;
+    .p-interview__photo--work { --photo-x: -6.447%; --photo-y: -14.781%; --photo-w: 112.918%; --photo-h: 137.37%; }
+    .p-interview__photo--growth { --photo-x: -6.5%; --photo-y: -5.474%; --photo-w: 109.9%; --photo-h: 133.759%; }
+    .p-interview__photo--message { --photo-x: -29.5%; --photo-y: -27.555%; --photo-w: 142.4%; --photo-h: 146.168%; }
+  }
+  .p-interview--02 {
+    --portrait-x: -10.087%; --portrait-y: -17.598%; --portrait-w: 130.137%; --portrait-h: 121.739%;
+    .p-interview__photo--work { --photo-x: -8.1%; --photo-y: -4.745%; --photo-w: 108.1%; --photo-h: 131.387%; }
+    .p-interview__photo--growth { --photo-x: -5.8%; --photo-y: -.547%; --photo-w: 106.6%; --photo-h: 129.745%; }
+    .p-interview__photo--message { --photo-x: -25.2%; --photo-y: -35.219%; --photo-w: 139.4%; --photo-h: 143.066%; }
+  }
+  .p-interview--03 {
+    --portrait-x: -5.978%; --portrait-y: -12.836%; --portrait-w: 127.771%; --portrait-h: 119.462%;
+    .p-interview__photo--work { --photo-x: -30%; --photo-y: -8.759%; --photo-w: 132.2%; --photo-h: 160.766%; }
+    .p-interview__photo--growth { --photo-x: -7.5%; --photo-y: -3.832%; --photo-w: 121%; --photo-h: 124.27%; }
+    .p-interview__photo--message { --photo-x: -33.5%; --photo-y: -25.365%; --photo-w: 157.1%; --photo-h: 161.131%; }
+  }
+  .p-interview--03.p-page-recruit .p-interview__section--1 .p-interview__qa { min-height: 146px; }
+  .p-interview--03.p-page-recruit .p-interview__section--2 .p-interview__qa { min-height: 143px; }
+}
+@include meta.load-css("recruit-interview-tablet");
+@include meta.load-css("recruit-interview-npc");
+
+// Desktop shows all three links without a carousel. Do not clip their captions.
+@media (min-width: 1024px) {
+  .p-interview.p-page-recruit .p-interview__related {
+    .p-page-recruit__voice-dots { display: none; }
+    .p-page-recruit__voice-card[data-slide="0"] { order: 0; }
+    .p-page-recruit__voice-card[data-slide="1"] { order: 1; }
+    .p-page-recruit__voice-card[data-slide="2"] { order: 2; }
+    .p-page-recruit__voice-slider,
+    .p-page-recruit__voice-track { overflow: visible; }
+  }
+}
+
+// Keep the staff cutout in front of ENTRY at every viewport width.
+.p-interview.p-page-recruit {
+  .p-page-recruit__entry-group-layer { z-index: 3; }
+  .p-page-recruit__entry { z-index: 2; }
+}
