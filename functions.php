@@ -39,6 +39,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-single-shop-js',
         'foods-archive-news-js',
         'foods-single-news-js',
+        'foods-single-recruit-part-time-js',
         'foods-archive-recipe-js',
         'foods-single-recipe-js',
         'foods-page-company-js',
@@ -171,6 +172,7 @@ function foods_theme_scripts() {
     $single_shop_entry = 'src/js/single-shop.js';
     $archive_news_entry = 'src/js/archive-news.js';
     $single_news_entry = 'src/js/single-news.js';
+    $single_recruit_part_time_entry = 'src/js/single-recruit-part-time.js';
     $archive_recipe_entry = 'src/js/archive-recipe.js';
     $single_recipe_entry = 'src/js/single-recipe.js';
     $page_company_entry = 'src/js/page-company.js';
@@ -267,7 +269,7 @@ function foods_theme_scripts() {
     }
 
     // 企業ページ共通ヘッダー・フッターのアセット
-    if (is_page() && in_array(basename((string) get_page_template()), [
+    if ((is_page() && in_array(basename((string) get_page_template()), [
         'page-company.php',
         'page-company-about.php',
         'page-company-business.php',
@@ -276,7 +278,7 @@ function foods_theme_scripts() {
         'page-job-search.php',
         'page-search.php',
         'page-job-entry.php',
-    ], true)) {
+    ], true)) || is_singular('recruit_part_time')) {
         foods_enqueue_vite_entry('foods-company-header', 'src/js/header-company.js', $dev_server, $manifest, $is_local);
         foods_enqueue_vite_entry('foods-company-footer', 'src/js/footer-company.js', $dev_server, $manifest, $is_local);
     }
@@ -490,6 +492,16 @@ function foods_theme_scripts() {
         foods_enqueue_vite_entry(
             'foods-single-news',
             $single_news_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    if (is_singular('recruit_part_time')) {
+        foods_enqueue_vite_entry(
+            'foods-single-recruit-part-time',
+            $single_recruit_part_time_entry,
             $dev_server,
             $manifest,
             $is_local

@@ -182,7 +182,7 @@ get_header('company');
                             'station_name'=> trim(wp_strip_all_tags((string) $job_search_get_field('station_name', $job_id))),
                             'walking_time'=> trim(wp_strip_all_tags((string) $job_search_get_field('walking_time', $job_id))),
                             'legacy_access' => trim(wp_strip_all_tags((string) $job_search_get_field('work_location_access', $job_id))),
-                            'detail_url'  => home_url('/job/detail/' . $job_id . '/'),
+                            'detail_url'  => get_permalink($job_id),
                             'entry_url'   => add_query_arg(['job_id' => $job_id], home_url('/job/entry/')),
                         ];
                     }
