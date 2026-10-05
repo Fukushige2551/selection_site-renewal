@@ -2,6 +2,7 @@
 $interviews = foods_get_recruit_interviews();
 $initial_index = isset($args['initial_index']) ? (int) $args['initial_index'] : 1;
 $image_uri = get_template_directory_uri() . '/img/page/page-recruit';
+$compressed_uri = get_template_directory_uri() . '/img/page/page-recruit-interview/compressed';
 // Carousel order follows article numbers; visual variant IDs remain stable.
 $card_order = ['01', '02', '03'];
 $card_variants = ['01' => 0, '02' => 2, '03' => 1];
@@ -12,8 +13,8 @@ $card_variants = ['01' => 0, '02' => 2, '03' => 1];
       <article class="p-page-recruit__voice-card<?php echo $index === $initial_index ? ' is-active' : ''; ?>" data-slide="<?php echo esc_attr($card_variants[$number]); ?>" data-interview-number="<?php echo esc_attr($number); ?>">
         <a class="p-page-recruit__voice-link" href="<?php echo esc_url(foods_get_recruit_interview_url($number)); ?>" aria-label="<?php echo esc_attr($person['role'] . 'のインタビューを読む'); ?>" draggable="false">
           <div class="p-page-recruit__voice-photo">
-            <img class="p-page-recruit__voice-background" src="<?php echo esc_url($image_uri . '/' . $person['card_background']); ?>" alt="" draggable="false">
-            <img class="p-page-recruit__voice-person" src="<?php echo esc_url($image_uri . '/' . $person['card_person']); ?>" alt="" draggable="false">
+            <img class="p-page-recruit__voice-background" src="<?php echo esc_url(!empty($args['interview_images']) ? $compressed_uri . '/card-' . $number . '-bg@2x.png' : $image_uri . '/' . $person['card_background']); ?>" alt="" draggable="false" loading="lazy" decoding="async">
+            <img class="p-page-recruit__voice-person" src="<?php echo esc_url(!empty($args['interview_images']) ? $compressed_uri . '/card-' . $number . '-person-transparent-source.png' : $image_uri . '/' . $person['card_person']); ?>" alt="" draggable="false" loading="lazy" decoding="async">
           </div>
           <div class="p-page-recruit__voice-body">
             <h3><?php echo wp_kses($person['card_heading'], ['br' => []]); ?></h3>

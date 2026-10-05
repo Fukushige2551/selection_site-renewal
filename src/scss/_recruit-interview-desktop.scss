@@ -1,0 +1,90 @@
+@use "sass:list";
+
+// Original 1920px Figma. NPC and smaller viewports keep their own rules.
+@media (min-width: 1280px) {
+  .p-interview.p-page-recruit {
+    --interview-group-height: 264px;
+    --interview-group-entry-overlap: 35px;
+    --interview-group-card-gap: 24px;
+    margin-bottom: -91px;
+    @each $person, $heights, $bottoms, $gaps in
+      ("01", (116, 201, 144, 176, 116, 176), (19, 20, 19, 23, 19, 23), (38, 42, 44, 40, 40, 0)),
+      ("02", (116, 176, 144, 176, 205, 176), (19, 23, 19, 23, 24, 23), (35, 35, 40, 40, 40, 0)),
+      ("03", (146, 143, 144, 176, 142, 176), (21, 18, 19, 23, 17, 23), (30, 30, 30, 40, 49, 0)) {
+      &.p-interview--#{$person} {
+        @for $index from 1 through 6 {
+          .p-interview__section--#{$index} {
+            margin-bottom: #{list.nth($gaps, $index)}px;
+            .p-interview__qa {
+              min-height: #{list.nth($heights, $index)}px;
+              p { padding-bottom: #{list.nth($bottoms, $index)}px; }
+            }
+          }
+        }
+      }
+    }
+    &.p-interview--01 .p-interview__photo--work { margin-bottom: -10px; }
+    &.p-interview--02 .p-interview__photo--work,
+    &.p-interview--03 .p-interview__photo--work { margin-bottom: -25px; }
+
+    .p-interview__related {
+      // Reserve the cutout's visible height below the tallest card.
+      height: auto;
+      min-height: 956px;
+      padding: 166px 0 calc(var(--interview-group-height) - var(--interview-group-entry-overlap) + var(--interview-group-card-gap));
+      > h2 { font-size: 26px; line-height: 31px; transform: translateX(-53.5px); }
+      > p { margin: 13px 0 30px; line-height: 36px; transform: translateX(-53.5px); }
+      .p-page-recruit__voice-slider { width: 1230px; margin: 0 0 0 max(24px, calc(50% - 648px)); overflow: visible; }
+      .p-page-recruit__voice-track { gap: 30px; height: auto; padding: 0; overflow: visible; }
+      .p-page-recruit__voice-card { flex: 0 0 390px; width: 390px; height: 498px; margin-top: 49px; }
+      .p-page-recruit__voice-card[data-slide="1"] { height: 493px; margin-top: 0; }
+      .p-page-recruit__voice-card[data-slide="2"] { height: 474px; margin-top: 73px; }
+      .p-page-recruit__voice-person { top: -32px; left: 89px; right: auto; }
+      .p-page-recruit__voice-card[data-slide="0"] .p-page-recruit__voice-person { top: -37px; left: 101px; }
+      .p-page-recruit__voice-card[data-slide="2"] .p-page-recruit__voice-person { top: -13px; left: 105px; }
+      .p-page-recruit__voice-card[data-slide="2"] .p-page-recruit__voice-photo { top: 13px; }
+      .p-page-recruit__voice-card[data-slide="2"] .p-page-recruit__voice-background { opacity: .7; }
+      .p-page-recruit__voice-body {
+        padding: 40px 23px 0;
+        h3 { font-size: 20px; line-height: 30px; margin: 0; }
+      }
+      .p-page-recruit__voice-card[data-slide="0"] .p-page-recruit__voice-body h3 br { display: inline; }
+      .p-page-recruit__voice-card[data-slide="1"] .p-page-recruit__voice-body { padding-top: 41px; }
+      .p-page-recruit__voice-meta {
+        position: absolute; top: 111px; left: 23px; right: 23px;
+        display: flex; justify-content: space-between; margin: 0; padding-top: 13px;
+        font-size: 16px; line-height: 24px;
+        span, strong { display: block; white-space: nowrap; }
+        strong { float: none; margin: 0; }
+      }
+      .p-page-recruit__voice-card[data-slide="2"] {
+        .p-page-recruit__voice-body { top: 302px; padding-top: 37px; }
+        .p-page-recruit__voice-meta { top: 81px; display: block; }
+        .p-page-recruit__voice-meta strong { margin-top: 6px; }
+        .p-page-recruit__voice-meta strong br { display: none; }
+      }
+    }
+    .p-page-recruit__entry-group {
+      height: var(--interview-group-height);
+      bottom: calc(0px - var(--interview-group-entry-overlap));
+    }
+    .p-page-recruit__entry {
+      height: 771px; margin: 0; padding-top: 79px;
+      .p-page-recruit__entry-title { height: 99px; margin-bottom: 34px; transform: translateX(-28.5px); }
+      .p-page-recruit__entry-title span { display: block; font-size: 55px; line-height: 75px; letter-spacing: 0; }
+      .p-page-recruit__entry-title p { margin: 0; font-size: 14px; line-height: 24px; }
+      > a { position: relative; height: 133px; font-size: 30px; font-weight: 900; padding-right: 72px; }
+      > a > span { position: absolute; left: calc(50% + 103px); width: 50px; height: 50px; }
+      .p-page-recruit__entry-word { top: 454px; left: calc(50% - 170.14px); width: 196.639px; height: 168.291px; }
+      .p-page-recruit__entry-word > img:nth-of-type(2) { display: none; }
+      .p-interview__entry-tab-copy {
+        display: block; position: absolute; left: calc(50% - 169.18px); top: 490.895px;
+        width: 187px; height: 94px; transform: rotate(12.2deg);
+        color: #00a784; font: 700 20px/30px "Zen Kaku Gothic New", sans-serif; text-align: center;
+      }
+    }
+  }
+  .p-interview__entry-person-layer .p-page-recruit__entry-person {
+    left: calc(50% - 41px); right: auto; bottom: -25.265px; width: 202.737px; height: 193.265px;
+  }
+}

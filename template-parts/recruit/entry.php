@@ -1,10 +1,9 @@
 <?php $image_uri = get_template_directory_uri() . '/img/page/page-recruit'; ?>
   <div class="p-page-recruit__entry-group-layer" aria-hidden="true">
     <?php if (!empty($args['interview_images'])) : $group_uri = get_template_directory_uri() . '/img/page/page-recruit-interview/'; ?>
-    <picture>
-      <source media="(min-width: 1024px)" srcset="<?php echo esc_url($group_uri . 'entry-group-pc-transparent@2x.png'); ?>">
-      <img class="p-page-recruit__entry-group" src="<?php echo esc_url($group_uri . 'entry-group-sp-transparent@2x.png'); ?>" alt="">
-    </picture>
+    <span class="p-page-recruit__entry-group p-interview__compressed-group">
+      <img src="<?php echo esc_url($group_uri . 'compressed/entry-group-transparent-source.png'); ?>" alt="" loading="lazy" decoding="async">
+    </span>
     <?php else : ?>
     <img class="p-page-recruit__entry-group" src="<?php echo esc_url($image_uri . '/img_entry-group-02.png'); ?>" alt="">
     <?php endif; ?>

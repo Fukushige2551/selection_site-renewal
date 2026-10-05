@@ -253,6 +253,7 @@
 }
 @include meta.load-css("recruit-interview-tablet");
 @include meta.load-css("recruit-interview-npc");
+@include meta.load-css("recruit-interview-desktop");
 
 // Desktop shows all three links without a carousel. Do not clip their captions.
 @media (min-width: 1024px) {
@@ -270,4 +271,20 @@
 .p-interview.p-page-recruit {
   .p-page-recruit__entry-group-layer { z-index: 3; }
   .p-page-recruit__entry { z-index: 2; }
+}
+
+// Compressed photos already include the Figma crop and background appearance.
+.p-interview.p-page-recruit {
+  .p-interview__photo img { inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .p-interview__related .p-page-recruit__voice-card .p-page-recruit__voice-background { opacity: 1; }
+  .p-interview__compressed-group > img {
+    position: absolute; left: 50%; top: 50%;
+    width: 98.1%; height: 98.86%; max-width: none; object-fit: contain;
+    transform: translate(-50%, -50%) rotate(.9573deg);
+  }
+}
+.p-interview__compressed-person > img {
+  position: absolute; left: 50%; top: 50%;
+  width: 89.77%; height: 88.48%; max-width: none; object-fit: contain;
+  transform: translate(-50%, -50%) rotate(7.4898deg);
 }

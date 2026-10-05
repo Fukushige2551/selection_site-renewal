@@ -42,7 +42,7 @@ foreach (['01', '02', '03'] as $i => $number) {
     check(substr_count($html, 'class="p-interview__photo ') === 3, 'Three story photos');
     check(substr_count($html, 'class="p-page-recruit__voice-link"') === 3, 'Three linked cards');
     check(strpos($html, 'https://www.figma.com/api/') === false, 'No temporary asset URLs');
-    preg_match_all('~(?:src|srcset)="/theme/([^"?]+)~', $html, $assets);
+    preg_match_all('~/theme/([^"\\s,?]+\\.(?:png|svg))~', $html, $assets);
     foreach ($assets[1] as $asset) {
         $path = dirname(__DIR__) . '/' . $asset;
         check(is_file($path) && filesize($path) > 0, 'Missing image ' . $asset);
