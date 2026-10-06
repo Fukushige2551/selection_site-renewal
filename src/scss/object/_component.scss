@@ -8,16 +8,6 @@
     padding-top: $header-height;
     position: relative;
 
-    &:after {
-        @include backgroundImg("#{$img-path}header/bg_cartain.png");
-        content: "";
-        position: absolute;
-        pointer-events: none;
-        top: 14.35vw;
-        left: 0;
-        width: 100%;
-        aspect-ratio: 390 / 6;
-    }
 }
 
 // セクション
@@ -540,9 +530,6 @@ font-family: $font-family-ZenKakuAntique;
 .c-main {
     padding-top: $header-height-tab;
 
-    &:after {
-        top: $header-height-tab;
-    }
 }
 
 //  ボタン
@@ -666,9 +653,6 @@ font-size: 2.08vw;
 .c-main {
     padding-top: $header-height-pc;
 
-    &:after {
-        display: none;
-    }
 }
 .c-section {
     &__title {

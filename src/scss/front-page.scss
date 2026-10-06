@@ -1,16 +1,5 @@
 ﻿@use "foundation/global" as *;
 
-.l-header__logo {
-    position: relative;
-    width: 18.20vw;
-    aspect-ratio: 71 / 35;
-    top: 0.14vw;
-    left: -0.6vw;
-    display: none;
-}
-.is-fixed .l-header .l-header__logo {
-    display: block;
-}
 .p-front-page {
     padding-top: 0;
 
@@ -28,7 +17,7 @@
     &__bg {
         &--hero {
             @include backgroundImg("#{$img-path}page/front-page/bg_hero.png");
-            padding-top: 15.5vw;
+            padding-top: $header-height;
             width: 100%;
             aspect-ratio: 390 / 710;
 
@@ -301,7 +290,7 @@
      */
     &__hero {
         position: relative;
-        top: 1.28vw;
+        top: 0;
         width: 79.23%;
         aspect-ratio: 309 / 279;
         margin: 0 auto 12.6vw 12.6vw;
@@ -326,16 +315,6 @@
         }
         &__slider-pc {
             display: none;
-        }
-        &__cartain {
-            @include backgroundImg("#{$img-path}page/front-page/bg_cartain.png");
-            position: absolute;
-            top: -1.28vw;
-            left: 0;
-            width: 76.41vw;
-            aspect-ratio: 298 / 31;
-            z-index: 3;
-            pointer-events: none;
         }
         &__catch-copy {
             position: absolute;
@@ -1162,31 +1141,6 @@
 
 @media screen and (min-width: 768px) {
 /**
- * ヘッダー
- */
-.is-fixed {
-    .l-header {
-        height: 10.41vw;
-
-        &__logo {
-            width: 15.11vw;
-            top: 2.5vw;
-            left: 42.96vw;
-        }
-        &__nav {
-            &__inner {
-                overflow: auto;
-                height: calc(100dvh - 10.41vw);
-            }
-            &__overlay {
-                width: 100%;
-                height: 10.41vw;
-            }
-        }
-    }
-}
-
-/**
  * コンテンツ
  */
 .p-front-page {
@@ -1199,7 +1153,7 @@
             background-size: contain;
             background-position: center top;
             aspect-ratio: 768 / 1100;
-            padding-top: 10.41vw;
+            padding-top: $header-height-tab;
 
             &::before {
                 @include backgroundImg("#{$img-path}page/front-page/bg_hero-logo-tab.png");
@@ -1512,7 +1466,7 @@
         }
         &__slider-tablet {
             position: absolute;
-            top: 8.33vw;
+            top: 0;
             left: 0;
             display: flex;
             align-items: stretch;
@@ -1525,14 +1479,6 @@
             touch-action: pan-y;
             -ms-touch-action: pan-y;
             backface-visibility: hidden;
-        }
-        &__cartain {
-            @include backgroundImg("#{$img-path}page/front-page/bg_cartain-tab.png");
-            width: 44.27vw;
-            aspect-ratio: 340 / 36;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
         }
         &__catch-copy {
             position: absolute;
@@ -2552,9 +2498,6 @@
             touch-action: pan-y;
             -ms-touch-action: pan-y;
             backface-visibility: hidden;
-        }
-        &__cartain {
-            display: none;
         }
         &__pagination {
             bottom: 20.8%;

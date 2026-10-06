@@ -499,7 +499,6 @@
     <div class="c-bg p-front-page__bg--hero">
         <div class="p-front-page__hero">
             <!-- 背景画像(position配置) start -->
-            <div class="p-front-page__hero__cartain"></div>
             <div class="c-bg__positioned p-front-page__bg--hero--01"></div>
             <div class="c-bg__positioned p-front-page__bg--hero--02"></div>
             <div class="c-bg__positioned p-front-page__bg--hero--03"></div>
