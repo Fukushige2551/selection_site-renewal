@@ -255,6 +255,12 @@
 @include meta.load-css("recruit-interview-npc");
 @include meta.load-css("recruit-interview-desktop");
 
+// Let the director's skills answer follow its actual wrapped text height.
+.p-interview.p-page-recruit.p-interview--03 .p-interview__section--4 .p-interview__qa {
+  height: auto;
+  min-height: 0;
+}
+
 // Desktop shows all three links without a carousel. Do not clip their captions.
 @media (min-width: 1024px) {
   .p-interview.p-page-recruit .p-interview__related {
