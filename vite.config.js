@@ -45,6 +45,8 @@ export default defineConfig({
                 'page-company-about': path.resolve(__dirname, 'src/js/page-company-about.js'),
                 'page-company-business': path.resolve(__dirname, 'src/js/page-company-business.js'),
                 'page-company-business-form': path.resolve(__dirname, 'src/js/page-company-business-form.js'),
+                'page-job': path.resolve(__dirname, 'src/js/page-job.js'),
+                'page-job-search': path.resolve(__dirname, 'src/js/page-job-search.js'),
                 'page-select-washoku-daily': path.resolve(__dirname, 'src/js/page-select-washoku-daily.js'),
                 'page-select-foods': path.resolve(__dirname, 'src/js/page-select-foods.js'),
                 'page-select-sweets': path.resolve(__dirname, 'src/js/page-select-sweets.js'),
@@ -56,6 +58,7 @@ export default defineConfig({
                 'single-shop': path.resolve(__dirname, 'src/js/single-shop.js'),
                 'archive-news': path.resolve(__dirname, 'src/js/archive-news.js'),
                 'single-news': path.resolve(__dirname, 'src/js/single-news.js'),
+                'single-recruit-part-time': path.resolve(__dirname, 'src/js/single-recruit-part-time.js'),
                 'archive-recipe': path.resolve(__dirname, 'src/js/archive-recipe.js'),
                 'single-recipe': path.resolve(__dirname, 'src/js/single-recipe.js')
             },

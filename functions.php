@@ -41,6 +41,7 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-single-shop-js',
         'foods-archive-news-js',
         'foods-single-news-js',
+        'foods-single-recruit-part-time-js',
         'foods-archive-recipe-js',
         'foods-single-recipe-js',
         'foods-page-recruit-js',
@@ -53,6 +54,8 @@ function foods_add_module_type($tag, $handle, $src) {
         'foods-page-recruit-work-js',
         'foods-page-recruit-entry-js',
         'foods-page-company-business-form-js',
+        'foods-page-job-js',
+        'foods-page-job-search-js',
     ];
 
     if (in_array($handle, $module_handles, true)) {
@@ -175,6 +178,7 @@ function foods_theme_scripts() {
     $single_shop_entry = 'src/js/single-shop.js';
     $archive_news_entry = 'src/js/archive-news.js';
     $single_news_entry = 'src/js/single-news.js';
+    $single_recruit_part_time_entry = 'src/js/single-recruit-part-time.js';
     $archive_recipe_entry = 'src/js/archive-recipe.js';
     $single_recipe_entry = 'src/js/single-recipe.js';
     $page_recruit_entry = 'src/js/page-recruit.js';
@@ -184,6 +188,8 @@ function foods_theme_scripts() {
     $page_recruit_work_entry = 'src/js/page-recruit-work.js';
     $page_recruit_entry_form_entry = 'src/js/page-recruit-entry.js';
     $page_company_business_form_entry = 'src/js/page-company-business-form.js';
+    $page_job_entry = 'src/js/page-job.js';
+    $page_job_search_entry = 'src/js/page-job-search.js';
 
     if ($is_local) {
         wp_enqueue_script(
@@ -272,7 +278,7 @@ function foods_theme_scripts() {
     }
 
     // 企業ページ共通ヘッダー・フッターのアセット
-    if (is_page() && in_array(basename((string) get_page_template()), [
+    if ((is_page() && in_array(basename((string) get_page_template()), [
         'page-company.php',
         'page-company-about.php',
         'page-company-business.php',
@@ -282,7 +288,11 @@ function foods_theme_scripts() {
         'page-recruit-entry.php',
         'page-recruit-career-entry.php',
         'page-company-business-contact.php',
-    ], true)) {
+        'page-job.php',
+        'page-job-search.php',
+        'page-search.php',
+        'page-job-entry.php',
+    ], true)) || is_singular('recruit_part_time')) {
         foods_enqueue_vite_entry('foods-company-header', 'src/js/header-company.js', $dev_server, $manifest, $is_local);
         foods_enqueue_vite_entry('foods-company-footer', 'src/js/footer-company.js', $dev_server, $manifest, $is_local);
     }
@@ -309,9 +319,32 @@ function foods_theme_scripts() {
         );
     }
 
-    // 企業向けお問い合わせフォーム専用アセット
+    // page-job.php 専用アセット
+    if (is_page() && basename((string) get_page_template()) === 'page-job.php') {
+        foods_enqueue_vite_entry(
+            'foods-page-job',
+            $page_job_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    // page-job-search.php 専用アセット
+    if (is_page() && in_array(basename((string) get_page_template()), ['page-job-search.php', 'page-search.php'], true)) {
+        foods_enqueue_vite_entry(
+            'foods-page-job-search',
+            $page_job_search_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    // 企業向けお問い合わせ・パートアルバイト応募フォーム共通アセット
     if (is_page() && in_array(basename((string) get_page_template()), [
         'page-company-business-contact.php',
+        'page-job-entry.php',
     ], true)) {
         foods_enqueue_vite_entry(
             'foods-page-company-business-form',
@@ -520,6 +553,16 @@ function foods_theme_scripts() {
         foods_enqueue_vite_entry(
             'foods-single-news',
             $single_news_entry,
+            $dev_server,
+            $manifest,
+            $is_local
+        );
+    }
+
+    if (is_singular('recruit_part_time')) {
+        foods_enqueue_vite_entry(
+            'foods-single-recruit-part-time',
+            $single_recruit_part_time_entry,
             $dev_server,
             $manifest,
             $is_local
@@ -976,6 +1019,13 @@ function foods_get_recruit_part_time_field_group() {
         'title' => '採用情報（パート・アルバイト）',
         'fields' => [
             [
+                'key' => 'field_recruit_part_time_shop_name',
+                'label' => '店舗名',
+                'name' => 'shop_name',
+                'type' => 'text',
+                'required' => 0,
+            ],
+            [
                 'key' => 'field_recruit_part_time_job_type',
                 'label' => '募集職種',
                 'name' => 'job_type',
@@ -999,6 +1049,27 @@ function foods_get_recruit_part_time_field_group() {
                 'required' => 0,
                 'rows' => 4,
                 'new_lines' => 'br',
+            ],
+            [
+                'key' => 'field_recruit_part_time_railway_line',
+                'label' => '路線名',
+                'name' => 'railway_line',
+                'type' => 'text',
+                'required' => 0,
+            ],
+            [
+                'key' => 'field_recruit_part_time_station_name',
+                'label' => '駅名',
+                'name' => 'station_name',
+                'type' => 'text',
+                'required' => 0,
+            ],
+            [
+                'key' => 'field_recruit_part_time_walking_time',
+                'label' => '徒歩時間',
+                'name' => 'walking_time',
+                'type' => 'text',
+                'required' => 0,
             ],
             [
                 'key' => 'field_recruit_part_time_working_hours',
@@ -1072,14 +1143,14 @@ function foods_register_recruit_part_time_scf_fields() {
         return;
     }
 
-    $version = '20260623-3';
+    $version = '20261001-1';
     if (get_option('foods_recruit_part_time_scf_fields_version') === $version) {
         return;
     }
 
     $result = foods_sync_recruit_part_time_scf_fields();
 
-    if (!empty($result['field_group_id']) && $result['field_count'] === 8) {
+    if (!empty($result['field_group_id']) && $result['field_count'] === 12) {
         update_option('foods_recruit_part_time_scf_fields_version', $version);
     }
 }
