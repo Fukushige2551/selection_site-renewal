@@ -1999,10 +1999,12 @@ function foods_get_recipe_field_group() {
                         'key' => 'field_recipe_steps_point',
                         'label' => "\u{30DD}\u{30A4}\u{30F3}\u{30C8}",
                         'name' => 'step_point',
-                        'type' => 'textarea',
+                        'type' => 'wysiwyg',
                         'required' => 0,
-                        'rows' => 3,
-                        'new_lines' => 'br',
+                        'tabs' => 'all',
+                        'toolbar' => 'basic',
+                        'media_upload' => 0,
+                        'instructions' => '工程の補足を入力します。リンクする文字を選択し、リンク挿入から解説ページのURLを設定できます。',
                     ],
                 ],
             ],
@@ -2014,6 +2016,14 @@ function foods_get_recipe_field_group() {
                 'required' => 0,
                 'rows' => 5,
                 'new_lines' => 'br',
+            ],
+            [
+                'key' => 'field_recipe_source_url',
+                'label' => '出典URL',
+                'name' => 'recipe_source_url',
+                'type' => 'url',
+                'required' => 0,
+                'instructions' => 'クラシルの個別レシピURLを入力します。空欄の場合は従来どおりクラシルのトップページへリンクします。',
             ],
         ],
         'location' => [
@@ -2042,7 +2052,7 @@ function foods_register_recipe_scf_fields() {
         return;
     }
 
-    $version = '20260727-01';
+    $version = '20261007-01';
     if (get_option('foods_recipe_scf_fields_version') === $version) {
         return;
     }

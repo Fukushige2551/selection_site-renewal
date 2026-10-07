@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
-    "build": "vite build && node tools/optimize-images.mjs"
+    "build:stg": "vite build && node tools/package-stg.mjs",
+    "build": "vite build"
   },
   "repository": {
     "type": "git",

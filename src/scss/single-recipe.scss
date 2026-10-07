@@ -328,6 +328,9 @@
     }
 
     &__point-text {
+        p { margin: 0; }
+        p + p { margin-top: 0.5em; }
+        a { color: inherit; text-decoration: underline; text-underline-offset: 0.15em; }
         margin: 0;
         color: #525252;
         font-size: 3.59vw;
@@ -1274,7 +1277,7 @@
         }
 
         &__title {
-            width: 22.86vw;
+            width: 100%;
             margin: 0;
             font-size: 1.04vw;
             line-height: 1.8;

@@ -19,20 +19,20 @@ function foods_recipe_detail_get_field_value($post_id, $field_name) {
     return $value !== '' ? $value : null;
 }
 
-function foods_recipe_detail_normalize_value($value) {
+function foods_recipe_detail_normalize_value($value, $preserve_html = false) {
     if (is_string($value)) {
         $maybe_unserialized = maybe_unserialize($value);
         if ($maybe_unserialized !== $value) {
-            return foods_recipe_detail_normalize_value($maybe_unserialized);
+            return foods_recipe_detail_normalize_value($maybe_unserialized, $preserve_html);
         }
 
-        return wp_strip_all_tags($value);
+        return $preserve_html ? wp_kses_post($value) : wp_strip_all_tags($value);
     }
 
     if (is_array($value)) {
         $normalized = [];
         foreach ($value as $key => $item) {
-            $normalized[$key] = foods_recipe_detail_normalize_value($item);
+            $normalized[$key] = foods_recipe_detail_normalize_value($item, $preserve_html);
         }
 
         return $normalized;
@@ -348,7 +348,7 @@ function foods_recipe_detail_normalize_steps($steps) {
         }
 
         $text = trim(wp_strip_all_tags((string) $text));
-        $point = is_scalar($point) ? trim(wp_strip_all_tags((string) $point)) : '';
+        $point = is_scalar($point) ? trim(wp_kses_post((string) $point)) : '';
         if ($text !== '') {
             $rows[] = [
                 'text' => $text,
@@ -422,8 +422,9 @@ function foods_recipe_detail_format_item($recipe_post) {
         'servings' => foods_recipe_detail_normalize_value(foods_recipe_detail_get_field_value($recipe_id, 'recipe_servings')),
         'ingredients' => foods_recipe_detail_normalize_value(foods_recipe_detail_get_field_value($recipe_id, 'recipe_ingredients')),
         'preparation' => foods_recipe_detail_normalize_value(foods_recipe_detail_get_field_value($recipe_id, 'recipe_preparation')),
-        'steps' => foods_recipe_detail_normalize_value(foods_recipe_detail_get_field_value($recipe_id, 'recipe_steps')),
+        'steps' => foods_recipe_detail_normalize_value(foods_recipe_detail_get_field_value($recipe_id, 'recipe_steps'), true),
         'tips' => foods_recipe_detail_normalize_value(foods_recipe_detail_get_field_value($recipe_id, 'recipe_tips')),
+        'source_url' => foods_recipe_detail_normalize_value(foods_recipe_detail_get_field_value($recipe_id, 'recipe_source_url')),
         'terms' => [
             'recipe_categories' => $recipe_categories,
             'recipe_main_ingredients' => $recipe_main_ingredients,
@@ -477,6 +478,13 @@ $recipe_share_text = rawurlencode($recipe_title);
 $recipe_previous_post = get_previous_post(false, '', 'recipe_category');
 $recipe_next_post = get_next_post(false, '', 'recipe_category');
 $recipe_kurashiru_url = 'https://www.kurashiru.com/';
+$recipe_source_url = $recipe_detail_item['source_url'] ?? '';
+if (is_string($recipe_source_url) && preg_match('~^https?://~i', trim($recipe_source_url))) {
+    $recipe_source_url = esc_url_raw(trim($recipe_source_url), ['http', 'https']);
+    if ($recipe_source_url !== '') {
+        $recipe_kurashiru_url = $recipe_source_url;
+    }
+}
 $related_recipe_items = foods_recipe_detail_get_related_items($recipe_detail_item['id'] ?? get_the_ID(), 24);
 $theme_uri = get_template_directory_uri();
 
@@ -593,7 +601,7 @@ get_header();
                                     <?php if (($step['point'] ?? '') !== '') : ?>
                                         <div class="p-recipe-detail__point">
                                             <p class="p-recipe-detail__point-title"><span aria-hidden="true">&#9679;</span>&#12509;&#12452;&#12531;&#12488;</p>
-                                            <p class="p-recipe-detail__point-text"><?php echo nl2br(esc_html($step['point'])); ?></p>
+                                            <div class="p-recipe-detail__point-text"><?php echo wp_kses_post(wpautop($step['point'])); ?></div>
                                         </div>
                                     <?php endif; ?>
                                 </li>
