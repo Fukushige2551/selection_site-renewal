@@ -270,22 +270,22 @@ get_header('company');
             </div>
 
             <nav class="p-page-company__info__nav">
-                <a class="p-page-company__info__item" href="/">
+                <a class="p-page-company__info__item" href="<?php echo esc_url(home_url('/company/about/#message')); ?>">
                     <img class="p-page-company__info__icon" src="<?php echo get_template_directory_uri(); ?>/img/page/page-company/svg/icon_message.svg" alt="">
                     <span>代表挨拶</span>
                 </a>
 
-                <a class="p-page-company__info__item" href="/">
+                <a class="p-page-company__info__item" href="<?php echo esc_url(home_url('/company/about/#profile')); ?>">
                     <img class="p-page-company__info__icon" src="<?php echo get_template_directory_uri(); ?>/img/page/page-company/svg/icon_company.svg" alt="">
                     <span>会社概要</span>
                 </a>
 
-                <a class="p-page-company__info__item" href="/">
+                <a class="p-page-company__info__item" href="<?php echo esc_url(home_url('/company/about/#office')); ?>">
                     <img class="p-page-company__info__icon" src="<?php echo get_template_directory_uri(); ?>/img/page/page-company/svg/icon_office.svg" alt="">
                     <span>事業所</span>
                 </a>
 
-                <a class="p-page-company__info__item" href="/">
+                <a class="p-page-company__info__item" href="<?php echo esc_url(home_url('/company/about/#history')); ?>">
                     <img class="p-page-company__info__icon" src="<?php echo get_template_directory_uri(); ?>/img/page/page-company/svg/icon_history.svg" alt="">
                     <span>沿革</span>
                 </a>

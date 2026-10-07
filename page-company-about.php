@@ -72,7 +72,7 @@ get_header('company');
 
 <main id="page-company-about" class="p-page-company-about">
     <!-- 代表メッセージ 開始 -->
-    <section class="p-page-company-about__message">
+    <section id="message" class="p-page-company-about__message">
         <nav class="p-page-company-about__breadcrumb" aria-label="パンくずリスト">
             <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a><span>企業情報</span><span>会社概要</span>
         </nav>
@@ -115,7 +115,7 @@ get_header('company');
     <!-- 代表メッセージ 終了 -->
 
     <!-- 会社概要 開始 -->
-    <section class="p-page-company-about__profile">
+    <section id="profile" class="p-page-company-about__profile">
         <div class="p-page-company-about__visual p-page-company-about__visual--profile">
             <picture>
                 <?php if (file_exists($about_image_path . '/webp/img_company-profile.webp')) : ?>
@@ -140,7 +140,7 @@ get_header('company');
     <!-- 会社概要 終了 -->
 
     <!-- 事業所 開始 -->
-    <section class="p-page-company-about__office">
+    <section id="office" class="p-page-company-about__office">
         <header class="p-page-company-about__heading">
             <h2 class="p-page-company-about__title">事業所</h2>
             <p class="p-page-company-about__headingEn">Office</p>
@@ -158,7 +158,7 @@ get_header('company');
     <!-- 事業所 終了 -->
 
     <!-- 沿革 開始 -->
-    <section class="p-page-company-about__history">
+    <section id="history" class="p-page-company-about__history">
         <div class="p-page-company-about__visual p-page-company-about__visual--history">
             <picture>
                 <?php if (file_exists($about_image_path . '/webp/img_history.webp')) : ?>

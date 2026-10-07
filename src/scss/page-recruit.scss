@@ -1288,7 +1288,7 @@
       width: auto;
       max-width: 390px;
       height: clamp(410px, 25.94vw, 498px);
-      margin: clamp(38px, 2.55vw, 49px) 0 0;
+      margin: 0;
       scroll-snap-align: none;
 
       &.is-active { margin-top: 0; }
@@ -1299,7 +1299,7 @@
       height: clamp(235px, 15.06vw, 289px);
     }
 
-    &__voice-card.is-active &__voice-photo { top: clamp(26px, 1.67vw, 32px); }
+    &__voice-card.is-active &__voice-photo { top: clamp(27px, 1.93vw, 37px); }
 
     &__voice-background { border-radius: clamp(20px, 1.56vw, 30px) clamp(20px, 1.56vw, 30px) 0 0; }
 
@@ -1340,7 +1340,7 @@
       h3 br { display: none; }
     }
 
-    &__voice-card.is-active &__voice-body { top: clamp(258px, 16.72vw, 321px); }
+    &__voice-card.is-active &__voice-body { top: clamp(262px, 16.98vw, 326px); }
 
     &__voice-meta {
       margin-top: clamp(5px, .52vw, 10px);
@@ -1885,7 +1885,7 @@
       width: 317.33px;
       max-width: 317.33px;
       height: 410px;
-      margin: 38px 0 0;
+      margin: 0;
       scroll-snap-align: none;
 
       &.is-active { margin-top: 0; }
@@ -1896,7 +1896,7 @@
       height: 235px;
     }
 
-    &__voice-card.is-active &__voice-photo { top: 26px; }
+    &__voice-card.is-active &__voice-photo { top: 27px; }
 
     &__voice-background { border-radius: 20px 20px 0 0; }
 
@@ -1942,7 +1942,7 @@
     &__voice-card[data-slide="1"] &__voice-body h3 br:first-of-type,
     &__voice-card[data-slide="2"] &__voice-body h3 br { display: none; }
 
-    &__voice-card.is-active &__voice-body { top: 258px; }
+    &__voice-card.is-active &__voice-body { top: 262px; }
 
     &__voice-meta {
       margin-top: 5px;
@@ -2046,7 +2046,7 @@
       width: auto;
       max-width: 390px;
       height: clamp(410px, calc(34.375vw + 58px), 498px);
-      margin-top: clamp(38px, calc(4.296875vw - 6px), 49px);
+      margin-top: 0;
 
     }
 
@@ -2056,7 +2056,7 @@
     }
 
     &__voice-card.is-active &__voice-photo {
-      top: clamp(26px, calc(2.34375vw + 2px), 32px);
+      top: clamp(27px, calc(3.90625vw - 13px), 37px);
     }
 
     &__voice-background {
@@ -2094,7 +2094,7 @@
     }
 
     &__voice-card.is-active &__voice-body {
-      top: clamp(258px, calc(24.609375vw + 6px), 321px);
+      top: clamp(262px, calc(25vw + 6px), 326px);
     }
 
     &__voice-meta {
@@ -2121,7 +2121,7 @@
       width: 390px;
       max-width: 390px;
       height: 498px;
-      margin-top: 49px;
+      margin-top: 0;
 
     }
 
@@ -2130,7 +2130,7 @@
       height: 289px;
     }
 
-    &__voice-card.is-active &__voice-photo { top: 32px; }
+    &__voice-card.is-active &__voice-photo { top: 37px; }
 
     &__voice-background { border-radius: 30px 30px 0 0; }
 
@@ -2164,7 +2164,7 @@
       }
     }
 
-    &__voice-card.is-active &__voice-body { top: 321px; }
+    &__voice-card.is-active &__voice-body { top: 326px; }
 
     &__voice-meta {
       margin-top: 10px;
