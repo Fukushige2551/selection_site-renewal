@@ -11,10 +11,11 @@
             @include backgroundImg("#{$img-path}component/selection-logo.svg");
             background-size: contain;
             position: absolute;
-            top: 1.8vw;
-            left: 37.4vw;
-            width: 26.15vw;
-            aspect-ratio: 102 / 54;
+            top: 50%;
+            left: 51%;
+            width: 78px;
+            height: 39px;
+            transform: translate(-50%, -50%);
         }
         &__btn {
             &__bascket {
@@ -55,7 +56,8 @@
         pointer-events: none;
         top: 100%;
         left: 0;
-        width: 100%;
+        right: 0;
+        width: auto;
         aspect-ratio: 390 / 6;
     }
 
@@ -74,8 +76,15 @@
         }
     }
     &__logo {
-        width: 18.20vw;
+        @include backgroundImg("#{$img-path}component/selection-logo.svg");
+        background-size: contain;
+        position: absolute;
+        top: 52%;
+        left: 53%;
+        width: 25.2vw;
+        height: auto;
         aspect-ratio: 71 / 35;
+        transform: translate(-50%, -50%);
 
         &__img {
             display: none;
@@ -260,7 +269,8 @@
         }
     }
     &__logo {
-        width: 15.11vw;
+        width: 92px;
+        height: 46px;
     }
     &__hamburger {
         &__img {
@@ -326,6 +336,11 @@
         }
     }
 }
+
+.is-fixed .l-header__logo {
+    width: 92px;
+    height: 46px;
+}
 }
 @media screen and (min-width: 1024px) {
     .l-header--sp,
@@ -347,7 +362,9 @@
             content: "";
             position: absolute;
             pointer-events: none;
-            width: 100%;
+            left: 0;
+            right: 0;
+            width: auto;
             aspect-ratio: 1920 / 25.48;
         }
 

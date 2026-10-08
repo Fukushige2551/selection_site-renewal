@@ -12,6 +12,9 @@ $select_detail_urls = [
     'rice' => home_url('/select/rice/'),
     'deli' => home_url('/select/deli/'),
     'washoku-daily' => home_url('/select/washoku-daily/'),
+    'foods' => home_url('/select/foods/'),
+    'sweets' => home_url('/select/sweets/'),
+    'alcohol' => home_url('/select/alcohol/'),
 ];
 ?>
 
@@ -96,22 +99,17 @@ $select_detail_urls = [
                 </picture>
             </a>
             */ ?>
-            <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--08" href="/">
-                <picture>
-                    <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-08.svg" alt="こだわり　乳製品">
-                </picture>
-            </a>
-            <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--09" href="/">
+            <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--09" href="<?php echo esc_url($select_detail_urls['foods']); ?>">
                 <picture>
                     <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-09.svg" alt="こだわり　加工食品">
                 </picture>
             </a>
-            <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--10" href="/">
+            <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--10" href="<?php echo esc_url($select_detail_urls['sweets']); ?>">
                 <picture>
                     <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-10.svg" alt="こだわり　お菓子">
                 </picture>
             </a>
-            <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--11" href="/">
+            <a class="c-pop p-page-select__commitment__link c-pop p-page-select__commitment__link--11" href="<?php echo esc_url($select_detail_urls['alcohol']); ?>">
                 <picture>
                     <img class="c-pop p-page-select__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-select/svg/link_select-commitment-content-11.svg" alt="こだわり　お酒">
                 </picture>
