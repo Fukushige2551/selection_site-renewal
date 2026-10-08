@@ -18,12 +18,17 @@ if (file_exists($voices_word_file)) {
   $voices_word_uri .= '?v=' . filemtime($voices_word_file);
 }
 
+$recruit_work_page = get_page_by_path('recruit/work', OBJECT, 'page');
+$recruit_work_url = $recruit_work_page
+  ? get_permalink($recruit_work_page)
+  : home_url('/recruit/work/');
+
 $about_items = [
-  ['01', '私たちについて', '会社名である”セレクション”の由来は？<br>会社の目指す形とともに紹介します', 'img_work-source', '#'],
-  ['02', '仕事内容', '食品を扱う現場ではどんな仕事をしているのか<br>製造・販売・仕入れ、企画、それぞれのお仕事<br>について紹介します', 'img_career-source', '#'],
-  ['03', 'キャリアアップ', '一人ひとりの成長を全力でサポート。<br>将来のキャリアの描き方を紹介します。', 'img_day-flow-source', '#'],
-  ['04', '教育・資格支援制度', '小売り販売で活かせる資格の取得をサポート！<br>自身の力になるキャリアアップを支援します', 'img_training-original', '#'],
-  ['05', '1日の仕事の流れ', '入社●年目の先輩社員の1日をご紹介', 'img_day-flow-original', '#'],
+  ['01', '私たちについて', '会社名である”セレクション”の由来は？<br>会社の目指す形とともに紹介します', 'img_work-source', $recruit_work_url . '#about-selection'],
+  ['02', '仕事内容', '食品を扱う現場ではどんな仕事をしているのか<br>製造・販売・仕入れ、企画、それぞれのお仕事<br>について紹介します', 'img_career-source', $recruit_work_url . '#jobs'],
+  ['03', 'キャリアアップ', '一人ひとりの成長を全力でサポート。<br>将来のキャリアの描き方を紹介します。', 'img_day-flow-source', $recruit_work_url . '#career'],
+  ['04', '教育・資格支援制度', '小売り販売で活かせる資格の取得をサポート！<br>自身の力になるキャリアアップを支援します', 'img_training-original', $recruit_work_url . '#training'],
+  ['05', '1日の仕事の流れ', '入社●年目の先輩社員の1日をご紹介', 'img_day-flow-original', $recruit_work_url . '#daily-flow'],
 ];
 
 get_header('company');

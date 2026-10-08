@@ -31,9 +31,13 @@
         text-decoration: none;
     }
 
-    & a:focus, & summary:focus {
+    & a:focus-visible, & summary:focus-visible {
         outline-offset: 3px;
         outline: 2px solid #00a784;
+    }
+
+    & a:focus:not(:focus-visible), & summary:focus:not(:focus-visible) {
+        outline: none;
     }
 
     & ul {
@@ -167,15 +171,7 @@
     }
 
     &__row--privacy {
-        border-bottom: 0;
         order: 8;
-        padding-left: 0;
-        font-size: 14px;
-        font-weight: 400;
-    }
-
-    &__row--privacy:before {
-        display: none;
     }
 
     &__group &__list {
@@ -352,13 +348,6 @@
             padding-left: 14px;
             font-size: 12px;
             line-height: 28px;
-        }
-        &__row--privacy {
-            padding-left: 14px;
-            font-weight: 700;
-        }
-        &__row--privacy:before {
-            display: block;
         }
         &__banners {
             grid-column: 2;

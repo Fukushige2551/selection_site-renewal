@@ -193,7 +193,7 @@ get_header('company');
     <p>千葉県、埼玉県、<br>そして近年は東京都エリアにも<br>出店を広げてます。<br>独自の仕入れルートで「低価格で高品質」な<br>商品ラインナップ実現。<br>また本社のある千葉県エリアを中心に<br>「地産地消」にも力をいれる<br>地域に密着したスーパーマーケットです！</p>
   </section>
 
-  <section class="p-page-recruit-work__about">
+  <section id="about-selection" class="p-page-recruit-work__about">
     <article class="p-page-recruit-work__vision p-page-recruit-work__white-card">
       <div class="p-page-recruit-work__card-decoration"><img src="<?php echo esc_url($image_uri . '/vision-sprout.png'); ?>" alt="芽吹く若葉"></div>
       <h2 class="p-page-recruit-work__label">VISION</h2>
@@ -327,7 +327,7 @@ get_header('company');
     </div>
   </section>
 
-  <section class="p-page-recruit-work__jobs">
+  <section id="jobs" class="p-page-recruit-work__jobs">
     <header class="p-page-recruit-work__heading p-page-recruit-work__heading--light">
       <h2>仕事内容</h2>
       <p>job description</p>
@@ -352,7 +352,7 @@ get_header('company');
     </div>
   </section>
 
-  <section class="p-page-recruit-work__career">
+  <section id="career" class="p-page-recruit-work__career">
     <header class="p-page-recruit-work__heading">
       <h2>キャリアアップ</h2>
       <p>job description</p>
@@ -374,7 +374,7 @@ get_header('company');
     </div>
   </section>
 
-  <section class="p-page-recruit-work__training">
+  <section id="training" class="p-page-recruit-work__training">
     <header class="p-page-recruit-work__heading p-page-recruit-work__heading--light">
       <h2>研修・資格制度</h2>
       <p>Training and Certification Systems</p>
@@ -408,7 +408,7 @@ get_header('company');
     </article>
   </section>
 
-  <section class="p-page-recruit-work__daily">
+  <section id="daily-flow" class="p-page-recruit-work__daily">
     <header class="p-page-recruit-work__heading">
       <h2>1日の流れ</h2>
       <p>Daily Schedule</p>

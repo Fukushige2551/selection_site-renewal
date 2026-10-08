@@ -7,6 +7,21 @@ $footer_destinations = apply_filters('foods_company_footer_destinations', [
     'company_profile' => '', 'recruit' => '', 'business' => '',
     'app' => '', 'cgc' => '', 'youtube' => '', 'instagram' => '', 'facebook' => '',
 ]);
+
+// STG に登録済みの固定ページをテンプレートから特定し、未登録の環境では想定 URL を使用する。
+$footer_page_url = static function ($template, $fallback_path) {
+    $pages = get_posts([
+        'post_type'      => 'page',
+        'post_status'    => 'publish',
+        'posts_per_page' => 1,
+        'meta_key'       => '_wp_page_template',
+        'meta_value'     => $template,
+        'fields'         => 'ids',
+        'no_found_rows'  => true,
+    ]);
+
+    return $pages ? get_permalink($pages[0]) : home_url($fallback_path);
+};
 // 店舗一覧
 $footer_shops = [
     ['行徳店', 'gyoutoku'], ['三郷店', 'misato'], ['八潮店', 'yashio'],
@@ -16,9 +31,17 @@ $footer_shops = [
 ];
 // 商品・売場の一覧
 $footer_departments = [
-    ['お店づくり', '/select/'], ['お野菜・果物', '/select-vegetables-fruit/'],
-    ['お肉', '/select-meat/'], ['お魚', '/select-fish/'], ['お菓子', ''], ['お米', '/select-rice/'],
-    ['乳製品', ''], ['和日配', ''], ['お惣菜', '/select-deli/'], ['加工食品', ''], ['お酒', ''],
+    ['お店づくり', $footer_page_url('page-select-shop.php', '/select/shop/')],
+    ['お野菜・果物', $footer_page_url('page-select-vegetables-fruit.php', '/select/vegetables-fruit/')],
+    ['お肉', $footer_page_url('page-select-meat.php', '/select/meat/')],
+    ['お魚', $footer_page_url('page-select-fish.php', '/select/fish/')],
+    ['お菓子', $footer_page_url('page-select-sweets.php', '/select/sweets/')],
+    ['お米', $footer_page_url('page-select-rice.php', '/select/rice/')],
+    ['乳製品', ''],
+    ['和日配', $footer_page_url('page-select-washoku-daily.php', '/select/washoku-daily/')],
+    ['お惣菜', $footer_page_url('page-select-deli.php', '/select/deli/')],
+    ['加工食品', $footer_page_url('page-select-foods.php', '/select/foods/')],
+    ['お酒', $footer_page_url('page-select-alcohol.php', '/select/alcohol/')],
 ];
 // リンク先の有無に応じて要素を出力する。
 $footer_link = static function ($label, $url, $class = '') {
@@ -48,7 +71,7 @@ $footer_link = static function ($label, $url, $class = '') {
                     </ul>
                 </details>
                 <div class="l-company-footer__row l-company-footer__row--news"><?php $footer_link('新着情報', get_post_type_archive_link('news')); ?></div>
-                <div class="l-company-footer__row l-company-footer__row--recruit"><?php $footer_link('パート・アルバイト募集', get_post_type_archive_link('recruit_part_time')); ?></div>
+                <div class="l-company-footer__row l-company-footer__row--recruit"><?php $footer_link('パート・アルバイト募集', $footer_page_url('page-job.php', '/job/')); ?></div>
                 <div class="l-company-footer__row l-company-footer__row--recipe"><?php $footer_link('レシピ', get_post_type_archive_link('recipe')); ?></div>
                 <div class="l-company-footer__row l-company-footer__row--online"><?php $footer_link('オンラインショップ', 'https://foods-selection.shops.jp/'); ?></div>
             </div>
@@ -57,8 +80,8 @@ $footer_link = static function ($label, $url, $class = '') {
                 <details class="l-company-footer__group l-company-footer__group--select" data-footer-departments>
                     <summary><a href="<?php echo esc_url(home_url('/select/')); ?>">セレクションのこだわり</a><span class="l-company-footer__plus" aria-hidden="true">+</span></summary>
                     <ul class="l-company-footer__list l-company-footer__list--departments">
-                        <?php foreach ($footer_departments as [$name, $path]) : ?>
-                            <li><?php $footer_link($name, $path ? home_url($path) : ''); ?></li>
+                        <?php foreach ($footer_departments as [$name, $url]) : ?>
+                            <li><?php $footer_link($name, $url); ?></li>
                         <?php endforeach; ?>
                     </ul>
                 </details>
@@ -68,9 +91,9 @@ $footer_link = static function ($label, $url, $class = '') {
                 <details class="l-company-footer__group l-company-footer__group--company">
                     <summary><a href="<?php echo esc_url(home_url('/company/')); ?>">会社情報</a><span class="l-company-footer__plus" aria-hidden="true">+</span></summary>
                     <ul class="l-company-footer__list l-company-footer__list--company">
-                        <li><?php $footer_link('会社概要', $footer_destinations['company_profile']); ?></li>
-                        <li><?php $footer_link('採用情報（新卒・中途）', $footer_destinations['recruit']); ?></li>
-                        <li><?php $footer_link('企業の方', $footer_destinations['business']); ?></li>
+                        <li><?php $footer_link('会社概要', $footer_destinations['company_profile'] ?: $footer_page_url('page-company-about.php', '/company/about/')); ?></li>
+                        <li><?php $footer_link('採用情報（新卒・中途）', $footer_destinations['recruit'] ?: $footer_page_url('page-recruit.php', '/recruit/')); ?></li>
+                        <li><?php $footer_link('企業の方', $footer_destinations['business'] ?: $footer_page_url('page-company-business.php', '/company/business/')); ?></li>
                     </ul>
                 </details>
                 <div class="l-company-footer__row l-company-footer__row--contact"><?php $footer_link('お問い合わせ', home_url('/contact/')); ?></div>
