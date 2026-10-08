@@ -27,6 +27,11 @@ time, mark, audio, video {
     background:transparent;
 }
 
+html,
+body {
+    overflow-x: clip;
+}
+
 body {
     line-height:1;
 }

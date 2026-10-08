@@ -1500,7 +1500,7 @@
                         <img class="p-front-page__recipe__banner__img--app" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_banner-content-01.png" alt="公式アプリ">
                     </picture>
                 </a>
-                <a class="c-pop p-front-page__recipe__banner" href="">
+                <a class="c-pop p-front-page__recipe__banner" href="https://foods-selection.shops.jp/" target="_blank" rel="noopener noreferrer">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_banner-content-02.webp" type="image/webp">
                         <img class="p-front-page__recipe__banner__img--online-shop" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_banner-content-02.png" alt="セレクションのネットスーパー">
@@ -1703,10 +1703,11 @@
                     <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_sns-content-06.png" alt="セレクション公式Instagram">
                 </picture>
             </div>
-            <a class="p-front-page__sns__all p-front-page__sns__all--instagram" href="/">
+            <a class="p-front-page__sns__all p-front-page__sns__all--instagram" href="https://www.instagram.com/foods_selection/" target="_blank" rel="noopener noreferrer">
                 <button class="c-btn c-btn--common--green--large">Instagramはこちら</button>
             </a>
 
+            <?php if (false) : // TODO: 公式YouTubeチャンネル開設後、リンクを設定して再表示する。 ?>
             <h2 class="p-front-page__sns__subtitle">You Tube</h2>
             <a href="/">
                 <picture class="c-btn--youtube--play">
@@ -1718,6 +1719,7 @@
             <a class="p-front-page__sns__all p-front-page__sns__all--youtube" href="/">
                 <button class="c-btn c-btn--common--blue--large">Youtubeチャンネルはこちら</button>
             </a>
+            <?php endif; ?>
         </section>
     </div>
     <!-- SNS end -->
@@ -1730,13 +1732,13 @@
             <p class="c-section__title--sub">Recruitment</p>
             <!-- タイトル end -->
 
-            <a class="p-front-page__recruit__link u-disp--sp" href="/">
+            <a class="p-front-page__recruit__link u-disp--sp" href="<?php echo esc_url(home_url('/recruit/')); ?>">
                 <picture>
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_recruit-content-01.webp" type="image/webp">
                     <img class="p-front-page__recruit__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recruit-content-01.png" alt="採用情報">
                 </picture>
             </a>
-            <a class="p-front-page__recruit__link u-disp--pc" href="/">
+            <a class="p-front-page__recruit__link u-disp--pc" href="<?php echo esc_url(home_url('/recruit/')); ?>">
                 <picture>
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_recruit-content-pc-01.webp" type="image/webp">
                     <img class="c-pop p-front-page__recruit__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recruit-content-pc-01.png" alt="採用情報">
@@ -1749,13 +1751,13 @@
     <!-- 会社情報 start -->
     <div class="c-bg p-front-page__bg--company no-image">
         <div class="p-front-page__company__picture--wrapper">
-            <a class="c-pop p-front-page__company__link p-front-page__company__link--company" href="/">
+            <a class="c-pop p-front-page__company__link p-front-page__company__link--company" href="<?php echo esc_url(home_url('/company/')); ?>">
                 <picture class="p-front-page__company__picture">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_company-content-01.webp" type="image/webp">
                     <img class="p-front-page__company__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_company-content-01.png" alt="会社情報">
                 </picture>
             </a>
-            <a class="c-pop p-front-page__company__link p-front-page__company__link--beef" href="/">
+            <a class="c-pop p-front-page__company__link p-front-page__company__link--beef" href="https://www.foods-selection.co.jp/tore.html" target="_blank" rel="noopener noreferrer">
                 <picture class="p-front-page__company__picture">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_company-content-02.webp" type="image/webp">
                     <img class="p-front-page__company__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_company-content-02.png" alt="牛肉個体識別情報検索">
@@ -1764,10 +1766,10 @@
         </div>
 
         <div class="p-front-page__company__link-wrapper">
-            <a class="p-front-page__company__link p-front-page__company__link--company" href="/">
+            <a class="p-front-page__company__link p-front-page__company__link--company" href="<?php echo esc_url(home_url('/company/')); ?>">
                 <button class="c-btn p-btn--common--blue">企業情報</button>
             </a>
-            <a class="p-front-page__company__link p-front-page__company__link--beef" href="/">
+            <a class="p-front-page__company__link p-front-page__company__link--beef" href="<?php echo esc_url(home_url('/company/business/')); ?>">
                 <button class="c-btn c-btn--common--green">企業の方へ</button>
             </a>
         </div>

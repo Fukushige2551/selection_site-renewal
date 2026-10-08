@@ -5,7 +5,12 @@
  */
 $footer_destinations = apply_filters('foods_company_footer_destinations', [
     'company_profile' => '', 'recruit' => '', 'business' => '',
-    'app' => '', 'cgc' => '', 'youtube' => '', 'instagram' => '', 'facebook' => '',
+    'app' => '',
+    'cgc' => 'https://www.cgcjapan.co.jp/',
+    // TODO: 公式YouTubeチャンネル開設後にリンクを追加し、下部のSNS一覧にも戻す。
+    'youtube' => '',
+    'instagram' => 'https://www.instagram.com/foods_selection/',
+    'facebook' => 'https://www.facebook.com/218555321614153/',
 ]);
 
 // STG に登録済みの固定ページをテンプレートから特定し、未登録の環境では想定 URL を使用する。
@@ -105,7 +110,7 @@ $footer_link = static function ($label, $url, $class = '') {
         <!-- バナー一覧 -->
         <div class="l-company-footer__banners">
             <?php foreach (['app' => ['selection-app', 'セレクション アプリ ダウンロード'], 'cgc' => ['cgc-colab', 'セレクションはCGCの加盟店です']] as $key => [$file, $alt]) : ?>
-                <?php if ($footer_destinations[$key]) : ?><a class="l-company-footer__banner l-company-footer__banner--<?php echo esc_attr($key); ?>" href="<?php echo esc_url($footer_destinations[$key]); ?>"><?php else : ?><div class="l-company-footer__banner l-company-footer__banner--<?php echo esc_attr($key); ?>"><?php endif; ?>
+                <?php if ($footer_destinations[$key]) : ?><a class="l-company-footer__banner l-company-footer__banner--<?php echo esc_attr($key); ?>" href="<?php echo esc_url($footer_destinations[$key]); ?>"<?php if ($key === 'cgc') : ?> target="_blank" rel="noopener noreferrer"<?php endif; ?>><?php else : ?><div class="l-company-footer__banner l-company-footer__banner--<?php echo esc_attr($key); ?>"><?php endif; ?>
                     <img src="<?php echo esc_url(get_template_directory_uri() . '/img/footer/footer_banner-' . $file . '.png'); ?>" alt="<?php echo esc_attr($alt); ?>" width="<?php echo $key === 'app' ? 722 : 720; ?>" height="<?php echo $key === 'app' ? 257 : 254; ?>" loading="lazy">
                 <?php if ($footer_destinations[$key]) : ?></a><?php else : ?></div><?php endif; ?>
             <?php endforeach; ?>
@@ -114,10 +119,10 @@ $footer_link = static function ($label, $url, $class = '') {
 
     <!-- ソーシャルリンク -->
     <ul class="l-company-footer__socials">
-        <?php foreach (['youtube' => 'YouTube', 'instagram' => 'Instagram', 'facebook' => 'Facebook'] as $key => $label) : ?>
+        <?php foreach (['instagram' => 'Instagram', 'facebook' => 'Facebook'] as $key => $label) : ?>
             <li class="l-company-footer__social l-company-footer__social--<?php echo esc_attr($key); ?>">
-                <?php if ($footer_destinations[$key]) : ?><a href="<?php echo esc_url($footer_destinations[$key]); ?>" aria-label="<?php echo esc_attr($label); ?>"><?php endif; ?>
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/img/component/svg/icon_' . $key . '.svg'); ?>" alt="<?php echo esc_attr($label); ?>" width="40" height="40" loading="lazy">
+                <?php if ($footer_destinations[$key]) : ?><a href="<?php echo esc_url($footer_destinations[$key]); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr($label); ?>"><?php endif; ?>
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/img/component/svg/icon_' . $key . '_color.svg'); ?>" alt="<?php echo esc_attr($label); ?>" width="40" height="40" loading="lazy">
                 <?php if ($footer_destinations[$key]) : ?></a><?php endif; ?>
             </li>
         <?php endforeach; ?>

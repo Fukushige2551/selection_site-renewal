@@ -169,7 +169,7 @@ get_header('company');
 
                     <p class="p-page-company__partner__guide">
                         商品提案やお取引に関する<br>
-                        ご案内は<a class="p-page-company__partner__guideLink" href="/">こちらから</a><br>
+                        ご案内は<a class="p-page-company__partner__guideLink" href="<?php echo esc_url(home_url('/company/business/')); ?>">こちらから</a><br>
                         ご覧ください。
                     </p>
                 </div>
@@ -187,7 +187,7 @@ get_header('company');
                 </picture>
             </div>
 
-            <a class="p-page-company__partner__more" href="/">
+            <a class="p-page-company__partner__more" href="<?php echo esc_url(home_url('/company/business/')); ?>">
                 <span class="p-page-company__partner__moreText">VIEW MORE</span>
                 <span class="p-page-company__partner__moreArrow"></span>
             </a>

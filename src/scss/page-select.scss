@@ -55,11 +55,11 @@
             @include backgroundImg("#{$img-path}page/page-select/svg/bg_select-sp.svg");
             background-position: top center;
             background-size: 100% auto;
-            margin: 10vw 0 -45vw;
+            margin: 10vw 0 -12vw;
             position: relative;
             z-index: 1;
             padding: 17vw 3.8vw 0 ;
-            height: 318.5vw;
+            height: 280vw;
         }
 
         &__img--mark {
@@ -135,29 +135,24 @@
                 z-index: 1;
                 left: 0vw;
             }
-            &--08 {
-                width: 42.3vw;
-                top: 133vw;
-                z-index: 1;
-                left: 0;
-            }
             &--09 {
                 width: 42.3vw;
-                top: 146.8vw;
+                top: 136vw;
                 z-index: 1;
-                right: 0vw;
+                left: 0vw;
             }
             &--10 {
                 width: 43.3vw;
-                top: 188vw;
-                left: 0vw;
+                top: 146vw;
+                right: 0vw;
                 z-index: 1;
             }    
             &--11 {
                 width: 43.3vw;
-                top: 194vw;
+                top: 191vw;
                 z-index: 1;
-                right: 0vw;
+                left: 50%;
+                transform: translateX(-50%);
             }    
         }
     }
@@ -211,9 +206,9 @@
         }
 
         &--bg {
-            margin: 5vw 0 -25vw;
+            margin: 5vw 0 -15vw;
             padding: 14vw 3.8vw 0 ;
-            height: 160vw;
+            height: 115vw;
         }
 
         &__img--mark {
@@ -248,37 +243,36 @@
             &--04 {
                 width: 25.3vw;
                 top: 31vw;
-                right: 49vw;
+                left: 3vw;
+                right: auto;
                 }
             &--05 {
                 width: 27vw;
                 top: 29.4vw;
-                left: 47vw;
+                left: 34vw;
                 }
             &--06 {
                 width: 26.9vw;
-                top: 57.5vw;
-                right: 61vw;
-                }
-            &--08 {
-                width: 25.6vw;
-                top: 55vw;
-                left: 34vw;
+                top: 31vw;
+                right: 3vw;
                 }
             &--09 {
                 width: 24.8vw;
                 top: 57.8vw;
-                right: 5vw;
+                left: 3vw;
                 }
             &--10 {
                  width: 27.8vw;
-                top: 86vw;
-                left: 15vw;
+                top: 55vw;
+                left: 34vw;
+                right: auto;
                 }    
             &--11 {
                 width: 28.2vw;
-                top: 85vw;
-                right: 14vw;
+                top: 57vw;
+                right: 3vw;
+                left: auto;
+                transform: none;
                 }    
             }
         }
@@ -337,7 +331,7 @@
                 @include backgroundImg("#{$img-path}page/page-select/svg/bg_select-pc.svg");
                 margin: 6.35vw 0 -9.77vw;
                 padding: 8.30vw 0;
-                height: 98vw;
+                height: 76vw;
             }
 
             &__img--mark {
@@ -367,55 +361,55 @@
                 &--02 {
                     width: 18.31vw;
                     top: 2vw;
-                    right: 25.5vw;
+                    left: 25vw;
+                    right: auto;
                 }
 
                 &--03 {
                     width: 18.80vw;
                     top: 4vw;
-                    left: 44.5vw;
+                    left: auto;
+                    right: 4vw;
                 }
 
                 &--04 {
                     width: 17.04vw;
                     top: 20vw;
-                    right: 36vw;
+                    left: 4vw;
+                    right: auto;
                 }
 
                 &--05 {
                     width: 18.21vw;
                     top: 19vw;
-                    left: 35vw;
+                    left: 25vw;
                 }
 
                 &--06 {
                     width: 18.21vw;
-                    top: 37vw;
-                    right: 46vw;
-                }
-
-                &--08 {
-                    width: 17.24vw;
-                    top: 37vw;
-                    left: 25vw;
+                    top: 20vw;
+                    right: 4vw;
                 }
 
                 &--09 {
                     width: 16.65vw;
                     top: 39vw;
-                    right: 6vw;
+                    left: 4vw;
                 }
 
                 &--10 {
                     width: 18.90vw;
-                    top: 57vw;
-                    left: 11vw;
+                    top: 37vw;
+                    left: 25vw;
+                    right: auto;
                 }
 
                 &--11 {
                     width: 19.19vw;
-                    top: 57vw;
-                    right: 11vw;
+                    top: 39vw;
+                    right: 4vw;
+                    left: auto;
+                    transform: none;
                 }
             }
         }
@@ -464,7 +458,7 @@
                 @include backgroundImg("#{$img-path}page/page-select/svg/bg_select-pc.svg");
                 margin: 6.35vw 0 -9.77vw;
                 padding: 7vw 0;
-                height: 92vw;
+                height: 70vw;
             }
 
             &__img--mark {
@@ -487,62 +481,63 @@
 
                 &--01 {
                     top: 4vw;
-                    width: 17vw;
-                    left: 7vw;
+                    width: 15.2vw;
+                    left: 10vw;
                 }
 
                 &--02 {
-                    width: 18vw;
+                    width: 15.2vw;
                     top: 2vw;
-                    right: 24.41vw;
+                    left: 26vw;
+                    right: auto;
                 }
 
                 &--03 {
-                    width: 17.2vw;
+                    width: 15.2vw;
                     top: 5vw;
-                    left: 46vw;
+                    left: auto;
+                    right: 10vw;
                 }
 
                 &--04 {
-                    width: 16vw;
+                    width: 15.2vw;
                     top: 20vw;
-                    right: 36.13vw;
+                    left: 10vw;
+                    right: auto;
                 }
 
                 &--05 {
-                    width: 17.5vw;
+                    width: 15.2vw;
                     top: 19vw;
-                    left: 35vw;
+                    left: 26vw;
                 }
 
                 &--06 {
-                    width: 17.3vw;
-                    top: 37vw;
-                    right: 45vw;
-                }
-
-                &--08 {
-                    width: 16.3vw;
-                    top: 37vw;
-                    left: 25vw;
+                    width: 15.2vw;
+                    top: 20vw;
+                    right: 10vw;
                 }
 
                 &--09 {
-                    width: 16.6vw;
+                    width: 15.2vw;
                     top: 38vw;
-                    right: 8vw;
+                    left: 10vw;
+                    right: auto;
                 }
 
                 &--10 {
-                    width: 17.4vw;
-                    top: 57vw;
-                    left: 13vw;
+                    width: 15.2vw;
+                    top: 37vw;
+                    left: 26vw;
+                    right: auto;
                 }
 
                 &--11 {
-                    width: 17.5vw;
-                    top: 56vw;
-                    right: 14vw;
+                    width: 15.2vw;
+                    top: 38vw;
+                    right: 10vw;
+                    left: auto;
+                    transform: none;
                 }
             }
         }
@@ -583,7 +578,7 @@
                 @include backgroundImg("#{$img-path}page/page-select/svg/bg_select-pc.svg");
                 margin: 3.35vw 0 -13.77vw;
                 padding: 6vw 0;
-                height: 82vw;
+                height: 62vw;
             }
 
             &__img--mark {
@@ -606,65 +601,122 @@
 
                 &--01 {
                     top: 4vw;
-                    width: 14.5vw;
+                    width: 13vw;
                     left: 12vw;
                 }
 
                 &--02 {
-                    width: 14.8vw;
+                    width: 13vw;
                     top: 2vw;
-                    right: 25.41vw;
+                    left: 29vw;
+                    right: auto;
                 }
 
                 &--03 {
-                    width: 14.2vw;
+                    width: 13vw;
                     top: 5vw;
-                    left: 45vw;
+                    left: auto;
+                    right: 12vw;
                 }
 
                 &--04 {
-                    width: 13.7vw;
+                    width: 13vw;
                     top: 18vw;
-                    right: 35.13vw;
+                    left: 12vw;
+                    right: auto;
                 }
 
                 &--05 {
-                    width: 14.7vw;
+                    width: 13vw;
                     top: 17vw;
-                    left: 36vw;
-                }
-
-                &--06 {
-                    width: 14.5vw;
-                    top: 32vw;
-                    right: 42vw;
-                }
-
-                &--08 {
-                    width: 13.5vw;
-                    top: 31vw;
                     left: 29vw;
                 }
 
+                &--06 {
+                    width: 13vw;
+                    top: 18vw;
+                    right: 12vw;
+                }
+
                 &--09 {
-                    width: 13.6vw;
+                    width: 13vw;
                     top: 33vw;
-                    right: 10vw;
+                    left: 12vw;
                 }
 
                 &--10 {
-                    width: 14.6vw;
-                    top: 47vw;
-                    left: 18vw;
+                    width: 13vw;
+                    top: 31vw;
+                    left: 29vw;
+                    right: auto;
                 }
 
                 &--11 {
-                    width: 14.7vw;
-                    top: 47vw;
-                    right: 15vw;
+                    width: 13vw;
+                    top: 33vw;
+                    right: 12vw;
+                    left: auto;
+                    transform: none;
                 }
             }
         }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .p-page-select__commitment--bg {
+        height: 120vw;
+        margin-bottom: -10vw;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1335px) {
+    .p-page-select__commitment--bg {
+        height: 80vw;
+        margin-bottom: -10vw;
+    }
+}
+
+// Tablet / PC: keep the nine cards in the same fixed 687 x 736 px grid.
+@media screen and (min-width: 768px) {
+    .p-page-select__commitment__link {
+        --commitment-card-width: clamp(190px, 27vw, 207px);
+        --commitment-grid-width: calc((var(--commitment-card-width) * 3) + 66px);
+        width: var(--commitment-card-width);
+
+        &--01,
+        &--04,
+        &--09 {
+            left: calc(50% - (var(--commitment-grid-width) / 2));
+            right: auto;
+        }
+
+        &--02,
+        &--05,
+        &--10 {
+            left: calc(50% - (var(--commitment-card-width) / 2));
+            right: auto;
+        }
+
+        &--03,
+        &--06,
+        &--11 {
+            left: calc(50% + (var(--commitment-grid-width) / 2) - var(--commitment-card-width));
+            right: auto;
+            transform: none;
+        }
+
+        &--01 { top: 55px; }
+        &--02 { top: 27px; }
+        &--03 { top: 68px; }
+
+        &--04 { top: 273px; }
+        &--05 { top: 260px; }
+        &--06 { top: 273px; }
+
+        &--09 { top: 516px; }
+        &--10 { top: 502px; }
+        &--11 { top: 516px; }
     }
 }
 
