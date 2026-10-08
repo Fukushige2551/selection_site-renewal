@@ -5,9 +5,10 @@
 
 if (
     array_key_exists('keyword', $_GET) &&
-    trim((string) wp_unslash($_GET['keyword'])) === '' &&
+    trim(is_string($_GET['keyword']) ? wp_unslash($_GET['keyword']) : '') === '' &&
     !isset($_GET['job_shop']) &&
     !isset($_GET['job_role']) &&
+    !isset($_GET['job']) &&
     !isset($_GET['paged'])
 ) {
     wp_safe_redirect(home_url('/job/search/'));
@@ -32,11 +33,11 @@ $job_search_roles = [
 ];
 $theme_uri = get_template_directory_uri();
 
-$keyword = isset($_GET['keyword']) ? sanitize_text_field(wp_unslash($_GET['keyword'])) : '';
-$selected_shops = isset($_GET['job_shop']) ? array_map('sanitize_text_field', (array) wp_unslash($_GET['job_shop'])) : [];
+$keyword = isset($_GET['keyword']) && is_string($_GET['keyword']) ? sanitize_text_field(wp_unslash($_GET['keyword'])) : '';
+$selected_shops = isset($_GET['job_shop']) ? array_map('sanitize_text_field', array_filter((array) wp_unslash($_GET['job_shop']), 'is_string')) : [];
 $selected_roles = isset($_GET['job_role'])
-    ? array_map('sanitize_text_field', (array) wp_unslash($_GET['job_role']))
-    : (isset($_GET['job']) ? [sanitize_text_field(wp_unslash($_GET['job']))] : []);
+    ? array_map('sanitize_text_field', array_filter((array) wp_unslash($_GET['job_role']), 'is_string'))
+    : (isset($_GET['job']) && is_string($_GET['job']) ? [sanitize_text_field(wp_unslash($_GET['job']))] : []);
 
 $all_jobs = get_posts([
     'post_type'      => 'recruit_part_time',
@@ -63,7 +64,7 @@ $matched_jobs = array_values(array_filter($all_jobs, static function ($job_post)
     if ($selected_shops && !array_filter($selected_shops, static fn($shop) => mb_stripos($haystack, $shop) !== false)) {
         return false;
     }
-    if ($selected_roles && !array_filter($selected_roles, static fn($role) => mb_stripos($haystack, $role) !== false)) {
+    if ($selected_roles && !array_filter($selected_roles, static fn($role) => foods_job_role_matches($job_type, $role))) {
         return false;
     }
 
@@ -73,23 +74,9 @@ $matched_jobs = array_values(array_filter($all_jobs, static function ($job_post)
 $per_page = 10;
 $current_page = max(1, isset($_GET['paged']) ? absint($_GET['paged']) : 1);
 $total_jobs = count($matched_jobs);
-$is_local_preview = false;
-
-if (
-    !$matched_jobs &&
-    ($keyword !== '' || $selected_shops || $selected_roles) &&
-    function_exists('wp_get_environment_type') &&
-    wp_get_environment_type() === 'local'
-) {
-    $is_local_preview = true;
-    $total_jobs = 60;
-}
-
 $total_pages = max(1, (int) ceil($total_jobs / $per_page));
 $current_page = min($current_page, $total_pages);
-$visible_jobs = $is_local_preview
-    ? array_fill(0, $per_page, null)
-    : array_slice($matched_jobs, ($current_page - 1) * $per_page, $per_page);
+$visible_jobs = array_slice($matched_jobs, ($current_page - 1) * $per_page, $per_page);
 
 $conditions = array_filter(array_merge([$keyword], $selected_shops, $selected_roles));
 $filter_is_open = isset($_GET['filter']) && $_GET['filter'] === 'open';
@@ -157,21 +144,6 @@ get_header('company');
         <section class="p-job-search-results__content js-job-search-results"<?php echo $filter_is_open ? ' hidden' : ''; ?>>
             <div class="p-job-search-results__grid">
                 <?php foreach ($visible_jobs as $job_post) :
-                    if ($is_local_preview) {
-                        $job_id = 0;
-                        $card = [
-                            'shop_name'   => $selected_shops[0] ?? '行徳店',
-                            'job_type'    => ($selected_roles[0] ?? '') === 'どこでも可（レジ）' ? 'レジスタッフ（アルバイト）' : ($selected_roles[0] ?? 'レジスタッフ（アルバイト）'),
-                            'image_url'   => $theme_uri . '/img/page/page-job/job-register.png',
-                            'salary'      => '時給 1100円～',
-                            'railway_line'=> '東西線',
-                            'station_name'=> '行徳駅',
-                            'walking_time'=> '徒歩5分',
-                            'legacy_access' => '',
-                            'detail_url'  => '#',
-                            'entry_url'   => '#',
-                        ];
-                    } else {
                         $job_id = $job_post->ID;
                         $card = [
                             'shop_name'   => trim(wp_strip_all_tags((string) $job_search_get_field('shop_name', $job_id))),
@@ -185,7 +157,6 @@ get_header('company');
                             'detail_url'  => get_permalink($job_id),
                             'entry_url'   => add_query_arg(['job_id' => $job_id], home_url('/job/entry/')),
                         ];
-                    }
                     $card_title = trim($card['shop_name'] . '　' . $card['job_type']) ?: get_the_title($job_id);
                 ?>
                     <article class="p-job-result-card">

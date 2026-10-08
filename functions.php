@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/inc/recruit-interview.php';
+require_once __DIR__ . '/inc/job-search.php';
 
 /**
  * テーマのセットアップ
