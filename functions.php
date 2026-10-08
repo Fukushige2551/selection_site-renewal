@@ -628,6 +628,40 @@ function create_shop_post_type() {
 }
 add_action('init', 'create_shop_post_type');
 
+// 店舗ごとのATM銀行名を管理画面から編集する。
+function foods_register_shop_service_details_fields() {
+    if (!function_exists('acf_add_local_field_group')) {
+        return;
+    }
+
+    acf_add_local_field_group([
+        'key' => 'group_foods_shop_service_details',
+        'title' => '施設・サービス補足',
+        'fields' => [
+            [
+                'key' => 'field_foods_shop_atm_bank_name',
+                'label' => '隣接ATMの銀行名',
+                'name' => 'atm_bank_name',
+                'type' => 'text',
+                'instructions' => 'ATM隣接を選択した店舗で表示する銀行名。',
+            ],
+        ],
+        'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'shop']]],
+    ]);
+}
+add_action('acf/init', 'foods_register_shop_service_details_fields');
+
+function foods_shop_service_choice_labels($field) {
+    if (isset($field['choices']['courier-reception'])) {
+        $field['choices']['courier-reception'] = '宅急便受付';
+    }
+    if (isset($field['choices']['wheelchair-accessible'])) {
+        $field['choices']['wheelchair-accessible'] = '車いす設置';
+    }
+    return $field;
+}
+add_filter('acf/load_field/name=available_services', 'foods_shop_service_choice_labels');
+
 // チラシ
 function register_flyer_post_type() {
     register_post_type('flyer', [

@@ -671,7 +671,7 @@ $payment_groups = [
             ['key' => 'kitaca', 'label' => 'Kitaca', 'icon' => 'kitaca.svg', 'aliases' => ['Kitaca']],
             ['key' => 'suica', 'label' => 'Suica', 'icon' => 'suica.svg', 'aliases' => ['Suica']],
             ['key' => 'pasmo', 'label' => 'PASMO', 'icon' => 'pasmo.svg', 'aliases' => ['PASMO']],
-            ['key' => 'tolca', 'label' => 'tolCa', 'icon' => 'tolca.svg', 'aliases' => ['tolCa', 'TOICA']],
+            ['key' => 'toica', 'label' => 'TOICA', 'icon' => 'tolca.svg', 'aliases' => ['tolCa', 'TOICA']],
             ['key' => 'manaca', 'label' => 'manaca', 'icon' => 'manaca.svg', 'aliases' => ['manaca']],
             ['key' => 'icoca', 'label' => 'ICOCA', 'icon' => 'icoca.svg', 'aliases' => ['ICOCA']],
             ['key' => 'sugoca', 'label' => 'SUGOCA', 'icon' => 'sugoca.svg', 'aliases' => ['SUGOCA']],
@@ -691,12 +691,12 @@ $payment_groups = array_values(array_filter(array_map(function ($group) use ($se
 
 $service_items = [
     ['key' => 'parking', 'label' => '駐車場', 'icon' => 'parking.svg', 'aliases' => ['駐車場', 'P']],
-    ['key' => 'wheelchair-accessible', 'label' => '車いす設備', 'icon' => 'wheelchair.svg', 'aliases' => ['wheelchair', '車いす設備', '車椅子設備', '車いす', '車椅子']],
+    ['key' => 'wheelchair-accessible', 'label' => '車いす設置', 'icon' => 'wheelchair.svg', 'aliases' => ['wheelchair', '車いす設備', '車椅子設備', '車いす', '車椅子']],
     ['key' => 'atm', 'label' => 'ATM隣接', 'icon' => 'atm.svg', 'aliases' => ['ATM隣接', 'ATM']],
     ['key' => 'credit-card', 'label' => 'クレジットカード', 'icon' => 'creditcard.svg', 'aliases' => ['creditcard', 'クレジットカード', 'クレジット']],
     ['key' => 'electronic-payment', 'label' => '各種電子決済', 'icon' => 'qr.svg', 'aliases' => ['qr', '各種電子決済', '電子決済', 'QR', 'QR決済']],
     ['key' => 'aed', 'label' => 'AED', 'icon' => 'aed.svg', 'aliases' => ['AED']],
-    ['key' => 'courier-reception', 'label' => '宅急便受付<br>(持込不可)', 'icon' => 'delivery.svg', 'aliases' => ['delivery', '宅急便受付', '宅急便受付（持込不可）', '宅急便', '配送']],
+    ['key' => 'courier-reception', 'label' => '宅急便受付', 'icon' => 'delivery.svg', 'aliases' => ['delivery', '宅急便受付', '宅急便受付（持込不可）', '宅急便', '配送']],
     ['key' => 'rice-polishing-machine', 'label' => '精米機', 'icon' => 'rice_mill.svg', 'aliases' => ['rice_mill', '精米機']],
 ];
 $service_items = array_values(array_filter($service_items, function ($item) use ($selected_service_keys) {
@@ -1111,6 +1111,9 @@ $recruit_archive_url = get_post_type_archive_link('recruit_part_time') ?: home_u
                     <li>
                         <span><img src="<?php echo esc_url($theme_uri . '/img/page/single-shop/' . $service_item['icon']); ?>" alt=""></span>
                         <?php echo wp_kses($service_item['label'], ['br' => []]); ?>
+                        <?php if ($service_item['key'] === 'atm' && ($atm_bank_name = foods_single_shop_get_field_value('atm_bank_name', $shop_id))) : ?>
+                            <br>（<?php echo esc_html($atm_bank_name); ?>）
+                        <?php endif; ?>
                     </li>
                 <?php endforeach; ?>
             </ul>
