@@ -462,7 +462,7 @@
         ));
         ?>
         <li class="c-shop-card <?php echo esc_attr($prefecture_classes); ?>">
-            <p class="c-shop-card__name"><?php echo esc_html($shop['name']); ?></p>
+            <a class="c-shop-card__name" href="<?php echo esc_url($shop['url']); ?>"><?php echo esc_html($shop['name']); ?></a>
             <div class="c-shop-card__wrapper">
                 <svg class="c-shop-card__address" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M7 8.75C6.0375 8.75 5.25 7.9625 5.25 7C5.25 6.0375 6.0375 5.25 7 5.25C7.9625 5.25 8.75 6.0375 8.75 7C8.75 7.9625 7.9625 8.75 7 8.75ZM12.25 7.175C12.25 3.99875 9.93125 1.75 7 1.75C4.06875 1.75 1.75 3.99875 1.75 7.175C1.75 9.2225 3.45625 11.935 7 15.1725C10.5438 11.935 12.25 9.2225 12.25 7.175ZM7 0C10.675 0 14 2.8175 14 7.175C14 10.08 11.6637 13.5187 7 17.5C2.33625 13.5187 0 10.08 0 7.175C0 2.8175 3.325 0 7 0Z" fill="black"/>
