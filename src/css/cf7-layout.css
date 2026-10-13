@@ -1,0 +1,103 @@
+.foods-cf7 .wpcf7-form-control-wrap { display: block; width: 100%; }
+.foods-cf7 .p-contact-store__options {
+  display: block;
+  width: 87.69vw;
+  margin-inline: calc((100% - 87.69vw) / 2);
+}
+.foods-cf7 .p-contact-store__options .wpcf7-radio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5.13vw 5.64vw;
+}
+.foods-cf7 .p-contact-store__options .wpcf7-list-item { width: auto; margin: 0; }
+.foods-cf7 .p-contact-store__options label {
+  display: flex;
+  align-items: center;
+  gap: 2.31vw;
+  font-size: 4.62vw;
+  line-height: 1.67;
+  white-space: nowrap;
+}
+.foods-cf7 .p-contact-store__options input[type="radio"] {
+  flex: 0 0 6.95vw;
+  width: 6.95vw;
+  height: 6.95vw;
+  margin: 0;
+}
+.foods-cf7 .p-contact-form textarea.wpcf7-textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 87.69vw;
+  max-width: none;
+  height: 72.56vw;
+  min-height: 72.56vw;
+  margin-inline: calc((100% - 87.69vw) / 2);
+  padding: 2vw 4.1vw;
+  appearance: none;
+  border: 0.26vw solid #cecece;
+  border-radius: 5.13vw;
+  background: #f9f9f9;
+  color: #000;
+  font: inherit;
+  font-size: 4.1vw;
+  line-height: 1.5;
+  resize: none;
+}
+.foods-cf7 .p-contact-form textarea.wpcf7-textarea:focus {
+  outline: 2px solid #12356e;
+  outline-offset: 2px;
+}
+@media screen and (min-width: 768px) {
+  .foods-cf7 .p-contact-store__options { width: min(500px, 100%); margin-inline: auto; }
+  .foods-cf7 .p-contact-store__options .wpcf7-radio {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    justify-content: space-between;
+    gap: 34px 0;
+  }
+  .foods-cf7 .p-contact-store__options label { gap: 9px; font-size: 18px; line-height: 30px; }
+  .foods-cf7 .p-contact-store__options input[type="radio"] { flex-basis: 27px; width: 27px; height: 27px; margin: 0; }
+  .foods-cf7 .p-contact-form textarea.wpcf7-textarea {
+    width: 100%;
+    max-width: 500px;
+    height: 283px;
+    min-height: 283px;
+    margin-inline: auto;
+    padding: 14px 16px;
+    border-width: 1px;
+    border-radius: 20px;
+    font-size: 16px;
+  }
+}
+/* Match the PC page's 1920px-based scaling, rather than a fixed 500px group. */
+@media screen and (min-width: 1280px) {
+  .foods-cf7 .p-contact-store__options {
+    width: 26.041667vw;
+    margin-inline: auto;
+  }
+  .foods-cf7 .p-contact-store__options .wpcf7-radio {
+    row-gap: 1.770833vw;
+  }
+  .foods-cf7 .p-contact-store__options label {
+    gap: 0.46875vw;
+    font-size: 0.9375vw;
+    line-height: 1.5625vw;
+  }
+  .foods-cf7 .p-contact-store__options input[type="radio"] {
+    flex-basis: 1.40625vw;
+    width: 1.40625vw;
+    height: 1.40625vw;
+    border-width: 0.052083vw;
+  }
+  .foods-cf7 .p-contact-store__options input[type="radio"]::before {
+    width: 0.364583vw;
+    height: 0.364583vw;
+  }
+}
+.foods-cf7 .p-recruit-entry__type .wpcf7-radio { display: flex; gap: 1em; }
+.foods-cf7 .p-recruit-entry__type .wpcf7-list-item { margin: 0; }
+.foods-cf7 [data-name="privacy_agree"] { width: auto; }
+.foods-cf7 [data-name="privacy_agree"] .wpcf7-list-item { margin: 0; }
+.foods-cf7 [data-name="privacy_agree"] .wpcf7-list-item-label { display: none; }
+.foods-cf7 .p-recruit-entry__field > .wpcf7-form-control-wrap { margin: 0; }
+.foods-cf7 .hidden-fields-container { display: none; }

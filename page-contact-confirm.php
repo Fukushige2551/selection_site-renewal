@@ -3,11 +3,14 @@
 Template Name: お問い合わせ確認
 */
 
+foods_contact_check_request();
+$foods_contact_token = bin2hex(random_bytes(16));
+set_transient('foods_contact_' . $foods_contact_token, true, 30 * MINUTE_IN_SECONDS);
 get_header();
 
 if (!function_exists('foods_contact_confirm_value')) {
     function foods_contact_confirm_value($key) {
-        $value = filter_input(INPUT_POST, $key, FILTER_UNSAFE_RAW);
+        $value = $_POST[$key] ?? '';
 
         if (is_array($value)) {
             $value = implode('、', array_map('sanitize_text_field', $value));
@@ -29,15 +32,7 @@ if (!function_exists('foods_contact_confirm_display')) {
     }
 }
 
-$contact_confirm_fields = [
-    'contact_store' => 'お問い合わせ先',
-    'your_name' => 'お名前',
-    'your_kana' => 'お名前（フリガナ）',
-    'your_email' => 'メールアドレス',
-    'your_email_confirm' => 'メールアドレス（確認）',
-    'your_tel' => '電話番号',
-    'message' => 'お問い合わせ内容',
-];
+$contact_confirm_fields = foods_cf7_labels('contact');
 ?>
 
 <main id="page-contact-confirm" class="c-main p-contact p-contact--confirm">
@@ -68,8 +63,12 @@ $contact_confirm_fields = [
                 <?php endforeach; ?>
             </dl>
 
-            <form class="p-contact-confirm__form" action="<?php echo esc_url(home_url('/contact/thanks/')); ?>" method="post">
-                <?php foreach ($contact_confirm_fields as $key => $label) : ?>
+            <form class="p-contact-confirm__form" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post">
+                <?php wp_nonce_field('foods_contact', 'foods_contact_nonce'); ?>
+                <input type="hidden" name="action" value="foods_contact_send">
+                <input type="hidden" name="privacy_agree" value="1">
+                <input type="hidden" name="foods_contact_token" value="<?php echo esc_attr($foods_contact_token); ?>">
+                <?php foreach (foods_contact_values() as $key => $value) : ?>
                     <input type="hidden" name="<?php echo esc_attr($key); ?>" value="<?php echo esc_attr(foods_contact_confirm_value($key)); ?>">
                 <?php endforeach; ?>
 

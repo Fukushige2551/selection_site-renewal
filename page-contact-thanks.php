@@ -19,6 +19,9 @@ get_header();
         <div class="p-contact-thanks__message">
             <h1 id="contact-thanks-title" class="p-contact-thanks__title">お問い合わせ<br>ありがとうございます</h1>
             <p class="p-contact-thanks__text">送信が完了しました</p>
+            <?php if (isset($_GET['receipt']) && $_GET['receipt'] === 'failed') : ?>
+                <p role="alert">お問い合わせは受け付けましたが、受付メールを送信できませんでした。</p>
+            <?php endif; ?>
         </div>
         <p class="p-contact-thanks__lead">
             お問い合わせいただきありがとうございます。<br>

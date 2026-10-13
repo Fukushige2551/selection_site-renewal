@@ -32,7 +32,11 @@ get_header('company');
         $hero_url = has_post_thumbnail($job_id)
             ? get_the_post_thumbnail_url($job_id, 'full')
             : $asset_uri . '/job-register-hero.png';
-        $entry_url = home_url('/job/entry/?job_id=' . $job_id);
+        $entry_url = add_query_arg([
+            'job_id' => $job_id,
+            'store' => trim(wp_strip_all_tags((string) $shop_name)),
+            'job' => trim(wp_strip_all_tags((string) $job_type)),
+        ], home_url('/job/entry/'));
         $detail_rows = [
             '職種' => $job_type,
             '給与' => $salary,

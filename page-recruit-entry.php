@@ -95,35 +95,7 @@ get_header('company');
         <p>各項目を入力の上、<br class="u-sp-only">「入力確認」ボタンを押してください。</p>
       </div>
 
-      <form class="p-recruit-entry__form" action="<?php echo esc_url(home_url($form_action)); ?>" method="post" novalidate>
-        <fieldset class="p-recruit-entry__type">
-          <legend>応募区分 <em>*必須</em></legend>
-          <div>
-            <label><input type="radio" name="application_type" value="新卒" required <?php checked(!$is_career_entry); ?>><span>新卒</span></label>
-            <label><input type="radio" name="application_type" value="インターン" required><span>インターン</span></label>
-            <label><input type="radio" name="application_type" value="キャリア" required <?php checked($is_career_entry); ?>><span>キャリア</span></label>
-          </div>
-        </fieldset>
-
-        <?php foreach ($fields as [$name, $label, $type, $autocomplete]) : ?>
-          <label class="p-recruit-entry__field p-recruit-entry__field--<?php echo esc_attr(str_replace('_', '-', $name)); ?>">
-            <span><?php echo esc_html($label); ?> <em>*必須</em></span>
-            <input type="<?php echo esc_attr($type); ?>" name="<?php echo esc_attr($name); ?>" autocomplete="<?php echo esc_attr($autocomplete); ?>" required>
-          </label>
-        <?php endforeach; ?>
-
-        <label class="p-recruit-entry__field">
-          <span>その他内容 <em>*必須</em></span>
-          <textarea name="message" required></textarea>
-        </label>
-
-        <label class="p-recruit-entry__privacy">
-          <input type="checkbox" name="privacy_agree" value="1" required>
-          <span><a href="<?php echo esc_url(home_url('/privacy/')); ?>">プライバシーポリシー</a>に同意して送信する</span>
-        </label>
-
-        <button class="p-recruit-entry__submit" type="submit">確認</button>
-      </form>
+      <?php foods_cf7_render($is_career_entry ? 'career' : 'graduate', $form_action, 'p-recruit-entry__form'); ?>
     </div>
   </section>
 </main>

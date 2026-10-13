@@ -1,0 +1,237 @@
+/* Figma 7029:1803 / 7029:2005. Only the two intermediate viewport ranges. */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  body.page-template-page-contact .l-header--sp { height: 70px; padding: 12px 32px 8px; align-items: center; }
+  body.page-template-page-contact .l-header__logo { width: 83px; height: 50px; left: 50%; top: 37px; }
+  body.page-template-page-contact .l-header__bascket__img { width: 35px; }
+  body.page-template-page-contact .l-header__hamburger__img { width: 36px; }
+  #page-contact { padding-top: 82px; }
+  #page-contact .p-contact__breadcrumb { width: calc(100% - 64px); margin: 20px auto 0; padding: 0; min-height: 16px; font-size: 13px; }
+  #page-contact .p-contact__inner { width: 420px; max-width: calc(100% - 64px); }
+  #page-contact .p-contact__hero { padding: 48px 0; }
+  #page-contact .p-contact__title { margin-bottom: 24px; font-size: 24px; line-height: 1.15; }
+  #page-contact .p-contact__lead { width: 385.2px; max-width: 100%; margin-inline: auto; font-size: 19.2px; line-height: 36px; }
+  #page-contact .p-contact__note { width: 385.2px; max-width: 100%; margin: 15.6px auto 0; font-size: 16.8px; line-height: 30px; }
+  #page-contact .p-contact__caution { padding-bottom: 48px; }
+  #page-contact .p-contact-caution { width: 402px; max-width: 100%; margin-inline: auto; border-width: 1.2px; border-radius: 24px; }
+  #page-contact .p-contact-caution__title { padding: 14.4px 0; font-size: 21.6px; line-height: 30px; white-space: nowrap; }
+  #page-contact .p-contact-caution__list { padding: 20.4px 16.8px 30px; font-size: 19.2px; line-height: 36px; }
+  #page-contact .p-contact-caution__list li { padding-bottom: 24px; border-bottom-width: 1.2px; }
+  #page-contact .p-contact-caution__list li + li { padding-top: 24px; }
+  #page-contact .p-contact-caution__list li:last-child { padding-bottom: 0; }
+  #page-contact .p-contact-store__title-text { font-size: 24px; }
+  #page-contact .p-contact-store__required { left: calc(50% + 110.4px); font-size: 16.8px; }
+  #page-contact .p-contact-store__guide { margin: 18px 0 28.8px; font-size: 19.2px; line-height: 36px; }
+  #page-contact .p-contact-store__options { width: 410.4px; margin-inline: auto; }
+  #page-contact .p-contact-store__options .wpcf7-radio { display: grid; grid-template-columns: 130px 112px 112px; justify-content: space-between; gap: 24px 0; }
+  #page-contact .p-contact-store__options .wpcf7-list-item:nth-child(5) { grid-column: span 2; }
+  #page-contact .p-contact-store__options label { gap: 10.8px; font-size: 21.6px; line-height: 36px; }
+  #page-contact .p-contact-store__options input[type="radio"] { flex-basis: 32.4px; width: 32.4px; height: 32.4px; margin: 0; border-width: 1.2px; }
+  #page-contact .p-contact-store__options input[type="radio"]::before { width: 8.4px; height: 8.4px; }
+  #page-contact .p-contact-store__business-note { margin: 30px auto 0; font-size: 16.8px; line-height: 30px; text-align: left; }
+  #page-contact .p-contact-fields { width: 410.4px; max-width: 100%; margin: 52.8px auto 0; }
+  #page-contact .p-contact-fields__item { margin-bottom: 26.4px; }
+  #page-contact .p-contact-fields__item:last-child { margin-bottom: 0; }
+  #page-contact .p-contact-fields__label { margin-bottom: 12px; gap: 9.6px; font-size: 19.2px; line-height: 28.8px; }
+  #page-contact .p-contact-fields__label span { font-size: 16.8px; line-height: 36px; }
+  #page-contact .p-contact-fields__control { height: 55.2px; padding-inline: 19.2px; border-width: 1.2px; border-radius: 27.6px; font-size: 19.2px; }
+  #page-contact .p-contact-form textarea.wpcf7-textarea { width: 100%; max-width: none; height: 339.6px; min-height: 339.6px; margin-inline: 0; padding: 14px 19.2px; border-width: 1.2px; border-radius: 24px; font-size: 19.2px; resize: none; }
+  #page-contact .p-contact-privacy { margin-top: 48px; }
+  #page-contact .p-contact-privacy__label { font-size: 19.2px; line-height: 36px; }
+  #page-contact .p-contact-privacy__checkbox { flex-basis: 25.2px; width: 25.2px; height: 24px; margin-right: 12px; border-width: 1.2px; border-radius: 6px; }
+  #page-contact .p-contact-actions { margin-top: 48px; }
+  #page-contact .p-contact-actions__button { width: 341px; min-height: 48px; font-size: 16px; }
+  #page-contact .p-contact__store { padding-bottom: 64px; }
+}
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  body.page-template-page-contact .l-header-pc__inner { height: 90px; width: calc(100% - 64px); margin-inline: auto; }
+  body.page-template-page-contact .l-header-pc__nav { width: 100%; gap: 16px; justify-content: space-between; }
+  body.page-template-page-contact .l-header-pc__nav__link { font-size: 14px; }
+  body.page-template-page-contact .l-header-pc__nav__logo { width: 105.23px; height: 64.35px; }
+  body.page-template-page-contact .l-header-pc__nav__link.online-shop { width: 199.43px; height: 27.91px; font-size: 9.28px; gap: 5px; }
+  body.page-template-page-contact .l-header-pc__nav__online-shop__img { width: 20.88px; }
+  #page-contact { padding-top: calc(90px + 1.327vw); }
+  #page-contact .p-contact__breadcrumb { width: calc(100% - 64px); margin: 20px auto 0; padding: 0; min-height: 16px; font-size: 13px; }
+  #page-contact .p-contact__inner { width: 790px; max-width: calc(100% - 64px); }
+  #page-contact .p-contact__hero { padding: 50px 0; }
+  #page-contact .p-contact__title { margin-bottom: 29px; font-size: 20px; line-height: 29px; }
+  #page-contact .p-contact__lead { width: 526px; margin-inline: auto; font-size: 16px; line-height: 30px; }
+  #page-contact .p-contact__lead p:first-child br:nth-of-type(2) { display: none; }
+  #page-contact .p-contact__note { width: 370px; margin: 16px auto 0; font-size: 14px; line-height: 25px; }
+  #page-contact .p-contact__caution { padding-bottom: 50px; }
+  #page-contact .p-contact-caution { width: 790px; max-width: 100%; margin-inline: auto; border-width: 1px; border-radius: 20px; }
+  #page-contact .p-contact-caution__title { padding: 12px 18px; font-size: 18px; line-height: 26px; }
+  #page-contact .p-contact-caution__list { padding: 17px 18px 25px; font-size: 16px; line-height: 30px; }
+  #page-contact .p-contact-caution__list li { padding-bottom: 15px; border-bottom-width: 1px; }
+  #page-contact .p-contact-caution__list li + li { padding-top: 15px; }
+  #page-contact .p-contact-caution__list li:last-child { padding-bottom: 0; }
+  #page-contact .p-contact-store__title-text { font-size: 20px; }
+  #page-contact .p-contact-store__required { left: calc(50% + 98px); font-size: 14px; }
+  #page-contact .p-contact-store__guide { margin: 19px 0 45px; font-size: 16px; line-height: 30px; }
+  #page-contact .p-contact-store__guide br { display: none; }
+  #page-contact .p-contact-store__options { width: 501px; margin-inline: auto; }
+  #page-contact .p-contact-store__options .wpcf7-radio { display: grid; grid-template-columns: repeat(4, max-content); justify-content: space-between; gap: 34px 0; }
+  #page-contact .p-contact-store__options label { font-size: 18px; line-height: 30px; gap: 9px; }
+  #page-contact .p-contact-store__options input[type="radio"] { flex-basis: 27px; width: 27px; height: 27px; margin: 0; border-width: 1px; }
+  #page-contact .p-contact-store__options input[type="radio"]::before { width: 7px; height: 7px; }
+  #page-contact .p-contact-store__business-note { margin-top: 29px; font-size: 14px; line-height: 25px; text-align: center; }
+  #page-contact .p-contact-fields { width: 500px; margin: 74px auto 0; }
+  #page-contact .p-contact-fields__item { margin-bottom: 25px; }
+  #page-contact .p-contact-fields__item:last-child { margin-bottom: 0; }
+  #page-contact .p-contact-fields__label { margin-bottom: 10px; gap: 8px; font-size: 16px; line-height: 24px; }
+  #page-contact .p-contact-fields__label span { font-size: 14px; line-height: 30px; }
+  #page-contact .p-contact-fields__control { height: 46px; padding-inline: 16px; border-width: 1px; border-radius: 23px; font-size: 16px; }
+  #page-contact .p-contact-form textarea.wpcf7-textarea { width: 100%; max-width: 500px; height: 283px; min-height: 283px; padding: 14px 16px; border-width: 1px; border-radius: 20px; font-size: 16px; resize: none; }
+  #page-contact .p-contact-privacy { margin-top: 50px; }
+  #page-contact .p-contact-privacy__label { font-size: 16px; line-height: 30px; }
+  #page-contact .p-contact-privacy__checkbox { flex-basis: 21px; width: 21px; height: 20px; margin-right: 10px; border-width: 1px; border-radius: 5px; }
+  #page-contact .p-contact-actions { margin-top: 50px; }
+  #page-contact .p-contact-actions__button { width: 341px; min-height: 48px; font-size: 16px; }
+  #page-contact .p-contact__store { padding-bottom: 64px; }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+@charset "UTF-8";
+/**
+ * Path
+ */
+/**
+ * margin, padding
+ */
+/**
+ * font-family
+ */
+/**
+ * font-weight
+ */
+body.page-template-page-contact .l-footer {
+  position: relative;
+  z-index: 100 !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/footer/footer_bg-sp.svg");
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center top;
+  padding: 80.356px 17.999px 17.999px;
+}
+body.page-template-page-contact .l-footer a:hover {
+  opacity: 0.8;
+  transform: scale(1);
+}
+body.page-template-page-contact .l-footer__logo {
+  width: 194.360px;
+  aspect-ratio: 162/77;
+  margin-bottom: 31.169px;
+}
+body.page-template-page-contact .l-footer__logo__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+body.page-template-page-contact .l-footer__logo--pc {
+  display: none;
+}
+body.page-template-page-contact .l-footer__nav {
+  margin-bottom: 338.364px;
+  width: 213.595px;
+}
+body.page-template-page-contact .l-footer__nav--tab {
+  display: none;
+}
+body.page-template-page-contact .l-footer__nav__group {
+  position: relative;
+  padding: 19.188px 0 21.598px;
+  color: #103675;
+}
+body.page-template-page-contact .l-footer__nav__group::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-image: repeating-linear-gradient(to right, #103675 0 2px, transparent 3px 5px);
+}
+body.page-template-page-contact .l-footer__nav__item {
+  display: flex;
+  justify-content: center;
+  font-size: 19.422px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+body.page-template-page-contact .l-footer__nav__item.list-title {
+  margin-bottom: 17.316px;
+}
+body.page-template-page-contact .l-footer__nav__list {
+  display: flex;
+  gap: 10px 0;
+}
+body.page-template-page-contact .l-footer__nav__list__item {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: 16.754px;
+  white-space: nowrap;
+  width: 50%;
+}
+body.page-template-page-contact .l-footer__nav__list.shop-info {
+  flex-wrap: wrap;
+}
+body.page-template-page-contact .l-footer__nav__list.company-info {
+  flex-flow: column;
+  align-items: center;
+}
+body.page-template-page-contact .l-footer__nav__list.company-info body.page-template-page-contact .l-footer__nav__list__item {
+  width: fit-content;
+}
+body.page-template-page-contact .l-footer__sns {
+  display: flex;
+  align-items: center;
+  gap: 0 23.962px;
+  margin-bottom: 20.358px;
+}
+body.page-template-page-contact .l-footer__sns__img {
+  display: block;
+  background-size: cover;
+  background-position: center;
+}
+body.page-template-page-contact .l-footer__sns__img.youtube {
+  width: 47.970px;
+  aspect-ratio: 40/40;
+}
+body.page-template-page-contact .l-footer__sns__img.instagram, body.page-template-page-contact .l-footer__sns__img.facebook {
+  width: 38.376px;
+  aspect-ratio: 32/32;
+}
+body.page-template-page-contact .l-footer__banner {
+  display: block;
+  margin-bottom: 17.971px;
+}
+body.page-template-page-contact .l-footer__banner__img {
+  display: block;
+  width: 100%;
+}
+body.page-template-page-contact .l-footer__company, body.page-template-page-contact .l-footer__address, body.page-template-page-contact .l-footer__copyright {
+  color: #fff;
+}
+body.page-template-page-contact .l-footer__company, body.page-template-page-contact .l-footer__address {
+  line-height: 1.8;
+  letter-spacing: 10%;
+  font-size: 16.754px;
+  font-weight: bold;
+}
+body.page-template-page-contact .l-footer__address {
+  margin-bottom: 28.782px;
+}
+body.page-template-page-contact .l-footer__copyright {
+  font-size: 14.368px;
+}
+
+
+body.page-template-page-contact .l-footer { background-color: #82d9eb; background-size: 468px auto; aspect-ratio: auto; }
+body.page-template-page-contact .l-footer__nav { display: block; }
+body.page-template-page-contact .l-footer__nav--tab { display: none; }
+body.page-template-page-contact .l-footer__logo--sp { display: block; }
+body.page-template-page-contact .l-footer__logo--pc { display: none; }
+}

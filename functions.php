@@ -1,4 +1,8 @@
 <?php
+require_once __DIR__ . '/inc/contact-mail.php';
+require_once __DIR__ . '/inc/business-contact-mail.php';
+require_once __DIR__ . '/inc/application-mail.php';
+require_once __DIR__ . '/inc/cf7-forms.php';
 
 require_once __DIR__ . '/inc/recruit-interview.php';
 require_once __DIR__ . '/inc/job-search.php';
@@ -289,6 +293,7 @@ function foods_theme_scripts() {
         'page-recruit-entry.php',
         'page-recruit-career-entry.php',
         'page-company-business-contact.php',
+        'page-company-business-contact-result.php',
         'page-job.php',
         'page-job-search.php',
         'page-search.php',
@@ -344,7 +349,9 @@ function foods_theme_scripts() {
 
     // 企業向けお問い合わせ・パートアルバイト応募フォーム共通アセット
     if (is_page() && in_array(basename((string) get_page_template()), [
+        'page-application-result.php',
         'page-company-business-contact.php',
+        'page-company-business-contact-result.php',
         'page-job-entry.php',
     ], true)) {
         foods_enqueue_vite_entry(
@@ -1057,14 +1064,24 @@ function foods_get_recruit_part_time_field_group() {
                 'key' => 'field_recruit_part_time_shop_name',
                 'label' => '店舗名',
                 'name' => 'shop_name',
-                'type' => 'text',
+                'type' => 'select',
+                'choices' => foods_get_job_shop_choices(),
+                'multiple' => 0,
+                'allow_null' => 1,
+                'return_format' => 'value',
+                'ui' => 0,
                 'required' => 0,
             ],
             [
                 'key' => 'field_recruit_part_time_job_type',
                 'label' => '募集職種',
                 'name' => 'job_type',
-                'type' => 'text',
+                'type' => 'select',
+                'choices' => foods_get_job_occupation_choices(),
+                'multiple' => 0,
+                'allow_null' => 1,
+                'return_format' => 'value',
+                'ui' => 0,
                 'required' => 0,
             ],
             [
@@ -1178,7 +1195,7 @@ function foods_register_recruit_part_time_scf_fields() {
         return;
     }
 
-    $version = '20261001-1';
+    $version = '20261008-job-shop-select-1';
     if (get_option('foods_recruit_part_time_scf_fields_version') === $version) {
         return;
     }

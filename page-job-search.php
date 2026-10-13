@@ -155,7 +155,11 @@ get_header('company');
                             'walking_time'=> trim(wp_strip_all_tags((string) $job_search_get_field('walking_time', $job_id))),
                             'legacy_access' => trim(wp_strip_all_tags((string) $job_search_get_field('work_location_access', $job_id))),
                             'detail_url'  => get_permalink($job_id),
-                            'entry_url'   => add_query_arg(['job_id' => $job_id], home_url('/job/entry/')),
+                            'entry_url'   => add_query_arg([
+                                'job_id' => $job_id,
+                                'store' => trim(wp_strip_all_tags((string) $job_search_get_field('shop_name', $job_id))),
+                                'job' => trim(wp_strip_all_tags((string) $job_search_get_field('job_type', $job_id))),
+                            ], home_url('/job/entry/')),
                         ];
                     $card_title = trim($card['shop_name'] . '　' . $card['job_type']) ?: get_the_title($job_id);
                 ?>
