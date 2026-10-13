@@ -40,8 +40,8 @@ foreach($definitions as $kind=>$definition){
  $fields=[]; preg_match_all('/\[(?:text|email|tel|number|textarea|select|radio|checkbox)\*?\s+([^\s\]]+)/',$definition,$matches);
  foreach(array_unique($matches[1]) as $name){if(!in_array($name,['email_confirm','your_email_confirm','privacy_agree'],true))$fields[]=$name.'：['.$name.']';}
  $email=$kind==='contact'?'your_email':'email';
- $props['mail']=array_merge($props['mail'],['active'=>true,'recipient'=>'k.fukushige@cdrive-inc.jp','sender'=>'セレクション <wordpress@foods-selectioncojp.local>','subject'=>'【開発環境】'.$titles[$kind],'body'=>implode("\n\n",$fields),'additional_headers'=>'Reply-To: ['.$email.']','use_html'=>false]);
- $props['mail_2']=array_merge($props['mail_2'],['active'=>true,'recipient'=>'k.fukushige@cdrive-inc.jp','sender'=>'セレクション <wordpress@foods-selectioncojp.local>','subject'=>'【開発環境】'.$titles[$kind].'受付','body'=>"受け付けました。内容を確認のうえ、担当者よりご連絡いたします。\n\n".implode("\n\n",$fields),'additional_headers'=>'','use_html'=>false]);
+ $props['mail']=array_merge($props['mail'],['active'=>true,'sender'=>'セレクション <wordpress@foods-selectioncojp.local>','subject'=>'【開発環境】'.$titles[$kind],'body'=>implode("\n\n",$fields),'additional_headers'=>'Reply-To: ['.$email.']','use_html'=>false]);
+ $props['mail_2']=array_merge($props['mail_2'],['active'=>true,'sender'=>'セレクション <wordpress@foods-selectioncojp.local>','subject'=>'【開発環境】'.$titles[$kind].'受付','body'=>"受け付けました。内容を確認のうえ、担当者よりご連絡いたします。\n\n".implode("\n\n",$fields),'additional_headers'=>'','use_html'=>false]);
  $f->set_properties($props); $f->save(); $map[$kind]=$f->id();
 }
 update_option('foods_cf7_forms',$map,false);

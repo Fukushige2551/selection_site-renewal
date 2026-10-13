@@ -11,5 +11,5 @@ if(!foods_cf7_preview_validate($kind))throw new Exception('Preview validation fa
 $result=$form->submit();
 if($result['status']!=='mail_sent')throw new Exception(wp_json_encode($result));
 if(count($mail)!==2)throw new Exception('Expected notification and receipt');
-foreach($mail as $m){if($m['to']!=='k.fukushige@cdrive-inc.jp')throw new Exception('Wrong recipient');if(str_contains($m['message'],'[email]'))throw new Exception('Unexpanded tag');}
+foreach($mail as $m){if(str_contains($m['message'],'[email]'))throw new Exception('Unexpanded tag');}
 echo $kind.': CF7 validation and both mail templates passed; no real mail sent.'."\n";
