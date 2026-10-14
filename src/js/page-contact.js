@@ -1,4 +1,6 @@
 import '../scss/page-contact.scss';
+import './form-privacy-feedback.js';
+import { validationMessages } from './form-validation-messages.js';
 
 const ERROR_CLASS = 'p-contact-error';
 const INVALID_CLASS = 'is-invalid';
@@ -17,18 +19,18 @@ const validationRules = [
     {
         name: 'your_email',
         message: 'メールアドレスを入力してください。',
-        formatMessage: 'メールアドレスの形式で入力してください。',
-        validate: (field) => field.validity.valid,
+        formatMessage: validationMessages.email,
+        validate: (field) => field.validity.valid && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value),
     },
     {
         name: 'your_email_confirm',
         message: 'メールアドレス（確認）を入力してください。',
-        formatMessage: 'メールアドレスの形式で入力してください。',
-        matchMessage: 'メールアドレスが一致していません。',
+        formatMessage: validationMessages.email,
+        matchMessage: validationMessages.emailMismatch,
         validate: (field, root) => {
             const email = root.querySelector('[name="your_email"]');
 
-            if (!field.validity.valid) {
+            if (!field.validity.valid || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
                 return 'format';
             }
 
@@ -46,7 +48,7 @@ const validationRules = [
     {
         name: 'privacy_agree',
         type: 'checkbox',
-        message: 'プライバシーポリシーへの同意が必要です。',
+        message: validationMessages.consent,
         getTarget: (root) => root.querySelector('.p-contact-privacy__label'),
     },
 ];
@@ -106,7 +108,11 @@ const showError = (root, rule, message) => {
     error.className = ERROR_CLASS;
     error.setAttribute('role', 'alert');
     error.textContent = message;
-    target.insertAdjacentElement('afterend', error);
+    if (target.classList.contains('p-contact-fields__item')) {
+        target.append(error);
+    } else {
+        target.insertAdjacentElement('afterend', error);
+    }
 
     if (Array.isArray(field)) {
         field.forEach((input) => {
@@ -122,13 +128,13 @@ const showError = (root, rule, message) => {
     field?.classList.add(INVALID_CLASS);
 };
 
-const validateRule = (root, rule) => {
+const validateRule = (root, rule, showRequired = true) => {
     const field = getField(root, rule);
 
     if (Array.isArray(field)) {
         const isChecked = field.some((input) => input.checked);
 
-        if (!isChecked) {
+        if (!isChecked && showRequired) {
             showError(root, rule, rule.message);
             return false;
         }
@@ -142,7 +148,7 @@ const validateRule = (root, rule) => {
     }
 
     if (rule.type === 'checkbox') {
-        if (!field.checked) {
+        if (!field.checked && showRequired) {
             showError(root, rule, rule.message);
             return false;
         }
@@ -152,6 +158,7 @@ const validateRule = (root, rule) => {
     }
 
     if (!field.value.trim()) {
+        if (!showRequired) { clearError(root, rule); return true; }
         showError(root, rule, rule.message);
         return false;
     }
@@ -215,8 +222,8 @@ const setupContactValidation = () => {
         const fields = Array.isArray(field) ? field : [field];
 
         fields.filter(Boolean).forEach((input) => {
-            input.addEventListener('input', () => validateRule(root, rule));
-            input.addEventListener('change', () => validateRule(root, rule));
+            input.addEventListener('input', () => validateRule(root, rule, false));
+            input.addEventListener('change', () => validateRule(root, rule, false));
         });
     });
 

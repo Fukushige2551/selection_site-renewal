@@ -1,0 +1,68 @@
+@use "sass:list";
+
+.p-business-form-page--entry {
+  .p-business-form-page__content {
+    width: min(87.468031vw, 600px);
+    padding: 49px 0 81px;
+    h1 { font-size: 20px; line-height: 23px; }
+  }
+  .p-business-form-page__lead {
+    width: 100%; margin: 27px 0 29px;
+    font-size: 16px; line-height: 28px; font-weight: 400;
+  }
+  .u-business-form-sp { display: inline; }
+  .p-business-form {
+    font-family: "Noto Sans JP", sans-serif;
+    &__field { margin-bottom: var(--entry-bottom, 0px); }
+    &__label {
+      display: flex; align-items: center; gap: var(--entry-required-gap, 0px);
+      min-height: 34px; margin: 0; padding-left: 4px;
+      font-size: 16px; font-weight: 500; line-height: 24px;
+      em { font-size: 14px; font-weight: 500; line-height: 30px; }
+    }
+    input, select, textarea {
+      width: 100%; border: 1px solid #e7eae6; background-color: #f9faf5;
+      font-family: inherit; font-size: 16px; font-weight: 500;
+    }
+    input, select { height: 46px; padding: 0 16px; border-radius: 23px; }
+    textarea { height: 283px; padding: 14px 16px; border-radius: 20px; resize: none; }
+    &__select-wrap::before { content: none; }
+    select {
+      appearance: none; padding-right: 50px;
+      background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/component/svg/icon_entry-select.svg");
+      background-size: 23px 23px; background-position: right 11px center; background-repeat: no-repeat;
+    }
+    select option { font-size: 16px; }
+    &__privacy {
+      gap: 9px; margin-top: 40px; font-size: 16px; font-weight: 400; line-height: 30px;
+      input { flex: 0 0 21px; width: 21px; min-width: 21px; max-width: 21px;
+        height: 20px; min-height: 20px; max-height: 20px;
+        margin: 0; padding: 0; border-color: #cecece; border-radius: 5px; background-color: #f9f9f9; }
+      .wpcf7-list-item { margin: 0; }
+    }
+    &__submit {
+      width: min(342px, 100%); height: 60px; margin-top: 34px;
+      border-radius: 20px; background: #00a784; font-size: 18px; font-weight: 700;
+    }
+  }
+  $spacing: (store: (24px, 0px), job: (25px, 10px), name: (26px, 8px),
+    name_kana: (25px, 0px), phone: (26px, 7px), age: (24px, 8px),
+    email: (25px, 5px), email_confirm: (24px, 0px), contact_time: (26px, 0px), message: (0px, 0px));
+  @each $name, $values in $spacing {
+    .p-business-form__field:has([name="#{$name}"]) {
+      --entry-bottom: #{list.nth($values, 1)};
+      --entry-required-gap: #{list.nth($values, 2)};
+    }
+  }
+  @media (min-width: 768px) {
+    .p-business-form-page__content { width: 600px; padding-top: 28px; }
+  }
+  @media (min-width: 1024px) {
+    .p-business-form-page__content { padding: 19px 0 100px; }
+    .p-business-form-page__lead { margin: 22px 0 63px; }
+    .u-business-form-sp { display: none; }
+    .p-business-form__privacy { margin-top: 30px; }
+    .p-business-form__privacy input { border-color: #e7eae6; background-color: #f9faf5; }
+    .p-business-form__submit { width: 372px; margin-top: 75px; }
+  }
+}

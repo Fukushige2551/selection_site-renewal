@@ -55,20 +55,20 @@ function foods_cf7_deliver($kind, $thanks) {
         if ($return !== null && !$return) { $track_receipt_failure(); }
         return $return;
     };
-    if (in_array($kind, ['business', 'contact'], true)) {
+    if (in_array($kind, ['business', 'contact', 'job'], true)) {
         add_action('wp_mail_failed', $track_receipt_failure);
         add_filter('pre_wp_mail', $track_short_circuit, PHP_INT_MAX);
     }
     try {
         $result = $form->submit();
     } finally {
-        if (in_array($kind, ['business', 'contact'], true)) {
+        if (in_array($kind, ['business', 'contact', 'job'], true)) {
             remove_action('wp_mail_failed', $track_receipt_failure);
             remove_filter('pre_wp_mail', $track_short_circuit, PHP_INT_MAX);
         }
     }
     if (($result['status'] ?? '') !== 'mail_sent') {
-        if (in_array($kind, ['business', 'contact'], true)) {
+        if (in_array($kind, ['business', 'contact', 'job'], true)) {
             wp_die(foods_cf7_business_error_html($result, $form, $kind), '送信エラー', ['response' => 400, 'back_link' => true]);
         }
         wp_die(esc_html($result['message'] ?? '送信できませんでした。'), '送信エラー', ['response' => 400, 'back_link' => true]);
@@ -87,7 +87,7 @@ function foods_cf7_business_error_html($result, $form, $kind = 'business') {
     ]);
     $translations = [
         'invalid_required' => '入力・選択してください。',
-        'invalid_email' => 'メールアドレスの形式を確認してください。',
+        'invalid_email' => 'メールアドレスの形式を確認してください。（例：name@example.com）',
         'invalid_url' => 'https://などを含むURLを入力してください。',
         'invalid_tel' => '半角数字の電話・FAX番号を入力してください。（例：03-1234-5678）',
         'invalid_number' => '数値を入力してください。',
@@ -122,7 +122,7 @@ function foods_cf7_business_error_html($result, $form, $kind = 'business') {
 add_filter('wpcf7_validate_email*', static function ($result, $tag) {
     if (!in_array($tag->name, ['email_confirm', 'your_email_confirm'], true)) { return $result; }
     $original = $tag->name === 'email_confirm' ? 'email' : 'your_email';
-    if (($_POST[$tag->name] ?? null) !== ($_POST[$original] ?? null)) { $result->invalidate($tag, 'メールアドレスが一致していません。'); }
+    if (($_POST[$tag->name] ?? null) !== ($_POST[$original] ?? null)) { $result->invalidate($tag, 'メールアドレスと確認用メールアドレスが一致していません。'); }
     return $result;
 }, 20, 2);
 add_filter('wpcf7_form_tag', static function ($tag) {
@@ -133,7 +133,10 @@ add_filter('wpcf7_form_tag', static function ($tag) {
     if (in_array($tag->name, ['store', 'job'], true) && isset($_GET[$tag->name]) && is_string($_GET[$tag->name])) {
         $value = sanitize_text_field(wp_unslash($_GET[$tag->name]));
         $index = array_search($value, $tag->values, true);
-        if ($index !== false) { $tag->options[] = 'default:' . ($index + 1); }
+        if ($index !== false) {
+            $tag->options = array_values(array_filter($tag->options, static fn($option) => !str_starts_with($option, 'default:')));
+            $tag->options[] = 'default:' . ($index + 1);
+        }
     }
     return $was_array ? get_object_vars($tag) : $tag;
 });
@@ -174,7 +177,10 @@ function foods_cf7_preview_validate($kind, &$errors = null) {
         }
         if (($tag->is_required() || $tag->basetype === 'radio') && $value === '') { $errors[] = $label . 'を入力・選択してください。'; continue; }
         if ($value === '') { continue; }
-        if ($tag->basetype === 'email' && !is_email($value)) { $errors[] = $label . 'の形式を確認してください。'; }
+        if ($kind === 'job' && $tag->name === 'age' && !preg_match('/^[0-9]+$/D', $value)) {
+            $errors[] = '年齢は0以上の整数で入力してください。';
+        }
+        if ($tag->basetype === 'email' && !is_email($value)) { $errors[] = 'メールアドレスの形式を確認してください。（例：name@example.com）'; }
         if ($tag->basetype === 'url' && !filter_var($value, FILTER_VALIDATE_URL)) { $errors[] = $label . 'はhttps://などを含むURLを入力してください。'; }
         if ($kind === 'business' && $tag->basetype === 'tel' && !wpcf7_is_tel($value)) { $errors[] = $label . 'は半角数字の番号を入力してください。（例：03-1234-5678）'; }
         if ($tag->basetype === 'number' && !is_numeric($value)) { $errors[] = $label . 'は数値を入力してください。'; }

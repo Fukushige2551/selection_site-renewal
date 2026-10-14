@@ -1,4 +1,54 @@
 <?php
+function foods_job_mail_addresses() {
+    return ['行徳店' => '04', '八潮店' => '03', '西原店' => '05', '三郷店' => '02',
+        '西船橋店' => '06', '花野井店' => '07', 'しいの木台店' => '08',
+        '水産加工センター' => '010', '青葉台店' => '011', '松戸店' => '12', '西新井店' => '13'];
+}
+function foods_job_mail_address($store) {
+    if (is_array($store)) { $store = count($store) === 1 ? reset($store) : ''; }
+    $addresses = foods_job_mail_addresses();
+    return is_string($store) && isset($addresses[$store]) ? 'noreply' . $addresses[$store] . '@foods-selection.co.jp' : '';
+}
+add_filter('wpcf7_special_mail_tags', static function ($output, $name) {
+    if (!in_array($name, ['_foods_job_address', '_foods_job_store'], true)) { return $output; }
+    $submission = WPCF7_Submission::get_instance();
+    $store = $submission ? $submission->get_posted_data('store') : '';
+    if ($name === '_foods_job_address') { return foods_job_mail_address($store); }
+    if (is_array($store)) { $store = count($store) === 1 ? reset($store) : ''; }
+    return is_string($store) ? $store : '';
+}, 20, 2);
+add_filter('wpcf7_contact_form_properties', static function ($properties, $form) {
+    $ids = get_option('foods_cf7_forms', []);
+    if ((int) $form->id() !== (int) ($ids['job'] ?? 0) && $form->name() !== 'foods-form-job') { return $properties; }
+    $subject = 'パートナー採用応募申込＜[_foods_job_store]＞';
+    $prefix = '差出人: [name] <[email]>' . "\n題名: " . $subject . "\n\n";
+    $properties['form'] = preg_replace_callback('/\[select\*?\s+(store|job|contact_time)\b([^\]]*)\]/', static function ($match) {
+        $options = preg_replace('/\s+(?:include_blank|first_as_label|default:[^\s\]]+)/', '', $match[2]);
+        $type = $match[1] === 'contact_time' ? 'select' : 'select*';
+        return '[' . $type . ' ' . $match[1] . ' default:1' . $options . ']';
+    }, $properties['form']);
+    $properties['form'] = preg_replace_callback('/\[number\*?\s+age\b([^\]]*)\]/', static function ($match) {
+        $options = preg_replace('/\s+(?:min|step):[^\s\]]+/', '', $match[1]);
+        return '[number* age min:0 step:1' . $options . ']';
+    }, $properties['form']);
+    $details = "[ お名前 ]\n[name]\n\n[ お名前（カナ） ]\n[name_kana]\n\n[ 年齢 ]\n[age]歳\n\n[ 電話番号 ]\n[phone]\n\n[ メールアドレス ]\n[email]\n\n[ 希望職種 ]\n[job]\n\n[ 都合の良い連絡時間帯 ]\n[contact_time]\n\n[ その他 ]\n[message]";
+    $signature = 'このメールは 株式会社セレクション採用サイト (http://foods-selection.co.jp/job) の';
+    $properties['mail'] = array_merge($properties['mail'], [
+        'active' => true, 'recipient' => '[_foods_job_address]', 'sender' => '[name] <[email]>',
+        'subject' => $subject, 'additional_headers' => '', 'attachments' => '',
+        'use_html' => false, 'exclude_blank' => false,
+        'body' => $prefix . $details . "\n\n--\n" . $signature . 'お問い合わせフォームから送信されました',
+    ]);
+    $properties['mail_2'] = array_merge($properties['mail_2'], [
+        'active' => true, 'recipient' => '[email]',
+        'sender' => '株式会社セレクション採用サイト <[_foods_job_address]>',
+        'subject' => '株式会社セレクション・パートナー採用応募申込ありがとうございます',
+        'additional_headers' => '', 'attachments' => '', 'use_html' => false, 'exclude_blank' => false,
+        'body' => $prefix . "この度は、株式会社セレクション採用情報WEBサイトからご応募いただきありがとうございます。\n後ほど、担当者からご連絡いたします。\nいましばらくお待ちください。\n\nご応募いただきました内容は下記の通りです。\n\n"
+            . $details . "\n\n--\n" . $signature . '採用情報応募フォームから送信されました',
+    ]);
+    return $properties;
+}, 20, 2);
 function foods_application_config($kind) {
     $paths = ['job' => '/job/entry/', 'graduate' => '/recruit/entry/', 'career' => '/recruit/career-entry/'];
     if (!isset($paths[$kind])) { return null; }
@@ -48,7 +98,10 @@ function foods_application_send() {
     $kind = $_POST['foods_application_kind'] ?? '';
     $kind = is_string($kind) ? $kind : '';
     foods_application_check_request($kind);
-    if (wp_parse_url(home_url(), PHP_URL_HOST) !== 'foods-selectioncojp.local') {
+    if ($kind === 'job' && !foods_job_mail_address(foods_application_values($kind)['store'] ?? '')) {
+        wp_die('応募店舗の採用メール送信先が未設定です。送信先の設定をご確認ください。', '送信設定の確認', ['response' => 503, 'back_link' => true]);
+    }
+    if ($kind !== 'job' && wp_parse_url(home_url(), PHP_URL_HOST) !== 'foods-selectioncojp.local') {
         wp_die('この環境のメール送信先は設定されていません。', '送信設定の確認', ['response' => 503, 'back_link' => true]);
     }
     $token = $_POST['foods_application_token'] ?? '';

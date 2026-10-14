@@ -1,0 +1,7 @@
+.application-field-error {
+  margin: 6px 4px 0;
+  color: #d60000;
+  font-size: 14px;
+  line-height: 1.6;
+  &[hidden] { display: none; }
+}

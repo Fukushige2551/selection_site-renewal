@@ -2,8 +2,32 @@ import '../scss/page-company-business-form.scss';
 import '../scss/page-company-business-contact-design.scss';
 import '../scss/page-company-business-confirm.scss';
 import '../scss/page-company-business-thanks.scss';
+import '../scss/page-job-entry-design.scss';
+import '../scss/page-job-confirm.scss';
+import '../scss/page-job-thanks.scss';
+import './form-privacy-feedback.js';
+import './application-validation.js';
+import { validationMessages } from './form-validation-messages.js';
 
 const form = document.querySelector('.p-business-form');
+if (form?.closest('.p-business-form-page--entry')) {
+    for (const select of form.querySelectorAll('select')) {
+        if (select.name === 'contact_time') {
+            select.required = false;
+            select.setAttribute('aria-required', 'false');
+            select.closest('.p-business-form__field')?.querySelector('.p-business-form__label em')?.remove();
+            continue;
+        }
+        select.required = true;
+        select.setAttribute('aria-required', 'true');
+        const label = select.closest('.p-business-form__field')?.querySelector('.p-business-form__label');
+        if (label && !label.querySelector('em')) {
+            const required = document.createElement('em');
+            required.textContent = '*必須';
+            label.append(required);
+        }
+    }
+}
 
 export function businessByteLength(value, name, sending = false) {
     if (sending) value = value.replace(/[ \n\r\t\v\0]+$/, '');
@@ -37,7 +61,7 @@ if (siteUrl) {
         // Native URL validation works even when CF7 sets novalidate on the form.
         siteUrl.setCustomValidity('');
         const valid = siteUrl.value === '' || !siteUrl.validity.typeMismatch;
-        const message = valid ? '' : 'https://などを含むURLを入力してください。（例：https://example.com）';
+        const message = valid ? '' : validationMessages.url;
         siteUrl.setCustomValidity(message);
         siteUrl.setAttribute('aria-invalid', String(!valid));
         error.textContent = message;
@@ -54,7 +78,7 @@ form?.addEventListener('submit', (event) => {
     const confirmation = form.querySelector('[name="email_confirm"]');
 
     if (email && confirmation && email.value !== confirmation.value) {
-        confirmation.setCustomValidity('メールアドレスが一致していません。');
+        confirmation.setCustomValidity(validationMessages.emailMismatch);
     } else {
         confirmation?.setCustomValidity('');
     }
@@ -191,26 +215,34 @@ if (form?.closest('.p-business-form-page--contact')) {
         error.className = 'business-field-error';
         error.setAttribute('aria-live', 'polite');
         error.hidden = true;
-        const host = control.closest('.wpcf7-form-control-wrap') || control.parentElement;
-        host.append(error);
+        const privacyRow = control.type === 'checkbox' ? control.closest('.p-business-form__privacy') : null;
+        if (privacyRow) {
+            const feedback = document.createElement('div');
+            feedback.className = 'business-privacy-feedback';
+            privacyRow.before(feedback);
+            feedback.append(privacyRow, error);
+        } else {
+            const host = control.closest('.wpcf7-form-control-wrap') || control.parentElement;
+            host.append(error);
+        }
         const proxy = control === inquirySelect ? control.parentElement.querySelector('.business-select__trigger') : control;
         for (const element of new Set([control, proxy])) {
             if (!element) continue;
             element.setAttribute('aria-describedby', [element.getAttribute('aria-describedby'), error.id].filter(Boolean).join(' '));
         }
-        const validate = () => {
+        const validate = (showRequired = false) => {
             control.setCustomValidity('');
             const label = labels[control.name];
             let message = '';
             if (control.required && (control.type === 'checkbox' ? !control.checked : !control.value.trim())) {
-                message = control.type === 'checkbox' ? 'プライバシーポリシーへの同意が必要です。' : `${label}を${control.tagName === 'SELECT' ? '選択' : '入力'}してください。`;
+                if (showRequired === true) message = control.type === 'checkbox' ? 'プライバシーポリシーへの同意が必要です。' : `${label}を${control.tagName === 'SELECT' ? '選択' : '入力'}してください。`;
             } else if (byteLimits[control.name] && Math.max(businessByteLength(control.value, control.name), businessByteLength(control.value, control.name, true)) > byteLimits[control.name]) {
                 const examples = control.name === 'email' ? '半角英数字で100文字まで' : control.name === 'contact_name' ? '漢字・ひらがなだけなら16文字まで' : '漢字・ひらがなだけなら333文字まで。改行も長さに含みます';
                 message = `${label}が長すぎます。（${examples}）`;
             } else if (control.value && control.type === 'email' && (control.validity.typeMismatch || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(control.value))) {
-                message = 'メールアドレスの形式を確認してください。（例：name@example.com）';
+                message = validationMessages.email;
             } else if (control.name === 'email_confirm' && control.value && control.value !== form.querySelector('[name="email"]')?.value) {
-                message = 'メールアドレスと確認用メールアドレスが一致していません。';
+                message = validationMessages.emailMismatch;
             } else if (control.value && control.type === 'tel' && !isBusinessTelephone(control.value)) {
                 message = `${label}の形式を確認してください。半角数字で入力してください。（例：03-1234-5678）`;
             } else if (control.validity.tooLong) {
@@ -238,7 +270,7 @@ if (form?.closest('.p-business-form-page--contact')) {
         if (confirmation?.value) validators.get(confirmation)?.();
     });
     validateBusinessFields = () => {
-        const results = [...validators.values()].map(validate => validate());
+        const results = [...validators.values()].map(validate => validate(true));
         return results.every(Boolean);
     };
     form.addEventListener('reset', () => setTimeout(() => {

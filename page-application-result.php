@@ -10,7 +10,7 @@ if ($is_confirm) {
 }
 get_header('company');
 ?>
-<main class="c-main p-business-form-page">
+<main class="c-main p-business-form-page<?php echo $kind === 'job' ? ($is_confirm ? ' p-job-confirm-page' : ' p-job-thanks-page') : ''; ?>">
     <nav class="c-breadcrumb p-business-form-page__breadcrumb" aria-label="パンくず">
         <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a><span aria-hidden="true">›</span>
         <a href="<?php echo esc_url(home_url($config['path'])); ?>"><?php echo esc_html($config['title']); ?></a><span aria-hidden="true">›</span>
@@ -19,7 +19,7 @@ get_header('company');
     <section class="p-business-form-page__content">
         <h1><?php echo $is_confirm ? '応募内容の確認' : 'ご応募ありがとうございます'; ?></h1>
         <?php if ($is_confirm) : ?>
-            <p class="p-business-form-page__lead">内容をご確認のうえ、「送信」ボタンを押してください。</p>
+            <p class="p-business-form-page__lead">内容をご確認のうえ、<?php if ($kind === 'job') : ?><br class="p-job-confirm-page__break"><?php endif; ?>「送信」ボタンを押してください。</p>
             <form class="p-business-form" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post">
                 <?php wp_nonce_field('foods_application_' . $kind, 'foods_application_nonce'); ?>
                 <input type="hidden" name="action" value="foods_application_send">
@@ -29,14 +29,14 @@ get_header('company');
                     <input type="hidden" name="<?php echo esc_attr($key); ?>" value="<?php echo esc_attr($value); ?>">
                 <?php endforeach; ?>
                 <?php foreach (foods_cf7_labels($kind) as $key => $label) : ?>
-                    <div class="p-business-form__field"><span class="p-business-form__label"><?php echo esc_html($label); ?></span><div><?php echo nl2br(esc_html($values[$key] !== '' ? $values[$key] : '－')); ?></div></div>
+                    <div class="p-business-form__field"><span class="p-business-form__label"><?php echo esc_html($label); ?></span><div class="p-application-confirm__value"><?php echo nl2br(esc_html($values[$key] !== '' ? $values[$key] . ($kind === 'job' && $key === 'age' ? '歳' : '') : '－')); ?></div></div>
                 <?php endforeach; ?>
                 <button class="p-business-form__submit" type="submit">送信</button>
             </form>
         <?php else : ?>
-            <p class="p-business-form-page__lead">ご応募を受け付けました。<br>内容を確認のうえ、担当者よりご連絡いたします。</p>
+            <p class="p-business-form-page__lead">ご応募を受け付けました。<br>内容を確認のうえ、<?php if ($kind === 'job') : ?><br class="p-job-thanks-page__break"><?php endif; ?>担当者よりご連絡いたします。</p>
             <?php if (isset($_GET['receipt']) && $_GET['receipt'] === 'failed') : ?><p role="alert">ご応募は受け付けましたが、受付メールを送信できませんでした。</p><?php endif; ?>
-            <a href="<?php echo esc_url(home_url('/')); ?>">TOPへ戻る</a>
+            <a class="p-application-thanks__home" href="<?php echo esc_url(home_url('/')); ?>">TOPへ戻る</a>
         <?php endif; ?>
     </section>
 </main>

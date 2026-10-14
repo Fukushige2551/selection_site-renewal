@@ -44,8 +44,7 @@
   resize: none;
 }
 .foods-cf7 .p-contact-form textarea.wpcf7-textarea:focus {
-  outline: 2px solid #12356e;
-  outline-offset: 2px;
+  outline: none;
 }
 @media screen and (min-width: 768px) {
   .foods-cf7 .p-contact-store__options { width: min(500px, 100%); margin-inline: auto; }

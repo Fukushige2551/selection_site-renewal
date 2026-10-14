@@ -262,8 +262,7 @@
         box-sizing: border-box;
 
         &:focus {
-            outline: 2px solid #12356e;
-            outline-offset: 2px;
+            outline: none;
         }
 
         &--textarea {
@@ -353,7 +352,7 @@
 }
 
 .p-contact-error {
-    margin: 2.05vw 0 0;
+    margin: 6px 0 0;
     color: #ff0b0b;
     font-family: v.$font-family-ZenKakuAntique;
     font-size: 3.59vw;
@@ -1082,14 +1081,14 @@
 }
 @media screen and (min-width: 768px) {
     .p-contact-error {
-        margin-top: clamp(0.8rem, 0.62vw, 1.2rem);
+        margin-top: 6px;
         font-size: clamp(1.4rem, 1.08vw, 2rem);
     }
 }
 
 @media screen and (min-width: 1280px) {
     .p-contact-error {
-        margin-top: 0.42vw;
+        margin-top: 6px;
         font-size: 0.7292vw;
     }
 }

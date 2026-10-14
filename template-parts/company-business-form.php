@@ -24,7 +24,7 @@ $contact_fields = [
 $entry_store_choices = $is_entry ? array_values(foods_get_job_shop_choices()) : [];
 
 $entry_fields = [
-    ['store', '応募店舗', 'select', false, $entry_store_choices],
+    ['store', '応募店舗', 'select', true, $entry_store_choices],
     ['job', '応募職種', 'select', true, array_values(foods_get_job_occupation_choices())],
     ['name', 'お名前', 'text', true, 'name'],
     ['name_kana', 'お名前（カナ）', 'text', false],
@@ -50,7 +50,7 @@ if ($is_entry) {
 get_header('company');
 ?>
 
-<main class="p-business-form-page<?php echo $is_entry ? '' : ' p-business-form-page--contact'; ?>">
+<main class="p-business-form-page<?php echo $is_entry ? ' p-business-form-page--entry' : ' p-business-form-page--contact'; ?>">
     <nav class="p-business-form-page__breadcrumb" aria-label="パンくずリスト">
         <?php if ($is_entry) : ?>
             <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a><span aria-hidden="true">›</span>

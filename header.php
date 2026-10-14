@@ -108,7 +108,7 @@
         </div>
         <div class="l-header__nav__group">
             <p class="l-header__nav__group__title">
-                <span class="l-header__nav__group__title--position-fix">パート・アルバイト募集</span>
+                <a href="<?php echo esc_url(home_url('/job/')); ?>" class="l-header__nav__group__title--position-fix">パート・アルバイト募集</a>
             </p>
         </div>
         <div class="l-header__nav__group">
@@ -139,7 +139,7 @@
             <a class="l-header-pc__nav__link" href="<?php echo esc_url(home_url('/')); ?>">
                 <img class="l-header-pc__nav__logo" src="<?php echo esc_url(get_template_directory_uri() . '/img/component/selection-logo.svg'); ?>" alt="FOODS MARKET Selection" width="311" height="189">
             </a>
-            <a class="l-header-pc__nav__link recruit--part-time" href="">パート・アルバイト募集</a>
+            <a class="l-header-pc__nav__link recruit--part-time" href="<?php echo esc_url(home_url('/job/')); ?>">パート・アルバイト募集</a>
             <a class="l-header-pc__nav__link" href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a>
             <a class="l-header-pc__nav__link online-shop" href="https://foods-selection.shops.jp/" target="_blank" rel="noopener noreferrer">
                 <picture>

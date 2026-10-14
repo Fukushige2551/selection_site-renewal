@@ -78,11 +78,18 @@
 
     // CF7 wraps its checkbox in a list item; keep the text and checkbox aligned.
     &__privacy {
+      display: grid;
+      grid-template-columns: 21px minmax(0, 1fr);
+      align-items: center;
       gap: 10px;
       margin-top: 40px;
       font-family: "Noto Sans JP", sans-serif;
       font-size: 16px;
       line-height: 30px;
+
+      .wpcf7-form-control-wrap { width: 21px; }
+      .wpcf7-list-item { display: block; margin: 0; }
+      .wpcf7-list-item label { display: flex; align-items: center; margin: 0; }
 
       input {
         flex: 0 0 21px;
@@ -93,6 +100,7 @@
         min-height: 20px;
         max-height: 20px;
         border-radius: 5px;
+        margin: 0;
         padding: 0;
         border-color: #e7eae6;
         background-color: #f9faf5;
@@ -139,6 +147,13 @@
     &[hidden] { display: none; }
   }
   input[name="site_url"][aria-invalid="true"] { border-color: #d60000; }
+  .business-privacy-feedback {
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
+
+    .business-field-error { margin: 6px 0 0 31px; }
+  }
   .p-business-form [aria-invalid="true"] { border-color: #d60000; }
 
   .business-select {
