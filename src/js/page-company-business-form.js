@@ -7,6 +7,7 @@ import '../scss/page-job-confirm.scss';
 import '../scss/page-job-thanks.scss';
 import './form-privacy-feedback.js';
 import './application-validation.js';
+import './form-kana-date-validation.js';
 import { validationMessages } from './form-validation-messages.js';
 
 const form = document.querySelector('.p-business-form');

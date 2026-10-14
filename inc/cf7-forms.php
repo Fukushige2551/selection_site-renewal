@@ -55,20 +55,20 @@ function foods_cf7_deliver($kind, $thanks) {
         if ($return !== null && !$return) { $track_receipt_failure(); }
         return $return;
     };
-    if (in_array($kind, ['business', 'contact', 'job'], true)) {
+    if (in_array($kind, ['business', 'contact', 'job', 'graduate', 'career'], true)) {
         add_action('wp_mail_failed', $track_receipt_failure);
         add_filter('pre_wp_mail', $track_short_circuit, PHP_INT_MAX);
     }
     try {
         $result = $form->submit();
     } finally {
-        if (in_array($kind, ['business', 'contact', 'job'], true)) {
+        if (in_array($kind, ['business', 'contact', 'job', 'graduate', 'career'], true)) {
             remove_action('wp_mail_failed', $track_receipt_failure);
             remove_filter('pre_wp_mail', $track_short_circuit, PHP_INT_MAX);
         }
     }
     if (($result['status'] ?? '') !== 'mail_sent') {
-        if (in_array($kind, ['business', 'contact', 'job'], true)) {
+        if (in_array($kind, ['business', 'contact', 'job', 'graduate', 'career'], true)) {
             wp_die(foods_cf7_business_error_html($result, $form, $kind), '送信エラー', ['response' => 400, 'back_link' => true]);
         }
         wp_die(esc_html($result['message'] ?? '送信できませんでした。'), '送信エラー', ['response' => 400, 'back_link' => true]);
@@ -141,6 +141,52 @@ add_filter('wpcf7_form_tag', static function ($tag) {
     return $was_array ? get_object_vars($tag) : $tag;
 });
 
+function foods_form_kana_names() { return ['name_kana', 'contact_name_kana', 'your_name_kana']; }
+function foods_form_format_error($name, $value) {
+    if ($value === '') { return ''; }
+    if (in_array($name, foods_form_kana_names(), true) && !preg_match('/^[ァ-ヺー・　 ｦ-ﾟ]+$/uD', $value)) {
+        return 'カナはカタカナと空白で入力してください。';
+    }
+    if ($name === 'birth_date') {
+        if (!preg_match('/^([0-9]{4})\/([0-9]{2})\/([0-9]{2})$/D', $value, $match)
+            || !checkdate((int) $match[2], (int) $match[3], (int) $match[1]) || str_replace('/', '-', $value) > current_time('Y-m-d')) {
+            return '生年月日は2000/01/01の形式で、実在する今日以前の日付を入力してください。';
+        }
+    }
+    return '';
+}
+function foods_form_normalize_kana($name, $value) {
+    return in_array($name, foods_form_kana_names(), true) && function_exists('mb_convert_kana')
+        ? mb_convert_kana($value, 'KVas', 'UTF-8') : $value;
+}
+add_filter('wpcf7_contact_form_properties', static function ($properties, $form) {
+    $ids = get_option('foods_cf7_forms', []);
+    if (!in_array((int) $form->id(), array_map('intval', array_values($ids)), true)
+        && !in_array($form->name(), ['foods-form-contact', 'foods-form-business', 'foods-form-job', 'foods-form-graduate', 'foods-form-career'], true)) { return $properties; }
+    $properties['form'] = preg_replace_callback('/\[(?:text|date)(\*?)\s+birth_date\b([^\]]*)\]/', static function ($match) {
+        $options = preg_replace('/\s+(?:max|min):[^\s\]]+|\s+placeholder(?:\s+"[^"]*")?/', '', $match[2]);
+        return '[text' . $match[1] . ' birth_date' . $options . ' placeholder "2000/01/01"]';
+    }, $properties['form']);
+    return $properties;
+}, 30, 2);
+add_filter('wpcf7_validate', static function ($result, $tags) {
+    foreach ($tags as $tag) {
+        if (!in_array($tag->name, array_merge(foods_form_kana_names(), ['birth_date']), true)) { continue; }
+        $raw = $_POST[$tag->name] ?? '';
+        $value = is_string($raw) ? trim(wp_unslash($raw)) : '';
+        $error = foods_form_format_error($tag->name, $value);
+        if ($error !== '') { $result->invalidate($tag, $error); }
+    }
+    return $result;
+}, 40, 2);
+add_filter('wpcf7_posted_data', static function ($data) {
+    foreach (foods_form_kana_names() as $name) {
+        if (isset($data[$name]) && is_string($data[$name]) && foods_form_format_error($name, $data[$name]) === '') {
+            $data[$name] = foods_form_normalize_kana($name, $data[$name]);
+        }
+    }
+    return $data;
+});
 function foods_cf7_values($kind) {
     $form = foods_cf7_form($kind);
     $values = [];
@@ -156,6 +202,9 @@ function foods_cf7_values($kind) {
             $values[$tag->name] = is_string($raw) ? ($tag->basetype === 'textarea' ? sanitize_textarea_field(wp_unslash($raw)) : sanitize_text_field(wp_unslash($raw))) : '';
         }
     }
+    foreach (foods_form_kana_names() as $name) {
+        if (isset($values[$name]) && foods_form_format_error($name, $values[$name]) === '') { $values[$name] = foods_form_normalize_kana($name, $values[$name]); }
+    }
     return $values;
 }
 
@@ -165,6 +214,9 @@ function foods_cf7_preview_validate($kind, &$errors = null) {
     if (!$form) { $errors[] = 'フォームの設定が見つかりません。'; return false; }
     $values = foods_cf7_values($kind);
     $labels = foods_cf7_labels($kind);
+    if (in_array($kind, ['graduate', 'career'], true)) {
+        $labels = array_merge($labels, foods_application_config($kind)['fields'], ['email_confirm' => '確認用メールアドレス']);
+    }
     foreach ($form->scan_form_tags() as $tag) {
         if (!$tag->name) { continue; }
         $value = $values[$tag->name];
@@ -177,12 +229,14 @@ function foods_cf7_preview_validate($kind, &$errors = null) {
         }
         if (($tag->is_required() || $tag->basetype === 'radio') && $value === '') { $errors[] = $label . 'を入力・選択してください。'; continue; }
         if ($value === '') { continue; }
+        $format_error = foods_form_format_error($tag->name, $value);
+        if ($format_error !== '') { $errors[] = $label . '：' . $format_error; }
         if ($kind === 'job' && $tag->name === 'age' && !preg_match('/^[0-9]+$/D', $value)) {
             $errors[] = '年齢は0以上の整数で入力してください。';
         }
         if ($tag->basetype === 'email' && !is_email($value)) { $errors[] = 'メールアドレスの形式を確認してください。（例：name@example.com）'; }
         if ($tag->basetype === 'url' && !filter_var($value, FILTER_VALIDATE_URL)) { $errors[] = $label . 'はhttps://などを含むURLを入力してください。'; }
-        if ($kind === 'business' && $tag->basetype === 'tel' && !wpcf7_is_tel($value)) { $errors[] = $label . 'は半角数字の番号を入力してください。（例：03-1234-5678）'; }
+        if (in_array($kind, ['business', 'graduate', 'career'], true) && $tag->basetype === 'tel' && !wpcf7_is_tel($value)) { $errors[] = $label . 'は半角数字の番号を入力してください。（例：03-1234-5678）'; }
         if ($tag->basetype === 'number' && !is_numeric($value)) { $errors[] = $label . 'は数値を入力してください。'; }
         if (in_array($tag->basetype, ['select', 'radio', 'checkbox'], true) && !in_array($value, $tag->values, true)) { $errors[] = $label . 'の選択内容を確認してください。'; }
     }

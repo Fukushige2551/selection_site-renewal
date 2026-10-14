@@ -49,6 +49,39 @@ add_filter('wpcf7_contact_form_properties', static function ($properties, $form)
     ]);
     return $properties;
 }, 20, 2);
+add_filter('wpcf7_contact_form_properties', static function ($properties, $form) {
+    $ids = get_option('foods_cf7_forms', []);
+    foreach (['graduate', 'career'] as $kind) {
+        if ((int) $form->id() !== (int) ($ids[$kind] ?? 0) && $form->name() !== 'foods-form-' . $kind) { continue; }
+        $address = 'noreply01@foods-selection.co.jp';
+        $title = $kind === 'graduate' ? '新卒採用' : 'キャリア採用';
+        $subject = $title . '応募申込＜' . $title . '＞';
+        $prefix = '差出人: [name] <[email]>' . "\n題名: " . $subject . "\n\n";
+        $details = [];
+        foreach (foods_application_config($kind)['fields'] as $name => $label) {
+            $details[] = '[ ' . $label . " ]\n[" . $name . ']';
+        }
+        $details = implode("\n\n", $details);
+        $signature = "\n\n--\nこのメールは 株式会社セレクション採用サイト (http://foods-selection.co.jp/job) の";
+        $properties['mail'] = array_merge($properties['mail'], [
+            'active' => true, 'recipient' => $address,
+            'sender' => '株式会社セレクション採用サイト <' . ($kind === 'graduate' ? $address : '[email]') . '>',
+            'subject' => $subject,
+            'body' => $prefix . $details . $signature . 'お問い合わせフォームから送信されました',
+            'additional_headers' => '', 'attachments' => '', 'use_html' => false, 'exclude_blank' => false,
+        ]);
+        $properties['mail_2'] = array_merge($properties['mail_2'], [
+            'active' => true, 'recipient' => '[email]',
+            'sender' => '株式会社セレクション採用サイト <' . $address . '>',
+            'subject' => '株式会社セレクション・' . $title . '応募申込ありがとうございます',
+            'body' => $prefix . "この度は、株式会社セレクション採用情報WEBサイトからご応募いただきありがとうございます。\n後ほど、担当者からご連絡いたします。\nいましばらくお待ちください。\n\nご応募いただきました内容は下記の通りです。\n\n"
+                . $details . $signature . '採用情報応募フォームから送信されました',
+            'additional_headers' => '', 'attachments' => '', 'use_html' => false, 'exclude_blank' => false,
+        ]);
+        break;
+    }
+    return $properties;
+}, 20, 2);
 function foods_application_config($kind) {
     $paths = ['job' => '/job/entry/', 'graduate' => '/recruit/entry/', 'career' => '/recruit/career-entry/'];
     if (!isset($paths[$kind])) { return null; }
@@ -74,25 +107,46 @@ function foods_application_validate($kind, $values) {
 }
 function foods_application_check_request($kind) {
     $nonce = $_POST['foods_application_nonce'] ?? '';
-    if (!foods_application_config($kind) || !is_string($nonce) || !wp_verify_nonce($nonce, 'foods_application_' . $kind) || !foods_cf7_preview_validate($kind)) {
+    if (!foods_application_config($kind) || !is_string($nonce) || !wp_verify_nonce($nonce, 'foods_application_' . $kind)) {
+        if (in_array($kind, ['graduate', 'career'], true)) {
+            wp_die('入力画面の有効期限が切れています。応募画面を再読み込みしてから再度お進みください。', '入力画面の再読み込み', ['response' => 400, 'back_link' => true]);
+        }
         wp_die('入力内容を確認し、応募画面から再度お進みください。', '入力内容の確認', ['response' => 400, 'back_link' => true]);
     }
+    if (!foods_cf7_preview_validate($kind, $errors)) {
+        $message = in_array($kind, ['graduate', 'career'], true)
+            ? '<ul><li>' . implode('</li><li>', array_map('esc_html', $errors)) . '</li></ul>'
+            : '入力内容を確認し、応募画面から再度お進みください。';
+        wp_die($message, '入力内容の確認', ['response' => 400, 'back_link' => true]);
+    }
+}
+function foods_recruit_route_query($path) {
+    foreach ([$path, 'recurit', 'recruit'] as $candidate) {
+        $page = get_page_by_path($candidate, OBJECT, 'page');
+        if ($page && $page->post_status === 'publish') { return ['page_id' => $page->ID]; }
+    }
+    return ['pagename' => $path];
 }
 add_action('parse_request', static function ($wp) {
+    if (trim($wp->request, '/') === 'recruit/entry') {
+        $wp->query_vars = array_merge(foods_recruit_route_query('recruit/entry'), ['foods_graduate_entry' => 1]);
+    }
     foreach (['job', 'graduate', 'career'] as $kind) {
         $config = foods_application_config($kind);
         foreach (['confirm', 'thanks'] as $step) {
             if (trim($wp->request, '/') === trim($config['path'], '/') . '/' . $step) {
-                $wp->query_vars = ['pagename' => $kind === 'job' ? 'job' : trim($config['path'], '/'), 'foods_application_kind' => $kind, 'foods_application_step' => $step];
+                $page_query = $kind === 'job' ? ['pagename' => 'job'] : foods_recruit_route_query(trim($config['path'], '/'));
+                $wp->query_vars = array_merge($page_query, ['foods_application_kind' => $kind, 'foods_application_step' => $step]);
             }
         }
     }
 });
 add_filter('page_template', static function ($template) {
+    if (get_query_var('foods_graduate_entry')) { return __DIR__ . '/../page-recruit-entry.php'; }
     return get_query_var('foods_application_kind') ? __DIR__ . '/../page-application-result.php' : $template;
 }, 20);
 add_filter('redirect_canonical', static function ($redirect) {
-    return get_query_var('foods_application_kind') ? false : $redirect;
+    return get_query_var('foods_application_kind') || get_query_var('foods_graduate_entry') ? false : $redirect;
 });
 function foods_application_send() {
     $kind = $_POST['foods_application_kind'] ?? '';
@@ -100,9 +154,6 @@ function foods_application_send() {
     foods_application_check_request($kind);
     if ($kind === 'job' && !foods_job_mail_address(foods_application_values($kind)['store'] ?? '')) {
         wp_die('応募店舗の採用メール送信先が未設定です。送信先の設定をご確認ください。', '送信設定の確認', ['response' => 503, 'back_link' => true]);
-    }
-    if ($kind !== 'job' && wp_parse_url(home_url(), PHP_URL_HOST) !== 'foods-selectioncojp.local') {
-        wp_die('この環境のメール送信先は設定されていません。', '送信設定の確認', ['response' => 503, 'back_link' => true]);
     }
     $token = $_POST['foods_application_token'] ?? '';
     if (!is_string($token) || !preg_match('/^[a-f0-9]{32}$/D', $token) || get_transient('foods_application_' . $token) !== $kind) {

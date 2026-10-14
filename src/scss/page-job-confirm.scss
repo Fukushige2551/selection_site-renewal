@@ -1,5 +1,6 @@
-// Job confirmation only: recruitment results and completion screens keep their styles.
-.p-job-confirm-page {
+// Shared confirmation design for part-time, graduate and career applications.
+.p-job-confirm-page,
+.p-recruit-confirm-page {
   .p-business-form-page__content {
     width: min(87.468031vw, 600px);
     padding: 49px 0 81px;

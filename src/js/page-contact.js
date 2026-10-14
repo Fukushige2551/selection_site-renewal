@@ -239,3 +239,4 @@ if (document.readyState === 'loading') {
 } else {
     setupContactValidation();
 }
+import './form-kana-date-validation.js';
