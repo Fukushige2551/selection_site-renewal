@@ -55,21 +55,21 @@ function foods_cf7_deliver($kind, $thanks) {
         if ($return !== null && !$return) { $track_receipt_failure(); }
         return $return;
     };
-    if ($kind === 'business') {
+    if (in_array($kind, ['business', 'contact'], true)) {
         add_action('wp_mail_failed', $track_receipt_failure);
         add_filter('pre_wp_mail', $track_short_circuit, PHP_INT_MAX);
     }
     try {
         $result = $form->submit();
     } finally {
-        if ($kind === 'business') {
+        if (in_array($kind, ['business', 'contact'], true)) {
             remove_action('wp_mail_failed', $track_receipt_failure);
             remove_filter('pre_wp_mail', $track_short_circuit, PHP_INT_MAX);
         }
     }
     if (($result['status'] ?? '') !== 'mail_sent') {
-        if ($kind === 'business') {
-            wp_die(foods_cf7_business_error_html($result, $form), '送信エラー', ['response' => 400, 'back_link' => true]);
+        if (in_array($kind, ['business', 'contact'], true)) {
+            wp_die(foods_cf7_business_error_html($result, $form, $kind), '送信エラー', ['response' => 400, 'back_link' => true]);
         }
         wp_die(esc_html($result['message'] ?? '送信できませんでした。'), '送信エラー', ['response' => 400, 'back_link' => true]);
     }
@@ -79,9 +79,10 @@ function foods_cf7_deliver($kind, $thanks) {
     exit;
 }
 
-function foods_cf7_business_error_html($result, $form) {
-    $labels = array_merge(foods_cf7_labels('business'), [
+function foods_cf7_business_error_html($result, $form, $kind = 'business') {
+    $labels = array_merge(foods_cf7_labels($kind), [
         'email_confirm' => '確認用メールアドレス',
+        'your_email_confirm' => '確認用メールアドレス',
         'privacy_agree' => 'プライバシーポリシーへの同意',
     ]);
     $translations = [
@@ -145,7 +146,12 @@ function foods_cf7_values($kind) {
         if (!$tag->name) { continue; }
         $raw = $_POST[$tag->name] ?? '';
         if (is_array($raw)) { $raw = implode('、', array_filter($raw, 'is_string')); }
-        $values[$tag->name] = is_string($raw) ? ($tag->basetype === 'textarea' ? sanitize_textarea_field(wp_unslash($raw)) : sanitize_text_field(wp_unslash($raw))) : '';
+        if (in_array($kind, ['business', 'contact'], true) && isset(foods_business_byte_limits($kind)[$tag->name])) {
+            // Preserve legacy text in hidden values; templates escape it at output.
+            $values[$tag->name] = is_string($raw) ? rtrim(wp_unslash($raw)) : '';
+        } else {
+            $values[$tag->name] = is_string($raw) ? ($tag->basetype === 'textarea' ? sanitize_textarea_field(wp_unslash($raw)) : sanitize_text_field(wp_unslash($raw))) : '';
+        }
     }
     return $values;
 }
@@ -160,12 +166,14 @@ function foods_cf7_preview_validate($kind, &$errors = null) {
         if (!$tag->name) { continue; }
         $value = $values[$tag->name];
         $label = $labels[$tag->name] ?? ($tag->name === 'privacy_agree' ? 'プライバシーポリシーへの同意' : $tag->name);
+        if (in_array($kind, ['business', 'contact'], true) && isset(foods_business_byte_limits($kind)[$tag->name])) {
+            $limit = foods_business_byte_limits($kind)[$tag->name];
+            $sending = in_array($_POST['action'] ?? '', ['foods_business_contact_send', 'foods_contact_send'], true);
+            $raw = $_POST[$tag->name] ?? '';
+            if (is_string($raw) && foods_business_byte_length(wp_unslash($raw), $tag->name, $sending) > $limit) { $errors[] = $label . 'はUTF-8で' . $limit . 'バイト以内で入力してください。'; }
+        }
         if (($tag->is_required() || $tag->basetype === 'radio') && $value === '') { $errors[] = $label . 'を入力・選択してください。'; continue; }
         if ($value === '') { continue; }
-        if ($kind === 'business' && isset(foods_business_byte_limits()[$tag->name])) {
-            $limit = foods_business_byte_limits()[$tag->name];
-            if (foods_business_byte_length($value, $tag->name) > $limit) { $errors[] = $label . 'はUTF-8で' . $limit . 'バイト以内で入力してください。'; }
-        }
         if ($tag->basetype === 'email' && !is_email($value)) { $errors[] = $label . 'の形式を確認してください。'; }
         if ($tag->basetype === 'url' && !filter_var($value, FILTER_VALIDATE_URL)) { $errors[] = $label . 'はhttps://などを含むURLを入力してください。'; }
         if ($kind === 'business' && $tag->basetype === 'tel' && !wpcf7_is_tel($value)) { $errors[] = $label . 'は半角数字の番号を入力してください。（例：03-1234-5678）'; }
@@ -178,29 +186,57 @@ function foods_cf7_preview_validate($kind, &$errors = null) {
     return !$errors;
 }
 
-function foods_business_byte_limits() {
+function foods_business_byte_limits($kind = 'business') {
+    if ($kind === 'contact') { return ['your_name' => 50, 'your_email' => 100, 'message' => 2000]; }
     return ['contact_name' => 50, 'email' => 100, 'message' => 1000];
 }
-function foods_business_byte_length($value, $name) {
-    // The backup checks UTF-8 bytes before converting half-width kana for mail.
-    if ($name === 'message') { $value = preg_replace('/\r\n|\r|\n/', "\r\n", $value); }
+function foods_business_byte_length($value, $name, $sending = false) {
+    // Hidden HTML attributes are decoded by the browser; only newline-to-br persists.
+    if ($sending) { $value = rtrim($value); }
+    if ($name === 'message') { $value = preg_replace('/\r\n|\r|\n/', $sending ? '<br>' : "\r\n", $value); }
     return strlen($value);
 }
 add_filter('wpcf7_validate', static function ($result, $tags) {
     $submission = WPCF7_Submission::get_instance();
     $form = $submission ? $submission->get_contact_form() : null;
-    $business = foods_cf7_form('business');
-    if (!$form || !$business || $form->id() !== $business->id()) { return $result; }
+    $kind = foods_cf7_legacy_kind($form);
+    if (!$kind) { return $result; }
     foreach ($tags as $tag) {
-        $limit = foods_business_byte_limits()[$tag->name] ?? null;
+        $limit = foods_business_byte_limits($kind)[$tag->name] ?? null;
         if (!$limit) { continue; }
-        $value = $submission->get_posted_data($tag->name);
-        if (is_string($value) && foods_business_byte_length($value, $tag->name) > $limit) {
+        $raw = $_POST[$tag->name] ?? '';
+        $value = is_string($raw) ? wp_unslash($raw) : '';
+        if (is_string($value) && foods_business_byte_length($value, $tag->name, true) > $limit) {
             $result->invalidate($tag, 'UTF-8で' . $limit . 'バイト以内で入力してください。');
         }
     }
     return $result;
 }, 30, 2);
+
+// Preserve raw legacy text and convert kana only when rendering contact mail.
+add_filter('wpcf7_mail_tag_replaced', static function ($replaced, $submitted, $html, $tag) {
+    $submission = WPCF7_Submission::get_instance();
+    $form = $submission ? $submission->get_contact_form() : null;
+    $kind = foods_cf7_legacy_kind($form);
+    if (!$kind) { return $replaced; }
+    $name = $tag->field_name();
+    if (!array_key_exists($name, foods_business_byte_limits($kind))) { return $replaced; }
+    $raw = $_POST[$name] ?? null;
+    $value = is_string($raw) ? wp_unslash($raw) : (string) $submitted;
+    $value = rtrim($value);
+    if ($name === 'message') { $value = str_replace('<br>', "\n", $value); }
+    if (!in_array($name, ['email', 'your_email'], true) && function_exists('mb_convert_kana')) { $value = mb_convert_kana($value, 'K', 'UTF-8'); }
+    return $html ? esc_html($value) : $value;
+}, 30, 4);
+
+function foods_cf7_legacy_kind($form) {
+    if (!$form) { return null; }
+    foreach (['business', 'contact'] as $kind) {
+        $target = foods_cf7_form($kind);
+        if ($target && (int) $target->id() === (int) $form->id()) { return $kind; }
+    }
+    return null;
+}
 
 function foods_cf7_labels($kind) {
     $form = foods_cf7_form($kind);

@@ -77,8 +77,11 @@ function foods_contact_validate($values) {
 
 function foods_contact_check_request() {
     $nonce = $_POST['foods_contact_nonce'] ?? '';
-    if (!is_string($nonce) || !wp_verify_nonce($nonce, 'foods_contact') || !foods_cf7_preview_validate('contact')) {
+    if (!is_string($nonce) || !wp_verify_nonce($nonce, 'foods_contact')) {
         wp_die('入力内容を確認し、お問い合わせ画面から再度お進みください。', '入力内容の確認', ['response' => 400, 'back_link' => true]);
+    }
+    if (!foods_cf7_preview_validate('contact', $errors)) {
+        wp_die(esc_html(implode(' ', $errors)), '入力内容の確認', ['response' => 400, 'back_link' => true]);
     }
 }
 

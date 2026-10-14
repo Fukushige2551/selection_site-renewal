@@ -156,6 +156,18 @@ const validateRule = (root, rule) => {
         return false;
     }
 
+    const byteLimit = { your_name: 50, your_email: 100, message: 2000 }[rule.name];
+    if (byteLimit) {
+        const raw = rule.name === 'message' ? field.value.replace(/\r\n|\r|\n/g, '\r\n') : field.value;
+        let sending = field.value.replace(/[ \n\r\t\v\0]+$/, '');
+        if (rule.name === 'message') sending = sending.replace(/\r\n|\r|\n/g, '<br>');
+        const encoder = new TextEncoder();
+        if (Math.max(encoder.encode(raw).length, encoder.encode(sending).length) > byteLimit) {
+            showError(root, rule, `入力内容が長すぎます。UTF-8で${byteLimit}バイト以内にしてください。`);
+            return false;
+        }
+    }
+
     if (rule.validate) {
         const result = rule.validate(field, root);
 

@@ -5,8 +5,9 @@ import '../scss/page-company-business-thanks.scss';
 
 const form = document.querySelector('.p-business-form');
 
-export function businessByteLength(value, name) {
-    if (name === 'message') value = value.replace(/\r\n|\r|\n/g, '\r\n');
+export function businessByteLength(value, name, sending = false) {
+    if (sending) value = value.replace(/[ \n\r\t\v\0]+$/, '');
+    if (name === 'message') value = value.replace(/\r\n|\r|\n/g, sending ? '<br>' : '\r\n');
     return new TextEncoder().encode(value).length;
 }
 
@@ -203,7 +204,7 @@ if (form?.closest('.p-business-form-page--contact')) {
             let message = '';
             if (control.required && (control.type === 'checkbox' ? !control.checked : !control.value.trim())) {
                 message = control.type === 'checkbox' ? 'プライバシーポリシーへの同意が必要です。' : `${label}を${control.tagName === 'SELECT' ? '選択' : '入力'}してください。`;
-            } else if (byteLimits[control.name] && businessByteLength(control.value, control.name) > byteLimits[control.name]) {
+            } else if (byteLimits[control.name] && Math.max(businessByteLength(control.value, control.name), businessByteLength(control.value, control.name, true)) > byteLimits[control.name]) {
                 const examples = control.name === 'email' ? '半角英数字で100文字まで' : control.name === 'contact_name' ? '漢字・ひらがなだけなら16文字まで' : '漢字・ひらがなだけなら333文字まで。改行も長さに含みます';
                 message = `${label}が長すぎます。（${examples}）`;
             } else if (control.value && control.type === 'email' && (control.validity.typeMismatch || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(control.value))) {

@@ -16,7 +16,7 @@ if (!function_exists('foods_contact_confirm_value')) {
             $value = implode('、', array_map('sanitize_text_field', $value));
         }
 
-        return is_string($value) ? trim(wp_unslash($value)) : '';
+        return is_string($value) ? rtrim(wp_unslash($value)) : '';
     }
 }
 
