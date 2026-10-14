@@ -1,0 +1,39 @@
+.p-business-form-page--thanks {
+  .p-business-form-page__breadcrumb {
+    width: 100%; min-height: 79px; margin: 0;
+    padding: 20px 21px 39px; gap: 8px; font-size: 13px; line-height: 20px;
+    a, span { white-space: normal; }
+  }
+  .p-business-form-page__content {
+    width: min(87.468031vw, 600px); padding: 0 0 89px; text-align: center;
+    h1 { font-size: 20px; line-height: 1.6; }
+  }
+  .p-business-form-page__lead {
+    width: 100%; margin: 22px 0 40px; font-size: 16px; line-height: 28px; font-weight: 400;
+  }
+  [role="alert"] {
+    margin: 0 0 24px; padding: 16px; border: 1px solid #e7eae6;
+    border-radius: 16px; background: #f9faf5; color: #d60000; font-size: 14px; line-height: 1.7;
+  }
+  .p-business-thanks__home {
+    display: flex; align-items: center; justify-content: center;
+    width: min(342px, 100%); min-height: 60px; margin: 0 auto; padding: 14px 24px;
+    border-radius: 20px; background: #00a784; color: #fff;
+    font-family: "Noto Sans JP", sans-serif; font-size: 18px; font-weight: 700;
+    letter-spacing: .1em; text-decoration: none;
+    &:focus-visible { outline: 2px solid #103675; outline-offset: 3px; }
+  }
+  @media (min-width: 768px) {
+    .p-business-form-page__breadcrumb { padding-left: 40px; padding-right: 40px; }
+    .p-business-form-page__content { width: 600px; }
+  }
+  @media (min-width: 1024px) {
+    .p-business-form-page__breadcrumb { min-height: 99px; padding-top: 21px; padding-bottom: 58px; }
+    .p-business-form-page__content { padding-bottom: 100px; }
+    .p-business-form-page__lead { margin-bottom: 60px; }
+    .p-business-thanks__home { width: 372px; }
+  }
+  @media (min-width: 1280px) {
+    .p-business-form-page__breadcrumb { padding-left: max(40px, calc((100vw - 1714px) / 2)); }
+  }
+}

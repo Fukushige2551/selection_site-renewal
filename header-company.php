@@ -9,7 +9,7 @@ $company_header_links = [
     ['label' => 'セレクションのこだわり', 'url' => home_url('/select/')],
     ['label' => 'レシピ', 'url' => get_post_type_archive_link('recipe')],
     ['label' => 'パート・アルバイト募集', 'url' => get_post_type_archive_link('recruit_part_time'), 'modifier' => 'recruit'],
-    ['label' => 'お問い合わせ', 'url' => home_url('/contact/'), 'modifier' => 'contact'],
+    ['label' => 'お問い合わせ', 'url' => home_url('/company/business/contact/'), 'modifier' => 'contact'],
 ];
 ?>
 <!DOCTYPE html>

@@ -50,7 +50,7 @@ if ($is_entry) {
 get_header('company');
 ?>
 
-<main class="p-business-form-page">
+<main class="p-business-form-page<?php echo $is_entry ? '' : ' p-business-form-page--contact'; ?>">
     <nav class="p-business-form-page__breadcrumb" aria-label="パンくずリスト">
         <?php if ($is_entry) : ?>
             <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a><span aria-hidden="true">›</span>
@@ -61,7 +61,7 @@ get_header('company');
         <?php else : ?>
             <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a><span aria-hidden="true">›</span>
             <a href="<?php echo esc_url(home_url('/company/')); ?>">企業情報</a><span aria-hidden="true">›</span>
-            <a href="<?php echo esc_url(home_url('/company/business/')); ?>">生産者・お取引先の方へ</a><span aria-hidden="true">›</span>
+            <a href="<?php echo esc_url(home_url('/company/business/')); ?>">企業の方へ</a><span aria-hidden="true">›</span>
             <span><?php echo esc_html($page_title); ?></span>
         <?php endif; ?>
     </nav>
@@ -71,7 +71,7 @@ get_header('company');
         <?php if ($is_entry) : ?>
             <p class="p-business-form-page__lead">各項目を入力の上、<br class="u-business-form-sp">「入力確認」ボタンを押してください。</p>
         <?php else : ?>
-            <p class="p-business-form-page__lead">お取引希望の業者様は下記の問い合わせ<br class="u-business-form-sp">フォームよりお問合せください。<br>各項目を入力の上、<br class="u-business-form-sp">「入力確認」ボタンを押してください。</p>
+            <p class="p-business-form-page__lead">お取引希望の業者様は下記の問い合わせフォームよりお問合せください。<br>各項目を入力の上、<br class="u-business-form-sp">「入力確認」ボタンを押してください。</p>
         <?php endif; ?>
 
         <?php foods_cf7_render($is_entry ? 'job' : 'business', $form_action, 'p-business-form'); ?>

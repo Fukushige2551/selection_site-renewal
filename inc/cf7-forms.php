@@ -23,6 +23,14 @@ function foods_cf7_render($kind, $path, $class) {
     $html = str_replace('name="_wpcf7"', 'name="foods_cf7_id"', $html);
     $html = str_replace('name="privacy_agree[]"', 'name="privacy_agree"', $html);
     $html = str_replace('aria-required="true"', 'aria-required="true" required', $html);
+    if ($kind === 'business') {
+        $html = str_replace(['住所1', '住所2（建物名）'], ['住所１', '住所２（建物名）'], $html);
+        // Keep CF7's empty-value option and required validation, but match the blank design.
+        $html = preg_replace_callback('/(<select\b[^>]*\bname="inquiry_type"[^>]*>)(.*?)(<\/select>)/s', static function ($match) {
+            $options = preg_replace('/(<option\b[^>]*\bvalue=""[^>]*>).*?(<\/option>)/s', '$1$2', $match[2], 1);
+            return $match[1] . $options . $match[3];
+        }, $html);
+    }
     if ($kind === 'contact') {
         $html = str_replace('<label><input type="radio"', '<label class="p-contact-store__option"><input type="radio"', $html);
         $html = str_replace('<input type="checkbox"', '<input class="p-contact-privacy__checkbox" type="checkbox"', $html);
@@ -38,12 +46,76 @@ function foods_cf7_deliver($kind, $thanks) {
     $_POST['_wpcf7'] = (string) $form->id();
     $_POST['_wpcf7_unit_tag'] = 'wpcf7-f' . $form->id() . '-o1';
     $_POST['_wpnonce'] = wpcf7_create_nonce();
-    $result = $form->submit();
+    $receipt_failed = false;
+    $track_receipt_failure = static function () use (&$receipt_failed) {
+        $mail = WPCF7_Mail::get_current();
+        if ($mail && $mail->name() === 'mail_2') { $receipt_failed = true; }
+    };
+    $track_short_circuit = static function ($return) use ($track_receipt_failure) {
+        if ($return !== null && !$return) { $track_receipt_failure(); }
+        return $return;
+    };
+    if ($kind === 'business') {
+        add_action('wp_mail_failed', $track_receipt_failure);
+        add_filter('pre_wp_mail', $track_short_circuit, PHP_INT_MAX);
+    }
+    try {
+        $result = $form->submit();
+    } finally {
+        if ($kind === 'business') {
+            remove_action('wp_mail_failed', $track_receipt_failure);
+            remove_filter('pre_wp_mail', $track_short_circuit, PHP_INT_MAX);
+        }
+    }
     if (($result['status'] ?? '') !== 'mail_sent') {
+        if ($kind === 'business') {
+            wp_die(foods_cf7_business_error_html($result, $form), '送信エラー', ['response' => 400, 'back_link' => true]);
+        }
         wp_die(esc_html($result['message'] ?? '送信できませんでした。'), '送信エラー', ['response' => 400, 'back_link' => true]);
     }
-    wp_safe_redirect(home_url($thanks));
+    $redirect = home_url($thanks);
+    if ($receipt_failed) { $redirect = add_query_arg('receipt', 'failed', $redirect); }
+    wp_safe_redirect($redirect);
     exit;
+}
+
+function foods_cf7_business_error_html($result, $form) {
+    $labels = array_merge(foods_cf7_labels('business'), [
+        'email_confirm' => '確認用メールアドレス',
+        'privacy_agree' => 'プライバシーポリシーへの同意',
+    ]);
+    $translations = [
+        'invalid_required' => '入力・選択してください。',
+        'invalid_email' => 'メールアドレスの形式を確認してください。',
+        'invalid_url' => 'https://などを含むURLを入力してください。',
+        'invalid_tel' => '半角数字の電話・FAX番号を入力してください。（例：03-1234-5678）',
+        'invalid_number' => '数値を入力してください。',
+        'invalid_too_short' => '入力文字数が不足しています。',
+        'invalid_too_long' => '入力文字数が上限を超えています。',
+        'invalid_number_too_small' => '入力値が下限を下回っています。',
+        'invalid_number_too_large' => '入力値が上限を超えています。',
+        'invalid_enum_value' => '選択内容を確認してください。',
+    ];
+    $items = [];
+    foreach (($result['invalid_fields'] ?? []) as $name => $error) {
+        $reason = (string) ($error['reason'] ?? '');
+        $message = preg_match('/[\x{3040}-\x{30ff}\x{4e00}-\x{9fff}]/u', $reason)
+            ? $reason : '入力形式・文字数・選択内容を確認してください。';
+        foreach ($translations as $key => $translation) {
+            if ($reason !== '' && $reason === $form->message($key)) { $message = $translation; break; }
+        }
+        $items[] = '<li>' . esc_html(($labels[$name] ?? '入力項目') . '：' . $message) . '</li>';
+    }
+    if ($items) {
+        return '<p>以下の項目を確認して、お問い合わせ画面から修正してください。</p><ul>' . implode('', $items) . '</ul>';
+    }
+    $messages = [
+        'validation_failed' => '入力内容を確認して、お問い合わせ画面から修正してください。',
+        'acceptance_missing' => 'プライバシーポリシーへの同意を確認してください。',
+        'spam' => '送信を受け付けられませんでした。時間をおいて再度お試しください。',
+        'mail_failed' => 'メールを送信できませんでした。時間をおいて再度お試しください。',
+    ];
+    return '<p>' . esc_html($messages[$result['status'] ?? ''] ?? '送信できませんでした。時間をおいて再度お試しください。') . '</p>';
 }
 // Match confirmation emails on both the REST and native CF7 submission paths.
 add_filter('wpcf7_validate_email*', static function ($result, $tag) {
@@ -78,25 +150,57 @@ function foods_cf7_values($kind) {
     return $values;
 }
 
-function foods_cf7_preview_validate($kind) {
+function foods_cf7_preview_validate($kind, &$errors = null) {
+    $errors = [];
     $form = foods_cf7_form($kind);
-    if (!$form) { return false; }
+    if (!$form) { $errors[] = 'フォームの設定が見つかりません。'; return false; }
     $values = foods_cf7_values($kind);
+    $labels = foods_cf7_labels($kind);
     foreach ($form->scan_form_tags() as $tag) {
         if (!$tag->name) { continue; }
         $value = $values[$tag->name];
-        if (($tag->is_required() || $tag->basetype === 'radio') && $value === '') { return false; }
+        $label = $labels[$tag->name] ?? ($tag->name === 'privacy_agree' ? 'プライバシーポリシーへの同意' : $tag->name);
+        if (($tag->is_required() || $tag->basetype === 'radio') && $value === '') { $errors[] = $label . 'を入力・選択してください。'; continue; }
         if ($value === '') { continue; }
-        if ($tag->basetype === 'email' && !is_email($value)) { return false; }
-        if ($tag->basetype === 'url' && !filter_var($value, FILTER_VALIDATE_URL)) { return false; }
-        if ($tag->basetype === 'number' && !is_numeric($value)) { return false; }
-        if (in_array($tag->basetype, ['select', 'radio', 'checkbox'], true) && !in_array($value, $tag->values, true)) { return false; }
+        if ($kind === 'business' && isset(foods_business_byte_limits()[$tag->name])) {
+            $limit = foods_business_byte_limits()[$tag->name];
+            if (foods_business_byte_length($value, $tag->name) > $limit) { $errors[] = $label . 'はUTF-8で' . $limit . 'バイト以内で入力してください。'; }
+        }
+        if ($tag->basetype === 'email' && !is_email($value)) { $errors[] = $label . 'の形式を確認してください。'; }
+        if ($tag->basetype === 'url' && !filter_var($value, FILTER_VALIDATE_URL)) { $errors[] = $label . 'はhttps://などを含むURLを入力してください。'; }
+        if ($kind === 'business' && $tag->basetype === 'tel' && !wpcf7_is_tel($value)) { $errors[] = $label . 'は半角数字の番号を入力してください。（例：03-1234-5678）'; }
+        if ($tag->basetype === 'number' && !is_numeric($value)) { $errors[] = $label . 'は数値を入力してください。'; }
+        if (in_array($tag->basetype, ['select', 'radio', 'checkbox'], true) && !in_array($value, $tag->values, true)) { $errors[] = $label . 'の選択内容を確認してください。'; }
     }
     foreach (['email_confirm' => 'email', 'your_email_confirm' => 'your_email'] as $confirm => $email) {
-        if (isset($values[$confirm]) && $values[$confirm] !== ($values[$email] ?? '')) { return false; }
+        if (isset($values[$confirm]) && $values[$confirm] !== ($values[$email] ?? '')) { $errors[] = 'メールアドレスと確認用メールアドレスが一致していません。'; }
     }
-    return true;
+    return !$errors;
 }
+
+function foods_business_byte_limits() {
+    return ['contact_name' => 50, 'email' => 100, 'message' => 1000];
+}
+function foods_business_byte_length($value, $name) {
+    // The backup checks UTF-8 bytes before converting half-width kana for mail.
+    if ($name === 'message') { $value = preg_replace('/\r\n|\r|\n/', "\r\n", $value); }
+    return strlen($value);
+}
+add_filter('wpcf7_validate', static function ($result, $tags) {
+    $submission = WPCF7_Submission::get_instance();
+    $form = $submission ? $submission->get_contact_form() : null;
+    $business = foods_cf7_form('business');
+    if (!$form || !$business || $form->id() !== $business->id()) { return $result; }
+    foreach ($tags as $tag) {
+        $limit = foods_business_byte_limits()[$tag->name] ?? null;
+        if (!$limit) { continue; }
+        $value = $submission->get_posted_data($tag->name);
+        if (is_string($value) && foods_business_byte_length($value, $tag->name) > $limit) {
+            $result->invalidate($tag, 'UTF-8で' . $limit . 'バイト以内で入力してください。');
+        }
+    }
+    return $result;
+}, 30, 2);
 
 function foods_cf7_labels($kind) {
     $form = foods_cf7_form($kind);
