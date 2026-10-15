@@ -136,15 +136,36 @@ function foods_enqueue_vite_entry($handle_prefix, $entry_key, $dev_server, $mani
         );
     }
 
-    if (!empty($entry['css']) && is_array($entry['css'])) {
-        foreach ($entry['css'] as $index => $css_file) {
-            wp_enqueue_style(
-                $handle_prefix . '-css-' . $index,
-                get_template_directory_uri() . '/dist/' . $css_file,
-                [],
-                null
-            );
+    $visited = [];
+    $styles = [];
+    $collect_styles = static function ($key) use (&$collect_styles, &$visited, &$styles, $manifest) {
+        if (isset($visited[$key]) || empty($manifest[$key])) {
+            return;
         }
+        $visited[$key] = true;
+        $chunk = $manifest[$key];
+        foreach ($chunk['imports'] ?? [] as $import) {
+            $collect_styles($import);
+        }
+        foreach ($chunk['css'] ?? [] as $index => $css_file) {
+            if (!isset($styles[$css_file])) {
+                $styles[$css_file] = [$key, $index];
+            }
+        }
+    };
+    $collect_styles($entry_key);
+
+    foreach ($styles as $css_file => [$key, $index]) {
+        // Imported CSS uses a stable handle shared by all page entries.
+        $style_handle = $key === $entry_key
+            ? $handle_prefix . '-css-' . $index
+            : 'foods-vite-shared-css-' . md5($css_file);
+        wp_enqueue_style(
+            $style_handle,
+            get_template_directory_uri() . '/dist/' . $css_file,
+            [],
+            null
+        );
     }
 }
 

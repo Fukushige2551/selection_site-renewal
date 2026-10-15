@@ -318,8 +318,16 @@ function foods_cf7_labels($kind) {
 }
 
 add_action('wp_enqueue_scripts', static function () {
-    wp_enqueue_style('foods-cf7-layout', get_template_directory_uri() . '/src/css/cf7-layout.css', [], filemtime(__DIR__ . '/../src/css/cf7-layout.css'));
+    $manifest = foods_get_vite_manifest();
+    $enqueue = static function ($handle, $entry, $dependencies = []) use ($manifest) {
+        $file = $manifest[$entry]['file'] ?? null;
+        if (!$file) { return; }
+        $path = get_template_directory() . '/dist/' . $file;
+        if (!is_file($path)) { return; }
+        wp_enqueue_style($handle, get_template_directory_uri() . '/dist/' . $file, $dependencies, filemtime($path));
+    };
+    $enqueue('foods-cf7-layout', 'src/css/cf7-layout.css');
     if (is_page() && basename((string) get_page_template()) === 'page-contact.php') {
-        wp_enqueue_style('foods-contact-responsive', get_template_directory_uri() . '/src/css/contact-responsive.css', ['foods-cf7-layout'], filemtime(__DIR__ . '/../src/css/contact-responsive.css'));
+        $enqueue('foods-contact-responsive', 'src/css/contact-responsive.css', ['foods-cf7-layout']);
     }
 });

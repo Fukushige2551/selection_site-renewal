@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build:stg": "vite build && node tools/package-stg.mjs",
-    "build": "vite build"
+    "build": "vite build && php tools/test-vite-assets.php",
+    "test:assets": "php tools/test-vite-assets.php"
   },
   "repository": {
     "type": "git",

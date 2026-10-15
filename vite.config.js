@@ -26,6 +26,8 @@ export default defineConfig({
         manifest: true,
         rollupOptions: {
             input: {
+                'cf7-layout': path.resolve(__dirname, 'src/css/cf7-layout.css'),
+                'contact-responsive': path.resolve(__dirname, 'src/css/contact-responsive.css'),
                 main: path.resolve(__dirname, 'src/js/main.js'),
                 'front-page': path.resolve(__dirname, 'src/js/front-page.js'),
                 'page-contact': path.resolve(__dirname, 'src/js/page-contact.js'),
