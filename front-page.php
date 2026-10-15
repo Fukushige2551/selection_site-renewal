@@ -1531,82 +1531,94 @@
             <p class="c-section__title--sub">Commitment</p>
             <!-- タイトル end -->
 
-            <p class="p-front-page__commitment__text">
+            <p class="p-front-page__commitment__text p-front-page__commitment__text--compact">
                 セレクションは、“楽しむ・楽しませる”を
                 テーマに、バイヤーが全国から
                 選び抜いた本当に価値ある商品を
                 お届けしています。
             </p>
-            <p class="p-front-page__commitment__text">
+            <p class="p-front-page__commitment__text p-front-page__commitment__text--compact">
                 生産地・味・鮮度・価格のバランスを
                 徹底的に見極め、毎日の食卓が
                 少し誇らしくなる品揃えを目指しています。
             </p>
-            <p class="p-front-page__commitment__text">
+            <p class="p-front-page__commitment__text p-front-page__commitment__text--compact">
                 ぜひセレクションのこだわりを
                 ご体感ください。
             </p>
 
+            <p class="p-front-page__commitment__text p-front-page__commitment__text--desktop">
+                セレクションは、“楽しむ・楽しませる”をテーマに、バイヤーが全国から<br>
+                選び抜いた本当に価値ある商品をお届けしています。<br>
+                生産地・味・鮮度・価格のバランスを徹底的に見極め、毎日の食卓が<br>
+                少し誇らしくなる品揃えを目指しています。<br>
+                ぜひセレクションのこだわりをご体感ください。
+            </p>
+
+            <a class="c-pop p-front-page__commitment__link p-front-page__commitment__link--shop" href="<?php echo esc_url(home_url('/select/shop/')); ?>">
+                <img class="p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-shop.png" alt="こだわり　お店" width="235" height="201">
+            </a>
             <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--01" href="<?php echo esc_url(home_url('/select/meat/')); ?>">
                 <picture>
-                    <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_commitment-content-01.webp" type="image/webp">
-                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-content-01.png" alt="こだわり　お肉">
+                    <source media="(max-width: 1023px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-meat-compact.png" type="image/png">
+                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-meat-web.png" alt="こだわり　お肉">
                 </picture>
             </a>
             <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--02" href="<?php echo esc_url(home_url('/select/fish/')); ?>">
                 <picture>
-                    <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_commitment-content-02.webp" type="image/webp">
-                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-content-02.png" alt="こだわり　お魚">
+                    <source media="(max-width: 1023px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-fish-compact.png" type="image/png">
+                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-fish-web.png" alt="こだわり　お魚">
                 </picture>
             </a>
             <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--03" href="<?php echo esc_url(home_url('/select/vegetables-fruit/')); ?>">
                 <picture>
-                    <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_commitment-content-03.webp" type="image/webp">
-                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-content-03.png" alt="こだわり　お野菜・果物">
+                    <source media="(max-width: 1023px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-vegetables-compact.png" type="image/png">
+                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-vegetables-web.png" alt="こだわり　お野菜・果物">
                 </picture>
             </a>
             <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--04" href="<?php echo esc_url(home_url('/select/rice/')); ?>">
                 <picture>
-                    <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_commitment-content-04.webp" type="image/webp">
-                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-content-04.png" alt="こだわり　お米">
+                    <source media="(max-width: 1023px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-rice-compact.png" type="image/png">
+                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-rice-web.png" alt="こだわり　お米">
                 </picture>
             </a>
             <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--05" href="<?php echo esc_url(home_url('/select/deli/')); ?>">
                 <picture>
+                    <source media="(min-width: 1024px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-deli-web.png">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_commitment-content-05.webp" type="image/webp">
-                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-content-05.png" alt="こだわり　お肉">
+                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-content-05.png" alt="こだわり　お惣菜">
                 </picture>
             </a>
-            <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--06" href="<?php echo esc_url(home_url('/select/washoku-daily/')); ?>">
+            <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--07" href="<?php echo esc_url(home_url('/select/washoku-daily/')); ?>">
                 <picture>
-                    <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_commitment-content-06.webp" type="image/webp">
-                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-content-06.png" alt="こだわり　お魚">
-                </picture>
-            </a>
-            <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--07" href="/">
-                <picture>
+                    <source media="(min-width: 1024px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-washoku-web.png">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_commitment-content-07.webp" type="image/webp">
-                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-content-07.png" alt="こだわり　お野菜・果物">
+                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-content-07.png" alt="こだわり　和日配">
                 </picture>
             </a>
-            <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--08" href="/">
+            <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--08" href="<?php echo esc_url(home_url('/select/foods/')); ?>">
                 <picture>
+                    <source media="(min-width: 1024px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-foods-web.png">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_commitment-content-08.webp" type="image/webp">
-                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-content-08.png" alt="こだわり　お米">
+                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-content-08.png" alt="こだわり　食品">
                 </picture>
             </a>
-            <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--09" href="/">
+            <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--09" href="<?php echo esc_url(home_url('/select/sweets/')); ?>">
                 <picture>
+                    <source media="(min-width: 1024px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-sweets-web.png">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_commitment-content-09.webp" type="image/webp">
-                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-content-09.png" alt="こだわり　お野菜・果物">
+                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-content-09.png" alt="こだわり　お菓子">
                 </picture>
             </a>
-            <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--10" href="/">
+            <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--10" href="<?php echo esc_url(home_url('/select/alcohol/')); ?>">
                 <picture>
+                    <source media="(min-width: 1024px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-alcohol-web.png">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_commitment-content-10.webp" type="image/webp">
-                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-content-10.png" alt="こだわり　お米">
+                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-content-10.png" alt="こだわり　お酒">
                 </picture>
             </a>
+
+            <img class="p-front-page__commitment__foreground" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/foreground_commitment-pc-web.png" alt="" width="1920" height="2364" aria-hidden="true">
 
             <a class="p-front-page__commitment__all" href="<?php echo esc_url(home_url('/select/')); ?>">
                 <button class="c-btn c-btn--common--blue">もっと見る</button>

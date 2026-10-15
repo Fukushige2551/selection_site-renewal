@@ -212,38 +212,39 @@
         &--commitment {
             @include backgroundImg("#{$img-path}page/front-page/bg_commitment.png");
             aspect-ratio: 390 / 1516;
+            container-type: inline-size;
             position: relative;
             z-index: 1;
 
             &--01 {
                 @include backgroundImg("#{$img-path}page/front-page/svg/bg_commitment-01.svg");
-                top: 135vw;
-                right: 11vw;
-                width: 40.12vw;
+                top: 135cqw;
+                right: 11cqw;
+                width: 40.12cqw;
                 aspect-ratio: 156.5 / 165.5;
                 z-index: 1;
             }
             &--02 {
                 @include backgroundImg("#{$img-path}page/front-page/svg/bg_commitment-02.svg");
-                top: 189.23vw;
+                top: 189.23cqw;
                 left: 0;
-                width: 50.00vw;
+                width: 50.00cqw;
                 aspect-ratio: 195 / 183;
                 z-index: 1;
             }
             &--03 {
                 @include backgroundImg("#{$img-path}page/front-page/svg/bg_commitment-03.svg");
-                top: 252.56vw;
+                top: 252.56cqw;
                 right: 0;
-                width: 43.58vw;
+                width: 43.58cqw;
                 aspect-ratio: 170 / 189;
                 z-index: 1;
             }
             &--04 {
                 @include backgroundImg("#{$img-path}page/front-page/svg/bg_commitment-04.svg");
-                top: 325.64vw;
-                right: 4.61vw;
-                width: 18.72vw;
+                top: 325.64cqw;
+                right: 4.61cqw;
+                width: 18.72cqw;
                 aspect-ratio: 73.02 / 172.51;
                 z-index: 1;
             }
@@ -875,11 +876,12 @@
     }
     &__commitment {
         position: relative;
-        padding-top: 22.4vw;
+        padding-top: 22.4cqw;
 
         .c-section__title {
+            font-weight: 900;
             &--sub {
-                margin-bottom: 2.4vw;
+                margin-bottom: 2.4cqw;
             }
         }
 
@@ -887,15 +889,29 @@
             text-align: center;
             font-family: $font-family-ZenKaku;
             font-weight: $font-weight-medium;
-            font-size: 4.10vw;
+            font-size: 4.10cqw;
             line-height: 2.18;
-            width: 78.71vw;
+            width: 83.84615cqw;
             margin: 0 auto;
             word-break: keep-all;
+        }
+        &__text--desktop {
+            display: none;
+        }
+        &__foreground {
+            display: none;
         }
         &__link {
             position: absolute;
 
+            &--shop {
+                display: none;
+            }
+
+            picture,
+            &__img {
+                display: block;
+            }
             &__img {
                 width: 100%;
                 height: 100%;
@@ -909,36 +925,36 @@
                 display: none;
             }
             &--01 {
-                top: 144.87vw;
-                left: 7vw;
-                width: 55.38vw;
+                top: 144.87cqw;
+                left: 7cqw;
+                width: 55.38cqw;
                 aspect-ratio: 216 / 184;
             }
             &--02 {
-                top: 193.33vw;
-                right: 6.66vw;
-                width: 60.25vw;
+                top: 193.33cqw;
+                right: 6.66cqw;
+                width: 60.25cqw;
                 aspect-ratio: 235 / 201;
             }
             &--03 {
-                top: 241.28vw;
-                left: 5.64vw;
-                width: 60.25vw;
+                top: 241.28cqw;
+                left: 5.64cqw;
+                width: 60.25cqw;
                 aspect-ratio: 235 / 201;
             }
             &--04 {
-                top: 301.02vw;
-                right: 5.89vw;
-                width: 60.25vw;
+                top: 301.02cqw;
+                right: 5.89cqw;
+                width: 60.25cqw;
                 aspect-ratio: 235 / 201;
             }
         }
         &__all {
             position: absolute;
-            top: 364.87vw;
-            left: 28.71vw;
+            top: 364.87cqw;
+            left: 28.71cqw;
             display: block;
-            width: 44.1vw;
+            width: 44.1cqw;
             aspect-ratio: 172 / 42;
         }
     }
@@ -1356,70 +1372,94 @@
         }
         &--commitment {
             @include backgroundImg("#{$img-path}page/front-page/bg_commitment-tab.png");
-            aspect-ratio: 768 / 1305;
+            background-size: 100% auto;
+            background-position: center 1.5625cqw;
+            aspect-ratio: 768 / 1319;
 
             &--01 {
-                top: 55vw;
-                left: 69.59vw;
-                width: 20.32vw;
+                top: 56.510417cqw;
+                left: 69.59cqw;
+                width: 20.32cqw;
                 aspect-ratio: 156.09 / 165.25;
             }
             &--02 {
                 @include backgroundImg("#{$img-path}page/front-page/svg/bg_commitment-pc-02.svg");
-                top: 75.78vw;
+                top: 77.734375cqw;
                 left: 0;
-                width: 32.87vw;
+                width: 32.87cqw;
                 aspect-ratio: 252.48 / 202.69;
             }
             &--03 {
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_commitment-pc-03.svg");
-                top: 93.6vw;
-                right: 4.80vw;
-                width: 26.05vw;
-                aspect-ratio: 200.09 / 189;
+                background-image: none;
+                top: 92.655945cqw;
+                left: 69.010417cqw;
+                right: auto;
+                width: 26.053385cqw;
+                aspect-ratio: 200.09 / 179.8947;
+
+                &::before, &::after {
+                    content: "";
+                    position: absolute;
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                }
+                &::before {
+                    background-image: url("#{$img-path}page/front-page/commitment-tab-woman.png");
+                    left: 50.477285%;
+                    top: 0;
+                    width: 31.990801%;
+                    height: 100%;
+                }
+                &::after {
+                    background-image: url("#{$img-path}page/front-page/commitment-tab-field.png");
+                    left: 0;
+                    top: 13.008911%;
+                    width: 100%;
+                    height: 74.287902%;
+                }
             }
             &--04 {
                 @include backgroundImg("#{$img-path}page/front-page/svg/bg_commitment-pc-04.svg");
-                top: 118.88vw;
-                right: 81.37vw;
-                width: 9.50vw;
+                top: 120.703125cqw;
+                right: 81.37cqw;
+                width: 9.50cqw;
                 aspect-ratio: 77 / 181.91;
                 z-index: 1;
             }
             &--05 {
                 @include backgroundImg("#{$img-path}page/front-page/svg/bg_commitment-pc-05.svg");
-                top: 30.36vw;
-                left: 36.56vw;
-                width: 3.34vw;
+                top: 30.36cqw;
+                left: 36.56cqw;
+                width: 3.34cqw;
                 aspect-ratio: 64.17 / 51.41;
                 z-index: 1;
             }
             &--06 {
                 @include backgroundImg("#{$img-path}page/front-page/svg/bg_commitment-pc-06.svg");
-                top: 46.82vw;
-                left: 26.45vw;
-                width: 12.34vw;
+                top: 46.82cqw;
+                left: 26.45cqw;
+                width: 12.34cqw;
                 aspect-ratio: 237 / 218;
             }
             &--07 {
                 @include backgroundImg("#{$img-path}page/front-page/svg/bg_commitment-pc-07.svg");
-                top: 88.43vw;
-                left: 22.50vw;
-                width: 21.82vw;
+                top: 88.43cqw;
+                left: 22.50cqw;
+                width: 21.82cqw;
                 aspect-ratio: 419 / 278;
             }
             &--08 {
                 @include backgroundImg("#{$img-path}page/front-page/svg/bg_commitment-pc-08.svg");
-                top: 84.53vw;
-                left: 47.23vw;
-                width: 25.98vw;
+                top: 84.53cqw;
+                left: 47.23cqw;
+                width: 25.98cqw;
                 aspect-ratio: 499 / 506;
             }
             &--09 {
                 @include backgroundImg("#{$img-path}page/front-page/svg/bg_commitment-tab-09.svg");
-                top: 119.14vw;
-                left: 35.54vw;
-                width: 47.86vw;
+                top: 121.354167cqw;
+                left: 35.54cqw;
+                width: 47.86cqw;
                 aspect-ratio: 367.59 / 236.05;
             }
         }
@@ -1976,17 +2016,24 @@
         }
     }
     &__commitment {
-        padding-top: 8.6vw;
+        padding-top: 9.765625cqw;
 
         .c-section__title {
+            font-size: 2.864583cqw;
+            line-height: 2.994792cqw;
             &--sub {
-                margin-bottom: 4.42vw;
+                font-size: 1.822917cqw;
+                line-height: 1.692708cqw;
+                @media (max-width: 1023px) {
+                    margin-top: 1.692708cqw;
+                }
+                margin-bottom: 4.427083cqw;
             }
         }
 
         &__text {
-            font-size: 2.08vw;
-            width: 83.59vw;
+            font-size: 2.08cqw;
+            width: 83.59cqw;
             line-height: 2.18;
         }
         &__link {
@@ -1995,24 +2042,24 @@
             }
 
             &--01 {
-                top: 59vw;
-                left: 47.65vw;
-                width: 28.12vw;
+                top: 60.643cqw;
+                left: 47.65cqw;
+                width: 28.125cqw;
             }
             &--02 {
-                top: 66.27vw;
-                right: 56.38vw;
-                width: 30.59vw;
+                top: 68.320878cqw;
+                right: 56.510417cqw;
+                width: 30.598958cqw;
             }
             &--03 {
-                top: 87.50vw;
-                left: 43.09vw;
-                width: 30.59vw;
+                top: 89.662933cqw;
+                left: 43.09cqw;
+                width: 30.598958cqw;
             }
             &--04 {
-                top: 106.11vw;
-                right: 58.07vw;
-                width: 30.59vw;
+                top: 108.011882cqw;
+                right: 58.203125cqw;
+                width: 30.598958cqw;
             }
             &--05,
             &--06,
@@ -2024,9 +2071,9 @@
             }
         }
         &__all {
-            top: 154.81vw;
-            left: 38.80vw;
-            width: 26vw;
+            top: 156.640625cqw;
+            left: 38.802083cqw;
+            width: 22.44366cqw;
             aspect-ratio: 172.37 / 42.1;
         }
     }
@@ -2388,70 +2435,23 @@
             }
         }
         &--commitment {
-            @include backgroundImg("#{$img-path}page/front-page/bg_commitment-pc.png");
+            @include backgroundImg("#{$img-path}page/front-page/bg_commitment-pc-web.png");
+            background-position: center top;
             aspect-ratio: 1920 / 2364;
+            container-type: inline-size;
 
-            &--01 {
-                display: none;
+            // PCの人物・風景は、整理済みFigmaから書き出した背景に含める。
+            &::before {
+                content: "";
+                position: absolute;
+                pointer-events: none;
+                left: 69.490115cqw;
+                top: 28.601583cqw;
+                width: 30.116005cqw;
+                height: 7.513091cqw;
+                background: url("#{$img-path}page/front-page/commitment-pc-ripples.png") center / 100% 100% no-repeat;
             }
-            &--02 {
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_commitment-pc-02.svg");
-                top: 26.45vw;
-                left: 50.93vw;
-                width: 13.15vw;
-                aspect-ratio: 252.48 / 202.69;
-            }
-            &--03 {
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_commitment-pc-03.svg");
-                top: 35.15vw;
-                right: 55.56vw;
-                width: 10.42vw;
-                aspect-ratio: 200.09 / 189;
-            }
-            &--04 {
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_commitment-pc-04.svg");
-                top: 42.60vw;
-                right: 21.66vw;
-                width: 4.01vw;
-                aspect-ratio: 77 / 181.91;
-                z-index: 1;
-            }
-            &--05 {
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_commitment-pc-05.svg");
-                top: 30.36vw;
-                left: 36.56vw;
-                width: 3.34vw;
-                aspect-ratio: 64.17 / 51.41;
-                z-index: 1;
-            }
-            &--06 {
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_commitment-pc-06.svg");
-                top: 46.82vw;
-                left: 26.45vw;
-                width: 12.34vw;
-                aspect-ratio: 237 / 218;
-            }
-            &--07 {
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_commitment-pc-07.svg");
-                top: 88.43vw;
-                left: 22.50vw;
-                width: 21.82vw;
-                aspect-ratio: 419 / 278;
-            }
-            &--08 {
-                @include backgroundImg("#{$img-path}page/front-page/svg/bg_commitment-pc-08.svg");
-                top: 84.53vw;
-                left: 47.23vw;
-                width: 25.98vw;
-                aspect-ratio: 499 / 506;
-            }
-            &--05,
-            &--06,
-            &--07,
-            &--08 {
-                display: block;
-            }
-            &--09 {
+            > .p-front-page__commitment > .c-bg__positioned {
                 display: none;
             }
         }
@@ -2894,91 +2894,143 @@
         }
     }
     &__commitment {
-        padding-top: 5.31vw;
+        padding-top: 5.72917cqw;
+
+        &__foreground {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 123.125cqw;
+            pointer-events: none;
+        }
 
         .c-section__title {
+            width: 14.58333cqw;
+            margin-left: 42.76042cqw;
+            font-size: 1.14583cqw;
+            font-weight: 900;
+            line-height: 1.6;
+            letter-spacing: 0.17188cqw;
+
             &--sub {
-                margin-bottom: 1.66vw;
+                width: 5.26042cqw;
+                margin-left: 47.44792cqw;
+                font-size: 0.72917cqw;
+                line-height: 1.6;
+                letter-spacing: 0.10938cqw;
+                margin-bottom: 0.85417cqw;
             }
         }
 
         &__text {
-            font-size: calc(0.83vw * var(--pc-font-scale));
-            width: 33.43vw;
-            line-height: 2;
+            font-size: 0.83333cqw;
+            width: 33.4375cqw;
+            margin-left: 32.8125cqw;
+            line-height: 2.1875;
+
+            &--compact {
+                display: none;
+            }
+            &--desktop {
+                display: block;
+                white-space: nowrap;
+            }
         }
+
         &__link {
-            &--05,
-            &--06,
-            &--07,
-            &--08,
-            &--09,
-            &--10 {
+            picture,
+            &__img {
                 display: block;
             }
 
+            &--shop {
+                display: block;
+                top: 21.35417cqw;
+                left: 29.79167cqw;
+                right: auto;
+                width: 12.23958cqw;
+                aspect-ratio: 235 / 201;
+            }
             &--01 {
-                top: 24.21vw;
-                left: 38.38vw;
-                width: 11.25vw;
+                display: block;
+                top: 36.35417cqw;
+                left: 34.53125cqw;
+                right: auto;
+                width: 11.25000cqw;
+                aspect-ratio: 216 / 184;
             }
             &--02 {
-                top: 25.93vw;
-                right: 27.44vw;
-                width: 12.23vw;
+                display: block;
+                top: 27.34375cqw;
+                left: 49.79167cqw;
+                right: auto;
+                width: 12.23958cqw;
+                aspect-ratio: 235 / 201;
             }
             &--03 {
-                top: 33.75vw;
-                left: 23.59vw;
-                width: 12.23vw;
+                display: block;
+                top: 40.41667cqw;
+                left: 47.96875cqw;
+                right: auto;
+                width: 12.23958cqw;
+                aspect-ratio: 235 / 201;
             }
             &--04 {
-                top: 42.18vw;
-                right: 22.65vw;
-                width: 12.23vw;
+                display: block;
+                top: 49.27083cqw;
+                left: 34.89583cqw;
+                right: auto;
+                width: 12.23958cqw;
+                aspect-ratio: 235 / 201;
             }
             &--05 {
-                top: 46.40vw;
-                left: 37.23vw;
-                width: 12.23vw;
-                aspect-ratio: 235 / 201;
-            }
-            &--06 {
-                top: 56vw;
-                right: 36.71vw;
-                width: 12.23vw;
-                aspect-ratio: 235 / 201;
+                display: block;
+                top: 52.91667cqw;
+                left: 62.50000cqw;
+                right: auto;
+                width: 12.23958cqw;
+                aspect-ratio: 235 / 214;
             }
             &--07 {
-                top: 67.76vw;
-                right: 40.46vw;
-                width: 13.54vw;
-                aspect-ratio: 260.08 / 231;
+                display: block;
+                top: 66.92708cqw;
+                left: 21.56250cqw;
+                right: auto;
+                width: 13.54573cqw;
+                aspect-ratio: 260.078 / 231.001;
             }
             &--08 {
-                top: 75.83vw;
-                right: 26.97vw;
-                width: 12.23vw;
+                display: block;
+                top: 72.65625cqw;
+                left: 53.80208cqw;
+                right: auto;
+                width: 12.23958cqw;
                 aspect-ratio: 235 / 201;
             }
             &--09 {
-                top: 78.64vw;
-                left: 23.17vw;
-                width: 12.23vw;
+                display: block;
+                top: 80.78125cqw;
+                left: 34.32292cqw;
+                right: auto;
+                width: 12.23958cqw;
                 aspect-ratio: 235 / 201;
             }
             &--10 {
-                top: 88.07vw;
-                right: 22.03vw;
-                width: 12.23vw;
+                display: block;
+                top: 83.59375cqw;
+                left: 64.63542cqw;
+                right: auto;
+                width: 12.23958cqw;
                 aspect-ratio: 235 / 226;
             }
         }
         &__all {
-            top: 111.82vw;
-            left: 43.80vw;
-            width: 13.86vw;
-            aspect-ratio: 266.19 / 65;
+            top: 112.60417cqw;
+            left: 43.85417cqw;
+            width: 13.85963cqw;
+            aspect-ratio: 266.105 / 65;
         }
     }
     &__news {
