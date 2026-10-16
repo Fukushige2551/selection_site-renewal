@@ -24,8 +24,8 @@
     &__mark { position: absolute; width: 70.483333cqw; height: 36.76816cqw; top: -15.384615cqw; left: .923077cqw; transform: rotate(-11.64deg); opacity: .36; }
     &__category-title { position: absolute; top: 19.64359cqw; left: 50%; transform: translateX(-50%); width: 51.282051cqw; height: 18.51cqw; display: flex; align-items: center; justify-content: center; margin: 0; background: url("../../img/page/page-select/svg/bg_select-category-title-sp.svg") center/contain no-repeat; color: #00a684; font: 900 5.128205cqw/1.45 "Zen Kaku Gothic New",sans-serif; letter-spacing: .15em; white-space: nowrap; }
     &__links { position: absolute; top: 42.307692cqw; left: 0; width: 100%; height: 252.051282cqw; }
-    &__card { position: absolute; display: block; transition: filter .2s; }
-    &__card:hover { filter: brightness(1.04); }
+    &__card { position: absolute; display: block; transition: transform .4s ease; }
+    &__card:hover { opacity: 1; transform: scale(1.04); }
     &__card:focus-visible { outline: 3px solid #103675; outline-offset: 5px; border-radius: 40%; }
     &__card-art { display: block; position: relative; transform-origin: top left; }
     &__card-art--sp { zoom: calc(100cqw / 390px); }

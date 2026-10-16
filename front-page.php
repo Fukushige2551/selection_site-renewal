@@ -531,35 +531,35 @@
                 <a href="/" class="p-front-page__hero__link is-active">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-01.png" alt="おせち予約はこちら">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-01.png" alt="おせち予約はこちら">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">おせち<br>ご予約承り中</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-01.png" alt="おせち予約はこちら">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-01.png" alt="おせち予約はこちら">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">2<br>ヒーロー画像</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-01.png" alt="おせち予約はこちら">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-01.png" alt="おせち予約はこちら">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">3<br>ヒーロー画像</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-01.png" alt="おせち予約はこちら">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-01.png" alt="おせち予約はこちら">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">4<br>ヒーロー画像</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-01.png" alt="おせち予約はこちら">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-01.png" alt="おせち予約はこちら">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">5<br>ヒーロー画像</p>
                 </a>
@@ -583,77 +583,77 @@
                 <a href="/" class="p-front-page__hero__link hero__link--05">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-01.png" alt="おせち予約はこちら">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-01.png" alt="おせち予約はこちら">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">5<br>ヒーロー画像</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link hero__link--01 is-active">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-01.png" alt="おせち予約はこちら">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-01.png" alt="おせち予約はこちら">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">おせち<br>ご予約承り中</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link hero__link--02">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-01.png" alt="おせち予約はこちら">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-01.png" alt="おせち予約はこちら">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">2<br>ヒーロー画像</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link hero__link--03">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-01.png" alt="おせち予約はこちら">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-01.png" alt="おせち予約はこちら">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">3<br>ヒーロー画像</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link hero__link--04">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-01.png" alt="おせち予約はこちら">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-01.png" alt="おせち予約はこちら">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">4<br>ヒーロー画像</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link hero__link--05">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-01.png" alt="おせち予約はこちら">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-01.png" alt="おせち予約はこちら">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">5<br>ヒーロー画像</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link hero__link--01 is-active">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-01.png" alt="おせち予約はこちら">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-01.png" alt="おせち予約はこちら">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">おせち<br>ご予約承り中</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link hero__link--02">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-01.png" alt="おせち予約はこちら">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-01.png" alt="おせち予約はこちら">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">2<br>ヒーロー画像</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link hero__link--03">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-01.png" alt="おせち予約はこちら">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-01.png" alt="おせち予約はこちら">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">3<br>ヒーロー画像</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link hero__link--04">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-01.png" alt="おせち予約はこちら">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-01.png" alt="おせち予約はこちら">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">4<br>ヒーロー画像</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link hero__link--05">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-01.png" alt="おせち予約はこちら">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-01.png" alt="おせち予約はこちら">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">5<br>ヒーロー画像</p>
                 </a>
@@ -677,77 +677,77 @@
                 <a href="/" class="p-front-page__hero__link hero__link--05 is-active">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-pc-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-pc-01.png" alt="おせち予約はこちら">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-pc-01.png" alt="おせち予約はこちら">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">5<br>ヒーロー画像</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link hero__link--01 is-active">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-pc-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-pc-01.png" alt="おせち予約はこちら">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-pc-01.png" alt="おせち予約はこちら">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">1<br>ヒーロー画像</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link hero__link--02 is-active">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-pc-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-pc-01.png" alt="おせち予約はこちら">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-pc-01.png" alt="おせち予約はこちら">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">2<br>ヒーロー画像</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link hero__link--03 is-active">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-pc-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-pc-01.png" alt="おせち予約はこちら">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-pc-01.png" alt="おせち予約はこちら">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">3<br>ヒーロー画像</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link hero__link--04 is-active">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-pc-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-pc-01.png" alt="おせち予約はこちら">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-pc-01.png" alt="おせち予約はこちら">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">4<br>ヒーロー画像</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link hero__link--05 is-active">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-pc-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-pc-01.png" alt="">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-pc-01.png" alt="">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">5<br>ヒーロー画像</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link hero__link--01" aria-hidden="true" tabindex="-1">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-pc-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-pc-01.png" alt="">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-pc-01.png" alt="">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">1<br>ヒーロー画像</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link hero__link--02" aria-hidden="true" tabindex="-1">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-pc-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-pc-01.png" alt="">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-pc-01.png" alt="">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">2<br>ヒーロー画像</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link hero__link--03" aria-hidden="true" tabindex="-1">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-pc-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-pc-01.png" alt="">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-pc-01.png" alt="">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">3<br>ヒーロー画像</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link hero__link--04" aria-hidden="true" tabindex="-1">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-pc-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-pc-01.png" alt="">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-pc-01.png" alt="">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">4<br>ヒーロー画像</p>
                 </a>
                 <a href="/" class="p-front-page__hero__link hero__link--05" aria-hidden="true" tabindex="-1">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_hero-slider-pc-01.webp" type="image/webp">
-                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_hero-slider-pc-01.png" alt="">
+                        <img class="p-front-page__hero__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_hero-slider-pc-01.png" alt="">
                     </picture>
                     <p class="p-front-page__hero__catch-copy">5<br>ヒーロー画像</p>
                 </a>
@@ -1244,11 +1244,11 @@
                         <a href="">
                             <picture class="u-disp--sp">
                                 <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_campaign-content-01.webp" type="image/webp">
-                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-01.png" alt="セレクションおせちご予約始まります！">
+                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_campaign-content-01.png" alt="セレクションおせちご予約始まります！">
                             </picture>
                             <picture class="u-disp--pc">
                                 <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_campaign-content-pc-01.webp" type="image/webp">
-                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-pc-01.png" alt="セレクションおせちご予約始まります！">
+                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_campaign-content-pc-01.png" alt="セレクションおせちご予約始まります！">
                             </picture>
                             <time class="c-campaign-content__time" datetime="2025-11-18">2025.11.18</time>
                         </a>
@@ -1261,7 +1261,7 @@
                         <a href="">
                             <picture>
                                 <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_campaign-content-02.webp" type="image/webp">
-                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-02.png" alt="セレクションおせちご予約始まります！">
+                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_campaign-content-02.png" alt="セレクションおせちご予約始まります！">
                             </picture>
                             <p class="c-campaign-content__phrase">リサイクル<br>ポイント<span class="c-campaign-content__phrase__highlight">3</span>倍</p>
                             <time class="c-campaign-content__time" datetime="2025-11-10">2025.11.10</time>
@@ -1275,7 +1275,7 @@
                         <a href="">
                             <picture>
                                 <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_campaign-content-03.webp" type="image/webp">
-                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-03.png" alt="セレクションおせちご予約始まります！">
+                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_campaign-content-03.png" alt="セレクションおせちご予約始まります！">
                             </picture>
                             <time class="c-campaign-content__time" datetime="2025-10-31">2025.10.31</time>
                         </a>
@@ -1288,11 +1288,11 @@
                         <a href="">
                             <picture class="u-disp--sp">
                                 <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_campaign-content-01.webp" type="image/webp">
-                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-01.png" alt="セレクションおせちご予約始まります！">
+                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_campaign-content-01.png" alt="セレクションおせちご予約始まります！">
                             </picture>
                             <picture class="u-disp--pc">
                                 <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_campaign-content-pc-01.webp" type="image/webp">
-                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-pc-01.png" alt="セレクションおせちご予約始まります！">
+                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_campaign-content-pc-01.png" alt="セレクションおせちご予約始まります！">
                             </picture>
                             <time class="c-campaign-content__time" datetime="2025-11-18">2025.11.18</time>
                         </a>
@@ -1305,7 +1305,7 @@
                         <a href="">
                             <picture>
                                 <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_campaign-content-02.webp" type="image/webp">
-                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-02.png" alt="セレクションおせちご予約始まります！">
+                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_campaign-content-02.png" alt="セレクションおせちご予約始まります！">
                             </picture>
                             <p class="c-campaign-content__phrase">リサイクル<br>ポイント<span class="c-campaign-content__phrase__highlight">3</span>倍</p>
                             <time class="c-campaign-content__time" datetime="2025-11-10">2025.11.10</time>
@@ -1319,7 +1319,7 @@
                         <a href="">
                             <picture>
                                 <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_campaign-content-03.webp" type="image/webp">
-                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_campaign-content-03.png" alt="セレクションおせちご予約始まります！">
+                                <img class="c-pop c-campaign-content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_campaign-content-03.png" alt="セレクションおせちご予約始まります！">
                             </picture>
                             <time class="c-campaign-content__time" datetime="2025-10-31">2025.10.31</time>
                         </a>
@@ -1395,7 +1395,7 @@
                         <p class="c-recipe-card__category">麺</p>
                         <picture>
                             <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_recipe-content-01.webp" type="image/webp">
-                            <img class="c-recipe-card__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recipe-content-01.png" alt="暑い日にピッタリ！さっぱり冷やし中華">
+                            <img class="c-recipe-card__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_recipe-content-01.png" alt="暑い日にピッタリ！さっぱり冷やし中華">
                         </picture>
                         <time class="c-recipe-card__time" datetime="PT30M">
                             <svg class="c-recipe-card__clock" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1411,7 +1411,7 @@
                         <p class="c-recipe-card__category">お豆腐</p>
                         <picture>
                             <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_recipe-content-02.webp" type="image/webp">
-                            <img class="c-recipe-card__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recipe-content-02.png" alt="ピリ辛！麻婆豆腐">
+                            <img class="c-recipe-card__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_recipe-content-02.png" alt="ピリ辛！麻婆豆腐">
                         </picture>
                         <time class="c-recipe-card__time" datetime="PT30M">
                             <svg class="c-recipe-card__clock" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1427,7 +1427,7 @@
                         <p class="c-recipe-card__category">ご飯</p>
                         <picture>
                             <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_recipe-content-03.webp" type="image/webp">
-                            <img class="c-recipe-card__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recipe-content-03.png" alt="彩り豊かな夏野菜カレー">
+                            <img class="c-recipe-card__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_recipe-content-03.png" alt="彩り豊かな夏野菜カレー">
                         </picture>
                         <time class="c-recipe-card__time" datetime="PT30M">
                             <svg class="c-recipe-card__clock" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1443,7 +1443,7 @@
                         <p class="c-recipe-card__category">麺</p>
                         <picture>
                             <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_recipe-content-01.webp" type="image/webp">
-                            <img class="c-recipe-card__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recipe-content-01.png" alt="暑い日にピッタリ！さっぱり冷やし中華">
+                            <img class="c-recipe-card__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_recipe-content-01.png" alt="暑い日にピッタリ！さっぱり冷やし中華">
                         </picture>
                         <time class="c-recipe-card__time" datetime="PT30M">
                             <svg class="c-recipe-card__clock" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1459,7 +1459,7 @@
                         <p class="c-recipe-card__category">お豆腐</p>
                         <picture>
                             <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_recipe-content-02.webp" type="image/webp">
-                            <img class="c-recipe-card__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recipe-content-02.png" alt="ピリ辛！麻婆豆腐">
+                            <img class="c-recipe-card__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_recipe-content-02.png" alt="ピリ辛！麻婆豆腐">
                         </picture>
                         <time class="c-recipe-card__time" datetime="PT30M">
                             <svg class="c-recipe-card__clock" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1475,7 +1475,7 @@
                         <p class="c-recipe-card__category">ご飯</p>
                         <picture>
                             <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_recipe-content-03.webp" type="image/webp">
-                            <img class="c-recipe-card__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recipe-content-03.png" alt="彩り豊かな夏野菜カレー">
+                            <img class="c-recipe-card__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_recipe-content-03.png" alt="彩り豊かな夏野菜カレー">
                         </picture>
                         <time class="c-recipe-card__time" datetime="PT30M">
                             <svg class="c-recipe-card__clock" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1497,13 +1497,13 @@
                 <a class="c-pop p-front-page__recipe__banner u-margin-top--38" href="">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_banner-content-01.webp" type="image/webp">
-                        <img class="p-front-page__recipe__banner__img--app" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_banner-content-01.png" alt="公式アプリ">
+                        <img class="p-front-page__recipe__banner__img--app" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/jpg/link_banner-content-01.jpg" alt="公式アプリ">
                     </picture>
                 </a>
                 <a class="c-pop p-front-page__recipe__banner" href="https://foods-selection.shops.jp/" target="_blank" rel="noopener noreferrer">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_banner-content-02.webp" type="image/webp">
-                        <img class="p-front-page__recipe__banner__img--online-shop" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_banner-content-02.png" alt="セレクションのネットスーパー">
+                        <img class="p-front-page__recipe__banner__img--online-shop" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/jpg/link_banner-content-02.jpg" alt="セレクションのネットスーパー">
                     </picture>
                 </a>
             </div>
@@ -1556,69 +1556,69 @@
             </p>
 
             <a class="c-pop p-front-page__commitment__link p-front-page__commitment__link--shop" href="<?php echo esc_url(home_url('/select/shop/')); ?>">
-                <img class="p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-shop.png" alt="こだわり　お店" width="235" height="201">
+                <img class="p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-shop.png" alt="こだわり　お店" width="235" height="201">
             </a>
             <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--01" href="<?php echo esc_url(home_url('/select/meat/')); ?>">
                 <picture>
-                    <source media="(max-width: 1023px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-meat-compact.png" type="image/png">
-                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-meat-web.png" alt="こだわり　お肉">
+                    <source media="(max-width: 1023px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-meat-compact.png" type="image/png">
+                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-meat-web.png" alt="こだわり　お肉">
                 </picture>
             </a>
             <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--02" href="<?php echo esc_url(home_url('/select/fish/')); ?>">
                 <picture>
-                    <source media="(max-width: 1023px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-fish-compact.png" type="image/png">
-                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-fish-web.png" alt="こだわり　お魚">
+                    <source media="(max-width: 1023px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-fish-compact.png" type="image/png">
+                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-fish-web.png" alt="こだわり　お魚">
                 </picture>
             </a>
             <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--03" href="<?php echo esc_url(home_url('/select/vegetables-fruit/')); ?>">
                 <picture>
-                    <source media="(max-width: 1023px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-vegetables-compact.png" type="image/png">
-                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-vegetables-web.png" alt="こだわり　お野菜・果物">
+                    <source media="(max-width: 1023px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-vegetables-compact.png" type="image/png">
+                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-vegetables-web.png" alt="こだわり　お野菜・果物">
                 </picture>
             </a>
             <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--04" href="<?php echo esc_url(home_url('/select/rice/')); ?>">
                 <picture>
-                    <source media="(max-width: 1023px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-rice-compact.png" type="image/png">
-                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-rice-web.png" alt="こだわり　お米">
+                    <source media="(max-width: 1023px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-rice-compact.png" type="image/png">
+                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-rice-web.png" alt="こだわり　お米">
                 </picture>
             </a>
             <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--05" href="<?php echo esc_url(home_url('/select/deli/')); ?>">
                 <picture>
-                    <source media="(min-width: 1024px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-deli-web.png">
+                    <source media="(min-width: 1024px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-deli-web.png">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_commitment-content-05.webp" type="image/webp">
-                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-content-05.png" alt="こだわり　お惣菜">
+                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-content-05.png" alt="こだわり　お惣菜">
                 </picture>
             </a>
             <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--07" href="<?php echo esc_url(home_url('/select/washoku-daily/')); ?>">
                 <picture>
-                    <source media="(min-width: 1024px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-washoku-web.png">
+                    <source media="(min-width: 1024px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-washoku-web.png">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_commitment-content-07.webp" type="image/webp">
-                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-content-07.png" alt="こだわり　和日配">
+                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-content-07.png" alt="こだわり　和日配">
                 </picture>
             </a>
             <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--08" href="<?php echo esc_url(home_url('/select/foods/')); ?>">
                 <picture>
-                    <source media="(min-width: 1024px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-foods-web.png">
+                    <source media="(min-width: 1024px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-foods-web.png">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_commitment-content-08.webp" type="image/webp">
-                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-content-08.png" alt="こだわり　食品">
+                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-content-08.png" alt="こだわり　食品">
                 </picture>
             </a>
             <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--09" href="<?php echo esc_url(home_url('/select/sweets/')); ?>">
                 <picture>
-                    <source media="(min-width: 1024px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-sweets-web.png">
+                    <source media="(min-width: 1024px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-sweets-web.png">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_commitment-content-09.webp" type="image/webp">
-                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-content-09.png" alt="こだわり　お菓子">
+                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-content-09.png" alt="こだわり　お菓子">
                 </picture>
             </a>
             <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--10" href="<?php echo esc_url(home_url('/select/alcohol/')); ?>">
                 <picture>
-                    <source media="(min-width: 1024px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-alcohol-web.png">
+                    <source media="(min-width: 1024px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-alcohol-web.png">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_commitment-content-10.webp" type="image/webp">
-                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_commitment-content-10.png" alt="こだわり　お酒">
+                    <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-content-10.png" alt="こだわり　お酒">
                 </picture>
             </a>
 
-            <img class="p-front-page__commitment__foreground" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/foreground_commitment-pc-web.png" alt="" width="1920" height="2364" aria-hidden="true">
+            <img class="p-front-page__commitment__foreground" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/foreground_commitment-pc-web.png" alt="" width="1920" height="2364" aria-hidden="true">
 
             <a class="p-front-page__commitment__all" href="<?php echo esc_url(home_url('/select/')); ?>">
                 <button class="c-btn c-btn--common--blue">もっと見る</button>
@@ -1667,52 +1667,52 @@
             <div class="p-front-page__sns__content">
                 <picture class="p-front-page__sns__content__picture p-front-page__sns__content__picture--large">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_sns-content-01.webp" type="image/webp">
-                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_sns-content-01.png" alt="セレクション公式Instagram">
+                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_sns-content-01.png" alt="セレクション公式Instagram">
                 </picture>
                 <picture class="p-front-page__sns__content__picture">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_sns-content-02.webp" type="image/webp">
-                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_sns-content-02.png" alt="セレクション公式Instagram">
+                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/jpg/bg_sns-content-02.jpg" alt="セレクション公式Instagram">
                 </picture>
                 <picture class="p-front-page__sns__content__picture">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_sns-content-03.webp" type="image/webp">
-                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_sns-content-03.png" alt="セレクション公式Instagram">
+                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/jpg/bg_sns-content-03.jpg" alt="セレクション公式Instagram">
                 </picture>
                 <picture class="p-front-page__sns__content__picture">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_sns-content-04.webp" type="image/webp">
-                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_sns-content-04.png" alt="セレクション公式Instagram">
+                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/jpg/bg_sns-content-04.jpg" alt="セレクション公式Instagram">
                 </picture>
                 <picture class="p-front-page__sns__content__picture">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_sns-content-05.webp" type="image/webp">
-                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_sns-content-05.png" alt="セレクション公式Instagram">
+                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/jpg/bg_sns-content-05.jpg" alt="セレクション公式Instagram">
                 </picture>
                 <picture class="p-front-page__sns__content__picture">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_sns-content-06.webp" type="image/webp">
-                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_sns-content-06.png" alt="セレクション公式Instagram">
+                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/jpg/bg_sns-content-06.jpg" alt="セレクション公式Instagram">
                 </picture>
 
                 <picture class="p-front-page__sns__content__picture p-front-page__sns__content__picture--large u-disp--pc">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_sns-content-01.webp" type="image/webp">
-                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_sns-content-01.png" alt="セレクション公式Instagram">
+                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_sns-content-01.png" alt="セレクション公式Instagram">
                 </picture>
                 <picture class="p-front-page__sns__content__picture  u-disp--pc">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_sns-content-02.webp" type="image/webp">
-                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_sns-content-02.png" alt="セレクション公式Instagram">
+                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/jpg/bg_sns-content-02.jpg" alt="セレクション公式Instagram">
                 </picture>
                 <picture class="p-front-page__sns__content__picture u-disp--pc">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_sns-content-03.webp" type="image/webp">
-                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_sns-content-03.png" alt="セレクション公式Instagram">
+                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/jpg/bg_sns-content-03.jpg" alt="セレクション公式Instagram">
                 </picture>
                 <picture class="p-front-page__sns__content__picture u-disp--pc">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_sns-content-04.webp" type="image/webp">
-                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_sns-content-04.png" alt="セレクション公式Instagram">
+                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/jpg/bg_sns-content-04.jpg" alt="セレクション公式Instagram">
                 </picture>
                 <picture class="p-front-page__sns__content__picture u-disp--pc">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_sns-content-05.webp" type="image/webp">
-                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_sns-content-05.png" alt="セレクション公式Instagram">
+                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/jpg/bg_sns-content-05.jpg" alt="セレクション公式Instagram">
                 </picture>
                 <picture class="p-front-page__sns__content__picture u-disp--pc">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_sns-content-06.webp" type="image/webp">
-                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_sns-content-06.png" alt="セレクション公式Instagram">
+                    <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/jpg/bg_sns-content-06.jpg" alt="セレクション公式Instagram">
                 </picture>
             </div>
             <a class="p-front-page__sns__all p-front-page__sns__all--instagram" href="https://www.instagram.com/foods_selection/" target="_blank" rel="noopener noreferrer">
@@ -1724,7 +1724,7 @@
             <a href="/">
                 <picture class="c-btn--youtube--play">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_sns-content-07.webp" type="image/webp">
-                    <img class="p-front-page__sns__content__img p-front-page__sns__content__img--07" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_sns-content-07.png" alt="セレクション公式YouTube">
+                    <img class="p-front-page__sns__content__img p-front-page__sns__content__img--07" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/bg_sns-content-07.png" alt="セレクション公式YouTube">
                 </picture>
             </a>
 
@@ -1747,13 +1747,13 @@
             <a class="p-front-page__recruit__link u-disp--sp" href="<?php echo esc_url(home_url('/recruit/')); ?>">
                 <picture>
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_recruit-content-01.webp" type="image/webp">
-                    <img class="p-front-page__recruit__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recruit-content-01.png" alt="採用情報">
+                    <img class="p-front-page__recruit__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/jpg/bg_recruit-content-01.jpg" alt="採用情報">
                 </picture>
             </a>
             <a class="p-front-page__recruit__link u-disp--pc" href="<?php echo esc_url(home_url('/recruit/')); ?>">
                 <picture>
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_recruit-content-pc-01.webp" type="image/webp">
-                    <img class="c-pop p-front-page__recruit__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/bg_recruit-content-pc-01.png" alt="採用情報">
+                    <img class="c-pop p-front-page__recruit__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/jpg/bg_recruit-content-pc-01.jpg" alt="採用情報">
                 </picture>
             </a>
         </section>
@@ -1766,13 +1766,13 @@
             <a class="c-pop p-front-page__company__link p-front-page__company__link--company" href="<?php echo esc_url(home_url('/company/')); ?>">
                 <picture class="p-front-page__company__picture">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_company-content-01.webp" type="image/webp">
-                    <img class="p-front-page__company__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_company-content-01.png" alt="会社情報">
+                    <img class="p-front-page__company__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/jpg/link_company-content-01.jpg" alt="会社情報">
                 </picture>
             </a>
             <a class="c-pop p-front-page__company__link p-front-page__company__link--beef" href="https://www.foods-selection.co.jp/tore.html" target="_blank" rel="noopener noreferrer">
                 <picture class="p-front-page__company__picture">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_company-content-02.webp" type="image/webp">
-                    <img class="p-front-page__company__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_company-content-02.png" alt="牛肉個体識別情報検索">
+                    <img class="p-front-page__company__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/jpg/link_company-content-02.jpg" alt="牛肉個体識別情報検索">
                 </picture>
             </a>
         </div>

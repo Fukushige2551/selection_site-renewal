@@ -16,13 +16,13 @@
      */
     &__bg {
         &--hero {
-            @include backgroundImg("#{$img-path}page/front-page/bg_hero.png");
+            @include backgroundImg("#{$img-path}page/front-page/png/bg_hero.png");
             padding-top: $header-height;
             width: 100%;
             aspect-ratio: 390 / 710;
 
             &::before {
-                @include backgroundImg("#{$img-path}page/front-page/bg_hero-logo-sp.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/bg_hero-logo-sp.png");
                 content: "";
                 position: absolute;
                 top: 1.8vw;
@@ -89,7 +89,7 @@
             }
         }
         &--campaign {
-            @include backgroundImg("#{$img-path}page/front-page/bg_campaign.png");
+            @include backgroundImg("#{$img-path}page/front-page/png/bg_campaign.png");
             aspect-ratio: 390 / 1175;
 
             &--01 {
@@ -132,14 +132,14 @@
                 aspect-ratio: 53 / 73.5;
             }
             &--03 {
-                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-03.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/bg_recipe-03.png");
                 top: -7.25vw;
                 right: 31.75vw;
                 width: 19.35vw;
                 aspect-ratio: 75.5 / 37;
             }
             &--04 {
-                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-04.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/bg_recipe-04.png");
                 top: 4.57vw;
                 right: 25.64vw;
                 width: 15.64vw;
@@ -169,7 +169,7 @@
                 z-index: 1;
             }
             &--08 {
-                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-08.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/bg_recipe-08.png");
                 top: 64.05vw;
                 right: 3.41vw;
                 width: 7.94vw;
@@ -177,7 +177,7 @@
                 z-index: 1;
             }
             &--09 {
-                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-09.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/bg_recipe-09.png");
                 top: 103.80vw;
                 left: 47.69vw;
                 width: 9.23vw;
@@ -185,7 +185,7 @@
                 z-index: 1;
             }
             &--10 {
-                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-10.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/bg_recipe-10.png");
                 top: 98.67vw;
                 right: 19.30vw;
                 width: 12.56vw;
@@ -193,7 +193,7 @@
                 z-index: 1;
             }
             &--11 {
-                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-11.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/bg_recipe-11.png");
                 top: 158.16vw;
                 left: 5.38vw;
                 width: 17.17vw;
@@ -210,7 +210,7 @@
             }
         }
         &--commitment {
-            @include backgroundImg("#{$img-path}page/front-page/bg_commitment.png");
+            @include backgroundImg("#{$img-path}page/front-page/png/bg_commitment.png");
             aspect-ratio: 390 / 1516;
             container-type: inline-size;
             position: relative;
@@ -256,14 +256,14 @@
             }
         }
         &--news {
-            @include backgroundImg("#{$img-path}page/front-page/bg_news.png");
+            @include backgroundImg("#{$img-path}page/front-page/png/bg_news.png");
             aspect-ratio: 389 / 652.54;
             margin-top: -37.17vw;
             padding-top: 44.86vw;
             box-sizing: border-box;
         }
         &--recruit {
-            @include backgroundImg("#{$img-path}page/front-page/bg_recruit.png");
+            @include backgroundImg("#{$img-path}page/front-page/png/bg_recruit.png");
             aspect-ratio: 390 / 487;
             padding-top: 15.38vw;
             box-sizing: border-box;
@@ -1137,7 +1137,7 @@
             }
 
             .p-btn--common--blue {
-                @include backgroundImg("#{$img-path}page/front-page/btn_company-blue.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/btn_company-blue.png");
                 color: #fff;
                 font-family: $font-family-NotoSans;
                 font-size: 4.10vw;
@@ -1165,14 +1165,14 @@
      */
     &__bg {
         &--hero {
-            @include backgroundImg("#{$img-path}page/front-page/bg_hero-tablet.png");
+            @include backgroundImg("#{$img-path}page/front-page/png/bg_hero-tablet.png");
             background-size: contain;
             background-position: center top;
             aspect-ratio: 768 / 1100;
             padding-top: $header-height-tab;
 
             &::before {
-                @include backgroundImg("#{$img-path}page/front-page/bg_hero-logo-tab.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/bg_hero-logo-tab.png");
                 width: 15.11vw;
                 aspect-ratio: 116.06 / 60.88;
                 top: 2.5vw;
@@ -1252,7 +1252,7 @@
             }
         }
         &--campaign {
-            @include backgroundImg("#{$img-path}page/front-page/bg_campaign-tab.png");
+            @include backgroundImg("#{$img-path}page/front-page/png/bg_campaign-tab.png");
             aspect-ratio: 768 / 957;
 
             &--01 {
@@ -1289,21 +1289,21 @@
                 aspect-ratio: 120.52 / 128.93;
             }
             &--02 {
-                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-pc-02.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/bg_recipe-pc-02.png");
                 top: -1.2vw;
                 left: 38.54vw;
                 width: 6.90vw;
                 aspect-ratio: 53 / 73.5;
             }
             &--03 {
-                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-pc-03.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/bg_recipe-pc-03.png");
                 top: -3.4vw;
                 right: 41.38vw;
                 width: 9.83vw;
                 aspect-ratio: 75.5 / 37;
             }
             &--04 {
-                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-pc-04.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/bg_recipe-pc-04.png");
                 top: 2.8vw;
                 right: 36.98vw;
                 width: 7.94vw;
@@ -1318,21 +1318,21 @@
                 z-index: 1;
             }
             &--06 {
-                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-pc-06.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/bg_recipe-pc-06.png");
                 top: 30vw;
                 left: 1.43vw;
                 width: 8.07vw;
                 aspect-ratio: 62 / 29;
             }
             &--07 {
-                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-07.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/bg_recipe-07.png");
                 top: 26vw;
                 right: 57.68vw;
                 width: 6.90vw;
                 aspect-ratio: 53 / 47;
             }
             &--08 {
-                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-08.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/bg_recipe-08.png");
                 top: 8.2vw;
                 right: 11vw;
                 width: 4.68vw;
@@ -1340,21 +1340,21 @@
                 z-index: 1;
             }
             &--09 {
-                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-09.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/bg_recipe-09.png");
                 top: 24vw;
                 left: 92.18vw;
                 width: 5.85vw;
                 aspect-ratio: 45 / 50;
             }
             &--10 {
-                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-10.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/bg_recipe-10.png");
                 top: 33vw;
                 right: 12.53vw;
                 width: 6.38vw;
                 aspect-ratio: 49 / 34;
             }
             &--11 {
-                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-tab-11.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/bg_recipe-tab-11.png");
                 top: 54.6vw;
                 left: 86.97vw;
                 width: 9.11vw;
@@ -1362,7 +1362,7 @@
                 z-index: 1;
             }
             &--12 {
-                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-12.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/bg_recipe-12.png");
                 top: 50.8vw;
                 right: 61.45vw;
                 width: 9.11vw;
@@ -1371,7 +1371,7 @@
             }
         }
         &--commitment {
-            @include backgroundImg("#{$img-path}page/front-page/bg_commitment-tab.png");
+            @include backgroundImg("#{$img-path}page/front-page/png/bg_commitment-tab.png");
             background-size: 100% auto;
             background-position: center 1.5625cqw;
             aspect-ratio: 768 / 1319;
@@ -1404,14 +1404,14 @@
                     background-repeat: no-repeat;
                 }
                 &::before {
-                    background-image: url("#{$img-path}page/front-page/commitment-tab-woman.png");
+                    background-image: url("#{$img-path}page/front-page/png/commitment-tab-woman.png");
                     left: 50.477285%;
                     top: 0;
                     width: 31.990801%;
                     height: 100%;
                 }
                 &::after {
-                    background-image: url("#{$img-path}page/front-page/commitment-tab-field.png");
+                    background-image: url("#{$img-path}page/front-page/png/commitment-tab-field.png");
                     left: 0;
                     top: 13.008911%;
                     width: 100%;
@@ -1464,13 +1464,13 @@
             }
         }
         &--news {
-            @include backgroundImg("#{$img-path}page/front-page/bg_news-tab.png");
+            @include backgroundImg("#{$img-path}page/front-page/png/bg_news-tab.png");
             aspect-ratio: 768 / 619;
             margin-top: -6.97vw;
             padding-top: 6.97vw;
         }
         &--recruit {
-            @include backgroundImg("#{$img-path}page/front-page/bg_recruit-pc.png");
+            @include backgroundImg("#{$img-path}page/front-page/png/bg_recruit-pc.png");
             aspect-ratio: 768 / 500;
             padding-top: 7.68vw;
         }
@@ -1622,7 +1622,7 @@
             }
         }
         &__item {
-            @include backgroundImg("#{$img-path}page/front-page/bg_special-offers-tab-body.png");
+            @include backgroundImg("#{$img-path}page/front-page/png/bg_special-offers-tab-body.png");
             display: flex;
             flex-flow: column;
             background-size: contain;
@@ -1643,7 +1643,7 @@
 
             &.is-good-deal {
                 &:before {
-                    @include backgroundImg("#{$img-path}page/front-page/bg_special-offers-tab-header.png");
+                    @include backgroundImg("#{$img-path}page/front-page/png/bg_special-offers-tab-header.png");
                     width: 30.20vw;
                     aspect-ratio: 232 / 59.15;
                     font-size: 2.60vw;
@@ -1655,7 +1655,7 @@
             }
             &.is-special {
                 &:after {
-                    @include backgroundImg("#{$img-path}page/front-page/bg_special-offers-tab-body-good.png");
+                    @include backgroundImg("#{$img-path}page/front-page/png/bg_special-offers-tab-body-good.png");
                     top: 1vw;
                     right: -3.4vw;
                     width: 11vw;
@@ -2221,7 +2221,7 @@
             }
 
             .p-btn--common--blue {
-                @include backgroundImg("#{$img-path}page/front-page/btn_company-blue.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/btn_company-blue.png");
                 font-size: 2.08vw;
             }
 
@@ -2244,7 +2244,7 @@
      */
     &__bg {
         &--hero {
-            @include backgroundImg("#{$img-path}page/front-page/bg_hero-pc.png");
+            @include backgroundImg("#{$img-path}page/front-page/png/bg_hero-pc.png");
             background-size: contain;
             background-position: center top;
             aspect-ratio: 1920 / 1307;
@@ -2327,7 +2327,7 @@
             }
         }
         &--campaign {
-            @include backgroundImg("#{$img-path}page/front-page/bg_campaign-pc.png");
+            @include backgroundImg("#{$img-path}page/front-page/png/bg_campaign-pc.png");
             aspect-ratio: 1920 / 1164;
 
             &--01 {
@@ -2363,7 +2363,7 @@
                 aspect-ratio: 215.89 / 231.08;
             }
             &--02 {
-                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-pc-02.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/bg_recipe-pc-02.png");
                 left: 42.03vw;
                 width: 3.69vw;
                 aspect-ratio: 71 / 98;
@@ -2419,7 +2419,7 @@
                 aspect-ratio: 49 / 33.5;
             }
             &--11 {
-                @include backgroundImg("#{$img-path}page/front-page/bg_recipe-11.png");
+                @include backgroundImg("#{$img-path}page/front-page/png/bg_recipe-11.png");
                 top: 27.41vw;
                 left: 22.00vw;
                 width: 4.85vw;
@@ -2435,7 +2435,7 @@
             }
         }
         &--commitment {
-            @include backgroundImg("#{$img-path}page/front-page/bg_commitment-pc-web.png");
+            @include backgroundImg("#{$img-path}page/front-page/png/bg_commitment-pc-web.png");
             background-position: center top;
             aspect-ratio: 1920 / 2364;
             container-type: inline-size;
@@ -2449,20 +2449,20 @@
                 top: 28.601583cqw;
                 width: 30.116005cqw;
                 height: 7.513091cqw;
-                background: url("#{$img-path}page/front-page/commitment-pc-ripples.png") center / 100% 100% no-repeat;
+                background: url("#{$img-path}page/front-page/png/commitment-pc-ripples.png") center / 100% 100% no-repeat;
             }
             > .p-front-page__commitment > .c-bg__positioned {
                 display: none;
             }
         }
         &--news {
-            @include backgroundImg("#{$img-path}page/front-page/bg_news-pc.png");
+            @include backgroundImg("#{$img-path}page/front-page/png/bg_news-pc.png");
             aspect-ratio: 1920 / 941;
             margin-top: -6.97vw;
             padding-top: 6.97vw;
         }
         &--recruit {
-            @include backgroundImg("#{$img-path}page/front-page/bg_recruit-pc.png");
+            @include backgroundImg("#{$img-path}page/front-page/png/bg_recruit-pc.png");
             aspect-ratio: 1920 / 754;
             padding-top: 4.68vw;
         }
@@ -2552,14 +2552,14 @@
             }
         }
         &__item {
-            @include backgroundImg("#{$img-path}page/front-page/bg_special-offers-pc-body.png");
+            @include backgroundImg("#{$img-path}page/front-page/png/bg_special-offers-pc-body.png");
             width: 30.10vw;
             aspect-ratio: 578 / 343;
             padding-top: 2.8vw;
 
             &.is-good-deal {
                 &:before {
-                    @include backgroundImg("#{$img-path}page/front-page/bg_special-offers-pc-header.png");
+                    @include backgroundImg("#{$img-path}page/front-page/png/bg_special-offers-pc-header.png");
                     width: 16.14vw;
                     aspect-ratio: 310 / 75.88;
                     font-size: calc(1.25vw * var(--pc-font-scale));
@@ -2569,7 +2569,7 @@
             }
             &.is-special {
                 &:after {
-                    @include backgroundImg("#{$img-path}page/front-page/bg_special-offers-pc-body-good.png");
+                    @include backgroundImg("#{$img-path}page/front-page/png/bg_special-offers-pc-body-good.png");
                     top: 1.25vw;
                     right: 3vw;
                     width: 5.39vw;
