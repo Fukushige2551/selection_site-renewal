@@ -1095,8 +1095,9 @@
         }
 
         h3 {
-            height: 11.02vw;
-            margin-bottom: 4vw;
+            height: auto;
+            min-height: 0;
+            margin-bottom: 3.08vw;
             font-size: 4.1vw;
             line-height: 1.45;
         }
@@ -1118,6 +1119,7 @@
         a {
             display: flex;
             margin-top: auto;
+            padding: 0;
             align-items: center;
             justify-content: center;
             width: 100%;
@@ -1130,6 +1132,7 @@
             color: #fff;
             font-size: 4.1vw;
             font-weight: 700;
+            line-height: 1.2;
             text-decoration: none;
         }
     }
@@ -2846,7 +2849,7 @@
 
             h3 {
                 height: auto;
-                min-height: 3.52vw;
+                min-height: 0;
                 margin-bottom: 1.37vw;
                 font-size: 1.95vw;
                 line-height: 1.28;
@@ -3950,7 +3953,7 @@
 
             h3 {
                 height: auto;
-                min-height: 2.2396vw;
+                min-height: 0;
                 margin-bottom: 0.625vw;
                 font-size: 0.8333vw;
                 line-height: 1.25;
@@ -3975,8 +3978,9 @@
                 width: 7.5445vw;
                 min-height: 2.3577vw;
                 margin: auto auto 0;
-                padding-top: 0.4167vw;
+                padding: 0;
                 font-size: 0.8333vw;
+                line-height: 1.2;
             }
         }
 

@@ -1500,7 +1500,7 @@
                         <img class="p-front-page__recipe__banner__img--app" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_banner-content-01.png" alt="公式アプリ">
                     </picture>
                 </a>
-                <a class="c-pop p-front-page__recipe__banner" href="https://foods-selection.shops.jp/" target="_blank" rel="noopener noreferrer">
+                <a class="c-pop p-front-page__recipe__banner" href="https://www.selection-ec.jp/" target="_blank" rel="noopener noreferrer">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_banner-content-02.webp" type="image/webp">
                         <img class="p-front-page__recipe__banner__img--online-shop" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_banner-content-02.png" alt="セレクションのネットスーパー">
@@ -1763,13 +1763,13 @@
     <!-- 会社情報 start -->
     <div class="c-bg p-front-page__bg--company no-image">
         <div class="p-front-page__company__picture--wrapper">
-            <a class="c-pop p-front-page__company__link p-front-page__company__link--company" href="<?php echo esc_url(home_url('/company/')); ?>">
+            <a class="c-pop p-front-page__company__link p-front-page__company__link--company" href="https://www.cgcjapan.co.jp/" target="_blank" rel="noopener noreferrer">
                 <picture class="p-front-page__company__picture">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_company-content-01.webp" type="image/webp">
-                    <img class="p-front-page__company__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_company-content-01.png" alt="会社情報">
+                    <img class="p-front-page__company__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_company-content-01.png" alt="セレクションはCGCの加盟店です">
                 </picture>
             </a>
-            <a class="c-pop p-front-page__company__link p-front-page__company__link--beef" href="https://www.foods-selection.co.jp/tore.html" target="_blank" rel="noopener noreferrer">
+            <a class="c-pop p-front-page__company__link p-front-page__company__link--beef" href="https://www.id.nlbc.go.jp/top.html?pc" target="_blank" rel="noopener noreferrer">
                 <picture class="p-front-page__company__picture">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_company-content-02.webp" type="image/webp">
                     <img class="p-front-page__company__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/link_company-content-02.png" alt="牛肉個体識別情報検索">

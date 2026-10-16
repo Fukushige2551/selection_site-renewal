@@ -21,13 +21,12 @@ $main_footer_shops = [
 ];
 
 $main_footer_departments = [
-    ['お店づくり', $main_footer_page_url('page-select-shop.php', '/select/shop/')],
+    ['お店', home_url('/select/shop/')],
     ['お野菜・果物', $main_footer_page_url('page-select-vegetables-fruit.php', '/select/vegetables-fruit/')],
     ['お肉', $main_footer_page_url('page-select-meat.php', '/select/meat/')],
     ['お魚', $main_footer_page_url('page-select-fish.php', '/select/fish/')],
     ['お菓子', $main_footer_page_url('page-select-sweets.php', '/select/sweets/')],
     ['お米', $main_footer_page_url('page-select-rice.php', '/select/rice/')],
-    ['乳製品', ''],
     ['和日配', $main_footer_page_url('page-select-washoku-daily.php', '/select/washoku-daily/')],
     ['お惣菜', $main_footer_page_url('page-select-deli.php', '/select/deli/')],
     ['加工食品', $main_footer_page_url('page-select-foods.php', '/select/foods/')],
@@ -79,6 +78,7 @@ $main_footer_link = static function ($label, $url) {
         <details class="l-footer__nav__group l-footer__nav__group--company">
             <summary class="l-footer__nav__item"><a href="<?php echo esc_url(home_url('/company/')); ?>">会社情報</a><span aria-hidden="true">＋</span></summary>
             <ul class="l-footer__nav__list company-info">
+                <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/company/')); ?>">セレクションを知る</a></li>
                 <li class="l-footer__nav__list__item"><a href="<?php echo esc_url($main_footer_page_url('page-company-about.php', '/company/about/')); ?>">会社概要</a></li>
                 <li class="l-footer__nav__list__item"><a href="<?php echo esc_url($main_footer_page_url('page-recruit.php', '/recruit/')); ?>">採用情報（新卒・中途）</a></li>
                 <li class="l-footer__nav__list__item"><a href="<?php echo esc_url($main_footer_page_url('page-company-business.php', '/company/business/')); ?>">企業の方</a></li>
@@ -87,7 +87,7 @@ $main_footer_link = static function ($label, $url) {
 
         <div class="l-footer__nav__group l-footer__nav__group--part-time"><a class="l-footer__nav__item" href="<?php echo esc_url($main_footer_page_url('page-job.php', '/job/')); ?>">パート・アルバイト募集</a></div>
         <div class="l-footer__nav__group l-footer__nav__group--recipe"><a class="l-footer__nav__item" href="<?php echo esc_url(get_post_type_archive_link('recipe')); ?>">レシピ</a></div>
-        <div class="l-footer__nav__group l-footer__nav__group--online"><a class="l-footer__nav__item" href="https://foods-selection.shops.jp/" target="_blank" rel="noopener noreferrer">オンラインショップ</a></div>
+        <div class="l-footer__nav__group l-footer__nav__group--online"><a class="l-footer__nav__item" href="https://www.selection-ec.jp/" target="_blank" rel="noopener noreferrer">オンラインショップ</a></div>
         <div class="l-footer__nav__group l-footer__nav__group--privacy"><a class="l-footer__nav__item" href="<?php echo esc_url(home_url('/privacy/')); ?>">プライバシーポリシー</a></div>
         <div class="l-footer__nav__group l-footer__nav__group--contact"><a class="l-footer__nav__item" href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a></div>
     </nav>
