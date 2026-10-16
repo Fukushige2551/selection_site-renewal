@@ -44,7 +44,7 @@
 
 <!-- ヘッダー(SP) start -->
 <header class="l-header l-header--sp">
-    <a href="https://foods-selection.shops.jp/" class="l-header__btn l-header__btn__bascket js-toggle--nav js-transparent" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.selection-ec.jp/" class="l-header__btn l-header__btn__bascket js-transparent" target="_blank" rel="noopener noreferrer">
         <picture class="l-header__bascket">
             <source srcset="<?php echo get_template_directory_uri(); ?>/img/component/btn_bascket.webp" type="image/webp">
             <img class="l-header__bascket__img" src="<?php echo get_template_directory_uri(); ?>/img/component/btn_bascket.png" alt="オンラインショップ">
@@ -117,7 +117,7 @@
             </p>
         </div>
 
-        <a href="https://foods-selection.shops.jp/" class="l-header__nav__online-shop" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.selection-ec.jp/" class="l-header__nav__online-shop" target="_blank" rel="noopener noreferrer">
             <button class="c-btn c-btn--online-shop" type="button" aria-label="オンラインショップを開く" aria-expanded="true">
                 <picture>
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/component/btn_bascket--white.webp" type="image/webp">
@@ -141,7 +141,7 @@
             </a>
             <a class="l-header-pc__nav__link recruit--part-time" href="<?php echo esc_url(home_url('/job/')); ?>">パート・アルバイト募集</a>
             <a class="l-header-pc__nav__link" href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a>
-            <a class="l-header-pc__nav__link online-shop" href="https://foods-selection.shops.jp/" target="_blank" rel="noopener noreferrer">
+            <a class="l-header-pc__nav__link online-shop" href="https://www.selection-ec.jp/" target="_blank" rel="noopener noreferrer">
                 <picture>
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/component/btn_bascket--white.webp" type="image/webp">
                     <img class="l-header-pc__nav__online-shop__img" src="<?php echo get_template_directory_uri(); ?>/img/component/btn_bascket--white.png" alt="オンラインショップのバナー画像">
