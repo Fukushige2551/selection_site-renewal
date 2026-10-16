@@ -1,722 +1,111 @@
 @use "foundation/global" as *;
 
+// The illustrated link positions follow the approved 390px / 1920px Figma frames.
+// Only this page is affected; the shared header and footer remain reusable.
 .p-page-select {
-
-    &__hero {
-        padding-top: 20vw;
-
-        &__inner {
-            position: relative;
-        }
-        .c-section__title{
-            font-size: 5.1vw;
-            margin:auto;
-            font-weight:bold;
-        }
-        .c-section__title--sub{
-            font-size: 3.1vw;
-            margin:auto;
-            font-weight:normal;
-        }
-        &__img {
-            &--top-sp {
-                width: 91.8vw;
-                display: block;
-                margin: 4.8vw auto 0vw;
-            }
-            &--top-pc {
-                display: none;
-            }
-            &--toptext {
-                position: relative;
-                width: 65vw;
-                display: block;
-                margin: 0 auto 3vw;
-    
-            }
-        }
-
-        &__text {
-            text-align: center;
-            font-family: $font-family-ZenKaku;
-            font-weight: $font-weight-medium;
-            font-size: 4.10vw;
-            line-height: 2.18;
-            width: 82.1vw;
-            margin: 0 auto;
-            word-break: keep-all;
-        }
-    }
-
-    &__commitment {
-        position: relative;
-        padding: 5vw 3.8vw;
-        &--bg {
-            @include backgroundImg("#{$img-path}page/page-select/svg/bg_select-sp.svg");
-            background-position: top center;
-            background-size: 100% auto;
-            margin: 10vw 0 -12vw;
-            position: relative;
-            z-index: 1;
-            padding: 17vw 3.8vw 0 ;
-            height: 280vw;
-        }
-
-        &__img--mark {
-            position: absolute;
-            top: -17vw;
-            width: 65vw;
-            display: block;
-            left: 0;
-        }
-
-        &__selectTitle {
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 67vw;
-            height: 18.5vw;
-            background-image: url("#{$img-path}page/page-select/svg/img_kodawariTitle.svg");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            span {
-                transform: translateY(-0.5vw);
-                font-family: $font-family-ZenKaku;
-                font-size: 5.1vw;
-                color: #00A684;
-            }
-        }
-        &__link__img{
-            width: 100%;
-            height: 100%;
-        }
-        &__link{
-            position: absolute;
-            &--01 {
-                top: 4.8vw;
-                width: 43.3vw;
-                left: 0vw;
-            }
-            &--02 {
-                width: 43.3vw;
-                top: 13.5vw;
-                right: 0vw;
-            }
-            &--03 {
-                width: 44.5vw;
-                height: auto;
-                top: 46vw;
-                left: 0vw;
-            }
-            &--04 {
-                width: 42.3vw;
-                top: 57vw;
-                right: 0vw;
-            }
-            &--05 {
-                width: 43vw;
-                top: 89.4vw;
-                z-index: 1;
-                left: 0vw;
-            }
-            &--06 {
-                width: 44vw;
-                top: 103.5vw;
-                right: 0vw;
-            }
-            &--07 {
-                width: 43.3vw;
-                top: 136.5vw;
-                z-index: 1;
-                left: 0vw;
-            }
-            &--09 {
-                width: 42.3vw;
-                top: 136vw;
-                z-index: 1;
-                left: 0vw;
-            }
-            &--10 {
-                width: 43.3vw;
-                top: 146vw;
-                right: 0vw;
-                z-index: 1;
-            }    
-            &--11 {
-                width: 43.3vw;
-                top: 191vw;
-                z-index: 1;
-                left: 50%;
-                transform: translateX(-50%);
-            }    
-        }
-    }
+    --intro-height: 222.307692cqw;
+    --category-height: 373.333333cqw;
+    container-type: inline-size;
+    padding: 0;
+    position: relative;
+    .c-breadcrumb { position: absolute; top: 19.230769cqw; left: 5.384615cqw; margin: 0; padding: 0; }
+    &__hero { height: var(--intro-height); position: relative; }
+    .c-section__title { position: absolute; top: 33.333333cqw; width: 100%; margin: 0; font-size: 5.128205cqw; line-height: 1.45; font-weight: 900; letter-spacing: .15em; }
+    .c-section__title--sub { position: absolute; top: 41.794872cqw; width: 100%; margin: 0; font-size: 3.076923cqw; line-height: 1.4; letter-spacing: .15em; }
+    &__hero-picture { display: block; position: absolute; top: 51.025641cqw; left: 50%; transform: translateX(-50%); width: 90.27422cqw; }
+    &__hero-picture img { display: block; width: 100%; height: auto; }
+    &__message-title { position: absolute; top: 113.846154cqw; left: 50%; transform: translateX(-50%); width: 65.128205cqw; text-align: center; }
+    &__message-title p { margin: 0; font: 400 7.179487cqw/1.46 "Zen Kurenaido", sans-serif; letter-spacing: .15em; white-space: nowrap; }
+    &__message-title img { display: block; width: 36.410256cqw; margin: 1.282051cqw auto 0; }
+    &__hero__text { position: absolute; top: 134.871795cqw; left: 50%; transform: translateX(-50%); width: 94cqw; margin: 0; text-align: center; font: 500 4.102564cqw/7.692308cqw "Zen Kaku Gothic New",sans-serif; }
+    &__hero__text span { display: block; white-space: nowrap; }
+    &__categories { position: relative; height: var(--category-height); isolation: isolate; clip-path: inset(0 -100vmax -100vmax); }
+    &__category-background { position: absolute; z-index: -1; inset: 0 0 -77cqw; background: url("../../img/page/page-select/svg/bg_select-category-wave-sp.svg") center top / 100% auto no-repeat, linear-gradient(to bottom, transparent 20.512821cqw, #00a684 20.512821cqw); }
+    &__mark { position: absolute; width: 70.483333cqw; height: 36.76816cqw; top: -15.384615cqw; left: .923077cqw; transform: rotate(-11.64deg); opacity: .36; }
+    &__category-title { position: absolute; top: 19.64359cqw; left: 50%; transform: translateX(-50%); width: 51.282051cqw; height: 18.51cqw; display: flex; align-items: center; justify-content: center; margin: 0; background: url("../../img/page/page-select/svg/bg_select-category-title-sp.svg") center/contain no-repeat; color: #00a684; font: 900 5.128205cqw/1.45 "Zen Kaku Gothic New",sans-serif; letter-spacing: .15em; white-space: nowrap; }
+    &__links { position: absolute; top: 42.307692cqw; left: 0; width: 100%; height: 252.051282cqw; }
+    &__card { position: absolute; display: block; transition: filter .2s; }
+    &__card:hover { filter: brightness(1.04); }
+    &__card:focus-visible { outline: 3px solid #103675; outline-offset: 5px; border-radius: 40%; }
+    &__card-art { display: block; position: relative; transform-origin: top left; }
+    &__card-art--sp { zoom: calc(100cqw / 390px); }
+    &__card-art--pc { display: none; }
+    &__card-layer, &__card-label { position: absolute; left: 0; top: 0; max-width: none; transform-origin: top left; margin: 0; }
+    &__card-label { font-family: "Zen Kurenaido", sans-serif; font-weight: 400; line-height: normal; color: #00a684; white-space: nowrap; }
 }
-
-@media screen and (min-width: 768px) {
-
+@media (min-width: 768px) {
     .p-page-select {
-
-    &__hero {
-        padding-top: 10vw;
-
-        &__inner {
-            position: relative;
-        }
-         .c-section__title{
-            font-size: 2.6vw;
-        }
-        .c-section__title--sub{
-            font-size: 1.6vw;
-        }
-        &__img {
-            &--top {
-                width: 80vw;
-                margin: 1.8vw auto 0;
-            }
-
-            &--toptext {
-                width: 25vw;
-                bottom: 0;
-            }
-        }
-
-        &__text {
-            font-size: 2.1vw;
-            line-height: 2;
-            width: 72.1vw;
-            margin: 0 auto;
-            }
-        }
-        &__commitment {
-        padding: 5vw 3.8vw;
-
-        &__link {
-            transition: transform 0.4s ease;
-
-            &:hover {
-                opacity: 1;
-                transform: scale(1.04);
-            }
-        }
-
-        &--bg {
-            margin: 5vw 0 -15vw;
-            padding: 14vw 3.8vw 0 ;
-            height: 115vw;
-        }
-
-        &__img--mark {
-            top: -5vw;
-            width: 36vw;
-            left: 21vw;
-        }
-
-        &__selectTitle {
-            width: 35vw;
-            height: 9.5vw;
-            span {
-                font-size: 2.6vw;
-            }
-        }
-        &__link{
-            &--01 {
-                top: 7.8vw;
-                width: 26.9vw;
-                left: 3vw;
-                }
-            &--02 {
-                width: 27vw;
-                top: 3.5vw;
-                right: 33vw;
-                }
-            &--03 {
-                width: 27.7vw;
-                top: 9vw;
-                left: 62vw;
-                }
-            &--04 {
-                width: 25.3vw;
-                top: 31vw;
-                left: 3vw;
-                right: auto;
-                }
-            &--05 {
-                width: 27vw;
-                top: 29.4vw;
-                left: 34vw;
-                }
-            &--06 {
-                width: 26.9vw;
-                top: 31vw;
-                right: 3vw;
-                }
-            &--09 {
-                width: 24.8vw;
-                top: 57.8vw;
-                left: 3vw;
-                }
-            &--10 {
-                 width: 27.8vw;
-                top: 55vw;
-                left: 34vw;
-                right: auto;
-                }    
-            &--11 {
-                width: 28.2vw;
-                top: 57vw;
-                right: 3vw;
-                left: auto;
-                transform: none;
-                }    
-            }
-        }
+        --intro-height: 1040px;
+        --category-height: 1245px;
+        &__categories { clip-path: none; }
+        .c-breadcrumb { top: 78px; left: 24px; }
+        .c-section__title { top: 92px; font-size: 20px; }
+        .c-section__title--sub { top: 125px; font-size: 12px; }
+        &__hero-picture { top: 190px; width: 700px; }
+        &__message-title { top: 600px; width: 254px; }
+        &__message-title p { font-size: 28px; }
+        &__message-title img { width: 142px; margin-top: 5px; }
+        &__hero__text { top: 680px; width: 700px; font-family: "Zen Maru Gothic",sans-serif; font-size: 16px; line-height: 40px; }
+        .select-sp-break { display: none; }
+        &__category-background { inset: 84px 0 -400px; background: url("../../img/page/page-select/svg/bg_select-category-wave-pc.svg") center top / 1920px 1026px no-repeat, linear-gradient(to bottom,transparent 180px,#00a684 180px); }
+        &__mark { width: 345.038px; height: 179.991px; top: 33px; left: calc(50% - 337px); }
+        &__category-title { top: 176px; left: calc(50% + 5px); width: 219px; height: 79px; background-image: url("../../img/page/page-select/svg/bg_select-category-title-pc.svg"); font-size: 20px; }
+        &__links { top: 277px; left: calc(50% - 323px); width: 700px; height: 900px; }
+        &__card-art--sp { display: none; }
+        &__card-art--pc { display: block; }
     }
 }
-
-@media screen and (min-width: 1024px) {
-
-    main{
-        padding: 7vw 0 0;
-    }
+@media (min-width: 1024px) {
     .p-page-select {
-
-        &__hero {
-            padding-top: 9.38vw;
-
-            .c-section__title {
-                font-size: 1.9vw;
-            }
-
-            .c-section__title--sub {
-                font-size: 1.1vw;
-            }
-
-            &__img {
-
-                &--top-sp {
-                    display: none;
-                }
-
-                &--top-pc {
-                    width: 62.27vw;
-                    margin: 1.76vw auto 0;
-                    display: block;
-                }
-
-                &--toptext {
-                    width: 16vw;
-                    bottom: 0;
-                }
-            }
-
-            &__text {
-                font-size: 1.57vw;
-                width: 54vw;
-            }
-        }
-
-        &__commitment {
-            margin: auto;
-            padding: 0;
-            position: relative;
-            max-width: 68.36vw;
-
-            &--bg {
-                @include backgroundImg("#{$img-path}page/page-select/svg/bg_select-pc.svg");
-                margin: 6.35vw 0 -9.77vw;
-                padding: 8.30vw 0;
-                height: 76vw;
-            }
-
-            &__img--mark {
-                top: -8.40vw;
-                width: 28.7vw;
-                left: 24vw;
-            }
-
-            &__selectTitle {
-                width: 26.9vw;
-                height: 7.71vw;
-
-                span {
-                    font-size: 1.8vw;
-                    padding: 0.3vw 0 0;
-                }
-            }
-
-            &__link {
-
-                &--01 {
-                    top: 4vw;
-                    width: 18.21vw;
-                    left: 4vw;
-                }
-
-                &--02 {
-                    width: 18.31vw;
-                    top: 2vw;
-                    left: 25vw;
-                    right: auto;
-                }
-
-                &--03 {
-                    width: 18.80vw;
-                    top: 4vw;
-                    left: auto;
-                    right: 4vw;
-                }
-
-                &--04 {
-                    width: 17.04vw;
-                    top: 20vw;
-                    left: 4vw;
-                    right: auto;
-                }
-
-                &--05 {
-                    width: 18.21vw;
-                    top: 19vw;
-                    left: 25vw;
-                }
-
-                &--06 {
-                    width: 18.21vw;
-                    top: 20vw;
-                    right: 4vw;
-                }
-
-                &--09 {
-                    width: 16.65vw;
-                    top: 39vw;
-                    left: 4vw;
-                }
-
-                &--10 {
-                    width: 18.90vw;
-                    top: 37vw;
-                    left: 25vw;
-                    right: auto;
-                }
-
-                &--11 {
-                    width: 19.19vw;
-                    top: 39vw;
-                    right: 4vw;
-                    left: auto;
-                    transform: none;
-                }
-            }
-        }
+        --intro-height: 1120px;
+        --category-height: 1235px;
+        .c-breadcrumb { top: 116px; }
+        .c-section__title { top: 130px; }
+        .c-section__title--sub { top: 163px; }
+        &__hero-picture { top: 230px; width: 850px; }
+        &__message-title { top: 700px; }
+        &__hero__text { top: 780px; }
     }
 }
-
-@media screen and (min-width: 1280px) {
+@media (min-width: 1280px) {
     .p-page-select {
-        &__hero {
-            padding-top: 120px;
-        }
+        --intro-height: 1316px;
+        --category-height: 1264px;
+        .c-breadcrumb { top: 162px; left: calc(50% - 498px); }
+        .c-section__title { top: 242px; }
+        .c-section__title--sub { top: 275px; }
+        &__hero-picture { top: 311px; left: calc(50% + 8.836px); width: 1195.672px; }
+        &__message-title { top: 957px; left: calc(50% + 9px); }
+        &__hero__text { top: 1035px; left: calc(50% + 9px); }
     }
 }
 
-@media screen and (min-width: 1336px) {
-
-    .p-page-select {
-
-        &__hero {
-
-            .c-section__title {
-                font-size: 1.4vw;
-            }
-
-            .c-section__title--sub {
-                font-size: 0.89vw;
-            }
-
-            &__img {
-    
-                &--toptext {
-                    width: 16vw;
-                    bottom: 0;
-                }
-            }
-
-            &__text {
-                font-size: 1.19vw;
-                width: 41vw;
-            }
-        }
-
-        &__commitment {
-
-            &--bg {
-                @include backgroundImg("#{$img-path}page/page-select/svg/bg_select-pc.svg");
-                margin: 6.35vw 0 -9.77vw;
-                padding: 7vw 0;
-                height: 70vw;
-            }
-
-            &__img--mark {
-                left: 28vw;
-                top: -4.4vw;
-                width: 22vw;
-            }
-
-            &__selectTitle {
-                width: 24vw;
-                height: 7vw;
-
-                span {
-                    font-size: 1.6vw;
-                    padding: 0.5vw 0 0;
-                }
-            }
-
-            &__link {
-
-                &--01 {
-                    top: 4vw;
-                    width: 15.2vw;
-                    left: 10vw;
-                }
-
-                &--02 {
-                    width: 15.2vw;
-                    top: 2vw;
-                    left: 26vw;
-                    right: auto;
-                }
-
-                &--03 {
-                    width: 15.2vw;
-                    top: 5vw;
-                    left: auto;
-                    right: 10vw;
-                }
-
-                &--04 {
-                    width: 15.2vw;
-                    top: 20vw;
-                    left: 10vw;
-                    right: auto;
-                }
-
-                &--05 {
-                    width: 15.2vw;
-                    top: 19vw;
-                    left: 26vw;
-                }
-
-                &--06 {
-                    width: 15.2vw;
-                    top: 20vw;
-                    right: 10vw;
-                }
-
-                &--09 {
-                    width: 15.2vw;
-                    top: 38vw;
-                    left: 10vw;
-                    right: auto;
-                }
-
-                &--10 {
-                    width: 15.2vw;
-                    top: 37vw;
-                    left: 26vw;
-                    right: auto;
-                }
-
-                &--11 {
-                    width: 15.2vw;
-                    top: 38vw;
-                    right: 10vw;
-                    left: auto;
-                    transform: none;
-                }
-            }
-        }
-    }
+.p-page-select__card--shop{left:4.102564102564103cqw;top:0cqw;width:44.35318384415064cqw;height:37.93612749148638cqw;}
+.p-page-select__card--meat{left:51.15685096153846cqw;top:10.035807291666666cqw;width:44.35318384415064cqw;height:37.78234237279648cqw;}
+.p-page-select__card--fish{left:4.230769230769231cqw;top:42.88386418269231cqw;width:45.64102564102564cqw;height:37.94871794871795cqw;}
+.p-page-select__card--vegetables-fruit{left:51.282051282051285cqw;top:51.75956530448718cqw;width:46.41025641025641cqw;height:39.743589743589745cqw;}
+.p-page-select__card--rice{left:5.256410256410256cqw;top:86.76983173076923cqw;width:43.333333333333336cqw;height:42.56410256410256cqw;}
+.p-page-select__card--deli{left:50.60496794871795cqw;top:101.09049479166667cqw;width:46.15384615384615cqw;height:45.897388947315704cqw;}
+.p-page-select__card--washoku-daily{left:5.089142628205129cqw;top:134.4315905448718cqw;width:43.411532671023636cqw;height:38.85219867412861cqw;}
+.p-page-select__card--foods{left:50.769230769230774cqw;top:148.64783653846155cqw;width:41.282051282051285cqw;height:44.61538461538461cqw;}
+.p-page-select__card--sweets{left:3.8461538461538463cqw;top:183.11548477564102cqw;width:45.8974358974359cqw;height:45.12820512820513cqw;}
+.p-page-select__card--alcohol{left:48.205128205128204cqw;top:195.84935897435898cqw;width:46.41025641025641cqw;height:55.12820512820513cqw;}
+@media(min-width:768px){
+.p-page-select__card--shop{left:-14px;top:15.5px;width:235px;height:201px;}
+.p-page-select__card--meat{left:232.6796875px;top:-2.66015625px;width:207px;height:176px;}
+.p-page-select__card--fish{left:465.369140625px;top:39.0361328125px;width:208px;height:170.68052673339844px;}
+.p-page-select__card--vegetables-fruit{left:112.775390625px;top:211.3427734375px;width:213.3498992919922px;height:178.7532501220703px;}
+.p-page-select__card--rice{left:341.341796875px;top:220.0322265625px;width:194.89869689941406px;height:192.43896484375px;}
+.p-page-select__card--deli{left:14.25px;top:385.767578125px;width:207.58441162109375px;height:206.81851196289062px;}
+.p-page-select__card--washoku-daily{left:229.45703125px;top:436.62890625px;width:230.08685302734375px;height:212.35330200195312px;}
+.p-page-select__card--foods{left:483px;top:415px;width:191px;height:207px;}
+.p-page-select__card--sweets{left:118px;top:645px;width:214px;height:210px;}
+.p-page-select__card--alcohol{left:383px;top:645px;width:217px;height:254.288818359375px;}
 }
 
-@media screen and (min-width: 1600px) {
-
-    .p-page-select {
-
-        &__hero {
-
-            .c-section__title {
-                font-size: 1.25vw;
-            }
-
-            .c-section__title--sub {
-                font-size: 0.75vw;
-            }
-
-            &__img {
-    
-                &--toptext {
-                    width: 15vw;
-                    bottom: 0;
-                }
-            }
-
-            &__text {
-                font-size: 1vw;
-                width: 37vw;
-            }
-        }
-
-        &__commitment {
-
-            &--bg {
-                @include backgroundImg("#{$img-path}page/page-select/svg/bg_select-pc.svg");
-                margin: 3.35vw 0 -13.77vw;
-                padding: 6vw 0;
-                height: 62vw;
-            }
-
-            &__img--mark {
-                left: 28vw;
-                top: -4.4vw;
-                width: 20vw;
-            }
-
-            &__selectTitle {
-                width: 19vw;
-                height: 5vw;
-
-                span {
-                    font-size: 1.25vw;
-                    padding: 0.7vw 0 0;
-                }
-            }
-
-            &__link {
-
-                &--01 {
-                    top: 4vw;
-                    width: 13vw;
-                    left: 12vw;
-                }
-
-                &--02 {
-                    width: 13vw;
-                    top: 2vw;
-                    left: 29vw;
-                    right: auto;
-                }
-
-                &--03 {
-                    width: 13vw;
-                    top: 5vw;
-                    left: auto;
-                    right: 12vw;
-                }
-
-                &--04 {
-                    width: 13vw;
-                    top: 18vw;
-                    left: 12vw;
-                    right: auto;
-                }
-
-                &--05 {
-                    width: 13vw;
-                    top: 17vw;
-                    left: 29vw;
-                }
-
-                &--06 {
-                    width: 13vw;
-                    top: 18vw;
-                    right: 12vw;
-                }
-
-                &--09 {
-                    width: 13vw;
-                    top: 33vw;
-                    left: 12vw;
-                }
-
-                &--10 {
-                    width: 13vw;
-                    top: 31vw;
-                    left: 29vw;
-                    right: auto;
-                }
-
-                &--11 {
-                    width: 13vw;
-                    top: 33vw;
-                    right: 12vw;
-                    left: auto;
-                    transform: none;
-                }
-            }
-        }
-    }
+.p-page-select__category-title::before,.p-page-select__category-title::after { content:""; position:absolute; width:5.83cqw; height:7.02cqw; opacity:.4; background:url("../../img/page/page-select/svg/img_select-category-title-accent-left-sp.svg") center/contain no-repeat; left:-9.23cqw; top:3.95cqw; }
+.p-page-select__category-title::after { background-image:url("../../img/page/page-select/svg/img_select-category-title-accent-right-sp.svg"); left:auto; right:-6.15cqw; top:10.87cqw; }
+@media(min-width:768px){
+.p-page-select__category-title::before{width:27.407px;height:33.033px;left:-44.979px;top:13.56px;background-image:url("../../img/page/page-select/svg/img_select-category-title-accent-left-pc.svg");}
+.p-page-select__category-title::after{width:27.739px;height:31.129px;right:-31.999px;top:46.12px;background-image:url("../../img/page/page-select/svg/img_select-category-title-accent-right-pc.svg");}
 }
-
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    .p-page-select__commitment--bg {
-        height: 120vw;
-        margin-bottom: -10vw;
-    }
-}
-
-@media screen and (min-width: 1024px) and (max-width: 1335px) {
-    .p-page-select__commitment--bg {
-        height: 80vw;
-        margin-bottom: -10vw;
-    }
-}
-
-// Tablet / PC: keep the nine cards in the same fixed 687 x 736 px grid.
-@media screen and (min-width: 768px) {
-    .p-page-select__commitment__link {
-        --commitment-card-width: clamp(190px, 27vw, 207px);
-        --commitment-grid-width: calc((var(--commitment-card-width) * 3) + 66px);
-        width: var(--commitment-card-width);
-
-        &--01,
-        &--04,
-        &--09 {
-            left: calc(50% - (var(--commitment-grid-width) / 2));
-            right: auto;
-        }
-
-        &--02,
-        &--05,
-        &--10 {
-            left: calc(50% - (var(--commitment-card-width) / 2));
-            right: auto;
-        }
-
-        &--03,
-        &--06,
-        &--11 {
-            left: calc(50% + (var(--commitment-grid-width) / 2) - var(--commitment-card-width));
-            right: auto;
-            transform: none;
-        }
-
-        &--01 { top: 55px; }
-        &--02 { top: 27px; }
-        &--03 { top: 68px; }
-
-        &--04 { top: 273px; }
-        &--05 { top: 260px; }
-        &--06 { top: 273px; }
-
-        &--09 { top: 516px; }
-        &--10 { top: 502px; }
-        &--11 { top: 516px; }
-    }
-}
-
