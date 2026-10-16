@@ -92,6 +92,9 @@ foreach ($background_decorations as $decoration) {
                 <?php $main_image = $section['main_image']; ?>
                 <div class="<?php echo esc_attr($block_class); ?>__about__content--mainImageWrap">
                     <picture>
+                        <?php if (!empty($main_image['src_sp'])) : ?>
+                            <source media="(max-width: 767px)" srcset="<?php echo esc_url(foods_get_select_detail_asset_url($config, $main_image['src_sp'])); ?>">
+                        <?php endif; ?>
                         <?php if (!empty($main_image['webp'])) : ?>
                             <source srcset="<?php echo esc_url(foods_get_select_detail_asset_url($config, $main_image['webp'])); ?>" type="image/webp">
                         <?php endif; ?>

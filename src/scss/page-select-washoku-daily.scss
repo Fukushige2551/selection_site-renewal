@@ -2,6 +2,16 @@ $detail: '.p-page-select-detail';
 
 #{$detail}--washoku-daily {
 	@media screen and (max-width: 767px) {
+		#{$detail}__about__content--image[src$="hamada-farm-president-pc.png"] {
+			-webkit-mask-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-washoku-daily/svg/hamada-farm-photo-mask-sp.svg");
+			mask-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-washoku-daily/svg/hamada-farm-photo-mask-sp.svg");
+			-webkit-mask-size: 100% 100%;
+			mask-size: 100% 100%;
+			-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+			mask-mode: alpha;
+		}
+
 		#{$detail}__news__bg {
 			margin-top: -15vw;
 		}

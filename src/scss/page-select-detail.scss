@@ -92,6 +92,16 @@
 			z-index: 2;
 
 			width: 36.9vw;
+
+			&[src$=".png"] {
+				-webkit-mask-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/svg/buyer-portrait-mask.svg");
+				mask-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/svg/buyer-portrait-mask.svg");
+				-webkit-mask-size: 100% 100%;
+				mask-size: 100% 100%;
+				-webkit-mask-repeat: no-repeat;
+				mask-repeat: no-repeat;
+				mask-mode: alpha;
+			}
 		}
 
 		&--text {
@@ -1749,6 +1759,23 @@
 	.p-page-select-detail--fish {
 		.p-page-select-detail__message--shape {
 			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-fish/svg/buyer-message-background-pc.svg');
+		}
+	}
+}
+
+// SP原本の写真と吹き出しの相対位置（390px基準: 右201px・上32px）。
+.p-page-select-detail {
+	@media screen and (max-width: 767px) {
+		&--meat,
+		&--fish,
+		&--vegetables-fruit,
+		&--deli {
+			.p-page-select-detail__message--buyer {
+				top: -1.2051282051vw;
+				right: auto;
+				left: 57.5384615385vw;
+				width: 36.9230769231vw;
+			}
 		}
 	}
 }

@@ -34,7 +34,12 @@ $message_background_decorations = array_values(array_filter(
                         <p class="<?php echo esc_attr($block_class); ?>__message--catch"><?php echo wp_kses_post($message['catch']); ?></p>
                     </div>
                 <?php endif; ?>
-                <img class="<?php echo esc_attr($block_class); ?>__message--buyer" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $message['buyer_image'])); ?>" alt="バイヤー">
+                <?php if (!empty($message['buyer_image_sp'])) : ?><picture><?php endif; ?>
+                    <?php if (!empty($message['buyer_image_sp'])) : ?>
+                        <source media="(max-width: 767px)" srcset="<?php echo esc_url(foods_get_select_detail_asset_url($config, $message['buyer_image_sp'])); ?>">
+                    <?php endif; ?>
+                    <img class="<?php echo esc_attr($block_class); ?>__message--buyer" src="<?php echo esc_url(foods_get_select_detail_asset_url($config, $message['buyer_image'])); ?>" alt="バイヤー">
+                <?php if (!empty($message['buyer_image_sp'])) : ?></picture><?php endif; ?>
                 <div class="<?php echo esc_attr($block_class); ?>__message--text">
                     <p class="<?php echo esc_attr($block_class); ?>__message--textSp"><?php echo wp_kses_post($message['text']); ?></p>
                     <p class="<?php echo esc_attr($block_class); ?>__message--textPc"><?php echo wp_kses_post($message['text_pc']); ?></p>
