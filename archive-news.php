@@ -117,6 +117,8 @@ if ($news_commitment !== '') {
 $news_query = new WP_Query($news_query_args);
 $news_posts = $news_query->posts;
 $news_total_pages = (int) $news_query->max_num_pages;
+$news_page_start = max(1, min($news_paged - 2, $news_total_pages - 4));
+$news_page_end = min($news_total_pages, $news_page_start + 4);
 
 $news_items = array_map(function ($news_post) {
     $categories = get_the_terms($news_post->ID, 'news_category');
@@ -264,7 +266,7 @@ get_header();
             </section>
             <?php if ($news_total_pages > 1) : ?>
                 <nav class="c-archive-pagination p-news-archive__pagination" aria-label="新着情報一覧のページ送り">
-                    <?php for ($page_number = 1; $page_number <= $news_total_pages; $page_number++) : ?>
+                    <?php for ($page_number = $news_page_start; $page_number <= $news_page_end; $page_number++) : ?>
                         <?php if ($page_number === $news_paged) : ?>
                             <span class="c-archive-pagination__item p-news-archive__pagination-item is-current" aria-current="page"><?php echo esc_html($page_number); ?></span>
                         <?php else : ?>
