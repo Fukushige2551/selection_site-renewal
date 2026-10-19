@@ -84,7 +84,7 @@ get_header('company');
     </div>
   </section>
 
-  <section class="p-page-recruit__voices">
+  <section id="recruit-interviews" class="p-page-recruit__voices">
     <img class="p-page-recruit__voices-word" src="<?php echo esc_url($voices_word_uri); ?>" alt="">
     <header class="p-page-recruit__section-heading"><h2>先輩の声</h2></header>
     <img class="p-page-recruit__voices-decoration" src="<?php echo esc_url($recruit_image('img_voice-decoration.png', 'bg_recruit.png')); ?>" alt="">

@@ -269,8 +269,11 @@
         }
     }
     &__logo {
-        width: 92px;
-        height: 46px;
+        top: 50%;
+        left: 50%;
+        width: 14vw;
+        height: auto;
+        aspect-ratio: 71 / 35;
     }
     &__hamburger {
         &__img {
@@ -338,8 +341,11 @@
 }
 
 .is-fixed .l-header__logo {
-    width: 92px;
-    height: 46px;
+    top: 50%;
+    left: 50%;
+    width: 14vw;
+    height: auto;
+    aspect-ratio: 71 / 35;
 }
 }
 @media screen and (min-width: 1024px) {

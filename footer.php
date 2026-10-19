@@ -64,8 +64,6 @@ $main_footer_link = static function ($label, $url) {
             </ul>
         </details>
 
-        <div class="l-footer__nav__group l-footer__nav__group--news"><a class="l-footer__nav__item" href="<?php echo esc_url(get_post_type_archive_link('news')); ?>">新着情報</a></div>
-
         <details class="l-footer__nav__group l-footer__nav__group--select">
             <summary class="l-footer__nav__item"><a href="<?php echo esc_url(home_url('/select/')); ?>">セレクションのこだわり</a><span aria-hidden="true">＋</span></summary>
             <ul class="l-footer__nav__list select-info">
@@ -78,22 +76,39 @@ $main_footer_link = static function ($label, $url) {
         <details class="l-footer__nav__group l-footer__nav__group--company">
             <summary class="l-footer__nav__item"><a href="<?php echo esc_url(home_url('/company/')); ?>">会社情報</a><span aria-hidden="true">＋</span></summary>
             <ul class="l-footer__nav__list company-info">
-                <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/company/')); ?>">セレクションを知る</a></li>
                 <li class="l-footer__nav__list__item"><a href="<?php echo esc_url($main_footer_page_url('page-company-about.php', '/company/about/')); ?>">会社概要</a></li>
-                <li class="l-footer__nav__list__item"><a href="<?php echo esc_url($main_footer_page_url('page-recruit.php', '/recruit/')); ?>">採用情報（新卒・中途）</a></li>
                 <li class="l-footer__nav__list__item"><a href="<?php echo esc_url($main_footer_page_url('page-company-business.php', '/company/business/')); ?>">企業の方</a></li>
             </ul>
         </details>
 
+        <details class="l-footer__nav__group l-footer__nav__group--recruit">
+            <summary class="l-footer__nav__item"><a href="<?php echo esc_url($main_footer_page_url('page-recruit.php', '/recruit/')); ?>">採用情報（新卒・キャリア）</a><span aria-hidden="true">＋</span></summary>
+            <ul class="l-footer__nav__list recruit-info">
+                <li class="l-footer__nav__list__item"><a href="<?php echo esc_url($main_footer_page_url('page-recruit-work.php', '/recruit/work/')); ?>">セレクションを知る</a></li>
+                <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/recruit/#recruit-interviews')); ?>">社員インタビュー</a></li>
+                <li class="l-footer__nav__list__item"><a href="<?php echo esc_url(home_url('/recruit/#recruit-requirements')); ?>">募集要項</a></li>
+            </ul>
+        </details>
+
         <div class="l-footer__nav__group l-footer__nav__group--part-time"><a class="l-footer__nav__item" href="<?php echo esc_url($main_footer_page_url('page-job.php', '/job/')); ?>">パート・アルバイト募集</a></div>
+        <div class="l-footer__nav__group l-footer__nav__group--news"><a class="l-footer__nav__item" href="<?php echo esc_url(get_post_type_archive_link('news')); ?>">新着情報</a></div>
         <div class="l-footer__nav__group l-footer__nav__group--recipe"><a class="l-footer__nav__item" href="<?php echo esc_url(get_post_type_archive_link('recipe')); ?>">レシピ</a></div>
         <div class="l-footer__nav__group l-footer__nav__group--online"><a class="l-footer__nav__item" href="https://www.selection-ec.jp/" target="_blank" rel="noopener noreferrer">オンラインショップ</a></div>
         <div class="l-footer__nav__group l-footer__nav__group--privacy"><a class="l-footer__nav__item" href="<?php echo esc_url(home_url('/privacy/')); ?>">プライバシーポリシー</a></div>
         <div class="l-footer__nav__group l-footer__nav__group--contact"><a class="l-footer__nav__item" href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a></div>
+
+        <ul class="l-footer__sns l-footer__sns--sp" aria-label="ソーシャルメディア">
+            <li class="l-footer__sns__item">
+                <a href="https://www.instagram.com/foods_selection/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="c-pop l-footer__sns__img instagram c-icon--instagram"></i></a>
+            </li>
+            <li class="l-footer__sns__item">
+                <a href="https://www.facebook.com/218555321614153/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="c-pop l-footer__sns__img facebook c-icon--facebook"></i></a>
+            </li>
+        </ul>
     </nav>
 
     <!-- SNS -->
-    <ul class="l-footer__sns">
+    <ul class="l-footer__sns l-footer__sns--wide">
         <?php /* TODO: 公式YouTubeチャンネル開設後、リンクを設定して再表示する。
         <li class="l-footer__sns__item">
             <a href=""><i class="c-pop l-footer__sns__img youtube c-icon--youtube"></i></a>
