@@ -3233,3 +3233,18 @@
         }
     }
 }
+
+// Keep every primary section link visually centered, regardless of the
+// intentionally offset card layouts around it.
+.p-front-page__shop__all,
+.p-front-page__campaign__all,
+.p-front-page__recipe__all,
+.p-front-page__news__all {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.p-front-page__commitment__all {
+    left: 50%;
+    transform: translateX(-50%);
+}
