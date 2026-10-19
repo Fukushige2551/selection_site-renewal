@@ -96,14 +96,25 @@ $theme_uri = get_template_directory_uri();
 $placeholder_image = $theme_uri . '/img/component/no-image.png';
 
 $news_paged = max(1, (int) get_query_var('paged'));
-$news_query = new WP_Query([
+$news_query_args = [
     'post_type' => 'news',
     'post_status' => 'publish',
     'posts_per_page' => 10,
     'paged' => $news_paged,
     'orderby' => 'date',
     'order' => 'DESC',
-]);
+];
+$news_commitment = isset($_GET['commitment']) && is_string($_GET['commitment'])
+    ? sanitize_title(wp_unslash($_GET['commitment']))
+    : '';
+if ($news_commitment !== '') {
+    $news_query_args['tax_query'] = [[
+        'taxonomy' => 'news_commitment',
+        'field' => 'slug',
+        'terms' => [$news_commitment],
+    ]];
+}
+$news_query = new WP_Query($news_query_args);
 $news_posts = $news_query->posts;
 $news_total_pages = (int) $news_query->max_num_pages;
 

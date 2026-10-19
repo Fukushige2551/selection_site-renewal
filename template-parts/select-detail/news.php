@@ -81,7 +81,7 @@ $news = $config['news'];
             wp_reset_postdata();
             ?>
 
-            <a class="<?php echo esc_attr($block_class); ?>__news__link" href="<?php echo esc_url(get_post_type_archive_link('news')); ?>"><?php echo esc_html($news['archive_label']); ?></a>
+            <a class="<?php echo esc_attr($block_class); ?>__news__link" href="<?php echo esc_url(add_query_arg('commitment', $news['term'], get_post_type_archive_link('news'))); ?>"><?php echo esc_html($news['archive_label']); ?></a>
         </div>
         <a class="<?php echo esc_attr($block_class); ?>__news__seeMore" href="<?php echo esc_url(home_url('/select/')); ?>">
             <span class="c-btn c-btn--common--green">一覧へ戻る</span>

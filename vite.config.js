@@ -17,7 +17,13 @@ export default defineConfig({
         strictPort: true,
         cors: true,
         watch: {
-            usePolling: true
+            usePolling: true,
+            ignored: [
+                '**/bk_foods-selection.co.jp/**',
+                '**/bk_foods-selection.co.jp.testrs.jp/**',
+                '**/stg-upload/**',
+                '**/_local_bk/**'
+            ]
         }
     },
     build: {
