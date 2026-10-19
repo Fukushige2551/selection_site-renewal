@@ -9,7 +9,7 @@
     <?php endif; ?>
   </div>
 
-  <section class="p-page-recruit__entry">
+  <section id="recruit-requirements" class="p-page-recruit__entry">
     <div class="p-page-recruit__entry-word" aria-hidden="true">
       <img src="<?php echo esc_url($image_uri . '/svg/decoration_entry.svg'); ?>" alt="">
       <img src="<?php echo esc_url($image_uri . '/svg/text_entry-waiting.svg'); ?>" alt="">

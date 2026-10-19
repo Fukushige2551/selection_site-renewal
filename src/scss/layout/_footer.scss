@@ -8,9 +8,10 @@
     flex-flow: column;
     align-items: center;
     background-repeat: no-repeat;
-    background-size: 100% auto;
+    // SPの背景を少しだけ画面外へ広げ、元画像の緑色の端を見せない。
+    background-size: calc(100% + 32px) auto;
     background-position: center top;
-    padding: 17.17vw 3.846vw 3.846vw;
+    padding: clamp(55px, 17.17vw, 132px) clamp(12px, 3.846vw, 30px) clamp(16px, 5vw, 38px);
 
     a {
         &:hover {
@@ -22,7 +23,7 @@
     &__logo {
         width: 41.53vw;
         aspect-ratio: 162 / 77;
-        margin-bottom: 6.66vw;
+        margin-bottom: clamp(21px, 6.66vw, 51px);
 
         &__img {
             display: block;
@@ -35,7 +36,7 @@
         }
     }
     &__nav {
-        margin-bottom: 72.3vw;
+        margin-bottom: clamp(231px, 72.3vw, 555px);
         width: 45.64vw;
 
         &--tab {
@@ -63,7 +64,7 @@
         &__item {
             display: flex;
             justify-content: center;
-            font-size: 4.15vw;
+            font-size: 16px;
             font-weight: bold;
             white-space: nowrap;
 
@@ -77,7 +78,7 @@
 
             &__item {
                 font-family: "Zen Kaku Gothic New", sans-serif;
-                font-size: 3.58vw;
+                font-size: 14px;
                 white-space: nowrap;
                 width: 50%;
             }
@@ -97,8 +98,18 @@
     &__sns {
         display: flex;
         align-items: center;
-        gap: 0 5.12vw;
-        margin-bottom: 4.35vw;
+        gap: clamp(16px, 5.12vw, 39px);
+        margin: clamp(8px, 2.5vw, 19px) 0 clamp(14px, 4.35vw, 33px);
+
+        &--sp {
+            justify-content: center;
+            width: 100%;
+            padding-top: clamp(16px, 5vw, 24px);
+        }
+
+        &--wide {
+            display: none;
+        }
 
         &__img {
             display: block;
@@ -111,19 +122,21 @@
             }
             &.instagram,
             &.facebook {
-                width: 8.2vw;
+                width: 34px;
+                height: 34px;
                 aspect-ratio: 32 / 32;
             }
         }
     }
     &__banner {
         display: block;
-        margin-bottom: 3.84vw;
+        margin-bottom: clamp(12px, 3.84vw, 29px);
 
         &__img {
             display: block;
             width: 100%;
         }
+
     }
     &__company,
     &__address,
@@ -134,14 +147,14 @@
     &__address {
         line-height: 1.8;
         letter-spacing: 10%;
-        font-size: 3.58vw;
+        font-size: 14px;
         font-weight: bold;
     }
     &__address {
-        margin-bottom: 6.15vw;
+        margin-bottom: clamp(20px, 6.15vw, 47px);
     }
     &__copyright {
-        font-size: 3.07vw;
+        font-size: 12px;
     }
 }
 
@@ -196,10 +209,10 @@
             padding: 2.08vw 0;
         }
         &__item {
-            font-size: 2.08vw;
+            font-size: 16px;
 
             &.list-title {
-                font-size: 2.08vw;
+                font-size: 16px;
                 margin-bottom: 1.69vw;
             }
         }
@@ -211,7 +224,7 @@
             }
 
             &__item {
-                font-size: 1.82vw;
+                font-size: 14px;
             }
         }
     }
@@ -226,7 +239,8 @@
             }
             &.instagram,
             &.facebook {
-                width: 4.17vw;
+                width: 34px;
+                height: 34px;
                 aspect-ratio: 32 / 32;
             }
         }
@@ -241,16 +255,17 @@
         &__img {
             width: 46.98vw;
         }
+
     }
     &__company,
     &__address {
-        font-size: 1.82vw;
+        font-size: 14px;
     }
     &__address {
         margin-bottom: 2.8vw;
     }
     &__copyright {
-        font-size: 1.56vw;
+        font-size: 12px;
     }
 }
 }
@@ -270,7 +285,7 @@
     &__nav {
         display: flex;
         gap: 1.75vw 1.25vw;
-        width: 62.50vw;
+        width: min(92vw, 1500px);
         margin-bottom: 38.12vw;
 
         &--tab {
@@ -281,10 +296,10 @@
             padding: 1.04vw 0 0;
         }
         &__item {
-            font-size: calc(0.72vw * var(--pc-font-scale));
+            font-size: 14px;
 
             &.list-title {
-                font-size: calc(0.83vw * var(--pc-font-scale));
+                font-size: 14px;
                 margin-bottom: 0.72vw;
             }
         }
@@ -296,7 +311,7 @@
             }
 
             &__item {
-                font-size: calc(0.72vw * var(--pc-font-scale));
+                font-size: 12px;
             }
         }
     }
@@ -304,13 +319,22 @@
         gap: 1.12vw;
         margin-bottom: 1.50vw;
 
+        &--sp {
+            display: none;
+        }
+
+        &--wide {
+            display: flex;
+        }
+
         &__img {
             &.youtube {
                 width: 2.08vw;
             }
             &.instagram,
             &.facebook {
-                width: 1.67vw;
+                width: 34px;
+                height: 34px;
             }
         }
     }
@@ -331,14 +355,37 @@
         }
     }
     &__company {
-        font-size: calc(0.83vw * var(--pc-font-scale));
+        font-size: 14px;
     }
     &__address {
-        font-size: calc(0.72vw * var(--pc-font-scale));
+        font-size: 12px;
         margin-bottom: 1.77vw;
     }
     &__copyright {
-        font-size: calc(0.62vw * var(--pc-font-scale));
+        font-size: 12px;
+    }
+}
+}
+
+@media screen and (min-width: 1280px) {
+.l-footer {
+    &__nav {
+        &__item,
+        &__item.list-title {
+            font-size: 16px;
+        }
+
+        &__list__item {
+            font-size: 14px;
+        }
+    }
+
+    &__company {
+        font-size: 16px;
+    }
+
+    &__address {
+        font-size: 14px;
     }
 }
 }
@@ -428,11 +475,13 @@
 }
 
 .l-footer__nav__list.select-info .l-footer__nav__list__item,
-.l-footer__nav__list.company-info .l-footer__nav__list__item {
+.l-footer__nav__list.company-info .l-footer__nav__list__item,
+.l-footer__nav__list.recruit-info .l-footer__nav__list__item {
     width: 50%;
 }
 
-.l-footer__nav__list.company-info {
+.l-footer__nav__list.company-info,
+.l-footer__nav__list.recruit-info {
     flex-flow: row wrap;
     align-items: flex-start;
 }
@@ -449,6 +498,13 @@
         column-gap: 7vw;
     }
 
+    .l-footer__sns--sp {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: auto;
+        margin-top: 24px;
+    }
+
     .l-footer__nav__group[open] > .l-footer__nav__list {
         max-height: 320px;
     }
@@ -457,9 +513,14 @@
 @media screen and (min-width: 1024px) {
     .l-footer__nav {
         display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1.25fr)
+            minmax(0, .85fr)
+            minmax(0, 1.6fr)
+            minmax(0, 1.25fr);
         grid-auto-rows: minmax(54px, auto);
-        width: 72vw;
+        width: min(92vw, 1500px);
         margin-top: 1.5vw;
         margin-bottom: 38.12vw;
         gap: 0 1.25vw;
@@ -475,7 +536,7 @@
     .l-footer__nav__group summary.l-footer__nav__item {
         min-height: 54px;
         padding: 0 14px;
-        font-size: calc(.72vw * var(--pc-font-scale));
+        font-size: 14px;
     }
 
     .l-footer__nav__list {
@@ -489,7 +550,22 @@
     }
 
     .l-footer__nav__list.select-info .l-footer__nav__list__item,
-    .l-footer__nav__list.company-info .l-footer__nav__list__item {
+    .l-footer__nav__list.company-info .l-footer__nav__list__item,
+    .l-footer__nav__list.recruit-info .l-footer__nav__list__item {
         width: 50%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .l-footer__nav__item,
+    .l-footer__nav__group summary.l-footer__nav__item {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+    .l-footer__nav {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        width: 92vw;
     }
 }

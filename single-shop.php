@@ -1298,7 +1298,10 @@ $recruit_archive_url = get_post_type_archive_link('recruit_part_time') ?: home_u
                             </svg>
                             <span class="c-shop-card__link__text">店舗チラシ</span>
                         </a>
-                        <a class="c-shop-card__link u-bg--blue" href="<?php echo esc_url($nearby_permalink . '#single-shop-recruit-title'); ?>">
+                        <a
+                            class="c-shop-card__link u-bg--blue"
+                            href="<?php echo esc_url(add_query_arg(['job_shop' => [$nearby_shop['title'] ?? '']], home_url('/job/search/'))); ?>"
+                        >
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path d="M12.85 11.21C12.18 11.68 11.37 11.95 10.49 11.95C9.61 11.95 8.8 11.67 8.13 11.21C6.96 11.71 6.24 12.59 5.81 13.37C5.23 14.4 5.68 15.87 6.69 15.87H14.29C15.3 15.87 15.75 14.41 15.17 13.37C14.73 12.59 14.01 11.71 12.85 11.21Z" fill="white"/>
                                 <path d="M10.49 10.98C12.21 10.98 13.6 9.59 13.6 7.87V7.13C13.6 5.41 12.21 4.02 10.49 4.02C8.77 4.02 7.38 5.41 7.38 7.13V7.87C7.38 9.59 8.77 10.98 10.49 10.98Z" fill="white"/>

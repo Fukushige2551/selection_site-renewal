@@ -75,9 +75,7 @@ $footer_link = static function ($label, $url, $class = '') {
                     </ul>
                 </details>
                 <div class="l-company-footer__row l-company-footer__row--news"><?php $footer_link('新着情報', get_post_type_archive_link('news')); ?></div>
-                <div class="l-company-footer__row l-company-footer__row--recruit"><?php $footer_link('パート・アルバイト募集', $footer_page_url('page-job.php', '/job/')); ?></div>
                 <div class="l-company-footer__row l-company-footer__row--recipe"><?php $footer_link('レシピ', get_post_type_archive_link('recipe')); ?></div>
-                <div class="l-company-footer__row l-company-footer__row--online"><?php $footer_link('オンラインショップ', 'https://www.selection-ec.jp/'); ?></div>
             </div>
 
             <div class="l-company-footer__column">
@@ -89,20 +87,37 @@ $footer_link = static function ($label, $url, $class = '') {
                         <?php endforeach; ?>
                     </ul>
                 </details>
+                <div class="l-company-footer__row l-company-footer__row--online"><?php $footer_link('オンラインショップ', 'https://www.selection-ec.jp/'); ?></div>
             </div>
 
             <div class="l-company-footer__column">
                 <details class="l-company-footer__group l-company-footer__group--company">
                     <summary><a href="<?php echo esc_url(home_url('/company/')); ?>">会社情報</a><span class="l-company-footer__plus" aria-hidden="true">+</span></summary>
                     <ul class="l-company-footer__list l-company-footer__list--company">
-                        <li><?php $footer_link('セレクションを知る', home_url('/company/')); ?></li>
                         <li><?php $footer_link('会社概要', $footer_destinations['company_profile'] ?: $footer_page_url('page-company-about.php', '/company/about/')); ?></li>
-                        <li><?php $footer_link('採用情報（新卒・中途）', $footer_destinations['recruit'] ?: $footer_page_url('page-recruit.php', '/recruit/')); ?></li>
                         <li><?php $footer_link('企業の方', $footer_destinations['business'] ?: $footer_page_url('page-company-business.php', '/company/business/')); ?></li>
                     </ul>
                 </details>
-                <div class="l-company-footer__row l-company-footer__row--contact"><?php $footer_link('お問い合わせ', home_url('/contact/')); ?></div>
+                <details class="l-company-footer__group l-company-footer__group--recruit">
+                    <summary><a href="<?php echo esc_url($footer_destinations['recruit'] ?: $footer_page_url('page-recruit.php', '/recruit/')); ?>">採用情報（新卒・キャリア）</a><span class="l-company-footer__plus" aria-hidden="true">+</span></summary>
+                    <ul class="l-company-footer__list l-company-footer__list--recruit">
+                        <li><?php $footer_link('セレクションを知る', $footer_page_url('page-recruit-work.php', '/recruit/work/')); ?></li>
+                        <li><?php $footer_link('社員インタビュー', home_url('/recruit/#recruit-interviews')); ?></li>
+                        <li><?php $footer_link('募集要項', home_url('/recruit/#recruit-requirements')); ?></li>
+                    </ul>
+                </details>
+                <div class="l-company-footer__row l-company-footer__row--part-time"><?php $footer_link('パート・アルバイト募集', $footer_page_url('page-job.php', '/job/')); ?></div>
+                <div class="l-company-footer__row l-company-footer__row--contact"><?php $footer_link('お問い合わせ', home_url('/company/business/contact/')); ?></div>
                 <div class="l-company-footer__row l-company-footer__row--privacy"><?php $footer_link('プライバシーポリシー', home_url('/privacy/')); ?></div>
+                <ul class="l-company-footer__socials l-company-footer__socials--sp" aria-label="ソーシャルメディア">
+                    <?php foreach (['instagram' => 'Instagram', 'facebook' => 'Facebook'] as $key => $label) : ?>
+                        <li class="l-company-footer__social l-company-footer__social--<?php echo esc_attr($key); ?>">
+                            <?php if ($footer_destinations[$key]) : ?><a href="<?php echo esc_url($footer_destinations[$key]); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr($label); ?>"><?php endif; ?>
+                                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/component/svg/icon_' . $key . '_color.svg'); ?>" alt="<?php echo esc_attr($label); ?>" width="40" height="40" loading="lazy">
+                            <?php if ($footer_destinations[$key]) : ?></a><?php endif; ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
             </div>
         </nav>
         <!-- フッターナビゲーション 終了 -->
@@ -118,7 +133,7 @@ $footer_link = static function ($label, $url, $class = '') {
     </div>
 
     <!-- ソーシャルリンク -->
-    <ul class="l-company-footer__socials">
+    <ul class="l-company-footer__socials l-company-footer__socials--wide">
         <?php foreach (['instagram' => 'Instagram', 'facebook' => 'Facebook'] as $key => $label) : ?>
             <li class="l-company-footer__social l-company-footer__social--<?php echo esc_attr($key); ?>">
                 <?php if ($footer_destinations[$key]) : ?><a href="<?php echo esc_url($footer_destinations[$key]); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr($label); ?>"><?php endif; ?>

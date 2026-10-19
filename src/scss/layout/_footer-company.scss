@@ -131,11 +131,15 @@
     }
 
     &__group--select {
-        order: 2;
+        order: 3;
     }
 
     &__group--company {
-        order: 3;
+        order: 5;
+    }
+
+    &__group--recruit {
+        order: 6;
     }
 
     &__plus {
@@ -154,24 +158,24 @@
         order: 1;
     }
 
-    &__row--recruit {
-        order: 4;
-    }
-
     &__row--recipe {
-        order: 5;
+        order: 2;
     }
 
     &__row--online {
-        order: 6;
+        order: 4;
     }
 
-    &__row--contact {
+    &__row--part-time {
         order: 7;
     }
 
-    &__row--privacy {
+    &__row--contact {
         order: 8;
+    }
+
+    &__row--privacy {
+        order: 9;
     }
 
     &__group &__list {
@@ -199,16 +203,19 @@
         grid-template-rows: repeat(6, auto);
     }
 
-    &__group &__list--company {
+    &__group &__list--company,
+    &__group &__list--recruit {
         padding-top: 0;
         padding-bottom: 0;
     }
 
-    &__group &__list--company li {
+    &__group &__list--company li,
+    &__group &__list--recruit li {
         padding: 10px 0;
     }
 
-    &__group &__list--company li:not(:last-child) {
+    &__group &__list--company li:not(:last-child),
+    &__group &__list--recruit li:not(:last-child) {
         border-bottom: 1px dotted #d3d6cf;
     }
 
@@ -253,6 +260,15 @@
         gap: 16px;
         display: flex;
         margin: 40px 0 22px !important;
+
+        &--sp {
+            order: 10;
+            margin: 18px 0 22px !important;
+        }
+
+        &--wide {
+            display: none;
+        }
     }
 
     &__social a, &__social img {
@@ -356,6 +372,14 @@
         }
         &__socials {
             margin-top: 76px !important;
+
+            &--sp {
+                display: none;
+            }
+
+            &--wide {
+                display: flex;
+            }
         }
         &__company {
             justify-content: center;

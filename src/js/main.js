@@ -10,6 +10,18 @@ jQuery(function($) {
     var $body = $('body');
     var $scrollTopButton = $('.c-btn--scroll-top');
 
+    // フッターは常に1項目だけ開き、縦に伸びすぎないようにする。
+    var footerDetails = document.querySelectorAll('.l-footer__nav details');
+    footerDetails.forEach(function(detail) {
+        detail.addEventListener('toggle', function() {
+            if (!detail.open) return;
+
+            footerDetails.forEach(function(otherDetail) {
+                if (otherDetail !== detail) otherDetail.open = false;
+            });
+        });
+    });
+
     var $topPulldown = $('.l-header__nav__group.js-toggle--pulldown').first();
     var $prefGroups = $('.shop-info__group.js-toggle--pulldown');
 
