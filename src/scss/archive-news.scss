@@ -8,7 +8,7 @@
 }
 
 .post-type-archive-news {
-    --news-paper-extension: 402.56vw;
+    --news-paper-extension: 40vw;
     --news-bottom-gap: 64px;
     --news-footer-overlap: 17vw;
 }
@@ -453,7 +453,7 @@
 .post-type-archive-news .l-footer {
     position: relative;
     z-index: 2;
-    margin-top: calc(-1 * var(--news-footer-overlap));
+    margin-top: 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -1464,363 +1464,6 @@
     }
 }
 
-
-.p-news-footer {
-    --footer-height: 402.56vw;
-    --footer-logo-top: 20.51vw;
-    --footer-logo-width: 49.49vw;
-    --footer-nav-top: 51.8vw;
-    --footer-nav-width: 45.64vw;
-    --footer-title-size: 4.1vw;
-    --footer-text-size: 3.59vw;
-    --footer-sns-top: 289.49vw;
-    --footer-banner-top: 304.1vw;
-    --footer-banner-width: 92.56vw;
-    --footer-address-top: 377.44vw;
-    --footer-copyright-top: 395.38vw;
-    position: relative;
-    min-height: var(--footer-height);
-    color: #103675;
-    background: url("/wp-content/themes/foods-selectioncojp-theme/img/footer/news-footer-bg-sp.png") center top / 100% 100% no-repeat;
-    font-family: "Zen Kaku Gothic New", sans-serif;
-
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
-
-    .c-btn--scroll-top {
-        appearance: none;
-        background-color: transparent;
-        border: 0;
-        border-radius: 50%;
-        padding: 0;
-    }
-
-    &__logo {
-        position: absolute;
-        top: var(--footer-logo-top);
-        left: 50%;
-        width: var(--footer-logo-width);
-        transform: translateX(-50%);
-
-        img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-    }
-
-    &__nav {
-        position: relative;
-        top: var(--footer-nav-top);
-        display: grid;
-        width: var(--footer-nav-width);
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    &__group {
-        padding: 3.25vw 0;
-        border-top: 1px dotted #103675;
-        font-size: var(--footer-title-size);
-        font-weight: 700;
-        line-height: 1.5;
-    }
-
-    &__shops {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.79vw 0;
-        margin-top: 2.31vw;
-        text-align: left;
-    }
-
-    &__shops,
-    &__company-links {
-        font-size: var(--footer-text-size);
-        font-weight: 500;
-    }
-
-    &__company-links {
-        display: grid;
-        gap: 1.79vw;
-        margin-top: 2.31vw;
-        white-space: nowrap;
-    }
-
-    &__sns {
-        position: absolute;
-        top: var(--footer-sns-top);
-        left: 50%;
-        display: flex;
-        align-items: center;
-        gap: 5.13vw;
-        transform: translateX(-50%);
-
-        i {
-            display: block;
-            width: 8.21vw;
-            height: 8.21vw;
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-    }
-
-    &__banners {
-        position: absolute;
-        top: var(--footer-banner-top);
-        left: 50%;
-        display: flex;
-        flex-direction: column;
-        gap: 4.1vw;
-        transform: translateX(-50%);
-
-        a,
-        img {
-            display: block;
-            width: var(--footer-banner-width);
-            height: auto;
-        }
-    }
-
-    &__address,
-    &__copyright {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        color: #fff;
-        text-align: center;
-        font-size: var(--footer-text-size);
-        line-height: 1.5;
-    }
-
-    &__address {
-        top: var(--footer-address-top);
-        font-weight: 700;
-
-        address {
-            font-style: normal;
-        }
-    }
-
-    &__copyright {
-        top: var(--footer-copyright-top);
-        font-size: 3.08vw;
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1279px) {
-    // Continue the same paper layer under the footer instead of restarting its tile.
-    .post-type-archive-news {
-        --news-paper-extension: 120.0527vw;
-    }
-
-    .p-news-footer {
-        // TAB and laptop share the two-column composition in the WEB frames.
-        --footer-leading-space: 33.0473vw;
-        --footer-height: calc(153.1vw - var(--footer-leading-space));
-        --footer-logo-top: calc(40.9vw - var(--footer-leading-space));
-        --footer-logo-width: 18.85vw;
-        --footer-nav-top: calc(57.85vw - var(--footer-leading-space));
-        --footer-nav-width: 46.2vw;
-        --footer-title-size: 1.5625vw;
-        --footer-text-size: 1.3672vw;
-        --footer-sns-top: calc(118vw - var(--footer-leading-space));
-        --footer-banner-top: calc(125.36vw - var(--footer-leading-space));
-        --footer-banner-width: 35.25vw;
-        --footer-address-top: calc(143.2vw - var(--footer-leading-space));
-        --footer-copyright-top: calc(150.1vw - var(--footer-leading-space));
-        isolation: isolate;
-        background-color: transparent;
-        background-image: linear-gradient(to bottom, transparent calc(115.789vw - var(--footer-leading-space)), #86cbbb calc(115.789vw - var(--footer-leading-space)));
-        background-position: center top;
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-
-        &::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            z-index: -1;
-            pointer-events: none;
-            background: url("/wp-content/themes/foods-selectioncojp-theme/img/footer/news-footer-art-tab.svg") center calc(-1 * var(--footer-leading-space)) / 100% 143.6195vw no-repeat;
-            mask: url("/wp-content/themes/foods-selectioncojp-theme/img/footer/news-footer-sky-mask-tab.svg") center top / 100.779% 112.3659vw no-repeat;
-            bottom: auto;
-            height: calc(143.6195vw - var(--footer-leading-space) - 2px);
-        }
-
-        &::after {
-            content: "";
-            position: absolute;
-            z-index: -1;
-            left: 0;
-            right: 0;
-            top: calc(143.6195vw - var(--footer-leading-space) - 12px);
-            height: 24px;
-            background: #86cbbb;
-            pointer-events: none;
-        }
-
-        &__nav {
-            display: block;
-            width: 100%;
-        }
-
-        &__group {
-            position: absolute;
-            top: 0;
-            left: 60.546875vw;
-            width: 17.1875vw;
-            padding: 0;
-            transform: translateX(-50%);
-            line-height: 1.459065;
-        }
-
-        &__title {
-            display: block;
-            text-align: center;
-        }
-
-        &__group--shops {
-            left: 35.15625vw;
-        }
-
-        &__group--news {
-            left: 35.546875vw;
-            top: 18.436vw;
-        }
-
-        &__group--select {
-            left: 35.546875vw;
-            top: 23.293vw;
-            white-space: nowrap;
-        }
-
-        &__group--company {
-            grid-column: 2;
-            grid-row: 1 / 3;
-        }
-
-        &__group--part,
-        &__group--recipe,
-        &__group--online,
-        &__group--privacy,
-        &__group--contact {
-            grid-column: 2;
-            white-space: nowrap;
-        }
-
-        &__group--part {
-            top: 13.084vw;
-        }
-        &__group--recipe {
-            top: 18.139vw;
-        }
-        &__group--online {
-            top: 23.095vw;
-        }
-        &__group--privacy {
-            top: 28.051vw;
-        }
-        &__group--contact {
-            top: 32.71vw;
-        }
-
-        &__shops,
-        &__company-links {
-            margin-top: 0.9vw;
-            gap: 0.8vw 0;
-        }
-
-        &__sns {
-            gap: 2.1vw;
-
-            i {
-                width: 3.125vw;
-                height: 3.125vw;
-            }
-        }
-
-        &__banners {
-            flex-direction: row;
-            gap: 2.4vw;
-
-            a:first-child {
-                margin-top: 3.3vw;
-            }
-        }
-
-        &__copyright {
-            font-size: 1.172vw;
-        }
-    }
-}
-
-@media screen and (min-width: 1280px) {
-    .post-type-archive-news {
-        --news-paper-extension: 80.73vw;
-    }
-
-    .p-news-footer {
-        --footer-height: 80.73vw;
-        --footer-logo-top: 5.68vw;
-        --footer-logo-width: 10.05vw;
-        --footer-nav-top: 12.92vw;
-        --footer-nav-width: 62.5vw;
-        --footer-title-size: 0.8333vw;
-        --footer-text-size: 0.7292vw;
-        --footer-sns-top: 62.76vw;
-        --footer-banner-top: 66.35vw;
-        --footer-banner-width: 18.8vw;
-        --footer-address-top: 74.69vw;
-        --footer-copyright-top: 79.22vw;
-        background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/footer/footer_bg-pc.png");
-
-        &__nav {
-            grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: 10.52vw auto;
-            gap: 0 1.25vw;
-            text-align: center;
-        }
-
-        &__group {
-            padding: 0;
-            white-space: nowrap;
-        }
-
-        &__group--online,
-        &__group--privacy,
-        &__group--contact {
-            grid-row: 2;
-        }
-
-        &__shops,
-        &__company-links {
-            margin-top: 0.5vw;
-            gap: 0.45vw 0;
-        }
-
-        &__sns {
-            gap: 1.04vw;
-
-            i {
-                width: 1.67vw;
-                height: 1.67vw;
-            }
-        }
-
-        &__banners {
-            flex-direction: row;
-            gap: 1vw;
-        }
-
-        &__copyright {
-            font-size: 0.625vw;
-        }
-    }
-}
-
 @media screen and (max-width: 767px) {
     .p-news-archive {
         &__list-card {
@@ -1862,24 +1505,13 @@
         }
     }
 
-    .p-news-footer__nav {
-        top: 52.985vw;
-        font-family: "Noto Sans JP", sans-serif;
-        grid-template-rows: 47.692308vw 12.564103vw 13.846154vw 33.846154vw 13.076923vw 12.820513vw 12.820513vw 12.051282vw auto;
-    }
 
-    .p-news-footer__group {
-        line-height: 1.1875;
-    }
 
-    .p-news-footer__title {
-        display: block;
-    }
 
-    .p-news-footer__shops,
-    .p-news-footer__company-links {
-        line-height: 1.5;
-    }
+
+
+
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -1971,5 +1603,23 @@
 @media screen and (min-width: 768px) and (max-width: 1279px) {
     .p-news-archive__pagination-item {
         font-size: 13.395349px;
+    }
+}
+
+.post-type-archive-news .l-footer .c-btn--scroll-top {
+    appearance: none;
+    background-color: transparent;
+    border: 0;
+    border-radius: 50%;
+    padding: 0;
+}
+
+@media screen and (min-width: 1024px) {
+    .post-type-archive-news .l-footer {
+        // Keep the shared artwork; continue its green base when content is taller.
+        background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/footer/footer_bg-pc.png"),
+            linear-gradient(to bottom, transparent 70vw, #86cbbb 70vw);
+        background-size: 100% auto, 100% 100%;
+        background-repeat: no-repeat;
     }
 }

@@ -38,7 +38,15 @@ $entry_fields = [
 
 $fields = $is_entry ? $entry_fields : $contact_fields;
 $entry_defaults = [];
+$entry_job = null;
 if ($is_entry) {
+    $entry_job_id = isset($_GET['job_id']) && is_string($_GET['job_id'])
+        && preg_match('/^[1-9][0-9]*$/D', $_GET['job_id'])
+        ? (int) $_GET['job_id'] : 0;
+    $entry_job = $entry_job_id ? get_post($entry_job_id) : null;
+    if ($entry_job && ($entry_job->post_type !== 'recruit_part_time' || $entry_job->post_status !== 'publish')) {
+        $entry_job = null;
+    }
     foreach (['store', 'job'] as $entry_key) {
         $entry_value = $_GET[$entry_key] ?? '';
         $entry_defaults[$entry_key] = is_string($entry_value)
@@ -57,6 +65,9 @@ get_header('company');
             <a href="<?php echo esc_url(home_url('/recruit/')); ?>">採用情報</a><span aria-hidden="true">›</span>
             <a href="<?php echo esc_url(home_url('/job/')); ?>">パートアルバイト募集</a><span aria-hidden="true">›</span>
             <a href="<?php echo esc_url(home_url('/job/search/')); ?>">検索結果</a><span aria-hidden="true">›</span>
+            <?php if ($entry_job) : ?>
+                <a href="<?php echo esc_url(get_permalink($entry_job)); ?>"><?php echo esc_html(get_the_title($entry_job)); ?></a><span aria-hidden="true">›</span>
+            <?php endif; ?>
             <span><?php echo esc_html($page_title); ?></span>
         <?php else : ?>
             <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a><span aria-hidden="true">›</span>

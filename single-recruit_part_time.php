@@ -12,6 +12,12 @@ $job_detail_field = static function ($post_id, $field_name, $fallback = '') {
     return ($value !== null && $value !== false && $value !== '') ? $value : $fallback;
 };
 
+$job_detail_text = static function ($value) {
+    // ACF textareas may already format newlines as HTML breaks.
+    $text = preg_replace('/<br\s*\/?\s*>\r?\n?/i', "\n", (string) $value);
+    return nl2br(esc_html($text));
+};
+
 get_header('company');
 ?>
 
@@ -19,6 +25,7 @@ get_header('company');
     <?php while (have_posts()) : the_post(); ?>
         <?php
         $job_id = get_the_ID();
+        $is_imported_job = (bool) get_post_meta($job_id, '_foods_legacy_job_id', true);
         $theme_uri = get_template_directory_uri();
         $asset_uri = $theme_uri . '/img/page/single-recruit-part-time';
         $shop_name = $job_detail_field($job_id, 'shop_name', 'セレクション 行徳店');
@@ -45,6 +52,18 @@ get_header('company');
             '待遇/福利厚生' => $benefits,
             'その他' => $other,
         ];
+        if ($is_imported_job) {
+            // Preserve the legacy sections and avoid inserting demo terms into empty fields.
+            $lead = '';
+            $detail_rows = [
+                '募集職種' => get_post_meta($job_id, '_foods_legacy_job_occupation', true),
+                '職種別 勤務時間・時給' => get_post_meta($job_id, '_foods_legacy_job_conditions', true),
+            ];
+            $source_benefits = get_post_meta($job_id, 'benefits', true);
+            if ($source_benefits !== '') { $detail_rows['待遇'] = $source_benefits; }
+            $detail_rows['勤務地'] = get_post_meta($job_id, 'work_location_access', true);
+            $detail_rows['お問合せ'] = get_post_meta($job_id, 'application_method', true);
+        }
         $steps = [
             ['応募フォームよりご応募', "エントリーフォームより\nご応募ください。", 'step-1.svg'],
             ['店舗担当者よりご連絡', "エントリーフォームよりご応募ください。\nもしくは店舗に\n直接お電話ください。", 'step-2.svg'],
@@ -58,15 +77,15 @@ get_header('company');
             <a href="<?php echo esc_url(home_url('/recruit/')); ?>">採用情報</a><span>›</span>
             <a href="<?php echo esc_url(home_url('/job/')); ?>">パート・アルバイト募集</a><span>›</span>
             <a href="<?php echo esc_url(home_url('/job/search/')); ?>">検索結果</a><span>›</span>
-            <span>行徳店 レジスタッフ募集</span>
+            <span><?php echo esc_html(get_the_title()); ?></span>
         </nav>
 
         <article class="p-job-detail__article">
             <header class="p-job-detail__header">
                 <h1><?php the_title(); ?></h1>
                 <?php if ($lead) : ?>
-                    <p><?php echo nl2br(esc_html($lead)); ?></p>
-                <?php else : ?>
+                    <p><?php echo $job_detail_text($lead); ?></p>
+                <?php elseif (!$is_imported_job) : ?>
                     <p>お客様対応が好きな方歓迎！<br>レジでの会計対応を中心に、<br>明るく元気に接客していただくお仕事です。<br>未経験の方も、丁寧にサポートしますので<br>安心してご応募ください。</p>
                 <?php endif; ?>
             </header>
@@ -87,7 +106,7 @@ get_header('company');
                                     <?php echo esc_html($label); ?>
                                 <?php endif; ?>
                             </dt>
-                            <dd><?php echo nl2br(esc_html((string) $value)); ?></dd>
+                            <dd><?php echo $job_detail_text($value); ?></dd>
                         </div>
                     <?php endforeach; ?>
                 </dl>

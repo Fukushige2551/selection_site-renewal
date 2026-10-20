@@ -1137,6 +1137,24 @@ function foods_get_recruit_part_time_field_group() {
                 'new_lines' => 'br',
             ],
             [
+                'key' => 'field_recruit_part_time_card_salary',
+                'label' => '一覧用給与',
+                'name' => 'card_salary',
+                'type' => 'text',
+                'instructions' => '例：時給 1,140円～。勤務条件の全文は「給与」に入力してください。',
+                'required' => 0,
+            ],
+            [
+                'key' => 'field_recruit_part_time_card_access',
+                'label' => '一覧用アクセス',
+                'name' => 'card_access',
+                'type' => 'textarea',
+                'instructions' => '路線・駅名と徒歩時間を2～3行程度で入力してください。',
+                'rows' => 2,
+                'new_lines' => '',
+                'required' => 0,
+            ],
+            [
                 'key' => 'field_recruit_part_time_work_location_access',
                 'label' => '勤務地・アクセス',
                 'name' => 'work_location_access',
@@ -1238,14 +1256,14 @@ function foods_register_recruit_part_time_scf_fields() {
         return;
     }
 
-    $version = '20261008-job-shop-select-1';
+    $version = '20261020-job-card-summary-1';
     if (get_option('foods_recruit_part_time_scf_fields_version') === $version) {
         return;
     }
 
     $result = foods_sync_recruit_part_time_scf_fields();
 
-    if (!empty($result['field_group_id']) && $result['field_count'] === 12) {
+    if (!empty($result['field_group_id']) && $result['field_count'] === count(foods_get_recruit_part_time_field_group()['fields'])) {
         update_option('foods_recruit_part_time_scf_fields_version', $version);
     }
 }

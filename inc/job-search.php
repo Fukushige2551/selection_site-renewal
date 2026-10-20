@@ -12,6 +12,7 @@ function foods_get_job_shop_choices() {
         $title = get_the_title($shop);
         $choices[$title] = $title;
     }
+    $choices['船橋水産加工センター'] = '船橋水産加工センター';
     return $choices;
 }
 
@@ -23,6 +24,11 @@ add_filter('acf/load_field/key=field_recruit_part_time_shop_name', static functi
 /** Shared single-choice occupations for vacancy editing and applications. */
 function foods_get_job_occupation_choices() {
     $labels = ['チェッカー（レジ）', '水産', '青果', '惣菜', '食肉', 'グロサリー', '早朝品出し', 'アルバイト（全部門）'];
+    $labels = array_merge($labels, [
+        'チェッカー（レジ）、品出し', '品出しパートナー募集', '販売部', 'クリ－ン部',
+        '販売部（チェッカー・品出し他）', '夜間店長', '食品品出し(レジ作業含む)',
+        '製造部', '水産加工', '夜間レジ', '清掃', '加工品（品出し）', 'アルバイト',
+    ]);
     return array_combine($labels, $labels);
 }
 

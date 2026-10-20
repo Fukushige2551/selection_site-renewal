@@ -6,6 +6,17 @@
  */
 require_once __DIR__ . '/recruit-interview-config.php';
 
+// Correct the legacy recruitment landing-page slug without touching interviews.
+add_action('init', static function () {
+    if (get_page_by_path('recruit', OBJECT, 'page')) {
+        return;
+    }
+    $page = get_page_by_path('recurit', OBJECT, 'page');
+    if ($page && get_page_template_slug($page->ID) === 'page-recruit.php') {
+        wp_update_post(['ID' => $page->ID, 'post_name' => 'recruit']);
+    }
+});
+
 function foods_get_recruit_interview_number($post) {
     $post = get_post($post);
     if (!$post || $post->post_type !== 'page'

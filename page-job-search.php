@@ -27,10 +27,12 @@ $job_search_shops = [
     '行徳店', '西船橋店', '花野井店', 'しいの木台店', '青葉台店',
     '西原店', '松戸店', '西新井店', '三郷店', '八潮店',
 ];
+$job_search_shops = array_values(array_unique(array_merge($job_search_shops, array_values(foods_get_job_shop_choices()))));
 $job_search_roles = [
     'どこでも可（レジ）', '品出し（グロサリー）', 'チェッカー', 'お惣菜',
     'ベーカリー', '水産', '寿司', '食肉', '青果',
 ];
+$job_search_roles = array_values(array_unique(array_merge($job_search_roles, array_values(foods_get_job_occupation_choices()))));
 $theme_uri = get_template_directory_uri();
 
 $keyword = isset($_GET['keyword']) && is_string($_GET['keyword']) ? sanitize_text_field(wp_unslash($_GET['keyword'])) : '';
@@ -149,7 +151,9 @@ get_header('company');
                             'shop_name'   => trim(wp_strip_all_tags((string) $job_search_get_field('shop_name', $job_id))),
                             'job_type'    => trim(wp_strip_all_tags((string) $job_search_get_field('job_type', $job_id))),
                             'image_url'   => get_the_post_thumbnail_url($job_id, 'medium') ?: $theme_uri . '/img/page/page-job/job-register.png',
-                            'salary'      => trim(wp_strip_all_tags((string) $job_search_get_field('salary', $job_id))),
+                            'salary'      => trim(wp_strip_all_tags((string) $job_search_get_field('card_salary', $job_id)))
+                                ?: trim(wp_strip_all_tags((string) $job_search_get_field('salary', $job_id))),
+                            'access'      => trim((string) $job_search_get_field('card_access', $job_id)),
                             'railway_line'=> trim(wp_strip_all_tags((string) $job_search_get_field('railway_line', $job_id))),
                             'station_name'=> trim(wp_strip_all_tags((string) $job_search_get_field('station_name', $job_id))),
                             'walking_time'=> trim(wp_strip_all_tags((string) $job_search_get_field('walking_time', $job_id))),
@@ -164,12 +168,12 @@ get_header('company');
                     $card_title = trim($card['shop_name'] . '　' . $card['job_type']) ?: get_the_title($job_id);
                 ?>
                     <article class="p-job-result-card">
-                        <h2><?php echo esc_html($card_title); ?></h2>
+                        <h2><a href="<?php echo esc_url($card['detail_url']); ?>"><?php echo esc_html($card_title); ?></a></h2>
                         <div class="p-job-result-card__body">
                             <img src="<?php echo esc_url($card['image_url']); ?>" alt="">
                             <dl>
                                 <div><dt>【給与】</dt><dd><?php echo esc_html($card['salary'] ?: '給与の詳細をご確認ください'); ?></dd></div>
-                                <div><dt>【アクセス】</dt><dd><?php if ($card['railway_line'] || $card['station_name'] || $card['walking_time']) : ?><span><?php echo esc_html(trim($card['railway_line'] . ' ' . $card['station_name'])); ?></span><?php if ($card['walking_time']) : ?><br><span><?php echo esc_html($card['walking_time']); ?></span><?php endif; ?><?php else : ?><?php echo nl2br(esc_html($card['legacy_access'] ?: '勤務地の詳細をご確認ください')); ?><?php endif; ?></dd></div>
+                                <div><dt>【アクセス】</dt><dd><?php if ($card['access'] !== '') : ?><?php echo nl2br(esc_html($card['access'])); ?><?php elseif ($card['railway_line'] || $card['station_name'] || $card['walking_time']) : ?><span><?php echo esc_html(trim($card['railway_line'] . ' ' . $card['station_name'])); ?></span><?php if ($card['walking_time']) : ?><br><span><?php echo esc_html($card['walking_time']); ?></span><?php endif; ?><?php else : ?><?php echo nl2br(esc_html($card['legacy_access'] ?: '勤務地の詳細をご確認ください')); ?><?php endif; ?></dd></div>
                             </dl>
                         </div>
                         <div class="p-job-result-card__actions">

@@ -1,0 +1,253 @@
+{
+  "salary_policy": "現行原文の基本時給を記載。曜日・時間帯の加給、賃金幅、昇給の記載がある場合は末尾を～とする。研修中の減額条件は詳細原文に保持。",
+  "access_sources": [
+    "店舗の登録済みaccess（確認対象）",
+    "tools/shop-update-plugin/data.json",
+    "https://www.tobu.co.jp/railway/guide/line/noda_line.html",
+    "https://www.tokyometro.jp/station/gyotoku/index.html",
+    "https://www.jreast.co.jp/estation/station/info.aspx?StationCD=1171",
+    "https://pop.mir.co.jp/route_map/kashiwanoha-campus/",
+    "https://www.keisei.co.jp/keisei/tetudou/accessj/matsudo-shinden.php",
+    "https://funabashi-ichiba.jp/access/"
+  ],
+  "jobs": [
+    {
+      "source_id": 1058,
+      "title": "＜西船橋店＞青果部パートナー募集",
+      "shop_name": "西船橋店",
+      "card_salary": "時給 1,200円～",
+      "card_access": "JR総武線 西船橋駅\n徒歩約2分"
+    },
+    {
+      "source_id": 1056,
+      "title": "＜西船橋店＞水産部パートナー募集",
+      "shop_name": "西船橋店",
+      "card_salary": "時給 1,200円～",
+      "card_access": "JR総武線 西船橋駅\n徒歩約2分"
+    },
+    {
+      "source_id": 1028,
+      "title": "＜八潮店＞アルバイトパートナー募集",
+      "shop_name": "八潮店",
+      "card_salary": "時給 1,200円～",
+      "card_access": "TX 八潮駅\n徒歩約8～10分"
+    },
+    {
+      "source_id": 1022,
+      "title": "＜八潮店＞品出しパートナー募集募集",
+      "shop_name": "八潮店",
+      "card_salary": "時給 1,200円～",
+      "card_access": "TX 八潮駅\n徒歩約8～10分"
+    },
+    {
+      "source_id": 1007,
+      "title": "＜しいの木台＞販売部パートナー募集",
+      "shop_name": "しいの木台店",
+      "card_salary": "時給 1,140円～",
+      "card_access": "東武野田線 高柳駅\n徒歩約22分"
+    },
+    {
+      "source_id": 1003,
+      "title": "＜しいの木台＞クリ－ン部 パートナー募集",
+      "shop_name": "しいの木台店",
+      "card_salary": "時給 1,140円～",
+      "card_access": "東武野田線 高柳駅\n徒歩約22分"
+    },
+    {
+      "source_id": 993,
+      "title": "＜松戸店＞販売部(チェッカー・品出し他) パートナー募集",
+      "shop_name": "松戸店",
+      "card_salary": "時給 1,150円",
+      "card_access": "松戸線 松戸新田駅\n徒歩約2分"
+    },
+    {
+      "source_id": 984,
+      "title": "＜松戸店＞夜間店長 パートナー募集",
+      "shop_name": "松戸店",
+      "card_salary": "時給 1,500円",
+      "card_access": "松戸線 松戸新田駅\n徒歩約2分"
+    },
+    {
+      "source_id": 953,
+      "title": "＜西原店＞食品品出し(レジ作業含む) パートナー募集",
+      "shop_name": "西原店",
+      "card_salary": "時給 1,140円～",
+      "card_access": "東武野田線 初石駅\n徒歩約14分"
+    },
+    {
+      "source_id": 892,
+      "title": "＜しいの木台＞製造部パートナー募集",
+      "shop_name": "しいの木台店",
+      "card_salary": "時給 1,140円～",
+      "card_access": "東武野田線 高柳駅\n徒歩約22分"
+    },
+    {
+      "source_id": 288,
+      "title": "＜船橋水産加工センター＞パートナー募集",
+      "shop_name": "船橋水産加工センター",
+      "card_salary": "時給 1,150円",
+      "card_access": "JR総武線 船橋駅\n徒歩約15分（市場）"
+    },
+    {
+      "source_id": 165,
+      "title": "＜三郷店＞水産部パートナー募集",
+      "shop_name": "三郷店",
+      "card_salary": "時給 1,200円～",
+      "card_access": "「鎌倉」バス停\n徒歩約2分"
+    },
+    {
+      "source_id": 138,
+      "title": "＜行徳店＞チェッカー（レジ）部パートナー募集",
+      "shop_name": "行徳店",
+      "card_salary": "時給 1,026円～",
+      "card_access": "東西線 行徳駅\n徒歩約4分"
+    },
+    {
+      "source_id": 136,
+      "title": "＜行徳店＞グロサリーパートナー募集",
+      "shop_name": "行徳店",
+      "card_salary": "時給 1,026円～",
+      "card_access": "東西線 行徳駅\n徒歩約4分"
+    },
+    {
+      "source_id": 122,
+      "title": "＜八潮店＞チェッカー（レジ）パートナー募集",
+      "shop_name": "八潮店",
+      "card_salary": "時給 1,200円～",
+      "card_access": "TX 八潮駅\n徒歩約8～10分"
+    },
+    {
+      "source_id": 232,
+      "title": "＜西船橋店＞夜間レジパートナー募集",
+      "shop_name": "西船橋店",
+      "card_salary": "時給 1,150円",
+      "card_access": "JR総武線 西船橋駅\n徒歩約2分"
+    },
+    {
+      "source_id": 188,
+      "title": "＜西原店＞食肉部パートナー募集",
+      "shop_name": "西原店",
+      "card_salary": "時給 1,140円～",
+      "card_access": "東武野田線 初石駅\n徒歩約14分"
+    },
+    {
+      "source_id": 401,
+      "title": "＜行徳店＞夜間店長募集",
+      "shop_name": "行徳店",
+      "card_salary": "時給 1,500円",
+      "card_access": "東西線 行徳駅\n徒歩約4分"
+    },
+    {
+      "source_id": 133,
+      "title": "＜行徳店＞惣菜部パートナー募集",
+      "shop_name": "行徳店",
+      "card_salary": "時給 1,000円～",
+      "card_access": "東西線 行徳駅\n徒歩約4分"
+    },
+    {
+      "source_id": 131,
+      "title": "＜行徳店＞水産部パートナー募集",
+      "shop_name": "行徳店",
+      "card_salary": "時給 1,000円～",
+      "card_access": "東西線 行徳駅\n徒歩約4分"
+    },
+    {
+      "source_id": 128,
+      "title": "＜行徳店＞食肉部パートナー募集",
+      "shop_name": "行徳店",
+      "card_salary": "時給 1,000円～",
+      "card_access": "東西線 行徳駅\n徒歩約4分"
+    },
+    {
+      "source_id": 216,
+      "title": "＜西船橋店＞惣菜部パートナー募集",
+      "shop_name": "西船橋店",
+      "card_salary": "時給 1,200円～",
+      "card_access": "JR総武線 西船橋駅\n徒歩約2分"
+    },
+    {
+      "source_id": 212,
+      "title": "＜西船橋店＞清掃パートナー募集",
+      "shop_name": "西船橋店",
+      "card_salary": "時給 1,200円～",
+      "card_access": "JR総武線 西船橋駅\n徒歩約2分"
+    },
+    {
+      "source_id": 208,
+      "title": "＜西船橋店＞食肉部パートナー募集",
+      "shop_name": "西船橋店",
+      "card_salary": "時給 1,200円～",
+      "card_access": "JR総武線 西船橋駅\n徒歩約2分"
+    },
+    {
+      "source_id": 236,
+      "title": "＜西船橋店＞夜間店長パートナー募集",
+      "shop_name": "西船橋店",
+      "card_salary": "時給 1,500円～",
+      "card_access": "JR総武線 西船橋駅\n徒歩約2分"
+    },
+    {
+      "source_id": 214,
+      "title": "＜西船橋店＞加工品（品出し）パートナー募集",
+      "shop_name": "西船橋店",
+      "card_salary": "時給 1,250円～",
+      "card_access": "JR総武線 西船橋駅\n徒歩約2分"
+    },
+    {
+      "source_id": 230,
+      "title": "＜西船橋店＞チェッカー（レジ）パートナー募集",
+      "shop_name": "西船橋店",
+      "card_salary": "時給 1,200円～",
+      "card_access": "JR総武線 西船橋駅\n徒歩約2分"
+    },
+    {
+      "source_id": 717,
+      "title": "＜三郷店＞アルバイトパートナー募集",
+      "shop_name": "三郷店",
+      "card_salary": "時給 1,200円～",
+      "card_access": "「鎌倉」バス停\n徒歩約2分"
+    },
+    {
+      "source_id": 154,
+      "title": "＜三郷店＞青果部パートナー募集",
+      "shop_name": "三郷店",
+      "card_salary": "時給 1,200円～",
+      "card_access": "「鎌倉」バス停\n徒歩約2分"
+    },
+    {
+      "source_id": 177,
+      "title": "＜三郷店＞チェッカー（レジ）パートナー募集",
+      "shop_name": "三郷店",
+      "card_salary": "時給 1,200円",
+      "card_access": "「鎌倉」バス停\n徒歩約2分"
+    },
+    {
+      "source_id": 173,
+      "title": "＜三郷店＞グロサリーパートナー募集",
+      "shop_name": "三郷店",
+      "card_salary": "時給 1,200円～",
+      "card_access": "「鎌倉」バス停\n徒歩約2分"
+    },
+    {
+      "source_id": 168,
+      "title": "＜三郷店＞惣菜部パートナー募集",
+      "shop_name": "三郷店",
+      "card_salary": "時給 1,200円～",
+      "card_access": "「鎌倉」バス停\n徒歩約2分"
+    },
+    {
+      "source_id": 163,
+      "title": "＜三郷店＞食肉部パートナー募集",
+      "shop_name": "三郷店",
+      "card_salary": "時給 1,200円～",
+      "card_access": "「鎌倉」バス停\n徒歩約2分"
+    },
+    {
+      "source_id": 254,
+      "title": "＜花野井店＞食品品出し(レジ作業含む) パートナー募集",
+      "shop_name": "花野井店",
+      "card_salary": "時給 1,140円～",
+      "card_access": "TX 柏の葉キャンパス駅\n徒歩約18分"
+    }
+  ]
+}

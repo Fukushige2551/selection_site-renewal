@@ -6,6 +6,7 @@ function foods_job_mail_addresses() {
 }
 function foods_job_mail_address($store) {
     if (is_array($store)) { $store = count($store) === 1 ? reset($store) : ''; }
+    if ($store === '船橋水産加工センター') { $store = '水産加工センター'; }
     $addresses = foods_job_mail_addresses();
     return is_string($store) && isset($addresses[$store]) ? 'noreply' . $addresses[$store] . '@foods-selection.co.jp' : '';
 }

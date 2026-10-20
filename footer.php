@@ -41,13 +41,6 @@ $main_footer_link = static function ($label, $url) {
     }
 };
 ?>
-<?php if (is_post_type_archive('news')) : ?>
-    <?php include get_template_directory() . '/template-parts/news/archive-footer.php'; ?>
-    <?php wp_footer(); ?>
-    </body>
-    </html>
-    <?php return; ?>
-<?php endif; ?>
 <footer class="l-footer">
     <picture class="l-footer__logo l-footer__logo--sp">
         <a href="<?php echo esc_url(home_url('/')); ?>">

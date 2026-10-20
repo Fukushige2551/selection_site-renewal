@@ -25,7 +25,7 @@ $pale: #f9faf5;
   &__filter-toggle[aria-expanded="true"] &__filter-icon::after { display: none; }
   &__content { min-height: 500px; padding: 8.21vw 5.13vw 23.08vw; }
   &__content[hidden] { display: none; }
-  &__grid { display: grid; gap: 4.62vw; }
+  &__grid { display: grid; gap: 20px; }
   &__empty { margin: 5px auto 80px; padding: 0 20px; font-size: 14px; text-align: center; }
   &__pagination { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 55px; }
   &__pagination a { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 50%; background: #f7f7f7; color: #777; text-decoration: none; }
@@ -59,18 +59,23 @@ $pale: #f9faf5;
   &__role-sub { margin-top: .77vw; }
 }
 
-.p-job-result-card { width: 100%; padding: 4.62vw 4.1vw 3.85vw; border: 1px solid #d9d9d9; border-radius: 3.08vw; background: #fff;
-  h2 { margin: 0 0 5.38vw; color: $navy; font-size: 4.62vw; line-height: 1.45; text-decoration: underline; text-underline-offset: .15em; }
-  &__body { display: grid; grid-template-columns: 43% 1fr; gap: 2.05vw; }
-  &__body > img { width: 100%; height: 36.67vw; object-fit: cover; border-radius: 1.54vw; }
+.p-job-result-card { display: flex; width: 100%; min-height: 315px; align-self: start; flex-direction: column; padding: 22px 16px 15px 18px; border: 1px solid #d9d9d9; border-radius: 20px; background: #fff;
+  h2 { width: calc(100% + 5px); margin: 0 0 29px; overflow: hidden; color: #103675; font-size: 18px; line-height: 26px; text-overflow: ellipsis; white-space: nowrap; }
+  h2 a { color: inherit; text-decoration: underline; text-underline-offset: .15em; }
+  &__body { display: grid; grid-template-columns: minmax(0, 157px) minmax(0, 1fr); gap: 8px; min-height: 150px; }
+  &__body > img { width: 100%; height: 150px; object-fit: cover; border-radius: 20px; }
   dl, dl div, dt, dd { margin: 0; }
-  dl { display: grid; align-content: start; gap: 2.56vw; font-size: 4.1vw; }
-  dl div + div { padding-top: 2.56vw; border-top: 1px solid #d9d9d9; }
-  dt { margin-bottom: .77vw; font-weight: 700; }
-  dd { line-height: 1.65; }
-  &__actions { display: grid; grid-template-columns: 1fr 1fr; gap: 2.56vw; margin-top: 6.67vw; }
-  &__actions a { display: flex; height: 12.31vw; align-items: center; justify-content: center; border-radius: 3.85vw; background: $green; color: #fff; font-size: 4.1vw; font-weight: 700; text-decoration: none; }
-  &__actions a:last-child { background: $navy; }
+  dl { display: grid; align-content: start; gap: 14px; padding-top: 1px; font-size: 16px; }
+  dl div + div { position: relative; padding-top: 19px; }
+  dl div + div::before { position: absolute; top: 0; left: 8px; width: min(130px, calc(100% - 8px)); border-top: 1px solid #d9d9d9; content: ""; }
+  dt { margin-bottom: 14px; font-weight: 700; line-height: 16px; }
+  dd { margin-left: 8px; line-height: 16px; }
+  dd { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; }
+  dl div + div dt { margin-bottom: 8px; }
+  dl div + div dd { line-height: 25px; letter-spacing: .05em; }
+  &__actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 30px; }
+  &__actions a { display: flex; height: 50px; align-items: center; justify-content: center; border-radius: 15px; background: $green; color: #fff; font-size: 16px; font-weight: 700; text-decoration: none; }
+  &__actions a:last-child { background: #0f3675; }
 }
 
 .p-job-search-results + .l-company-footer { position: relative; z-index: 2; margin-top: -30px; }
@@ -102,21 +107,12 @@ $pale: #f9faf5;
     &__role-main, &__role-sub { display: inline; }
     &__role-sub { margin-top: 0; }
   }
-  .p-job-result-card { display: flex; width: min(350px, 100%); min-height: 340px; flex-direction: column; padding: 19px; border-radius: 15px;
-    h2 { margin-bottom: 28px; font-size: 18px; line-height: 1.2; }
-    &__body { grid-template-columns: minmax(0, 157px) 1fr; gap: 8px; }
-    &__body > img { width: 157px; height: 150px; border-radius: 20px; }
-    dl { grid-template-rows: auto auto; align-self: start; gap: 10px; font-size: 16px; }
-    dl div + div { padding-top: 10px; }
-    dt { margin-bottom: 3px; }
-    &__actions { grid-template-columns: repeat(2, minmax(0, 152px)); gap: 8px; margin-top: auto; padding-top: 28px; }
-    &__actions a { width: 100%; height: 50px; border-radius: 15px; font-size: 16px; }
-  }
+  .p-job-result-card { width: min(350px, 100%); }
   .p-job-search-results + .l-company-footer { margin-top: -30px; }
 }
 
 @media (min-width: 1100px) {
   .p-job-search-results__content { padding-right: 7px; padding-left: 7px; }
-  .p-job-search-results__grid { width: min(1070px, 100%); grid-template-columns: repeat(3, minmax(0, 350px)); gap: 10px; }
+  .p-job-search-results__grid { width: min(1090px, 100%); grid-template-columns: repeat(3, minmax(0, 350px)); gap: 20px; }
   .p-job-search-results__summary-row { width: min(1070px, 100%); }
 }

@@ -128,8 +128,8 @@ add_filter('wpcf7_validate_email*', static function ($result, $tag) {
 add_filter('wpcf7_form_tag', static function ($tag) {
     $was_array = is_array($tag);
     if ($was_array) { $tag = new WPCF7_FormTag($tag); }
-    if ($tag->name === 'store' && $tag->basetype === 'select') { $tag->values = $tag->raw_values = array_values(foods_get_job_shop_choices()); }
-    if ($tag->name === 'job' && $tag->basetype === 'select') { $tag->values = $tag->raw_values = array_values(foods_get_job_occupation_choices()); }
+    if ($tag->name === 'store' && $tag->basetype === 'select') { $tag->labels = $tag->values = $tag->raw_values = array_values(foods_get_job_shop_choices()); }
+    if ($tag->name === 'job' && $tag->basetype === 'select') { $tag->labels = $tag->values = $tag->raw_values = array_values(foods_get_job_occupation_choices()); }
     if (in_array($tag->name, ['store', 'job'], true) && isset($_GET[$tag->name]) && is_string($_GET[$tag->name])) {
         $value = sanitize_text_field(wp_unslash($_GET[$tag->name]));
         $index = array_search($value, $tag->values, true);
