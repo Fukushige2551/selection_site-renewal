@@ -3248,3 +3248,10 @@
     left: 50%;
     transform: translateX(-50%);
 }
+
+// Keep the Japanese title and its English subtitle visually separated.
+.p-front-page__shop > .c-section__title,
+.p-front-page__news > .c-section__title,
+.p-front-page__recruit > .c-section__title {
+    margin-bottom: clamp(6px, 0.52vw, 10px);
+}

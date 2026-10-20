@@ -15,6 +15,10 @@
             box-sizing: border-box;
 
             .c-section {
+                &__title {
+                    margin-bottom: clamp(6px, 0.52vw, 10px);
+                }
+
                 &__title--sub {
                     margin-bottom: 73vw;
                 }

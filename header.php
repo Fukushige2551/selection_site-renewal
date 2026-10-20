@@ -134,13 +134,17 @@
 <header class="l-header-pc" aria-label="PCヘッダー">
     <div class="l-header-pc__inner">
         <nav class="l-header-pc__nav" aria-label="グローバルナビゲーション">
-            <a class="l-header-pc__nav__link" href="<?php echo esc_url(get_post_type_archive_link('shop')); ?>">チラシ・店舗情報</a>
-            <a class="l-header-pc__nav__link" href="<?php echo esc_url(get_post_type_archive_link('recipe')); ?>">レシピ</a>
-            <a class="l-header-pc__nav__link" href="<?php echo esc_url(home_url('/')); ?>">
+            <div class="l-header-pc__nav__group l-header-pc__nav__group--left">
+                <a class="l-header-pc__nav__link" href="<?php echo esc_url(get_post_type_archive_link('shop')); ?>">チラシ・店舗情報</a>
+                <a class="l-header-pc__nav__link" href="<?php echo esc_url(get_post_type_archive_link('recipe')); ?>">レシピ</a>
+            </div>
+            <a class="l-header-pc__nav__link l-header-pc__nav__link--logo" href="<?php echo esc_url(home_url('/')); ?>">
                 <img class="l-header-pc__nav__logo" src="<?php echo esc_url(get_template_directory_uri() . '/img/component/selection-logo.svg'); ?>" alt="FOODS MARKET Selection" width="311" height="189">
             </a>
-            <a class="l-header-pc__nav__link recruit--part-time" href="<?php echo esc_url(home_url('/job/')); ?>">パート・アルバイト募集</a>
-            <a class="l-header-pc__nav__link" href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a>
+            <div class="l-header-pc__nav__group l-header-pc__nav__group--right">
+                <a class="l-header-pc__nav__link recruit--part-time" href="<?php echo esc_url(home_url('/job/')); ?>">パート・アルバイト募集</a>
+                <a class="l-header-pc__nav__link" href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a>
+            </div>
             <a class="l-header-pc__nav__link online-shop" href="https://www.selection-ec.jp/" target="_blank" rel="noopener noreferrer">
                 <picture>
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/component/btn_bascket--white.webp" type="image/webp">
