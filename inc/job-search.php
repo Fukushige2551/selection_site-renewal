@@ -9,7 +9,7 @@ function foods_get_job_shop_choices() {
     ]);
     $choices = [];
     foreach ($shops as $shop) {
-        $title = get_the_title($shop);
+        $title = foods_get_shop_short_name(get_the_title($shop));
         $choices[$title] = $title;
     }
     $choices['船橋水産加工センター'] = '船橋水産加工センター';

@@ -487,10 +487,13 @@ function foods_single_shop_get_news_image_data($post_id, $size = 'large') {
 $shop_id = get_the_ID();
 $shop_slug = get_post_field('post_name', $shop_id);
 $shop_title = get_the_title($shop_id);
+$shop_match_title = foods_get_shop_short_name($shop_title);
 
 $shop_data = foods_single_shop_format_post($shop_id, [
     'business_hours',
     'business_hours_note',
+    'regular_holiday',
+    'regular_holiday_note',
     'postal_code',
     'address',
     'tel',
@@ -586,7 +589,7 @@ $same_prefecture_shops_data = array_values(array_filter(array_map(function ($sho
 
 $flyer_store_term_ids = foods_single_shop_get_related_term_ids(
     'flyer_store',
-    $shop_title,
+    $shop_match_title,
     array_merge([$shop_slug], foods_single_shop_get_legacy_shop_slugs($shop_slug))
 );
 
@@ -706,7 +709,7 @@ $service_items = array_values(array_filter($service_items, function ($item) use 
 $shop_news_category_term = get_term_by('slug', 'shop-news', 'news_category');
 $shop_news_shop_term_ids = foods_single_shop_get_related_term_ids(
     'news_shop_category',
-    $shop_title,
+    $shop_match_title,
     array_merge([$shop_slug], foods_single_shop_get_legacy_shop_slugs($shop_slug))
 );
 $shop_news_posts = [];
@@ -822,7 +825,7 @@ $recruit_search_posts = get_posts([
     'posts_per_page' => -1,
     'orderby' => 'date',
     'order' => 'DESC',
-    's' => $shop_title,
+    's' => $shop_match_title,
 ]);
 
 $recruit_location_posts = get_posts([
@@ -834,7 +837,7 @@ $recruit_location_posts = get_posts([
     'meta_query' => [
         [
             'key' => 'work_location_access',
-            'value' => $shop_title,
+            'value' => $shop_match_title,
             'compare' => 'LIKE',
         ],
     ],
@@ -875,9 +878,10 @@ if ($manager_message === '') {
     $manager_message = 'セレクション行徳店店長の阿部です。地域密着型スーパーマーケットで「鮮度・味・低価格」を重視した営業をさせて頂いてます。惣菜コーナーにおいても手作りのお弁当・煮物・揚げたてのご提供もさせて頂いております。地域のお客様あっての店舗運営をしております。従業員一同心よりお待ちしております。ぜひご来店下さい。';
 }
 $manager_name = trim((string) ($shop_data['fields']['manager_name'] ?? ''));
-$manager_image_data = foods_single_shop_get_image_data($shop_data['fields']['manager_image'] ?? '', 'large');
+$manager_image_data = foods_single_shop_get_image_data($shop_data['fields']['manager_image'] ?? '', 'full');
 $manager_image_url = $manager_image_data['url'] ?? $placeholder_image;
 $manager_image_alt = $manager_image_data['alt'] ?? '';
+$manager_responsive_assets = foods_get_manager_responsive_assets($manager_image_data['id'] ?? 0);
 $recruit_image = $theme_uri . '/img/page/single-shop/recruit_banner.svg';
 $visible_recruit_data = array_slice($recruit_data, 0, 10);
 $recruit_page_count = (int) ceil(count($visible_recruit_data) / 2);
@@ -900,7 +904,7 @@ $recruit_archive_url = get_post_type_archive_link('recruit_part_time') ?: home_u
 
     <section class="p-single-shop__hero" aria-labelledby="single-shop-title">
         <h1 id="single-shop-title" class="p-single-shop__title"><?php echo esc_html($shop_title ?: '行徳店'); ?></h1>
-        <p class="p-single-shop__title-sub">gotoku</p>
+        <p class="p-single-shop__title-sub"><?php echo esc_html($shop_slug); ?></p>
     </section>
 
     <?php if ($current_flyer) : ?>
@@ -1042,6 +1046,17 @@ $recruit_archive_url = get_post_type_archive_link('recruit_part_time') ?: home_u
                     <?php endif; ?>
                 </dd>
             </div>
+            <?php if (!empty($shop_data['fields']['regular_holiday'])) : ?>
+            <div>
+                <dt>定休日</dt>
+                <dd>
+                    <?php echo foods_single_shop_get_text_field_html($shop_data['fields']['regular_holiday']); ?>
+                    <?php if (!empty($shop_data['fields']['regular_holiday_note'])) : ?>
+                        <br><span><?php echo foods_single_shop_get_text_field_html($shop_data['fields']['regular_holiday_note']); ?></span>
+                    <?php endif; ?>
+                </dd>
+            </div>
+            <?php endif; ?>
             <div>
                 <dt>住所</dt>
                 <dd>
@@ -1072,10 +1087,12 @@ $recruit_archive_url = get_post_type_archive_link('recruit_part_time') ?: home_u
             <div class="p-single-shop__map" role="img" aria-label="店舗周辺地図の仮表示"></div>
         <?php endif; ?>
         <dl class="p-single-shop__info-list p-single-shop__info-list--compact">
+            <?php if (!empty($shop_data['fields']['access'])) : ?>
             <div>
                 <dt>アクセス</dt>
                 <dd><?php echo foods_single_shop_get_text_field_html($shop_data['fields']['access'] ?? ''); ?></dd>
             </div>
+            <?php endif; ?>
             <div>
                 <dt>混雑状況</dt>
                 <dd>
@@ -1174,7 +1191,14 @@ $recruit_archive_url = get_post_type_archive_link('recruit_part_time') ?: home_u
             <p class="p-single-shop__manager"><?php echo esc_html(($shop_title ?: '店舗') . ' 店長 ' . $manager_name); ?></p>
         <?php endif; ?>
         <div class="p-single-shop__manager-photo">
+            <?php if ($manager_responsive_assets) : ?>
+                <picture class="p-single-shop__manager-photo-picture">
+                    <source type="image/webp" srcset="<?php echo esc_url($manager_responsive_assets['webp']); ?>">
+                    <img class="p-single-shop__manager-photo-image" src="<?php echo esc_url($manager_responsive_assets['png']); ?>" width="960" height="736" alt="<?php echo esc_attr($manager_image_alt ?: ($shop_title ?: '店舗') . ' 店長' . ($manager_name ? ' ' . $manager_name : '')); ?>" loading="lazy" decoding="async">
+                </picture>
+            <?php else : ?>
             <img class="p-single-shop__manager-photo-image" src="<?php echo esc_url($manager_image_url); ?>" alt="<?php echo esc_attr($manager_image_alt ?: ($shop_title ?: '店舗') . ' 店長' . ($manager_name ? ' ' . $manager_name : '')); ?>">
+            <?php endif; ?>
             <img class="p-single-shop__manager-photo-frame" src="<?php echo esc_url($theme_uri . '/img/page/single-shop/owner_greeting_frame.svg'); ?>" alt="" aria-hidden="true">
             <img class="p-single-shop__manager-photo-decoration p-single-shop__manager-photo-decoration--default" src="<?php echo esc_url($theme_uri . '/img/page/single-shop/owner_greeting_decoration.png'); ?>" alt="" aria-hidden="true">
             <img class="p-single-shop__manager-photo-decoration p-single-shop__manager-photo-decoration--tablet" src="<?php echo esc_url($theme_uri . '/img/page/single-shop/owner_greeting_decoration-tablet.svg'); ?>" alt="" aria-hidden="true">
@@ -1300,7 +1324,7 @@ $recruit_archive_url = get_post_type_archive_link('recruit_part_time') ?: home_u
                         </a>
                         <a
                             class="c-shop-card__link u-bg--blue"
-                            href="<?php echo esc_url(add_query_arg(['job_shop' => [$nearby_shop['title'] ?? '']], home_url('/job/search/'))); ?>"
+                            href="<?php echo esc_url(add_query_arg(['job_shop' => [foods_get_shop_short_name($nearby_shop['title'] ?? '')]], home_url('/job/search/'))); ?>"
                         >
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path d="M12.85 11.21C12.18 11.68 11.37 11.95 10.49 11.95C9.61 11.95 8.8 11.67 8.13 11.21C6.96 11.71 6.24 12.59 5.81 13.37C5.23 14.4 5.68 15.87 6.69 15.87H14.29C15.3 15.87 15.75 14.41 15.17 13.37C14.73 12.59 14.01 11.71 12.85 11.21Z" fill="white"/>

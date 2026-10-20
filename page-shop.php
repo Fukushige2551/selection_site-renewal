@@ -213,7 +213,7 @@ $map_prefectures = [
                             </a>
                             <a
                                 class="c-shop-card__link u-bg--blue"
-                                href="<?php echo esc_url(add_query_arg(['job_shop' => [get_the_title($shop_id)]], home_url('/job/search/'))); ?>"
+                                href="<?php echo esc_url(add_query_arg(['job_shop' => [foods_get_shop_short_name(get_the_title($shop_id))]], home_url('/job/search/'))); ?>"
                             >
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                     <path d="M12.85 11.21C12.18 11.68 11.37 11.95 10.49 11.95C9.61 11.95 8.8 11.67 8.13 11.21C6.96 11.71 6.24 12.59 5.81 13.37C5.23 14.4 5.68 15.87 6.69 15.87H14.29C15.3 15.87 15.75 14.41 15.17 13.37C14.73 12.59 14.01 11.71 12.85 11.21Z" fill="white"/>

@@ -23,7 +23,7 @@ function fsu_match($rows, $posts) {
     $result = [];
     foreach ($rows as $row) {
         $matches = array_values(array_filter($posts, function ($p) use ($row) {
-            return $p->post_title === $row['title'];
+            return preg_replace('/^セレクション[\s　]*/u', '', $p->post_title) === $row['title'];
         }));
         if (count($matches) !== 1) { throw new RuntimeException($row['title'] . '：同名の店舗が0件または複数件です。店舗登録を確認してください。'); }
         $post = $matches[0];

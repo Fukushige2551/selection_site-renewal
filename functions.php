@@ -7,6 +7,7 @@ require_once __DIR__ . '/inc/cf7-forms.php';
 require_once __DIR__ . '/inc/recruit-interview.php';
 require_once __DIR__ . '/inc/job-search.php';
 require_once __DIR__ . '/inc/confirmed-seo.php';
+require_once __DIR__ . '/inc/manager-images.php';
 
 /**
  * テーマのセットアップ
@@ -658,26 +659,10 @@ function create_shop_post_type() {
 }
 add_action('init', 'create_shop_post_type');
 
-/**
- * 花野井店の営業時間をサイト内のすべての店舗表示で統一する。
- */
-function foods_correct_hananoi_business_hours($value, $post_id, $field) {
-    $resolved_post_id = is_numeric($post_id) ? (int) $post_id : 0;
-
-    if (!$resolved_post_id || get_post_type($resolved_post_id) !== 'shop') {
-        return $value;
-    }
-
-    $shop_slug = (string) get_post_field('post_name', $resolved_post_id);
-    $shop_name = (string) get_the_title($resolved_post_id);
-
-    if ($shop_slug === 'hananoi' || $shop_name === '花野井店') {
-        return '9:30～21:45';
-    }
-
-    return $value;
+// 現行サイトの正式店舗名と、求人・分類に使う店舗名を対応させる。
+function foods_get_shop_short_name($name) {
+    return preg_replace('/^セレクション[\s　]*/u', '', (string) $name);
 }
-add_filter('acf/format_value/name=business_hours', 'foods_correct_hananoi_business_hours', 10, 3);
 
 // 店舗ごとのATM銀行名を管理画面から編集する。
 function foods_register_shop_service_details_fields() {
