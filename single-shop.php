@@ -1275,9 +1275,6 @@ $recruit_archive_url = get_post_type_archive_link('recruit_part_time') ?: home_u
                                     <span class="c-shop-card__detail__time__main">
                                         <?php echo esc_html($nearby_fields['business_hours'] ?? ''); ?>
                                     </span>
-                                    <span class="c-shop-card__detail__time__note">
-                                        <?php echo esc_html($nearby_fields['business_hours_note'] ?? ''); ?>
-                                    </span>
                                 </time>
                             </dd>
                         </div>

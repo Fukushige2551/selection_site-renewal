@@ -69,6 +69,47 @@ $detail: '.p-page-select-detail';
 
 @media screen and (max-width: 767px) {
 	#{$detail}--shop {
+		// SP Figma 5895:13801 / 390px: portrait (235, 0), balloon (34, 32), copy (40, 222).
+		#{$detail}__message--bg {
+			box-sizing: border-box;
+			width: 100%;
+			margin: 1.072873vw auto 0;
+			padding: 56.923077vw 0 14.081155vw;
+		}
+
+		#{$detail}__message--shape {
+			inset: auto;
+			top: 4.252436vw;
+			left: 3.981384vw;
+			width: 93.532402vw;
+			height: calc(100% - 4.658859vw);
+			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-shop/message-background-sp.svg');
+			transform: rotate(-0.5deg);
+			transform-origin: center;
+		}
+
+		#{$detail}__message--bubbleSp {
+			top: 8.205128vw;
+			left: 8.717949vw;
+			width: 60vw;
+			height: auto;
+		}
+
+		#{$detail}__message--buyer {
+			top: 0;
+			right: auto;
+			left: 60.25641vw;
+			width: 36.923077vw;
+			height: auto;
+		}
+
+		#{$detail}__message--text {
+			width: 80.512821vw;
+			margin-left: 10.25641vw;
+			font-size: 4.102564vw;
+			line-height: 7.692308vw;
+		}
+
 		#{$detail}__news__bg {
 			margin-top: -10.6vw;
 		}
