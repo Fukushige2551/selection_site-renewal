@@ -1007,7 +1007,7 @@
 			margin: 1.17vw auto 0;
 
 			&--heading {
-				top: 4.7895vw;
+				top: 7.2895vw;
 				left: 15.9342vw;
 				width: 21.5526vw;
 			}
@@ -1025,14 +1025,15 @@
 
 			&--bg {
 				width: 100%;
-				min-height: 61.18vw;
+				min-height: 63.68vw;
 				margin: 0;
-				padding: 17.6vw 4.44vw 10.62vw;
+				padding: 20.1vw 4.44vw 10.62vw;
 				box-sizing: border-box;
 			}
 
 			&--shape {
-				inset: 1.17vw 0 0;
+				// Keep the original top curve while the message container grows downward.
+				inset: -1.33vw 0 0;
 				background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/svg/message-section-bg-desktop.svg');
 				background-repeat: no-repeat;
 				background-position: center top;
@@ -1051,13 +1052,13 @@
 			&--bubblePc {
 				width: 29.75vw;
 				height: 13.1711vw;
-				top: 3.2237vw;
+				top: 5.7237vw;
 				left: 15.9342vw;
 			}
 			&--buyer {
 				width: 13.2632vw;
 				height: 13.0789vw;
-				top: 0;
+				top: 2.5vw;
 				right: 13.5395vw;
 			}
 			&--text {
