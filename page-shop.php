@@ -152,6 +152,8 @@ $map_prefectures = [
                     $shop_id        = $shop->ID;
                     $business_hours = get_field('business_hours', $shop_id);
                     $business_hours_note = get_field('business_hours_note', $shop_id);
+                    $show_business_hours_note = is_string($business_hours_note)
+                        && preg_match('/(?:[0-9０-９]{1,2}\s*[:：]\s*[0-9０-９]{2}|[0-9０-９]{1,2}\s*時)/u', $business_hours_note);
                     $postal_code    = get_field('postal_code', $shop_id);
                     $address        = get_field('address', $shop_id);
                     $tel            = get_field('tel', $shop_id);
@@ -166,9 +168,11 @@ $map_prefectures = [
                                         <span class="c-shop-card__detail__time__main">
                                             <?php echo esc_html($business_hours); ?>
                                         </span>
-                                        <span class="c-shop-card__detail__time__note">
-                                            <?php echo esc_html($business_hours_note); ?>
-                                        </span>
+                                        <?php if ($show_business_hours_note) : ?>
+                                            <span class="c-shop-card__detail__time__note">
+                                                <?php echo esc_html($business_hours_note); ?>
+                                            </span>
+                                        <?php endif; ?>
                                     </time>
                                 </dd>
                             </div>

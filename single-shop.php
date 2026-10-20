@@ -263,6 +263,7 @@ function foods_single_shop_get_first_field_value($post_id, $field_names) {
 function foods_single_shop_format_multiline_text($value) {
     $text = preg_replace('/<br\s*\/?>/i', "\n", (string) $value);
     $text = str_replace(['\\r\\n', '\\n', "\r\n", "\r"], "\n", $text);
+    $text = str_replace(["\u{2028}", "\u{2029}"], "\n", $text);
     $lines = array_values(array_filter(array_map('trim', explode("\n", $text)), 'strlen'));
     $text = implode("\n", $lines);
 
@@ -271,6 +272,42 @@ function foods_single_shop_format_multiline_text($value) {
     }
 
     return nl2br(esc_html($text));
+}
+
+function foods_single_shop_format_recruit_hours($value, $job_type, $salary) {
+    $hours_html = foods_single_shop_format_multiline_text($value);
+    $salary_html = foods_single_shop_format_multiline_text($salary);
+    $split_lines = static function ($html) {
+        return array_map('trim', preg_split('/<br\s*\/?>/i', $html));
+    };
+    $normalize_title = static function ($text) {
+        return str_replace(['（', '）', ' ', '　'], ['(', ')', '', ''], $text);
+    };
+    $salary_lines = $split_lines($salary_html);
+    $title = $normalize_title(esc_html($job_type));
+    $lines = [];
+
+    foreach ($split_lines($hours_html) as $line) {
+        if ($line === '' || $normalize_title($line) === $title) {
+            continue;
+        }
+
+        // Imported hours sometimes repeat the salary table. Keep its time range.
+        if (preg_match('/^(.+?[～〜~].+?)\s*(?:基本給|時給)\s*[0-9０-９]/u', $line, $matches)) {
+            $line = trim($matches[1]);
+        } elseif (in_array($line, $salary_lines, true)
+            && preg_match('/[0-9０-９][0-9０-９,，.]*円/u', $line)
+            && !preg_match('/[0-9０-９].*[～〜~]/u', $line)) {
+            // The unchanged salary block already displays this exact line.
+            continue;
+        }
+
+        if (!in_array($line, $lines, true)) {
+            $lines[] = $line;
+        }
+    }
+
+    return implode("<br>\n", $lines);
 }
 
 function foods_single_shop_format_important_notices($notice_field) {
@@ -1137,6 +1174,7 @@ $recruit_archive_url = get_post_type_archive_link('recruit_part_time') ?: home_u
         </section>
     <?php endif; ?>
 
+    <div class="p-single-shop__story">
     <?php if ($shop_news_items) : ?>
         <section class="p-single-shop__news p-single-shop__section" aria-labelledby="single-shop-news-title">
             <h2 id="single-shop-news-title" class="p-single-shop__heading">店舗からのお知らせ</h2>
@@ -1182,6 +1220,13 @@ $recruit_archive_url = get_post_type_archive_link('recruit_part_time') ?: home_u
         </section>
     <?php endif; ?>
 
+    <?php if ($shop_news_items) : ?>
+        <div class="p-single-shop__news-trees" aria-hidden="true">
+            <img class="p-single-shop__news-tree p-single-shop__news-tree--left" src="<?php echo esc_url($theme_uri . '/img/page/single-shop/responsive/news-tree-left.svg'); ?>" alt="">
+            <img class="p-single-shop__news-tree p-single-shop__news-tree--pair" src="<?php echo esc_url($theme_uri . '/img/page/single-shop/responsive/news-tree-pair.svg'); ?>" alt="">
+            <img class="p-single-shop__news-tree p-single-shop__news-tree--right" src="<?php echo esc_url($theme_uri . '/img/page/single-shop/responsive/news-tree-right.svg'); ?>" alt="">
+        </div>
+    <?php endif; ?>
     <section class="p-single-shop__message p-single-shop__section" aria-labelledby="single-shop-message-title">
         <h2 id="single-shop-message-title" class="p-single-shop__heading">店長あいさつ</h2>
         <div class="p-single-shop__message-body">
@@ -1201,7 +1246,7 @@ $recruit_archive_url = get_post_type_archive_link('recruit_part_time') ?: home_u
             <?php endif; ?>
             <img class="p-single-shop__manager-photo-frame" src="<?php echo esc_url($theme_uri . '/img/page/single-shop/owner_greeting_frame.svg'); ?>" alt="" aria-hidden="true">
             <img class="p-single-shop__manager-photo-decoration p-single-shop__manager-photo-decoration--default" src="<?php echo esc_url($theme_uri . '/img/page/single-shop/owner_greeting_decoration.png'); ?>" alt="" aria-hidden="true">
-            <img class="p-single-shop__manager-photo-decoration p-single-shop__manager-photo-decoration--tablet" src="<?php echo esc_url($theme_uri . '/img/page/single-shop/owner_greeting_decoration-tablet.svg'); ?>" alt="" aria-hidden="true">
+            <img class="p-single-shop__manager-photo-decoration p-single-shop__manager-photo-decoration--tablet" src="<?php echo esc_url($theme_uri . '/img/page/single-shop/responsive/manager-tree.svg'); ?>" alt="" aria-hidden="true">
             <img class="p-single-shop__manager-photo-bush" src="<?php echo esc_url($theme_uri . '/img/page/single-shop/owner_greeting_bush.svg'); ?>" alt="" aria-hidden="true">
         </div>
     </section>
@@ -1215,20 +1260,16 @@ $recruit_archive_url = get_post_type_archive_link('recruit_part_time') ?: home_u
                     $recruit_fields = $recruit_item['fields'] ?? [];
                     $recruit_title = trim((string) ($recruit_fields['job_type'] ?? '')) ?: ($recruit_item['title'] ?? '');
                     $recruit_salary = foods_single_shop_format_multiline_text($recruit_fields['salary'] ?? '');
-                    $recruit_hours = foods_single_shop_format_multiline_text($recruit_fields['working_hours'] ?? '');
-                    $recruit_note = foods_single_shop_format_multiline_text($recruit_fields['benefits'] ?? '');
+                    $recruit_hours = foods_single_shop_format_recruit_hours($recruit_fields['working_hours'] ?? '', $recruit_title, $recruit_fields['salary'] ?? '');
                     $recruit_link = $recruit_item['permalink'] ?? '#';
                     ?>
                     <article class="p-single-shop__recruit-card js-single-shop-recruit-card" <?php echo $recruit_index < 2 ? '' : 'hidden'; ?>>
                         <h3><?php echo esc_html($recruit_title); ?></h3>
                         <?php if ($recruit_salary) : ?>
-                            <p><strong>給与：</strong><?php echo $recruit_salary; ?></p>
+                            <p class="p-single-shop__recruit-salary"><strong>給与：</strong><br><?php echo $recruit_salary; ?></p>
                         <?php endif; ?>
                         <?php if ($recruit_hours) : ?>
-                            <p><strong>勤務時間：</strong><br><?php echo $recruit_hours; ?></p>
-                        <?php endif; ?>
-                        <?php if ($recruit_note) : ?>
-                            <p><?php echo $recruit_note; ?></p>
+                            <p class="p-single-shop__recruit-hours"><strong>勤務時間：</strong><br><?php echo $recruit_hours; ?></p>
                         <?php endif; ?>
                         <a href="<?php echo esc_url($recruit_link); ?>">応募する</a>
                     </article>
@@ -1251,6 +1292,7 @@ $recruit_archive_url = get_post_type_archive_link('recruit_part_time') ?: home_u
         <?php endif; ?>
         <img class="p-single-shop__recruit-banner" src="<?php echo esc_url($recruit_image); ?>" alt="採用募集">
     </section>
+    </div>
 
     <?php $nearby_shops = $same_prefecture_shops_data; ?>
     <?php $nearby_page_count = (int) ceil(count($nearby_shops) / 3); ?>
@@ -1264,9 +1306,14 @@ $recruit_archive_url = get_post_type_archive_link('recruit_part_time') ?: home_u
                 $nearby_postal_code = preg_replace('/^〒\s*/u', '', (string) ($nearby_fields['postal_code'] ?? ''));
                 $nearby_tel = (string) ($nearby_fields['tel'] ?? '');
                 $nearby_permalink = (string) ($nearby_shop['permalink'] ?? '');
+                $nearby_address = (string) ($nearby_fields['address'] ?? '');
+                // Keep the final number and map pin together when the address wraps.
+                preg_match('/^(.*?)([0-9０-９A-Za-z－ー-]+)$/u', $nearby_address, $nearby_address_parts);
+                $nearby_address_prefix = $nearby_address_parts[1] ?? '';
+                $nearby_address_end = $nearby_address_parts[2] ?? $nearby_address;
                 ?>
                 <li class="c-shop-card js-single-shop-nearby-card"<?php echo $nearby_index < 3 ? '' : ' hidden'; ?>>
-                    <p class="c-shop-card__name"><?php echo esc_html($nearby_shop['title'] ?? ''); ?></p>
+                    <p class="c-shop-card__name"><a href="<?php echo esc_url($nearby_permalink); ?>"><?php echo esc_html($nearby_shop['title'] ?? ''); ?></a></p>
                     <dl class="c-shop-card__detail">
                         <div class="c-shop-card__detail__item">
                             <dt class="c-shop-card__detail__title">営業時間</dt>
@@ -1287,9 +1334,7 @@ $recruit_archive_url = get_post_type_archive_link('recruit_part_time') ?: home_u
                                             〒<?php echo esc_html($nearby_postal_code); ?>
                                         </span><br>
                                     <?php endif; ?>
-                                    <span class="c-shop-card__detail__address__place">
-                                        <?php echo esc_html($nearby_fields['address'] ?? ''); ?>
-                                    </span>
+                                    <span class="c-shop-card__detail__address__place"><?php echo esc_html($nearby_address_prefix); ?><span class="c-shop-card__detail__address__end"><?php echo esc_html($nearby_address_end); ?></span></span>
                                 </address>
                             </dd>
                         </div>
