@@ -638,7 +638,7 @@ get_header();
         </div>
 
         <a class="p-recipe-detail__shop-link c-pop" href="<?php echo esc_url($shop_archive_url); ?>">
-            <img class="p-recipe-detail__shop-link-image" src="<?php echo esc_url($theme_uri . '/img/page/recipe/recipe-detail-shop-link.png'); ?>" alt="&#12481;&#12521;&#12471;&#12539;&#24215;&#33303;&#19968;&#35239;">
+            <img class="p-recipe-detail__shop-link-image" src="<?php echo esc_url($theme_uri . '/img/page/recipe/recipe-detail-shop-link-retina.png'); ?>" width="2048" height="1303" alt="&#12481;&#12521;&#12471;&#12539;&#24215;&#33303;&#19968;&#35239;">
         </a>
 
         <section class="p-recipe-detail__actions" aria-label="&#12524;&#12471;&#12500;&#12398;&#20849;&#26377;&#12392;&#31227;&#21205;">
