@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/inc/instagram-feed.php';
 require_once __DIR__ . '/inc/contact-mail.php';
 require_once __DIR__ . '/inc/business-contact-mail.php';
 require_once __DIR__ . '/inc/application-mail.php';

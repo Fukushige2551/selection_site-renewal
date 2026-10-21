@@ -1671,6 +1671,12 @@
             <!-- タイトル end -->
 
             <h2 class="p-front-page__sns__subtitle">Instagram</h2>
+            <?php $foods_instagram_html = foods_instagram_feed_html(); ?>
+            <?php if ($foods_instagram_html !== '') : ?>
+                <div class="p-front-page__sns__content p-front-page__sns__content--feed">
+                    <?php echo $foods_instagram_html; // Trusted plugin shortcode output. ?>
+                </div>
+            <?php else : ?>
             <div class="p-front-page__sns__content">
                 <picture class="p-front-page__sns__content__picture p-front-page__sns__content__picture--large">
                     <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/bg_sns-content-01.webp" type="image/webp">
@@ -1722,6 +1728,7 @@
                     <img class="p-front-page__sns__content__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/jpg/bg_sns-content-06.jpg" alt="セレクション公式Instagram">
                 </picture>
             </div>
+            <?php endif; ?>
             <a class="p-front-page__sns__all p-front-page__sns__all--instagram" href="https://www.instagram.com/foods_selection/" target="_blank" rel="noopener noreferrer">
                 <button class="c-btn c-btn--common--green--large">Instagramはこちら</button>
             </a>
