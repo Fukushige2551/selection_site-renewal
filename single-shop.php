@@ -993,7 +993,22 @@ $recruit_archive_url = get_post_type_archive_link('recruit_part_time') ?: home_u
                     <?php
                     $item_image = foods_single_shop_get_image_data($item['item_image'] ?? '', 'medium');
                     $item_image_url = $item_image && !empty($item_image['url']) ? $item_image['url'] : $placeholder_image;
-                    $item_name = $item['item_name'] ?? '';
+                    $item_name = trim((string) ($item['item_name'] ?? ''));
+                    $item_store_name = trim((string) ($shop_match_title ?: $shop_title));
+                    $item_product_name = $item_name;
+
+                    if ($item_store_name !== '') {
+                        $item_product_name = preg_replace(
+                            '/[\s　]*' . preg_quote($item_store_name, '/') . '$/u',
+                            '',
+                            $item_name
+                        );
+                        $item_product_name = trim((string) $item_product_name);
+                    }
+
+                    if ($item_product_name === '') {
+                        $item_product_name = $item_name;
+                    }
                     $item_period = foods_single_shop_format_period_html($item['item_start_date'] ?? '', $item['item_end_date'] ?? '');
                     ?>
                     <article class="p-front-page__special-offers__item js-single-shop-deal-card<?php echo $item_index === 0 ? ' is-good-deal' : ''; ?><?php echo !empty($item['label_1']) ? ' is-special' : ''; ?>" data-deal-index="<?php echo esc_attr($item_index); ?>"<?php echo !empty($item['label_1']) ? ' data-label="' . esc_attr($item['label_1']) . '"' : ''; ?><?php echo $item_index >= 2 ? ' hidden' : ''; ?>>
@@ -1006,15 +1021,10 @@ $recruit_archive_url = get_post_type_archive_link('recruit_part_time') ?: home_u
                             </picture>
                             <div class="p-front-page__special-offers__item__details">
                                 <div class="p-front-page__special-offers__item__details__title">
-                                    <?php if (!empty($item['item_origin'])) : ?>
-                                        <span class="p-front-page__special-offers__item__details__title__origin"><?php echo esc_html($item['item_origin']); ?></span>
-                                    <?php endif; ?>
-                                    <?php if ($item_name) : ?>
-                                        <span class="p-front-page__special-offers__item__details__title__highlight"><?php echo esc_html($item_name); ?></span>
-                                    <?php endif; ?>
-                                    <?php if (!empty($item['item_quantity'])) : ?>
-                                        <span class="p-front-page__special-offers__item__details__title__note"><?php echo esc_html($item['item_quantity']); ?></span>
-                                    <?php endif; ?>
+                                    <span class="p-front-page__special-offers__item__details__title__origin"><?php echo esc_html($item['item_origin'] ?? ''); ?></span>
+                                    <span class="p-front-page__special-offers__item__details__title__highlight"><?php echo esc_html($item_product_name); ?></span>
+                                    <span class="p-front-page__special-offers__item__details__title__store"><?php echo esc_html($item_store_name); ?></span>
+                                    <span class="p-front-page__special-offers__item__details__title__note"><?php echo esc_html($item['item_quantity'] ?? ''); ?></span>
                                 </div>
                                 <div class="p-front-page__special-offers__item__details__price">
                                 <?php if (isset($item['base_price']) && $item['base_price'] !== '') : ?>
@@ -1290,7 +1300,9 @@ $recruit_archive_url = get_post_type_archive_link('recruit_part_time') ?: home_u
             <?php endif; ?>
             <a class="p-single-shop__more" href="<?php echo esc_url($recruit_archive_url); ?>">もっと見る</a>
         <?php endif; ?>
-        <img class="p-single-shop__recruit-banner" src="<?php echo esc_url($recruit_image); ?>" alt="採用募集">
+        <a class="p-single-shop__recruit-banner-link" href="<?php echo esc_url(home_url('/recruit/')); ?>" aria-label="採用情報を見る">
+            <img class="p-single-shop__recruit-banner" src="<?php echo esc_url($recruit_image); ?>" alt="新卒・中途社員、パート・アルバイト採用募集">
+        </a>
     </section>
     </div>
 
