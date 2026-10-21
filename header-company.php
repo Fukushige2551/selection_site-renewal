@@ -7,7 +7,7 @@ $company_header_links = [
     ['label' => '会社情報', 'url' => home_url('/company/')],
     ['label' => 'チラシ・店舗情報', 'url' => get_post_type_archive_link('shop')],
     ['label' => 'セレクションのこだわり', 'url' => home_url('/select/')],
-    ['label' => 'レシピ', 'url' => get_post_type_archive_link('recipe')],
+    ['label' => '採用情報', 'url' => home_url('/recruit/')],
     ['label' => 'パート・アルバイト募集', 'url' => home_url('/job/'), 'modifier' => 'recruit'],
     ['label' => 'お問い合わせ', 'url' => home_url('/company/business/contact/'), 'modifier' => 'contact'],
 ];

@@ -1518,7 +1518,7 @@
             <a class="p-front-page__recipe__all" href="<?php echo esc_url(get_post_type_archive_link('recipe')); ?>">
                 <button class="c-btn c-btn--common--green">もっと見る</button>
             </a>
-            <a class="p-front-page__recipe__hureai" href="">ふれ愛交差点レシピ集はこちら</a>
+            <a class="p-front-page__recipe__hureai" href="https://www.cgcjapan.co.jp/fureai/" target="_blank" rel="noopener noreferrer">ふれ愛交差点レシピ集はこちら</a>
 
             <div class="p-front-page__recipe__banner--wrapper">
                 <a class="c-pop p-front-page__recipe__banner u-margin-top--38" href="">
@@ -1597,7 +1597,7 @@
                     <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-fish-web.png" alt="こだわり　お魚">
                 </picture>
             </a>
-            <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--03" href="<?php echo esc_url(home_url('/select/vegetables-fruit/')); ?>">
+            <a class="c-pop p-front-page__commitment__link c-pop p-front-page__commitment__link--03" href="<?php echo esc_url(home_url('/select/fruit-vegetables/')); ?>">
                 <picture>
                     <source media="(max-width: 1023px)" srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-vegetables-compact.png" type="image/png">
                     <img class="c-pop p-front-page__commitment__link__img" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/png/link_commitment-vegetables-web.png" alt="こだわり　お野菜・果物">
