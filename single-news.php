@@ -178,7 +178,7 @@ function foods_news_detail_get_related_items($post_id, $limit = 2) {
 function foods_news_detail_prepare_body($html) {
     $html = (string) $html;
 
-    if (trim(wp_strip_all_tags($html)) === '') {
+    if (trim($html) === '') {
         return [
             'html' => '',
             'toc' => [],
@@ -320,11 +320,14 @@ get_header();
                 <h1 id="news-detail-title" class="p-news-detail__title"><?php the_title(); ?></h1>
             </section>
 
-            <?php if ($news_image || $news_summary || trim(wp_strip_all_tags($news_body_html))) : ?>
+            <?php if ($news_image || $news_summary || trim($news_body_html)) : ?>
                 <section class="p-news-detail__content" aria-label="新着情報本文">
                     <?php if ($news_image) : ?>
                         <figure class="p-news-detail__figure">
+                            <picture>
+                            <?php foods_render_news_sp_image_source($news_id); ?>
                             <img class="p-news-detail__image" src="<?php echo esc_url($news_image['url']); ?>" alt="<?php echo esc_attr($news_image['alt'] ?: get_the_title($news_id)); ?>">
+                            </picture>
                         </figure>
                     <?php endif; ?>
                     <?php if ($news_summary) : ?>
@@ -342,7 +345,7 @@ get_header();
                             </ol>
                         </nav>
                     <?php endif; ?>
-                    <?php if (trim(wp_strip_all_tags($news_body_html))) : ?>
+                    <?php if (trim($news_body_html)) : ?>
                         <div class="p-news-detail__body"><?php echo wp_kses_post($news_body_html); ?></div>
                     <?php endif; ?>
                 </section>
@@ -405,6 +408,7 @@ get_header();
                                 </div>
                                 <div class="p-news-detail__related-body">
                                     <picture class="p-news-detail__related-image">
+                                        <?php foods_render_news_sp_image_source($related_item['id']); ?>
                                         <img src="<?php echo esc_url($related_image_url); ?>" alt="<?php echo esc_attr($related_image_alt ?: $related_item['title']); ?>">
                                     </picture>
                                     <p class="p-news-detail__related-text"><?php echo esc_html($related_item['title']); ?></p>

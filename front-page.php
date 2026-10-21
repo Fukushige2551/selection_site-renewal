@@ -6,8 +6,12 @@
         'post_type' => 'news',
         'post_status' => 'publish',
         'posts_per_page' => 5,
-        'orderby' => 'date',
-        'order' => 'DESC',
+        'meta_key' => 'news_publish_date',
+        'orderby' => ['meta_value_num' => 'DESC', 'date' => 'DESC', 'ID' => 'DESC'],
+        'meta_query' => [[
+            'key' => 'show_first_view',
+            'value' => '1',
+        ]],
         'no_found_rows' => true,
     ]);
 
@@ -31,12 +35,23 @@
         $title = get_the_title($post_id);
 
         return [
+            'id' => $post_id,
             'url' => get_permalink($post_id),
             'image_url' => $image_url ?: get_template_directory_uri() . '/img/component/no-image.png',
             'image_alt' => ($image_id ? get_post_meta($image_id, '_wp_attachment_image_alt', true) : '') ?: $title,
+            'date' => (get_post_meta($post_id, 'news_publish_date', true) ?: str_replace('-', '', substr($news_post->post_date, 0, 10))) . substr($news_post->post_date, 10),
         ];
     }, $front_hero_query->posts);
 
+    $front_hero_items = array_merge($front_hero_items, foods_get_fv_banner_items());
+    usort($front_hero_items, static function ($a, $b) {
+        $order = ($a['order'] ?? 0) <=> ($b['order'] ?? 0);
+        if ($order) { return $order; }
+        $date_a = $a['date'] ?? get_post_field('post_date', $a['id']);
+        $date_b = $b['date'] ?? get_post_field('post_date', $b['id']);
+        return strcmp($date_b, $date_a) ?: ($b['id'] <=> $a['id']);
+    });
+    $front_hero_items = array_slice($front_hero_items, 0, 5);
     wp_reset_postdata();
 
     $front_flyer_query = new WP_Query([
@@ -278,6 +293,7 @@
         }
 
         return [
+            'id' => $post_id,
             'title' => $title,
             'url' => get_permalink($post_id),
             'date' => get_the_date('Y.m.d', $post_id),
@@ -403,10 +419,18 @@
         ?>
         <a href="<?php echo esc_url($item['url']); ?>"
            class="<?php echo esc_attr($classes); ?>"
+           <?php if (!empty($item['app'])) : ?>data-fv-app data-ios-url="<?php echo esc_url($item['ios']); ?>" data-android-url="<?php echo esc_url($item['android']); ?>" aria-haspopup="dialog" aria-controls="fv-app-<?php echo esc_attr($item['id']); ?>"<?php endif; ?>
            <?php if ($clone) : ?>aria-hidden="true" tabindex="-1"<?php endif; ?>>
-            <img class="p-front-page__hero__link__img"
-                 src="<?php echo esc_url($item['image_url']); ?>"
-                 alt="<?php echo $clone ? '' : esc_attr($item['image_alt']); ?>">
+            <picture>
+                <?php if (!empty($item['banner'])) : ?>
+                    <?php if (!empty($item['sp_url'])) : ?><source media="(max-width: 767px)" srcset="<?php echo esc_url($item['sp_url']); ?>"><?php endif; ?>
+                <?php else : ?>
+                    <?php foods_render_news_sp_image_source($item['id']); ?>
+                <?php endif; ?>
+                <img class="p-front-page__hero__link__img"
+                     src="<?php echo esc_url($item['image_url']); ?>"
+                     alt="<?php echo $clone ? '' : esc_attr($item['image_alt']); ?>">
+            </picture>
         </a>
         <?php
     };
@@ -497,6 +521,7 @@
     ?>
     <!-- ヒーロー start -->
     <div class="c-bg p-front-page__bg--hero">
+        <?php if ($front_hero_items) : ?>
         <div class="p-front-page__hero">
             <!-- 背景画像(position配置) start -->
             <div class="c-bg__positioned p-front-page__bg--hero--01"></div>
@@ -756,6 +781,7 @@
             <!-- スライダー（PC用） end -->
         </div>
 
+        <?php endif; ?>
         <!-- 今日のオススメ start -->
         <div class="p-front-page__special-offers">
             <!-- WPコンテンツ start -->
@@ -1224,6 +1250,7 @@
                         <div class="c-campaign-content">
                             <a href="<?php echo esc_url($front_campaign_item['url']); ?>">
                                 <picture>
+                                    <?php foods_render_news_sp_image_source($front_campaign_item['id']); ?>
                                     <img
                                         class="c-pop c-campaign-content__img"
                                         src="<?php echo esc_url($front_campaign_item['image']['url']); ?>"
@@ -1790,4 +1817,5 @@
 
 </main>
 
+<?php foods_render_fv_app_dialogs($front_hero_items); ?>
 <?php get_footer(); ?>

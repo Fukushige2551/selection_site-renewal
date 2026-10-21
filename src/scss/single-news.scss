@@ -74,9 +74,9 @@
     &__image {
         display: block;
         width: 100%;
-        aspect-ratio: 356 / 265;
-        border-radius: 17.95vw 17.95vw 7.18vw 7.18vw;
-        object-fit: cover;
+        height: auto;
+        object-fit: contain;
+        border-radius: 0;
     }
 
     &__summary {
@@ -606,10 +606,6 @@
             margin-top: 9.38vw;
         }
 
-        &__image {
-            aspect-ratio: 560 / 417;
-            border-radius: 9.11vw 9.11vw 3.65vw 3.65vw;
-        }
 
         &__summary,
         &__toc,
@@ -878,10 +874,6 @@
             margin-top: 7.03vw;
         }
 
-        &__image {
-            aspect-ratio: 640 / 477;
-            border-radius: 6.84vw 6.84vw 2.73vw 2.73vw;
-        }
 
         &__summary,
         &__toc,
@@ -1167,10 +1159,6 @@
             margin-top: 1.98vw;
         }
 
-        &__image {
-            aspect-ratio: 760 / 562;
-            border-radius: 5.21vw 5.21vw 2.08vw 2.08vw;
-        }
 
         &__summary,
         &__toc,

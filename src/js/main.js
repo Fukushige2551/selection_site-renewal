@@ -1,5 +1,7 @@
 import '../scss/style.scss';
 
+import './fv-banner.js';
+
 /**
  * jQuery
  */

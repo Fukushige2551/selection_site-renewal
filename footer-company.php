@@ -113,7 +113,7 @@ $footer_link = static function ($label, $url, $class = '') {
                     <?php foreach (['instagram' => 'Instagram', 'facebook' => 'Facebook'] as $key => $label) : ?>
                         <li class="l-company-footer__social l-company-footer__social--<?php echo esc_attr($key); ?>">
                             <?php if ($footer_destinations[$key]) : ?><a href="<?php echo esc_url($footer_destinations[$key]); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr($label); ?>"><?php endif; ?>
-                                <img src="<?php echo esc_url(get_template_directory_uri() . '/img/component/svg/icon_' . $key . '_color.svg'); ?>" alt="<?php echo esc_attr($label); ?>" width="40" height="40" loading="lazy">
+                                <img class="c-pop" src="<?php echo esc_url(get_template_directory_uri() . '/img/component/svg/icon_' . $key . '_color.svg'); ?>" alt="<?php echo esc_attr($label); ?>" width="40" height="40" loading="lazy">
                             <?php if ($footer_destinations[$key]) : ?></a><?php endif; ?>
                         </li>
                     <?php endforeach; ?>
@@ -125,9 +125,11 @@ $footer_link = static function ($label, $url, $class = '') {
         <!-- バナー一覧 -->
         <div class="l-company-footer__banners">
             <?php foreach (['app' => ['selection-app', 'セレクション アプリ ダウンロード'], 'cgc' => ['cgc-colab', 'セレクションはCGCの加盟店です']] as $key => [$file, $alt]) : ?>
-                <?php if ($footer_destinations[$key]) : ?><a class="l-company-footer__banner l-company-footer__banner--<?php echo esc_attr($key); ?>" href="<?php echo esc_url($footer_destinations[$key]); ?>"<?php if ($key === 'cgc') : ?> target="_blank" rel="noopener noreferrer"<?php endif; ?>><?php else : ?><div class="l-company-footer__banner l-company-footer__banner--<?php echo esc_attr($key); ?>"><?php endif; ?>
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/img/footer/footer_banner-' . $file . '.png'); ?>" alt="<?php echo esc_attr($alt); ?>" width="<?php echo $key === 'app' ? 722 : 720; ?>" height="<?php echo $key === 'app' ? 257 : 254; ?>" loading="lazy">
-                <?php if ($footer_destinations[$key]) : ?></a><?php else : ?></div><?php endif; ?>
+                <?php if ($key === 'app') : ?>
+                    <a class="l-company-footer__banner l-company-footer__banner--app" <?php foods_footer_app_link_attributes(); ?>>
+                <?php elseif ($footer_destinations[$key]) : ?><a class="l-company-footer__banner l-company-footer__banner--<?php echo esc_attr($key); ?>" href="<?php echo esc_url($footer_destinations[$key]); ?>" target="_blank" rel="noopener noreferrer"><?php else : ?><div class="l-company-footer__banner l-company-footer__banner--<?php echo esc_attr($key); ?>"><?php endif; ?>
+                    <img class="c-pop" src="<?php echo esc_url(get_template_directory_uri() . '/img/footer/footer_banner-' . $file . '.png'); ?>" alt="<?php echo esc_attr($alt); ?>" width="<?php echo $key === 'app' ? 722 : 720; ?>" height="<?php echo $key === 'app' ? 257 : 254; ?>" loading="lazy">
+                <?php if ($key === 'app' || $footer_destinations[$key]) : ?></a><?php else : ?></div><?php endif; ?>
             <?php endforeach; ?>
         </div>
     </div>
@@ -137,7 +139,7 @@ $footer_link = static function ($label, $url, $class = '') {
         <?php foreach (['instagram' => 'Instagram', 'facebook' => 'Facebook'] as $key => $label) : ?>
             <li class="l-company-footer__social l-company-footer__social--<?php echo esc_attr($key); ?>">
                 <?php if ($footer_destinations[$key]) : ?><a href="<?php echo esc_url($footer_destinations[$key]); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr($label); ?>"><?php endif; ?>
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/img/component/svg/icon_' . $key . '_color.svg'); ?>" alt="<?php echo esc_attr($label); ?>" width="40" height="40" loading="lazy">
+                    <img class="c-pop" src="<?php echo esc_url(get_template_directory_uri() . '/img/component/svg/icon_' . $key . '_color.svg'); ?>" alt="<?php echo esc_attr($label); ?>" width="40" height="40" loading="lazy">
                 <?php if ($footer_destinations[$key]) : ?></a><?php endif; ?>
             </li>
         <?php endforeach; ?>

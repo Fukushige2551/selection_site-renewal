@@ -1,0 +1,23 @@
+.fv-app-dialog {
+    box-sizing: border-box;
+    width: min(680px, calc(100% - 32px));
+    max-height: calc(100dvh - 48px);
+    padding: 48px 28px 32px;
+    border: 0;
+    border-radius: 24px;
+    margin: auto;
+    background: #fffdf5;
+    color: #333;
+    text-align: center;
+    box-shadow: 0 12px 48px #0003;
+    &::backdrop { background: #0009; }
+    h2 { margin: 0 0 16px; font-size: 24px; color: #008b52; line-height: 1.5; }
+    p { margin: 0 0 24px; font-size: 14px; line-height: 1.8; }
+    &__close { position: absolute; top: 8px; right: 12px; width: 44px; height: 44px; border: 0; background: transparent; font-size: 30px; cursor: pointer; }
+    &__stores { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
+    &__store { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    &__store-link { display: inline-block; padding: 14px 16px; border-radius: 10px; background: #008b52; color: white; font-size: 14px; font-weight: bold; text-decoration: none; }
+    &__qr { width: 200px; height: 200px; max-width: 100%; background: white; }
+    :focus-visible { outline: 3px solid #bf6b00; outline-offset: 3px; }
+}
+html:has(.fv-app-dialog[open]) { overflow: hidden; }

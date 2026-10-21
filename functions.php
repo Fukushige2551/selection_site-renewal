@@ -8,6 +8,7 @@ require_once __DIR__ . '/inc/recruit-interview.php';
 require_once __DIR__ . '/inc/job-search.php';
 require_once __DIR__ . '/inc/confirmed-seo.php';
 require_once __DIR__ . '/inc/manager-images.php';
+require_once __DIR__ . '/inc/fv-banner.php';
 
 /**
  * テーマのセットアップ
@@ -1033,7 +1034,7 @@ function foods_sync_scf_field_group($field_group) {
             'class' => '',
             'id' => '',
         ];
-        $field['conditional_logic'] = 0;
+        $field['conditional_logic'] = $field['conditional_logic'] ?? 0;
 
         $saved_field = acf_update_field($field);
         if ($saved_field) {
@@ -1261,6 +1262,14 @@ function foods_sync_recruit_part_time_scf_fields() {
 /**
  * 新着情報のSCFフィールドをDBに登録
  */
+function foods_render_news_sp_image_source($post_id) {
+    $image_id = (int) get_post_meta($post_id, 'news_eyecatch_image_sp', true);
+    $url = $image_id ? wp_get_attachment_image_url($image_id, 'full') : false;
+    if ($url) {
+        echo '<source media="(max-width: 767px)" srcset="' . esc_url($url) . '">';
+    }
+}
+
 function foods_get_news_field_group() {
     return [
         'key' => 'group_news_fields',
@@ -1282,6 +1291,17 @@ function foods_get_news_field_group() {
                 'label' => 'アイキャッチ画像',
                 'name' => 'news_eyecatch_image',
                 'type' => 'image',
+                'required' => 0,
+                'return_format' => 'id',
+                'preview_size' => 'medium',
+                'library' => 'all',
+            ],
+            [
+                'key' => 'field_news_eyecatch_image_sp',
+                'label' => 'SP用アイキャッチ画像',
+                'name' => 'news_eyecatch_image_sp',
+                'type' => 'image',
+                'instructions' => '767px以下で表示する画像です。未登録の場合は通常のアイキャッチ画像を表示します。',
                 'required' => 0,
                 'return_format' => 'id',
                 'preview_size' => 'medium',
@@ -1320,16 +1340,6 @@ function foods_get_news_field_group() {
                 'ui_on_text' => '表示',
                 'ui_off_text' => '非表示',
             ],
-            [
-                'key' => 'field_news_first_view_order',
-                'label' => 'ファーストビュー表示順',
-                'name' => 'first_view_order',
-                'type' => 'number',
-                'required' => 0,
-                'default_value' => '',
-                'min' => 0,
-                'step' => 1,
-            ],
         ],
         'location' => [
             [
@@ -1357,14 +1367,14 @@ function foods_register_news_scf_fields() {
         return;
     }
 
-    $version = '20260707-1';
+    $version = '20261021-news-publish-date-order';
     if (get_option('foods_news_scf_fields_version') === $version) {
         return;
     }
 
     $result = foods_sync_news_scf_fields();
 
-    if (!empty($result['field_group_id']) && $result['field_count'] === 6) {
+    if (!empty($result['field_group_id']) && $result['field_count'] === count(foods_get_news_field_group()['fields'])) {
         update_option('foods_news_scf_fields_version', $version);
     }
 }

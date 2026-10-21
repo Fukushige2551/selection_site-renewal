@@ -22,6 +22,7 @@
   "homepage": "https://github.com/Fukushige2551/selection_site-renewal#readme",
   "description": "",
   "dependencies": {
+    "qrcode": "^1.5.4",
     "vite": "^8.0.0"
   },
   "devDependencies": {

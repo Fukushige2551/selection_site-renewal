@@ -1,6 +1,44 @@
 ﻿@use "foundation/global" as *;
 @use "object/recipe-archive-list";
 
+// Typography measured from the 390px and 1920px recipe-detail frames.
+// Keep these adjustments out of the intermediate layouts.
+@mixin recipe-detail-type {
+    &__summary, &__ingredients, &__method, &__tips,
+    &__keyword, &__source, &__share-title {
+        font-family: $font-family-ZenKakuAntique;
+    }
+    &__summary, &__tips-text { font-size: calc(16 * var(--detail-unit)); line-height: 1.875; font-weight: 400; }
+    &__ingredients { background-color: #f9f9f9; color: #525252; }
+    &__ingredients-heading { gap: calc(4 * var(--detail-unit)); margin-bottom: calc(12 * var(--detail-unit)); }
+    &__section-title, &__servings, &__ingredient-section-title, &__ingredient-compound-title {
+        font-size: calc(18 * var(--detail-unit)); line-height: calc(30 * var(--detail-unit)); color: #525252;
+    }
+    &__ingredient-section-title { margin-bottom: calc(11 * var(--detail-unit)); }
+    &__ingredient-compound-title { margin-bottom: 0; }
+    &__ingredient-item, &__ingredient-item + &__ingredient-item {
+        min-height: 0; padding-top: 0; padding-bottom: 0; border-bottom-width: 1px;
+    }
+    &__ingredient-name, &__ingredient-amount {
+        font-size: calc(16 * var(--detail-unit)); font-weight: 500; line-height: calc(40 * var(--detail-unit)); color: #525252;
+    }
+    &__ingredient-note {
+        grid-column: 1 / -1; margin-top: calc(-5 * var(--detail-unit));
+        font-size: calc(14 * var(--detail-unit)); line-height: calc(30 * var(--detail-unit)); color: #000;
+    }
+    &__method-title, &__tips-title { font-size: calc(18 * var(--detail-unit)); line-height: calc(30 * var(--detail-unit)); }
+    &__method-title { margin-bottom: calc(12 * var(--detail-unit)); }
+    &__method-body, &__step-item::before { font-size: calc(16 * var(--detail-unit)); line-height: calc(26 * var(--detail-unit)); }
+    &__preparation { padding-bottom: calc(9 * var(--detail-unit)); border-bottom-width: 1px; }
+    &__step-item { padding: calc(7 * var(--detail-unit)) 0 calc(9 * var(--detail-unit)) calc(24 * var(--detail-unit)); border-bottom-width: 1px; }
+    &__step-item::before { top: calc(7 * var(--detail-unit)); }
+    &__point { padding-top: calc(5 * var(--detail-unit)); }
+    &__point-title { font-size: calc(16 * var(--detail-unit)); line-height: calc(26 * var(--detail-unit)); }
+    &__point-text { font-size: calc(14 * var(--detail-unit)); line-height: calc(26 * var(--detail-unit)); }
+    &__tips-title { margin-bottom: calc(7 * var(--detail-unit)); }
+    &__time, &__category { box-sizing: border-box; }
+}
+
 .js-recipe-detail-related-list > .js-recipe-detail-related-card:nth-child(n + 11) {
     display: block;
 }
@@ -105,6 +143,14 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        mask-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/mask_recipe-detail.svg");
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: 100% 100%;
+        -webkit-mask-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/mask_recipe-detail.svg");
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        -webkit-mask-size: 100% 100%;
     }
 
     &__summary {
@@ -1556,5 +1602,47 @@
 
     .l-footer {
         margin-top: -20vw;
+    }
+}
+
+@media screen and (max-width: 767.98px) {
+    .p-recipe-detail {
+        --detail-unit: calc(100vw / 390);
+        @include recipe-detail-type;
+        &__article { margin-top: calc(21.5 * var(--detail-unit)); margin-left: calc(30 * var(--detail-unit)); }
+        &__figure { margin-top: calc(22 * var(--detail-unit)); }
+        &__ingredients {
+            margin-top: calc(30 * var(--detail-unit));
+            margin-left: calc(-4 * var(--detail-unit));
+            padding: calc(14 * var(--detail-unit)) calc(14 * var(--detail-unit)) calc(22 * var(--detail-unit));
+            border-radius: calc(20 * var(--detail-unit));
+        }
+        &__ingredient-sections { gap: calc(20 * var(--detail-unit)); }
+        &__ingredient-list--nested { padding-left: calc(12 * var(--detail-unit)); }
+        &__ingredient-compound { margin-top: calc(22 * var(--detail-unit)); margin-bottom: 0; }
+        &__method, &__tips { margin-left: calc(-5 * var(--detail-unit)); }
+        &__method-title { margin-left: calc(-7 * var(--detail-unit)); }
+        &__step-list { padding-left: calc(8 * var(--detail-unit)); padding-right: calc(15 * var(--detail-unit)); }
+        &__tips { margin-top: calc(27 * var(--detail-unit)); }
+        &__tips-title { margin-left: calc(-12 * var(--detail-unit)); }
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .p-recipe-detail {
+        --detail-unit: calc(100vw / 1920);
+        @include recipe-detail-type;
+        &__article { width: calc(758 * var(--detail-unit)); margin-top: calc(85.3 * var(--detail-unit)); margin-left: calc(580 * var(--detail-unit)); }
+        &__title { margin-left: calc(4 * var(--detail-unit)); font-size: calc(20 * var(--detail-unit)); letter-spacing: calc(3 * var(--detail-unit)); }
+        &__figure { margin-top: calc(29 * var(--detail-unit)); margin-left: calc(123 * var(--detail-unit)); }
+        &__summary { margin-left: calc(11 * var(--detail-unit)); }
+        &__ingredients { margin-top: calc(23 * var(--detail-unit)); margin-left: calc(11 * var(--detail-unit)); padding-right: calc(21 * var(--detail-unit)); }
+        &__ingredient-sections { gap: calc(20 * var(--detail-unit)); }
+        &__ingredient-compound { margin-top: calc(22 * var(--detail-unit)); margin-bottom: 0; }
+        &__method { margin-left: calc(7 * var(--detail-unit)); }
+        &__preparation { padding-left: calc(28 * var(--detail-unit)); padding-right: calc(35 * var(--detail-unit)); }
+        &__step-list { padding-left: calc(32 * var(--detail-unit)); padding-right: calc(35 * var(--detail-unit)); }
+        &__tips { margin-left: calc(12 * var(--detail-unit)); }
+        &__keywords { margin-left: calc(17 * var(--detail-unit)); }
     }
 }

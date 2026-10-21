@@ -1,5 +1,6 @@
 import '../scss/front-page.scss';
 
+
 jQuery(function($) {
 	/**
 	 * ヒーロースライダー(sp)

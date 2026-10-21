@@ -261,7 +261,7 @@ get_header();
     <?php if (!$recipe_is_search) : ?>
     <div class="p-recipe-archive__heading">
         <h1 class="p-recipe-archive__title c-section__title">レシピ</h1>
-        <p class="p-recipe-archive__title-en c-section__title--sub">RECIPE</p>
+        <p class="p-recipe-archive__title-en c-section__title--sub"><span class="p-recipe-archive__title-en-original">RECIPE</span><span class="p-recipe-archive__title-en-responsive">Recipe</span></p>
     </div>
 
     <form class="p-recipe-archive__search" aria-label="レシピ検索" action="<?php echo esc_url($recipe_archive_url); ?>" method="get">
@@ -288,7 +288,7 @@ get_header();
 
         <div class="p-recipe-archive__desktop-search" aria-label="レシピ検索">
             <section class="p-recipe-archive__desktop-search-group" aria-labelledby="recipe-desktop-ingredient-title">
-                <h2 id="recipe-desktop-ingredient-title" class="p-recipe-archive__desktop-search-title">食材から探す</h2>
+                <h2><button id="recipe-desktop-ingredient-title" class="p-recipe-archive__desktop-search-title" type="button" data-recipe-search-tab="ingredient" aria-pressed="true">食材から探す</button></h2>
                 <div class="p-recipe-archive__desktop-search-grid">
                     <button class="p-recipe-archive__desktop-search-card" type="submit" name="recipe_search" value="野菜" data-recipe-category="vegetable">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-ingredient-vegetable.png'); ?>" alt="" loading="lazy">
@@ -317,7 +317,7 @@ get_header();
                 </div>
             </section>
             <section class="p-recipe-archive__desktop-search-group" aria-labelledby="recipe-desktop-name-title">
-                <h2 id="recipe-desktop-name-title" class="p-recipe-archive__desktop-search-title">料理名から探す</h2>
+                <h2><button id="recipe-desktop-name-title" class="p-recipe-archive__desktop-search-title" type="button" data-recipe-search-tab="name" aria-pressed="false">料理名から探す</button></h2>
                 <div class="p-recipe-archive__desktop-search-grid">
                     <button class="p-recipe-archive__desktop-search-card" type="submit" name="recipe_search" value="麺・ご飯" data-recipe-keyword="麺・ご飯">
                         <img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/recipe/search-name-rice.png'); ?>" alt="" loading="lazy">
@@ -346,32 +346,29 @@ get_header();
                 </div>
             </section>
         </div>
+        <div class="p-recipe-archive__name-panel" role="region" aria-label="料理名検索" hidden>
+            <div class="p-recipe-archive__name-field">
+                <input class="p-recipe-archive__name-input" type="search" aria-label="料理名" placeholder="料理名を入力" disabled>
+                <button class="p-recipe-archive__name-submit" type="submit" disabled>検索</button>
+            </div>
+            <p class="p-recipe-archive__name-help">料理名を入力して検索できます</p>
+        </div>
         <section class="p-recipe-archive__keyword" aria-labelledby="recipe-archive-keyword-title">
             <h2 id="recipe-archive-keyword-title" class="p-recipe-archive__keyword-title">
                 <span class="p-recipe-archive__keyword-title-text">キーワード</span>
             </h2>
             <div class="p-recipe-archive__keyword-list" aria-label="キーワード一覧">
                 <?php
-                $recipe_keywords = [
-                    '豚肉',
-                    'ひき肉',
-                    'お豆腐',
-                    'お正月',
-                    'ハロウィンメニュー',
-                    'サクッと簡単',
-                    '家族みんなで',
-                    'ナス',
-                    'トマト',
-                    'サンマ',
-                    'きゅうり',
-                    'じゃがいも',
-                    '大根',
-                    '子供が喜ぶ',
-                    '誕生日',
-                    '春野菜',
-                    '夏野菜',
-                    '秋野菜',
-                ];
+                $recipe_keywords = get_terms([
+                    'taxonomy' => 'recipe_tag',
+                    'hide_empty' => true,
+                    'fields' => 'names',
+                    'orderby' => 'name',
+                    'order' => 'ASC',
+                ]);
+                if (is_wp_error($recipe_keywords)) {
+                    $recipe_keywords = [];
+                }
 
                 foreach ($recipe_keywords as $recipe_keyword) :
                     ?>

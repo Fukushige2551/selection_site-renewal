@@ -3255,3 +3255,61 @@
 .p-front-page__recruit > .c-section__title {
     margin-bottom: clamp(6px, 0.52vw, 10px);
 }
+
+// Campaign paper grows with its cards; only the background receives the wave mask.
+.p-front-page__bg--campaign {
+    --campaign-top: 7.95vw;
+    --campaign-bottom: 20.65vw;
+    --campaign-mask-top: url("#{$img-path}page/front-page/png/campaign-masktop.png");
+    --campaign-mask-bottom: url("#{$img-path}page/front-page/png/campaign-maskbottom.png");
+    --campaign-tile: url("#{$img-path}page/front-page/png/campaign-tile.png");
+    --campaign-tile-height: 24.6154vw;
+    position: relative;
+    isolation: isolate;
+    aspect-ratio: auto;
+    background: none;
+    padding-bottom: calc(var(--campaign-bottom) + 8vw);
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background-image: var(--campaign-tile);
+        background-size: 100% var(--campaign-tile-height);
+        background-repeat: repeat-y;
+        -webkit-mask-image: var(--campaign-mask-top), linear-gradient(#fff, #fff), var(--campaign-mask-bottom);
+        mask-image: var(--campaign-mask-top), linear-gradient(#fff, #fff), var(--campaign-mask-bottom);
+        -webkit-mask-size: 100% var(--campaign-top), 100% calc(100% - var(--campaign-top) - var(--campaign-bottom) + 2px), 100% var(--campaign-bottom);
+        mask-size: 100% var(--campaign-top), 100% calc(100% - var(--campaign-top) - var(--campaign-bottom) + 2px), 100% var(--campaign-bottom);
+        -webkit-mask-position: center top, center var(--campaign-top), center bottom;
+        mask-position: center top, center var(--campaign-top), center bottom;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .p-front-page__bg--campaign {
+        --campaign-top: 3.8412vw;
+        --campaign-bottom: 8.9193vw;
+        --campaign-mask-top: url("#{$img-path}page/front-page/png/campaign-masktop-tab.png");
+        --campaign-mask-bottom: url("#{$img-path}page/front-page/png/campaign-maskbottom-tab.png");
+        --campaign-tile: url("#{$img-path}page/front-page/png/campaign-tile-tab.png");
+        --campaign-tile-height: 12.5vw;
+        padding-bottom: calc(var(--campaign-bottom) + 5vw);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .p-front-page__bg--campaign {
+        --campaign-top: 5.8334vw;
+        --campaign-bottom: 7.6042vw;
+        --campaign-mask-top: url("#{$img-path}page/front-page/png/campaign-masktop-pc.png");
+        --campaign-mask-bottom: url("#{$img-path}page/front-page/png/campaign-maskbottom-pc.png");
+        --campaign-tile: url("#{$img-path}page/front-page/png/campaign-tile-pc.png");
+        --campaign-tile-height: 10vw;
+        padding-bottom: calc(var(--campaign-bottom) + 4vw);
+    }
+}

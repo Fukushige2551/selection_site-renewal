@@ -203,6 +203,7 @@ get_header();
                             <div class="c-campaign-content">
                                 <a href="<?php echo esc_url($news_item['permalink']); ?>">
                                     <picture>
+                                        <?php foods_render_news_sp_image_source($news_item['id']); ?>
                                         <img class="c-pop c-campaign-content__img" src="<?php echo esc_url($news_image_url); ?>" alt="<?php echo esc_attr($news_image_alt ?: $news_item['title']); ?>">
                                     </picture>
                                     <time class="c-campaign-content__time" datetime="<?php echo esc_attr($news_item['datetime']); ?>"><?php echo esc_html($news_item['date']); ?></time>
@@ -256,6 +257,7 @@ get_header();
                             </div>
                             <div class="p-news-archive__list-body-row">
                                 <picture class="p-news-archive__list-image">
+                                    <?php foods_render_news_sp_image_source($news_item['id']); ?>
                                     <img src="<?php echo esc_url($news_image_url); ?>" alt="<?php echo esc_attr($news_image_alt ?: $news_item['title']); ?>">
                                 </picture>
                                 <p class="c-news-card__body p-news-archive__list-body"><?php echo esc_html($news_item['title']); ?></p>

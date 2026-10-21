@@ -124,7 +124,7 @@ $main_footer_link = static function ($label, $url) {
 
     <!-- バナー -->
     <div class="l-footer__banner__group">
-        <a href="" class="l-footer__banner">
+        <a <?php foods_footer_app_link_attributes(); ?> class="l-footer__banner">
             <picture>
                 <source srcset="<?php echo get_template_directory_uri(); ?>/img/footer/footer_banner-selection-app.webp" type="image/webp">
                 <img class="c-pop l-footer__banner__img selection-app" src="<?php echo get_template_directory_uri(); ?>/img/footer/footer_banner-selection-app.jpg" alt="セレクションアプリ">

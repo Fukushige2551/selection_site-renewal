@@ -19,7 +19,25 @@ document.addEventListener('DOMContentLoaded', () => {
     syncResultPageSize();
     mobileViewport.addEventListener('change', syncResultPageSize);
     document.querySelectorAll('form.p-recipe-archive__search').forEach(form => {
-        form.addEventListener('submit', () => {
+        form.addEventListener('submit', event => {
+            const input = form.querySelector('.p-recipe-archive__name-input');
+            if (input && !input.disabled && event.submitter?.name !== 'recipe_search') {
+                if (!input.value.trim()) {
+                    event.preventDefault();
+                    input.focus();
+                    return;
+                }
+                let search = form.querySelector('input[name="recipe_search"]');
+                if (!search) {
+                    search = document.createElement('input');
+                    search.type = 'hidden';
+                    search.name = 'recipe_search';
+                    form.append(search);
+                }
+                search.value = input.value.trim();
+            } else {
+                form.querySelector('input[name="recipe_search"]')?.remove();
+            }
             let field = form.querySelector('[name="recipe_view"]');
             if (!field) {
                 field = document.createElement('input');
@@ -35,38 +53,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const panel = document.getElementById('recipe-search-panel');
     if (!panel || !tabs.length) return;
 
-    const ingredientButtons = [...panel.children].map(button => button.cloneNode(true));
-    const dishCards = document.querySelectorAll('[aria-labelledby="recipe-desktop-name-title"] [name="recipe_search"]');
-    const dishButtons = [...dishCards].map(card => {
-        const button = document.createElement('button');
-        button.className = 'p-recipe-archive__ingredient-button';
-        button.type = 'submit';
-        button.name = 'recipe_search';
-        button.value = card.value;
-        button.textContent = card.querySelector('span').textContent;
-        return button;
+    const form = panel.closest('form');
+    const namePanel = form.querySelector('.p-recipe-archive__name-panel');
+    namePanel.querySelector('input').addEventListener('keydown', event => {
+        if (event.key !== 'Enter' || event.isComposing) return;
+        event.preventDefault();
+        form.requestSubmit(namePanel.querySelector('button'));
     });
 
     const activateTab = tab => {
         tabs.forEach(item => {
-            const selected = item === tab;
+            const selected = item.dataset.recipeSearchTab === tab.dataset.recipeSearchTab;
             item.classList.toggle('is-active', selected);
-            item.setAttribute('aria-selected', String(selected));
-            item.tabIndex = selected ? 0 : -1;
+            if (item.getAttribute('role') === 'tab') {
+                item.setAttribute('aria-selected', String(selected));
+                item.tabIndex = selected ? 0 : -1;
+            } else {
+                item.setAttribute('aria-pressed', String(selected));
+            }
         });
-        panel.setAttribute('aria-labelledby', tab.id);
-        const buttons = tab.dataset.recipeSearchTab === 'name' ? dishButtons : ingredientButtons;
-        panel.replaceChildren(...buttons.map(button => button.cloneNode(true)));
+        const nameSearch = tab.dataset.recipeSearchTab === 'name';
+        form.classList.toggle('is-name-search', nameSearch);
+        panel.hidden = nameSearch;
+        namePanel.hidden = !nameSearch;
+        namePanel.querySelectorAll('input, button').forEach(control => { control.disabled = !nameSearch; });
     };
 
-    tabs.forEach((tab, index) => {
+    tabs.forEach(tab => {
         tab.addEventListener('click', () => activateTab(tab));
         tab.addEventListener('keydown', event => {
             let next;
-            if (event.key === 'ArrowRight') next = tabs[(index + 1) % tabs.length];
-            if (event.key === 'ArrowLeft') next = tabs[(index + tabs.length - 1) % tabs.length];
-            if (event.key === 'Home') next = tabs[0];
-            if (event.key === 'End') next = tabs[tabs.length - 1];
+            const peers = tabs.filter(item => item.getAttribute('role') === tab.getAttribute('role'));
+            const position = peers.indexOf(tab);
+            if (event.key === 'ArrowRight') next = peers[(position + 1) % peers.length];
+            if (event.key === 'ArrowLeft') next = peers[(position + peers.length - 1) % peers.length];
+            if (event.key === 'Home') next = peers[0];
+            if (event.key === 'End') next = peers[peers.length - 1];
             if (!next) return;
             event.preventDefault();
             activateTab(next);

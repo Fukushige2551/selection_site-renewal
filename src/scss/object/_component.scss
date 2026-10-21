@@ -443,6 +443,12 @@ font-family: $font-family-ZenKakuAntique;
     box-sizing: border-box;
 
     &__title {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        overflow: hidden;
+        overflow-wrap: anywhere;
         font-family: $font-family-ZenKaku;
         font-weight: bold;
         line-height: 1.43;
@@ -459,6 +465,14 @@ font-family: $font-family-ZenKakuAntique;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        mask-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/mask_recipe-card.svg");
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: 100% 100%;
+        -webkit-mask-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/mask_recipe-card.svg");
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        -webkit-mask-size: 100% 100%;
     }
 
     &__time {
