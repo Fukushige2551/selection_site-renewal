@@ -20,4 +20,3 @@
     &__qr { width: 200px; height: 200px; max-width: 100%; background: white; }
     :focus-visible { outline: 3px solid #bf6b00; outline-offset: 3px; }
 }
-html:has(.fv-app-dialog[open]) { overflow: hidden; }

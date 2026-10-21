@@ -462,6 +462,8 @@
                 img {
                     width: 32.3vw;
                     aspect-ratio: 126 / 113;
+                    object-fit: cover;
+                    object-position: center top;
                     border-radius: 2.56vw;
                 }
             }

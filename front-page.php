@@ -57,7 +57,7 @@
     $front_flyer_query = new WP_Query([
         'post_type' => 'flyer',
         'post_status' => 'publish',
-        'posts_per_page' => 5,
+        'posts_per_page' => 1,
         'orderby' => [
             'date' => 'DESC',
             'ID' => 'DESC',
@@ -75,36 +75,6 @@
         }
 
         return get_post_meta($post_id, $field_name, true);
-    };
-
-    $front_get_latest_bargain_item = static function ($items) {
-        if (!is_array($items) || !$items) {
-            return [];
-        }
-
-        $ranked_items = [];
-
-        foreach (array_values($items) as $index => $item) {
-            if (!is_array($item)) {
-                continue;
-            }
-
-            $ranked_items[] = [
-                'item' => $item,
-                'date' => preg_replace('/\D/', '', (string) ($item['item_start_date'] ?? '')),
-                'index' => $index,
-            ];
-        }
-
-        usort($ranked_items, static function ($left, $right) {
-            $date_comparison = strcmp($right['date'], $left['date']);
-
-            return $date_comparison !== 0
-                ? $date_comparison
-                : $right['index'] <=> $left['index'];
-        });
-
-        return $ranked_items[0]['item'] ?? [];
     };
 
     $front_get_image_data = static function ($image, $fallback_alt = '') {
@@ -174,13 +144,20 @@
         return number_format((float) $price, $decimal_count, '.', ',');
     };
 
-    $front_flyer_items = array_map(static function ($flyer_post) use (
+    $front_flyer_post = $front_flyer_query->posts[0] ?? null;
+    $front_bargain_items = $front_flyer_post
+        ? $front_get_flyer_field($front_flyer_post->ID, 'bargain_items')
+        : [];
+    $front_bargain_items = is_array($front_bargain_items)
+        ? array_values($front_bargain_items)
+        : [];
+
+    $front_flyer_items = array_map(static function ($item) use (
+        $front_flyer_post,
         $front_get_flyer_field,
-        $front_get_latest_bargain_item,
         $front_get_image_data
     ) {
-        $post_id = $flyer_post->ID;
-        $item = $front_get_latest_bargain_item($front_get_flyer_field($post_id, 'bargain_items'));
+        $post_id = $front_flyer_post->ID;
         $item_name = (string) ($item['item_name'] ?? '');
 
         return [
@@ -190,7 +167,7 @@
             'start_date' => $item['item_start_date'] ?? $front_get_flyer_field($post_id, 'flyer_start_date'),
             'end_date' => $item['item_end_date'] ?? $front_get_flyer_field($post_id, 'flyer_end_date'),
         ];
-    }, $front_flyer_query->posts);
+    }, $front_bargain_items);
 
     wp_reset_postdata();
 
