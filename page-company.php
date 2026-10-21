@@ -228,21 +228,21 @@ get_header('company');
 
             <div class="p-page-company__recruit__images">
 
-                <div class="p-page-company__recruit__imageBlock">
+                <a class="p-page-company__recruit__imageBlock" href="<?php echo esc_url(home_url('/recruit/career-entry/')); ?>" aria-label="キャリア採用の募集要項・エントリーへ">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/page-company/webp/img_recruit01.webp" type="image/webp">
-                        <img class="p-page-company__recruit__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-company/img_recruit01.png" alt="">
+                        <img class="p-page-company__recruit__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-company/img_recruit01.png" alt="新卒・キャリア採用">
                     </picture>
 
                     <p class="p-page-company__recruit__label p-page-company__recruit__label--career">新卒・中途採用</p>
-                </div>
+                </a>
 
-                <div class="p-page-company__recruit__imageBlock">
+                <a class="p-page-company__recruit__imageBlock" href="<?php echo esc_url(home_url('/job/')); ?>" aria-label="パート・アルバイト募集情報へ">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/page-company/webp/img_recruit02.webp" type="image/webp">
-                        <img class="p-page-company__recruit__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-company/img_recruit02.png" alt="">
+                        <img class="p-page-company__recruit__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-company/img_recruit02.png" alt="パート・アルバイト募集">
                     </picture>
-                </div>
+                </a>
 
             </div>
 

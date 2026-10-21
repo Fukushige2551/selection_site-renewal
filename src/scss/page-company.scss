@@ -440,15 +440,20 @@
 
         &__imageBlock {
             position: relative;
+            display: block;
+            opacity: 1;
+            transition: filter .3s ease, transform .3s ease;
 
             picture {
                 display: block;
             }
-        }
-        &__imageBlock {
-            &:nth-child(2) {
-                .p-page-company__recruit__img {
-                    border-radius: 0 0 4vw 0;
+
+            @media (hover: hover) {
+                &:hover {
+                    z-index: 4;
+                    opacity: 1;
+                    filter: drop-shadow(0 .8vw 1.6vw rgba(0, 71, 58, .2));
+                    transform: scale(1.025);
                 }
             }
         }
@@ -849,15 +854,6 @@
 
             &__img {
                 width: 72vw;
-            }
-
-            &__imageBlock {
-
-                &:nth-child(2) {
-                    .p-page-company__recruit__img {
-                        border-radius: 0 0 3vw 0;
-                    }
-                }
             }
 
             &__label--career {

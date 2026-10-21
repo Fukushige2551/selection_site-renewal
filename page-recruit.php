@@ -17,6 +17,11 @@ $voices_word_uri = $image_uri . '/svg/text_voices-from-seniors.svg';
 if (file_exists($voices_word_file)) {
   $voices_word_uri .= '?v=' . filemtime($voices_word_file);
 }
+$president_webp_file = $image_path . '/img_message-president-source-01.webp';
+$president_webp_uri = $image_uri . '/img_message-president-source-01.webp';
+if (file_exists($president_webp_file)) {
+  $president_webp_uri .= '?v=' . filemtime($president_webp_file);
+}
 
 $recruit_work_page = get_page_by_path('recruit/work', OBJECT, 'page');
 $recruit_work_url = $recruit_work_page
@@ -61,7 +66,10 @@ get_header('company');
     <h2><span class="p-page-recruit__message-slogan-line">地域の<img class="p-page-recruit__outline-mark" src="<?php echo esc_url($image_uri . '/svg/outline-bracket.svg'); ?>" alt="">おいしい<img class="p-page-recruit__outline-mark p-page-recruit__outline-mark--close" src="<?php echo esc_url($image_uri . '/svg/outline-bracket.svg'); ?>" alt="">を</span><span class="p-page-recruit__message-slogan-line">支える仲間へ。</span></h2>
     <div class="p-page-recruit__message-copy"><p>お客様がセレクションに来て良かったと思っていただける、<br class="p-page-recruit__message-break">雰囲気作りや接客サービス向上はもちろんのこと、当社の社員に対しても、<br class="p-page-recruit__message-break">セレクションに入社して良かったと思える環境の創造に力を注いでおります。<br class="p-page-recruit__message-break">それは、第一に御来店いただくお客様に対する責任、第二に社員に対する責任、第三に地域社会に対する責任。<br class="p-page-recruit__message-break">この三つの責任を果たすことが、私どもの「信条」であります。<br class="p-page-recruit__message-break">そして、この三つの当たり前なことを、常に愚直に取り組むことこそ、<br class="p-page-recruit__message-break">私どもの使命であると確信しております。</p></div>
     <p class="p-page-recruit__president"><span>代表取締役　</span><strong>山崎 洋介</strong><b>YAMAZAKI YOSUKE</b></p>
-    <picture class="p-page-recruit__president-photo"><img src="<?php echo esc_url($recruit_image('img_message-president-source-01.png', 'bg_campaign-content-01.png')); ?>" alt="代表取締役 山崎洋介"></picture>
+    <picture class="p-page-recruit__president-photo">
+      <source srcset="<?php echo esc_url($president_webp_uri); ?>" type="image/webp">
+      <img src="<?php echo esc_url($recruit_image('img_message-president-source-01.png', 'bg_campaign-content-01.png')); ?>" alt="代表取締役 山崎洋介">
+    </picture>
   </section>
 
   <section class="p-page-recruit__about">
