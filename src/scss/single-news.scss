@@ -348,7 +348,7 @@
     &__related {
         box-sizing: border-box;
         width: 100%;
-        min-height: 147.36vw;
+        min-height: 0;
         margin-top: 11.79vw;
         padding: 17.44vw 3.85vw 10.26vw;
         background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/news-detail-related-bg.svg");
@@ -723,7 +723,7 @@
         }
 
         &__related {
-            min-height: 148vw;
+            min-height: 0;
             margin-top: 8.85vw;
             padding: 10.42vw 7.81vw 6.77vw;
         }
@@ -991,7 +991,7 @@
         }
 
         &__related {
-            min-height: 82vw;
+            min-height: 0;
             margin-top: 6.64vw;
             padding: 10vw 5.86vw 5.08vw;
             background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/news-detail-related-bg-laptop.svg");
@@ -1280,7 +1280,7 @@
         }
 
         &__related {
-            min-height: 86.46vw;
+            min-height: 0;
             margin-top: 10.63vw;
             padding: 8.85vw 0 0;
             background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/news-detail-related-bg-laptop.svg");
@@ -1387,5 +1387,37 @@
             width: 28.65vw;
             margin: 0 auto 3.54vw;
         }
+    }
+}
+
+// Keep the existing wave outlines while allowing related articles to set the height.
+.p-news-detail__related {
+    --news-related-wave-height: 15.385vw;
+    --news-related-wave-top: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/news-related-wave-top-sp.svg");
+    --news-related-wave-bottom: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/news-related-wave-bottom-sp.svg");
+    position: relative;
+    isolation: isolate;
+    background: none;
+    padding-bottom: calc(var(--news-related-wave-height) + clamp(24px, 3vw, 56px));
+
+    &::before {
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        pointer-events: none;
+        content: "";
+        background: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/news-paper-seamless.svg") center top / 2048px 1036px repeat;
+        mask-image: var(--news-related-wave-top), linear-gradient(#fff, #fff), var(--news-related-wave-bottom);
+        mask-size: 100% var(--news-related-wave-height), 100% calc(100% - 2 * var(--news-related-wave-height) + 2px), 100% var(--news-related-wave-height);
+        mask-position: center top, center center, center bottom;
+        mask-repeat: no-repeat;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .p-news-detail__related {
+        --news-related-wave-height: 9.38vw;
+        --news-related-wave-top: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/news-related-wave-top-pc.svg");
+        --news-related-wave-bottom: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/news-related-wave-bottom-pc.svg");
     }
 }

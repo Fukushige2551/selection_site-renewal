@@ -263,12 +263,8 @@ get_header();
             $news_publish_date = foods_news_detail_get_field_value($news_id, 'news_publish_date');
             $news_display_date = foods_news_detail_format_publish_date($news_publish_date, $news_id);
             $news_image = foods_news_detail_get_news_image_data($news_id, 'large');
-            $news_summary = foods_news_detail_get_first_field_value($news_id, ['news_summary', 'news_overview', 'news_lead']);
-            $news_summary = $news_summary ?: get_the_excerpt($news_id);
-            $news_body = foods_news_detail_get_field_value($news_id, 'news_body');
             $news_content = apply_filters('the_content', get_post_field('post_content', $news_id));
-            $news_body_source = $news_body ? apply_filters('the_content', $news_body) : $news_content;
-            $news_body_data = foods_news_detail_prepare_body($news_body_source);
+            $news_body_data = foods_news_detail_prepare_body($news_content);
             $news_body_html = $news_body_data['html'];
             $news_toc_items = $news_body_data['toc'];
             $news_title = get_the_title($news_id);
@@ -288,9 +284,7 @@ get_header();
                 'datetime' => get_the_date('Y-m-d', $news_id),
                 'publish_date' => $news_publish_date,
                 'display_date' => $news_display_date,
-                'summary' => $news_summary,
                 'content' => $news_content,
-                'body' => $news_body,
                 'toc' => $news_toc_items,
                 'image' => $news_image,
                 'categories' => $news_categories,
@@ -320,7 +314,7 @@ get_header();
                 <h1 id="news-detail-title" class="p-news-detail__title"><?php the_title(); ?></h1>
             </section>
 
-            <?php if ($news_image || $news_summary || trim($news_body_html)) : ?>
+            <?php if ($news_image || trim($news_body_html)) : ?>
                 <section class="p-news-detail__content" aria-label="新着情報本文">
                     <?php if ($news_image) : ?>
                         <figure class="p-news-detail__figure">
@@ -329,9 +323,6 @@ get_header();
                             <img class="p-news-detail__image" src="<?php echo esc_url($news_image['url']); ?>" alt="<?php echo esc_attr($news_image['alt'] ?: get_the_title($news_id)); ?>">
                             </picture>
                         </figure>
-                    <?php endif; ?>
-                    <?php if ($news_summary) : ?>
-                        <div class="p-news-detail__summary"><?php echo wp_kses_post(wpautop($news_summary)); ?></div>
                     <?php endif; ?>
                     <?php if ($news_toc_items) : ?>
                         <nav class="p-news-detail__toc" aria-label="目次">

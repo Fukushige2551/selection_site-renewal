@@ -230,7 +230,7 @@
 
     &__pickup-card .c-campaign-content__img {
         aspect-ratio: 310 / 238;
-        object-fit: cover;
+        object-fit: contain;
     }
 
     &__pickup-card .c-campaign-content__time {
@@ -392,7 +392,7 @@
         display: block;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
     }
 
     &__list-body {
@@ -1174,7 +1174,8 @@
     --news-pickup-mask: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/pickup-mask-sp.svg");
 
     &__pickup .c-campaign-content__img {
-        mask: var(--news-pickup-mask) center / 100% 100% no-repeat;
+        mask: none;
+        -webkit-mask: none;
     }
 
     &__breadcrumb {

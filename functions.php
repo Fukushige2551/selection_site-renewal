@@ -1308,27 +1308,6 @@ function foods_get_news_field_group() {
                 'library' => 'all',
             ],
             [
-                'key' => 'field_news_summary',
-                'label' => 'お知らせ概要',
-                'name' => 'news_summary',
-                'type' => 'wysiwyg',
-                'required' => 0,
-                'tabs' => 'all',
-                'toolbar' => 'basic',
-                'media_upload' => 1,
-                'delay' => 0,
-            ],            [
-                'key' => 'field_news_body',
-                'label' => '本文',
-                'name' => 'news_body',
-                'type' => 'wysiwyg',
-                'required' => 0,
-                'tabs' => 'all',
-                'toolbar' => 'full',
-                'media_upload' => 1,
-                'delay' => 0,
-            ],
-            [
                 'key' => 'field_news_show_first_view',
                 'label' => 'ファーストビューへ表示',
                 'name' => 'show_first_view',
@@ -1367,7 +1346,7 @@ function foods_register_news_scf_fields() {
         return;
     }
 
-    $version = '20261021-news-publish-date-order';
+    $version = '20261021-news-standard-editor';
     if (get_option('foods_news_scf_fields_version') === $version) {
         return;
     }
