@@ -457,6 +457,9 @@
     };
 
     $render_front_shop_item = static function ($shop) {
+        // 店舗一覧と同様、時刻を含む営業時間の補足だけをカードに表示する。
+        $show_business_hours_note = is_string($shop['business_hours_note'])
+            && preg_match('/(?:[0-9０-９]{1,2}\s*[:：]\s*[0-9０-９]{2}|[0-9０-９]{1,2}\s*時)/u', $shop['business_hours_note']);
         $prefecture_classes = implode(' ', array_map(
             static fn($slug) => 'is-' . $slug,
             $shop['prefecture_slugs']
@@ -484,7 +487,7 @@
                 </svg>
                 <time>
                     <?php echo nl2br(esc_html($shop['business_hours'])); ?>
-                    <?php if ($shop['business_hours_note'] !== '') : ?>
+                    <?php if ($show_business_hours_note) : ?>
                         <br><?php echo nl2br(esc_html($shop['business_hours_note'])); ?>
                     <?php endif; ?>
                 </time>

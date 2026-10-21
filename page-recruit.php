@@ -6,7 +6,7 @@
 $image_uri = get_template_directory_uri() . '/img/page/page-recruit';
 $image_path = get_template_directory() . '/img/page/page-recruit';
 $theme_image_uri = get_template_directory_uri() . '/img/page/front-page';
-$use_recruit_video = false; // 動画の準備後に true へ変更します。
+$recruit_video_uri = get_template_directory_uri() . '/video/page-recruit';
 $recruit_image = static function ($filename, $fallback) use ($image_uri, $image_path, $theme_image_uri) {
   return file_exists($image_path . '/' . $filename)
     ? $image_uri . '/' . $filename . '?v=' . filemtime($image_path . '/' . $filename)
@@ -45,19 +45,7 @@ get_header('company');
   </nav>
 
   <section class="p-page-recruit__hero">
-    <?php if ($use_recruit_video) : ?>
-      <!-- 動画追加時は src と poster を実ファイルへ変更してください。 -->
-      <video class="p-page-recruit__hero-media" poster="<?php echo esc_url($theme_image_uri . '/bg_recruit-content-01.jpg'); ?>" autoplay muted loop playsinline>
-        <source src="<?php echo esc_url($image_uri . '/movie_recruit.mp4'); ?>" type="video/mp4">
-      </video>
-    <?php else : ?>
-      <picture>
-        <source media="(min-width: 768px)" type="image/webp" srcset="<?php echo esc_url($image_uri . '/webp/img_recruit-fv-pc.webp'); ?>">
-        <source media="(min-width: 768px)" srcset="<?php echo esc_url($image_uri . '/img_recruit-fv-pc.jpg'); ?>">
-        <img class="p-page-recruit__hero-media" src="<?php echo esc_url($image_uri . '/img_recruit-fv.png'); ?>" alt="セレクション店舗で働くスタッフ">
-      </picture>
-    <?php endif; ?>
-    <span class="p-page-recruit__movie-label">動画</span>
+    <video class="p-page-recruit__hero-media js-recruit-hero-video" data-src-pc="<?php echo esc_url($recruit_video_uri . '/recruit-pc.mp4'); ?>" data-src-sp="<?php echo esc_url($recruit_video_uri . '/recruit-sp.mp4'); ?>" autoplay muted loop playsinline aria-label="セレクション採用プロモーション動画"></video>
   </section>
 
   <section class="p-page-recruit__message">
