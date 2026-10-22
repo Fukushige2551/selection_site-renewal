@@ -411,11 +411,14 @@
     &__pagination {
         position: relative;
         z-index: 1;
-        display: flex;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
         align-items: center;
         justify-content: center;
         gap: 3.08vw;
-        margin-top: 11.28vw;
+        width: max-content;
+        margin: 11.28vw auto 0;
     }
 
     &__pagination-item {
@@ -440,6 +443,10 @@
     }
 
     &__pagination-next {
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translateY(-50%);
         display: block;
         width: 0;
         height: 0;
@@ -1622,5 +1629,61 @@
             linear-gradient(to bottom, transparent 70vw, #86cbbb 70vw);
         background-size: 100% auto, 100% 100%;
         background-repeat: no-repeat;
+    }
+}
+
+// Figma pagination assets: 5808:5973 (PC), 5808:2948 (SP).
+.p-news-archive__pagination {
+    --news-pager-unit: 0.2564102564vw;
+    column-gap: calc(13 * var(--news-pager-unit));
+
+    .p-news-archive__pagination-item {
+        width: calc(44 * var(--news-pager-unit));
+        height: calc(43 * var(--news-pager-unit));
+        border-radius: 0;
+        background: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/pagination-default.svg") center / contain no-repeat;
+        color: #848484;
+        font-size: calc(16 * var(--news-pager-unit));
+        line-height: 1;
+
+        &:first-child {
+            transform: translateX(var(--news-pager-unit));
+        }
+
+        &.is-current {
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/pagination-current.svg");
+            color: #fff;
+        }
+    }
+
+    .p-news-archive__pagination-next,
+    .p-news-archive__pagination-prev {
+        width: calc(13 * var(--news-pager-unit));
+        height: calc(14 * var(--news-pager-unit));
+        margin-left: calc(16 * var(--news-pager-unit));
+        margin-top: calc(0.5 * var(--news-pager-unit));
+        border: 0;
+        background: url("/wp-content/themes/foods-selectioncojp-theme/img/page/news/pagination-next.svg") center / contain no-repeat;
+    }
+
+    .p-news-archive__pagination-prev {
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        margin-left: 0;
+        margin-right: calc(16 * var(--news-pager-unit));
+        transform: translateY(-50%) rotate(180deg);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+    .p-news-archive__pagination {
+        --news-pager-unit: 0.8372093023px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .p-news-archive__pagination {
+        --news-pager-unit: 0.0520833333vw;
     }
 }

@@ -275,6 +275,9 @@ get_header();
                             <a class="c-archive-pagination__item p-news-archive__pagination-item" href="<?php echo esc_url(get_pagenum_link($page_number)); ?>"><?php echo esc_html($page_number); ?></a>
                         <?php endif; ?>
                     <?php endfor; ?>
+                    <?php if ($news_paged > 1) : ?>
+                        <a class="p-news-archive__pagination-prev" href="<?php echo esc_url(get_pagenum_link($news_paged - 1)); ?>" aria-label="前のページへ"></a>
+                    <?php endif; ?>
                     <?php if ($news_paged < $news_total_pages) : ?>
                         <a class="c-archive-pagination__next p-news-archive__pagination-next" href="<?php echo esc_url(get_pagenum_link($news_paged + 1)); ?>" aria-label="次のページへ"></a>
                     <?php endif; ?>

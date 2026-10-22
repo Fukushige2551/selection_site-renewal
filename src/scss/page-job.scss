@@ -25,7 +25,7 @@ $pale: #f7faf3;
   h2 img { width: 6.15vw; height: 6.15vw; }
   form { display: flex; flex-direction: column; align-items: center; gap: 9.74vw; }
   input { width: 87.69vw; height: 11.79vw; padding: 0 5.13vw; border: 1px solid #e7eae6; border-radius: 5.9vw; background: #fff; font: inherit; font-size: 4.1vw; }
-  button { width: 61.54vw; height: 15.38vw; border: 0; border-radius: 5.13vw; background: $green; color: #fff; font-size: 4.62vw; font-weight: 700; letter-spacing: .1em; }
+  button { cursor: pointer; width: 61.54vw; height: 15.38vw; border: 0; border-radius: 5.13vw; background: $green; color: #fff; font-size: 4.62vw; font-weight: 700; letter-spacing: .1em; }
 }
 .p-job-works { margin-top: -1px; padding: 0 4.36vw 12vw; background: $pale;
   > h2 { display: flex; align-items: center; justify-content: center; gap: 3.33vw; margin: 0 0 5.9vw; font-family: "Zen Kaku Gothic New", sans-serif; font-size: 5.13vw; font-weight: 900; letter-spacing: .15em; text-align: center; }
