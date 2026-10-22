@@ -33,8 +33,8 @@ execFileSync(process.env.PHP_BINARY || 'php', [path.join(root, 'tools', 'test-vi
 
 const entries = await readdir(root, { withFileTypes: true });
 const files = entries.filter(entry => entry.isFile() && entry.name.endsWith('.php')).map(entry => entry.name);
-const required = ['dist', 'img', 'inc', 'template-parts', 'style.css', ...files];
-for (const name of ['functions.php', 'index.php', 'style.css', 'dist', 'img', 'inc', 'template-parts']) {
+const required = ['dist', 'img', 'video', 'inc', 'template-parts', 'style.css', ...files];
+for (const name of ['functions.php', 'index.php', 'style.css', 'dist', 'img', 'video', 'inc', 'template-parts']) {
   await stat(path.join(root, name));
 }
 

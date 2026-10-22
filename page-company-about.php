@@ -77,16 +77,16 @@ get_header('company');
             <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a><span>企業情報</span><span>会社概要</span>
         </nav>
         <picture class="p-page-company-about__messagePicture">
-            <?php if (file_exists($about_image_path . '/webp/img_message-pc.webp')) : ?>
-                <source media="(min-width: 768px)" srcset="<?php echo esc_url($about_image_uri . '/webp/img_message-pc.webp'); ?>" type="image/webp">
+            <?php if (file_exists($about_image_path . '/webp/img_president-hero-pc.webp')) : ?>
+                <source media="(min-width: 768px)" srcset="<?php echo esc_url($about_image_uri . '/webp/img_president-hero-pc.webp'); ?>" type="image/webp">
             <?php endif; ?>
-            <?php if (file_exists($about_image_path . '/img_message-pc.png')) : ?>
-                <source media="(min-width: 768px)" srcset="<?php echo esc_url($about_image_uri . '/img_message-pc.png'); ?>">
+            <?php if (file_exists($about_image_path . '/img_president-hero-pc.png')) : ?>
+                <source media="(min-width: 768px)" srcset="<?php echo esc_url($about_image_uri . '/img_president-hero-pc.png'); ?>">
             <?php endif; ?>
-            <?php if (file_exists($about_image_path . '/webp/img_message-sp.webp')) : ?>
-                <source srcset="<?php echo esc_url($about_image_uri . '/webp/img_message-sp.webp'); ?>" type="image/webp">
+            <?php if (file_exists($about_image_path . '/webp/img_president-hero-sp.webp')) : ?>
+                <source srcset="<?php echo esc_url($about_image_uri . '/webp/img_president-hero-sp.webp'); ?>" type="image/webp">
             <?php endif; ?>
-            <img class="p-page-company-about__messageImage" src="<?php echo esc_url($about_image_uri . '/img_message-sp.png'); ?>" alt="代表取締役とセレクションの店舗・商品・スタッフ">
+            <img class="p-page-company-about__messageImage" src="<?php echo esc_url($about_image_uri . '/img_president-hero-sp.png'); ?>" alt="代表取締役 山崎洋介">
         </picture>
         <div class="p-page-company-about__inner">
             <header class="p-page-company-about__heading">

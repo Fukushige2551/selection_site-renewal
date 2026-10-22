@@ -25,7 +25,7 @@ function foods_get_fv_banner_field_group() {
             ['key' => 'field_fv_url', 'name' => 'fv_url', 'label' => '遷移先URL', 'type' => 'url', 'required' => 1, 'conditional_logic' => [[['field' => 'field_fv_link_type', 'operator' => '==', 'value' => 'url']]]],
             ['key' => 'field_fv_ios_url', 'name' => 'fv_ios_url', 'label' => 'App Store URL', 'type' => 'url', 'required' => 1, 'conditional_logic' => $app_condition],
             ['key' => 'field_fv_android_url', 'name' => 'fv_android_url', 'label' => 'Google Play URL', 'type' => 'url', 'required' => 1, 'conditional_logic' => $app_condition],
-            ['key' => 'field_fv_order', 'name' => 'fv_order', 'label' => '表示順', 'type' => 'number', 'default_value' => 0, 'min' => 0, 'instructions' => '小さい番号から表示します。同じ番号の新着情報は新しい順です。下書きに戻すとFVから非表示になります。'],
+            ['key' => 'field_fv_order', 'name' => 'fv_order', 'label' => '表示順', 'type' => 'number', 'default_value' => 0, 'min' => 0, 'instructions' => '新着情報のFV表示順と合わせて、小さい番号から表示します。同じ番号は日付の新しい順です。10・20・30のように間隔を空けると、追加時に間の番号を指定できます。下書きに戻すとFVから非表示になります。'],
         ],
         'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'fv_banner']]],
         'active' => true,
@@ -33,10 +33,10 @@ function foods_get_fv_banner_field_group() {
 }
 
 add_action('acf/init', static function () {
-    if (is_admin() && get_option('foods_fv_banner_fields_version') !== '2') {
+    if (is_admin() && get_option('foods_fv_banner_fields_version') !== '3') {
         $result = foods_sync_scf_field_group(foods_get_fv_banner_field_group());
         if (!empty($result['field_group_id']) && $result['field_count'] === 7) {
-            update_option('foods_fv_banner_fields_version', '2');
+            update_option('foods_fv_banner_fields_version', '3');
         }
     }
 });

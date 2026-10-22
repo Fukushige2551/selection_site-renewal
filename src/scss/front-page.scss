@@ -475,6 +475,7 @@
 
             &__img {
                 display: block;
+                flex-shrink: 0;
 
                 img {
                     width: 32.3vw;
@@ -489,6 +490,8 @@
                 flex-flow: column;
                 justify-content: space-between;
                 width: 100%;
+                min-width: 0;
+                flex: 1 1 0%;
                 --details-font-scale: 1;
 
                 &.is-wrapped {
@@ -522,7 +525,8 @@
                     }
                 }
                 &__title {
-                    word-break: keep-all;
+                    word-break: normal;
+                    overflow-wrap: anywhere;
                     line-height: 1.4;
 
                     &__origin {
@@ -531,9 +535,13 @@
                         font-size: calc(3.58vw * var(--details-font-scale));
                     }
                     &__highlight {
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                        overflow: hidden;
                         font-weight: bold;
                         font-size: calc(4.1vw * var(--details-font-scale));
-                        white-space: nowrap;
+                        white-space: normal;
                     }
                     &__note {
                         display: block;
@@ -3248,6 +3256,17 @@
         }
     }
 }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .p-front-page__special-offers__item--note {
+        display: block;
+        box-sizing: border-box;
+        padding: 0 2.60vw 0 2.34vw;
+        text-align: left;
+        word-break: normal;
+        overflow-wrap: anywhere;
+    }
 }
 
 // ノートPCでは、デスクトップ用の固定サイズを画面幅に合わせて縮小する

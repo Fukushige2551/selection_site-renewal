@@ -5,7 +5,7 @@
     $front_hero_query = new WP_Query([
         'post_type' => 'news',
         'post_status' => 'publish',
-        'posts_per_page' => 5,
+        'posts_per_page' => -1,
         'meta_key' => 'news_publish_date',
         'orderby' => ['meta_value_num' => 'DESC', 'date' => 'DESC', 'ID' => 'DESC'],
         'meta_query' => [[
@@ -36,6 +36,7 @@
 
         return [
             'id' => $post_id,
+            'order' => (int) get_post_meta($post_id, 'fv_order', true),
             'url' => get_permalink($post_id),
             'image_url' => $image_url ?: get_template_directory_uri() . '/img/component/no-image.png',
             'image_alt' => ($image_id ? get_post_meta($image_id, '_wp_attachment_image_alt', true) : '') ?: $title,
@@ -418,7 +419,7 @@
         $base_price = $front_format_price($item['base_price'] ?? '');
         $tax_price = $front_format_price($item['tax_price'] ?? '');
         ?>
-        <div class="p-front-page__special-offers__item special-offers__item--<?php echo esc_attr($number); ?> is-special<?php echo $index === 0 ? ' is-active' : ''; ?>">
+        <div class="p-front-page__special-offers__item special-offers__item--<?php echo esc_attr($number); ?><?php echo trim((string) ($item['label_1'] ?? '')) === '超目玉' ? ' is-special' : ''; ?><?php echo $index === 0 ? ' is-active' : ''; ?>">
             <p class="p-front-page__special-offers__date">
                 <?php echo wp_kses_post($front_format_offer_date($flyer['start_date'], $flyer['end_date'])); ?>
             </p>

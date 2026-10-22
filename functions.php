@@ -1320,6 +1320,16 @@ function foods_get_news_field_group() {
                 'ui_on_text' => '表示',
                 'ui_off_text' => '非表示',
             ],
+            [
+                'key' => 'field_news_fv_order',
+                'label' => 'FV表示順',
+                'name' => 'fv_order',
+                'type' => 'number',
+                'required' => 0,
+                'default_value' => 0,
+                'min' => 0,
+                'instructions' => 'FVバナーの表示順と合わせて、小さい番号から表示します。同じ番号は日付の新しい順です。未設定は0として扱います。10・20・30のように間隔を空けると、追加時に間の番号を指定できます。',
+            ],
         ],
         'location' => [
             [
@@ -1347,7 +1357,7 @@ function foods_register_news_scf_fields() {
         return;
     }
 
-    $version = '20261021-news-standard-editor';
+    $version = '20261022-news-fv-order';
     if (get_option('foods_news_scf_fields_version') === $version) {
         return;
     }
