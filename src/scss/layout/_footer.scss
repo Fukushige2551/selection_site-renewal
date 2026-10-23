@@ -219,7 +219,7 @@
         &__list {
             &.shop-info {
                 .l-footer__nav__list__item {
-                    text-align: center;
+                    text-align: left;
                 }
             }
 
@@ -272,9 +272,13 @@
 
 @media screen and (min-width: 1024px){
 .l-footer {
-    @include backgroundImg("#{$img-path}footer/footer_bg-pc.png");
-    background-size: auto 100%;
-    background-position: center bottom;
+    // Size both artwork layers by width; accordion height only extends the sky.
+    background-image: url("#{$img-path}footer/footer-wave-pc.png"),
+        url("#{$img-path}footer/footer-art-pc.png"),
+        linear-gradient(to bottom, transparent 7.8125vw, #abd9f5 7.8125vw);
+    background-size: 100% auto, 100% auto, 100% 100%;
+    background-position: center top, center bottom, center top;
+    background-repeat: no-repeat;
     aspect-ratio: auto;
     min-height: calc(100vw * 1550 / 1920);
     padding: 5.67vw 0 clamp(20px, 2vw, 36px);

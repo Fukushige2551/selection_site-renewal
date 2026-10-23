@@ -148,6 +148,11 @@
         flex: 0 0 20px;
         font-size: 24px;
         font-weight: 300;
+        transition: transform .35s ease;
+    }
+
+    &__group.is-expanded &__plus {
+        transform: rotate(45deg);
     }
 
     &__row > a {

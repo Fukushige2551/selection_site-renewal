@@ -1622,16 +1622,6 @@
     padding: 0;
 }
 
-@media screen and (min-width: 1024px) {
-    .post-type-archive-news .l-footer {
-        // Keep the shared artwork; continue its green base when content is taller.
-        background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/footer/footer_bg-pc.png"),
-            linear-gradient(to bottom, transparent 70vw, #86cbbb 70vw);
-        background-size: 100% auto, 100% 100%;
-        background-repeat: no-repeat;
-    }
-}
-
 // Figma pagination assets: 5808:5973 (PC), 5808:2948 (SP).
 .p-news-archive__pagination {
     --news-pager-unit: 0.2564102564vw;
