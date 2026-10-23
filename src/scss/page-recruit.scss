@@ -2187,6 +2187,13 @@
 
 // 採用トップの動画表示中だけ、右側の独立メニューに切り替える。
 @media (min-width: 1024px) {
+.p-page-recruit__hero {
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+.p-page-recruit__hero video.p-page-recruit__hero-media {
+  object-fit: contain;
+}
 .page-template-page-recruit .l-company-header {
   transform: translateY(0);
   visibility: visible;
@@ -2286,5 +2293,5 @@
   }
 }
 .admin-bar .p-recruit-navigation { &__toggle, &__panel { top: 32px; } }
-  .p-page-recruit__breadcrumb { top: calc(clamp(560px, 46.88vw, 900px) - 22px + clamp(18px, 1.77vw, 34px)); }
+  .p-page-recruit__breadcrumb { top: calc(var(--recruit-hero-height, 56.25vw) - 22px + clamp(18px, 1.77vw, 34px)); }
 }

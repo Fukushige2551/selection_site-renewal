@@ -3333,6 +3333,13 @@
 .p-front-page__shop__all,
 .p-front-page__campaign__all,
 .p-front-page__recipe__all,
+.p-front-page__news .c-news-card__body {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .p-front-page__news__all {
     margin-right: auto;
     margin-left: auto;

@@ -69,6 +69,12 @@ if (heroNavigation && message && companyHeader) {
 
 const heroVideo = document.querySelector('.js-recruit-hero-video');
 if (heroVideo) {
+  const hero = heroVideo.closest('.p-page-recruit__hero');
+  const syncHeroHeight = () => {
+    hero.closest('main').style.setProperty('--recruit-hero-height', `${hero.getBoundingClientRect().height}px`);
+  };
+  new ResizeObserver(syncHeroHeight).observe(hero);
+  syncHeroHeight();
   const desktop = window.matchMedia('(min-width: 768px)');
   const syncHeroVideo = () => {
     heroVideo.src = desktop.matches ? heroVideo.dataset.srcPc : heroVideo.dataset.srcSp;
