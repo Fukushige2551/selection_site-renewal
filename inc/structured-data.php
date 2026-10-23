@@ -83,7 +83,8 @@ function foods_schema_shop_hours($fields, $statuses = []) {
     $result = [];
     $temporarily_closed = false;
     foreach ($statuses as $status) {
-        if (foods_seo_text($status['name'] ?? '') === '一時休業中') {
+        if (($status['slug'] ?? '') === 'temporarily-closed'
+            || foods_seo_text($status['name'] ?? '') === '一時休業中') {
             $temporarily_closed = true;
             break;
         }
