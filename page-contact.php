@@ -4,11 +4,13 @@ get_header();
 ?>
 
 <main id="page-contact" class="c-main p-contact">
-    <nav class="c-breadcrumb p-contact__breadcrumb" aria-label="パンくず">
+    <?php ob_start(); ?>
+<nav class="c-breadcrumb p-contact__breadcrumb" aria-label="パンくず">
         <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
         <span class="c-breadcrumb__separator" aria-hidden="true"></span>
         <span>お問い合わせ</span>
     </nav>
+<?php echo foods_schema_breadcrumb_html(ob_get_clean()); ?>
     <section class="p-contact__hero" aria-labelledby="contact-title">
         <div class="p-contact__inner">
             <h1 id="contact-title" class="p-contact__title">お問い合わせ</h1>

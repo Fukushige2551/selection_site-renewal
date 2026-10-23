@@ -23,14 +23,14 @@ function foods_get_recruit_interview_number($post) {
         || get_page_template_slug($post->ID) !== 'page-recruit-interview.php') {
         return '';
     }
-    if (!preg_match('/^recruit-interview-(01|02|03)$/D', $post->post_name, $matches)) {
+    if (!preg_match('/^recruit-interview-([0-9]+)$/D', $post->post_name, $matches)) {
         return '';
     }
     return $matches[1];
 }
 
 function foods_register_recruit_interview_routes() {
-    foreach (['01', '02', '03'] as $number) {
+    foreach (array_keys(foods_get_recruit_interviews()) as $number) {
         add_rewrite_rule(
             '^recruit/interview/' . $number . '/?$',
             'index.php?pagename=recruit-interview-' . $number,
@@ -49,7 +49,7 @@ function foods_recruit_interview_permalink($link, $post_id, $sample) {
 add_filter('page_link', 'foods_recruit_interview_permalink', 10, 3);
 
 function foods_get_recruit_interview_url($number) {
-    if (!in_array($number, ['01', '02', '03'], true)) {
+    if (!array_key_exists($number, foods_get_recruit_interviews())) {
         return '';
     }
     $page = get_page_by_path('recruit-interview-' . $number, OBJECT, 'page');

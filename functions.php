@@ -7,7 +7,14 @@ require_once __DIR__ . '/inc/cf7-forms.php';
 
 require_once __DIR__ . '/inc/recruit-interview.php';
 require_once __DIR__ . '/inc/job-search.php';
+require_once __DIR__ . '/inc/job-reception.php';
 require_once __DIR__ . '/inc/confirmed-seo.php';
+require_once __DIR__ . '/inc/seo-head.php';
+require_once __DIR__ . '/inc/seo-completion.php';
+require_once __DIR__ . '/inc/structured-data.php';
+require_once __DIR__ . '/inc/recipe-provenance.php';
+require_once __DIR__ . '/inc/job-schema.php';
+require_once __DIR__ . '/inc/recruit-requirements.php';
 require_once __DIR__ . '/inc/manager-images.php';
 require_once __DIR__ . '/inc/fv-banner.php';
 

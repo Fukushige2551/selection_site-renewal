@@ -68,11 +68,13 @@ get_header('company');
 <main id="page-company-business" class="p-page-company-business">
     <!-- メインビジュアル・メッセージ 開始 -->
     <section class="p-page-company-business__intro" aria-labelledby="business-title">
-    <nav class="p-page-company-business__breadcrumb" aria-label="パンくずリスト">
+    <?php ob_start(); ?>
+<nav class="p-page-company-business__breadcrumb" aria-label="パンくずリスト">
         <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
         <span><a href="<?php echo esc_url(home_url('/company/')); ?>">企業情報</a></span>
         <span aria-current="page">企業の方へ</span>
     </nav>
+<?php echo foods_schema_breadcrumb_html(ob_get_clean()); ?>
         <div class="p-page-company-business__heroVisual">
             <picture class="p-page-company-business__heroPicture">
                 <img src="<?php echo esc_url($business_image_uri . '/img_business-fv-background.jpg'); ?>" alt="セレクションと地域の生産者・取引先の皆さま" fetchpriority="high">

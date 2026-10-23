@@ -37,10 +37,16 @@ function foods_cf7_render($kind, $path, $class) {
     }
     $actions = ['contact' => ['foods_contact', 'foods_contact_nonce'], 'business' => ['foods_business_contact', 'foods_business_nonce']];
     [$action, $name] = $actions[$kind] ?? ['foods_application_' . $kind, 'foods_application_nonce'];
+    if ($kind === 'job' && isset($_GET['job_id']) && is_string($_GET['job_id']) && preg_match('/^[1-9][0-9]*$/D', $_GET['job_id'])) {
+        $html = str_replace('</form>', '<input type="hidden" name="job_id" value="' . esc_attr($_GET['job_id']) . '"></form>', $html);
+    }
     $html = str_replace('</form>', wp_nonce_field($action, $name, true, false) . '</form>', $html);
     echo $html;
 }
 function foods_cf7_deliver($kind, $thanks) {
+    if ($kind === 'job' && ($error = foods_job_application_error($_POST)) !== '') {
+        wp_die(esc_html($error), '募集受付の確認', ['response' => 400, 'back_link' => true]);
+    }
     $form = foods_cf7_form($kind);
     if (!$form) { wp_die('フォームの設定を確認してください。', '送信設定の確認', ['response' => 503]); }
     $_POST['_wpcf7'] = (string) $form->id();
@@ -130,6 +136,13 @@ add_filter('wpcf7_form_tag', static function ($tag) {
     if ($was_array) { $tag = new WPCF7_FormTag($tag); }
     if ($tag->name === 'store' && $tag->basetype === 'select') { $tag->labels = $tag->values = $tag->raw_values = array_values(foods_get_job_shop_choices()); }
     if ($tag->name === 'job' && $tag->basetype === 'select') { $tag->labels = $tag->values = $tag->raw_values = array_values(foods_get_job_occupation_choices()); }
+    if (in_array($tag->name, ['store', 'job'], true) && $tag->basetype === 'select'
+        && foods_job_form_is_target(WPCF7_ContactForm::get_current())) {
+        $id = isset($_GET['job_id']) && is_string($_GET['job_id']) && preg_match('/^[1-9][0-9]*$/D', $_GET['job_id']) ? (int) $_GET['job_id'] : 0;
+        $choices = foods_job_application_choices($id);
+        $options = $tag->name === 'store' ? array_keys($choices) : array_values(array_unique(array_merge([], ...array_values($choices))));
+        $tag->labels = $tag->values = $tag->raw_values = $options;
+    }
     if (in_array($tag->name, ['store', 'job'], true) && isset($_GET[$tag->name]) && is_string($_GET[$tag->name])) {
         $value = sanitize_text_field(wp_unslash($_GET[$tag->name]));
         $index = array_search($value, $tag->values, true);
@@ -204,6 +217,9 @@ function foods_cf7_values($kind) {
     }
     foreach (foods_form_kana_names() as $name) {
         if (isset($values[$name]) && foods_form_format_error($name, $values[$name]) === '') { $values[$name] = foods_form_normalize_kana($name, $values[$name]); }
+    }
+    if ($kind === 'job') {
+        $values['job_id'] = isset($_POST['job_id']) && is_string($_POST['job_id']) ? sanitize_text_field(wp_unslash($_POST['job_id'])) : '';
     }
     return $values;
 }

@@ -190,7 +190,7 @@ $recipe_search = isset($_GET['recipe_search']) && is_string($_GET['recipe_search
     ? trim(sanitize_text_field(wp_unslash($_GET['recipe_search'])))
     : '';
 // TODO RELEASE: Remove recipe_test_all and its pagination parameter after testing.
-$recipe_test_all = isset($_GET['recipe_test_all']) && $_GET['recipe_test_all'] === '1';
+$recipe_test_all = foods_seo_recipe_test_enabled();
 if ($recipe_test_all) {
     $recipe_search = '';
 }
@@ -242,11 +242,14 @@ if ($recipe_query->have_posts()) {
 
 wp_reset_postdata();
 
+foods_schema_recipe_list($recipe_items, $recipe_is_search, $recipe_page_url($recipe_paged));
+
 get_header();
 ?>
 
 <main class="p-recipe-archive c-main<?php echo $recipe_is_search ? ' p-recipe-archive--results' : ''; ?>" data-recipe-page-size="<?php echo esc_attr($recipe_per_page); ?>" aria-label="<?php echo $recipe_is_search ? 'レシピ検索結果' : 'レシピ一覧'; ?>">
-    <nav class="c-breadcrumb p-recipe-archive__breadcrumb" aria-label="パンくず">
+    <?php ob_start(); ?>
+<nav class="c-breadcrumb p-recipe-archive__breadcrumb" aria-label="パンくず">
         <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
         <span class="c-breadcrumb__separator" aria-hidden="true"></span>
         <?php if ($recipe_is_search) : ?>
@@ -257,6 +260,7 @@ get_header();
             <span aria-current="page">レシピ</span>
         <?php endif; ?>
     </nav>
+<?php echo foods_schema_breadcrumb_html(ob_get_clean()); ?>
 
     <?php if (!$recipe_is_search) : ?>
     <div class="p-recipe-archive__heading">

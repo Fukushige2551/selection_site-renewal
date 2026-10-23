@@ -7,11 +7,13 @@ $select_asset = get_template_directory_uri() . '/img/page/page-select/';
 $select_page_slugs = ['vegetables-fruit' => 'fruit-vegetables'];
 ?>
 <main id="page-select" class="p-page-select c-main">
-    <nav class="c-breadcrumb" aria-label="パンくずリスト">
+    <?php ob_start(); ?>
+<nav class="c-breadcrumb" aria-label="パンくずリスト">
         <a class="c-breadcrumb__link" href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
         <img class="c-breadcrumb__arrow" src="<?php echo esc_url(get_template_directory_uri() . '/img/component/svg/icon_breadcrumb.svg'); ?>" alt="">
         <span class="c-breadcrumb__current">セレクションのこだわり</span>
     </nav>
+<?php echo foods_schema_breadcrumb_html(ob_get_clean()); ?>
     <section class="p-page-select__hero">
         <h1 class="c-section__title">セレクションのこだわり</h1>
         <p class="c-section__title--sub">Commitment</p>

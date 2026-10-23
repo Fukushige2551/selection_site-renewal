@@ -63,11 +63,13 @@ if (!$job_search_suggestions) {
 get_header('company');
 ?>
 <main class="p-job">
-    <nav class="p-job__breadcrumb" aria-label="パンくずリスト">
+    <?php ob_start(); ?>
+<nav class="p-job__breadcrumb" aria-label="パンくずリスト">
         <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a><span>›</span>
         <a href="<?php echo esc_url(home_url('/recruit/')); ?>">採用情報</a><span>›</span>
         <span>パートアルバイト募集</span>
     </nav>
+<?php echo foods_schema_breadcrumb_html(ob_get_clean()); ?>
 
     <section class="p-job__hero">
         <div class="p-job__hero-image"><img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/page-job/img_job-hero.png'); ?>" alt="家族で食卓を囲む様子"></div>

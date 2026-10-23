@@ -1,4 +1,23 @@
 <?php
+/** Reception status is independent of JobPosting readiness and its unknown start date. */
+function foods_job_is_closed($id) {
+    return get_post_meta((int) $id, 'job_schema_status', true) === 'closed';
+}
+
+/** Keep published closed detail pages available, but remove them from public job lists. */
+add_action('pre_get_posts', static function ($query) {
+    if (is_admin() || !in_array($query->get('post_type'), ['recruit_part_time', ['recruit_part_time']], true)
+        || ($query->is_main_query() && $query->is_singular())) {
+        return;
+    }
+    $existing = $query->get('meta_query');
+    $query->set('meta_query', ['relation' => 'AND', is_array($existing) ? $existing : [], [
+        'relation' => 'OR',
+        ['key' => 'job_schema_status', 'compare' => 'NOT EXISTS'],
+        ['key' => 'job_schema_status', 'value' => 'closed', 'compare' => '!='],
+    ]]);
+});
+
 /** Shared published shop names for vacancy editing and applications. */
 function foods_get_job_shop_choices() {
     $shops = get_posts([

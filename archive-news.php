@@ -166,11 +166,13 @@ get_header();
 ?>
 
 <main class="p-news-archive c-main">
-    <nav class="c-breadcrumb p-news-archive__breadcrumb" aria-label="パンくず">
+    <?php ob_start(); ?>
+<nav class="c-breadcrumb p-news-archive__breadcrumb" aria-label="パンくず">
         <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
         <span class="c-breadcrumb__separator" aria-hidden="true"></span>
         <span>新着情報</span>
     </nav>
+<?php echo foods_schema_breadcrumb_html(ob_get_clean()); ?>
 
     <div class="p-news-archive__heading">
         <h1 class="p-news-archive__title c-section__title">新着情報</h1>

@@ -19,11 +19,13 @@ $compressed_image_uri = $interview_image_uri . '/compressed';
 get_header('company');
 ?>
 <main class="p-page-recruit p-interview p-interview--<?php echo esc_attr($interview_number); ?>">
-  <nav class="p-interview__breadcrumb" aria-label="パンくずリスト">
+  <?php ob_start(); ?>
+<nav class="p-interview__breadcrumb" aria-label="パンくずリスト">
     <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a><span aria-hidden="true">›</span>
     <a href="<?php echo esc_url(home_url('/recruit/')); ?>">採用情報</a><span aria-hidden="true">›</span>
     <span aria-current="page">社員インタビュー</span>
   </nav>
+<?php echo foods_schema_breadcrumb_html(ob_get_clean()); ?>
   <header class="p-interview__hero">
     <picture class="p-interview__portrait">
       <source media="(min-width: 1024px)" srcset="<?php echo esc_url($compressed_image_uri . '/' . $interview_number . '-hero-pc@2x.png'); ?>" width="1606" height="966">

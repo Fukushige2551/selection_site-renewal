@@ -646,6 +646,7 @@ $shop_image_field = foods_single_shop_get_first_field_value($shop_id, [
 $shop_image_data = foods_single_shop_get_image_data($shop_image_field, 'large');
 $shop_image_url = $shop_image_data['url'] ?? ($shop_data['thumbnail'] ?: get_template_directory_uri() . '/img/component/no-image.png');
 $shop_image_alt = $shop_image_data['alt'] ?? '';
+foods_schema_shop($shop_data, $shop_image_data['url'] ?? ($shop_data['thumbnail'] ?: ''));
 $access_map_embed_html = foods_single_shop_get_embed_html(foods_single_shop_get_first_field_value($shop_id, [
     'google_map_url',
     'access_map_embed_html',
@@ -931,13 +932,15 @@ $recruit_archive_url = get_post_type_archive_link('recruit_part_time') ?: home_u
         id="js-single-shop-data"
     ><?php echo wp_json_encode($single_shop_data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?></script>
 
-    <nav class="p-single-shop__breadcrumb" aria-label="パンくず">
+    <?php ob_start(); ?>
+<nav class="p-single-shop__breadcrumb" aria-label="パンくず">
         <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
         <span aria-hidden="true">></span>
         <a href="<?php echo esc_url(home_url('/shop/')); ?>">チラシ・店舗情報一覧</a>
         <span aria-hidden="true">></span>
         <span><?php echo esc_html($shop_title ?: '行徳店'); ?></span>
     </nav>
+<?php echo foods_schema_breadcrumb_html(ob_get_clean()); ?>
 
     <section class="p-single-shop__hero" aria-labelledby="single-shop-title">
         <h1 id="single-shop-title" class="p-single-shop__title"><?php echo esc_html($shop_title ?: '行徳店'); ?></h1>

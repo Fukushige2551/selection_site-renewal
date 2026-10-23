@@ -172,13 +172,15 @@ get_header('company');
 ?>
 
 <main id="page-recruit-work" class="p-page-recruit-work">
-  <nav class="p-page-recruit-work__breadcrumb" aria-label="パンくずリスト">
+  <?php ob_start(); ?>
+<nav class="p-page-recruit-work__breadcrumb" aria-label="パンくずリスト">
     <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
     <span aria-hidden="true">›</span>
     <a href="<?php echo esc_url(home_url('/recruit/')); ?>">採用情報</a>
     <span aria-hidden="true">›</span>
     <span>セレクションを知る</span>
   </nav>
+<?php echo foods_schema_breadcrumb_html(ob_get_clean()); ?>
 
   <div class="p-page-recruit-work__hero">
     <img src="<?php echo esc_url($image_uri . '/hero-super-resolution.webp'); ?>" alt="セレクションの青果売場" fetchpriority="high">

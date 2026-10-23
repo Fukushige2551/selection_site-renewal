@@ -86,12 +86,14 @@ $filter_is_open = isset($_GET['filter']) && $_GET['filter'] === 'open';
 get_header('company');
 ?>
 <main class="p-job-search-results">
-    <nav class="p-job-search-results__breadcrumb" aria-label="パンくずリスト">
+    <?php ob_start(); ?>
+<nav class="p-job-search-results__breadcrumb" aria-label="パンくずリスト">
         <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a><span>›</span>
         <a href="<?php echo esc_url(home_url('/recruit/')); ?>">採用情報</a><span>›</span>
         <a href="<?php echo esc_url(home_url('/job/')); ?>">パートアルバイト募集</a><span>›</span>
         <span>検索結果</span>
     </nav>
+<?php echo foods_schema_breadcrumb_html(ob_get_clean()); ?>
 
     <header class="p-job-search-results__summary">
         <h1>検索結果：<strong><?php echo esc_html($total_jobs); ?></strong>件</h1>

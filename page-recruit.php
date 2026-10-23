@@ -41,9 +41,11 @@ get_template_part('template-parts/recruit/hero-navigation');
 ?>
 
 <main id="page-recruit" class="p-page-recruit">
-  <nav class="p-page-recruit__breadcrumb" aria-label="パンくずリスト">
+  <?php ob_start(); ?>
+<nav class="p-page-recruit__breadcrumb" aria-label="パンくずリスト">
     <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a><span aria-hidden="true">›</span><span>採用情報</span>
   </nav>
+<?php echo foods_schema_breadcrumb_html(ob_get_clean()); ?>
 
   <section class="p-page-recruit__hero">
     <video class="p-page-recruit__hero-media js-recruit-hero-video" data-src-pc="<?php echo esc_url($recruit_video_uri . '/recruit-pc.mp4'); ?>" data-src-sp="<?php echo esc_url($recruit_video_uri . '/recruit-sp.mp4'); ?>" autoplay muted loop playsinline aria-label="セレクション採用プロモーション動画"></video>

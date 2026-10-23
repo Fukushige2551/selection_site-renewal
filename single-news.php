@@ -262,6 +262,7 @@ get_header();
             $news_categories = foods_news_detail_format_terms($news_id, 'news_category');
             $news_publish_date = foods_news_detail_get_field_value($news_id, 'news_publish_date');
             $news_display_date = foods_news_detail_format_publish_date($news_publish_date, $news_id);
+            $news_display_datetime = foods_schema_article_date($news_display_date);
             $news_image = foods_news_detail_get_news_image_data($news_id, 'large');
             $news_content = apply_filters('the_content', get_post_field('post_content', $news_id));
             $news_body_data = foods_news_detail_prepare_body($news_content);
@@ -281,7 +282,7 @@ get_header();
                 'title' => $news_title,
                 'permalink' => $news_permalink,
                 'date' => get_the_date('Y.m.d', $news_id),
-                'datetime' => get_the_date('Y-m-d', $news_id),
+                'datetime' => $news_display_datetime,
                 'publish_date' => $news_publish_date,
                 'display_date' => $news_display_date,
                 'content' => $news_content,
@@ -291,18 +292,21 @@ get_header();
                 'shops' => foods_news_detail_format_terms($news_id, 'news_shop_category'),
                 'commitments' => foods_news_detail_format_terms($news_id, 'news_commitment'),
             ];
+            foods_schema_article($news_detail_item, $news_body_html);
             ?>
-            <nav class="c-breadcrumb p-news-detail__breadcrumb" aria-label="パンくず">
+            <?php ob_start(); ?>
+<nav class="c-breadcrumb p-news-detail__breadcrumb" aria-label="パンくず">
                 <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
                 <span class="c-breadcrumb__separator" aria-hidden="true"></span>
                 <a href="<?php echo esc_url(get_post_type_archive_link('news')); ?>">新着情報</a>
                 <span class="c-breadcrumb__separator" aria-hidden="true"></span>
                 <span><?php the_title(); ?></span>
             </nav>
+<?php echo foods_schema_breadcrumb_html(ob_get_clean()); ?>
 
             <section class="p-news-detail__header" aria-labelledby="news-detail-title">
                 <div class="p-news-detail__meta">
-                    <time class="p-news-detail__date" datetime="<?php echo esc_attr(get_the_date('Y-m-d', $news_id)); ?>"><?php echo esc_html($news_display_date); ?></time>
+                    <time class="p-news-detail__date"<?php if ($news_display_datetime !== '') : ?> datetime="<?php echo esc_attr($news_display_datetime); ?>"<?php endif; ?>><?php echo esc_html($news_display_date); ?></time>
                     <?php if ($news_categories) : ?>
                         <ul class="p-news-detail__categories" aria-label="カテゴリ">
                             <?php foreach ($news_categories as $category) : ?>

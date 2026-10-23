@@ -84,7 +84,7 @@ add_filter('wpcf7_contact_form_properties', static function ($properties, $form)
     return $properties;
 }, 20, 2);
 function foods_application_config($kind) {
-    $paths = ['job' => '/job/entry/', 'graduate' => '/recruit/entry/', 'career' => '/recruit/career-entry/'];
+    $paths = ['job' => '/job/entry/', 'graduate' => '/entry/', 'career' => '/career-entry/'];
     if (!isset($paths[$kind])) { return null; }
     $fields = $kind === 'job'
         ? ['store' => '応募店舗', 'job' => '応募職種', 'name' => 'お名前', 'name_kana' => 'お名前（カナ）', 'phone' => '電話番号', 'age' => '年齢', 'email' => 'メールアドレス', 'contact_time' => '都合の良い連絡時間帯', 'message' => 'その他']
@@ -114,6 +114,9 @@ function foods_application_check_request($kind) {
         }
         wp_die('入力内容を確認し、応募画面から再度お進みください。', '入力内容の確認', ['response' => 400, 'back_link' => true]);
     }
+    if ($kind === 'job' && ($error = foods_job_application_error($_POST)) !== '') {
+        wp_die(esc_html($error), '募集受付の確認', ['response' => 400, 'back_link' => true]);
+    }
     if (!foods_cf7_preview_validate($kind, $errors)) {
         $message = in_array($kind, ['graduate', 'career'], true)
             ? '<ul><li>' . implode('</li><li>', array_map('esc_html', $errors)) . '</li></ul>'
@@ -135,7 +138,8 @@ add_action('parse_request', static function ($wp) {
     foreach (['job', 'graduate', 'career'] as $kind) {
         $config = foods_application_config($kind);
         foreach (['confirm', 'thanks'] as $step) {
-            if (trim($wp->request, '/') === trim($config['path'], '/') . '/' . $step) {
+            $legacy_path = $kind === 'graduate' ? 'recruit/entry' : ($kind === 'career' ? 'recruit/career-entry' : 'job/entry');
+            if (in_array(trim($wp->request, '/'), [trim($config['path'], '/') . '/' . $step, $legacy_path . '/' . $step], true)) {
                 $page_query = $kind === 'job' ? ['pagename' => 'job'] : foods_recruit_route_query(trim($config['path'], '/'));
                 $wp->query_vars = array_merge($page_query, ['foods_application_kind' => $kind, 'foods_application_step' => $step]);
             }

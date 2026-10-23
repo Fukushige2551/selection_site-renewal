@@ -25,6 +25,7 @@ get_header('company');
     <?php while (have_posts()) : the_post(); ?>
         <?php
         $job_id = get_the_ID();
+        $job_closed = foods_job_is_closed($job_id);
         $is_imported_job = (bool) get_post_meta($job_id, '_foods_legacy_job_id', true);
         $theme_uri = get_template_directory_uri();
         $asset_uri = $theme_uri . '/img/page/single-recruit-part-time';
@@ -64,6 +65,8 @@ get_header('company');
             $detail_rows['勤務地'] = get_post_meta($job_id, 'work_location_access', true);
             $detail_rows['お問合せ'] = get_post_meta($job_id, 'application_method', true);
         }
+        foods_schema_job($job_id, $detail_rows);
+        $detail_rows = array_merge($detail_rows, foods_job_schema_public_rows(foods_job_schema_values($job_id)));
         $steps = [
             ['応募フォームよりご応募', "エントリーフォームより\nご応募ください。", 'step-1.svg'],
             ['店舗担当者よりご連絡', "エントリーフォームよりご応募ください。\nもしくは店舗に\n直接お電話ください。", 'step-2.svg'],
@@ -72,13 +75,15 @@ get_header('company');
         ];
         ?>
 
-        <nav class="p-job-detail__breadcrumb" aria-label="パンくずリスト">
+        <?php ob_start(); ?>
+<nav class="p-job-detail__breadcrumb" aria-label="パンくずリスト">
             <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a><span>›</span>
             <a href="<?php echo esc_url(home_url('/recruit/')); ?>">採用情報</a><span>›</span>
             <a href="<?php echo esc_url(home_url('/job/')); ?>">パート・アルバイト募集</a><span>›</span>
             <a href="<?php echo esc_url(home_url('/job/search/')); ?>">検索結果</a><span>›</span>
             <span><?php echo esc_html(get_the_title()); ?></span>
         </nav>
+<?php echo foods_schema_breadcrumb_html(ob_get_clean()); ?>
 
         <article class="p-job-detail__article">
             <header class="p-job-detail__header">
@@ -89,6 +94,10 @@ get_header('company');
                     <p>お客様対応が好きな方歓迎！<br>レジでの会計対応を中心に、<br>明るく元気に接客していただくお仕事です。<br>未経験の方も、丁寧にサポートしますので<br>安心してご応募ください。</p>
                 <?php endif; ?>
             </header>
+
+            <?php if ($job_closed) : ?>
+                <p class="p-job-detail__closed" role="status"><strong>この求人は募集を終了しました。</strong></p>
+            <?php endif; ?>
 
             <figure class="p-job-detail__hero">
                 <img src="<?php echo esc_url($hero_url); ?>" alt="<?php echo esc_attr($shop_name . ' ' . $job_type); ?>">
@@ -112,9 +121,12 @@ get_header('company');
                 </dl>
             </section>
 
-            <a class="p-job-detail__entry-button" href="<?php echo esc_url($entry_url); ?>">エントリーフォーム</a>
+            <?php if (!$job_closed) : ?>
+                <a class="p-job-detail__entry-button" href="<?php echo esc_url($entry_url); ?>">エントリーフォーム</a>
+            <?php endif; ?>
         </article>
 
+        <?php if (!$job_closed) : ?>
         <section class="p-job-detail__process" aria-labelledby="job-process-title">
             <picture class="p-job-detail__process-arrow">
                 <source media="(min-width: 1020px)" srcset="<?php echo esc_url($asset_uri . '/process-arrow-pc.svg'); ?>">
@@ -141,6 +153,7 @@ get_header('company');
             </div>
             <a class="p-job-detail__entry-button p-job-detail__entry-button--bottom" href="<?php echo esc_url($entry_url); ?>">エントリーフォーム</a>
         </section>
+        <?php endif; ?>
     <?php endwhile; ?>
 </main>
 

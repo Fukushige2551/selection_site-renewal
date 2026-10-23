@@ -400,6 +400,7 @@ function foods_recipe_detail_get_related_items($post_id, $limit = 12) {
 }
 function foods_recipe_detail_format_item($recipe_post) {
     $recipe_id = $recipe_post->ID;
+    $confirmed_publication = foods_recipe_confirmed_date(foods_recipe_detail_get_field_value($recipe_id, 'recipe_published_on'));
     $recipe_categories = foods_recipe_detail_get_terms($recipe_id, 'recipe_category');
     $recipe_main_ingredients = foods_recipe_detail_get_terms($recipe_id, 'recipe_main_ingredient');
     $recipe_tags = foods_recipe_detail_get_terms($recipe_id, 'recipe_tag');
@@ -411,8 +412,12 @@ function foods_recipe_detail_format_item($recipe_post) {
         'title' => get_the_title($recipe_id),
         'slug' => $recipe_post->post_name,
         'permalink' => get_permalink($recipe_id),
-        'date' => get_the_date('Y.m.d', $recipe_id),
-        'datetime' => get_the_date('Y-m-d', $recipe_id),
+        'date' => $confirmed_publication !== '' ? str_replace('-', '.', $confirmed_publication) : get_the_date('Y.m.d', $recipe_id),
+        'datetime' => $confirmed_publication !== '' ? $confirmed_publication : get_the_date('Y-m-d', $recipe_id),
+        'confirmed_publication' => $confirmed_publication,
+        'author_organization' => foods_recipe_detail_get_field_value($recipe_id, 'recipe_author_organization'),
+        'author_url' => foods_recipe_detail_get_field_value($recipe_id, 'recipe_author_url'),
+        'time_scope' => foods_recipe_detail_get_field_value($recipe_id, 'recipe_time_scope'),
         'excerpt' => get_the_excerpt($recipe_id),
         'content' => wp_strip_all_tags(apply_filters('the_content', $recipe_post->post_content)),
         'image' => foods_recipe_detail_get_recipe_image_data($recipe_id, 'large'),
@@ -488,17 +493,23 @@ if (is_string($recipe_source_url) && preg_match('~^https?://~i', trim($recipe_so
 $related_recipe_items = foods_recipe_detail_get_related_items($recipe_detail_item['id'] ?? get_the_ID(), 24);
 $theme_uri = get_template_directory_uri();
 
+foods_schema_recipe(array_merge($recipe_detail_item, [
+    'instruction_names' => foods_recipe_detail_get_field_value($recipe_detail_item['id'], 'recipe_instruction_names'),
+]), $recipe_summary, $recipe_servings, $recipe_ingredient_sections, $recipe_preparation, $recipe_steps);
+
 get_header();
 ?>
 
 <main class="p-recipe-detail c-main" aria-label="&#12524;&#12471;&#12500;&#35443;&#32048;">
-    <nav class="c-breadcrumb p-recipe-detail__breadcrumb" aria-label="&#12497;&#12531;&#12367;&#12378;">
+    <?php ob_start(); ?>
+<nav class="c-breadcrumb p-recipe-detail__breadcrumb" aria-label="&#12497;&#12531;&#12367;&#12378;">
         <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
         <span class="c-breadcrumb__separator" aria-hidden="true"></span>
         <a href="<?php echo esc_url(get_post_type_archive_link('recipe')); ?>">&#12524;&#12471;&#12500;</a>
         <span class="c-breadcrumb__separator" aria-hidden="true"></span>
         <span><?php the_title(); ?></span>
     </nav>
+<?php echo foods_schema_breadcrumb_html(ob_get_clean()); ?>
 
     <article class="p-recipe-detail__article">
         <div class="p-recipe-detail__meta">
@@ -588,15 +599,15 @@ get_header();
                 <h2 id="recipe-detail-method-title" class="p-recipe-detail__method-title">&#65339;&#20316;&#12426;&#26041;&#65341;</h2>
                 <div class="p-recipe-detail__method-body">
                     <?php if ($recipe_preparation !== '') : ?>
-                        <p class="p-recipe-detail__preparation">
+                        <p id="recipe-preparation" class="p-recipe-detail__preparation">
                             <strong>&#12304;&#28310;&#20633;&#12305;</strong><?php echo nl2br(esc_html($recipe_preparation)); ?>
                         </p>
                     <?php endif; ?>
 
                     <?php if (!empty($recipe_steps)) : ?>
                         <ol class="p-recipe-detail__step-list">
-                            <?php foreach ($recipe_steps as $step) : ?>
-                                <li class="p-recipe-detail__step-item">
+                            <?php foreach ($recipe_steps as $step_index => $step) : ?>
+                                <li id="recipe-step-<?php echo esc_attr($step_index + 1); ?>" class="p-recipe-detail__step-item">
                                     <span class="p-recipe-detail__step-text"><?php echo nl2br(esc_html($step['text'])); ?></span>
                                     <?php if (($step['point'] ?? '') !== '') : ?>
                                         <div class="p-recipe-detail__point">
@@ -636,6 +647,9 @@ get_header();
                 <span class="p-recipe-detail__source-url"><?php echo esc_html($recipe_kurashiru_url); ?></span>
             </a>
         </div>
+        <?php if (!empty($recipe_detail_item['author_organization'])) : ?>
+            <p class="p-recipe-detail__source">原典の著者：<?php echo esc_html($recipe_detail_item['author_organization']); ?></p>
+        <?php endif; ?>
 
         <a class="p-recipe-detail__shop-link c-pop" href="<?php echo esc_url($shop_archive_url); ?>">
             <img class="p-recipe-detail__shop-link-image" src="<?php echo esc_url($theme_uri . '/img/page/recipe/recipe-detail-shop-link-retina.png'); ?>" width="2048" height="1303" alt="&#12481;&#12521;&#12471;&#12539;&#24215;&#33303;&#19968;&#35239;">

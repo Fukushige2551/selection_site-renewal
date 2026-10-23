@@ -4,6 +4,7 @@ $block_class = $args['block_class'];
 $breadcrumb = $config['breadcrumb'];
 $hero = $config['hero'];
 ?>
+<?php ob_start(); ?>
 <nav class="c-breadcrumb" aria-label="パンくずリスト">
     <a class="c-breadcrumb__link" href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
     <img class="c-breadcrumb__arrow" src="<?php echo esc_url(get_template_directory_uri() . '/img/component/svg/icon_breadcrumb.svg'); ?>" alt="矢印">
@@ -13,6 +14,7 @@ $hero = $config['hero'];
     <img class="c-breadcrumb__arrow" src="<?php echo esc_url(get_template_directory_uri() . '/img/component/svg/icon_breadcrumb.svg'); ?>" alt="矢印">
     <span class="c-breadcrumb__current"><?php echo esc_html($config['title']); ?></span>
 </nav>
+<?php echo foods_schema_breadcrumb_html(ob_get_clean()); ?>
 
 <div class="<?php echo esc_attr($block_class); ?>__hero">
     <h1 class="c-section__title"><?php echo esc_html($config['title']); ?></h1>

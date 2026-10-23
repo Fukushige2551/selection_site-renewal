@@ -7,9 +7,10 @@ $about_image_uri = get_template_directory_uri() . '/img/page/page-company-about'
 $about_image_path = get_template_directory() . '/img/page/page-company-about';
 
 // 会社概要
+$company_identity = foods_company_identity();
 $company_profile = [
-    ['会社名', '株式会社 セレクション'],
-    ['所在地', '〒272-0132 千葉県市川市湊新田1丁目6番8号'],
+    ['会社名', $company_identity['name']],
+    ['所在地', $company_identity['address_text']],
     ['代表者', '代表取締役 山崎洋介'],
     ['事業内容', 'スーパーマーケット事業<br>店名：フーズマーケット<br>　　　セレクション<br>　　　生鮮市場セレクション'],
     ['諸手当', '交通費支給'],
@@ -73,9 +74,11 @@ get_header('company');
 <main id="page-company-about" class="p-page-company-about">
     <!-- 代表メッセージ 開始 -->
     <section id="message" class="p-page-company-about__message">
-        <nav class="p-page-company-about__breadcrumb" aria-label="パンくずリスト">
+        <?php ob_start(); ?>
+<nav class="p-page-company-about__breadcrumb" aria-label="パンくずリスト">
             <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a><span>企業情報</span><span>会社概要</span>
         </nav>
+<?php echo foods_schema_breadcrumb_html(ob_get_clean()); ?>
         <picture class="p-page-company-about__messagePicture">
             <?php if (file_exists($about_image_path . '/webp/img_president-hero-pc.webp')) : ?>
                 <source media="(min-width: 768px)" srcset="<?php echo esc_url($about_image_uri . '/webp/img_president-hero-pc.webp'); ?>" type="image/webp">

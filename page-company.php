@@ -228,7 +228,7 @@ get_header('company');
 
             <div class="p-page-company__recruit__images">
 
-                <a class="p-page-company__recruit__imageBlock" href="<?php echo esc_url(home_url('/recruit/career-entry/')); ?>" aria-label="キャリア採用の募集要項・エントリーへ">
+                <a class="p-page-company__recruit__imageBlock" href="<?php echo esc_url(home_url('/career-entry/')); ?>" aria-label="キャリア採用の募集要項・エントリーへ">
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/page-company/webp/img_recruit01.webp" type="image/webp">
                         <img class="p-page-company__recruit__img" src="<?php echo get_template_directory_uri(); ?>/img/page/page-company/img_recruit01.png" alt="新卒・キャリア採用">

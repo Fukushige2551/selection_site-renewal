@@ -3,11 +3,13 @@ get_header();
 ?>
 
 <main id="page-privacy" class="c-main p-privacy">
-    <nav class="c-breadcrumb p-privacy__breadcrumb" aria-label="パンくず">
+    <?php ob_start(); ?>
+<nav class="c-breadcrumb p-privacy__breadcrumb" aria-label="パンくず">
         <a href="<?php echo esc_url(home_url('/')); ?>">TOP</a>
         <span class="c-breadcrumb__separator" aria-hidden="true"></span>
         <span>プライバシーポリシー</span>
     </nav>
+<?php echo foods_schema_breadcrumb_html(ob_get_clean()); ?>
 
     <section class="p-privacy__hero" aria-labelledby="privacy-title">
         <div class="p-privacy__inner">
