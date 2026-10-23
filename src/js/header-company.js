@@ -93,6 +93,7 @@
     });
     // 画面幅の変更や履歴からの復帰時に表示状態を整える。
     const resetNavigation = () => setOpen(false, true);
+    header.addEventListener('recruit-header-change', resetNavigation);
     if (typeof desktop.addEventListener === 'function') {
         desktop.addEventListener('change', resetNavigation);
     } else {

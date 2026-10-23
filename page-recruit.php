@@ -37,6 +37,7 @@ $about_items = [
 ];
 
 get_header('company');
+get_template_part('template-parts/recruit/hero-navigation');
 ?>
 
 <main id="page-recruit" class="p-page-recruit">

@@ -1622,7 +1622,7 @@
 
     &__message {
       height: 805px;
-      margin-top: -44px;
+      margin-top: -22px;
       padding: 0;
       border-radius: 22px 22px 0 0;
 
@@ -2183,4 +2183,108 @@
   text-decoration: none;
   border-radius: 30px;
   &:focus-visible { outline: 3px solid #00a784; outline-offset: 4px; }
+}
+
+// 採用トップの動画表示中だけ、右側の独立メニューに切り替える。
+@media (min-width: 1024px) {
+.page-template-page-recruit .l-company-header {
+  transform: translateY(0);
+  visibility: visible;
+  transition: transform .4s cubic-bezier(.4, 0, .2, 1), visibility 0s;
+}
+.page-template-page-recruit .l-company-header.is-recruit-hero {
+  transform: translateY(calc(-100% - 48px));
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform .4s cubic-bezier(.4, 0, .2, 1), visibility 0s .4s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-template-page-recruit .l-company-header,
+  .page-template-page-recruit .l-company-header.is-recruit-hero { transition: none; }
+}
+.p-recruit-navigation {
+  --menu-space: clamp(4px, calc((100dvh - 560px) * .035), 14px);
+  &, & * { box-sizing: border-box; }
+  position: fixed;
+  inset: 0 0 auto auto;
+  z-index: 110;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  &[hidden] { display: none; }
+  &__toggle {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 5.3vw;
+    width: 114px;
+    height: 85px;
+    border: 0;
+    border-radius: 0 0 30px 30px;
+    background: #00a784;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    cursor: pointer;
+    transform: translateY(0);
+    visibility: visible;
+    transition: transform .4s cubic-bezier(.4, 0, .2, 1), visibility 0s;
+    span { display: block; width: 36px; height: 2px; background: white; }
+    img { display: none; }
+    &[aria-expanded="true"] { span { display: none; } img { display: block; } }
+  }
+  &.is-header-visible &__toggle {
+    transform: translateY(calc(-100% - 48px));
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform .4s cubic-bezier(.4, 0, .2, 1), visibility 0s .4s;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    &__toggle, &.is-header-visible &__toggle { transition: none; }
+  }
+  &__panel {
+    position: fixed;
+    inset: 0 0 0 auto;
+    width: max(50%, min(960px, calc(100% - 32px)));
+    padding: clamp(96px, 12dvh, 130px) clamp(24px, 3vw, 60px) 16px;
+    overflow: visible;
+    background: rgba(15, 54, 117, .8);
+    color: white;
+    display: grid;
+    grid-template-columns: minmax(440px, 456fr) minmax(260px, 304fr);
+    align-content: start;
+    gap: clamp(20px, 2vw, 32px);
+    &[hidden] { display: none; }
+    a { color: inherit; text-decoration: none; white-space: nowrap; }
+    a:hover { text-decoration: underline; text-underline-offset: 5px; }
+    a:focus-visible { outline: 3px solid #ffed49; outline-offset: 4px; }
+  }
+  &__group {
+    margin-bottom: calc(var(--menu-space) * 2);
+    &:last-child { margin-bottom: 0; }
+    h2 {
+      margin: 0 0 var(--menu-space);
+      padding-bottom: var(--menu-space);
+      background: url('../../img/page/page-recruit/svg/menu-rule.svg') left bottom / 100% 1px no-repeat;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 26px;
+    }
+    ul { list-style: none; padding: 0 16px; margin: 0; display: grid; grid-auto-flow: column; grid-template-rows: repeat(3, auto); gap: var(--menu-space) 12px; font-size: 16px; line-height: 24px; }
+    &:first-child ul { display: block; li + li { margin-top: var(--menu-space); } }
+    &:nth-child(3) ul { grid-template-rows: repeat(5, auto); line-height: clamp(24px, 3.6dvh, 39px); row-gap: 0; letter-spacing: .08em; }
+  }
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--menu-space) * 2);
+    a { display: grid; place-items: center; min-height: 56px; border: 2px solid white; border-radius: 28px; font-size: 20px; font-weight: 700; text-align: center; padding: 8px; }
+  }
+  @media (max-width: 1279px) {
+    &__panel { padding-inline: 30px; gap: 24px; }
+    &__actions a { font-size: 16px; }
+  }
+}
+.admin-bar .p-recruit-navigation { &__toggle, &__panel { top: 32px; } }
+  .p-page-recruit__breadcrumb { top: calc(clamp(560px, 46.88vw, 900px) - 22px + clamp(18px, 1.77vw, 34px)); }
 }

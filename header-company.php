@@ -26,7 +26,7 @@ $company_header_links = [
 <?php wp_body_open(); ?>
 
 <!-- 企業ページ共通ヘッダー 開始 -->
-<header class="l-company-header" data-company-header>
+<header class="l-company-header<?php echo is_page_template('page-recruit.php') ? ' is-recruit-hero' : ''; ?>" data-company-header>
     <div class="l-company-header__bar">
         <a class="l-company-header__logo" href="<?php echo esc_url(home_url('/')); ?>" aria-label="セレクション トップページへ">
             <img src="<?php echo esc_url(get_template_directory_uri() . '/img/component/selection-logo.svg'); ?>" width="311" height="189" alt="FOODS MARKET Selection">
