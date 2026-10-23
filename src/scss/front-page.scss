@@ -3350,6 +3350,11 @@
     margin-bottom: clamp(6px, 0.52vw, 10px);
 }
 
+// Keep recipe links above the main element's hit area.
+.p-front-page__bg--recipe {
+    z-index: 0;
+}
+
 // Campaign paper grows with its cards; only the background receives the wave mask.
 .p-front-page__bg--campaign {
     --campaign-top: 7.95vw;
@@ -3359,6 +3364,7 @@
     --campaign-tile: url("#{$img-path}page/front-page/png/campaign-tile.png");
     --campaign-tile-height: 24.6154vw;
     position: relative;
+    z-index: 0;
     isolation: isolate;
     aspect-ratio: auto;
     background: none;

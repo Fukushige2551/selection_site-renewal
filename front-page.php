@@ -1243,7 +1243,7 @@
                                 </time>
                             </a>
                         </div>
-                        <p class="c-campaign-content-caption"><?php echo esc_html($front_campaign_item['title']); ?></p>
+                        <p class="c-campaign-content-caption"><a href="<?php echo esc_url($front_campaign_item['url']); ?>"><?php echo esc_html($front_campaign_item['title']); ?></a></p>
                     </div>
                 <?php endforeach; ?>
                 <?php if (false): ?>
@@ -1502,7 +1502,7 @@
             <a class="p-front-page__recipe__hureai" href="https://www.cgcjapan.co.jp/fureai/" target="_blank" rel="noopener noreferrer">ふれ愛交差点レシピ集はこちら</a>
 
             <div class="p-front-page__recipe__banner--wrapper">
-                <a class="c-pop p-front-page__recipe__banner u-margin-top--38" href="">
+                <a class="c-pop p-front-page__recipe__banner u-margin-top--38" <?php foods_footer_app_link_attributes(); ?>>
                     <picture>
                         <source srcset="<?php echo get_template_directory_uri(); ?>/img/page/front-page/webp/link_banner-content-01.webp" type="image/webp">
                         <img class="p-front-page__recipe__banner__img--app" src="<?php echo get_template_directory_uri(); ?>/img/page/front-page/jpg/link_banner-content-01.jpg" alt="公式アプリ">

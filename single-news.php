@@ -368,7 +368,7 @@ get_header();
                             <img src="<?php echo esc_url($theme_uri . '/img/component/svg/btn_arrow-left.svg'); ?>" alt="">
                         </span>
                     <?php endif; ?>
-                    <a class="c-pop p-news-detail__back-link" href="<?php echo esc_url($news_archive_url); ?>">一覧へ戻る</a>
+                    <a class="p-news-detail__back-link" href="<?php echo esc_url($news_archive_url); ?>">一覧へ戻る</a>
                     <?php if ($news_next_post) : ?>
                         <a class="c-pop p-news-detail__pager-arrow p-news-detail__pager-arrow--next" href="<?php echo esc_url(get_permalink($news_next_post)); ?>" aria-label="次の新着情報へ">
                             <img src="<?php echo esc_url($theme_uri . '/img/component/svg/btn_arrow-right.svg'); ?>" alt="">

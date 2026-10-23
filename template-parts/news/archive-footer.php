@@ -37,7 +37,7 @@ $news_footer_uri = get_template_directory_uri();
         <li><a href="https://www.facebook.com/218555321614153/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="c-icon--facebook"></i></a></li>
     </ul>
     <div class="p-news-footer__banners">
-        <a href="<?php echo esc_url(home_url('/news/')); ?>"><img src="<?php echo esc_url($news_footer_uri . '/img/footer/footer_banner-selection-app.webp'); ?>" alt="セレクションアプリ" width="361" height="128"></a>
+        <a <?php foods_footer_app_link_attributes(); ?>><img src="<?php echo esc_url($news_footer_uri . '/img/footer/footer_banner-selection-app.webp'); ?>" alt="セレクションアプリ" width="361" height="128"></a>
         <a href="https://www.cgcjapan.co.jp/" target="_blank" rel="noopener noreferrer"><img src="<?php echo esc_url($news_footer_uri . '/img/footer/footer_banner-cgc-colab.webp'); ?>" alt="セレクションはCGCの加盟店です" width="360" height="127"></a>
     </div>
     <div class="p-news-footer__address">

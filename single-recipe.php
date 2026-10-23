@@ -668,7 +668,7 @@ get_header();
                         <img src="<?php echo esc_url($theme_uri . '/img/component/svg/btn_arrow-left.svg'); ?>" alt="">
                     </span>
                 <?php endif; ?>
-                <a class="c-pop p-recipe-detail__back-link" href="<?php echo esc_url($recipe_archive_url); ?>">&#19968;&#35239;&#12408;&#25147;&#12427;</a>
+                <a class="p-recipe-detail__back-link" href="<?php echo esc_url($recipe_archive_url); ?>">&#19968;&#35239;&#12408;&#25147;&#12427;</a>
                 <?php if ($recipe_next_post) : ?>
                     <a class="c-pop p-recipe-detail__pager-arrow p-recipe-detail__pager-arrow--next" href="<?php echo esc_url(get_permalink($recipe_next_post)); ?>" aria-label="&#27425;&#12398;&#12524;&#12471;&#12500;&#12408;">
                         <img src="<?php echo esc_url($theme_uri . '/img/component/svg/btn_arrow-right.svg'); ?>" alt="">
