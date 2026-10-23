@@ -31,6 +31,14 @@ function foods_job_schema_fields() {
         }
         $fields[] = $field;
     }
+    $location_fields = [];
+    foreach (['name' => '店舗・拠点名', 'country' => '国コード', 'region' => '都道府県', 'locality' => '市区町村', 'street' => '町名・番地・建物名', 'postal_code' => '郵便番号（任意）'] as $name => $label) {
+        $location_fields[] = ['key' => 'field_foods_job_location_' . $name, 'name' => $name, 'label' => $label, 'type' => 'text', 'required' => 0];
+    }
+    $fields[] = ['key' => 'field_foods_job_schema_locations', 'name' => 'job_schema_locations',
+        'label' => '複数の勤務地（確認済み）', 'type' => 'repeater', 'layout' => 'row', 'min' => 0,
+        'instructions' => '同じ求人の勤務地を原稿に記載された範囲で登録します。登録がある場合は単一勤務地欄に代わって使用し、住所が不足する行がある場合はJobPostingを出力しません。',
+        'sub_fields' => $location_fields];
     return $fields;
 }
 
@@ -66,10 +74,36 @@ add_action('manage_recruit_part_time_posts_custom_column', static function ($col
 function foods_job_schema_values($id) {
     $data = [];
     foreach (foods_job_schema_fields() as $field) {
+        if ($field['name'] === 'job_schema_locations') {
+            $locations = function_exists('get_field') ? get_field($field['name'], $id) : [];
+            $data['locations'] = is_array($locations) ? $locations : [];
+            continue;
+        }
         $value = get_post_meta($id, $field['name'], true);
         $data[substr($field['name'], strlen('job_schema_'))] = is_scalar($value) ? trim((string) $value) : '';
     }
     return $data;
+}
+
+/** Validate every registered workplace; never substitute headquarters or drop invalid rows. */
+function foods_job_schema_locations($data) {
+    $locations = !empty($data['locations']) && is_array($data['locations']) ? $data['locations'] : [$data];
+    $nodes = [];
+    foreach ($locations as $location) {
+        if (!is_array($location)) { return []; }
+        foreach (['country', 'region', 'locality', 'street'] as $key) {
+            if (foods_seo_text($location[$key] ?? '') === '') { return []; }
+        }
+        if (!preg_match('/^[A-Z]{2}$/D', $location['country'])) { return []; }
+        $address = ['@type' => 'PostalAddress', 'addressCountry' => $location['country'],
+            'addressRegion' => foods_seo_text($location['region']), 'addressLocality' => foods_seo_text($location['locality']),
+            'streetAddress' => foods_seo_text($location['street'])];
+        if (foods_seo_text($location['postal_code'] ?? '') !== '') { $address['postalCode'] = foods_seo_text($location['postal_code']); }
+        $node = ['@type' => 'Place', 'address' => $address];
+        if (foods_seo_text($location['name'] ?? '') !== '') { $node['name'] = foods_seo_text($location['name']); }
+        $nodes[] = $node;
+    }
+    return $nodes;
 }
 
 /** Strict calendar parsing in the site's timezone; never use server defaults. */
@@ -134,10 +168,11 @@ function foods_job_schema_build($post, $data, $rows, $now = null) {
     }
     if (($data['status'] ?? '') !== 'open') { $errors[] = '受付状態が「募集中」ではありません。'; }
     if (($data['verified'] ?? '') !== '1') { $errors[] = '求人原稿の確認が完了していません。'; }
-    foreach (['title' => '職務名', 'employer' => '雇用主', 'country' => '勤務国', 'region' => '都道府県', 'locality' => '市区町村', 'street' => '町名・番地'] as $key => $label) {
+    foreach (['title' => '職務名', 'employer' => '雇用主'] as $key => $label) {
         if (foods_seo_text($data[$key] ?? '') === '') { $errors[] = $label . 'が未入力です。'; }
     }
-    if (!preg_match('/^[A-Z]{2}$/D', $data['country'] ?? '')) { $errors[] = '勤務国は大文字2文字の国コードで入力してください。'; }
+    $locations = foods_job_schema_locations($data);
+    if (!$locations) { $errors[] = '勤務地の国コード・都道府県・市区町村・町名番地が未入力または不正です。'; }
     $start = foods_job_schema_date($data['date_posted'] ?? '');
     if (!$start || $start > $now) { $errors[] = '実際の募集開始日が未入力・不正、または未来の日付です。'; }
     $deadline = $data['deadline'] ?? '';
@@ -154,9 +189,6 @@ function foods_job_schema_build($post, $data, $rows, $now = null) {
     if (!$rows || foods_seo_text($description) === '') { $errors[] = '表示中の正式な募集説明がありません。'; }
     if ($errors) { return ['node' => null, 'errors' => $errors]; }
     $url = get_permalink($post);
-    $address = ['@type' => 'PostalAddress', 'addressCountry' => $data['country'],
-        'addressRegion' => foods_seo_text($data['region']), 'addressLocality' => foods_seo_text($data['locality']), 'streetAddress' => foods_seo_text($data['street'])];
-    if (foods_seo_text($data['postal_code'] ?? '') !== '') { $address['postalCode'] = foods_seo_text($data['postal_code']); }
     $employer = ['@type' => 'Organization', 'name' => foods_seo_text($data['employer'])];
     if (preg_replace('/\s+/u', '', $employer['name']) === preg_replace('/\s+/u', '', foods_company_identity()['name'])) {
         $employer['@id'] = home_url('/#organization');
@@ -164,7 +196,7 @@ function foods_job_schema_build($post, $data, $rows, $now = null) {
     $node = ['@type' => 'JobPosting', '@id' => $url . '#job', 'url' => $url,
         'title' => foods_seo_text($data['title']), 'description' => $description,
         'datePosted' => $start->format('Y-m-d'), 'hiringOrganization' => $employer,
-        'jobLocation' => ['@type' => 'Place', 'address' => $address]];
+        'jobLocation' => count($locations) === 1 ? $locations[0] : $locations];
     if ($end) { $node['validThrough'] = $end->format(DATE_ATOM); }
     if ($type !== '') { $node['employmentType'] = $type; }
     return ['node' => $node, 'errors' => []];
@@ -176,7 +208,14 @@ function foods_job_schema_public_rows($data) {
     $rows = [];
     $labels = ['title' => '職務名', 'employer' => '雇用主', 'country' => '勤務国', 'region' => '勤務地（都道府県）', 'locality' => '勤務地（市区町村）', 'street' => '勤務地（町名・番地）', 'postal_code' => '勤務地の郵便番号'];
     foreach ($labels as $key => $label) {
+        if (!empty($data['locations']) && in_array($key, ['country', 'region', 'locality', 'street', 'postal_code'], true)) { continue; }
         if (foods_seo_text($data[$key] ?? '') !== '') { $rows[$label] = $data[$key]; }
+    }
+    if (!empty($data['locations'])) {
+        foreach (foods_job_schema_locations($data) as $index => $place) {
+            $address = $place['address'];
+            $rows['勤務地 ' . ($index + 1)] = ($place['name'] ?? '') . ' ' . $address['addressRegion'] . $address['addressLocality'] . $address['streetAddress'];
+        }
     }
     $statuses = ['open' => '募集中', 'closed' => '受付終了'];
     $end = ($data['deadline'] ?? '') === 'specified' ? foods_job_schema_date($data['valid_through'] ?? '', true) : null;

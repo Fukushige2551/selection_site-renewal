@@ -647,9 +647,6 @@ get_header();
                 <span class="p-recipe-detail__source-url"><?php echo esc_html($recipe_kurashiru_url); ?></span>
             </a>
         </div>
-        <?php if (!empty($recipe_detail_item['author_organization'])) : ?>
-            <p class="p-recipe-detail__source">原典の著者：<?php echo esc_html($recipe_detail_item['author_organization']); ?></p>
-        <?php endif; ?>
 
         <a class="p-recipe-detail__shop-link c-pop" href="<?php echo esc_url($shop_archive_url); ?>">
             <img class="p-recipe-detail__shop-link-image" src="<?php echo esc_url($theme_uri . '/img/page/recipe/recipe-detail-shop-link-retina.png'); ?>" width="2048" height="1303" alt="&#12481;&#12521;&#12471;&#12539;&#24215;&#33303;&#19968;&#35239;">
