@@ -766,7 +766,7 @@
 
             &__img {
                 width: 81.02vw;
-                aspect-ratio: 316 / 236;
+                aspect-ratio: 309 / 279;
             }
             &__phrase {
                 top: 51.6%;
@@ -1187,6 +1187,14 @@
 .p-front-page__sns__content--feed {
     display: block !important;
 
+    // Feed-ID shortcodes ignore legacy visibility options in Instagram Feed Lite.
+    // Keep plugin controls out of this theme-owned mosaic only.
+    .sb_instagram_header,
+    .sbi_header,
+    #sbi_load {
+        display: none !important;
+    }
+
     #sb_instagram {
         width: 100% !important;
         padding: 0 !important;
@@ -1232,7 +1240,8 @@
             gap: 0.72vw;
         }
         #sb_instagram #sbi_images .sbi_item {
-            &:nth-child(n + 7) { display: block !important; }
+            &:nth-child(n + 7):nth-child(-n + 12) { display: block !important; }
+            &:nth-child(n + 13) { display: none !important; }
             &:nth-child(7) { grid-column: span 2; grid-row: span 2; }
         }
     }
@@ -1963,7 +1972,7 @@
 
             &__img {
                 width: 100%;
-                aspect-ratio: 377.33 / 289;
+                aspect-ratio: 309 / 279;
             }
             &__phrase {
                 top: 52%;
@@ -2866,7 +2875,7 @@
         }
         .c-campaign-content {
             &__img {
-                aspect-ratio: 377.33 / 289;
+                aspect-ratio: 895.65 / 542;
             }
             &__phrase {
                 top: 49%;
@@ -3333,6 +3342,13 @@
 .p-front-page__shop__all,
 .p-front-page__campaign__all,
 .p-front-page__recipe__all,
+.p-front-page__campaign .c-campaign-content__img {
+    height: auto;
+    object-fit: contain;
+    mask: none;
+    -webkit-mask: none;
+}
+
 .p-front-page__news .c-news-card__body {
     min-width: 0;
     overflow: hidden;
