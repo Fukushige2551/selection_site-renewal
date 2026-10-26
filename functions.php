@@ -8,6 +8,7 @@ require_once __DIR__ . '/inc/cf7-forms.php';
 require_once __DIR__ . '/inc/recruit-interview.php';
 require_once __DIR__ . '/inc/job-search.php';
 require_once __DIR__ . '/inc/job-reception.php';
+require_once __DIR__ . '/inc/legacy-job-import.php';
 require_once __DIR__ . '/inc/confirmed-seo.php';
 require_once __DIR__ . '/inc/seo-head.php';
 require_once __DIR__ . '/inc/seo-completion.php';

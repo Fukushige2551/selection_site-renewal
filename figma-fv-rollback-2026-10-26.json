@@ -1,0 +1,160 @@
+[
+  {
+    "id": "6141:1894",
+    "name": "Mask group",
+    "type": "FRAME",
+    "parent": "6141:1893",
+    "index": 0,
+    "x": 0,
+    "y": 0,
+    "width": 309,
+    "height": 279,
+    "children": [
+      {
+        "id": "6131:11815",
+        "name": "Mask group",
+        "width": 309,
+        "height": 279
+      }
+    ]
+  },
+  {
+    "id": "6141:1896",
+    "name": "Mask group",
+    "type": "FRAME",
+    "parent": "6141:1893",
+    "index": 2,
+    "x": 713.7235107421875,
+    "y": 0,
+    "width": 309,
+    "height": 279,
+    "children": [
+      {
+        "id": "5648:1806",
+        "name": "Mask group",
+        "width": 309,
+        "height": 279
+      }
+    ]
+  },
+  {
+    "id": "6141:1897",
+    "name": "Mask group",
+    "type": "FRAME",
+    "parent": "6141:1893",
+    "index": 3,
+    "x": 1062.7235107421875,
+    "y": 0,
+    "width": 309,
+    "height": 279,
+    "children": [
+      {
+        "id": "5743:9526",
+        "name": "Mask group",
+        "width": 309,
+        "height": 279
+      }
+    ]
+  },
+  {
+    "id": "6141:1898",
+    "name": "Mask group",
+    "type": "FRAME",
+    "parent": "6141:1893",
+    "index": 4,
+    "x": 1411.7235107421875,
+    "y": 0,
+    "width": 309,
+    "height": 279,
+    "children": [
+      {
+        "id": "5746:9533",
+        "name": "Mask group",
+        "width": 309,
+        "height": 279
+      }
+    ]
+  },
+  {
+    "id": "6141:1906",
+    "name": "Mask group",
+    "type": "FRAME",
+    "parent": "6141:1893",
+    "index": 12,
+    "x": 4818.7236328125,
+    "y": 0,
+    "width": 760,
+    "height": 561.7086791992188,
+    "children": [
+      {
+        "id": "5823:276",
+        "name": "Mask group",
+        "width": 760,
+        "height": 561.7086791992188
+      }
+    ]
+  },
+  {
+    "id": "6141:1908",
+    "name": "Mask group",
+    "type": "FRAME",
+    "parent": "6141:1907",
+    "index": 0,
+    "x": 0,
+    "y": 0,
+    "width": 760,
+    "height": 561.7086791992188,
+    "children": [
+      {
+        "id": "5972:10056",
+        "name": "Mask group",
+        "width": 760,
+        "height": 561.7086791992188
+      }
+    ]
+  },
+  {
+    "id": "6141:1909",
+    "name": "Mask group",
+    "type": "FRAME",
+    "parent": "6141:1907",
+    "index": 1,
+    "x": 800,
+    "y": 0,
+    "width": 760,
+    "height": 561.7086791992188,
+    "children": [
+      {
+        "id": "6130:11798",
+        "name": "Mask group",
+        "width": 760,
+        "height": 561.7086791992188
+      }
+    ]
+  },
+  {
+    "id": "6143:1885",
+    "name": "01 / TOP・共通ナビゲーション",
+    "type": "SECTION",
+    "parent": "297:849",
+    "index": 0,
+    "x": -36480,
+    "y": 512,
+    "width": 1565,
+    "height": 11408,
+    "children": [
+      {
+        "id": "6143:1886",
+        "name": "TOP",
+        "width": 630,
+        "height": 11188
+      },
+      {
+        "id": "6143:1887",
+        "name": "ナビゲーション",
+        "width": 630,
+        "height": 1359
+      }
+    ]
+  }
+]

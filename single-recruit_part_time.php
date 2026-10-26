@@ -64,6 +64,13 @@ get_header('company');
             if ($source_benefits !== '') { $detail_rows['待遇'] = $source_benefits; }
             $detail_rows['勤務地'] = get_post_meta($job_id, 'work_location_access', true);
             $detail_rows['お問合せ'] = get_post_meta($job_id, 'application_method', true);
+            $imported_rows = get_post_meta($job_id, '_foods_legacy_job_rows', true);
+            if (metadata_exists('post', $job_id, '_foods_legacy_job_rows') && is_array($imported_rows)) {
+                $detail_rows = [];
+                foreach ($imported_rows as $row) {
+                    $detail_rows[$row['label']] = $row['value'];
+                }
+            }
         }
         foods_schema_job($job_id, $detail_rows);
         $detail_rows = array_merge($detail_rows, foods_job_schema_public_rows(foods_job_schema_values($job_id)));
@@ -119,6 +126,9 @@ get_header('company');
                         </div>
                     <?php endforeach; ?>
                 </dl>
+                <?php if ($is_imported_job && !$detail_rows) : ?>
+                    <?php the_content(); ?>
+                <?php endif; ?>
             </section>
 
             <?php if (!$job_closed) : ?>
