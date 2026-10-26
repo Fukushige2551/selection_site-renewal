@@ -450,9 +450,23 @@
     }
 }
 
+@media screen and (min-width: 1280px) {
+    .l-header-pc__nav__link.online-shop {
+        font-size: 16px;
+
+        picture {
+            transform: translateX(-4px);
+        }
+    }
+}
+
 @media screen and (min-width: 1600px) {
     .l-header-pc__nav__link {
         font-size: 16px;
+    }
+
+    .l-header-pc__nav__link.online-shop {
+        font-size: 18px;
     }
 }
 

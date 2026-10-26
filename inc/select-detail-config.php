@@ -742,11 +742,11 @@ function foods_get_select_detail_configs() {
                         '自社農園を構え、土作りからの製品作りまで管理しつつ、品質を高いレベルで安定させる。これが濱田のこだわりです。',
                     ],
                     'sub_title' => '自然の恵みと人の技が融合した、<br>最高の梅干を作るための農園。',
-                    'secondary_image' => ['src' => 'plums.png', 'alt' => '農園で実る梅', 'background_decoration' => true],
+                    'secondary_image' => ['src' => 'plums.png', 'webp' => 'webp/plums.webp', 'alt' => '農園で実る梅', 'background_decoration' => true],
                     'secondary_text_blocks' => ['梅を通じた「おいしさ」と「楽しさ」を提供しつづけます。'],
                     'gallery' => [
-                        ['src' => 'umeboshi.png', 'alt' => '濱田農園の梅干し'],
-                        ['src' => 'farmers.png', 'alt' => '梅を収穫する農家の皆さん'],
+                        ['src' => 'umeboshi.png', 'webp' => 'webp/umeboshi.webp', 'alt' => '濱田農園の梅干し'],
+                        ['src' => 'farmers.png', 'webp' => 'webp/farmers.webp', 'alt' => '梅を収穫する農家の皆さん'],
                     ],
                     'decorations' => [],
                 ]],
@@ -808,11 +808,11 @@ function foods_get_select_detail_configs() {
                         'main_image' => ['src' => '横井チョコレート.png', 'alt' => '横井チョコレートの商品'],
                         'text_blocks' => ['福井県の横井チョコレートは添加物はなるべく使用しないなど身体に良い素材を厳選し、誰もが安心して美味しく食べられるチョコレート作りを目指しています。'],
                         'sub_title' => '上質な”クーベルチュールチョコレート”を使用',
-                        'secondary_image' => ['src' => 'クーベルチュールチョコレート.png', 'alt' => 'クーベルチュールチョコレートの商品'],
+                        'secondary_image' => ['src' => 'クーベルチュールチョコレート.png', 'webp' => 'webp/クーベルチュールチョコレート.webp', 'alt' => 'クーベルチュールチョコレートの商品'],
                         'secondary_text_blocks' => ['横井チョコレートで主に使用するのは、総カカオ分35％以上、ココアバター31%以上といった厳しい国際基準を満たす「クーベルチュールチョコレート」。' . "\n" . '産地もガーナ産に指定した特注品です。またアーモンドは使用するたびに焙煎するなど、すべての素材に手抜きなし。「日本一の材料で」と、素材にはこだわり尽くしています。'],
                         'gallery' => [
-                            ['src' => '販売.png', 'alt' => 'チョコレートの販売風景'],
-                            ['src' => 'チョコとパン.png', 'alt' => 'チョコレートとパン'],
+                            ['src' => '販売.png', 'webp' => 'webp/販売.webp', 'alt' => 'チョコレートの販売風景'],
+                            ['src' => 'チョコとパン.png', 'webp' => 'webp/チョコとパン.webp', 'alt' => 'チョコレートとパン'],
                         ],
                         'decorations' => [
                             ['key' => 'cacao-beans', 'src' => 'カカオ豆.svg', 'alt' => '', 'placement' => 'main_image'],
@@ -823,12 +823,13 @@ function foods_get_select_detail_configs() {
 						'location' => '安心な北海道の原料に<br>こだわったお菓子作り',
 						'location_pc' => '安心な北海道の原料にこだわったお菓子作り',
 						'title' => 'ノースカラーズ',
-                        'main_image' => ['src' => 'ノースカラーズ.png', 'alt' => 'ノースカラーズの北海道の風景'],
+                        'main_image' => ['src' => 'ノースカラーズ.png', 'webp' => 'webp/ノースカラーズ.webp', 'alt' => 'ノースカラーズの北海道の風景'],
                         'text_blocks' => ['純国産シリーズは化学添加物や合成着色料を使わず、厳選された自然素材を使用。素材の美味しさと自然の魅力を最大限引き出す商品づくり。特に北海道産の原材料を活かし、子どもから大人まで安心して食べられるお菓子で、健康と笑顔を届けることを目指しています。'],
                         'sub_title' => '北海道の恵みと<br class="u-sweets-break-sp">自然素材から生まれる、<br class="u-sweets-break-sp">やさしくて安心なお菓子。',
                         'gallery' => [
                             [
                                 'src' => 'ノースカラーズの思い.png',
+                                'webp' => 'webp/ノースカラーズの思い.webp',
                                 'alt' => 'ノースカラーズの想い',
                                 'modifier' => 'north-colors-thought',
                             ],
@@ -917,7 +918,7 @@ function foods_get_select_detail_configs() {
                         'location' => 'フランス南ローヌの家族経営ワイナリー',
                         'location_pc' => 'フランス南ローヌの家族経営ワイナリー',
                         'title' => 'ドメーヌ・ド・パスキエ',
-                        'main_image' => ['src' => 'ブドウ園.png', 'alt' => 'ドメーヌ・ド・パスキエのブドウ園'],
+                        'main_image' => ['src' => 'ブドウ園.png', 'webp' => 'webp/ブドウ園.webp', 'alt' => 'ドメーヌ・ド・パスキエのブドウ園'],
                         'text_blocks' => [
                             '“砂と風”の村サブレ。
  1935年から4世代、87haの畑を守り、2010年からオーガニックへ。
