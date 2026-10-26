@@ -11,6 +11,8 @@ jQuery(function($) {
     var $html = $('html');
     var $body = $('body');
     var $scrollTopButton = $('.c-btn--scroll-top');
+    var navScrollPosition = 0;
+    var isPageScrollLocked = false;
 
     // フッターは常に1項目だけ開き、縦に伸びすぎないようにする。
     var footerDetails = document.querySelectorAll('.l-footer__nav details');
@@ -37,10 +39,44 @@ jQuery(function($) {
         return window.matchMedia('(max-width: 1023px)').matches;
     }
 
+    function lockPageScroll() {
+        navScrollPosition = window.scrollY || window.pageYOffset || 0;
+        isPageScrollLocked = true;
+
+        $html.css('overflow', 'hidden');
+        $body.css({
+            position: 'fixed',
+            top: -navScrollPosition + 'px',
+            left: 0,
+            width: '100%',
+            overflow: 'hidden',
+        });
+    }
+
+    function unlockPageScroll() {
+        if (!isPageScrollLocked) return;
+
+        $html.css('overflow', '');
+        $body.css({
+            position: '',
+            top: '',
+            left: '',
+            width: '',
+            overflow: '',
+        });
+
+        window.scrollTo(0, navScrollPosition);
+        isPageScrollLocked = false;
+    }
+
     function openNav($trigger, triggerElement) {
         $nav.addClass('is-open').removeClass('is-closed');
         $html.addClass('is-fixed');
         $body.addClass('is-fixed');
+
+        if (isSpOrTabletViewport()) {
+            lockPageScroll();
+        }
 
         popButton($trigger, triggerElement);
     }
@@ -49,6 +85,7 @@ jQuery(function($) {
         $nav.removeClass('is-open').addClass('is-closed');
         $html.removeClass('is-fixed');
         $body.removeClass('is-fixed');
+        unlockPageScroll();
 
         popButton($trigger, triggerElement);
     }
@@ -69,10 +106,6 @@ jQuery(function($) {
             }
 
             if (isSpOrTabletViewport()) {
-                window.scrollTo(0, 0);
-                document.documentElement.scrollTop = 0;
-                document.body.scrollTop = 0;
-
                 window.requestAnimationFrame(function() {
                     openNav($this, $this.get(0));
                 });

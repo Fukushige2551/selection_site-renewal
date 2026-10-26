@@ -66,7 +66,7 @@
 <nav class="l-header__nav l-header__nav--sp is-closed">
     <div class="l-header__nav__overlay"></div>
     <div class="l-header__nav__inner">
-        <div class="l-header__nav__group shop-info u-border-top--header js-toggle--pulldown">
+        <div class="l-header__nav__group shop-info js-toggle--pulldown">
             <p class="l-header__nav__group__title c-btn--pulldown">
                 <a href="<?php echo esc_url(get_post_type_archive_link('shop')); ?>" class="l-header__nav__group__title--position-fix">チラシ・店舗情報</a>
             </p>
@@ -102,7 +102,7 @@
         </div>
 
         <div class="l-header__nav__group u-border-top--header js-toggle--pulldown">
-            <p class="l-header__nav__group__title c-btn--pulldown">
+            <p class="l-header__nav__group__title">
                 <a href="<?php echo esc_url(get_post_type_archive_link('recipe')); ?>" class="l-header__nav__group__title--position-fix">レシピ</a>
             </p>
         </div>

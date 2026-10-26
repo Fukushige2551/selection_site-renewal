@@ -112,14 +112,14 @@
             &--01 {
                 @include backgroundImg("#{$img-path}page/front-page/svg/bg_campaign-01.svg");
                 top: -13.66vw;
-                left: 10.51vw;
+                left: 7.59vw;
                 width: 13.99vw;
                 aspect-ratio: 54.57 / 153.28;
             }
             &--02 {
                 @include backgroundImg("#{$img-path}page/front-page/svg/bg_campaign-02.svg");
                 top: -1.28vw;
-                left: 39.50vw;
+                left: 37.5vw;
                 width: 24.58vw;
                 aspect-ratio: 95.87 / 43.32;
             }
@@ -277,6 +277,7 @@
             aspect-ratio: 389 / 652.54;
             margin-top: -37.17vw;
             padding-top: 44.86vw;
+            padding-bottom: 1vw;
             box-sizing: border-box;
         }
         &--recruit {
@@ -635,6 +636,7 @@
         position: relative;
         z-index: 1;
         padding-top: 10vw;
+        padding-bottom: 10vw;
 
         .c-section__title {
             &--sub {
@@ -751,22 +753,24 @@
     &__campaign {
         position: relative;
         z-index: 1;
-        padding-top: 15.2vw;
+        padding-top: 19.2vw;
 
         .c-section__title {
-            padding-left: 4.61vw;
+            padding-left: 0;
 
             &--sub {
-                padding-left: 4vw;
+                padding-left: 0;
             }
         }
 
         .c-campaign-content {
-            margin: 4.8vw auto 0 12.05vw;
+            margin: 4.8vw auto 0 9vw;
 
             &__img {
+                display: block;
                 width: 81.02vw;
-                aspect-ratio: 309 / 279;
+                aspect-ratio: 895.65 / 542;
+                object-fit: cover;
             }
             &__phrase {
                 top: 51.6%;
@@ -860,7 +864,7 @@
             display: block;
             width: 44.35vw;
             aspect-ratio: 173 / 54;
-            margin: 0 auto 6.92vw 29.48vw;
+            margin: 0 auto 10.92vw;
         }
         &__hureai {
             display: block;
@@ -1047,7 +1051,7 @@
         }
     }
     &__sns {
-        padding: 9.74vw 0 12.27vw;
+        padding: 9.74vw 0 4vw;
 
         .c-section__title {
             margin-bottom: 8.20vw;
@@ -1844,6 +1848,7 @@
         position: relative;
         top: -2.5vw;
         padding-top: 0;
+        padding-bottom: 5vw;
 
         .c-section__title {
             &--sub {
@@ -1972,7 +1977,7 @@
 
             &__img {
                 width: 100%;
-                aspect-ratio: 309 / 279;
+                aspect-ratio: 895.65 / 542;
             }
             &__phrase {
                 top: 52%;
@@ -2763,6 +2768,8 @@
         }
     }
     &__shop {
+        padding-bottom: 0;
+
         &__group {
             margin: 0 auto 0.98vw;
 
@@ -2860,7 +2867,7 @@
         }
     }
     &__campaign {
-        padding-top: 5.6vw;
+        padding-top: 6.1vw;
 
         .c-section__title {
             &--sub {
@@ -3384,14 +3391,14 @@
     --campaign-bottom: 20.65vw;
     --campaign-mask-top: url("#{$img-path}page/front-page/png/campaign-masktop.png");
     --campaign-mask-bottom: url("#{$img-path}page/front-page/png/campaign-maskbottom.png");
-    --campaign-tile: url("#{$img-path}page/front-page/png/campaign-tile.png");
-    --campaign-tile-height: 24.6154vw;
+    --campaign-tile: url("#{$img-path}page/page-select-detail/brick.png");
+    --campaign-tile-size: 24px 23px;
     position: relative;
     z-index: 0;
     isolation: isolate;
     aspect-ratio: auto;
     background: none;
-    padding-bottom: calc(var(--campaign-bottom) + 8vw);
+    padding-bottom: calc(var(--campaign-bottom) + 10vw);
 
     &::before {
         content: "";
@@ -3400,8 +3407,8 @@
         z-index: -1;
         pointer-events: none;
         background-image: var(--campaign-tile);
-        background-size: 100% var(--campaign-tile-height);
-        background-repeat: repeat-y;
+        background-size: var(--campaign-tile-size);
+        background-repeat: repeat;
         -webkit-mask-image: var(--campaign-mask-top), linear-gradient(#fff, #fff), var(--campaign-mask-bottom);
         mask-image: var(--campaign-mask-top), linear-gradient(#fff, #fff), var(--campaign-mask-bottom);
         -webkit-mask-size: 100% var(--campaign-top), 100% calc(100% - var(--campaign-top) - var(--campaign-bottom) + 2px), 100% var(--campaign-bottom);
@@ -3419,8 +3426,7 @@
         --campaign-bottom: 8.9193vw;
         --campaign-mask-top: url("#{$img-path}page/front-page/png/campaign-masktop-tab.png");
         --campaign-mask-bottom: url("#{$img-path}page/front-page/png/campaign-maskbottom-tab.png");
-        --campaign-tile: url("#{$img-path}page/front-page/png/campaign-tile-tab.png");
-        --campaign-tile-height: 12.5vw;
+        --campaign-tile-size: 20px 20px;
         padding-bottom: calc(var(--campaign-bottom) + 5vw);
     }
 }
@@ -3431,8 +3437,7 @@
         --campaign-bottom: 7.6042vw;
         --campaign-mask-top: url("#{$img-path}page/front-page/png/campaign-masktop-pc.png");
         --campaign-mask-bottom: url("#{$img-path}page/front-page/png/campaign-maskbottom-pc.png");
-        --campaign-tile: url("#{$img-path}page/front-page/png/campaign-tile-pc.png");
-        --campaign-tile-height: 10vw;
-        padding-bottom: calc(var(--campaign-bottom) + 4vw);
+        --campaign-tile-size: 17px 16px;
+        padding-bottom: calc(var(--campaign-bottom) + 2vw);
     }
 }

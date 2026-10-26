@@ -81,7 +81,7 @@
         position: absolute;
         top: 52%;
         left: 53%;
-        width: 25.2vw;
+        width: 78px;
         height: auto;
         aspect-ratio: 71 / 35;
         transform: translate(-50%, -50%);
@@ -145,6 +145,8 @@
         &__inner {
             overflow: auto;
             height: calc(100dvh - 14.2vw);
+            box-sizing: border-box;
+            padding-top: calc(100vw * 6 / 390);
         }
         &__group {
             display: block;
