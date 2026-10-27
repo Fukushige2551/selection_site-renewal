@@ -8,7 +8,7 @@ import '../scss/page-job-thanks.scss';
 import './form-privacy-feedback.js';
 import './application-validation.js';
 import './form-kana-date-validation.js';
-import { validationMessages } from './form-validation-messages.js';
+import { validationMessages, telephoneIsValid as isBusinessTelephone } from './form-validation-messages.js';
 
 const form = document.querySelector('.p-business-form');
 if (form?.closest('.p-business-form-page--entry')) {
@@ -36,14 +36,7 @@ export function businessByteLength(value, name, sending = false) {
     return new TextEncoder().encode(value).length;
 }
 
-// Match CF7's telephone rule, including separators and international prefixes.
-export function isBusinessTelephone(value) {
-    let normalized = value.replace(/[#*].*$/, '').replace(/[()/.*#\s-]+/g, '');
-    if (normalized.startsWith('+') || normalized.startsWith('00')) {
-        normalized = '+' + normalized.replace(/^[+0]+/, '');
-    }
-    return /^[+]?[0-9]+$/.test(normalized) && normalized.length > 5 && normalized.length < 16;
-}
+export { isBusinessTelephone };
 
 const siteUrl = document.querySelector('.p-business-form-page--contact [name="site_url"]');
 let validateSiteUrl = () => true;
