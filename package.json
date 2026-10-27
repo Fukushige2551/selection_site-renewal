@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "check:format": "node tools/check-format.mjs",
+    "test:format": "node --test tools/check-format.test.mjs",
+    "prebuild": "npm run check:format",
+    "prebuild:stg": "npm run check:format",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build:stg": "vite build && node tools/package-stg.mjs",

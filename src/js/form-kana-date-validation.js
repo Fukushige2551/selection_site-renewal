@@ -1,5 +1,6 @@
 import '../scss/application-validation.scss';
 import { formatBirthDate, birthDateBackspaceRange, insertBirthDateDigits } from './birth-date-format.js';
+import { createFieldError, describeFieldError, renderFieldError } from './form-field-error.js';
 
 const kanaNames = ['name_kana', 'contact_name_kana', 'your_name_kana'];
 const kanaMessage = 'カナはカタカナと空白で入力してください。';
@@ -10,18 +11,13 @@ function setup() {
             const isKana = kanaNames.includes(field.name);
             if (!isKana) { field.type = 'text'; field.placeholder = '2000/01/01'; field.inputMode = 'numeric'; }
             const normalizeDate = () => { if (!isKana) field.value = formatBirthDate(field.value); };
-            const error = document.createElement('p');
-            error.className = 'application-field-error';
-            error.id = `format-error-${field.name}`;
-            error.hidden = true;
-            error.setAttribute('aria-live', 'polite');
+            const error = createFieldError(`format-error-${field.name}`, 'application-field-error');
             (field.closest('.wpcf7-form-control-wrap') || field.parentElement).append(error);
-            field.setAttribute('aria-describedby', [field.getAttribute('aria-describedby'), error.id].filter(Boolean).join(' '));
+            describeFieldError(field, error);
             const validate = () => {
                 let message = '';
                 if (isKana && field.value && !/^[ァ-ヺー・ \u3000ｦ-ﾟ]+$/u.test(field.value)) message = kanaMessage;
-                error.textContent = message;
-                error.hidden = !message;
+                renderFieldError(error, message);
                 field.setCustomValidity(message);
                 field.setAttribute('aria-invalid', String(Boolean(message)));
                 return !message;

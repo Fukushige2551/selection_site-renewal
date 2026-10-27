@@ -2,8 +2,8 @@ import '../scss/front-page.scss';
 
 jQuery(function($) {
     /**
-	 * ヒーロースライダー(sp)
-	 */
+     * ヒーロースライダー(sp)
+     */
     function setupSlider(options) {
         var $root = $(options.rootSelector);
         var eventNamespace = options.eventNamespace || '.slider';
@@ -342,8 +342,8 @@ jQuery(function($) {
     }
 
     /**
-	 * 特売スライダー(sp) を初期化
-	 */
+     * 特売スライダー(sp) を初期化
+     */
     function setupSpecialOffersSliderSp() {
         var $page = $('.p-front-page');
         var $root = $page.find('.p-front-page__special-offers').first();
@@ -376,8 +376,8 @@ jQuery(function($) {
     }
 
     /**
-	 * 特売スライダー(pc) を初期化
-	 */
+     * 特売スライダー(pc) を初期化
+     */
     function setupSpecialOffersSliderPc() {
         var $page = $('.p-front-page');
         var $root = $page.find('.p-front-page__special-offers').first();
@@ -665,8 +665,8 @@ jQuery(function($) {
     }
 
     /**
-	 * 特売スライダーをSP/PCで排他的に同期
-	 */
+     * 特売スライダーをSP/PCで排他的に同期
+     */
     function syncSpecialOffersSliderMode() {
         var isSpViewport = window.matchMedia('(max-width: 767px)').matches;
         var nextMode = isSpViewport ? 'sp' : 'pc';
@@ -723,8 +723,8 @@ jQuery(function($) {
     });
 
     /**
-	 * ヒーロースライダー(pc) ページネーション
-	 */
+     * ヒーロースライダー(pc) ページネーション
+     */
     function setupHeroPaginationPc(options) {
         var sliderSelector = options && options.sliderSelector ? options.sliderSelector : '.p-front-page__hero__slider-pc';
         var eventNamespace = options && options.eventNamespace ? options.eventNamespace : '.heroPaginationPc';
@@ -1068,8 +1068,8 @@ jQuery(function($) {
     $(window).on('resize.heroPaginationPcInit', syncHeroPaginationPc);
 
     /**
-	 * 店舗一覧ページネーション
-	 */
+     * 店舗一覧ページネーション
+     */
     function setupStoreTabsPagination() {
         var $shop = $('.p-front-page__shop');
 

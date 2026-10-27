@@ -1,5 +1,6 @@
 import { validationMessages, telephoneIsValid } from './form-validation-messages.js';
 import '../scss/application-validation.scss';
+import { createFieldError, describeFieldError, renderFieldError } from './form-field-error.js';
 
 function setup() {
     for (const form of document.querySelectorAll('.p-business-form-page--entry form, .p-recruit-entry__form')) {
@@ -16,13 +17,9 @@ function setup() {
             const host = field.closest('.wpcf7-form-control-wrap') || field.parentElement;
             const labelNode = host.parentElement.querySelector('.p-business-form__label, .p-recruit-entry__label');
             const label = (labelNode?.textContent || field.name).replace(/\*必須/g, '').trim();
-            const error = document.createElement('p');
-            error.className = 'application-field-error';
-            error.id = `application-error-${field.name}`;
-            error.hidden = true;
-            error.setAttribute('aria-live', 'polite');
+            const error = createFieldError(`application-error-${field.name}`, 'application-field-error');
             host.append(error);
-            field.setAttribute('aria-describedby', [field.getAttribute('aria-describedby'), error.id].filter(Boolean).join(' '));
+            describeFieldError(field, error);
             const validate = (required = false) => {
                 field.setCustomValidity('');
                 let message = '';
@@ -41,8 +38,7 @@ function setup() {
                 }
                 field.setCustomValidity(message);
                 field.setAttribute('aria-invalid', String(Boolean(message)));
-                error.textContent = message;
-                error.hidden = !message;
+                renderFieldError(error, message);
                 return !message;
             };
             validators.set(field, validate);

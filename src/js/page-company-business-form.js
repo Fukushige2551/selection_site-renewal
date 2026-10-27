@@ -10,6 +10,7 @@ import './application-validation.js';
 import './form-kana-date-validation.js';
 import { validationMessages, telephoneIsValid as isBusinessTelephone } from './form-validation-messages.js';
 import { setupSubmitValidation } from './form-submit-validation.js';
+import { createFieldError, describeFieldError, renderFieldError } from './form-field-error.js';
 
 const form = document.querySelector('.p-business-form');
 if (form?.closest('.p-business-form-page--entry')) {
@@ -43,15 +44,10 @@ const siteUrl = document.querySelector('.p-business-form-page--contact [name="si
 let validateSiteUrl = () => true;
 let validateBusinessFields = () => true;
 if (siteUrl) {
-    const error = document.createElement('p');
-    error.id = 'business-site-url-error';
-    error.className = 'business-field-error';
-    error.setAttribute('aria-live', 'polite');
-    error.hidden = true;
+    const error = createFieldError('business-site-url-error', 'business-field-error');
     siteUrl.closest('.wpcf7-form-control-wrap')?.append(error);
     if (!error.isConnected) siteUrl.after(error);
-    const describedBy = siteUrl.getAttribute('aria-describedby');
-    siteUrl.setAttribute('aria-describedby', [describedBy, error.id].filter(Boolean).join(' '));
+    describeFieldError(siteUrl, error);
     validateSiteUrl = () => {
         // Native URL validation works even when CF7 sets novalidate on the form.
         siteUrl.setCustomValidity('');
@@ -59,8 +55,7 @@ if (siteUrl) {
         const message = valid ? '' : validationMessages.url;
         siteUrl.setCustomValidity(message);
         siteUrl.setAttribute('aria-invalid', String(!valid));
-        error.textContent = message;
-        error.hidden = valid;
+        renderFieldError(error, message);
         return valid;
     };
     siteUrl.addEventListener('input', validateSiteUrl);
@@ -202,11 +197,7 @@ if (form?.closest('.p-business-form-page--contact')) {
     const validators = new Map();
     const byteLimits = { contact_name: 50, email: 100, message: 1000 };
     for (const control of controls) {
-        const error = document.createElement('p');
-        error.id = `business-error-${control.name}`;
-        error.className = 'business-field-error';
-        error.setAttribute('aria-live', 'polite');
-        error.hidden = true;
+        const error = createFieldError(`business-error-${control.name}`, 'business-field-error');
         const privacyRow = control.type === 'checkbox' ? control.closest('.p-business-form__privacy') : null;
         if (privacyRow) {
             const feedback = document.createElement('div');
@@ -220,7 +211,7 @@ if (form?.closest('.p-business-form-page--contact')) {
         const proxy = control === inquirySelect ? control.parentElement.querySelector('.business-select__trigger') : control;
         for (const element of new Set([control, proxy])) {
             if (!element) continue;
-            element.setAttribute('aria-describedby', [element.getAttribute('aria-describedby'), error.id].filter(Boolean).join(' '));
+            describeFieldError(element, error);
         }
         const validate = (showRequired = false) => {
             control.setCustomValidity('');
@@ -247,8 +238,7 @@ if (form?.closest('.p-business-form-page--contact')) {
             control.setCustomValidity(message);
             control.setAttribute('aria-invalid', String(Boolean(message)));
             proxy?.setAttribute('aria-invalid', String(Boolean(message)));
-            error.textContent = message;
-            error.hidden = !message;
+            renderFieldError(error, message);
             return !message;
         };
         validators.set(control, validate);

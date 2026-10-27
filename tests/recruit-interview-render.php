@@ -4,6 +4,7 @@ define('OBJECT', 'OBJECT');
 $pages = [];
 $rules = [];
 $filters = [];
+$breadcrumb_fragments = [];
 function add_action($name, $callback) {}
 function add_filter($name, $callback, $priority = 10, $count = 1) { global $filters; $filters[$name] = $callback; }
 function add_rewrite_rule($regex, $query, $priority) { global $rules; $rules[$regex] = $query; }
@@ -22,6 +23,8 @@ function esc_attr($v) { return htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8'
 function esc_html($v) { return esc_attr($v); }
 function esc_url($v) { return esc_attr($v); }
 function wp_kses($v, $allowed) { return strip_tags($v, '<br>'); }
+// Mirror the helper's unchanged HTML return; structured data is outside this render test's scope.
+function foods_schema_breadcrumb_html($html) { global $breadcrumb_fragments; $breadcrumb_fragments[] = $html; return $html; }
 function check($test, $message) { if (!$test) throw new RuntimeException($message); }
 
 require dirname(__DIR__) . '/inc/recruit-interview.php';
@@ -34,9 +37,13 @@ foreach (['01', '02', '03'] as $i => $number) {
     check(get_permalink($current_id) === $url, 'Canonical permalink for ' . $number);
     check(foods_get_recruit_interview_url($number) === $url, 'Card link for ' . $number);
     check($rules['^recruit/interview/' . $number . '/?$'] === 'index.php?pagename=recruit-interview-' . $number, 'Route resolves to matching page');
+    $breadcrumb_fragments = [];
     ob_start();
     include dirname(__DIR__) . '/page-recruit-interview.php';
     $html = ob_get_clean();
+    check(count($breadcrumb_fragments) === 1, 'One breadcrumb fragment per interview');
+    check(strpos($breadcrumb_fragments[0], 'aria-current="page"') !== false, 'Breadcrumb includes current page');
+    check(strpos($html, $breadcrumb_fragments[0]) !== false, 'Breadcrumb HTML remains in rendered page');
     check(substr_count($html, '<h1>') === 1, 'One document heading');
     check(substr_count($html, '<h2 id="interview-question-') === 6, 'Six interview questions');
     check(substr_count($html, 'class="p-interview__photo ') === 3, 'Three story photos');

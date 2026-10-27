@@ -2,7 +2,7 @@ import '../scss/page-recruit-work.scss';
 
 document.querySelectorAll('[data-job-modal]').forEach((modal) => {
     const modalName = modal.dataset.jobModal;
-  const triggers = document.querySelectorAll(`[data-job-modal-open="${modalName}"]`);
+    const triggers = document.querySelectorAll(`[data-job-modal-open="${modalName}"]`);
     const dialog = modal.querySelector('[role="dialog"]');
     const closeButtons = modal.querySelectorAll('[data-job-modal-close]');
     const focusableElements = modal.querySelectorAll('button:not([disabled])');
