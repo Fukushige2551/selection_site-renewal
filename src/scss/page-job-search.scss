@@ -69,7 +69,7 @@ $pale: #f9faf5;
   dl div + div { position: relative; padding-top: 19px; }
   dl div + div::before { position: absolute; top: 0; left: 8px; width: min(130px, calc(100% - 8px)); border-top: 1px solid #d9d9d9; content: ""; }
   dt { margin-bottom: 14px; font-weight: 700; line-height: 16px; }
-  dd { margin-left: 8px; line-height: 16px; }
+  dd { margin-left: 8px; line-height: 25px; }
   dd { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; }
   dl div + div dt { margin-bottom: 8px; }
   dl div + div dd { line-height: 25px; letter-spacing: .05em; }
