@@ -189,7 +189,7 @@ function foods_get_select_detail_configs() {
             'message' => [
                 'bubble_sp' => '吹き出しsp.svg',
                 'bubble_pc' => '吹き出しpc.svg',
-                'buyer_image' => '@theme/img/page/page-select-detail/svg/img_message-buyer.svg',
+                'buyer_image' => '@theme/img/page/page-select-detail/buyer-portrait-foods-rice.png',
                 'corner_decoration' => 'スプーン.svg',
                 'text' => '料理の決め手になる調味料から、<br>コーヒーなどの嗜好品まで。<br>セレクションの加工食品は、<br>お客様の食卓が「ちゃんとおいしく整う」品ぞろえを大切にしています。<br>世界の一流メーカーの定番はもちろん、<br>日本の小さな町で丁寧につくられた<br>こだわりの商品まで、<br>使う場面が想像できるものを<br>選び抜きました。<br>毎日の料理がラクになる“基本の一本”、<br>いつもの味が変わる“ひとさじ”、<br>手土産にもなる“ちょっと良いもの”。<br>定番は切らさず、<br>季節や話題で新しい出会いもつくる。<br>迷ったら、料理や好みに合わせて<br>おすすめします。',
                 'text_pc' => '料理の決め手になる調味料から、コーヒーなどの嗜好品まで。<br>セレクションの加工食品は、<br>お客様の食卓が「ちゃんとおいしく整う」品ぞろえを大切にしています。<br>世界の一流メーカーの定番はもちろん、<br>日本の小さな町で丁寧につくられた<br>こだわりの商品まで、使う場面が想像できるものを選び抜きました。<br>毎日の料理がラクになる“基本の一本”、<br>いつもの味が変わる“ひとさじ”、<br>手土産にもなる“ちょっと良いもの”。<br>定番は切らさず、季節や話題で新しい出会いもつくる。<br>迷ったら、料理や好みに合わせておすすめします。',
@@ -539,7 +539,7 @@ function foods_get_select_detail_configs() {
             'message' => [
                 'bubble_sp' => 'svg/buyer-message-sp.svg',
                 'bubble_pc' => 'svg/buyer-message.svg',
-                'buyer_image' => '@theme/img/page/page-select-detail/svg/img_message-buyer.svg',
+                'buyer_image' => '@theme/img/page/page-select-detail/buyer-portrait-foods-rice.png',
                 'corner_decoration' => 'svg/swallows.svg',
                 'background_pc' => '@theme/img/page/page-select-detail/svg/message_section_bg-pc.svg',
                 'text' => '日本の食卓の主役だから、味で選ぶ。<br>産地と品種、精米の状態までこだわり、<br>ご家庭の食卓に<br>“いちばん合う一杯”を揃えました。<br>粒立ち、香り、甘み、粘り――<br>同じ銘柄でも年産や精米具合で<br>食味は変わります。<br>セレクションは<br>「炊き上がりの満足感」を基準に、<br>毎日のごはんがちゃんとおいしくなる<br>お米だけを選び抜きます。<br>千葉は米どころ。その強みを活かし、<br>生産者直送米を中心に、<br>全国の銘柄米まで幅広く厳選。<br>つくり手のこだわりが見えるお米、<br>食味が安定したお米を軸に、<br>日々の食卓から“ここぞ”のごはんまで<br>対応できる品揃えにしています。<br>さらに、入荷後の品質にも<br>手を抜きません。<br>保管環境や鮮度に目を配り、<br>「いつ炊いてもおいしい」状態で<br>お渡しすることを大切にしています。<br>白米としての旨みはもちろん、<br>カレー・丼・おにぎり・お弁当など、<br>料理に合わせた選び方もご案内します。<br>セレクションが選ぶ「食味」の違いを、<br>ぜひお召し上がりください。',

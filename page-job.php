@@ -9,7 +9,7 @@ $job_roles = [
     ['ベーカリー', 'パン製造', 'job-bakery.png'],
     ['水産', 'お魚カット<br>パック詰め', 'job-fish.png'],
     ['寿司', 'お寿司製造', 'job-sushi.png'],
-    ['食肉', 'お肉カット<br>パック詰め', 'job-meat.png'],
+    ['食肉', 'お肉カット<br>パック詰め', '../page-recruit-work/schedule-processing.png'],
     ['青果', '野菜・果物カット<br>パック詰め', 'job-produce.png'],
 ];
 $job_faqs = [
