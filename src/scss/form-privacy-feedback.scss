@@ -1,21 +1,21 @@
 .form-privacy-feedback {
-  width: fit-content;
-  max-width: 100%;
-  margin-inline: auto;
-  .p-contact-error, &__error {
-    margin: 6px 0 0 !important;
-    padding-left: var(--privacy-text-offset, 31px);
-    color: #ff0b0b;
-    font-size: 14px;
-    line-height: 1.6;
-    text-align: left;
-    &[hidden] { display: none; }
-  }
-  .p-contact-privacy__label, .p-business-form__privacy, .p-recruit-entry__privacy {
-    align-items: center;
-  }
-  .wpcf7-form-control-wrap:has(input[type="checkbox"]) { width: auto; flex: 0 0 auto; }
-  .wpcf7-list-item { display: block; margin: 0; }
-  .wpcf7-list-item label { display: flex; align-items: center; margin: 0; }
-  .p-business-form__privacy input, .p-recruit-entry__privacy input { margin: 0; }
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
+    .p-contact-error, &__error {
+        margin: 6px 0 0 !important;
+        padding-left: var(--privacy-text-offset, 31px);
+        color: #ff0b0b;
+        font-size: 14px;
+        line-height: 1.6;
+        text-align: left;
+        &[hidden] { display: none; }
+    }
+    .p-contact-privacy__label, .p-business-form__privacy, .p-recruit-entry__privacy {
+        align-items: center;
+    }
+    .wpcf7-form-control-wrap:has(input[type="checkbox"]) { width: auto; flex: 0 0 auto; }
+    .wpcf7-list-item { display: block; margin: 0; }
+    .wpcf7-list-item label { display: flex; align-items: center; margin: 0; }
+    .p-business-form__privacy input, .p-recruit-entry__privacy input { margin: 0; }
 }

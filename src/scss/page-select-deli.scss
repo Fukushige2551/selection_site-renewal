@@ -1,220 +1,220 @@
 $detail: '.p-page-select-detail';
 
 #{$detail}--deli {
-	@media screen and (max-width: 767px) {
-		#{$detail}__about__bg {
-			padding-bottom: 28.46vw;
-		}
+    @media screen and (max-width: 767px) {
+        #{$detail}__about__bg {
+            padding-bottom: 28.46vw;
+        }
 
-		#{$detail}__news__bg {
-			margin-top: -13vw;
-		}
-	}
+        #{$detail}__news__bg {
+            margin-top: -13vw;
+        }
+    }
 
-	.u-deli-title-break-sp-tab {
-		display: initial;
-	}
+    .u-deli-title-break-sp-tab {
+        display: initial;
+    }
 
-	#{$detail}__message--shape {
-		background: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-deli/svg/buyer-message-background-sp.svg') center top / 100% 100% no-repeat;
-	}
+    #{$detail}__message--shape {
+        background: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-deli/svg/buyer-message-background-sp.svg') center top / 100% 100% no-repeat;
+    }
 
-	#{$detail}__message--shapeBase,
-	#{$detail}__message--shapeTop,
-	#{$detail}__message--shapeMiddle,
-	#{$detail}__message--shapeBottom {
-		display: none;
-	}
+    #{$detail}__message--shapeBase,
+    #{$detail}__message--shapeTop,
+    #{$detail}__message--shapeMiddle,
+    #{$detail}__message--shapeBottom {
+        display: none;
+    }
 
-	#{$detail}__about__content--image,
-	#{$detail}__about__content--imgSmall {
-		object-fit: cover;
-	}
+    #{$detail}__about__content--image,
+    #{$detail}__about__content--imgSmall {
+        object-fit: cover;
+    }
 
-	#{$detail}__message--cornerDecoration,
-	#{$detail}__about__content--staff,
-	#{$detail}__news__wrapDecoration {
-		position: absolute;
-		z-index: 4;
-		display: block;
-		height: auto;
-		pointer-events: none;
-	}
+    #{$detail}__message--cornerDecoration,
+    #{$detail}__about__content--staff,
+    #{$detail}__news__wrapDecoration {
+        position: absolute;
+        z-index: 4;
+        display: block;
+        height: auto;
+        pointer-events: none;
+    }
 
-	#{$detail}__message--cornerDecoration {
-		right: 6vw;
-		bottom: -12.6vw;
-		width: 27.14vw;
-	}
+    #{$detail}__message--cornerDecoration {
+        right: 6vw;
+        bottom: -12.6vw;
+        width: 27.14vw;
+    }
 
-	#{$detail}__about__content--staff {
-		top: -33vw;
-		left: -1vw;
-		width: 16.93vw;
-	}
+    #{$detail}__about__content--staff {
+        top: -33vw;
+        left: -1vw;
+        width: 16.93vw;
+    }
 
-	#{$detail}__about__content--bread-making {
-		display: none;
-	}
+    #{$detail}__about__content--bread-making {
+        display: none;
+    }
 
-	#{$detail}__news__wrapDecoration {
-		&--karaage {
-			top: -50vw;
-			left: 1vw;
-			width: 22.5vw;
-		}
+    #{$detail}__news__wrapDecoration {
+        &--karaage {
+            top: -50vw;
+            left: 1vw;
+            width: 22.5vw;
+        }
 
-		&--nikujaga {
-			top: -44vw;
-			right: 3vw;
-			width: 22.88vw;
-		}
-	}
+        &--nikujaga {
+            top: -44vw;
+            right: 3vw;
+            width: 22.88vw;
+        }
+    }
 
-	@media screen and (min-width: 768px) and (max-width: 1023px) {
-		#{$detail}__message--shape {
-			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-deli/svg/buyer-message-background-tab.svg');
-		}
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        #{$detail}__message--shape {
+            background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-deli/svg/buyer-message-background-tab.svg');
+        }
 
-		#{$detail}__message--textSp {
-			display: block;
-		}
+        #{$detail}__message--textSp {
+            display: block;
+        }
 
-		#{$detail}__message--textPc {
-			display: none;
-		}
+        #{$detail}__message--textPc {
+            display: none;
+        }
 
-		#{$detail}__message--cornerDecoration {
-			right: 9vw;
-			bottom: -9vw;
-			width: 20vw;
-		}
+        #{$detail}__message--cornerDecoration {
+            right: 9vw;
+            bottom: -9vw;
+            width: 20vw;
+        }
 
-		#{$detail}__about__content--staff {
-			top: -8vw;
-			left: 0vw;
-			width: 15vw;
-		}
+        #{$detail}__about__content--staff {
+            top: -8vw;
+            left: 0vw;
+            width: 15vw;
+        }
 
-		#{$detail}__news__wrapDecoration {
-			&--karaage {
-				top: -30vw;
-				left: 15vw;
-				width: 12vw;
-			}
+        #{$detail}__news__wrapDecoration {
+            &--karaage {
+                top: -30vw;
+                left: 15vw;
+                width: 12vw;
+            }
 
-			&--nikujaga {
-				top: -23vw;
-				right: 14vw;
-				width: 12vw;
-			}
-		}
-	}
+            &--nikujaga {
+                top: -23vw;
+                right: 14vw;
+                width: 12vw;
+            }
+        }
+    }
 
-	@media screen and (min-width: 1024px) and (max-width: 1279px) {
-		.u-deli-title-break-sp-tab {
-			display: none;
-		}
+    @media screen and (min-width: 1024px) and (max-width: 1279px) {
+        .u-deli-title-break-sp-tab {
+            display: none;
+        }
 
-		#{$detail}__message--bg {
-			min-height: 53.18vw;
-			padding: 19vw 4.44vw 7.62vw;
-		}
+        #{$detail}__message--bg {
+            min-height: 53.18vw;
+            padding: 19vw 4.44vw 7.62vw;
+        }
 
-		#{$detail}__about__bg {
-			padding-bottom: 13.24vw;
-		}
+        #{$detail}__about__bg {
+            padding-bottom: 13.24vw;
+        }
 
-		#{$detail}__news {
-			margin-top: -9.92vw;
-		}
+        #{$detail}__news {
+            margin-top: -9.92vw;
+        }
 
-		#{$detail}__message--shape {
-			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-deli/svg/buyer-message-background-pc.svg');
-		}
+        #{$detail}__message--shape {
+            background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-deli/svg/buyer-message-background-pc.svg');
+        }
 
-		#{$detail}__message--cornerDecoration {
-			right: 2vw;
-			bottom: -4vw;
-			width: 13vw;
-		}
+        #{$detail}__message--cornerDecoration {
+            right: 2vw;
+            bottom: -4vw;
+            width: 13vw;
+        }
 
-		#{$detail}__about__content--staff {
-			top: -2vw;
-			left: -3vw;
-			width: 11vw;
-		}
+        #{$detail}__about__content--staff {
+            top: -2vw;
+            left: -3vw;
+            width: 11vw;
+        }
 
-		#{$detail}__about__content--bread-making {
-			position: absolute;
-			top: -11.2vw;
-			right: -11vw;
-			z-index: 4;
-			display: block;
-			width: 14vw;
-			height: auto;
-			pointer-events: none;
-		}
+        #{$detail}__about__content--bread-making {
+            position: absolute;
+            top: -11.2vw;
+            right: -11vw;
+            z-index: 4;
+            display: block;
+            width: 14vw;
+            height: auto;
+            pointer-events: none;
+        }
 
-		#{$detail}__news__wrapDecoration {
-			&--karaage {
-				left: 2vw;
-				top: -20vw;
-				width: 11vw;
-			}
+        #{$detail}__news__wrapDecoration {
+            &--karaage {
+                left: 2vw;
+                top: -20vw;
+                width: 11vw;
+            }
 
-			&--nikujaga {
-				right: 1vw;
-				top: -13vw;
-				width: 11vw;
-			}
-		}
-	}
+            &--nikujaga {
+                right: 1vw;
+                top: -13vw;
+                width: 11vw;
+            }
+        }
+    }
 
-	@media screen and (min-width: 1280px) {
-		.u-deli-title-break-sp-tab {
-			display: none;
-		}
+    @media screen and (min-width: 1280px) {
+        .u-deli-title-break-sp-tab {
+            display: none;
+        }
 
-		#{$detail}__message--shape {
-			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-deli/svg/buyer-message-background-pc.svg');
-		}
+        #{$detail}__message--shape {
+            background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-deli/svg/buyer-message-background-pc.svg');
+        }
 
-		#{$detail}__message--cornerDecoration {
-			right: -12px;
-			bottom: -106px;
-			width: 183.87px;
-		}
+        #{$detail}__message--cornerDecoration {
+            right: -12px;
+            bottom: -106px;
+            width: 183.87px;
+        }
 
-		#{$detail}__about__content--staff {
-			top: -82px;
-			left: -48px;
-			width: 169.47px;
-		}
+        #{$detail}__about__content--staff {
+            top: -82px;
+            left: -48px;
+            width: 169.47px;
+        }
 
-		#{$detail}__about__content--bread-making {
-			position: absolute;
-			top: -141px;
-			right: -137px;
-			z-index: 4;
-			display: block;
-			width: 174px;
-			height: auto;
-			pointer-events: none;
-		}
+        #{$detail}__about__content--bread-making {
+            position: absolute;
+            top: -141px;
+            right: -137px;
+            z-index: 4;
+            display: block;
+            width: 174px;
+            height: auto;
+            pointer-events: none;
+        }
 
-		#{$detail}__news__wrapDecoration {
-			&--karaage {
-				top: -274px;
-				left: 48px;
-				width: 132.12px;
-			}
+        #{$detail}__news__wrapDecoration {
+            &--karaage {
+                top: -274px;
+                left: 48px;
+                width: 132.12px;
+            }
 
-			&--nikujaga {
-				top: -174px;
-				right: 29px;
-				width: 134.41px;
-			}
-		}
-	}
+            &--nikujaga {
+                top: -174px;
+                right: 29px;
+                width: 134.41px;
+            }
+        }
+    }
 }

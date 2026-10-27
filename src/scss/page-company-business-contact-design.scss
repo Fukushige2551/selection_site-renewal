@@ -2,272 +2,272 @@
 
 // Business contact only: recruitment forms retain their existing shared styles.
 .p-business-form-page--contact {
-  --contact-form-width: min(87.468031vw, 600px);
-
-  .p-business-form-page__breadcrumb {
-    min-height: 75px;
-    padding: 20px 21px 39px;
-    gap: 8px;
-    font-size: 13px;
-    line-height: 16px;
-  }
-
-  .p-business-form-page__content {
-    width: var(--contact-form-width);
-    padding: 0 0 89px;
-  }
-
-  .p-business-form-page__content h1 {
-    font-size: 20px;
-    line-height: 23px;
-  }
-
-  .p-business-form-page__lead {
-    position: relative;
-    left: 50%;
-    width: min(82.097187vw, 1000px);
-    margin: 22px 0 46px;
-    transform: translateX(-50%);
-    font-family: "Noto Sans JP", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 28px;
-  }
-
-  .p-business-form {
-    font-family: "Noto Sans JP", sans-serif;
-
-    &__field { margin: 0 0 var(--field-bottom, 0px); }
-
-    &__label {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding-left: 4px;
-      margin-bottom: var(--label-gap, 7px);
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 30px;
-
-      em {
-        font-family: "Noto Sans JP", sans-serif;
-        font-size: 14px;
-        line-height: 30px;
-      }
-    }
-
-    input, select, textarea {
-      border-color: #e7eae6;
-      background-color: #f9faf5;
-      font-size: 16px;
-    }
-
-    input, select { height: 46px; padding: 0 16px; border-radius: 23px; }
-    textarea { height: 283px; padding: 14px 16px; border-radius: 20px; resize: none; }
-    textarea.is-small, textarea[name="main_products"] { width: calc(100% - 2px); height: 109px; }
-    &__field--postal input, input[name="postal_code"] { width: 210px; }
-    &__select-wrap::before { content: none; }
-    select[name="inquiry_type"] {
-      appearance: none;
-      padding-right: 56px;
-      background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/component/svg/icon_business-contact-select.svg");
-      background-position: right 12px center;
-      background-size: 23px 23px;
-      background-repeat: no-repeat;
-    }
-
-    // CF7 wraps its checkbox in a list item; keep the text and checkbox aligned.
-    &__privacy {
-      display: grid;
-      grid-template-columns: 21px minmax(0, 1fr);
-      align-items: center;
-      gap: 10px;
-      margin-top: 40px;
-      font-family: "Noto Sans JP", sans-serif;
-      font-size: 16px;
-      line-height: 30px;
-
-      .wpcf7-form-control-wrap { width: 21px; }
-      .wpcf7-list-item { display: block; margin: 0; }
-      .wpcf7-list-item label { display: flex; align-items: center; margin: 0; }
-
-      input {
-        flex: 0 0 21px;
-        width: 21px;
-        min-width: 21px;
-        max-width: 21px;
-        height: 20px;
-        min-height: 20px;
-        max-height: 20px;
-        border-radius: 5px;
-        margin: 0;
-        padding: 0;
-        border-color: #e7eae6;
-        background-color: #f9faf5;
-      }
-    }
-
-    &__field:has([name="message"]) { margin-bottom: 0; }
-
-    &__submit {
-      width: min(342px, 100%);
-      height: 60px;
-      margin-top: 30px;
-      border-radius: 20px;
-      font-family: "Noto Sans JP", sans-serif;
-      font-size: 18px;
-      background: #00a784;
-    }
-  }
-
-  @media (min-width: 768px) {
-    --contact-form-width: 600px;
+    --contact-form-width: min(87.468031vw, 600px);
 
     .p-business-form-page__breadcrumb {
-      width: 100%;
-      min-height: 75px;
-      padding: 20px 40px 39px;
-      gap: 8px;
+        min-height: 75px;
+        padding: 20px 21px 39px;
+        gap: 8px;
+        font-size: 13px;
+        line-height: 16px;
     }
+
+    .p-business-form-page__content {
+        width: var(--contact-form-width);
+        padding: 0 0 89px;
+    }
+
+    .p-business-form-page__content h1 {
+        font-size: 20px;
+        line-height: 23px;
+    }
+
     .p-business-form-page__lead {
-      width: min(calc(100vw - 80px), 1000px);
-    }
-    .p-business-form {
-      textarea.is-small, textarea[name="main_products"] { width: 100%; height: 109px; }
-    }
-  }
-
-  .u-business-form-sp { display: inline; }
-
-  .business-field-error {
-    margin: 6px 4px 0;
-    color: #d60000;
-    font-size: 14px;
-    line-height: 1.6;
-    &[hidden] { display: none; }
-  }
-  input[name="site_url"][aria-invalid="true"] { border-color: #d60000; }
-  .business-privacy-feedback {
-    width: fit-content;
-    max-width: 100%;
-    margin-inline: auto;
-
-    .business-field-error { margin: 6px 0 0 31px; }
-  }
-  .p-business-form [aria-invalid="true"] { border-color: #d60000; }
-
-  .business-select {
-    position: relative;
-    width: 100%;
-
-    &__native {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      pointer-events: none;
-    }
-    &__trigger {
-      display: block;
-      width: 100%;
-      height: 46px;
-      padding: 0 56px 0 16px;
-      border: 1px solid #e7eae6;
-      border-radius: 23px;
-      background: #f9faf5 url("/wp-content/themes/foods-selectioncojp-theme/img/component/svg/icon_business-contact-select.svg") right 12px center / 23px 23px no-repeat;
-      color: #000;
-      font: inherit;
-      font-size: 16px;
-      text-align: left;
-      cursor: pointer;
-
-      &:focus-visible { outline: 2px solid #103675; outline-offset: 3px; }
-      &[aria-invalid="true"] { border-color: #d60000; }
-    }
-    &__menu {
-      position: absolute;
-      z-index: 10;
-      top: calc(100% + 8px);
-      left: 0;
-      width: 100%;
-      margin: 0;
-      padding: 8px;
-      border: 1px solid #e7eae6;
-      border-radius: 16px;
-      background: #fff;
-      box-shadow: 0 8px 24px rgba(16, 54, 117, .12);
-      list-style: none;
-
-      &[hidden] { display: none; }
-      li {
-        padding: 11px 14px;
-        border-radius: 10px;
-        color: #103675;
+        position: relative;
+        left: 50%;
+        width: min(82.097187vw, 1000px);
+        margin: 22px 0 46px;
+        transform: translateX(-50%);
+        font-family: "Noto Sans JP", sans-serif;
         font-size: 16px;
-        line-height: 24px;
-        cursor: pointer;
-
-        &:hover, &.is-active { background: #f0f7f3; }
-        &[aria-selected="true"] { background: #e6f5ee; font-weight: 500; }
-      }
+        font-weight: 400;
+        line-height: 28px;
     }
-  }
 
-  // Measurements from the latest auto-layout frames, kept independent of CF7 wrappers.
-  $field-spacing: (
-    inquiry_type: (7px, 21px), company_name: (7px, 25px), department: (10px, 23px),
-    postal_code: (6px, 25px), address_1: (5px, 24px), address_2: (4px, 20px),
-    phone: (9px, 20px), fax: (8px, 12px), contact_name: (7px, 24px),
-    contact_name_kana: (4px, 23px), email: (6px, 26px), email_confirm: (4px, 29px),
-    main_products: (4px, 23px), site_url: (4px, 21px), message: (7px, 0px)
-  );
-  @each $name, $spacing in $field-spacing {
-    .p-business-form__field:has([name="#{$name}"]) {
-      --label-gap: #{list.nth($spacing, 1)};
-      --field-bottom: #{list.nth($spacing, 2)};
+    .p-business-form {
+        font-family: "Noto Sans JP", sans-serif;
+
+        &__field { margin: 0 0 var(--field-bottom, 0px); }
+
+        &__label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding-left: 4px;
+            margin-bottom: var(--label-gap, 7px);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 30px;
+
+            em {
+                font-family: "Noto Sans JP", sans-serif;
+                font-size: 14px;
+                line-height: 30px;
+            }
+        }
+
+        input, select, textarea {
+            border-color: #e7eae6;
+            background-color: #f9faf5;
+            font-size: 16px;
+        }
+
+        input, select { height: 46px; padding: 0 16px; border-radius: 23px; }
+        textarea { height: 283px; padding: 14px 16px; border-radius: 20px; resize: none; }
+        textarea.is-small, textarea[name="main_products"] { width: calc(100% - 2px); height: 109px; }
+        &__field--postal input, input[name="postal_code"] { width: 210px; }
+        &__select-wrap::before { content: none; }
+        select[name="inquiry_type"] {
+            appearance: none;
+            padding-right: 56px;
+            background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/component/svg/icon_business-contact-select.svg");
+            background-position: right 12px center;
+            background-size: 23px 23px;
+            background-repeat: no-repeat;
+        }
+
+        // CF7 wraps its checkbox in a list item; keep the text and checkbox aligned.
+        &__privacy {
+            display: grid;
+            grid-template-columns: 21px minmax(0, 1fr);
+            align-items: center;
+            gap: 10px;
+            margin-top: 40px;
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: 16px;
+            line-height: 30px;
+
+            .wpcf7-form-control-wrap { width: 21px; }
+            .wpcf7-list-item { display: block; margin: 0; }
+            .wpcf7-list-item label { display: flex; align-items: center; margin: 0; }
+
+            input {
+                flex: 0 0 21px;
+                width: 21px;
+                min-width: 21px;
+                max-width: 21px;
+                height: 20px;
+                min-height: 20px;
+                max-height: 20px;
+                border-radius: 5px;
+                margin: 0;
+                padding: 0;
+                border-color: #e7eae6;
+                background-color: #f9faf5;
+            }
+        }
+
+        &__field:has([name="message"]) { margin-bottom: 0; }
+
+        &__submit {
+            width: min(342px, 100%);
+            height: 60px;
+            margin-top: 30px;
+            border-radius: 20px;
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: 18px;
+            background: #00a784;
+        }
     }
-  }
 
-  @each $name in inquiry_type, company_name, department, postal_code, address_1 {
-    .p-business-form__field:has([name="#{$name}"]) .p-business-form__label {
-      font-weight: 500;
-      line-height: 24px;
+    @media (min-width: 768px) {
+        --contact-form-width: 600px;
+
+        .p-business-form-page__breadcrumb {
+            width: 100%;
+            min-height: 75px;
+            padding: 20px 40px 39px;
+            gap: 8px;
+        }
+        .p-business-form-page__lead {
+            width: min(calc(100vw - 80px), 1000px);
+        }
+        .p-business-form {
+            textarea.is-small, textarea[name="main_products"] { width: 100%; height: 109px; }
+        }
     }
-  }
-  .p-business-form__field:has([name="inquiry_type"]) .p-business-form__label { gap: 18px; }
-  .p-business-form__field:has([name="phone"]) .p-business-form__label { gap: 15px; }
-  .p-business-form__field:has([name="email"]) .p-business-form__label { gap: 9px; }
-  @each $name in contact_name, message {
-    .p-business-form__field:has([name="#{$name}"]) .p-business-form__label { gap: 11px; }
-  }
-  @each $name in phone, email, email_confirm, message {
-    .p-business-form__field:has([name="#{$name}"]) .p-business-form__label em { font-size: 16px; font-weight: 400; }
-  }
-  .p-business-form__field:has([name="contact_name"]) .p-business-form__label em {
-    font-family: "Zen Kaku Gothic Antique", sans-serif;
-    font-weight: 500;
-  }
 
-  @media (min-width: 1024px) {
-    .p-business-form-page__breadcrumb { min-height: 95px; padding-top: 21px; padding-bottom: 58px; }
-    .p-business-form-page__content { padding-bottom: 100px; }
-    .p-business-form-page__lead { margin-bottom: 69px; }
-    .u-business-form-sp { display: none; }
-    .p-business-form input[name="postal_code"] { width: 100%; }
-    .p-business-form__privacy { margin-top: 30px; }
-    .p-business-form__submit { width: min(372px, 100%); margin-top: 75px; }
-    $pc-spacing: (
-      contact_name_kana: (7px, 20px), email: (9px, 23px), email_confirm: (7px, 26px),
-      main_products: (7px, 20px), site_url: (7px, 18px), message: (10px, 0px)
+    .u-business-form-sp { display: inline; }
+
+    .business-field-error {
+        margin: 6px 4px 0;
+        color: #d60000;
+        font-size: 14px;
+        line-height: 1.6;
+        &[hidden] { display: none; }
+    }
+    input[name="site_url"][aria-invalid="true"] { border-color: #d60000; }
+    .business-privacy-feedback {
+        width: fit-content;
+        max-width: 100%;
+        margin-inline: auto;
+
+        .business-field-error { margin: 6px 0 0 31px; }
+    }
+    .p-business-form [aria-invalid="true"] { border-color: #d60000; }
+
+    .business-select {
+        position: relative;
+        width: 100%;
+
+        &__native {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            pointer-events: none;
+        }
+        &__trigger {
+            display: block;
+            width: 100%;
+            height: 46px;
+            padding: 0 56px 0 16px;
+            border: 1px solid #e7eae6;
+            border-radius: 23px;
+            background: #f9faf5 url("/wp-content/themes/foods-selectioncojp-theme/img/component/svg/icon_business-contact-select.svg") right 12px center / 23px 23px no-repeat;
+            color: #000;
+            font: inherit;
+            font-size: 16px;
+            text-align: left;
+            cursor: pointer;
+
+            &:focus-visible { outline: 2px solid #103675; outline-offset: 3px; }
+            &[aria-invalid="true"] { border-color: #d60000; }
+        }
+        &__menu {
+            position: absolute;
+            z-index: 10;
+            top: calc(100% + 8px);
+            left: 0;
+            width: 100%;
+            margin: 0;
+            padding: 8px;
+            border: 1px solid #e7eae6;
+            border-radius: 16px;
+            background: #fff;
+            box-shadow: 0 8px 24px rgba(16, 54, 117, .12);
+            list-style: none;
+
+            &[hidden] { display: none; }
+            li {
+                padding: 11px 14px;
+                border-radius: 10px;
+                color: #103675;
+                font-size: 16px;
+                line-height: 24px;
+                cursor: pointer;
+
+                &:hover, &.is-active { background: #f0f7f3; }
+                &[aria-selected="true"] { background: #e6f5ee; font-weight: 500; }
+            }
+        }
+    }
+
+    // Measurements from the latest auto-layout frames, kept independent of CF7 wrappers.
+    $field-spacing: (
+        inquiry_type: (7px, 21px), company_name: (7px, 25px), department: (10px, 23px),
+        postal_code: (6px, 25px), address_1: (5px, 24px), address_2: (4px, 20px),
+        phone: (9px, 20px), fax: (8px, 12px), contact_name: (7px, 24px),
+        contact_name_kana: (4px, 23px), email: (6px, 26px), email_confirm: (4px, 29px),
+        main_products: (4px, 23px), site_url: (4px, 21px), message: (7px, 0px)
     );
-    @each $name, $spacing in $pc-spacing {
-      .p-business-form__field:has([name="#{$name}"]) {
-        --label-gap: #{list.nth($spacing, 1)};
-        --field-bottom: #{list.nth($spacing, 2)};
-      }
+    @each $name, $spacing in $field-spacing {
+        .p-business-form__field:has([name="#{$name}"]) {
+            --label-gap: #{list.nth($spacing, 1)};
+            --field-bottom: #{list.nth($spacing, 2)};
+        }
     }
-  }
 
-  @media (min-width: 1280px) {
-    .p-business-form-page__breadcrumb { padding-left: max(40px, calc((100vw - 1714px) / 2)); }
-  }
+    @each $name in inquiry_type, company_name, department, postal_code, address_1 {
+        .p-business-form__field:has([name="#{$name}"]) .p-business-form__label {
+            font-weight: 500;
+            line-height: 24px;
+        }
+    }
+    .p-business-form__field:has([name="inquiry_type"]) .p-business-form__label { gap: 18px; }
+    .p-business-form__field:has([name="phone"]) .p-business-form__label { gap: 15px; }
+    .p-business-form__field:has([name="email"]) .p-business-form__label { gap: 9px; }
+    @each $name in contact_name, message {
+        .p-business-form__field:has([name="#{$name}"]) .p-business-form__label { gap: 11px; }
+    }
+    @each $name in phone, email, email_confirm, message {
+        .p-business-form__field:has([name="#{$name}"]) .p-business-form__label em { font-size: 16px; font-weight: 400; }
+    }
+    .p-business-form__field:has([name="contact_name"]) .p-business-form__label em {
+        font-family: "Zen Kaku Gothic Antique", sans-serif;
+        font-weight: 500;
+    }
+
+    @media (min-width: 1024px) {
+        .p-business-form-page__breadcrumb { min-height: 95px; padding-top: 21px; padding-bottom: 58px; }
+        .p-business-form-page__content { padding-bottom: 100px; }
+        .p-business-form-page__lead { margin-bottom: 69px; }
+        .u-business-form-sp { display: none; }
+        .p-business-form input[name="postal_code"] { width: 100%; }
+        .p-business-form__privacy { margin-top: 30px; }
+        .p-business-form__submit { width: min(372px, 100%); margin-top: 75px; }
+        $pc-spacing: (
+            contact_name_kana: (7px, 20px), email: (9px, 23px), email_confirm: (7px, 26px),
+            main_products: (7px, 20px), site_url: (7px, 18px), message: (10px, 0px)
+        );
+        @each $name, $spacing in $pc-spacing {
+            .p-business-form__field:has([name="#{$name}"]) {
+                --label-gap: #{list.nth($spacing, 1)};
+                --field-bottom: #{list.nth($spacing, 2)};
+            }
+        }
+    }
+
+    @media (min-width: 1280px) {
+        .p-business-form-page__breadcrumb { padding-left: max(40px, calc((100vw - 1714px) / 2)); }
+    }
 }

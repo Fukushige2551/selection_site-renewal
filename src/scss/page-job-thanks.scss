@@ -1,28 +1,28 @@
 .p-job-thanks-page,
 .p-recruit-thanks-page {
-  .p-business-form-page__content {
-    width: min(87.468031vw, 600px); padding: 49px 0 81px; text-align: center;
-    h1 { font-size: 20px; line-height: 23px; }
-  }
-  .p-business-form-page__lead {
-    width: 100%; margin: 22px 0 40px; font-size: 16px; font-weight: 400; line-height: 28px;
-  }
-  .p-application-thanks__home {
-    display: flex; justify-content: center; align-items: center;
-    width: min(342px, 100%); min-height: 60px; margin: 0 auto; padding: 14px 24px;
-    border-radius: 20px; background: #00a784; color: #fff;
-    font-family: "Noto Sans JP", sans-serif; font-size: 18px; font-weight: 700;
-    letter-spacing: .1em; text-decoration: none;
-    &:focus-visible { outline: 2px solid #103675; outline-offset: 3px; }
-  }
-  [role="alert"] { margin: 0 0 24px; color: #d60000; font-size: 14px; line-height: 1.6; }
-  @media (min-width: 768px) {
-    .p-business-form-page__content { width: 600px; padding-top: 28px; }
-    .p-job-thanks-page__break { display: none; }
-  }
-  @media (min-width: 1024px) {
-    .p-business-form-page__content { padding: 19px 0 100px; }
-    .p-business-form-page__lead { margin-bottom: 60px; }
-    .p-application-thanks__home { width: 372px; }
-  }
+    .p-business-form-page__content {
+        width: min(87.468031vw, 600px); padding: 49px 0 81px; text-align: center;
+        h1 { font-size: 20px; line-height: 23px; }
+    }
+    .p-business-form-page__lead {
+        width: 100%; margin: 22px 0 40px; font-size: 16px; font-weight: 400; line-height: 28px;
+    }
+    .p-application-thanks__home {
+        display: flex; justify-content: center; align-items: center;
+        width: min(342px, 100%); min-height: 60px; margin: 0 auto; padding: 14px 24px;
+        border-radius: 20px; background: #00a784; color: #fff;
+        font-family: "Noto Sans JP", sans-serif; font-size: 18px; font-weight: 700;
+        letter-spacing: .1em; text-decoration: none;
+        &:focus-visible { outline: 2px solid #103675; outline-offset: 3px; }
+    }
+    [role="alert"] { margin: 0 0 24px; color: #d60000; font-size: 14px; line-height: 1.6; }
+    @media (min-width: 768px) {
+        .p-business-form-page__content { width: 600px; padding-top: 28px; }
+        .p-job-thanks-page__break { display: none; }
+    }
+    @media (min-width: 1024px) {
+        .p-business-form-page__content { padding: 19px 0 100px; }
+        .p-business-form-page__lead { margin-bottom: 60px; }
+        .p-application-thanks__home { width: 372px; }
+    }
 }

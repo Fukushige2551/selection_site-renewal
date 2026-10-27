@@ -1,338 +1,338 @@
 $detail: '.p-page-select-detail';
 
 @media screen and (min-width: 1024px) {
-	#{$detail}--foods .u-foods-coffee-break-sp-tab,
-	#{$detail}--foods .u-foods-yuzu-break-sp-tab {
-		display: none;
-	}
+    #{$detail}--foods .u-foods-coffee-break-sp-tab,
+    #{$detail}--foods .u-foods-yuzu-break-sp-tab {
+        display: none;
+    }
 }
 
 #{$detail}--foods {
-	#{$detail}__about__content--section-2 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy p {
-		white-space: pre-line;
-	}
+    #{$detail}__about__content--section-2 #{$detail}__about__content--mainImageWrap + #{$detail}__about__content--copy p {
+        white-space: pre-line;
+    }
 
-	#{$detail}__message--shape {
-		background: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-foods/背景sp.svg') center top / 100% 100% no-repeat;
-	}
+    #{$detail}__message--shape {
+        background: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-foods/背景sp.svg') center top / 100% 100% no-repeat;
+    }
 
-	#{$detail}__message--shapeBase,
-	#{$detail}__message--shapeTop,
-	#{$detail}__message--shapeMiddle,
-	#{$detail}__message--shapeBottom {
-		display: none;
-	}
+    #{$detail}__message--shapeBase,
+    #{$detail}__message--shapeTop,
+    #{$detail}__message--shapeMiddle,
+    #{$detail}__message--shapeBottom {
+        display: none;
+    }
 
-	#{$detail}__about__content--image,
-	#{$detail}__about__content--imgSmall {
-		object-fit: cover;
-	}
+    #{$detail}__about__content--image,
+    #{$detail}__about__content--imgSmall {
+        object-fit: cover;
+    }
 
-	#{$detail}__about__content--imgWrap picture:only-child {
-		width: 100%;
-	}
+    #{$detail}__about__content--imgWrap picture:only-child {
+        width: 100%;
+    }
 
-	#{$detail}__about__content--imgWrap picture:only-child #{$detail}__about__content--imgSmall {
-		display: block;
-		width: 100%;
-		max-width: none;
-		height: auto;
-	}
+    #{$detail}__about__content--imgWrap picture:only-child #{$detail}__about__content--imgSmall {
+        display: block;
+        width: 100%;
+        max-width: none;
+        height: auto;
+    }
 
-	#{$detail}__about__content--section-1 #{$detail}__about__content--imgWrap #{$detail}__about__content--imgSmall {
-		border-radius: 0;
-	}
+    #{$detail}__about__content--section-1 #{$detail}__about__content--imgWrap #{$detail}__about__content--imgSmall {
+        border-radius: 0;
+    }
 
-	#{$detail}__about__content--section-1 #{$detail}__about__content--imgWrap > picture:first-of-type {
-		display: block;
-		flex: 0 0 100%;
-		width: 100%;
-		max-width: none;
-	}
+    #{$detail}__about__content--section-1 #{$detail}__about__content--imgWrap > picture:first-of-type {
+        display: block;
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: none;
+    }
 
-	#{$detail}__about__content--section-1 #{$detail}__about__content--imgWrap > picture:first-of-type #{$detail}__about__content--imgSmall {
-		display: block;
-		width: 100%;
-		max-width: none;
-		height: auto;
-	}
+    #{$detail}__about__content--section-1 #{$detail}__about__content--imgWrap > picture:first-of-type #{$detail}__about__content--imgSmall {
+        display: block;
+        width: 100%;
+        max-width: none;
+        height: auto;
+    }
 
-	#{$detail}__message--cornerDecoration,
-	#{$detail}__about__content--coffee-staff,
-	#{$detail}__about__content--coffee-beans,
-	#{$detail}__about__content--coffee-shop,
-	#{$detail}__about__content--yuzu-processing,
-	#{$detail}__about__content--yuzu,
-	#{$detail}__about__content--yuzu-machine,
-	#{$detail}__news__wrapDecoration--yuzu-kosho {
-		position: absolute;
-		z-index: 4;
-		display: block;
-		pointer-events: none;
-	}
+    #{$detail}__message--cornerDecoration,
+    #{$detail}__about__content--coffee-staff,
+    #{$detail}__about__content--coffee-beans,
+    #{$detail}__about__content--coffee-shop,
+    #{$detail}__about__content--yuzu-processing,
+    #{$detail}__about__content--yuzu,
+    #{$detail}__about__content--yuzu-machine,
+    #{$detail}__news__wrapDecoration--yuzu-kosho {
+        position: absolute;
+        z-index: 4;
+        display: block;
+        pointer-events: none;
+    }
 
-	#{$detail}__message--cornerDecoration {
-		right: 4vw;
-		bottom: -5vw;
-		width: 24.77vw;
-		aspect-ratio: 143 / 100;
-	}
+    #{$detail}__message--cornerDecoration {
+        right: 4vw;
+        bottom: -5vw;
+        width: 24.77vw;
+        aspect-ratio: 143 / 100;
+    }
 
-	#{$detail}__about__content--coffee-staff {
-		top: -19vw;
-		left: -2vw;
-		width: 16vw;
-		aspect-ratio: 124 / 240;
-	}
+    #{$detail}__about__content--coffee-staff {
+        top: -19vw;
+        left: -2vw;
+        width: 16vw;
+        aspect-ratio: 124 / 240;
+    }
 
-	#{$detail}__about__content--coffee-beans {
-		top: -12vw;
-		right: 6vw;
-		width: 13vw;
-		aspect-ratio: 100 / 93;
-	}
+    #{$detail}__about__content--coffee-beans {
+        top: -12vw;
+        right: 6vw;
+        width: 13vw;
+        aspect-ratio: 100 / 93;
+    }
 
-	#{$detail}__about__content--coffee-shop {
-		right: 63vw;
-		bottom: 4vw;
-		width: 30vw;
-		aspect-ratio: 353 / 294;
-	}
+    #{$detail}__about__content--coffee-shop {
+        right: 63vw;
+        bottom: 4vw;
+        width: 30vw;
+        aspect-ratio: 353 / 294;
+    }
 
-	#{$detail}__about__content--yuzu-processing {
-		top: -2vw;
-		left: 64vw;
-		width: 21.28vw;
-		transform: scaleX(-1);
-		aspect-ratio: 171 / 206;
-	}
+    #{$detail}__about__content--yuzu-processing {
+        top: -2vw;
+        left: 64vw;
+        width: 21.28vw;
+        transform: scaleX(-1);
+        aspect-ratio: 171 / 206;
+    }
 
-	#{$detail}__about__content--yuzu {
-		top: 3vw;
-		right: 61vw;
-		width: 24.84vw;
-		transform: scaleX(-1);
-		aspect-ratio: 159 / 76;
-	}
+    #{$detail}__about__content--yuzu {
+        top: 3vw;
+        right: 61vw;
+        width: 24.84vw;
+        transform: scaleX(-1);
+        aspect-ratio: 159 / 76;
+    }
 
-	#{$detail}__about__content--yuzu-machine {
-		left: -8vw;
-		bottom: -13vw;
-		width: 31vw;
-		aspect-ratio: 248 / 222;
-	}
+    #{$detail}__about__content--yuzu-machine {
+        left: -8vw;
+        bottom: -13vw;
+        width: 31vw;
+        aspect-ratio: 248 / 222;
+    }
 
-	#{$detail}__news__wrapDecoration--yuzu-kosho {
-		top: -47vw;
-		right: 6vw;
-		width: 18vw;
-		aspect-ratio: 143 / 191;
-	}
+    #{$detail}__news__wrapDecoration--yuzu-kosho {
+        top: -47vw;
+        right: 6vw;
+        width: 18vw;
+        aspect-ratio: 143 / 191;
+    }
 }
 
 @media screen and (max-width: 767px) {
-	#{$detail}--foods {
-		#{$detail}__news__bg {
-			margin-top: -11vw;
-		}
+    #{$detail}--foods {
+        #{$detail}__news__bg {
+            margin-top: -11vw;
+        }
 
-		#{$detail}__message--bg {
-			padding-bottom: 10vw;
-		}
+        #{$detail}__message--bg {
+            padding-bottom: 10vw;
+        }
 
-		#{$detail}__about__content--imgWrap {
-			padding-bottom: 15.5vw;
-		}
+        #{$detail}__about__content--imgWrap {
+            padding-bottom: 15.5vw;
+        }
 
-		#{$detail}__about__content--yuzu-machine {
-			display: none;
-		}
+        #{$detail}__about__content--yuzu-machine {
+            display: none;
+        }
 
-		#{$detail}__about__content--section-1 #{$detail}__about__content--imgWrap {
-			display: block;
-			width: 100%;
-		}
+        #{$detail}__about__content--section-1 #{$detail}__about__content--imgWrap {
+            display: block;
+            width: 100%;
+        }
 
-		#{$detail}__about__content--section-1 #{$detail}__about__content--imgWrap picture,
-		#{$detail}__about__content--section-1 #{$detail}__about__content--imgSmall {
-			display: block;
-			width: 100%;
-			max-width: none;
-			height: auto;
-		}
+        #{$detail}__about__content--section-1 #{$detail}__about__content--imgWrap picture,
+        #{$detail}__about__content--section-1 #{$detail}__about__content--imgSmall {
+            display: block;
+            width: 100%;
+            max-width: none;
+            height: auto;
+        }
 
-		#{$detail}__about__content--coffee-shop {
-			aspect-ratio: 110 / 124;
-		}
-	}
+        #{$detail}__about__content--coffee-shop {
+            aspect-ratio: 110 / 124;
+        }
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-	#{$detail}--foods #{$detail}__message--shape {
-		background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-foods/背景tab.svg');
-	}
+    #{$detail}--foods #{$detail}__message--shape {
+        background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-foods/背景tab.svg');
+    }
 
-	#{$detail}--foods {
-		#{$detail}__about__content--coffee-shop {
-			display: none;
-		}
-		#{$detail}__about__content--yuzu-machine {
-			display: none;
-		}
-		#{$detail}__message--cornerDecoration {
-			right: 8vw;
-			bottom: 1vw;
-			width: 16vw;
-		}
-		#{$detail}__about__content--coffee-staff {
-			top: -13vw;
-			left: 13vw;
-			width: 9vw;
-		}
-		#{$detail}__about__content--coffee-beans {
-			top: -12vw;
-			right: 15vw;
-			width: 8vw;
-		}
-		#{$detail}__about__content--coffee-shop {
-			right: 2vw;
-			bottom: -10vw;
-			width: 27vw;
-		}
-		#{$detail}__about__content--yuzu-processing {
-			top: -3vw;
-			left: 60vw;
-			width: 14vw;
-		}
-		#{$detail}__about__content--yuzu {
-			top: 4vw;
-			right: 57vw;
-			width: 15vw;
-		}
-		#{$detail}__about__content--yuzu-machine {
-			left: 3vw;
-			bottom: -8vw;
-			width: 22vw;
-		}
-		#{$detail}__news__wrapDecoration--yuzu-kosho {
-			top: -28vw;
-			right: 12vw;
-			width: 11vw;
-		}
-	}
+    #{$detail}--foods {
+        #{$detail}__about__content--coffee-shop {
+            display: none;
+        }
+        #{$detail}__about__content--yuzu-machine {
+            display: none;
+        }
+        #{$detail}__message--cornerDecoration {
+            right: 8vw;
+            bottom: 1vw;
+            width: 16vw;
+        }
+        #{$detail}__about__content--coffee-staff {
+            top: -13vw;
+            left: 13vw;
+            width: 9vw;
+        }
+        #{$detail}__about__content--coffee-beans {
+            top: -12vw;
+            right: 15vw;
+            width: 8vw;
+        }
+        #{$detail}__about__content--coffee-shop {
+            right: 2vw;
+            bottom: -10vw;
+            width: 27vw;
+        }
+        #{$detail}__about__content--yuzu-processing {
+            top: -3vw;
+            left: 60vw;
+            width: 14vw;
+        }
+        #{$detail}__about__content--yuzu {
+            top: 4vw;
+            right: 57vw;
+            width: 15vw;
+        }
+        #{$detail}__about__content--yuzu-machine {
+            left: 3vw;
+            bottom: -8vw;
+            width: 22vw;
+        }
+        #{$detail}__news__wrapDecoration--yuzu-kosho {
+            top: -28vw;
+            right: 12vw;
+            width: 11vw;
+        }
+    }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
-	#{$detail}--foods #{$detail}__news {
-		margin-top: -6.8vw;
-	}
+    #{$detail}--foods #{$detail}__news {
+        margin-top: -6.8vw;
+    }
 
-	#{$detail}--foods #{$detail}__message--bg {
-		padding-top: 19.6vw;
-		padding-bottom: 7.62vw;
-		min-height: 60.18vw;
-	}
+    #{$detail}--foods #{$detail}__message--bg {
+        padding-top: 19.6vw;
+        padding-bottom: 7.62vw;
+        min-height: 60.18vw;
+    }
 
-	#{$detail}--foods #{$detail}__message--shape {
-		background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-foods/背景pc.svg');
-	}
+    #{$detail}--foods #{$detail}__message--shape {
+        background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-foods/背景pc.svg');
+    }
 
-	#{$detail}--foods {
-		#{$detail}__message--cornerDecoration {
-			right: 0vw;
-			bottom: 4vw;
-			width: 11.17vw;
-		}
-		#{$detail}__about__content--coffee-staff {
-			top: -8.8vw;
-			left: -5.4vw;
-			width: 8.69vw;
-		}
-		#{$detail}__about__content--coffee-beans {
-			top: -9.4vw;
-			right: 12vw;
-			width: 7.81vw;
-		}
-		#{$detail}__about__content--coffee-shop {
-			right: -15.6vw;
-			bottom: 1vw;
-			width: 19.58vw;
-		}
-		#{$detail}__about__content--yuzu-processing {
-			top: 6vw;
-			left: -6.28vw;
-			width: 10.36vw;
-			transform: scale(1);
-		}
-		#{$detail}__about__content--yuzu {
-			top: 4.6vw;
-			left: 52.72vw;
-			width: 10.36vw;
-			transform: scale(1);
-		}
-		#{$detail}__about__content--yuzu-machine {
-			left: -14vw;
-			bottom: 0vw;
-			width: 17.38vw;
-		}
-		#{$detail}__news__wrapDecoration--yuzu-kosho {
-			top: -20.8vw;
-			right: 0vw;
-			width: 9.17vw;
-		}
-	}
+    #{$detail}--foods {
+        #{$detail}__message--cornerDecoration {
+            right: 0vw;
+            bottom: 4vw;
+            width: 11.17vw;
+        }
+        #{$detail}__about__content--coffee-staff {
+            top: -8.8vw;
+            left: -5.4vw;
+            width: 8.69vw;
+        }
+        #{$detail}__about__content--coffee-beans {
+            top: -9.4vw;
+            right: 12vw;
+            width: 7.81vw;
+        }
+        #{$detail}__about__content--coffee-shop {
+            right: -15.6vw;
+            bottom: 1vw;
+            width: 19.58vw;
+        }
+        #{$detail}__about__content--yuzu-processing {
+            top: 6vw;
+            left: -6.28vw;
+            width: 10.36vw;
+            transform: scale(1);
+        }
+        #{$detail}__about__content--yuzu {
+            top: 4.6vw;
+            left: 52.72vw;
+            width: 10.36vw;
+            transform: scale(1);
+        }
+        #{$detail}__about__content--yuzu-machine {
+            left: -14vw;
+            bottom: 0vw;
+            width: 17.38vw;
+        }
+        #{$detail}__news__wrapDecoration--yuzu-kosho {
+            top: -20.8vw;
+            right: 0vw;
+            width: 9.17vw;
+        }
+    }
 }
 
 @media screen and (min-width: 1280px) {
-	#{$detail}--foods {
-		#{$detail}__news {
-			margin-top: -112px;
-		}
+    #{$detail}--foods {
+        #{$detail}__news {
+            margin-top: -112px;
+        }
 
-		#{$detail}__message--shape {
-			background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-foods/背景pc.svg');
-		}
-		#{$detail}__message--cornerDecoration {
-			right: -26px;
-			bottom: 30px;
-			width: 143px;
-		}
-		#{$detail}__about__content--coffee-staff {
-			top: -140px;
-			left: -80px;
-			width: 124px;
-		}
-		#{$detail}__about__content--coffee-beans {
-			top: -108px;
-			right: 158px;
-			width: 100px;
-		}
-		#{$detail}__about__content--coffee-shop {
-			right: -281px;
-			bottom: 0px;
-			width: 353px;
-		}
-		#{$detail}__about__content--yuzu-processing {
-			top: 68px;
-			left: -106px;
-			width: 171px;
-			transform: scaleX(1);
-		}
-		#{$detail}__about__content--yuzu {
-			top: 58px;
-			right: -15px;
-			width: 159px;
-			transform: scaleX(1);
-		}
-		#{$detail}__about__content--yuzu-machine {
-			left: -199px;
-			bottom: -71px;
-			width: 248px;
-		}
-		#{$detail}__news__wrapDecoration--yuzu-kosho {
-			top: -270px;
-			right: 4px;
-			width: 114.43px;
-		}
-	}
+        #{$detail}__message--shape {
+            background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-foods/背景pc.svg');
+        }
+        #{$detail}__message--cornerDecoration {
+            right: -26px;
+            bottom: 30px;
+            width: 143px;
+        }
+        #{$detail}__about__content--coffee-staff {
+            top: -140px;
+            left: -80px;
+            width: 124px;
+        }
+        #{$detail}__about__content--coffee-beans {
+            top: -108px;
+            right: 158px;
+            width: 100px;
+        }
+        #{$detail}__about__content--coffee-shop {
+            right: -281px;
+            bottom: 0px;
+            width: 353px;
+        }
+        #{$detail}__about__content--yuzu-processing {
+            top: 68px;
+            left: -106px;
+            width: 171px;
+            transform: scaleX(1);
+        }
+        #{$detail}__about__content--yuzu {
+            top: 58px;
+            right: -15px;
+            width: 159px;
+            transform: scaleX(1);
+        }
+        #{$detail}__about__content--yuzu-machine {
+            left: -199px;
+            bottom: -71px;
+            width: 248px;
+        }
+        #{$detail}__news__wrapDecoration--yuzu-kosho {
+            top: -270px;
+            right: 4px;
+            width: 114.43px;
+        }
+    }
 }

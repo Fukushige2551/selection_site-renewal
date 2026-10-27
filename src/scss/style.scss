@@ -22,11 +22,11 @@
 @use 'page-select-detail';
 
 :root {
-	--pc-font-scale: 1;
+    --pc-font-scale: 1;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-	:root {
-		--pc-font-scale: 1.2;
-	}
+    :root {
+        --pc-font-scale: 1.2;
+    }
 }

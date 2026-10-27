@@ -820,9 +820,9 @@ function foods_get_select_detail_configs() {
                         ],
                     ],
                     [
-						'location' => '安心な北海道の原料に<br>こだわったお菓子作り',
-						'location_pc' => '安心な北海道の原料にこだわったお菓子作り',
-						'title' => 'ノースカラーズ',
+                        'location' => '安心な北海道の原料に<br>こだわったお菓子作り',
+                        'location_pc' => '安心な北海道の原料にこだわったお菓子作り',
+                        'title' => 'ノースカラーズ',
                         'main_image' => ['src' => 'ノースカラーズ.png', 'webp' => 'webp/ノースカラーズ.webp', 'alt' => 'ノースカラーズの北海道の風景'],
                         'text_blocks' => ['純国産シリーズは化学添加物や合成着色料を使わず、厳選された自然素材を使用。素材の美味しさと自然の魅力を最大限引き出す商品づくり。特に北海道産の原材料を活かし、子どもから大人まで安心して食べられるお菓子で、健康と笑顔を届けることを目指しています。'],
                         'sub_title' => '北海道の恵みと<br class="u-sweets-break-sp">自然素材から生まれる、<br class="u-sweets-break-sp">やさしくて安心なお菓子。',
@@ -946,10 +946,10 @@ function foods_get_select_detail_configs() {
             ],
             'news' => [
                 'taxonomy' => 'news_commitment',
-				'term' => 'alcohol',
-				'title' => 'お酒のこだわりを<br>もっと見る',
-				'title_pc' => 'お酒のこだわりを<br>もっと見る',
-				'archive_label' => 'お酒のこだわり一覧',
+                'term' => 'alcohol',
+                'title' => 'お酒のこだわりを<br>もっと見る',
+                'title_pc' => 'お酒のこだわりを<br>もっと見る',
+                'archive_label' => 'お酒のこだわり一覧',
                 'background_sp' => '@theme/img/page/page-select-detail/meat_news_bgSP.png',
                 'background_pc' => '@theme/img/page/page-select-detail/meat_news_bgPC.png',
                 'foreground_decorations' => [

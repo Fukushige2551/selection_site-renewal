@@ -1,45 +1,45 @@
 // Shared confirmation design for part-time, graduate and career applications.
 .p-job-confirm-page,
 .p-recruit-confirm-page {
-  .p-business-form-page__content {
-    width: min(87.468031vw, 600px);
-    padding: 49px 0 81px;
-    h1 { font-size: 20px; line-height: 23px; }
-  }
-  .p-business-form-page__lead {
-    width: 100%; margin: 22px 0 40px;
-    font-size: 16px; font-weight: 400; line-height: 28px;
-  }
-  .p-business-form {
-    font-family: "Noto Sans JP", sans-serif;
-    &__field { margin: 0 0 26px; }
-    &__field:has(+ .p-business-form__submit) { margin-bottom: 0; }
-    &__label {
-      display: block; min-height: 26px; margin: 0 0 8px; padding: 0;
-      color: #4c4c4c; font-size: 14px; font-weight: 700; line-height: 22px;
-      overflow-wrap: anywhere;
+    .p-business-form-page__content {
+        width: min(87.468031vw, 600px);
+        padding: 49px 0 81px;
+        h1 { font-size: 20px; line-height: 23px; }
     }
-    &__submit {
-      width: min(342px, 100%); height: 60px; margin: 40px auto 0;
-      border-radius: 20px; background: #00a784;
-      font-family: inherit; font-size: 18px; font-weight: 700; letter-spacing: .1em;
-      cursor: pointer;
-      &:focus-visible { outline: 2px solid #103675; outline-offset: 3px; }
+    .p-business-form-page__lead {
+        width: 100%; margin: 22px 0 40px;
+        font-size: 16px; font-weight: 400; line-height: 28px;
     }
-  }
-  .p-application-confirm__value {
-    min-height: 46px; padding: 9px 16px; border: 1px solid #e7eae6;
-    border-radius: 23px; background: #f9faf5; color: #000;
-    font-size: 16px; font-weight: 400; line-height: 26px;
-    overflow-wrap: anywhere;
-  }
-  @media (min-width: 768px) {
-    .p-business-form-page__content { width: 600px; padding-top: 28px; }
-  }
-  @media (min-width: 1024px) {
-    .p-business-form-page__content { padding: 19px 0 100px; }
-    .p-business-form-page__lead { margin-bottom: 56px; }
-    .p-job-confirm-page__break { display: none; }
-    .p-business-form__submit { width: 372px; margin-top: 60px; }
-  }
+    .p-business-form {
+        font-family: "Noto Sans JP", sans-serif;
+        &__field { margin: 0 0 26px; }
+        &__field:has(+ .p-business-form__submit) { margin-bottom: 0; }
+        &__label {
+            display: block; min-height: 26px; margin: 0 0 8px; padding: 0;
+            color: #4c4c4c; font-size: 14px; font-weight: 700; line-height: 22px;
+            overflow-wrap: anywhere;
+        }
+        &__submit {
+            width: min(342px, 100%); height: 60px; margin: 40px auto 0;
+            border-radius: 20px; background: #00a784;
+            font-family: inherit; font-size: 18px; font-weight: 700; letter-spacing: .1em;
+            cursor: pointer;
+            &:focus-visible { outline: 2px solid #103675; outline-offset: 3px; }
+        }
+    }
+    .p-application-confirm__value {
+        min-height: 46px; padding: 9px 16px; border: 1px solid #e7eae6;
+        border-radius: 23px; background: #f9faf5; color: #000;
+        font-size: 16px; font-weight: 400; line-height: 26px;
+        overflow-wrap: anywhere;
+    }
+    @media (min-width: 768px) {
+        .p-business-form-page__content { width: 600px; padding-top: 28px; }
+    }
+    @media (min-width: 1024px) {
+        .p-business-form-page__content { padding: 19px 0 100px; }
+        .p-business-form-page__lead { margin-bottom: 56px; }
+        .p-job-confirm-page__break { display: none; }
+        .p-business-form__submit { width: 372px; margin-top: 60px; }
+    }
 }
