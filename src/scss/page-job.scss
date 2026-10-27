@@ -47,7 +47,7 @@ $pale: #f7faf3;
   &:nth-of-type(4) .p-job-role__image img { transform: scale(1.33) translate(4%, 0); }
   &:nth-of-type(5) .p-job-role__image img { transform: scale(2.32) translate(-8%, -3%); }
   &:nth-of-type(6) .p-job-role__image img { transform: scale(1.46); }
-  &:nth-of-type(7) .p-job-role__image img { transform: scale(1.49) translate(-1.5%, 0); }
+  &:nth-of-type(7) .p-job-role__image img { transform: none; }
   &:nth-of-type(8) .p-job-role__image img { transform: scale(1.99) translate(-19%, -4%); }
   &__body { display: flex; height: 100%; flex-direction: column; padding: 4.1vw 2vw 3vw 5.64vw; }
   strong { min-height: 18.46vw; color: $green; font-family: "Zen Kaku Gothic New", sans-serif; font-size: 4.62vw; line-height: 7.18vw; text-decoration: underline; text-underline-offset: .12em; }

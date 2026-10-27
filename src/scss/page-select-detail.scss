@@ -115,6 +115,13 @@
 			word-break: keep-all;
 		}
 
+		&--foods &__message--buyer,
+		&--rice &__message--buyer {
+			aspect-ratio: 144 / 142;
+			object-fit: cover;
+			object-position: center 18%;
+		}
+
 		&--shapeTop,
 		&--shapeMiddle,
 		&--shapeBottom {
@@ -604,6 +611,10 @@
 	}
 
 	.p-page-select-detail {
+		&__news__link {
+			padding-right: 3.8vw;
+		}
+
 		&__message {
 			&--shape {
 				background-image: url('/wp-content/themes/foods-selectioncojp-theme/img/page/page-select-detail/svg/message-section-bg-sp.svg');
