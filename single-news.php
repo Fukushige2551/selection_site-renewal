@@ -10,17 +10,6 @@ function foods_news_detail_get_field_value($post_id, $field_name) {
     return get_post_meta($post_id, $field_name, true);
 }
 
-function foods_news_detail_get_first_field_value($post_id, array $field_names) {
-    foreach ($field_names as $field_name) {
-        $value = foods_news_detail_get_field_value($post_id, $field_name);
-        if ($value !== null && $value !== false && $value !== '') {
-            return $value;
-        }
-    }
-
-    return '';
-}
-
 function foods_news_detail_get_image_data($image, $size = 'large') {
     if (empty($image)) {
         return null;

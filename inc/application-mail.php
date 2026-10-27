@@ -94,18 +94,6 @@ function foods_application_config($kind) {
 function foods_application_values($kind) {
     return foods_cf7_values($kind);
 }
-function foods_application_validate($kind, $values) {
-    $config = foods_application_config($kind);
-    if (!$config) { return false; }
-    $required = $kind === 'job' ? ['job', 'name', 'phone', 'age', 'email'] : array_keys($config['fields']);
-    foreach ($required as $key) { if (($values[$key] ?? '') === '') { return false; } }
-    if (!is_email($values['email']) || $values['email'] !== $values['email_confirm'] || $values['privacy_agree'] !== '1') { return false; }
-    if ($kind !== 'job') { return in_array($values['application_type'], ['新卒', 'インターン', 'キャリア'], true); }
-    return in_array($values['job'], array_values(foods_get_job_occupation_choices()), true)
-        && ($values['store'] === '' || in_array($values['store'], array_values(foods_get_job_shop_choices()), true))
-        && preg_match('/^[0-9]+$/D', $values['age'])
-        && in_array($values['contact_time'], ['', 'いつでも', '午前', '午後', '夕方以降'], true);
-}
 function foods_application_check_request($kind) {
     $nonce = $_POST['foods_application_nonce'] ?? '';
     if (!foods_application_config($kind) || !is_string($nonce) || !wp_verify_nonce($nonce, 'foods_application_' . $kind)) {

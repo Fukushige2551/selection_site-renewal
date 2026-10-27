@@ -66,15 +66,6 @@ function foods_contact_values() {
     return foods_cf7_values('contact');
 }
 
-function foods_contact_validate($values) {
-    $stores = ['全店舗', '行徳店', '西船橋店', '花野井店', 'しいの木台店', '青葉台店', '西原店', '松戸店', '西新井店', '三郷店', '八潮店', '業者様'];
-    return in_array($values['contact_store'], $stores, true)
-        && $values['your_name'] !== '' && $values['message'] !== ''
-        && is_email($values['your_email'])
-        && $values['your_email'] === $values['your_email_confirm']
-        && $values['privacy_agree'] === '1';
-}
-
 function foods_contact_check_request() {
     $nonce = $_POST['foods_contact_nonce'] ?? '';
     if (!is_string($nonce) || !wp_verify_nonce($nonce, 'foods_contact')) {

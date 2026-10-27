@@ -37,18 +37,8 @@ function foods_business_contact_mail_properties($properties, $form) {
     return $properties;
 }
 
-function foods_business_contact_fields() {
-    return ['inquiry_type' => 'お問い合わせ内容（種別）', 'company_name' => '企業名', 'department' => '部署名', 'postal_code' => '郵便番号', 'address_1' => '住所1', 'address_2' => '住所2（建物名）', 'phone' => '電話番号', 'fax' => 'FAX番号', 'contact_name' => '担当者名', 'contact_name_kana' => '担当者名（フリガナ）', 'email' => 'メールアドレス', 'main_products' => '主力商品', 'site_url' => 'サイトURL', 'message' => 'お問い合わせ内容'];
-}
 function foods_business_contact_values() {
     return foods_cf7_values('business');
-}
-function foods_business_contact_validate($values) {
-    foreach (['company_name', 'postal_code', 'address_1', 'phone', 'contact_name', 'message'] as $key) {
-        if ($values[$key] === '') { return false; }
-    }
-    return in_array($values['inquiry_type'], ['お取引について', '商品について', 'その他'], true)
-        && is_email($values['email']) && $values['email'] === $values['email_confirm'] && $values['privacy_agree'] === '1';
 }
 function foods_business_contact_check_request() {
     $nonce = $_POST['foods_business_nonce'] ?? '';
