@@ -32,7 +32,7 @@ function setup() {
                 } else if (field.name === 'email_confirm' && field.value !== form.querySelector('[name="email"]')?.value) {
                     message = validationMessages.emailMismatch;
                 } else if (field.type === 'tel' && !telephoneIsValid(field.value)) {
-                    message = `${label}の形式を確認してください。半角数字で入力してください。（例：03-1234-5678）`;
+                    message = `${field.name === 'phone' ? '電話番号' : label}の形式を確認してください。半角数字で入力してください。（例：03-1234-5678）`;
                 } else if (field.name !== 'birth_date' && !field.validity.valid) {
                     message = `${label}の形式・入力範囲を確認してください。`;
                 }
