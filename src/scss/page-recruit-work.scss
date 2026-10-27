@@ -1062,30 +1062,8 @@ body.is-job-modal-open {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-  .p-page-recruit-work__job-modal {
-    padding: 160px 24px 90px;
-  }
-
-  .p-page-recruit-work__job-modal-dialog {
-    width: 680px;
-  }
-
-  .p-page-recruit-work__job-modal-icon-close {
-    right: 0;
-    width: 40px;
-    height: 40px;
-  }
-
-  .p-page-recruit-work__job-modal-content {
-    padding: 29px 50px 56px;
-  }
-
-  .p-page-recruit-work__job-modal-lead {
-    margin-bottom: 28px;
-    text-align: center;
-  }
-
+// Shared wide-screen lead spacing and photo crops; breakpoint-specific spacing stays below.
+@mixin job-modal-wide-photos {
   .p-page-recruit-work__job-modal-lead--grocery,
   .p-page-recruit-work__job-modal-lead--produce {
     margin-bottom: 27px;
@@ -1125,6 +1103,33 @@ body.is-job-modal-open {
     left: -17.94%;
     width: 125.74%;
   }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .p-page-recruit-work__job-modal {
+    padding: 160px 24px 90px;
+  }
+
+  .p-page-recruit-work__job-modal-dialog {
+    width: 680px;
+  }
+
+  .p-page-recruit-work__job-modal-icon-close {
+    right: 0;
+    width: 40px;
+    height: 40px;
+  }
+
+  .p-page-recruit-work__job-modal-content {
+    padding: 29px 50px 56px;
+  }
+
+  .p-page-recruit-work__job-modal-lead {
+    margin-bottom: 28px;
+    text-align: center;
+  }
+
+  @include job-modal-wide-photos;
 
   .p-page-recruit-work__job-modal-section {
     padding: 17px 0 20px;
@@ -1163,45 +1168,7 @@ body.is-job-modal-open {
     text-align: center;
   }
 
-  .p-page-recruit-work__job-modal-lead--grocery,
-  .p-page-recruit-work__job-modal-lead--produce {
-    margin-bottom: 27px;
-    line-height: 34px;
-  }
-
-  .p-page-recruit-work__job-modal-photo {
-    aspect-ratio: 680 / 380;
-
-    img {
-      top: -32.1%;
-      left: -41.6%;
-      width: 147.8%;
-    }
-  }
-
-  .p-page-recruit-work__job-modal-photo--fish img {
-    top: -64.7%;
-    left: -40.9%;
-    width: 175.15%;
-  }
-
-  .p-page-recruit-work__job-modal-photo--grocery img {
-    top: -12.9%;
-    left: -10%;
-    width: 110.29%;
-  }
-
-  .p-page-recruit-work__job-modal-photo--produce img {
-    top: -51.58%;
-    left: -31.18%;
-    width: 140.74%;
-  }
-
-  .p-page-recruit-work__job-modal-photo--checker img {
-    top: -25%;
-    left: -17.94%;
-    width: 125.74%;
-  }
+  @include job-modal-wide-photos;
 
   .p-page-recruit-work__job-modal-section {
     padding: 17px 0 20px;

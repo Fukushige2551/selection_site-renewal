@@ -9,6 +9,7 @@ import './form-privacy-feedback.js';
 import './application-validation.js';
 import './form-kana-date-validation.js';
 import { validationMessages, telephoneIsValid as isBusinessTelephone } from './form-validation-messages.js';
+import { setupSubmitValidation } from './form-submit-validation.js';
 
 const form = document.querySelector('.p-business-form');
 if (form?.closest('.p-business-form-page--entry')) {
@@ -66,32 +67,29 @@ if (siteUrl) {
     siteUrl.addEventListener('blur', validateSiteUrl);
 }
 
-form?.addEventListener('submit', (event) => {
-    const urlValid = validateSiteUrl();
-    const email = form.querySelector('[name="email"]');
-    const confirmation = form.querySelector('[name="email_confirm"]');
+setupSubmitValidation(form, {
+    validate: () => {
+        const urlValid = validateSiteUrl();
+        const email = form.querySelector('[name="email"]');
+        const confirmation = form.querySelector('[name="email_confirm"]');
 
-    if (email && confirmation && email.value !== confirmation.value) {
-        confirmation.setCustomValidity(validationMessages.emailMismatch);
-    } else {
-        confirmation?.setCustomValidity('');
-    }
+        if (email && confirmation && email.value !== confirmation.value) {
+            confirmation.setCustomValidity(validationMessages.emailMismatch);
+        } else {
+            confirmation?.setCustomValidity('');
+        }
 
-    const businessValid = validateBusinessFields();
-    const fields = form.closest('.p-business-form-page--contact')
-        ? [...form.querySelectorAll('input:not([type="hidden"]), select, textarea')]
-        : [...form.querySelectorAll('[required]')];
-    if (siteUrl && !fields.includes(siteUrl)) fields.push(siteUrl);
-    const firstInvalid = fields.find((field) => !field.checkValidity());
-
-    form.classList.add('is-validated');
-
-    if (firstInvalid || !urlValid || !businessValid) {
-        event.preventDefault();
-        const target = firstInvalid || siteUrl;
-        target.focus();
-        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
+        const businessValid = validateBusinessFields();
+        return urlValid && businessValid;
+    },
+    getFields: () => {
+        const fields = form.closest('.p-business-form-page--contact')
+            ? [...form.querySelectorAll('input:not([type="hidden"]), select, textarea')]
+            : [...form.querySelectorAll('[required]')];
+        if (siteUrl && !fields.includes(siteUrl)) fields.push(siteUrl);
+        return fields;
+    },
+    getInvalidTarget: (firstInvalid) => firstInvalid || siteUrl,
 });
 
 form?.querySelector('[name="email_confirm"]')?.addEventListener('input', (event) => {

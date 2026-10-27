@@ -1,5 +1,6 @@
 @use "foundation/global" as *;
 @use "archive-recipe-results";
+@use "object/recipe-archive-card";
 
 .p-recipe-archive__name-panel[hidden],
 .p-recipe-archive__ingredient-panel[hidden] { display: none !important; }
@@ -442,123 +443,7 @@
         background-image: url("/wp-content/themes/foods-selectioncojp-theme/img/page/recipe/decoration_tools.svg");
     }
 
-    &__list-title {
-        position: relative;
-        z-index: 1;
-        margin: 0;
-        color: #000;
-        font-family: $font-family-ZenKaku;
-        font-size: 5.13vw;
-        font-weight: 900;
-        line-height: 1.5;
-        letter-spacing: 0.08em;
-        text-align: center;
-    }
-
-    &__card-list {
-        position: relative;
-        z-index: 1;
-        display: block;
-        width: 100%;
-        margin: 8.21vw 0 0;
-    }
-
-    &__card-list > *:nth-child(n + 11) {
-        display: none;
-    }
-
-    &__card-link {
-        display: block;
-        color: inherit;
-        text-decoration: none;
-    }
-
-    &__pagination {
-        position: relative;
-        z-index: 1;
-        margin: 22.24vw 0 10.51vw;
-    }
-
-    &__source {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 2.05vw;
-        margin: 5.13vw 0 10.51vw;
-        color: #222;
-        font-family: $font-family-NotoSans;
-        font-size: 3.08vw;
-        font-weight: $font-weight-medium;
-        line-height: 1;
-    }
-
-    &__source-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 1.54vw;
-        color: inherit;
-        text-decoration: none;
-    }
-
-    &__source-logo {
-        display: block;
-        width: 17.18vw;
-        height: auto;
-        flex: 0 0 auto;
-    }
-
-    &__source-url {
-        text-decoration: underline;
-        text-underline-offset: 0.51vw;
-        color: #10A3FF;
-    }
-
-    &__card {
-        width: 63.33vw;
-        aspect-ratio: 247 / 134;
-        margin-left: 32.30vw;
-        margin-bottom: 9.23vw;
-        padding: 8.20vw 3.33vw 0 19.23vw;
-        border-radius: 0 15.38vw 15.38vw 0;
-        background-color: #fff;
-
-        .c-recipe-card__title {
-            margin: 0 0 3vw;
-            font-size: 4.10vw;
-            letter-spacing: 0;
-        }
-
-        .c-recipe-card__category {
-            margin: 0;
-            font-size: 4.10vw;
-        }
-
-        .c-recipe-card__img {
-            left: -24.61vw;
-            width: 41.76vw;
-            aspect-ratio: 162.89 / 150.24;
-            object-fit: cover;
-        }
-
-        .c-recipe-card__time {
-            left: -24.61vw;
-            gap: 1.54vw;
-            width: 20.04vw;
-            aspect-ratio: 78.19 / 32.08;
-            font-size: 3.33vw;
-            border-radius: 4.10vw;
-        }
-
-        .c-recipe-card__clock {
-            width: 5.39vw;
-        }
-    }
-
-    &__card-link:last-of-type &__card {
-        margin-bottom: 0;
-    }
+    @include recipe-archive-card.list-card-base;
 }
 
 .l-footer {

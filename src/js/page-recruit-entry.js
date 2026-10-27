@@ -2,18 +2,8 @@ import '../scss/page-recruit-entry.scss';
 import './form-privacy-feedback.js';
 import './application-validation.js';
 import './form-kana-date-validation.js';
+import { setupSubmitValidation } from './form-submit-validation.js';
 
 const form = document.querySelector('.p-recruit-entry__form');
 
-form?.addEventListener('submit', (event) => {
-  const fields = [...form.querySelectorAll('[required]')];
-  const firstInvalid = fields.find((field) => !field.checkValidity());
-
-  form.classList.add('is-validated');
-
-  if (firstInvalid) {
-    event.preventDefault();
-    firstInvalid.focus();
-    firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-});
+setupSubmitValidation(form);

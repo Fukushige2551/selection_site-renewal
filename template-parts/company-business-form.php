@@ -98,7 +98,7 @@ get_header('company');
             <?php foods_cf7_render($is_entry ? 'job' : 'business', $form_action, 'p-business-form'); ?>
         <?php endif; ?>
         <?php if ($is_entry && !$entry_blocked) : ?>
-            <p>別の求人へ応募する場合は、<a href="<?php echo esc_url(home_url('/job/search/')); ?>">求人一覧</a>から選び直してください。</p>
+            <p class="p-business-form-page__job-reselect">別の求人へ応募する場合は、<a href="<?php echo esc_url(home_url('/job/search/')); ?>">求人一覧</a>から選び直してください。</p>
             <script type="application/json" id="foods-job-choices"><?php echo wp_json_encode($entry_choices, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?></script>
             <script>
             (() => {
