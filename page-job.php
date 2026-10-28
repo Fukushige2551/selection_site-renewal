@@ -46,18 +46,19 @@ foreach ($job_search_shops as $shop) {
     }
 }
 $job_search_suggestions = array_values(array_unique($job_search_suggestions));
-// Pin centres measured on job-shop-map.png (1800 x 1204); keep in sync with the image.
-$job_map_pins = [
-    ['西原店', 1016, 215],
-    ['花野井店', 1124, 185],
-    ['八潮店', 762, 484],
-    ['三郷店', 881, 539],
-    ['松戸店', 1007, 562],
-    ['青葉台店', 1124, 471],
-    ['しいの木台店', 1179, 512],
-    ['西新井店', 623, 631],
-    ['西船橋店', 1110, 866],
-    ['行徳店', 971, 957],
+$job_shop_groups = [
+    'chiba' => [
+        'label' => '千葉',
+        'shops' => ['行徳店', '西船橋店', '西原店', '花野井店', 'しいの木台店', '青葉台店', '松戸店'],
+    ],
+    'tokyo' => [
+        'label' => '東京',
+        'shops' => ['西新井店'],
+    ],
+    'saitama' => [
+        'label' => '埼玉',
+        'shops' => ['三郷店', '八潮店'],
+    ],
 ];
 if (!$job_search_suggestions) {
     $job_search_suggestions = [
@@ -105,11 +106,16 @@ get_header('company');
 
     <section class="p-job-works">
         <h2><img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/page-job/icon-location.svg'); ?>" alt="">勤務地から探す</h2>
-        <div class="p-job-works__map">
-            <img class="p-job-works__map-image" src="<?php echo esc_url(add_query_arg('ver', filemtime(get_template_directory() . '/img/page/page-job/job-shop-map.png'), get_template_directory_uri() . '/img/page/page-job/job-shop-map.png')); ?>" width="1800" height="1204" alt="セレクションの店舗所在地。赤い店舗ピンを押すと、その店舗の求人を検索できます。" loading="lazy">
-            <small class="p-job-works__map-credit">地図データ &copy;2026 Google</small>
-            <?php foreach ($job_map_pins as [$shop_name, $pin_x, $pin_y]) : ?>
-                <a class="p-job-works__map-pin" href="<?php echo esc_url(add_query_arg(['job_shop' => [$shop_name]], home_url('/job/search/'))); ?>" style="left: <?php echo esc_attr((string) ($pin_x / 1800 * 100)); ?>%; top: <?php echo esc_attr((string) ($pin_y / 1204 * 100)); ?>%;" aria-label="<?php echo esc_attr($shop_name . 'の求人を検索'); ?>" title="<?php echo esc_attr($shop_name . 'の求人を検索'); ?>"><span><?php echo esc_html($shop_name); ?></span></a>
+        <div class="p-job-works__locations">
+            <?php foreach ($job_shop_groups as $area_key => $area) : ?>
+                <section class="p-job-works__location-group" aria-labelledby="job-location-<?php echo esc_attr($area_key); ?>">
+                    <h3 class="p-job-works__location-title" id="job-location-<?php echo esc_attr($area_key); ?>"><?php echo esc_html($area['label']); ?></h3>
+                    <ul class="p-job-works__location-list">
+                        <?php foreach ($area['shops'] as $shop_name) : ?>
+                            <li><a class="p-job-works__location-link" href="<?php echo esc_url(add_query_arg(['job_shop' => [$shop_name]], home_url('/job/search/'))); ?>"><?php echo esc_html($shop_name); ?></a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </section>
             <?php endforeach; ?>
         </div>
         <h2><img src="<?php echo esc_url(get_template_directory_uri() . '/img/page/page-job/icon-job.svg'); ?>" alt="">職種から探す</h2>
