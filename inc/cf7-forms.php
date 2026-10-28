@@ -22,6 +22,9 @@ function foods_cf7_render($kind, $path, $class) {
     $html = preg_replace('/(<form\b[^>]*\baction=")[^"]*/', '$1' . esc_url(home_url($path)), $html, 1);
     $html = str_replace('name="_wpcf7"', 'name="foods_cf7_id"', $html);
     $html = str_replace('name="privacy_agree[]"', 'name="privacy_agree"', $html);
+    $html = preg_replace_callback('/<a\b[^>]*>\s*プライバシーポリシー\s*<\/a>/u', static function ($match) {
+        return preg_replace('/\bhref=(["\']).*?\1/u', 'href="' . esc_url(home_url('/privacy/')) . '"', $match[0], 1);
+    }, $html);
     $html = str_replace('aria-required="true"', 'aria-required="true" required', $html);
     if ($kind === 'business') {
         $html = str_replace(['住所1', '住所2（建物名）'], ['住所１', '住所２（建物名）'], $html);
