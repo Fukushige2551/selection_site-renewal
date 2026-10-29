@@ -23,7 +23,10 @@ function foods_cf7_render($kind, $path, $class) {
     $html = str_replace('name="_wpcf7"', 'name="foods_cf7_id"', $html);
     $html = str_replace('name="privacy_agree[]"', 'name="privacy_agree"', $html);
     $html = preg_replace_callback('/<a\b[^>]*>\s*プライバシーポリシー\s*<\/a>/u', static function ($match) {
-        return preg_replace('/\bhref=(["\']).*?\1/u', 'href="' . esc_url(home_url('/privacy/')) . '"', $match[0], 1);
+        $link = preg_replace('/\bhref=(["\']).*?\1/u', 'href="' . esc_url(home_url('/privacy/')) . '"', $match[0], 1);
+        $link = preg_replace('/\s+(?:target|rel)=(["\']).*?\1/u', '', $link);
+        $link = preg_replace('/<a\b/u', '<a target="_blank" rel="noopener noreferrer"', $link, 1);
+        return $link;
     }, $html);
     $html = str_replace('aria-required="true"', 'aria-required="true" required', $html);
     if ($kind === 'business') {
