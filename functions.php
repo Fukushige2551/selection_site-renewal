@@ -1365,7 +1365,7 @@ function foods_register_news_scf_fields() {
         return;
     }
 
-    $version = '20261022-news-fv-order';
+    $version = '20261029-news-remove-unused-content-fields';
     if (get_option('foods_news_scf_fields_version') === $version) {
         return;
     }
@@ -1933,18 +1933,7 @@ function foods_get_recipe_field_group() {
                 'name' => 'recipe_eyecatch_image',
                 'type' => 'image',
                 'required' => 0,
-                'instructions' => 'レシピ一覧や関連レシピなど、詳細画面以外で表示する画像です。',
-                'return_format' => 'id',
-                'preview_size' => 'medium',
-                'library' => 'all',
-            ],
-            [
-                'key' => 'field_recipe_photo',
-                'label' => '詳細画像',
-                'name' => 'recipe_photo',
-                'type' => 'image',
-                'required' => 0,
-                'instructions' => 'レシピ詳細画面で表示する画像です。',
+                'instructions' => 'レシピ一覧・関連レシピ・詳細画面で共通して表示する画像です。',
                 'return_format' => 'id',
                 'preview_size' => 'medium',
                 'library' => 'all',
@@ -2158,7 +2147,7 @@ function foods_register_recipe_scf_fields() {
         return;
     }
 
-    $version = '20261007-01';
+    $version = '20261029-recipe-unified-image';
     if (get_option('foods_recipe_scf_fields_version') === $version) {
         return;
     }
