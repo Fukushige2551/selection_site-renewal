@@ -823,13 +823,13 @@ function foods_get_select_detail_configs() {
                         'location' => '安心な北海道の原料に<br>こだわったお菓子作り',
                         'location_pc' => '安心な北海道の原料にこだわったお菓子作り',
                         'title' => 'ノースカラーズ',
-                        'main_image' => ['src' => 'ノースカラーズ.png', 'webp' => 'webp/ノースカラーズ.webp', 'alt' => 'ノースカラーズの北海道の風景'],
+                        'main_image' => ['src' => 'north-colors-brand-message.png', 'webp' => 'webp/north-colors-brand-message.webp', 'alt' => '青空と北海道の大地に描かれたノースカラーズのブランドメッセージ'],
                         'text_blocks' => ['純国産シリーズは化学添加物や合成着色料を使わず、厳選された自然素材を使用。素材の美味しさと自然の魅力を最大限引き出す商品づくり。特に北海道産の原材料を活かし、子どもから大人まで安心して食べられるお菓子で、健康と笑顔を届けることを目指しています。'],
                         'sub_title' => '北海道の恵みと<br class="u-sweets-break-sp">自然素材から生まれる、<br class="u-sweets-break-sp">やさしくて安心なお菓子。',
                         'gallery' => [
                             [
-                                'src' => 'ノースカラーズの思い.png',
-                                'webp' => 'webp/ノースカラーズの思い.webp',
+                                'src' => 'north-colors-philosophy.png',
+                                'webp' => 'webp/north-colors-philosophy.webp',
                                 'alt' => 'ノースカラーズの想い',
                                 'modifier' => 'north-colors-thought',
                             ],
