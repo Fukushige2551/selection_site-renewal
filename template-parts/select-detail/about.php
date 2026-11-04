@@ -146,6 +146,9 @@ foreach ($background_decorations as $decoration) {
                     <?php endif; ?>
                     <div class="<?php echo esc_attr($block_class); ?>__about__content--secondaryImageWrap">
                         <picture>
+                        <?php if (!empty($secondary_image['src_sp'])) : ?>
+                            <source media="(max-width: 767px)" srcset="<?php echo esc_url(foods_get_select_detail_asset_url($config, $secondary_image['src_sp'])); ?>">
+                        <?php endif; ?>
                         <?php if (!empty($secondary_image['webp'])) : ?>
                             <source srcset="<?php echo esc_url(foods_get_select_detail_asset_url($config, $secondary_image['webp'])); ?>" type="image/webp">
                         <?php endif; ?>

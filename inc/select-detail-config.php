@@ -808,11 +808,11 @@ function foods_get_select_detail_configs() {
                         'main_image' => ['src' => '横井チョコレート.png', 'alt' => '横井チョコレートの商品'],
                         'text_blocks' => ['福井県の横井チョコレートは添加物はなるべく使用しないなど身体に良い素材を厳選し、誰もが安心して美味しく食べられるチョコレート作りを目指しています。'],
                         'sub_title' => '上質な”クーベルチュールチョコレート”を使用',
-                        'secondary_image' => ['src' => 'クーベルチュールチョコレート.png', 'webp' => 'webp/クーベルチュールチョコレート.webp', 'alt' => 'クーベルチュールチョコレートの商品'],
+                        'secondary_image' => ['src' => 'yokoi-main.png', 'src_sp' => 'webp/yokoi-main-sp.webp', 'webp' => 'webp/yokoi-main.webp', 'alt' => 'クーベルチュールチョコレートの商品'],
                         'secondary_text_blocks' => ['横井チョコレートで主に使用するのは、総カカオ分35％以上、ココアバター31%以上といった厳しい国際基準を満たす「クーベルチュールチョコレート」。' . "\n" . '産地もガーナ産に指定した特注品です。またアーモンドは使用するたびに焙煎するなど、すべての素材に手抜きなし。「日本一の材料で」と、素材にはこだわり尽くしています。'],
                         'gallery' => [
-                            ['src' => '販売.png', 'webp' => 'webp/販売.webp', 'alt' => 'チョコレートの販売風景'],
-                            ['src' => 'チョコとパン.png', 'webp' => 'webp/チョコとパン.webp', 'alt' => 'チョコレートとパン'],
+                            ['src' => 'yokoi-shop.png', 'src_sp' => 'webp/yokoi-shop-sp.webp', 'webp' => 'webp/yokoi-shop.webp', 'alt' => 'チョコレートの販売風景'],
+                            ['src' => 'yokoi-rusk.png', 'src_sp' => 'webp/yokoi-rusk-sp.webp', 'webp' => 'webp/yokoi-rusk.webp', 'alt' => 'チョコレートとパン'],
                         ],
                         'decorations' => [
                             ['key' => 'cacao-beans', 'src' => 'カカオ豆.svg', 'alt' => '', 'placement' => 'main_image'],
