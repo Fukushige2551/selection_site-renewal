@@ -2726,3 +2726,67 @@ function foods_sync_news_default_terms() {
 }
 add_action('init', 'foods_sync_news_default_terms', 20);
 
+
+
+/**
+ * Show image preparation guidance beside the relevant editor fields.
+ */
+function foods_admin_image_size_instructions($field) {
+    $sizes = [
+        'shop_image' => '2000 × 1060 px',
+        'shop_images' => '2000 × 1060 px',
+        'main_image' => '2000 × 1060 px',
+        'main_photo' => '2000 × 1060 px',
+        'manager_image' => '960 × 736 px',
+        'field_flyer_images_image' => '長辺3000 pxを目安に、原稿の縦横比を維持してください（A判・B判の例：横長 3000 × 約2121 px、縦長 約2121 × 3000 px）。',
+        'field_flyer_bargain_item_image' => '800 × 800 px',
+        'field_news_eyecatch_image' => '1800 × 1089 px',
+        'field_news_eyecatch_image_sp' => '928 × 837 px',
+        'field_recipe_eyecatch_image' => '1200 × 1200 px',
+    ];
+    $size = $sizes[$field['key'] ?? ''] ?? $sizes[$field['_name'] ?? $field['name'] ?? ''] ?? '';
+    if ($size === '') {
+        return $field;
+    }
+
+    $existing = trim($field['instructions'] ?? '');
+    $field['instructions'] = ($existing !== '' ? $existing . "<br>" : '') . '推奨入稿サイズ：' . $size;
+    return $field;
+}
+add_filter('acf/prepare_field', 'foods_admin_image_size_instructions', 20);
+
+function foods_admin_featured_image_size($html, $post_id) {
+    $sizes = [
+        'shop' => '2000 × 1060 px',
+        'recruit_part_time' => '1800 × 1200 px',
+    ];
+    $size = $sizes[get_post_type($post_id)] ?? '';
+    if ($size !== '') {
+        $html .= '<p class="description">' . esc_html('推奨入稿サイズ：' . $size) . '</p>';
+    }
+    return $html;
+}
+add_filter('admin_post_thumbnail_html', 'foods_admin_featured_image_size', 10, 2);
+
+
+
+add_action('enqueue_block_editor_assets', static function () {
+    $notice = foods_admin_featured_image_size('', get_the_ID());
+    if ($notice === '') {
+        return;
+    }
+
+    $message = wp_json_encode(wp_strip_all_tags($notice));
+    wp_add_inline_script('wp-editor', <<<JS
+wp.hooks.addFilter('editor.PostFeaturedImage', 'foods/image-size-guide', function (FeaturedImage) {
+    return function (props) {
+        return wp.element.createElement(wp.element.Fragment, null,
+            wp.element.createElement(FeaturedImage, props),
+            wp.element.createElement('p', { className: 'description' }, $message)
+        );
+    };
+});
+JS
+    );
+});
+
