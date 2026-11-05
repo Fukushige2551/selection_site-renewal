@@ -2876,6 +2876,8 @@
         }
 
         &__pc-flex {
+            display: grid;
+            grid-template-columns: repeat(3, 19.65vw);
             gap: 2.34vw 1.35vw;
             width: 62.81vw;
             margin: 0 auto 0 18vw;

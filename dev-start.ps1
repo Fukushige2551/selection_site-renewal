@@ -10,7 +10,7 @@ $projectDir = $PSScriptRoot
 $siteUrl = 'http://foods-selectioncojp.local'
 $localShortcut = 'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Local.lnk'
 $localExecutable = 'C:\Program Files (x86)\Local\Local.exe'
-$viteUrl = 'http://localhost:5173'
+$viteUrl = 'http://localhost:5180'
 
 function Test-Url {
     param(
@@ -81,7 +81,7 @@ if (-not (Test-Url -Url $siteUrl)) {
 
 Write-Host 'The WordPress site is running.' -ForegroundColor Green
 
-if (-not (Test-TcpPort -HostName 'localhost' -Port 5173)) {
+if (-not (Test-TcpPort -HostName 'localhost' -Port 5180)) {
     $viteLauncher = Join-Path $projectDir 'dev-vite.ps1'
     Write-Host 'Starting the Vite development server.' -ForegroundColor Cyan
     Start-Process -FilePath 'powershell.exe' -ArgumentList @(

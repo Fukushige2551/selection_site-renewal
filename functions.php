@@ -194,7 +194,7 @@ function foods_theme_scripts() {
         in_array(strtok($http_host, ':'), ['localhost', '127.0.0.1', '::1'], true) ||
         substr($http_host, -6) === '.local'
     );
-    $dev_server = 'http://localhost:5173';
+    $dev_server = 'http://localhost:5180';
 
     $main_entry       = 'src/js/main.js';
     $front_page_entry = 'src/js/front-page.js';
