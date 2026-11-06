@@ -292,11 +292,13 @@ get_header('company');
       </ol>
     </article>
 
+    <!-- クライアント確認により「事業」ブロックを一時的に非表示
     <article class="p-page-recruit-work__business p-page-recruit-work__white-card">
       <div class="p-page-recruit-work__card-decoration"><img src="<?php echo esc_url($image_uri . '/organization-store.png'); ?>" alt="セレクションの店舗"></div>
       <h2 class="p-page-recruit-work__label">事業</h2>
       <p>令和5年3月<br>売上高：　173億2700万円<br>営業利益：1.56％（2.7億円）<br>店舗数：　10店舗</p>
     </article>
+    -->
 
     <a class="p-page-recruit-work__company-link" href="<?php echo esc_url(home_url('/company/')); ?>">
       <span>会社概要</span>
