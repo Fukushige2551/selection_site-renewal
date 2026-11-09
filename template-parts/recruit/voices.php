@@ -3,8 +3,8 @@ $interviews = foods_get_recruit_interviews();
 $initial_index = isset($args['initial_index']) ? (int) $args['initial_index'] : 1;
 $image_uri = get_template_directory_uri() . '/img/page/page-recruit';
 $compressed_uri = get_template_directory_uri() . '/img/page/page-recruit-interview/compressed';
-// Carousel order follows article numbers; visual variant IDs remain stable.
-$card_order = ['01', '02', '03'];
+// Match the approved desktop composition: first and third cards sit lower, with card 03 centred.
+$card_order = ['01', '03', '02'];
 $card_variants = ['01' => 0, '02' => 2, '03' => 1];
 ?>
 <div class="p-page-recruit__voice-slider" data-recruit-slider data-initial-index="<?php echo esc_attr($initial_index); ?>">
@@ -26,7 +26,7 @@ $card_variants = ['01' => 0, '02' => 2, '03' => 1];
   </div>
 </div>
 <div class="p-page-recruit__voice-dots" role="group" aria-label="先輩社員の紹介を切り替える">
-  <?php foreach (['01', '02', '03'] as $number) : $index = array_search($number, $card_order, true); ?>
-    <button type="button" data-interview-number="<?php echo esc_attr($number); ?>" data-slide-index="<?php echo esc_attr($index); ?>"<?php echo $index === $initial_index ? ' class="is-active"' : ''; ?> aria-label="<?php echo esc_attr($interviews[$number]['role'] . 'のカードを表示'); ?>" aria-pressed="<?php echo $index === $initial_index ? 'true' : 'false'; ?>"><?php echo esc_html($number); ?></button>
+  <?php foreach ($card_order as $index => $number) : $label = str_pad((string) ($index + 1), 2, '0', STR_PAD_LEFT); ?>
+    <button type="button" data-slide-index="<?php echo esc_attr($index); ?>"<?php echo $index === $initial_index ? ' class="is-active"' : ''; ?> aria-label="<?php echo esc_attr($interviews[$number]['role'] . 'のカードを表示'); ?>" aria-pressed="<?php echo $index === $initial_index ? 'true' : 'false'; ?>"><?php echo esc_html($label); ?></button>
   <?php endforeach; ?>
 </div>

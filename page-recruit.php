@@ -94,8 +94,4 @@ get_template_part('template-parts/recruit/hero-navigation');
   <?php get_template_part('template-parts/recruit/entry'); ?>
 </main>
 
-<div class="p-page-recruit__entry-person-layer" aria-hidden="true">
-  <img src="<?php echo esc_url($recruit_image('img_entry-person.png', 'bg_recruit.png')); ?>" alt="" class="p-page-recruit__entry-person">
-</div>
-
 <?php get_footer('company'); ?>

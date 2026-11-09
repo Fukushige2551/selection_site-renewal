@@ -1604,7 +1604,7 @@
         // 装飾が折り返された社員情報に重ならないよう、下部に余白を確保する。
         height: auto;
         min-height: 890px;
-        padding-bottom: 240px;
+        padding-bottom: 150px;
     }
 }
 
@@ -2007,6 +2007,13 @@
             border-radius: 22px 22px 0 0;
         }
     }
+
+    .page-template-page-recruit .l-company-footer {
+        position: relative;
+        z-index: 10;
+        margin-top: -48px;
+        border-radius: 30px 30px 0 0;
+    }
 }
 
 @media (min-width: 1024px) and (max-width: 1279px) {
@@ -2171,6 +2178,299 @@
             padding-top: 9px;
             font-size: 16px;
             line-height: 24px;
+        }
+    }
+}
+
+// Entry CTA redesign: paired application buttons and responsive review banner.
+.p-page-recruit {
+    &__entry {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__entry-actions {
+        position: relative;
+        z-index: 10;
+        display: flex;
+
+        > a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            color: #00a784;
+            background: #fff;
+            font-family: "Zen Kaku Gothic New", sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+
+            > span {
+                position: absolute;
+                display: block;
+                border-radius: 50%;
+                color: transparent;
+                background: url("/wp-content/themes/foods-selectioncojp-theme/img/page/page-recruit/svg/entry-button-arrow.svg") center / 100% 100% no-repeat;
+            }
+        }
+    }
+
+    &__entry-review-wrap {
+        position: relative;
+        z-index: 5;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid rgba(255, 255, 255, .72);
+    }
+
+    &__entry-review-link {
+        display: flex;
+        justify-content: center;
+        color: inherit;
+        text-decoration: none;
+
+        &:focus-visible { outline: 3px solid #fff; outline-offset: 5px; }
+    }
+
+    &__entry-review-banner {
+        display: flex;
+        justify-content: center;
+
+        img { display: block; width: 100%; height: auto; }
+    }
+
+    &__entry-person-layer--inside {
+        position: absolute;
+        z-index: 12;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    &__entry-person-tablet-layer { display: none; }
+}
+
+@media (max-width: 767px) {
+    .p-page-recruit {
+        &__entry {
+            height: 250vw;
+            padding: 22.56vw 0 0;
+        }
+
+        &__entry-title {
+            margin-bottom: 9.74vw;
+        }
+
+        &__entry-actions {
+            flex-direction: column;
+            gap: 4.1vw;
+            width: calc(100% - 5.13vw);
+
+            > a {
+                width: 100%;
+                height: 25.64vw;
+                border-radius: 7.69vw;
+                font-size: 6.15vw;
+
+                > span {
+                    right: 3.85vw;
+                    width: 12.31vw;
+                    height: 12.31vw;
+                }
+            }
+        }
+
+        &__entry-review-wrap {
+            width: 92.31vw;
+            margin-top: 10.26vw;
+            padding-top: 5.2vw;
+        }
+
+        &__entry-review-banner {
+            img { width: 92.31vw; }
+        }
+
+        &__entry-word {
+            z-index: 7;
+            top: auto;
+            right: auto;
+            bottom: 18vw;
+            left: 12.82vw;
+            width: 53.33vw;
+            height: 45.64vw;
+        }
+
+        &__entry-person-layer--inside &__entry-person {
+            z-index: 9;
+            top: auto;
+            right: 3.85vw;
+            bottom: 5.13vw;
+            left: auto;
+            width: 46.15vw;
+            height: auto;
+        }
+    }
+
+    .page-template-page-recruit .l-company-footer {
+        position: relative;
+        z-index: 10;
+        margin-top: -11.28vw;
+        border-radius: 10.77vw 10.77vw 0 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .p-page-recruit {
+        &__voice-slider { margin-top: 60px; }
+
+        &__entry {
+            z-index: 3;
+            height: 680px;
+            margin-top: -62px;
+            padding-top: 72px;
+        }
+
+        &__entry-group { transform: translateY(20px); }
+
+        &__entry-actions {
+            gap: 24px;
+            width: calc(100% - 80px);
+
+            > a {
+                flex: 1 1 0;
+                height: 88px;
+                border-radius: 28px;
+                font-size: 24px;
+
+                > span { right: 24px; width: 44px; height: 44px; }
+            }
+        }
+
+        &__entry-review-wrap {
+            width: calc(100% - 80px);
+            margin-top: 40px;
+            padding-top: 24px;
+        }
+
+        &__entry-review-banner {
+            img { width: min(100%, 792px); }
+        }
+
+        &__entry-word {
+            z-index: 7;
+            top: auto;
+            right: auto;
+            bottom: 48px;
+            left: calc(50% - 210px);
+            width: 200px;
+            height: 170px;
+        }
+
+        &__entry-person-layer--inside &__entry-person {
+            display: none;
+        }
+
+        &__entry-person-tablet-layer {
+            position: relative;
+            z-index: 12;
+            display: block;
+            width: 100%;
+            height: 0;
+
+            .p-page-recruit__entry-person {
+                top: -170px;
+                right: auto;
+                bottom: auto;
+                left: calc(50% - 20px);
+                width: 164px;
+                height: 156px;
+            }
+        }
+    }
+
+    .page-template-page-recruit .l-company-footer {
+        position: relative;
+        z-index: 10;
+        margin-top: -34px;
+        border-radius: 30px 30px 0 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .p-page-recruit {
+        &__voices { background: #fff; }
+
+        &__voice-slider { margin-top: 60px; overflow: visible; }
+
+        &__entry {
+            height: 640px;
+            padding-top: 90px;
+            overflow: hidden;
+        }
+
+        &__entry-title { margin-bottom: 50px; }
+
+        &__entry-actions {
+            gap: 32px;
+            width: 792px;
+
+            > a {
+                width: 380px;
+                height: 100px;
+                border-radius: 30px;
+                font-size: 30px;
+
+                > span { right: 28px; width: 50px; height: 50px; }
+            }
+        }
+
+        &__entry-review-wrap {
+            width: min(calc(100% - 320px), 1600px);
+            margin-top: 32px;
+            padding-top: 32px;
+        }
+
+        &__entry-review-banner {
+            img { width: 792px; }
+        }
+
+        &__entry-word {
+            z-index: 7;
+            top: 20px;
+            right: clamp(172px, calc(50vw - 340px), 620px);
+            left: auto;
+            width: 164px;
+            height: 136px;
+        }
+
+        &__entry-person-layer--inside &__entry-person {
+            z-index: 9;
+            top: 70px;
+            right: clamp(72px, calc(50vw - 440px), 520px);
+            bottom: auto;
+            left: auto;
+            width: 164px;
+            height: 156px;
+        }
+    }
+}
+
+// Desktop/tablet Voices layout: raised centre card, visible pager and left-side group.
+@media (min-width: 768px) {
+    .p-page-recruit {
+        &__voice-card:nth-child(2) { transform: translateY(-42px); }
+
+        &__voice-dots {
+            display: none;
+        }
+
+        &__entry-group {
+            right: auto;
+            left: clamp(40px, 5vw, 96px);
         }
     }
 }
