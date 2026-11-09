@@ -2419,12 +2419,16 @@
             width: 792px;
 
             > a {
+                justify-content: flex-start;
                 width: 380px;
                 height: 100px;
                 border-radius: 30px;
                 font-size: 30px;
 
-                > span { right: 28px; width: 50px; height: 50px; }
+                &:first-child { padding-left: 90px; }
+                &:last-child { padding-left: 60px; }
+
+                > span { right: 40px; width: 50px; height: 50px; }
             }
         }
 
