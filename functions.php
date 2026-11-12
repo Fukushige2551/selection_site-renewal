@@ -197,6 +197,17 @@ function foods_theme_scripts() {
     );
     $dev_server = 'http://localhost:5180';
 
+    // Local can keep running when the Vite process is not available. In that
+    // case, fall back to the latest production build instead of rendering the
+    // page without CSS.
+    if ($is_local) {
+        $vite_socket = @fsockopen('127.0.0.1', 5180, $vite_error_code, $vite_error_message, 0.1);
+        $is_local = is_resource($vite_socket);
+        if (is_resource($vite_socket)) {
+            fclose($vite_socket);
+        }
+    }
+
     $main_entry       = 'src/js/main.js';
     $front_page_entry = 'src/js/front-page.js';
     $page_contact_entry = 'src/js/page-contact.js';
