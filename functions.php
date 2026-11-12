@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/inc/instagram-feed.php';
 require_once __DIR__ . '/inc/contact-mail.php';
+require_once __DIR__ . '/inc/flyer-display.php';
 require_once __DIR__ . '/inc/business-contact-mail.php';
 require_once __DIR__ . '/inc/application-mail.php';
 require_once __DIR__ . '/inc/cf7-forms.php';
@@ -2739,7 +2740,7 @@ function foods_admin_image_size_instructions($field) {
         'main_photo' => '2000 × 1060 px',
         'manager_image' => '960 × 736 px',
         'field_flyer_images_image' => '長辺3000 pxを目安に、原稿の縦横比を維持してください（A判・B判の例：横長 3000 × 約2121 px、縦長 約2121 × 3000 px）。',
-        'field_flyer_bargain_item_image' => '800 × 800 px',
+        'field_flyer_bargain_item_image' => '1008 × 904 px（横 × 縦）',
         'field_news_eyecatch_image' => '1800 × 1089 px',
         'field_news_eyecatch_image_sp' => '928 × 837 px',
         'field_recipe_eyecatch_image' => '1200 × 1200 px',

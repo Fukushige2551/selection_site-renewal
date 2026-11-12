@@ -629,6 +629,7 @@ $flyer_store_term_ids = foods_single_shop_get_related_term_ids(
     $shop_match_title,
     array_merge([$shop_slug], foods_single_shop_get_legacy_shop_slugs($shop_slug))
 );
+$flyer_store_term_ids = foods_flyer_include_common_store($flyer_store_term_ids);
 
 $important_notice_field = foods_single_shop_get_first_field_value($shop_id, [
     'important_notice',
@@ -835,10 +836,7 @@ $flyers_data = array_values(array_filter(array_map(function ($flyer) {
 $today = foods_single_shop_parse_ymd(current_time('Ymd'));
 $active_flyers_data = array_values(array_filter($flyers_data, function ($flyer) use ($today) {
     $fields = $flyer['fields'] ?? [];
-    $start_date = $fields['publish_start_date'] ?: ($fields['flyer_start_date'] ?? '');
-    $end_date = $fields['publish_end_date'] ?: ($fields['flyer_end_date'] ?? '');
-
-    return foods_single_shop_is_date_active($start_date, $end_date, $today);
+    return foods_flyer_is_publication_active($fields, $today->format('Ymd'));
 }));
 
 usort($active_flyers_data, function ($a, $b) {

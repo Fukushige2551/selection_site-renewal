@@ -58,7 +58,7 @@
     $front_flyer_query = new WP_Query([
         'post_type' => 'flyer',
         'post_status' => 'publish',
-        'posts_per_page' => 1,
+        'posts_per_page' => -1,
         'orderby' => [
             'date' => 'DESC',
             'ID' => 'DESC',
@@ -145,7 +145,18 @@
         return number_format((float) $price, $decimal_count, '.', ',');
     };
 
-    $front_flyer_post = $front_flyer_query->posts[0] ?? null;
+    $front_flyer_post = null;
+    $front_today = current_time('Ymd');
+    foreach ($front_flyer_query->posts as $candidate) {
+        $publication_fields = [];
+        foreach (['publish_start_date', 'publish_end_date', 'flyer_start_date', 'flyer_end_date'] as $field_name) {
+            $publication_fields[$field_name] = $front_get_flyer_field($candidate->ID, $field_name);
+        }
+        if (foods_flyer_is_publication_active($publication_fields, $front_today)) {
+            $front_flyer_post = $candidate;
+            break;
+        }
+    }
     $front_bargain_items = $front_flyer_post
         ? $front_get_flyer_field($front_flyer_post->ID, 'bargain_items')
         : [];
